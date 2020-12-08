@@ -1,0 +1,18 @@
+etc:
+- etc/*
+
+agnos:
+- customer-assets/agnos/*
+- agnos-*
+- *-agnos
+
+ekgf:
+  - customer-assets/ekgf/*
+  - ekgf-*
+  - *-ekgf
+
+kg-mm:
+- kg-mm/*
+
+
+

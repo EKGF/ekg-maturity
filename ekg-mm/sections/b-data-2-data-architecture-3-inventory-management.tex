@@ -1,0 +1,92 @@
+\section{Data Inventory}\label{sec:b-2-3} % B.2.3 Inventory Management
+
+A \iindex{Data Inventory} is a repository of data assets\index{Data Assets} for the organization (also known as a data catalog\index{Data Catalog} or metadata repository\index{Metadata Repository}).
+The inventory contains information about what data exists, where it resides (“data-at-rest”)\index{Data-at-Rest}, responsible parties,
+upstream/downstream usage, how it moves (“data in motion”)\index{Data-in-Motion} classifications, quality designations, availability and other useful metrics.
+The contents are catalogued at physical, logical and business levels using defined organizational standards.
+Consistently documenting data is the backbone of an effective data management program.
+Policies and controls are required to ensure the inventory remains accurate and relevant.
+
+\subsection*{\glsfmtshort{ekg} Rationale}
+
+Linking data inventory to the knowledge graph (and business concepts) ensures precision of meaning at the most granular level.
+Data in the knowledge graph is traceable to all application usage allowing users to find data of interest through assisted and contextual search.
+The unique ability of the knowledge graph to connect data with metadata enables users to perform flexible queries in ways that were not previously possible.
+
+\subsection*{Core Questions}
+
+\begin{itemize}[leftmargin=.5in]
+
+  \item [\thesection.1] Do (one of more) data inventories exist
+  \item [\thesection.2] Is the inventory based on defined standards (for both meaning and format)
+  \item [\thesection.3] Is defined and in-scope data (both breadth and depth) covered in the inventories
+  \item [\thesection.4] Is the data inventory linked to systems of record and authorized data distribution points
+  \item [\thesection.5] Is the inventory linked to the business meaning of the data and expressed using standards
+  \item [\thesection.6] Is the creation and maintenance of the data inventory mandated by policy and incorporated into the data strategy
+  \item [\thesection.7] Is the quality of the content in the inventory measured, reported to involved stakeholders and used for process enhancement
+
+\end{itemize}
+
+\subsection*{Scoring Criteria}
+
+(concepts are inherited as levels progress)
+
+The goal is implementation of the graph.
+All levels are viewed as they relate to various graph implementations.
+Focus is “inventory” for graph use case (not inventory AS use case)
+
+\kgmmscoringlevelOne
+
+\begin{itemize}
+  \item NOTES: Business glossaries for in-scope use cases defined and verified (in the graph); application portfolio (inventory of applications) defined and selected for graph (ownership, certification, evaluation of resiliency) - verify the authoritative (upstream) data sources and (downstream) consumers
+  \item Understand the downstream consumers – who they are, what they need, how it will be used, level of quality required, how it will be tied to the use cases)
+  \item Requirements of each outbound data flow are documented and verified - not required to be in graph
+  \item List of data sets and sources (enumeration of all the in-scope data sources - including all legacy catalogs)
+  \item Sources and datasets must be on-boarded into the KG (triples and metadata ontology about the sources)
+  \item Ontologies and field mapping for in-scope datasets (the content is in triples and expressed as formal ontologies)
+  \item Understand the interdependencies between sources (understand data flows of all the upstream data sources for the initial KG use cases) - not required to be in graph
+  \item Business agreement (verified) on the sources and the use of the sources for in-scope applications [agreement between users, data organization and IT]
+  \item Organizational mandate to maintain the inventory and only use data that is logged into the inventory
+  \item Access control and entitlement is implemented for in-scope data/use cases (at dataset level/named graph level)
+  \item CDE designation is captured in the inventory
+\end{itemize}
+
+\kgmmscoringlevelTwo
+
+\begin{itemize}
+  \item use case tree (i.e. taxonomies and relationship dependencies) defined, standardized and implemented [NOTE: preparing for automation - needs to be in graph for level 3 functionality]
+  \item all upstream data sources are linked to the authorized systems of record and distribution points (must know how to further extend the data model to understand how data gets into the SOR; hierarchical data flow model extends across the full data lifecycle) - must know from where firm is getting the data (named)
+  \item Entitlements have been defined and implemented in the graph (who is allowed – in which context – to use the sources in the inventory) -
+  \item Classifications (criticality, PII, security) are aligned with the use case tree and captured in the KG
+  \item All data inventory governance requirements (i.e. customers, uses, set, sources, data flow, SLAs) are registered into the knowledge graph [model all governance processes]
+\end{itemize}
+
+\kgmmscoringlevelThree
+
+\begin{itemize}
+  \item Entitlements are calculated within the inventory - based on context and enforced at the datapoint level from the graph - (move or reference in entitlement section with dependency map?)
+  \item Data inventory is tied to organizational governance (owners, budgets, program roadmaps, chargebacks based on metered usage) and incorporated into the graph and tied to onward use cases (more advanced version of bullet in level 2)
+  \item Ontologies, data models including change history, transformations are all incorporated into the inventory within the \acrshort{ekg}
+  \item Inventory is tied to fine-grained quality control in the graph (datapoint context/dynamic value resolution for which data source for which application/use case) - automatically calculates quality requirements for each context/use case
+  \item Data retention/destruction policies/masking rules are in the graph inventory and enforced
+  \item Full provenance (audit trail) for all upstream and downstream data usage is registered in the graph; fully regulatory compliant processing platform achieved
+  \item Inventory (data elements, calculation methods and criticality) are tied to individual regulatory requirements
+  \item Replace redundant inventory integration across lines of business and from mergers
+\end{itemize}
+
+\kgmmscoringlevelFour
+
+\begin{itemize}
+  \item Extend onboarding of inventory to include transactional (real-time) data
+  \item External supply chain inventory being incorporated into the \acrshort{ekg}
+  \item Human processes (stewardship) are replaced by AI
+  \item Full integration with machine learning to gain efficiency (to optimize data flow) across linked processes
+  \item Ability to calculate the “value” of data for any given data source (i.e. how much it contributes to the organizational mission – begin to determine how and why this data is this giving us some advantage in the marketplace); uncover the “golden egg” data sets that should be protected and leveraged
+\end{itemize}
+
+\kgmmscoringlevelFive
+
+\begin{itemize}
+  \item Inventory functionality is extended across the full supply chain (internal and external)
+  \item Inventory is linked to systems of the regulatory for automated reporting traceability – full transparency of inventory (if entitled)
+\end{itemize}

@@ -1,0 +1,22 @@
+%
+% Index support
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{index-stuff}[2019/09/16 agnos.ai - all index related stuff]
+
+\RequirePackage{imakeidx}
+
+%
+% Actually start generating the index file and add the index chapter in the ToC
+%
+\makeindex[intoc,columns=3,columnseprule]
+
+%
+% \insertPrintIndex is a command that whitepaper-style-doc.sty is inserting at the end of the document.
+%
+\newcommand{\insertPrintIndex}{\clearpage\printindex}
+
+%
+% New command that avoids having to repeat an indexed word
+%
+\newcommand{\iindex}[1]{#1\index{#1}}

@@ -1,0 +1,6 @@
+#
+# We have to check in pdf_tex files because they cannot be generated on Overleaf
+#
+!*.pdf_tex
+!*.pdf
+!*.svg

@@ -1,0 +1,49 @@
+%
+% All font related stuff
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{font-stuff}[2019/09/16 agnos.ai - All font related stuff]
+
+\RequirePackage{fontspec}
+\RequirePackage{overleaf-stuff}
+
+%
+% See https://tug.org/FontCatalogue/firasansbook/
+%
+% Also considered:
+%
+% https://tug.org/FontCatalogue/firasansextralight/ (looks pretty good but the bolds are too thick)
+%
+%\RequirePackage[sfdefault,extralight]{FiraSans}
+%\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+
+%\usepackage[default]{lato}
+%\setmainfont[Ligatures=TeX]{Lato}
+
+%\setmainfont{NotoSans-Regular}
+\whenNotRunningOnOverleafDo{
+  \setmainfont[
+    Ligatures=TeX,
+    ItalicFont={Frutiger LT 46 Light Italic},
+    BoldFont={Frutiger LT 65 Bold},
+    BoldItalicFont={Frutiger LT 66 Bold Italic}
+  ]{Frutiger LT 45 Light}
+  \setmonofont{Inconsolata-Regular}[Scale=MatchLowercase]
+%  \setmonofont{Inconsolata-Bold}[Scale=MatchLowercase]
+}
+
+%\setmainfont{Lato}
+%%\setmainfont{Helvetica Neue}
+%%\setmainfont{Minion Pro}
+%%\setsansfont{Myriad Pro}
+%\setmainfont{Hoefler Text}
+%%\setromanfont{EB Garamond}
+%\RequirePackage{amsmath}
+%\RequirePackage{amssymb,amsfonts,textcomp}
+\RequirePackage{hyphenat}
+\RequirePackage[font=scriptsize,labelfont=bf]{caption}
+\RequirePackage{enumitem}
+\RequirePackage{soul}% supports the \ul command for wrapped underlined lines
+
+\newlist{arrowlist}{itemize}{1}
+\setlist[arrowlist]{label=$\Rightarrow$}

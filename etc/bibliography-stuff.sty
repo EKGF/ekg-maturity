@@ -1,0 +1,24 @@
+%
+% All bibliography related stuff
+%
+% Shows up as "References" in the Table of Contents (and at the end of the doc).
+% All references are in the bibliography.bib file.
+%
+% Good guide: https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex#Basic_usage
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bibliography-stuff}[2019/12/27 agnos.ai - all bibliography related stuff]
+
+\RequirePackage{link-stuff} % according to xurl docs we need to load xurl before biblatex
+
+%
+% Bibliography, all references are in the bibliography.bib file.
+%
+%\RequirePackage[backend=biber,style=numeric]{biblatex}
+\RequirePackage[backend=biber,style=alphabetic]{biblatex}
+\addbibresource{../bibliography.bib}
+
+%
+% \insertPrintBibliography is a command that whitepaper-style-doc.sty is inserting at the end of the document.
+%
+\newcommand{\insertPrintBibliography}{\clearpage\printbibliography[title=References,heading=bibintoc]\label{sec:bibliography}}

@@ -1,0 +1,57 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = en_US
+% !TeX root = kg-method/kg-method.tex
+% The above are so called "magic comments" used by editors like TexStudio
+%
+% Here are some commands that instruct the "arara" tool (should be part of the standard LaTeX install on your Mac)
+% which can be used to build this file (use "arara -v kg-method.tex to run it)
+%
+% arara: lualatex
+% arara: biber
+% arara: makeglossaries
+% arara: makeindex
+% arara: lualatex
+% arara: lualatex
+
+\makeatletter\def\input@path{{etc/}{../etc/}{../../etc/}{images/}{./images/}{../images/}{../../images/}}\makeatother
+
+%
+% Document Class is whitepaper-style-doc, specify '--final' or '--draft' on the command line of the build script
+%
+\ifdefined\DocumentClassOptions
+  \typeout{Using the following document class options: \DocumentClassOptions}
+\else
+  \typeout{Building the document in DRAFT mode}
+  \def\DocumentClassOptions{draft}
+\fi
+\documentclass[\DocumentClassOptions]{whitepaper-style-doc}
+
+\makeglossaries
+\loadGlossaries
+
+%
+% Title page variables
+%
+\title{\glsfmtshort{ekgmm}}
+\def\subtitleLineA{Overview of the Maturity Model}
+\def\subtitleLineB{for the \acrlong{ekg}}
+\author{\agnos}
+\date{\today}
+
+\typeout{ekg-mm =================================> Start Document}
+\begin{document}
+
+\typeout{ekg-mm =================================> Intro}
+\part{Intro}
+\input{../ekg-mm/sections/ekg-mm-intro.tex}
+
+\typeout{ekg-mm =================================> Capabilities}
+
+\input{../ekg-mm/sections/ekg-mm.tex}
+
+\typeout{ekg-mm =================================> Appendices}
+\bookmarksetupnext{level=-1}
+\appendix
+\addappheadtotoc
+\appendixpage
+\end{document}

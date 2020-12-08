@@ -1,0 +1,38 @@
+%
+% All picture related stuff
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{picture-stuff}[2019/09/20 agnos.ai - All picture related stuff]
+
+\RequirePackage{graphicx}% this package must be before svg
+%\RequirePackage{svg}
+\newcommand{\home}{/Users/jacobus/Work/kg-whitepaper}
+\providecommand{\transparent}[1]{} % see manual
+% \pdfsuppresswarningpagegroup=1 % hot fix if required, see manual
+\RequirePackage{relsize} % required for adjusting text using relscale
+\graphicspath{{\home/images}{images/}{../images/}{../../images/}{../customer-assets/\customerCode/}{../../customer-assets/\customerCode/}}
+%\svgpath{{\home/images}{images/}{../images/}}
+%\svgsetup{inkscapepath=\home}
+\RequirePackage{float}
+\RequirePackage{ifdraft}
+\RequirePackage{changepage}
+
+\newcommand{\adjustimg}{% Horizontal adjustment of image
+  \checkoddpage%
+  \ifoddpage\hspace*{\dimexpr\evensidemargin-\oddsidemargin-1pt}\else\hspace*{-\dimexpr\evensidemargin-\oddsidemargin}\fi%
+}
+\newcommand{\centerimg}[2][width=\textwidth]{% Center an image
+  \makebox[\textwidth]{\adjustimg\includegraphics[#1]{#2}}%
+}
+
+%
+% Import a banner picture and size it across the whole page
+%
+\newcommand{\bannerAcrossWholePage}[2]{%
+  \mbox{} \par%
+  \ifoptionfinal{% final mode without TODOs so different right margin
+    \noindent\centerimg[width=\dimexpr\paperwidth+3pt\relax,height=#1]{#2}%
+  }{% draft mode
+    \noindent\centerimg[width=\dimexpr\paperwidth+17pt\relax,height=#1]{#2}%
+  }%
+}
