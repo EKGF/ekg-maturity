@@ -2,12 +2,13 @@
 #
 # Clean all temporary files or generated files
 #
-SCRIPT_DIR="$(cd $(dirname "${BASH_SOURCE[0]}") && pwd -P)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
 function getAllMainDocNames() {
 
   (
     cd "${SCRIPT_DIR}"
+    echo -n "$(pwd) "
     for directory in */ ; do
       directory="${directory/\//}" # strips the slash
       if [[ -f "${directory}/${directory}.tex" ]] ; then

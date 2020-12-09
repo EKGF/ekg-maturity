@@ -77,7 +77,7 @@
 \begin{document}
 %
 % Not that we actually generate a glossary but we need to import the glossary regardless because otherwise
-% all \acrshort{someterm} commands fail.
+% all \glsxtrshort{someterm} commands fail.
 %
 \import{../../}{glossary.tex}
 \import{../../}{glossary-business.tex}

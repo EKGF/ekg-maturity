@@ -19,7 +19,7 @@
 % Document Class is whitepaper-style-doc, specify '--final' or '--draft' on the command line of the build script
 %
 \ifdefined\DocumentClassOptions
-  \typeout{Using the following document class options: \DocumentClassOptions}
+  \typeout{Using the following  document class options: \DocumentClassOptions}
 \else
   \typeout{Building the document in DRAFT mode}
   \def\DocumentClassOptions{draft}
@@ -27,6 +27,7 @@
 \documentclass[\DocumentClassOptions]{whitepaper-style-doc}
 
 \makeglossaries
+\setabbreviationstyle[acronym]{long-short}
 \loadGlossaries
 
 %
@@ -34,7 +35,7 @@
 %
 \title{\glsfmtshort{ekgmm}}
 \def\subtitleLineA{Overview of the Maturity Model}
-\def\subtitleLineB{for the \acrlong{ekg}}
+\def\subtitleLineB{for the \glsxtrlong{ekg}}
 \author{\agnos}
 \date{\today}
 

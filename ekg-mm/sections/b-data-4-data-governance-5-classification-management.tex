@@ -1,4 +1,4 @@
-\section{Critical Data Elements}\label{sec:b-4-5} % B.4.5 Classification Management
+\section{Critical Data Elements}\label{sec:ekgmm-b-4-5} % B.4.5 Classification Management
 
 Critical data elements (CDEs) are designated as having a material impact on a business process, regulatory report, financial calculation or risk measure.
 The designation of a data element as critical means it is important enough to be governed by organizational policy.
@@ -7,21 +7,21 @@ understanding of data flow, capture of business rules and the management of qual
 Many firms use the term CDE to describe various things such as data attributes, business concepts, derived processes and physical expressions.
 This confusion over nomenclature about concepts makes it difficult to distinguish granular data from how it is assembled into business measures and how it is expressed in physical data repositories.
 
-\subsubsection*{\glsfmtshort{ekg} Rationale}
+\kgmmekgrationalesection
 
-In the \acrshort{ekg}, critical data are defined by data quality business rules and expressed as machine-executable models
+In the \glsxtrshort{ekg}, critical data are defined by data quality business rules and expressed as machine-executable models
 These rules are automatically executed across systems, processes and applications to ensure consistency.
 Data is linked to the ontology and resolved to a single identifier to mitigate confusion about meaning when the data is onboarded or transformed.
-The \acrshort{ekg} is able to trace data flow and verify that criticality is aligned with systems of record and agreed usage.
+The \glsxtrshort{ekg} is able to trace data flow and verify that criticality is aligned with \glsxtrfullpl{sor} and agreed usage.
 
-\subsubsection*{Core Questions}
+\kgmmcorequestionssection
 
 \begin{itemize}[leftmargin=.5in]
 
   \item [\thesection.1] Are critical data elements identified, verified and prioritized for specific use cases and applications
   \item [\thesection.2] How is the organization managing the distinctions between granular data attributes and derived/calculated business concepts
   \item [\thesection.3] Is the inventory of critical data elements implemented and linked to how the data is being consumed
-  \item [\thesection.4] Are critical business elements connected to business glossaries, ontologies, systems of record and authorized distribution points
+  \item [\thesection.4] Are critical business elements connected to business glossaries, ontologies, \glsxtrfullpl{sor} and authorized distribution points
   \item [\thesection.5] Is the front-to-back flow of data defined, validated and linked to the designations of critical data
   \item [\thesection.6] Are the governance mechanisms for managing critical data defined and operational
 
