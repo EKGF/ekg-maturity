@@ -2,7 +2,7 @@ name: Create PDF
 on: [push]
 
 jobs:
-  build_latex:
+  create-draft-ekgf-pdf:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
@@ -11,6 +11,77 @@ jobs:
         uses: xu-cheng/latex-action@v2
         env:
           OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
+          latex_document_customer: ekgf
+          latex_document_mode: draft
+        extra_system_packages: ncurses
         with:
           root_file: ekg-mm/ekg-mm.tex
           latexmk_use_lualatex: true
+      - name: Store PDF
+        uses: actions/upload-artifact@v2
+        with:
+          name: ekgf-ekg-mm-draft
+          path: ./ekg-mm/ekg-mm.pdf
+
+  create-final-ekgf-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        env:
+          OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
+          latex_document_customer: ekgf
+          latex_document_mode: final
+        extra_system_packages: ncurses
+        with:
+          root_file: ekg-mm/ekg-mm.tex
+          latexmk_use_lualatex: true
+      - name: Store PDF
+        uses: actions/upload-artifact@v2
+        with:
+          name: ekgf-ekg-mm
+          path: ./ekg-mm/ekg-mm.pdf
+
+  create-draft-agnos-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        env:
+          OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
+          latex_document_customer: agnos
+          latex_document_mode: draft
+        extra_system_packages: ncurses
+        with:
+          root_file: ekg-mm/ekg-mm.tex
+          latexmk_use_lualatex: true
+      - name: Store PDF
+        uses: actions/upload-artifact@v2
+        with:
+          name: agnos-ai-ekg-mm-draft
+          path: ./ekg-mm/ekg-mm.pdf
+
+  create-final-agnos-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        env:
+          OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
+          latex_document_customer: agnos
+          latex_document_mode: final
+        extra_system_packages: ncurses
+        with:
+          root_file: ekg-mm/ekg-mm.tex
+          latexmk_use_lualatex: true
+      - name: Store PDF
+        uses: actions/upload-artifact@v2
+        with:
+          name: agnos-ai-ekg-mm
+          path: ./ekg-mm/ekg-mm.pdf
