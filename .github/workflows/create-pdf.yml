@@ -13,10 +13,10 @@ jobs:
           OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
           latex_document_customer: ekgf
           latex_document_mode: draft
-        extra_system_packages: ncurses
         with:
           root_file: ekg-mm/ekg-mm.tex
           latexmk_use_lualatex: true
+          extra_system_packages: ncurses
       - name: Store PDF
         uses: actions/upload-artifact@v2
         with:
@@ -34,10 +34,10 @@ jobs:
           OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
           latex_document_customer: ekgf
           latex_document_mode: final
-        extra_system_packages: ncurses
         with:
           root_file: ekg-mm/ekg-mm.tex
           latexmk_use_lualatex: true
+          extra_system_packages: ncurses
       - name: Store PDF
         uses: actions/upload-artifact@v2
         with:
@@ -55,10 +55,10 @@ jobs:
           OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
           latex_document_customer: agnos
           latex_document_mode: draft
-        extra_system_packages: ncurses
         with:
           root_file: ekg-mm/ekg-mm.tex
           latexmk_use_lualatex: true
+          extra_system_packages: ncurses
       - name: Store PDF
         uses: actions/upload-artifact@v2
         with:
@@ -76,10 +76,10 @@ jobs:
           OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
           latex_document_customer: agnos
           latex_document_mode: final
-        extra_system_packages: ncurses
         with:
           root_file: ekg-mm/ekg-mm.tex
           latexmk_use_lualatex: true
+          extra_system_packages: ncurses
       - name: Store PDF
         uses: actions/upload-artifact@v2
         with:
