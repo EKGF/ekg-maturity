@@ -14,11 +14,16 @@
 
 \rhead{%
   \hspace{-0.5em}%
-  \IfFileExists{../customer-assets/\customerCode/\customerCode_logo_wide.pdf_tex}{
-    \def\svgwidth{0.1\columnwidth}%
-    \input{../customer-assets/\customerCode/\customerCode_logo_wide.pdf_tex}%
+  \IfFileExists{../customer-assets/\customerCode/\customerCode_logo_symbol.pdf_tex}{
+    \def\svgwidth{0.05\columnwidth}%
+    \input{../customer-assets/\customerCode/\customerCode_logo_symbol.pdf_tex}%
   }{
-    \typeout{ERROR: (in ../etc/header-and-footer-stuff.sty) Could not find ../customer-assets/\customerCode/\customerCode_logo_wide.pdf_tex}
+    \IfFileExists{../customer-assets/\customerCode/\customerCode_logo_wide.pdf_tex}{
+      \def\svgwidth{0.1\columnwidth}%
+      \input{../customer-assets/\customerCode/\customerCode_logo_wide.pdf_tex}%
+    }{
+      \typeout{ERROR: (in ../etc/header-and-footer-stuff.sty) Could not find ../customer-assets/\customerCode/\customerCode_logo_wide.pdf_tex}
+    }
   }
 }%
 \fancyfoot[C]{%
