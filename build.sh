@@ -53,8 +53,10 @@ function runLaTex() {
   if ((run == 1)) ; then
     lualatex \
       --output-format=pdf \
+      --file-line-error \
       --shell-escape \
       --halt-on-error \
+      --recorder \
       --interaction=nonstopmode \
       ${skipGeneratingPdf} ${latexCommand} | \
       grep -v "LaTeX Warning: Reference .* on page .* undefined on input line .*" | \
@@ -63,8 +65,10 @@ function runLaTex() {
   else
     lualatex \
       --output-format=pdf \
+      --file-line-error \
       --shell-escape \
       --halt-on-error \
+      --recorder \
       --interaction=nonstopmode \
       ${skipGeneratingPdf} ${latexCommand}
   fi
