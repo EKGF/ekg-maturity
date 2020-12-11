@@ -1,0 +1,37 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{maturity-model-stuff}[2020/12/11 agnos.ai - all EKG/MM related macros]
+
+\RequirePackage{tikz-stuff}
+
+\tikzset{
+    arrow/.style={% define the style for the arrows between the user story components
+        draw,
+        blue!40,
+        very thick,
+        >=stealth
+    },
+    usc/.style={% define the style of each user story component (usc)
+        draw=green!60,
+        rectangle,
+        fill=green!5,
+        semithick,
+        minimum height=2em,
+        text width=11em,
+        align=center,
+        rounded corners,
+        font=\normalsize
+    }
+}
+
+
+\newenvironment{core-questions}[1]{%
+    \begin{itemize}[leftmargin=.5in,font=\bfseries]%
+}{%
+    \end{itemize}%
+}
+
+\newenvironment{scoring}[1]{%
+    \begin{itemize}[leftmargin=1.5in,font=\bfseries]%
+}{%
+    \end{itemize}%
+}

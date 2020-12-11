@@ -20,7 +20,8 @@ most granular (atomic) level and eliminates confusion over meaning when data is 
 
 \kgmmcorequestionssection
 
-\begin{itemize}[leftmargin=.5in]
+\begin{core-questions}
+
   \item [\thesection.1] Are there multiple (official) business glossaries for lines of business or functions
   \item [\thesection.2] Are there internal standards for content, format and use of the business glossaries
   \item [\thesection.3] Is the business meaning of the data verified by accountable subject matter experts
@@ -29,7 +30,8 @@ most granular (atomic) level and eliminates confusion over meaning when data is 
   \item [\thesection.5] Are the glossaries mapped to all expressions of the data in various systems
                         (how is this maintained)
   \item [\thesection.4] Are the business glossaries accessible and searchable from the corporate intranet
-\end{itemize}
+
+\end{core-questions}
 
 \kgmmscoringsection
 
@@ -40,7 +42,8 @@ all glossaries are maintained with a defined mechanism for change management,
 all in-scope domains are covered (and all content is included), mapped to processes and expressions
 (lineage and transformation), governance (ownership, transformation, logic, allowable values, audit trail)
 
-\begin{itemize}
+\begin{scoring}
+
   \item The organization has one (or many) officially designated glossaries
   \item Front-to-back SME review and verification
   \item Official glossaries are captured in an inventory
@@ -49,39 +52,48 @@ all in-scope domains are covered (and all content is included), mapped to proces
   \item All in-scope domains are covered (and all content is included)
   \item Mapped to processes and expressions (lineage and transformation)
   \item Governance (ownership, transformation, logic, allowable values, audit trail)
-\end{itemize}
+
+\end{scoring}
 
 \kgmmscoringlevelOne
 
-\begin{itemize}[leftmargin=1.5in]
+\begin{scoring}
+
   \item All concepts for any KG use case are covered by the glossary
   \item Process exists to add new terms (and updating) into the official glossaries
-\end{itemize}
+
+\end{scoring}
 
 \kgmmscoringlevelTwo
 
-\begin{itemize}[leftmargin=1.5in]
+\begin{scoring}
+
   \item Relevant terms (for KG use cases) are expressed as RDF and imported into the knowledge graph
   \item Relevant terms are linked to their corresponding ontologies
-\end{itemize}
+
+\end{scoring}
 
 \kgmmscoringlevelThree
 
-\begin{itemize}[leftmargin=1.5in]
+\begin{scoring}
+
   \item All glossaries within the organization are expressed as RDF and imported into the knowledge graph
   \item All glossaries are searchable via the knowledge graph interface
   \item The governance process (including all metadata) for glossaries are on-boarded into the knowledge graph
         [passive, linked to existing governance tool, read-only]
-\end{itemize}
+
+\end{scoring}
 
 \kgmmscoringlevelFour
 
-\begin{itemize}[leftmargin=1.5in]
+\begin{scoring}
+
   \item The \glsxtrlong{ekgp} is the authoritative source for all glossaries
   \item All glossary terms are derived directly from the ontologies
   \item The governance processes for all new terms (and changes) are managed directly within the \glsxtrshort{ekg}
   \item Data usage (per glossary term) is monitored and reported
-\end{itemize}
+
+\end{scoring}
 
 \kgmmscoringlevelFive
 

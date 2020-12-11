@@ -20,7 +20,7 @@ different values, identities and definitions that existed at various times in th
 
 \kgmmcorequestionssection
 
-\begin{itemize}[leftmargin=.5in,font=\bfseries]
+\begin{core-questions}
 
   \item [\thesection.1] Are the data integration activities, their systems, repositories, and connections
                         known and tracked
@@ -31,7 +31,7 @@ different values, identities and definitions that existed at various times in th
   \item [\thesection.6] Has the firm established a central data integration function
                         (i.e. integration Center of Excellence) to manage \glsxtrshort{etl} across both
                         internal and external data pipelines
-\end{itemize}
+\end{core-questions}
 
 \kgmmcorequestionssection
 
@@ -40,7 +40,8 @@ for the appropriate context.
 
 \kgmmscoringlevelOne
 
-\begin{itemize}[leftmargin=1.5in,font=\bfseries]
+\begin{scoring}
+
     \item All data sources are identified and documented for in-scope use cases
     \item Do we know the authoritative source for each data set (should not be able to do integration without
           using approved authoritative source)
@@ -60,11 +61,13 @@ for the appropriate context.
     \item Entitlement policies and classification rules (i.e. security, PII, business sensitive) are
           defined and verified
     \item Data quality requirements are defined, documented and verified
-\end{itemize}
+
+\end{scoring}
 
 \kgmmscoringlevelTwo
 
-\begin{itemize}[leftmargin=1.5in,font=\bfseries]
+\begin{scoring}
+
     \item All information (above) are identified, precisely defined and on-boarded into the knowledge graph
     \item Able to do datapoint lineage (detailed and complete view of the data integration landscape)
     \item Start making the \gls{ekg} the central point for data integration (the \gls{ekg} becomes the Rosetta stone of
@@ -80,11 +83,12 @@ for the appropriate context.
     \item Entitlement policies and classification requirements are on-boarded into the \gls{ekg}
     \item Data quality business rules are on-boarded into the \gls{ekg}
 
-\end{itemize}
+\end{scoring}
 
 \kgmmscoringlevelThree
 
-\begin{itemize}[leftmargin=1.5in,font=\bfseries]
+\begin{scoring}
+
     \item Data is precisely defined (granular level) - expressed as formal ontologies - and on-boarded into the \gls{ekg}
     \item All data flows are modeled and defined and registered in the \gls{ekg} (full lineage in the \gls{ekg} for all
           in-scope applications)
@@ -92,15 +96,17 @@ for the appropriate context.
           The \gls{ekg} is structured to become the “new” system for in-scope applications (as soon as all
           connections emanate from the \gls{ekg}).
     \item Entitlements are automatically managed enforced
-\end{itemize}
+
+\end{scoring}
 
 \kgmmscoringlevelFour
 
-\begin{itemize}[leftmargin=1.5in,font=\bfseries]
+\begin{scoring}
+
     \item [policy] All downstream client systems are using authoritative sources as the only source of information
           for in-scope datasets (\gls{ekg} is in the middle of all data flows)
     \item All “cottage industry systems”\index{Cottage Industry} are replaced by the \gls{ekg}
           (and \gls{ekg} is able to perform all the requirements of any system it replaced --
          reporting, entitlement, quality control)
 
-\end{itemize}
+\end{scoring}
