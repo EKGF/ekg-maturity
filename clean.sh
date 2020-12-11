@@ -8,7 +8,7 @@ function getAllMainDocNames() {
 
   (
     cd "${SCRIPT_DIR}"
-    echo -n "$(pwd) "
+    echo -n "$(pwd) ./out "
     for directory in */ ; do
       directory="${directory/\//}" # strips the slash
       if [[ -f "${directory}/${directory}.tex" ]] ; then

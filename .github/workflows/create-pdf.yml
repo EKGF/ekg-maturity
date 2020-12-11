@@ -20,8 +20,8 @@ jobs:
       - name: Store PDF
         uses: actions/upload-artifact@v2
         with:
-          name: ekgf-ekg-mm-draft
-          path: ./ekg-mm/ekg-mm.pdf
+          name: 'ekgf - ekg-mm - draft'
+          path: './out/ekgf - ekg-mm - draft.pdf'
 
   create-final-ekgf-pdf:
     runs-on: ubuntu-latest
@@ -41,8 +41,8 @@ jobs:
       - name: Store PDF
         uses: actions/upload-artifact@v2
         with:
-          name: ekgf-ekg-mm
-          path: ./ekg-mm/ekg-mm.pdf
+          name: 'ekgf - ekg-mm'
+          path: './out/ekgf - ekg-mm.pdf'
 
   create-draft-agnos-pdf:
     runs-on: ubuntu-latest
@@ -62,8 +62,8 @@ jobs:
       - name: Store PDF
         uses: actions/upload-artifact@v2
         with:
-          name: agnos-ai-ekg-mm-draft
-          path: ./ekg-mm/ekg-mm.pdf
+          name: 'agnos.ai - ekg-mm - draft'
+          path: './out/agnos.ai - ekg-mm - draft.pdf'
 
   create-final-agnos-pdf:
     runs-on: ubuntu-latest
@@ -83,5 +83,6 @@ jobs:
       - name: Store PDF
         uses: actions/upload-artifact@v2
         with:
-          name: agnos-ai-ekg-mm
-          path: ./ekg-mm/ekg-mm.pdf
+          name: 'agnos.ai - ekg-mm'
+          path: './out/agnos.ai - ekg-mm.pdf'
+
