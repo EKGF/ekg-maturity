@@ -25,7 +25,7 @@ function cleanTopLevelDocDirectory() {
   (
     cd "${directory}" || return 1
 
-    rm *.{acn,acr,alg,aux,bbl,bcf,blg,fdb_latexmk,fls,glg,glo,gls,glsdefs,glsdef,idx,labelTags,log,odn,old,olg,pdf,run.xml,synctex.gz,tdn,tld,tlg,tex.bbl,tex.blg,ilg,ind,ist,tdo,log,out,sta,toc,pdf} >/dev/null 2>&1
+    rm *.{acn,acr,alg,aux,bbl,bcf,blg,fdb_latexmk,fls,glg,glo,gls,glsdefs,glsdef,idx,labelTags,log,odn,old,olg,run.xml,synctex.gz,tdn,tld,tlg,tex.bbl,tex.blg,ilg,ind,ist,tdo,log,out,sta,toc,pdf} >/dev/null 2>&1
     rm -rf .texpadtmp/ >/dev/null 2>&1
   )
 

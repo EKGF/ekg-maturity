@@ -15,8 +15,18 @@ $ENV{error_line} = 254;
 $ENV{half_error_line} = 238;
 $ENV{openout_any} = 'a';
 
+add_cus_dep( 'acn', 'acr', 0, 'makeglossaries' );
+add_cus_dep( 'glo', 'gls', 0, 'makeglossaries' );
+$clean_ext .= " acr acn alg glo gls glg";
+sub makeglossaries {
+  my ($base_name, $path) = fileparse( $_[0] );
+  pushd $path;
+  my $return = system "makeglossaries", $base_name;
+  popd;
+  return $return;
+}
+
 if (! $ENV{latex_document_customer}) {
-    print "AAAA1";
     $ENV{latex_document_customer} = 'ekgf';
 }
 

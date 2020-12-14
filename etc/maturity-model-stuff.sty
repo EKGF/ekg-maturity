@@ -2,6 +2,9 @@
 \ProvidesPackage{maturity-model-stuff}[2020/12/11 agnos.ai - all EKG/MM related macros]
 
 \RequirePackage{tikz-stuff}
+\RequirePackage{tocloft}
+
+\renewcommand{\customerCopyright}{\copyright~\the\year~Enterprise Knowledge Graph Foundation \& agnos.ai UK Ltd, All rights reserved.\xspace}
 
 \tikzset{
     arrow/.style={% define the style for the arrows between the user story components
@@ -35,3 +38,8 @@
 }{%
     \end{itemize}%
 }
+
+\setlength{\cftchapnumwidth}{4em}% Set numwidth of chapter
+\setlength{\cftsecnumwidth}{\cftchapnumwidth}% Set numwidth of section
+\setlength{\cftsubsecnumwidth}{\cftsecnumwidth}% Make subsection numwidth the same as section
+\setlength{\cftsubsecindent}{\cftsecindent}% Make subsection indent the same as section
