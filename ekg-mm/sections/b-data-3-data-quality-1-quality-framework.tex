@@ -1,29 +1,40 @@
 \section{Data Quality Framework}\label{sec:ekgmm-b-3-1} % B.3.1 Data Quality Framework
 
 Data quality is a measurement of the degree to which any dataset is fit for its intended purpose.
-It is based on an understanding of application requirements and derived by reverse engineering of the data production process.
-A data quality framework is an agreed methodology including operational controls, governance processes and measurement mechanisms.
+It is based on an understanding of application requirements and derived by reverse engineering of the
+data production process\iindex{Data Production Process}.
+A data quality framework is an agreed methodology including operational controls, governance processes and
+measurement mechanisms.
 The framework is designed to support organizational priorities for data quality based on criticality and business value.
 
 \kgmmekgrationalesection
 
 Data in the knowledge graph is structured around interconnectivity and precision.
-The goal is assurance of granular meaning so that users have confidence they are getting all the information they need to understand context and solve ad hoc business questions.
-In a semantic environment, every datapoint is resolved to a universally unique identifier, ensuring discoverability across repositories and domains.
-Data and metadata are connected so that logical errors and data inconsistencies are detected before they enter the system.
-From a compliance perspective, data in the graph is immutable because lineage can be traced and nothing can be deleted except by policy.
+The goal is assurance of granular meaning so that users have confidence they are getting all the information they
+need to understand context and solve ad hoc business questions.
+In a semantic environment, every datapoint is resolved to a universally unique identifier, ensuring discoverability
+across repositories and domains.
+Data and metadata are connected so that logical errors and data inconsistencies are detected before they enter
+the system.
+From a compliance perspective, data in the graph is immutable because lineage\index{Lineage} can be traced and
+nothing can be deleted except by policy.
 
 \kgmmcorequestionssection
 
 \begin{core-questions}
 
-  \item [\thesection.1] Has the data management strategy for the organization been defined, verified and aligned with the operating model
+  \item [\thesection.1] Has the data management strategy for the organization been defined, verified and aligned
+                        with the operating model
   \item [\thesection.2] Have business requirements been captured and linked to granular data concepts
   \item [\thesection.3] Have relevant data sources been identified and linked to \glsxtrfullpl{sor}
-  \item [\thesection.4] Is data precisely defined and mapped to enterprise models
-  \item [\thesection.5] Is the governance infrastructure (roles, responsibilities, funding requirements, measurement criteria) implemented and operational
-  \item [\thesection.6] Are communications mechanisms in place to ensure that quality issues are verified, addressed at source and linked to consuming applications
-  \item [\thesection.7] Are end users getting the data they need (and able to use it without the need for reconciliation or manual transformation)
+  \item [\thesection.4] Is data precisely defined and mapped to enterprise models\todo{or any semantic
+                        machine-readable model i.e. ontology?}
+  \item [\thesection.5] Is the governance infrastructure (roles, responsibilities, funding requirements,
+                        measurement criteria) implemented and operational
+  \item [\thesection.6] Are communications mechanisms in place to ensure that quality issues are verified,
+                        addressed at source and linked to consuming applications
+  \item [\thesection.7] Are end users getting the data they need (and able to use it without the need for
+                        reconciliation or manual transformation)
 
 \end{core-questions}
 
@@ -31,7 +42,7 @@ From a compliance perspective, data in the graph is immutable because lineage ca
 
 \begin{enumerate}
 
-  \item have business requirements be captured and verified in the form of use case trees and business user stories
+  \item have business requirements been captured and verified in the form of use case trees and business user stories
   \item are all data sources identified; defined in the knowledge graph; SOR and authorized distribution points;
   \item all data in machine-readable form and linked to ontologies
 
