@@ -47,7 +47,7 @@ if("$ENV{latex_document_mode}" eq'final'){
 
 $pre_tex_code = "\\def\\customerCode{$ENV{latex_document_customer}} \\def\\DocumentClassOptions{$ENV{latex_document_mode}}";
 
-$lualatex = 'lualatex --shell-escape --halt-on-error -file-line-error -pdf --interaction=nonstopmode %O %P';
+$lualatex = 'lualatex --output-format=pdf --recorder --shell-escape --halt-on-error -file-line-error -pdf --interaction=nonstopmode %O %P';
 
 print "\n\n$lualatex\n\n";
 
