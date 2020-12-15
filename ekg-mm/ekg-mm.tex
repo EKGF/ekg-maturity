@@ -24,6 +24,7 @@
   \typeout{Building the document in DRAFT mode}
   \def\DocumentClassOptions{draft}
 \fi
+\PassOptionsToPackage{final}{graphicx} % this line needs to be here if we want pictures to show up in draft mode
 \documentclass[\DocumentClassOptions]{whitepaper-style-doc}
 
 \RequirePackage{maturity-model-stuff}
