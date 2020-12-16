@@ -83,6 +83,6 @@ jobs:
       - name: Store PDF
         uses: actions/upload-artifact@v2
         with:
-          name: 'agnos.ai-ekg-mm'
-          path: './out/agnos.ai-ekg-mm.pdf'
+          name: 'agnos-ai-ekg-mm'
+          path: './out/agnos-ai-ekg-mm.pdf'
 
