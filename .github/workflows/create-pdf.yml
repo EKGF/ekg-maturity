@@ -23,9 +23,17 @@ jobs:
           root_file: ekg-mm/ekg-mm.tex
           latexmk_use_lualatex: true
           extra_system_packages: ncurses
-      - name: Store PDF
+      - name: Store Members Only PDF
+        if: ${{ matrix.members_only == 'yes' && matrix.customer == 'ekgf' }}
         uses: actions/upload-artifact@v2
         with:
-          path: './out/*.pdf'
+          name: 'members-only'
+          path: './out/*-members-only.pdf'
+      - name: Store PDF with agnos.ai logo
+        if: ${{ matrix.customer == 'agnos-ai' }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'agnos.ai'
+          path: './out/agnos-*.pdf'
 
 
