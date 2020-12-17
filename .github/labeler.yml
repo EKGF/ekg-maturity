@@ -2,8 +2,8 @@ infra:
   - etc/*
   - .github/*
   - .*
-  - *.sh
-  - *.md
+  - /**/**.sh
+  - /**/*.md
 
 agnos-ai:
   - customer-assets/agnos-ai/*
