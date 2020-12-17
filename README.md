@@ -1,6 +1,14 @@
-# docs
+# EKG/MM
 
 This repository contains the LaTeX based source documents of EKG/MM, the Maturity Model for the EKG.
+
+## Where to find the content?
+
+The "raw" LaTeX source documents (see LaTeX below for an explanation) can be found in the [/ekg-mm](./ekg-mm) directory
+and more specifically in the [/ekg-mm/sections](./ekg-mm/sections) directory.
+
+## LaTeX
+
 [LaTeX](https://www.latex-project.org/about/), which is pronounced «Lah-tech» or «Lay-tech» (to rhyme 
 ith «blech» or «Bertolt Brecht»), is a document preparation system for high-quality typesetting. 
 It is most often used for medium-to-large technical or scientific documents but it can be used for 
@@ -32,7 +40,9 @@ git clone https://github.com/EKGF/ekg-mm
 cd kg-mm
 ```
 
-## Build
+## Create PDFs
+
+Various PDF documents are generated from the content in this repository.
 
 ### Prerequisites
 
