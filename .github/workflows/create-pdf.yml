@@ -2,7 +2,12 @@ name: Create PDF
 on: [push]
 
 jobs:
-  create-draft-ekgf-pdf:
+  create-pdf:
+    strategy:
+      matrix:
+        customer: [ 'ekgf', 'agnos-ai' ]
+        mode: [ 'draft', 'final' ]
+        members_only: [ 'yes', 'no' ]
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
@@ -11,8 +16,9 @@ jobs:
         uses: xu-cheng/latex-action@v2
         env:
           OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
-          latex_document_customer: ekgf
-          latex_document_mode: draft
+          latex_document_customer: ${{ matrix.customer }}
+          latex_document_mode: ${{ matrix.mode }}
+          latex_document_members_only: ${{ matrix.members_only }}
         with:
           root_file: ekg-mm/ekg-mm.tex
           latexmk_use_lualatex: true
@@ -20,69 +26,6 @@ jobs:
       - name: Store PDF
         uses: actions/upload-artifact@v2
         with:
-          name: 'ekgf-ekg-mm-draft'
-          path: './out/ekgf-ekg-mm-draft.pdf'
+          path: './out/*.pdf'
 
-  create-final-ekgf-pdf:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v2
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        env:
-          OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
-          latex_document_customer: ekgf
-          latex_document_mode: final
-        with:
-          root_file: ekg-mm/ekg-mm.tex
-          latexmk_use_lualatex: true
-          extra_system_packages: ncurses
-      - name: Store PDF
-        uses: actions/upload-artifact@v2
-        with:
-          name: 'ekgf-ekg-mm'
-          path: './out/ekgf-ekg-mm.pdf'
-
-  create-draft-agnos-pdf:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v2
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        env:
-          OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
-          latex_document_customer: agnos
-          latex_document_mode: draft
-        with:
-          root_file: ekg-mm/ekg-mm.tex
-          latexmk_use_lualatex: true
-          extra_system_packages: ncurses
-      - name: Store PDF
-        uses: actions/upload-artifact@v2
-        with:
-          name: 'agnos-ai-ekg-mm-draft'
-          path: './out/agnos-ai-ekg-mm-draft.pdf'
-
-  create-final-agnos-pdf:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v2
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        env:
-          OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
-          latex_document_customer: agnos
-          latex_document_mode: final
-        with:
-          root_file: ekg-mm/ekg-mm.tex
-          latexmk_use_lualatex: true
-          extra_system_packages: ncurses
-      - name: Store PDF
-        uses: actions/upload-artifact@v2
-        with:
-          name: 'agnos-ai-ekg-mm'
-          path: './out/agnos-ai-ekg-mm.pdf'
 
