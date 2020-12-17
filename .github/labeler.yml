@@ -5,10 +5,11 @@ infra:
   - *.sh
   - *.md
 
-agnos:
-  - customer-assets/agnos/*
+agnos-ai:
+  - customer-assets/agnos-ai/*
   - agnos-*
   - *-agnos
+  - *-agnos-ai
 
 ekgf:
   - customer-assets/ekgf/*

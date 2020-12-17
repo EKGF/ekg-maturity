@@ -7,14 +7,14 @@
 \pagenumbering{Alph}% Invisible page numbering trick to avoid error
 \begin{titlepage}
   \begin{center}
-    \IfFileExists{../customer-assets/\customerCode/\customerCode_logo_wide.pdf_tex}{
+    \IfFileExists{../customer-assets/\customerCode/\customerCode-logo-wide.pdf_tex}{
       \noindent\makebox[\linewidth]{
-        \typeout{Importing ../customer-assets/\customerCode/\customerCode_logo_wide.pdf_tex}
+        \typeout{Importing ../customer-assets/\customerCode/\customerCode-logo-wide.pdf_tex}
         \def\svgwidth{\linewidth}
-        \input{../customer-assets/\customerCode/\customerCode_logo_wide.pdf_tex} %\\[8ex]
+        \input{../customer-assets/\customerCode/\customerCode-logo-wide.pdf_tex} %\\[8ex]
       }
     }{
-      \typeout{ERROR: Could not find ../customer-assets/\customerCode/\customerCode_logo_wide.pdf_tex}
+      \typeout{ERROR: Could not find ../customer-assets/\customerCode/\customerCode-logo-wide.pdf_tex}
     }
     {\huge \bfseries  \@title }\\[4ex]
     {\large \subtitleLineA}\\

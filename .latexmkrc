@@ -84,22 +84,35 @@ if (! $ENV{latex_document_customer}) {
 $ENV{latex_document_mode} = $ENV{latex_document_mode} || 'final';
 
 if("$ENV{latex_document_customer}" eq 'agnos') {
-    $document_customer = 'agnos-ai'
+    $ENV{latex_document_customer} = 'agnos-ai'
+}
+
+if("$ENV{latex_document_customer}" eq 'agnos-ai') {
+    $document_customer = 'agnos-ai';
+    $document_customer_code_short = 'agnos';
 } else {
-    $document_customer = $ENV{latex_document_customer}
+    $document_customer = $ENV{latex_document_customer};
+    $document_customer_code_short = ${document_customer};
 }
 print "Document Customer: $document_customer";
 
 #
 # Can't use spaces or dots in the file names unfortunately, tools like makeglossaries do not support it
 #
-if("$ENV{latex_document_mode}" eq 'final'){
+if("$ENV{latex_document_mode}" eq 'final') {
     $jobname = "$document_customer-%A";
 } else {
     $jobname = "$document_customer-%A-$ENV{latex_document_mode}";
 }
 
 $pre_tex_code = "\\def\\customerCode{$ENV{latex_document_customer}} \\def\\DocumentClassOptions{$ENV{latex_document_mode}}";
+
+if("$ENV{latex_document_members_only}" eq 'yes') {
+    $jobname = "${jobname}-members-only";
+    $pre_tex_code = "${pre_tex_code} \\def\\membersOnly{yes}"
+} else {
+    $pre_tex_code = "${pre_tex_code} \\def\\membersOnly{no}"
+}
 
 $lualatex = 'lualatex --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P';
 

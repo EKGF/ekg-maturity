@@ -1,19 +1,36 @@
-# docs
+# EKG/MM
 
-"This repository contains the LaTeX based source documents of EKG/MM, the Maturity Model for the EKG.
-LaTeX, which is pronounced «Lah-tech» or «Lay-tech» (to rhyme with «blech» or «Bertolt Brecht»), is a document preparation system for high-quality typesetting. It is most often used for medium-to-large technical or scientific documents but it can be used for almost any form of publishing.
+This repository contains the LaTeX based source documents of EKG/MM, the Maturity Model for the EKG.
 
-LaTeX is not a word processor! Instead, LaTeX encourages authors not to worry too much about the appearance of their documents but to concentrate on getting the right content. 
+## Where to find the content?
+
+The "raw" LaTeX source documents (see LaTeX below for an explanation) can be found in the [/ekg-mm](./ekg-mm) directory
+and more specifically in the [/ekg-mm/sections](./ekg-mm/sections) directory.
+
+## LaTeX
+
+[LaTeX](https://www.latex-project.org/about/), which is pronounced «Lah-tech» or «Lay-tech» (to rhyme 
+ith «blech» or «Bertolt Brecht»), is a document preparation system for high-quality typesetting. 
+It is most often used for medium-to-large technical or scientific documents but it can be used for 
+almost any form of publishing.
+
+LaTeX is not a word processor! Instead, LaTeX encourages authors not to worry too much about the appearance of 
+their documents but to concentrate on getting the right content. 
 
 See https://www.latex-project.org/about/
 
-## github
+## Github
 
 This repository resides on Github:
 
 - [Github](https://github.com/EKGF/ekg-mm)
 
 ### clone
+
+For advanced users who contribute often to this repository, it's best to create a so-called "clone" of this git
+repository on the local drive which allows any given LaTeX editor to be used locally to create new content.
+
+First, install git and/or Github Desktop.
 
 How to create a clone of the github repo:
 
@@ -23,7 +40,9 @@ git clone https://github.com/EKGF/ekg-mm
 cd kg-mm
 ```
 
-## Build
+## Create PDFs
+
+Various PDF documents are generated from the content in this repository.
 
 ### Prerequisites
 

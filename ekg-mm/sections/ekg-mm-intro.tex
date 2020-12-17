@@ -10,7 +10,14 @@
 \input{../ekg-mm/sections/ekg-mm-intro-executive-summary.tex}
 \input{../ekg-mm/sections/ekg-mm-intro-strategy-objectives.tex}
 \input{../ekg-mm/sections/ekg-mm-intro-model-overview.tex}
-\input{../ekg-mm/sections/ekg-mm-intro-essence.tex}
+
+%
+% Adding the essence chapter in draft mode
+%
+\ifoptionfinal{}{
+    \input{../ekg-mm/sections/ekg-mm-intro-essence.tex}
+}
+
 
 \egroup
 

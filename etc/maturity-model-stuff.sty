@@ -3,6 +3,23 @@
 
 \RequirePackage{tikz-stuff}
 \RequirePackage{tocloft}
+\RequirePackage{environ}
+\RequirePackage{ifthen}
+
+\ifthenelse{\isundefined{\membersOnly}}{
+    \typeout{maturity-model-stuff: The membersOnly variable was not defined, setting it to 'no'}
+    \def\membersOnly{no}
+}{
+    \typeout{maturity-model-stuff: The membersOnly variable was set to "\membersOnly"}
+}
+
+\ifthenelse{\equal{\membersOnly}{yes}}{
+    \typeout{maturity-model-stuff: Generating content for Members Only}
+    \NewEnviron{members-only}{\BODY}[]
+}{
+    \typeout{maturity-model-stuff: Generating content that is not exclusive to Members Only}
+    \NewEnviron{members-only}{}[]
+}
 
 \renewcommand{\customerCopyright}{\copyright~\the\year~Enterprise Knowledge Graph Foundation \& agnos.ai UK Ltd, All rights reserved.\xspace}
 
