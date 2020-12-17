@@ -83,6 +83,10 @@ if (! $ENV{latex_document_customer}) {
 
 $ENV{latex_document_mode} = $ENV{latex_document_mode} || 'final';
 
+if("$ENV{latex_document_customer}" eq 'agnos') {
+    $ENV{latex_document_customer} = 'agnos-ai'
+}
+
 if("$ENV{latex_document_customer}" eq 'agnos-ai') {
     $document_customer = 'agnos-ai';
     $document_customer_code_short = 'agnos';

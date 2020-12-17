@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.0.1 (c497b03c, 2020-09-10), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'ekgf_logo_symbol.pdf' (pdf, eps, ps)
+%% Accompanies image file 'ekgf-logo-symbol.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -53,6 +53,6 @@
   \begin{picture}(1,0.9695122)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{ekgf_logo_symbol.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{ekgf-logo-symbol.pdf}}%
   \end{picture}%
 \endgroup%

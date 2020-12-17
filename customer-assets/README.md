@@ -6,7 +6,7 @@ their logo's, fonts, house-style and IP statement.
 For that to work you create a subdirectory under this directory
 with the "customer code" such as:
 
-- [agnos](./agnos) (which is the default)
+- [agnos-ai](agnos-ai) (which is the default)
 - [ekgf](./ekgf)
 
 ## Special Files
@@ -14,6 +14,6 @@ with the "customer code" such as:
 - `customer-code-in-file-names.txt`
   You can add this file in a sub-directory if you want to override
   the customer code that needs to be used in the generated output
-  files. For instance customer code `agnos` should become `agnos.ai`
+  files. For instance customer code `agnos-ai` should become `agnos.ai`
   in the file names and `ekgf` should become `EKGF`
   
