@@ -1,38 +1,54 @@
 \pagebreak
 \section{Maturity Model in Essence}
 
-\subsection{Essence language, kernel, practices and methods}\label{subsec:Essence-language-kernel-practices-and-methods}
+\subsection{Essence language, kernel, practices and methods}\label{subsec:essence-language-kernel-practices-and-methods}
 
-Essence is a radical approach to software engineering methods originated by SEMAT, and now an OMG standard. Essence identifies the essentials
-of software engineering common to all software development endeavours. These essentials do not prescribe a method or practices for software
-engineering. The essentials are expressed in a visual and textual language with which a common kernel of software engineering is described –
-the essence of software engineering. The Essence kernel is actionable – it can be used as is to run a software engineering endeavour albeit
-with an assumption of significant tacit knowledge of software development. However, the kernel is extensible using the language and this allows
-practices to be described which give more detail and explicit descriptions. A collection of practices can be used together to describe a method.
+\iindex{Essence} is a radical approach to software engineering methods originated by SEMAT, and now an OMG standard.
+Essence identifies the essentials of software engineering common to all software development endeavours.
+These essentials do not prescribe a method or practices for software engineering.
+The essentials are expressed in a visual and textual language with which a common kernel of software engineering
+is described -- the essence of software engineering.
+The Essence kernel is actionable -- it can be used as is to run a software engineering endeavour albeit
+with an assumption of significant tacit knowledge of software development.
+However, the kernel is extensible using the language and this allows practices to be described which give more detail
+and explicit descriptions.
+A collection of practices can be used together to describe a method.
 
-\subsection{agnos.ai KG/Method}\label{subsec:agnos-ai-KG-Method}
-Recognizing the advantage of the Essence approach, the agnos.ai Knowledge Graph Method (KG/Method) is described as a set of practices to extend
-the Essence kernel. Now that Essence exists, it would be almost irresponsible to introduce a new method in any other way.
+\subsection{\glsfmtshort{kgmethod}}\label{subsec:agnos-ai-kg-method}
 
-\subsection{Capability Maturity Models}\label{subsec:Capability-Maturity-Models}
-The Essence language is independent of the Essence Kernel for software engineering; it is possible to describe kernels for other kinds of endeavours.
-Closely related to software engineering are the various capability maturity models, which are used to measure and guide improvements in organisations’
-software engineering capability. To date, maturity models have been described using their own terminology, with many similar issues around a lack of
-standardisation that led to the creation of the SEMAT initiative. Where a method is described using Essence, the application of a maturity model described
-using its own terminology would undo many of the benefits offered by Essence.
+Recognizing the advantage of the Essence approach, the agnos.ai \gls{kgmethod} is described as
+a set of practices to extend the Essence kernel.
+Now that Essence exists, it would be almost irresponsible to introduce a new method in any other way.
 
-\subsection{\glsfmtshort{ekgmm} Essence kernel and practices}\label{subsec:KG-MM-Essence-kernel-and-practices}
-To address the incongruity, describe above, an experiment has been made to express the \glsfmtshort{ekgmm} using Essence. To do this, using the Essence
-language a new kernel and practices have been described. This initial mapping has not changed any of the content, but rather has mapped the components of
-the \glsfmtshort{ekgmm} to Essence language elements to determine the “fit”.
+\subsection{Capability Maturity Models}\label{subsec:capability-maturity-models}
+
+The Essence language is independent of the Essence Kernel for software engineering;
+it is possible to describe kernels for other kinds of endeavours.
+Closely related to software engineering are the various capability maturity models, which are used to measure and
+guide improvements in organisations' software engineering capability.
+To date, maturity models have been described using their own terminology, with many similar issues around a lack of
+standardisation that led to the creation of the \iindex{SEMAT} initiative.
+Where a method is described using Essence, the application of a maturity model described using its own
+terminology would undo many of the benefits offered by Essence.
+
+\subsection{\glsfmtshort{ekgmm} Essence kernel and practices}\label{subsec:kg-mm-essence-kernel-and-practices}
+
+To address the incongruity, describe above, an experiment has been made to express the \glsfmtshort{ekgmm}
+using Essence.
+To do this, using the Essence language a new kernel and practices have been described.
+This initial mapping has not changed any of the content, but rather has mapped the components of
+the \glsfmtshort{ekgmm} to Essence language elements to determine the "fit".
 The diagram below shows a top level view of the mapping, and the following paragraphs describe the initial mappings.
 
 \centerimg[width=\dimexpr\textwidth+3pt\relax,height=300pt]{KGMM-Levels-Essence.png}
 
-This diagram is a graphical representation of \glsfmtshort{ekgmm} expressed in Essence, showing the areas of concern, alphas and levels in the style used for
-example multi-phase methods in the OMG standard. The states shown for the alphas are examples for the diagram only – the complete state models for the alphas is work in progress.
+This diagram is a graphical representation of \glsfmtshort{ekgmm} expressed in Essence, showing the areas of concern,
+alphas\index{Alpha} and levels in the style used for example multi-phase methods in the \iindex{OMG} standard.
+The states shown for the alphas are examples for the diagram only -- the complete state models for the alphas
+is work in progress.
 
-The shaded background shows the four areas of concern, identified by colours:
+The shaded background shows the four areas of concern, identified by colors:
+
 \begin{enumerate}
     \item Business (green)
     \item Data (blue)
@@ -52,23 +68,32 @@ These required states are shown on the lifelines for alpha.
 
   \item [areas of concern]
   The \glsfmtshort{ekgmm} pillars are mapped to Essence areas of concern.
-  The rationale for this mapping is that these \glsfmtshort{ekgmm} pillars serve the same purpose as Essence areas of concern, groupings of elements that share the same dimensional focus.
+  The rationale for this mapping is that these \glsfmtshort{ekgmm} pillars serve the same purpose as
+  Essence areas of concern, groupings of elements that share the same dimensional focus.
 
   \item [alphas]
   The \glsfmtshort{ekgmm} components are mapped to Essence alphas.
-  The rationale for this mapping is that these \glsfmtshort{ekgmm} components serve the same purpose as Essence alphas (abstract level progress health attribute) – the abstract representation of the subjects we wish to progress through our endeavour through the use of states.
+  The rationale for this mapping is that these \glsfmtshort{ekgmm} components serve the same purpose as
+  Essence alphas (abstract level progress health attribute) -- the abstract representation of the subjects
+  we wish to progress through our endeavour through the use of states.
 
   \item [practices]
   The \glsfmtshort{ekgmm} maturity levels are mapped to Essence practices.
-  The rationale for this mapping is that depending on the maturity level, the \glsfmtshort{ekgmm} capabilities require changed or additional processes to be performed with different work product states resulting. A practice for each maturity level can define activities that realise the activity space at the relevant level.
+  The rationale for this mapping is that depending on the maturity level, the \glsfmtshort{ekgmm} capabilities
+  require changed or additional processes to be performed with different work product states resulting.
+  A practice for each maturity level can define activities that realise the activity space at the relevant level.
 
   \item [activity spaces, activities and work products]
   The Capabilities in the \glsfmtshort{ekgmm} are mapped to activity spaces and activities.
-  The rational for this mapping is that each KE/MM capability can be represented as an Essence activity space, which is an abstract placeholder for activities to be performed.
-  The activities to be performed (which includes the work products to progressed through their levels of detail) will be specified in the practices for each level.
+  The rational for this mapping is that each KE/MM capability can be represented as an Essence activity space,
+  which is an abstract placeholder for activities to be performed.
+  The activities to be performed (which includes the work products to progressed through their levels of detail)
+  will be specified in the practices for each level.
 
   \item [checkpoint pattern]
-  The maturity levels in the \glsfmtshort{ekgmm} are mapped to sets of alpha states, described using the Essence checkpoint pattern.
-  The rational for this mapping is the alpha states will indicate the individual component maturities and the set of maturities required for a maturity level can then be easily expressed using the Essence pattern.
+  The maturity levels in the \glsfmtshort{ekgmm} are mapped to sets of alpha states, described using the
+  Essence checkpoint pattern.
+  The rationale for this mapping is the alpha states will indicate the individual component maturities and
+  the set of maturities required for a maturity level can then be easily expressed using the Essence pattern.
 
 \end{itemize}
