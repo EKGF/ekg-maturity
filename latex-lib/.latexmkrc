@@ -4,7 +4,28 @@
 $pdf_mode = 4;  # generate PDF using lualatex
 $bibtex_use = 2;
 $postscript_mode = $dvi_mode = 0;
-@default_files = ('content/main.tex');
+
+#
+# If the Github Actions workflow defined an environment variable called REPOSITORY_NAME
+# then use that environment variable as the repository name. Otherwise take the base
+# name of the current directory.
+#
+if(! "$ENV{REPOSITORY_NAME}") {
+    $repoName = basename(getcwd);
+} else {
+    $repoName = $ENV{REPOSITORY_NAME};
+}
+print "Repository name: ${repoName}";
+
+if(! "$ENV{latex_document_main}") {
+    @default_files = ('content/main.tex');
+} else {
+    @default_files = ($ENV{latex_document_main});
+}
+foreach (@default_files) {
+  print "Main file: $_\n";
+}
+
 $do_cd = 1;
 $out_dir = '../out';
 $aux_dir = '../out';
@@ -96,10 +117,6 @@ if("$ENV{latex_document_customer}" eq 'agnos-ai') {
 }
 print "Document Customer: $document_customer\n";
 
-$repoName = basename(getcwd);
-
-print "Repo name: ${repoName}\n";
-
 #
 # Can't use spaces or dots in the file names unfortunately, tools like makeglossaries do not support it
 #
@@ -125,10 +142,6 @@ if (! $ENV{GITHUB_RUN_NUMBER}) {
     $versionWithDashes = "${versionWithDashes}-$ENV{GITHUB_RUN_NUMBER}";
 }
 print "Document Version: $version\n";
-
-foreach (@default_files) {
-  print "Main file: $_\n";
-}
 
 $pre_tex_code = "\\def\\customerCode{$ENV{latex_document_customer}} \\def\\DocumentClassOptions{$ENV{latex_document_mode}}";
 

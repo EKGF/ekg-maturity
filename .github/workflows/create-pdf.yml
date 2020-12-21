@@ -16,6 +16,8 @@ jobs:
         uses: xu-cheng/latex-action@v2
         env:
           OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
+          REPOSITORY_NAME: ${{ github.event.repository.name }}
+          latex_document_main: 'content/main.tex'
           latex_document_customer: ${{ matrix.customer }}
           latex_document_mode: ${{ matrix.mode }}
           latex_document_members_only: ${{ matrix.members_only }}
