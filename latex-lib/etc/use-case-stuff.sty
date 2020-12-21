@@ -1,0 +1,81 @@
+%
+% Some generic macros dealing with use cases, to be imported in more specific packages
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{use-case-stuff}[2019/10/01 agnos.ai - Some generic macros dealing with use cases, to be imported in more specific packages]
+
+\RequirePackage{link-stuff}
+\RequirePackage[abspath]{currfile}
+\usepackage{luacode} % for luacode environment and \luastring macro
+
+%% Lua-side code
+\begin{luacode}
+  function myreplace(s,a,b)
+    x = string.gsub(s,a,b)
+    tex.sprint ( x )
+  end
+\end{luacode}
+
+\newcommand{\usecaseLabelNoPrefix}[1]{%
+  \directlua{%
+    myreplace(\luastring{#1},\luastring{uc:},\luastring{})
+  }%
+}
+
+%
+% Call \getUseCaseDirectoryName{\usecaseLabel} to derive the directory name from it and store it in \usecaseDirectoryName
+%
+\newcommand{\getUseCaseDirectoryName}[1]{%
+  \global\edef\usecaseDirectoryName{\usecaseLabelNoPrefix{#1}}%
+}
+
+%
+% New macro for all references to a use case
+%
+\newcommandx{\usecaseref}[1]{%
+  \iflabelexists{#1}{%
+    \textit{\nameref{#1}} {\tiny (\ref{#1} on page \pageref{#1})}%
+  }{%
+    \readUseCaseTitleFromFile{#1}%
+    \usecaseTitle {\tiny (not documented in this document)}%
+  }%
+}
+
+\newcommand{\usecaseTitleFileName}{}
+
+\newread\titleFileIn
+
+%
+% Private function do not use
+%
+\newcommand{\privateDoTheActualRead}[1]{
+  \openin\titleFileIn=#1\relax
+  \read\titleFileIn to \usecaseTitle
+  \closein\titleFileIn
+}
+
+%
+% Reads the title for the given use case from a file called <use case directory>/<use case name>-title.txt
+% and stores it in the global variable \usecaseTitle
+%
+\newcommand{\readUseCaseTitleFromFile}[1]{%
+  \global\edef\usecaseLabel{#1}%
+%  \typeout{readUseCaseTitleFromFile: #1 label=\usecaseLabel}
+  \getUseCaseDirectoryName{#1}%
+  \global\edef\usecaseTitleFileName{../use-cases/\usecaseDirectoryName/\usecaseDirectoryName-title.txt}%
+%  \typeout{readUseCaseTitleFromFile: #1 label=\usecaseLabel usecaseTitleFileName=\usecaseTitleFileName}%
+  \global\edef\usecaseTitle{Unknown Title}%
+  \IfFileExists{\usecaseTitleFileName}{%
+    \privateDoTheActualRead{\usecaseTitleFileName}%
+    \typeout{use-case-title-file.sty: label=\usecaseLabel, title=\usecaseTitle, file=\usecaseTitleFileName}%
+  }{%
+    \global\edef\usecaseTitleFileName{../\usecaseTitleFileName}%
+    \IfFileExists{\usecaseTitleFileName}{%
+      \privateDoTheActualRead{\usecaseTitleFileName}%
+      \typeout{use-case-title-file.sty: label=\usecaseLabel, title=\usecaseTitle, file=\usecaseTitleFileName}%
+    }{%
+      \typeout{use-case-title-file.sty: File {\usecaseTitleFileName} not found}%
+    }%
+  }%
+}
+

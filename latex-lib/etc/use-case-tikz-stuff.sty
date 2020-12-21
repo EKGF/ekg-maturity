@@ -1,0 +1,117 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{use-case-tikz-stuff}[2019/09/16 agnos.ai - all TiKz related stuff regarding use case trees]
+
+\RequirePackage{float}% for the H option in "\begin{figure}[H]"
+\RequirePackage{tikz-stuff}
+\RequirePackage{use-case-stuff}
+\RequirePackage{ifthen}
+
+\tikzset{% \tikzstyle is deprecated
+  usecase/.style={
+    draw,
+    rectangle,
+    burntorange,
+    left color=orange!30,
+    text=violet,
+    text centered,
+    text width=4em,
+    align=center,
+    minimum size=20pt,
+    font=\scriptsize
+  },
+  usecaselink/.style={
+    draw, burntorange, thick
+  }
+}
+
+\newif\ifisverticaltree\isverticaltreefalse
+
+%% Define your keys
+\pgfqkeys{/usecasetree declaration}{%
+  isverticaltree/.is if=isverticaltree,
+}
+
+\newcommand{\usecasetree}[3][]{%
+  \typeout{usecasetree1: #1 aa #2}
+  \pgfqkeys{/usecasetree declaration}{%
+    % set the default values first
+    isverticaltree=false,%
+    % then set the given options like 'isverticaltree'
+    #1%
+  }%
+  \readUseCaseTitleFromFile{#2}%
+  \edef\tmpUsecaseTitle{\usecaseTitle}% save in tmp var because #2 in tikzpicture calls out to readUseCaseTitleFromFile
+  \typeout{usecasetree: options=#1, label=#2, title=\tmpUsecaseTitle}%
+  \begin{figure}[H]%
+    \setlength{\abovecaptionskip}{1pt}
+    \setlength{\belowcaptionskip}{-0.0cm}
+    \centering%
+    \fboxsep = 10pt
+    \ifisverticaltree%
+      \fbox{\begin{tikzpicture}[
+        layered layout,
+        sibling distance=1cm,
+        level distance=3cm,
+        node distance=20cm,
+        every edge/.style={usecaselink},
+        every node/.style={usecase},
+        grow=right,
+        rounded corners,
+        >={Diamond[open]}
+      ]
+        #3
+      \end{tikzpicture}}
+    \else
+      \fbox{\begin{tikzpicture}[
+        layered layout,
+        sibling distance=1cm,
+        level distance=3cm,
+        node distance=20cm,
+        every edge/.style={usecaselink},
+        every node/.style={usecase},
+        rounded corners,
+        >={Diamond[open]}
+      ]
+        #3
+      \end{tikzpicture}}
+    \fi
+    \caption{Use Case Tree: \tmpUsecaseTitle}%
+    \label{#2-tree}%
+    \index{\string\tmpUsecaseTitle}%
+  \end{figure}%
+}
+
+\newcommand{\uclink}[2]{%
+%  \typeout{uclink: from=\usecaseLabelNoPrefix{#1}, to=\usecaseLabelNoPrefix{#2}}%
+  \draw (\usecaseLabelNoPrefix{#1}) edge[<-] (\usecaseLabelNoPrefix{#2});%
+}
+
+\newif\ifhaspageref\haspagereffalse
+
+%% Define your keys
+\pgfqkeys{/usecase declaration}{%
+  haspageref/.is if=haspageref,
+}
+
+\newcommand{\usecaseDeclare}[2][]{%
+  \pgfqkeys{/usecase declaration}{%
+    % set the default values first
+    haspageref=false,%
+    % then set the given options like 'haspageref'
+    #1%
+  }%
+  \readUseCaseTitleFromFile{#2}%
+%  \typeout{usecaseDeclare: options=#1, label=#2, label-no-prefix=\usecaseLabelNoPrefix{#2}, title=\usecaseTitle}%
+  \ifhaspageref%
+    \node[rectangle split, rectangle split parts=2] (\usecaseLabelNoPrefix{#2}) {%
+      \usecaseTitle\index{\usecaseTitle}%
+      \nodepart{two}{%
+        \tiny Page ~\pageref{#2}%
+      }%
+    }%
+  \else%
+    \node (\usecaseLabelNoPrefix{#2}) {\usecaseTitle\index{\usecaseTitle}}%
+  \fi%
+  ;%
+}
+

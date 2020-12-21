@@ -1,0 +1,57 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{user-story-stuff}[2019/10/01 agnos.ai - all graphical User Story stuff (TikZ based)]
+
+\RequirePackage{tikz-stuff}
+
+\tikzset{
+    arrow/.style={% define the style for the arrows between the user story components
+        draw,
+        blue!40,
+        very thick,
+        >=stealth
+    },
+    usc/.style={% define the style of each user story component (usc)
+        draw=green!60,
+        rectangle,
+        fill=green!5,
+        semithick,
+        minimum height=2em,
+        text width=11em,
+        align=center,
+        rounded corners,
+        font=\normalsize
+    }
+}
+
+\newcommand*{\asAPersona}[1]{
+  \node[usc](asAPersona) at (-6,0) {As a #1};
+}
+\newcommand*{\inUseCase}[1]{
+  \node[usc](inUseCase) at (-3,-1.5) {in the use case #1};
+}
+\newcommand*{\iWantFeature}[1]{
+  \node[usc,very thick](iWantFeature) at (0,0) {I want #1};
+}
+\newcommand*{\toAchieveObjective}[1]{
+  \node[usc](toAchieveObjective) at (3,-1.5) {to #1};
+}
+\newcommand*{\toDeliverOutcome}[1]{
+  \node[usc](toDeliverOutcome) at (6,0) {to deliver #1};
+}
+
+\newenvironment{userStory}[1]{
+  \newcommand{\userStoryCaption}{#1}
+  \begin{figure}[htp]%
+    \setlength{\abovecaptionskip}{1pt}
+    \setlength{\belowcaptionskip}{-0.0cm}
+    \centering%
+    \begin{tikzpicture}[
+      scale=0.7, every node/.style={transform shape}
+    ]
+%      \draw [help lines] (-10,-6) grid (10,1);
+}%
+{
+    \end{tikzpicture}
+    \caption{\userStoryCaption}%
+  \end{figure}
+}

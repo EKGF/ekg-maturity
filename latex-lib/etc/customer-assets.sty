@@ -1,0 +1,43 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{customer-assets}[2019/12/09 agnos.ai - load customer specific assets]
+
+\typeout{Start of customer-assets}
+
+\RequirePackage{xspace}
+\RequirePackage{picture-stuff}
+
+\providecommand{\customerCode}{agnos}% provide a default for \customerCode, it may not be defined when running on Overleaf
+
+%%
+%% Load the customer specific variables from variables.tex
+%%
+\IfFileExists{../customer-assets/\customerCode/variables.tex}{%
+  \input{../customer-assets/\customerCode/variables.tex}%
+}{%
+  \typeout{ERROR: Could not find ../customer-assets/\customerCode/variables.tex}
+  \stop
+}
+
+%%
+%% Use the customer specific title-page.tex file if it exists in the customer-assets directory
+%%
+\typeout{Including title-page.tex}
+\IfFileExists{../customer-assets/\customerCode/title-page.tex}{%
+  \renewcommand{\importTitlePage}{\input{../customer-assets/\customerCode/title-page.tex}}%
+}{%
+  \renewcommand{\importTitlePage}{\input{title-page.tex}}%
+}
+
+\makeatletter
+\providecommand*{\input@path}{}
+\edef\input@path{{./customer-assets/\customerCode/}{../customer-assets/\customerCode/}\input@path}% prepend
+\makeatother
+
+%%
+%% Load the somecust version of the header-and-footer-stuff
+%%
+%% TODO: Make more generic
+%%
+\ifthenelse{\equal{\customerCode}{somecust}}
+{\RequirePackage{header-and-footer-stuff-somecust}}
+{\RequirePackage{header-and-footer-stuff}}%

@@ -1,0 +1,32 @@
+%
+% Headers and Footers
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{header-and-footer-stuff}[2019/09/16 agnos.ai - all header and footer related stuff]
+
+\RequirePackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\setlength\headheight{26pt}
+
+\renewcommand{\headrulewidth}{.5pt}
+
+\rhead{%
+  \hspace{-0.5em}%
+  \IfFileExists{../customer-assets/\customerCode/\customerCode_logo_symbol.pdf_tex}{
+    \def\svgwidth{0.05\columnwidth}%
+    \input{../customer-assets/\customerCode/\customerCode_logo_symbol.pdf_tex}%
+  }{
+    \IfFileExists{../customer-assets/\customerCode/\customerCode-logo-wide.pdf_tex}{
+      \def\svgwidth{0.1\columnwidth}%
+      \input{../customer-assets/\customerCode/\customerCode-logo-wide.pdf_tex}%
+    }{
+      \typeout{ERROR: (in ../etc/header-and-footer-stuff.sty) Could not find ../customer-assets/\customerCode/\customerCode-logo-wide.pdf_tex}
+    }
+  }
+}%
+\fancyfoot[C]{%
+  \typeout{=======================> Page \thepage}
+  Page \thepage\\[-1mm]{\fontsize{6}{4}\selectfont \customerCopyright}%
+}

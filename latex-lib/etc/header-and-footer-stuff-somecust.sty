@@ -1,0 +1,24 @@
+%
+% Headers and Footers
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{header-and-footer-stuff-somecust}[2019/09/16 agnos.ai - all header and footer related stuff]
+
+\RequirePackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\setlength\headheight{36pt}
+
+\renewcommand{\headrulewidth}{.5pt}
+
+\rhead{%
+  \hspace{-0.5em}%
+  \def\svgwidth{1cm}%
+  \input{../customer-assets/somecust/somecust-logo-wide.pdf_tex}%
+}%
+
+\fancyfoot[C]{%
+  \typeout{=======================> Page \thepage}
+  Page \thepage%
+}
