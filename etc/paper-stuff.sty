@@ -1,0 +1,13 @@
+%
+% Paper size and dimensions. We might have to produce a US version and a rest of world version (A4)
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{paper-stuff}[2019/09/16 agnos.ai - all paper related stuff]
+
+\RequirePackage{ifdraft}
+
+\ifoptionfinal{% final mode without TODOs in the right margin
+\RequirePackage[a4paper, top=2cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+}{ % draft mode with TODOs in the right margin
+\RequirePackage[a4paper, top=2cm, bottom=2.5cm, left=2cm, right=2.5cm]{geometry}
+}

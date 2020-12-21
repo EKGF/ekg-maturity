@@ -1,0 +1,27 @@
+= latex-lib
+
+Some LaTeX goodies.
+
+This repo is pulled into other repositories via the `git subtree add` command,
+see https://hpc.uni.lu/blog/2014/understanding-git-subtree/[this article].
+
+To set up your own repo for a new LaTeX document use this command from the root of your repo:
+
+If you prefer using HTTPS urls:
+
+[source,asciidoc]
+----
+git remote add -f latex-lib https://github.com/agnos-ai/latex-lib.git
+git subtree add --prefix=latex-lib --squash latex-lib/main
+----
+
+If you prefer using SSH urls:
+
+[source,asciidoc]
+----
+git remote add -f latex-lib git@github.com:agnos-ai/latex-lib.git
+git subtree add --prefix=latex-lib --squash latex-lib/main
+----
+
+
+
