@@ -23,5 +23,19 @@ git remote add -f latex-lib git@github.com:agnos-ai/latex-lib.git
 git subtree add --prefix=latex-lib --squash latex-lib/main
 ----
 
+Here's how to push changes that you may have made in the latex-lib files, as they're part
+of your source repo, back to the latex-lib repo (if you have push rights to that repo):
 
+[source,asciidoc]
+----
+git subtree push --prefix=latex-lib latex-lib main
+----
+
+Before you do such a push, please check what the differences are between your local copy of the
+repo and the remote latex-lib repo as follows:
+
+[source,asciidoc]
+----
+git diff latex-lib/main main:latex-lib
+----
 
