@@ -94,7 +94,7 @@ if("$ENV{latex_document_customer}" eq 'agnos-ai') {
     $document_customer = $ENV{latex_document_customer};
     $document_customer_code_short = ${document_customer};
 }
-print "Document Customer: $document_customer";
+print "Document Customer: $document_customer\n";
 
 #
 # Can't use spaces or dots in the file names unfortunately, tools like makeglossaries do not support it
@@ -104,6 +104,24 @@ if("$ENV{latex_document_mode}" eq 'final') {
 } else {
     $jobname = "$document_customer-%A-$ENV{latex_document_mode}";
 }
+
+$versionFileName = 'VERSION';
+if(! open($versionFileHandle, '<:encoding(UTF-8)', $versionFileName)) {
+    warn "Could not open ${versionFileName} file";
+    exit;
+}
+$version = <$versionFileHandle>;
+chomp($version);
+if (! $ENV{GITHUB_RUN_NUMBER}) {
+    $version .= ".$ENV{USER}";
+} else {
+    $version .= ".$ENV{GITHUB_RUN_NUMBER}";
+}
+print "Version $version\n";
+$jobname = "${jobname}-${version}";
+
+print "Job name: ${jobname}\n";
+exit;
 
 $pre_tex_code = "\\def\\customerCode{$ENV{latex_document_customer}} \\def\\DocumentClassOptions{$ENV{latex_document_mode}}";
 
