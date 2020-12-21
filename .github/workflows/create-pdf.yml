@@ -20,7 +20,7 @@ jobs:
           latex_document_mode: ${{ matrix.mode }}
           latex_document_members_only: ${{ matrix.members_only }}
         with:
-          root_file: ekg-mm/ekg-mm.tex
+          root_file: content/main.tex
           latexmk_use_lualatex: true
           extra_system_packages: ncurses
       - name: Store Members Only PDF

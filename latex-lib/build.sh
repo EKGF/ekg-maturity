@@ -9,7 +9,7 @@
 # Usage: ./build.sh [--local] [--draft] [--final] [--skip-pandoc] <name of main doc without extension>
 #
 # This script assumes that your main doc is in a sub directory of the same name,
-# for instance "./ekg-mm/ekg-mm.tex"
+# for instance "./content/main.tex"
 #
 # The --draft option is the default option but if you want to build both the final and the draft version of a doc
 # you need to specify both --draft and --final.
