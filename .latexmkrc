@@ -4,7 +4,28 @@
 $pdf_mode = 4;  # generate PDF using lualatex
 $bibtex_use = 2;
 $postscript_mode = $dvi_mode = 0;
-@default_files = ('content/main.tex');
+
+#
+# If the Github Actions workflow defined an environment variable called REPOSITORY_NAME
+# then use that environment variable as the repository name. Otherwise take the base
+# name of the current directory.
+#
+if(! "$ENV{REPOSITORY_NAME}") {
+    $repoName = basename(getcwd);
+} else {
+    $repoName = $ENV{REPOSITORY_NAME};
+}
+print "Repository name: ${repoName}";
+
+if(! "$ENV{latex_document_main}") {
+    @default_files = ('content/main.tex');
+} else {
+    @default_files = ($ENV{latex_document_main});
+}
+foreach (@default_files) {
+  print "Main file: $_\n";
+}
+
 $do_cd = 1;
 $out_dir = '../out';
 $aux_dir = '../out';
@@ -100,9 +121,9 @@ print "Document Customer: $document_customer\n";
 # Can't use spaces or dots in the file names unfortunately, tools like makeglossaries do not support it
 #
 if("$ENV{latex_document_mode}" eq 'final') {
-    $jobname = "$document_customer-%A";
+    $jobname = "$document_customer-${repoName}";
 } else {
-    $jobname = "$document_customer-%A-$ENV{latex_document_mode}";
+    $jobname = "$document_customer-${repoName}-$ENV{latex_document_mode}";
 }
 
 $versionFileName = 'VERSION';
@@ -111,26 +132,29 @@ if(! open($versionFileHandle, '<:encoding(UTF-8)', $versionFileName)) {
     exit;
 }
 $version = <$versionFileHandle>;
-chomp($version);
-if (! $ENV{GITHUB_RUN_NUMBER}) {
-    $version .= ".$ENV{USER}";
-} else {
-    $version .= ".$ENV{GITHUB_RUN_NUMBER}";
-}
-print "Version $version\n";
-$jobname = "${jobname}-${version}";
+chop($version);
+$versionWithDashes = $version;
+$versionWithDashes =~ tr/./-/;
 
-print "Job name: ${jobname}\n";
-exit;
+if (! $ENV{GITHUB_RUN_NUMBER}) {
+    $versionWithDashes = "${versionWithDashes}-$ENV{USER}";
+} else {
+    $versionWithDashes = "${versionWithDashes}-$ENV{GITHUB_RUN_NUMBER}";
+}
+print "Document Version: $version\n";
 
 $pre_tex_code = "\\def\\customerCode{$ENV{latex_document_customer}} \\def\\DocumentClassOptions{$ENV{latex_document_mode}}";
 
-if("$ENV{latex_document_members_only}" eq 'yes') {
+if($ENV{latex_document_members_only} and "$ENV{latex_document_members_only}" eq 'yes') {
     $jobname = "${jobname}-members-only";
+    $jobname = "${jobname}-${versionWithDashes}";
     $pre_tex_code = "${pre_tex_code} \\def\\membersOnly{yes}"
 } else {
+    $jobname = "${jobname}-${versionWithDashes}";
     $pre_tex_code = "${pre_tex_code} \\def\\membersOnly{no}"
 }
+
+print "Job name: ${jobname}\n";
 
 $lualatex = 'lualatex --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P';
 
