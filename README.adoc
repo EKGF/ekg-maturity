@@ -39,3 +39,10 @@ repo and the remote latex-lib repo as follows:
 git diff latex-lib/main main:latex-lib
 ----
 
+Pull the latest changes from latex-lib into your own repo with:
+
+[source,asciidoc]
+----
+git fetch latex-lib
+git subtree pull --prefix latex-lib latex-lib main --squash
+----
