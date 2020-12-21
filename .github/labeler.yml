@@ -17,19 +17,19 @@ ekgf:
   - *-ekgf
 
 ekg-mm-intro:
-  - ekg-mm/sections/ekg-mm-intro*
+  - content/sections/ekg-mm-intro*
 
 ekg-mm-business:
-  - ekg-mm/sections/a-business*
+  - content/sections/a-business*
 
 ekg-mm-data:
-  - ekg-mm/sections/b-data*
+  - content/sections/b-data*
 
 ekg-mm-technology:
-  - ekg-mm/sections/c-technology*
+  - content/sections/c-technology*
 
 ekg-mm-organization:
-  - ekg-mm/sections/d-organization*
+  - content/sections/d-organization*
 
 
 

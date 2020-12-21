@@ -96,13 +96,17 @@ if("$ENV{latex_document_customer}" eq 'agnos-ai') {
 }
 print "Document Customer: $document_customer\n";
 
+$repoName = basename(getcwd);
+
+print "Repo name: ${repoName}\n";
+
 #
 # Can't use spaces or dots in the file names unfortunately, tools like makeglossaries do not support it
 #
 if("$ENV{latex_document_mode}" eq 'final') {
-    $jobname = "$document_customer-%A";
+    $jobname = "$document_customer-${repoName}";
 } else {
-    $jobname = "$document_customer-%A-$ENV{latex_document_mode}";
+    $jobname = "$document_customer-${repoName}-$ENV{latex_document_mode}";
 }
 
 $versionFileName = 'VERSION';
@@ -111,26 +115,33 @@ if(! open($versionFileHandle, '<:encoding(UTF-8)', $versionFileName)) {
     exit;
 }
 $version = <$versionFileHandle>;
-chomp($version);
-if (! $ENV{GITHUB_RUN_NUMBER}) {
-    $version .= ".$ENV{USER}";
-} else {
-    $version .= ".$ENV{GITHUB_RUN_NUMBER}";
-}
-print "Version $version\n";
-$jobname = "${jobname}-${version}";
+chop($version);
+$versionWithDashes = $version;
+$versionWithDashes =~ tr/./-/;
 
-print "Job name: ${jobname}\n";
-exit;
+if (! $ENV{GITHUB_RUN_NUMBER}) {
+    $versionWithDashes = "${versionWithDashes}-$ENV{USER}";
+} else {
+    $versionWithDashes = "${versionWithDashes}-$ENV{GITHUB_RUN_NUMBER}";
+}
+print "Document Version: $version\n";
+
+foreach (@default_files) {
+  print "Main file: $_\n";
+}
 
 $pre_tex_code = "\\def\\customerCode{$ENV{latex_document_customer}} \\def\\DocumentClassOptions{$ENV{latex_document_mode}}";
 
-if("$ENV{latex_document_members_only}" eq 'yes') {
+if($ENV{latex_document_members_only} and "$ENV{latex_document_members_only}" eq 'yes') {
     $jobname = "${jobname}-members-only";
+    $jobname = "${jobname}-${versionWithDashes}";
     $pre_tex_code = "${pre_tex_code} \\def\\membersOnly{yes}"
 } else {
+    $jobname = "${jobname}-${versionWithDashes}";
     $pre_tex_code = "${pre_tex_code} \\def\\membersOnly{no}"
 }
+
+print "Job name: ${jobname}\n";
 
 $lualatex = 'lualatex --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P';
 
