@@ -15,10 +15,11 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         env:
+          TERM: 'xterm-256color'
           OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
           REPOSITORY_NAME: ${{ github.event.repository.name }}
           latex_document_main: 'content/main.tex'
-          latex_document_customer: ${{ matrix.customer }}
+          latex_customer_code: ${{ matrix.customer }}
           latex_document_mode: ${{ matrix.mode }}
           latex_document_members_only: ${{ matrix.members_only }}
         with:
@@ -30,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: 'members-only'
-          path: './out/*-members-only.pdf'
+          path: './out/*-members-only*.pdf'
       - name: Store PDF with agnos.ai logo
         if: ${{ matrix.customer == 'agnos-ai' }}
         uses: actions/upload-artifact@v2

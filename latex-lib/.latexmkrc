@@ -10,14 +10,14 @@ $postscript_mode = $dvi_mode = 0;
 # then use that environment variable as the repository name. Otherwise take the base
 # name of the current directory.
 #
-if(! "$ENV{REPOSITORY_NAME}") {
+if(! $ENV{REPOSITORY_NAME}) {
     $repoName = basename(getcwd);
 } else {
     $repoName = $ENV{REPOSITORY_NAME};
 }
 print "Repository name: ${repoName}";
 
-if(! "$ENV{latex_document_main}") {
+if(! $ENV{latex_document_main}) {
     @default_files = ('content/main.tex');
 } else {
     @default_files = ($ENV{latex_document_main});
@@ -98,21 +98,21 @@ $clean_ext .= " aux fls log glsdefs tdo";
 
 print "clean ext: ${clean_ext}\n";
 
-if (! $ENV{latex_document_customer}) {
-    $ENV{latex_document_customer} = 'ekgf';
+if (! $ENV{latex_customer_code}) {
+    $ENV{latex_customer_code} = 'ekgf';
 }
 
 $ENV{latex_document_mode} = $ENV{latex_document_mode} || 'final';
 
-if("$ENV{latex_document_customer}" eq 'agnos') {
-    $ENV{latex_document_customer} = 'agnos-ai'
+if("$ENV{latex_customer_code}" eq 'agnos') {
+    $ENV{latex_customer_code} = 'agnos-ai'
 }
 
-if("$ENV{latex_document_customer}" eq 'agnos-ai') {
+if("$ENV{latex_customer_code}" eq 'agnos-ai') {
     $document_customer = 'agnos-ai';
     $document_customer_code_short = 'agnos';
 } else {
-    $document_customer = $ENV{latex_document_customer};
+    $document_customer = $ENV{latex_customer_code};
     $document_customer_code_short = ${document_customer};
 }
 print "Document Customer: $document_customer\n";
@@ -126,35 +126,48 @@ if("$ENV{latex_document_mode}" eq 'final') {
     $jobname = "$document_customer-${repoName}-$ENV{latex_document_mode}";
 }
 
+#
+# Process the VERSION file in the root directory of the repo. It should be a one-line file with the
+# major and minor version number separated by a dot. This code then adds the Github Actions run number
+# to it (taken from the environment variable GITHUB_RUN_NUMBER) or if you run latexmk locally it uses
+# your user id.
+#
 $versionFileName = 'VERSION';
 if(! open($versionFileHandle, '<:encoding(UTF-8)', $versionFileName)) {
     warn "Could not open ${versionFileName} file";
     exit;
 }
-$version = <$versionFileHandle>;
-chop($version);
-$versionWithDashes = $version;
+$latex_document_version = <$versionFileHandle>;
+chop($latex_document_version);
+# Create a var with the version number where dots are replaced with dashes because some LaTeX tools such
+# as makeindex do not work properly when there are dots in the job name.
+$versionWithDashes = $latex_document_version;
 $versionWithDashes =~ tr/./-/;
 
 if (! $ENV{GITHUB_RUN_NUMBER}) {
+    $latex_document_version = "${latex_document_version}.$ENV{USER}";
     $versionWithDashes = "${versionWithDashes}-$ENV{USER}";
 } else {
+    $latex_document_version = "${latex_document_version}.$ENV{GITHUB_RUN_NUMBER}";
     $versionWithDashes = "${versionWithDashes}-$ENV{GITHUB_RUN_NUMBER}";
 }
-print "Document Version: $version\n";
+print "Document Version: $latex_document_version\n";
 
-$pre_tex_code = "\\def\\customerCode{$ENV{latex_document_customer}} \\def\\DocumentClassOptions{$ENV{latex_document_mode}}";
+$pre_tex_code = "${pre_tex_code}\\def\\customerCode{$ENV{latex_customer_code}}";
+$pre_tex_code = "${pre_tex_code}\\def\\documentVersion{$latex_document_version}";
+$pre_tex_code = "${pre_tex_code}\\def\\DocumentClassOptions{$ENV{latex_document_mode}}";
 
 if($ENV{latex_document_members_only} and "$ENV{latex_document_members_only}" eq 'yes') {
     $jobname = "${jobname}-members-only";
     $jobname = "${jobname}-${versionWithDashes}";
-    $pre_tex_code = "${pre_tex_code} \\def\\membersOnly{yes}"
+    $pre_tex_code = "${pre_tex_code}\\def\\membersOnly{yes} "
 } else {
     $jobname = "${jobname}-${versionWithDashes}";
-    $pre_tex_code = "${pre_tex_code} \\def\\membersOnly{no}"
+    $pre_tex_code = "${pre_tex_code}\\def\\membersOnly{no} "
 }
 
 print "Job name: ${jobname}\n";
+print "pre_tex_code: ${pre_tex_code}\n";
 
 $lualatex = 'lualatex --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P';
 
