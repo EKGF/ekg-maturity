@@ -6,6 +6,9 @@ jobs:
     strategy:
       matrix:
         customer: [ 'ekgf', 'agnos-ai' ]
+        document_main: [
+            'ekg-mm'
+        ]
         mode: [ 'draft', 'final' ]
         members_only: [ 'yes', 'no' ]
     runs-on: ubuntu-latest
@@ -18,14 +21,14 @@ jobs:
           TERM: 'xterm-256color'
           OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
           REPOSITORY_NAME: ${{ github.event.repository.name }}
-          latex_document_main: 'content/main.tex'
+          latex_document_main: ${{ matrix.document_main }}
           latex_customer_code: ${{ matrix.customer }}
           latex_document_mode: ${{ matrix.mode }}
           latex_document_members_only: ${{ matrix.members_only }}
         with:
-          root_file: content/main.tex
+          root_file: '${{ matrix.document_main }}/${{ matrix.document_main }}.tex'
           latexmk_use_lualatex: true
-          extra_system_packages: ncurses
+          extra_system_packages: ncurses git
       - name: Store Members Only PDF
         if: ${{ matrix.members_only == 'yes' && matrix.customer == 'ekgf' }}
         uses: actions/upload-artifact@v2
@@ -38,5 +41,45 @@ jobs:
         with:
           name: 'agnos.ai'
           path: './out/agnos-*.pdf'
+      - name: Upload PDF to Google Drive agnos.ai
+        if: ${{ matrix.customer == 'agnos-ai' }}
+        run: |
+          curl --compressed -Ls https://github.com/labbots/google-drive-upload/raw/master/install.sh | sh -s
+          echo "CLIENT_ID=${{ secrets.AGNOS_GDRIVE_CLIENT_ID }}" > "${HOME}/.googledrive.conf"
+          echo "CLIENT_SECRET=${{ secrets.AGNOS_GDRIVE_CLIENT_SECRET }}" >> "${HOME}/.googledrive.conf"
+          echo "REFRESH_TOKEN=${{ secrets.AGNOS_GDRIVE_REFRESH_TOKEN }}" >> "${HOME}/.googledrive.conf"
+          source ${HOME}/.profile
+          export PATH=${PATH}:$HOME/.google-drive-upload/bin
+          cd ./out
+          echo "Generated PDF files, these files will now be uploaded:"
+          ls -al agnos-*.pdf
+          gupload \
+            --quiet \
+            --overwrite \
+            --config "${HOME}/.googledrive.conf" \
+            --skip-internet-check \
+            --root-dir "11-0r7WEB6bi7no2n7vQfFQMkmOS0RVso" \
+            --hide \
+            agnos-*.pdf
+      - name: Upload PDF to Google Drive EKGF
+        if: ${{ matrix.customer == 'ekgf' }}
+        run: |
+          curl --compressed -Ls https://github.com/labbots/google-drive-upload/raw/master/install.sh | sh -s
+          echo "CLIENT_ID=${{ secrets.AGNOS_GDRIVE_CLIENT_ID }}" > "${HOME}/.googledrive.conf"
+          echo "CLIENT_SECRET=${{ secrets.AGNOS_GDRIVE_CLIENT_SECRET }}" >> "${HOME}/.googledrive.conf"
+          echo "REFRESH_TOKEN=${{ secrets.AGNOS_GDRIVE_REFRESH_TOKEN }}" >> "${HOME}/.googledrive.conf"
+          source ${HOME}/.profile
+          export PATH=${PATH}:$HOME/.google-drive-upload/bin
+          cd ./out
+          echo "Generated PDF files, these files will now be uploaded:"
+          ls -al ekgf-*.pdf
+          gupload \
+            --quiet \
+            --overwrite \
+            --config "${HOME}/.googledrive.conf" \
+            --skip-internet-check \
+            --root-dir "0ACknmC_fYtNyUk9PVA" \
+            --hide \
+            ekgf-*.pdf
 
 

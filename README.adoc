@@ -4,8 +4,8 @@ This repository contains the LaTeX based source documents of EKG/MM, the Maturit
 
 == Where to find the content?
 
-The "raw" LaTeX source documents (see LaTeX below for an explanation) can be found in the link:content[/content] directory
-and more specifically in the link:content/sections[/content/sections] directory.
+The "raw" LaTeX source documents (see LaTeX below for an explanation) can be found in the link:ekg-mm[/content] directory
+and more specifically in the link:ekg-mm/sections[/content/sections] directory.
 
 == LaTeX
 
