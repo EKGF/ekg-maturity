@@ -34,7 +34,7 @@ function runLaTex() {
   local -r customerCode="$3"
   local -r file="$4.tex"
   local skipGeneratingPdf="--draftmode" # this is NOT the same as draft mode inside the doc itself
-  local latexCommand="\def\customerCode{${customerCode}}"
+  local latexCommand="\def\customerCode{${customerCode}} \def\documentVersion{UNKNOWN VERSION}"
 
   if [[ ${run} -eq 4 ]] ; then
     skipGeneratingPdf=""
