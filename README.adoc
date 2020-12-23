@@ -118,16 +118,6 @@ generated a new version of the document.
  the customer code but `ekgf` or something else. Some customer specific
  documents will then be generated with the right logo and styling.
 
-= Build with arara
-
-Another way to build the PDF document is by using the `arara` tool which
-should be installed on your machine if you have installed TexLive.
-
-----
-cd kg-mm
-arara -v kg-mm.tex
-----
-
 = Build from IntelliJ
 
 Install the Texify plugin which will allow you to compile the document

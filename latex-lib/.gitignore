@@ -33,7 +33,7 @@
 *.mtc
 *.mtc1
 .fdb_latexmk
-images/svg-inkscape/
+ekg-mm/images/svg-inkscape/
 svg-inkscape/
 /images/*.pdf
 /images/*.pdf_tex
