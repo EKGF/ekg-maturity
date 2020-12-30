@@ -2,6 +2,10 @@
 
 This repository contains the LaTeX based source documents of EKG/MM, the Maturity Model for the EKG.
 
+== Version
+
+The version number can be found in the file [./VERSION](/VERSION).
+
 == Where to find the content?
 
 The "raw" LaTeX source documents (see LaTeX below for an explanation) can be found in the link:ekg-mm[/content] directory
