@@ -5,6 +5,8 @@
 \ProvidesPackage{font-stuff}[2019/09/16 agnos.ai - All font related stuff]
 
 \RequirePackage{fontspec}
+\defaultfontfeatures{Ligatures={Common, TeX}}
+
 \RequirePackage{overleaf-stuff}
 
 %
@@ -20,17 +22,28 @@
 %\usepackage[default]{lato}
 %\setmainfont[Ligatures=TeX]{Lato}
 
-%\setmainfont{NotoSans-Regular}
-\whenNotRunningOnOverleafDo{
-  \setmainfont[
-    Ligatures=TeX,
-    ItalicFont={Frutiger LT 46 Light Italic},
-    BoldFont={Frutiger LT 65 Bold},
-    BoldItalicFont={Frutiger LT 66 Bold Italic}
-  ]{Frutiger LT 45 Light}
-  \setmonofont{Inconsolata-Regular}[Scale=MatchLowercase]
-%  \setmonofont{Inconsolata-Bold}[Scale=MatchLowercase]
-}
+\setmainfont[
+    Ligatures={Common, TeX},
+    BoldFont={Calibri Bold}, 
+    ItalicFont={Calibri Light Italic},
+    BoldItalicFont={Calibri Bold Italic}
+]{Calibri Light}
+
+% \usepackage[defaultfeatures={Ligatures={Common, TeX}}]{libertine}
+% \setsansfont{Linux Biolinum O}[Ligatures={Common,Rare}, Numbers=OldStyle]
+% \renewcommand{\familydefault}{\sfdefault}
+
+% %\setmainfont{NotoSans-Regular}
+% \whenNotRunningOnOverleafDo{
+%   \setmainfont[
+%     Ligatures=TeX,
+%     ItalicFont={Frutiger LT 46 Light Italic},
+%     BoldFont={Frutiger LT 65 Bold},
+%     BoldItalicFont={Frutiger LT 66 Bold Italic}
+%   ]{Frutiger LT 45 Light}
+%   \setmonofont{Inconsolata-Regular}[Scale=MatchLowercase]
+% %  \setmonofont{Inconsolata-Bold}[Scale=MatchLowercase]
+% }
 
 %\setmainfont{Lato}
 %%\setmainfont{Helvetica Neue}

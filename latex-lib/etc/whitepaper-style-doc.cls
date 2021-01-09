@@ -31,7 +31,7 @@
 % Any fontsize smaller than 10pt is not supported by the standard classes book, report and article.
 % For smaller sizes use the extsizes package which gives extbook, extarticle etc.
 %
-\LoadClass[\documentClassOptionFinal,8pt,oneside]{\documentClassType}
+\LoadClass[\documentClassOptionFinal,10pt,oneside]{\documentClassType}
 
 \RequirePackage{paper-stuff}
 \RequirePackage{font-stuff}
