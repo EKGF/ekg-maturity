@@ -33,6 +33,12 @@ jobs:
         if: ${{ matrix.members_only == 'yes' && matrix.customer == 'ekgf' }}
         uses: actions/upload-artifact@v2
         with:
+          name: 'public'
+          path: './out/*.pdf'
+      - name: Store Members Only PDF
+        if: ${{ matrix.members_only == 'yes' && matrix.customer == 'ekgf' }}
+        uses: actions/upload-artifact@v2
+        with:
           name: 'members-only'
           path: './out/*-members-only*.pdf'
       - name: Store PDF with agnos.ai logo
