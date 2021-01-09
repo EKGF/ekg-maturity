@@ -1,18 +1,8 @@
 % !TeX encoding = UTF-8
 % !TeX spellcheck = en_US
-% !TeX root = kg-method/kg-method.tex
+% !TeX root = ../ekg-mm/ekg-mm.tex
 % The above are so called "magic comments" used by editors like TexStudio
 %
-% Here are some commands that instruct the "arara" tool (should be part of the standard LaTeX install on your Mac)
-% which can be used to build this file (use "arara -v kg-method.tex to run it)
-%
-% arara: lualatex
-% arara: biber
-% arara: makeglossaries
-% arara: makeindex
-% arara: lualatex
-% arara: lualatex
-
 \makeatletter\def\input@path{{etc/}{../etc/}{../../etc/}{images/}{./images/}{../images/}{../../images/}}\makeatother
 
 %
@@ -58,4 +48,6 @@
 \appendix
 \addappheadtotoc
 \appendixpage
+\typeout{ekg-mm =================================> Appendix: Process}
+\input{../ekg-mm/sections/appendix-process.tex}
 \end{document}
