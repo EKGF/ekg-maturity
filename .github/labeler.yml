@@ -7,29 +7,24 @@ infra:
 
 agnos-ai:
   - customer-assets/agnos-ai/*
-  - agnos-*
-  - *-agnos
-  - *-agnos-ai
-
-ekgf:
-  - customer-assets/ekgf/*
-  - ekgf-*
-  - *-ekgf
+  - any: ['agnos-*']
+  - any: ['*-agnos/**/*']
+  - any: ['*-agnos-ai/**/*']
 
 ekg-mm-intro:
-  - content/sections/ekg-mm-intro*
+  - ekg-mm/sections/ekg-mm-intro*
 
 ekg-mm-business:
-  - content/sections/a-business*
+  - ekg-mm/sections/a-business*
 
 ekg-mm-data:
-  - content/sections/b-data*
+  - ekg-mm/sections/b-data*
 
 ekg-mm-technology:
-  - content/sections/c-technology*
+  - ekg-mm/sections/c-technology*
 
 ekg-mm-organization:
-  - content/sections/d-organization*
+  - ekg-mm/sections/d-organization*
 
 
 
