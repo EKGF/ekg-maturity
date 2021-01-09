@@ -55,3 +55,19 @@
     chapter "#2" of the #3-document\xspace%
   }%
 }
+
+\newcommand*{\secref}[1]{%
+  \hyperref[{#1}]{section \ref{#1}, "\nameref*{#1}"\xspace}%
+}
+
+\newcommand*{\subsecref}[1]{%
+  \hyperref[{#1}]{section \ref{#1}, "\nameref*{#1}"\xspace}%
+}
+
+\newcommand*{\subsubsecref}[1]{%
+  \hyperref[{#1}]{section \ref{#1}, "\nameref*{#1}"\xspace}%
+}
+
+\newcommand*{\parref}[1]{%
+  \hyperref[{#1}]{paragraph \ref{#1}, "\nameref*{#1}"\xspace}%
+}

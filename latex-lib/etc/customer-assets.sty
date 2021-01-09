@@ -5,6 +5,8 @@
 
 \RequirePackage{xspace}
 \RequirePackage{picture-stuff}
+\RequirePackage{color-stuff}
+\RequirePackage{sectsty}
 
 \providecommand{\customerCode}{agnos}% provide a default for \customerCode, it may not be defined when running on Overleaf
 
@@ -17,6 +19,28 @@
   \typeout{ERROR: Could not find ../customer-assets/\customerCode/variables.tex}
   \stop
 }
+
+%%
+%% Now activate the colors.
+%%
+%% The primary or secondary color may have been set in variables.tex so make sure
+%% that we set those colors globally
+%%
+\makeatletter
+\newcommand{\globalcolor}[1]{%
+  \color{#1}\global\let\default@color\current@color
+}
+\makeatother
+
+\allsectionsfont{\color{primaryHeading1}}
+\partfont{\color{primaryHeading1}}  % sets colour of chapters
+\chapterfont{\color{primaryHeading1}}  % sets colour of chapters
+\sectionfont{\color{primaryHeading1}}  % sets colour of sections
+\subsectionfont{\color{primaryHeading2}}  % sets colour of sections
+\subsubsectionfont{\color{primaryHeading3}}  % sets colour of sections
+
+\AtBeginDocument{\globalcolor{primary}}
+
 
 %%
 %% Use the customer specific title-page.tex file if it exists in the customer-assets directory

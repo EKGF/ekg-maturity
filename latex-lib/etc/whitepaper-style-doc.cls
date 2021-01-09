@@ -4,6 +4,7 @@
 \RequirePackage{xkeyval}% supports \DeclareOptionX, \ExecuteOptionsX, \ProcessOptionsX\
 \RequirePackage{ifthen}
 \RequirePackage{agnos-keywords}
+\RequirePackage{text-box-stuff}
 
 \newcommand{\documentClassOptionFinal}{}
 \newcommand{\documentClassOptionDraft}{}

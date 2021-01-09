@@ -7,10 +7,12 @@
 \RequirePackage{fancyhdr}
 
 \pagestyle{fancy}
+% \fancyhf{} % clear all header and footer fields
 
-\setlength\headheight{26pt}
+\setlength\headheight{27.04897pt}
 
 \renewcommand{\headrulewidth}{.5pt}
+
 
 \rhead{%
   \hspace{-0.5em}%
@@ -28,5 +30,17 @@
 }%
 \fancyfoot[C]{%
   \typeout{=======================> Page \thepage}
-  Page \thepage\\[-1mm]{\fontsize{6}{4}\selectfont \customerCopyright}%
+  {\fontsize{6}{4}\selectfont Page \thepage}\\[-1mm]{\fontsize{6}{4}\selectfont \customerCopyright}%
+}
+
+%
+% Set header and footer for the plain style which is used on
+% title, part and appendix pages etc.
+%
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[R]{}
+  \fancyfoot[L]{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
 }
