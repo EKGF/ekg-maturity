@@ -455,7 +455,7 @@ function copyToGoogleDriveLocal() {
       ;;
     ekgf)
       case "${mainFileStripped}" in
-        kg-mm)
+        ekg-mm)
           targetDirectory+="/EKGF Maturity Model"
           ;;
         *)
