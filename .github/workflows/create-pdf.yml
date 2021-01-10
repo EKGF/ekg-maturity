@@ -29,8 +29,8 @@ jobs:
           root_file: '${{ matrix.document_main }}/${{ matrix.document_main }}.tex'
           latexmk_use_lualatex: true
           extra_system_packages: ncurses git
-      - name: Store Members Only PDF
-        if: ${{ matrix.members_only == 'yes' && matrix.customer == 'ekgf' }}
+      - name: Store Public PDF
+        if: ${{ matrix.members_only == 'no' && matrix.customer == 'ekgf' }}
         uses: actions/upload-artifact@v2
         with:
           name: 'public'
