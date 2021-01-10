@@ -1,18 +1,28 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{color-stuff}[2019/09/16 agnos.ai - all color related stuff]
 
-\RequirePackage[dvipsnames]{xcolor}  % Coloured text etc. Needs to be imported BEFORE tikz
+% Coloured text etc. Needs to be imported BEFORE tikz
+\RequirePackage[dvipsnames,svgnames,table,hyperref,showerrors,xcdraw]{xcolor}  
 %\RequirePackage{color}% used for inkscape SVG
 \RequirePackage{transparent}% used for inkscape SVG
 %
 % Define colours (see http://latexcolor.com/)
 %
-\definecolor{primary}{HTML}{000000}
-\definecolor{secondary}{HTML}{0D47A1}
-\definecolor{accent}{HTML}{263238}
-\definecolor{links}{HTML}{1565C0}
-\definecolor{burntorange}{cmyk}{0,0.52,1,0}
-\definecolor{gray75}{gray}{0.75}
+% These colors can be overridden in the ../customer-assets/<customer-code>/variables.tex file
+%
+\xglobal\definecolor{primaryText}{HTML}{081120}
+\xglobal\definecolor{primarySubText}{HTML}{666682}
+\xglobal\definecolor{primaryHeading1}{HTML}{2D3071}
+\xglobal\definecolor{primaryHeading2}{HTML}{2D3071}
+\xglobal\definecolor{primaryHeading3}{HTML}{2D3071}
+
+\xglobal\definecolor{primary}{HTML}{081120}
+\xglobal\definecolor{secondary}{HTML}{0D47A1}
+
+\xglobal\definecolor{accent}{HTML}{263238}
+\xglobal\definecolor{links}{HTML}{1565C0}
+\xglobal\definecolor{burntorange}{cmyk}{0,0.52,1,0}
+\xglobal\definecolor{gray75}{gray}{0.75}
 
 \definecolor{light-gray}{gray}{0.95}
 \definecolor{lighter-gray}{gray}{0.97}
@@ -25,4 +35,3 @@
 \definecolor{red}{RGB}{221,65,50} % rgb(221,65,50)
 \definecolor{blue}{RGB}{3,79,132} % rgb(3,79,132)
 \definecolor{limpet}{RGB}{152,221,222} % rgb(152,221,222)
-

@@ -8,11 +8,11 @@ $bibtex_use = 2;
 $postscript_mode = $dvi_mode = 0;
 
 sub findMainDoc() {
-    my $mainDocName = 'content';
-    my $mainDocFileName = '${mainDocName}/main.tex';
+    my $mainDocName = 'ekg-mm';
+    my $mainDocFileName = "${mainDocName}/ekg-mm.tex";
 
-    if($ENV{latex_document_main}) {
-        $mainDocFileName = $ENV{latex_document_main};
+    if($ENV{'latex_document_main'}) {
+        $mainDocFileName = $ENV{'latex_document_main'};
         # If the env var latex_document_main happens to be just the directory name of the
         # document's content root then assume that the main file in that root has the same name
         if (-d $mainDocFileName) {
@@ -27,7 +27,7 @@ sub findMainDoc() {
     if (! -e $mainDocFileName) {
         die "${mainDocFileName} does not exist"
     }
-    $ENV{latex_document_main} = $mainDocFileName;
+    $ENV{'latex_document_main'} = $mainDocFileName;
     @default_files = ($mainDocFileName);
 
     print "Main document file name: ${mainDocFileName}\n";
@@ -42,7 +42,7 @@ sub getCustomerCode() {
 
     # If this runs in a Github Actions workflow then we can derive the best
     # default customer code from the repository name by taking the organization code.
-    if ($ENV{GITHUB_REPOSITORY}) {
+    if ($ENV{'GITHUB_REPOSITORY'}) {
         $defaultCustomerCode = split /\//, $defaultCustomerCode, 2;
     } else {
         my $gitRemoteUrl = `git remote get-url origin`;
@@ -50,24 +50,22 @@ sub getCustomerCode() {
             print "git not in path\n";
         } else {
             my @array = split /[:,\/]+/, $gitRemoteUrl;
-            $defaultCustomerCode = $array[-2];
+            $defaultCustomerCode = lc($array[-2]);
         }
     }
-    if (! $ENV{latex_customer_code}) {
-        $ENV{latex_customer_code} = $defaultCustomerCode;
+    if (! $ENV{'latex_customer_code'}) {
+        $ENV{'latex_customer_code'} = $defaultCustomerCode;
     }
 
-    $ENV{latex_document_mode} = $ENV{latex_document_mode} || 'final';
-
-    if("$ENV{latex_customer_code}" eq 'agnos') {
-        $ENV{latex_customer_code} = 'agnos-ai'
+    if("$ENV{'latex_customer_code'}" eq 'agnos') {
+        $ENV{'latex_customer_code'} = 'agnos-ai'
     }
 
-    if("$ENV{latex_customer_code}" eq 'agnos-ai') {
+    if("$ENV{'latex_customer_code'}" eq 'agnos-ai') {
         $document_customer = 'agnos-ai';
         $document_customer_code_short = 'agnos';
     } else {
-        $document_customer = $ENV{latex_customer_code};
+        $document_customer = lc($ENV{'latex_customer_code'});
         $document_customer_code_short = ${document_customer};
     }
     print "Document Customer Code: ${document_customer}\n";
@@ -119,10 +117,10 @@ sub getCurrentBranchName() {
 
 sub getVersionSuffix() {
     my $suffix = '';
-    if (! $ENV{GITHUB_RUN_NUMBER}) {
-        $suffix = "${suffix}.$ENV{USER}";
+    if (! $ENV{'GITHUB_RUN_NUMBER'}) {
+        $suffix = "${suffix}.$ENV{'USER'}";
     } else {
-        $suffix = "${suffix}.$ENV{GITHUB_RUN_NUMBER}";
+        $suffix = "${suffix}.$ENV{'GITHUB_RUN_NUMBER'}";
     }
     my $branchName = getCurrentBranchName();
     if ($branchName ~~ ['main', 'master']) {
@@ -185,11 +183,11 @@ $ENV{'SILENT'} //= 0;
 $silent     = $ENV{'SILENT'};
 $quiet      = $ENV{'SILENT'};
 
-$ENV{max_print_line} = 2000;
+$ENV{'max_print_line'} = 2000;
 $log_wrap = 2000;
-$ENV{error_line} = 254;
-$ENV{half_error_line} = 238;
-$ENV{openout_any} = 'a';
+$ENV{'error_line'} = 254;
+$ENV{'half_error_line'} = 238;
+$ENV{'openout_any'} = 'a';
 
 add_cus_dep( 'acn', 'acr', 0, 'acn2acr' );
 $clean_ext .= " acn acr";
@@ -214,16 +212,19 @@ $clean_ext .= " aux fls log glsdefs tdo";
 #
 # Can't use spaces or dots in the file names unfortunately, tools like makeglossaries do not support it
 #
-if("$ENV{latex_document_mode}" eq 'final') {
+$latex_document_mode = lc($ENV{'latex_document_mode'} || 'draft');
+print "latex_document_mode=${latex_document_mode}";
+if("${latex_document_mode}" eq 'final') {
+    print "We're not in draft mode, creating the final version\n";
     $jobname = "$document_customer_code-${mainDocName}";
 } else {
-    $jobname = "$document_customer_code-${mainDocName}-$ENV{latex_document_mode}";
+    $jobname = "$document_customer_code-${mainDocName}-${latex_document_mode}";
 }
 #
 # Remove duplicate customer codes
 #
 $jobname =~ s/${document_customer_code}-${document_customer_code}/${document_customer_code}/g ;
-$jobname =~ s/-${document_customer_code}-/-/g ;
+$jobname =~ lc s/-${document_customer_code}-/-/g ;
 
 $latex_document_version = readVersion();
 $latex_document_version_suffix = getVersionSuffix();
@@ -234,9 +235,9 @@ print "Document Version: $latex_document_version...\n";
 
 $pre_tex_code = "${pre_tex_code}\\def\\customerCode{$document_customer_code}";
 $pre_tex_code = "${pre_tex_code}\\def\\documentVersion{$latex_document_version}";
-$pre_tex_code = "${pre_tex_code}\\def\\DocumentClassOptions{$ENV{latex_document_mode}}";
+$pre_tex_code = "${pre_tex_code}\\def\\DocumentClassOptions{${latex_document_mode}}";
 
-if($ENV{latex_document_members_only} and "$ENV{latex_document_members_only}" eq 'yes') {
+if($ENV{'latex_document_members_only'} and "$ENV{'latex_document_members_only'}" eq 'yes') {
     $jobname = "${jobname}-members-only-${latex_document_version}";
     $pre_tex_code = "${pre_tex_code}\\def\\membersOnly{yes} "
 } else {

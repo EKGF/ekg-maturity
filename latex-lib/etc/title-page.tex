@@ -4,7 +4,7 @@
 % Requires \usepackage{ifdraft}
 %
 \makeatletter
-\pagenumbering{Alph}% Invisible page numbering trick to avoid error
+
 \begin{titlepage}
   \begin{center}
     \IfFileExists{../customer-assets/\customerCode/\customerCode-logo-wide.pdf_tex}{
@@ -26,9 +26,9 @@
     \ifoptionfinal{\large FINAL}{\large DRAFT}
   \end{center}
 \end{titlepage}
-\pagenumbering{arabic}
+
 \makeatother
-\clearpage\setcounter{page}{1}
+
 
 
 

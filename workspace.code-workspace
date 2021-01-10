@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"latex-workshop.latex.external.build.command": "latexmk",
+		"files.associations": {
+			".latexmkrc": "perl"
+		}
+	}
+}

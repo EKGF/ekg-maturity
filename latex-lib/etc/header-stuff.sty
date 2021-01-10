@@ -5,6 +5,7 @@
 \RequirePackage{link-stuff}
 \RequirePackage{xspace}
 \RequirePackage{titletoc}
+\RequirePackage{fmtcount}
 
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
@@ -14,4 +15,11 @@
 
 %\newcommand{\hsp}{\hspace{20pt}}
 %\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+%
+% The following two lines make sure that chapter numbers
+% start with 1 within each part.
+%
+\RequirePackage{chngcntr}
+\counterwithin*{chapter}{part}
 
