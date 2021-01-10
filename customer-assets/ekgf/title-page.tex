@@ -12,7 +12,6 @@
 \RequirePackage{customer-assets}
 
 \typeout{Generating title page, using title \thetitle}
-\pagenumbering{Alph}% Invisible page numbering trick to avoid error
 
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
@@ -41,8 +40,6 @@
   %
   \bannerAcrossWholePage{130pt}{../customer-assets/\customerCode/\customerCode-front-page-image.png}
 \end{titlepage}
-\pagenumbering{arabic}
-\clearpage\setcounter{page}{1}
 
 
 
