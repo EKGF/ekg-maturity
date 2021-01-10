@@ -50,14 +50,12 @@ sub getCustomerCode() {
             print "git not in path\n";
         } else {
             my @array = split /[:,\/]+/, $gitRemoteUrl;
-            $defaultCustomerCode = $array[-2];
+            $defaultCustomerCode = lc($array[-2]);
         }
     }
     if (! $ENV{'latex_customer_code'}) {
         $ENV{'latex_customer_code'} = $defaultCustomerCode;
     }
-
-    $ENV{'latex_document_mode'} = $ENV{'latex_document_mode'} || 'final';
 
     if("$ENV{'latex_customer_code'}" eq 'agnos') {
         $ENV{'latex_customer_code'} = 'agnos-ai'
@@ -67,7 +65,7 @@ sub getCustomerCode() {
         $document_customer = 'agnos-ai';
         $document_customer_code_short = 'agnos';
     } else {
-        $document_customer = $ENV{'latex_customer_code'};
+        $document_customer = lc($ENV{'latex_customer_code'});
         $document_customer_code_short = ${document_customer};
     }
     print "Document Customer Code: ${document_customer}\n";
@@ -214,18 +212,19 @@ $clean_ext .= " aux fls log glsdefs tdo";
 #
 # Can't use spaces or dots in the file names unfortunately, tools like makeglossaries do not support it
 #
-print "latex_document_mode=$ENV{'latex_document_mode'}";
-if("$ENV{'latex_document_mode'}" eq 'final') {
+$latex_document_mode = lc($ENV{'latex_document_mode'} || 'draft');
+print "latex_document_mode=${latex_document_mode}";
+if("${latex_document_mode}" eq 'final') {
     print "We're not in draft mode, creating the final version\n";
     $jobname = "$document_customer_code-${mainDocName}";
 } else {
-    $jobname = "$document_customer_code-${mainDocName}-$ENV{'latex_document_mode'}";
+    $jobname = "$document_customer_code-${mainDocName}-${latex_document_mode}";
 }
 #
 # Remove duplicate customer codes
 #
 $jobname =~ s/${document_customer_code}-${document_customer_code}/${document_customer_code}/g ;
-$jobname =~ s/-${document_customer_code}-/-/g ;
+$jobname =~ lc s/-${document_customer_code}-/-/g ;
 
 $latex_document_version = readVersion();
 $latex_document_version_suffix = getVersionSuffix();
@@ -236,7 +235,7 @@ print "Document Version: $latex_document_version...\n";
 
 $pre_tex_code = "${pre_tex_code}\\def\\customerCode{$document_customer_code}";
 $pre_tex_code = "${pre_tex_code}\\def\\documentVersion{$latex_document_version}";
-$pre_tex_code = "${pre_tex_code}\\def\\DocumentClassOptions{$ENV{latex_document_mode}}";
+$pre_tex_code = "${pre_tex_code}\\def\\DocumentClassOptions{${latex_document_mode}}";
 
 if($ENV{'latex_document_members_only'} and "$ENV{'latex_document_members_only'}" eq 'yes') {
     $jobname = "${jobname}-members-only-${latex_document_version}";
