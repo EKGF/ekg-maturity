@@ -2,7 +2,7 @@
 % All picture related stuff
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{picture-stuff}[2019/09/20 agnos.ai - All picture related stuff]
+\ProvidesPackage{picture-stuff}[2020/12/23 agnos.ai - All picture related stuff]
 
 \RequirePackage{graphicx}% this package must be before svg
 %\RequirePackage{svg}
@@ -10,7 +10,18 @@
 \providecommand{\transparent}[1]{} % see manual
 % \pdfsuppresswarningpagegroup=1 % hot fix if required, see manual
 \RequirePackage{relsize} % required for adjusting text using relscale
-\graphicspath{{\home/images}{images/}{../images/}{../../images/}{../customer-assets/\customerCode/}{../../customer-assets/\customerCode/}}
+\graphicspath{%
+{\home/images}%
+{\documentName/images}%
+{../\documentName/images}%
+{../../\documentName/images}%
+{images/}%
+{../images/}%
+{../../images/}%
+{../customer-assets/\customerCode/}%
+{../../customer-assets/\customerCode/}%
+}
+\makeatletter\typeout{picture-stuff.sty: Graphics Path: \Ginput@path}\makeatother
 %\svgpath{{\home/images}{images/}{../images/}}
 %\svgsetup{inkscapepath=\home}
 \RequirePackage{float}

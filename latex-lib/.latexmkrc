@@ -1,11 +1,22 @@
 #
 # Configure latexmk
 #
+# Looks at the following environment variables:
+#
+# - latex_document_main: the root directory of the document or the full file name of its main doc
+# - latex_customer_code: customer code such as "agnos" or "ekgf"
+# - latex_document_mode: "draft" or "final"
+# - latex_document_members_only: "yes" or "no"
+#
 use File::Basename;
 use experimental 'smartmatch';
 $pdf_mode = 4;  # generate PDF using lualatex
 $bibtex_use = 2;
 $postscript_mode = $dvi_mode = 0;
+#
+# Specify which PDF viewer you want to use (Skim is the best one on a Mac)
+#
+$pdf_previewer = 'open -a Skim';
 
 sub findMainDoc() {
     my $mainDocName = 'ekg-mm';
@@ -16,11 +27,11 @@ sub findMainDoc() {
         # If the env var latex_document_main happens to be just the directory name of the
         # document's content root then assume that the main file in that root has the same name
         if (-d $mainDocFileName) {
-            $mainDocName = $mainDocFileName;
+            $documentName = $mainDocFileName;
             $mainDocFileName = $mainDocFileName . '/' . ${mainDocFileName} . '.tex';
         } elsif (-f $mainDocFileName) {
             my @array = split /\//, $mainDocFileName, 2;
-            $mainDocName = $array[0];
+            $documentName = $array[0];
         }
     }
 
@@ -31,9 +42,9 @@ sub findMainDoc() {
     @default_files = ($mainDocFileName);
 
     print "Main document file name: ${mainDocFileName}\n";
-    print "Main document name: ${mainDocName}\n";
+    print "Main document name: ${document_name}\n";
 
-    return ($mainDocFileName, $mainDocName);
+    return ($mainDocFileName, $documentName);
 }
 
 sub getCustomerCode() {
@@ -89,9 +100,9 @@ sub tchomp {
 # if you run latexmk locally it uses your user id.
 #
 sub readVersion {
-    my $versionFileName = "./${mainDocName}/VERSION";
+    my $versionFileName = "./${document_name}/VERSION";
     if (-s $versionFileName) {
-        $mainDocFileName = ${mainDocName};
+        $mainDocFileName = $document_name;
     } else {
         print "Could not find ${versionFileName}, so using ./VERSION\n";
         $versionFileName = 'VERSION';
@@ -168,7 +179,7 @@ sub glo2gls {
 #    makeglossaries($_[0], 'old', 'odn');
 #}
 
-($mainDocFileName, $mainDocName) = findMainDoc();
+($mainDocFileName, $document_name) = findMainDoc();
 
 $do_cd = 1;
 $out_dir = '../out';
@@ -233,6 +244,7 @@ $versionWithDashes = $latex_document_version;
 $versionWithDashes =~ tr/./-/s;
 print "Document Version: $latex_document_version...\n";
 
+$pre_tex_code = "${pre_tex_code}\\def\\documentName{$document_name}";
 $pre_tex_code = "${pre_tex_code}\\def\\customerCode{$document_customer_code}";
 $pre_tex_code = "${pre_tex_code}\\def\\documentVersion{$latex_document_version}";
 $pre_tex_code = "${pre_tex_code}\\def\\DocumentClassOptions{${latex_document_mode}}";
@@ -252,7 +264,9 @@ $jobname =~ tr/./-/s;
 
 print "Job name: ${jobname}\n";
 
-$lualatex = 'lualatex --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P';
+$lualatex = 'lualatex --synctex=1 --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P';
+
+@generated_exts = (@generated_exts, 'synctex.gz');
 
 print "\n\n$lualatex\n\n";
 
