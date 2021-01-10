@@ -149,7 +149,7 @@ on the GitHub website (\url{https://github.com/ekgf/ekg-mm/actions}) where you c
 find the \gls{ci}-build processes that create the PDF for each change 
 (in git jargon that would be called "a push") in any branch.
 
-In figure \ref{fig:ekgmm-process-find-your-pdf}) you can see how you can 
+In figure \ref{fig:ekgmm-process-find-your-pdf} you can see how you can 
 find the latest successful run of the "Create PDF" workflow on the 
 \texttt{main} branch (job \#44 in this case, the branch name is shown in blue).
 
@@ -374,7 +374,7 @@ There are roughly two methods though:
 % Wrap the figure on the left, give it 20 lines of vertical space and scale
 % it down to half the text width
 %
-\begin{wrapfigure}[15]{r}{0.5\textwidth}
+\begin{wrapfigure}[16]{r}{0.5\textwidth}
     \vspace{-12pt}
     \begin{center}
         \includegraphics[width=0.50\textwidth]{../images/ekgmm-process-edit-content.png}
@@ -424,6 +424,18 @@ contains the issue number (which will be picked up by the project board).
 But you then also have to create a branch which shows up right under 
 the title and description. 
 
+Choose a branch name that explains what it is about. 
+In some cases that would be all there is to it but in most cases you 
+have multiple edits in multiple files for one given issue. 
+So in those cases you would have to make sure to always refer to 
+the right branch name where the branch name must include the 
+issue number itself. 
+For instance, for issue \texttt{\#123} the branch name would 
+be \texttt{issue-123}.
+
+\subsection{How to commit a change?}
+\label{subsec:ekg-mm-process-how-to-commit}
+
 %
 % Wrap the figure on the left, give it 20 lines of vertical space and scale
 % it down to half the text width
@@ -436,18 +448,6 @@ the title and description.
     \caption{Committing changes}
     \label{fig:ekgmm-process-commit-changes}
 \end{wrapfigure}
-
-Choose a branch name that explains what it is about. 
-In some cases that would be all there is to it but in most cases you 
-have multiple edits in multiple files for one given issue. 
-So in those cases you would have to make sure to always refer to 
-the right branch name where the branch name must include the 
-issue number itself. 
-For instance, for issue \texttt{\#123} the branch name would 
-be \texttt{issue-123}.
-
-\subsection{How to commit a change?}
-\label{subsec:ekg-mm-process-how-to-commit}
 
 There are many different ways to create a commit on a branch in a 
 git repository. It’s up to the "fixer" (usually called "developer"
@@ -464,7 +464,7 @@ What’s important to know is that, as a fixer, you should always include
 the issue number in the title of the commit. 
 For example, if you edit a content page and then commit that change, 
 you have to make sure that these two things are done before clicking 
-the "Propose Changes" button:
+the "Propose Changes" button as shown in figure \ref{fig:ekgmm-process-commit-changes}.
 
 Use a title for your commit that includes the issue number, 
 prefixed by \texttt{\#}, for example, \texttt{\#123} for issue 123.

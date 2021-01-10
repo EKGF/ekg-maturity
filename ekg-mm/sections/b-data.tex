@@ -1,6 +1,7 @@
-\part{Data}
+\bookmarksetup{bold=true, color=blue}
+\part{Data}\label{pt:ekgmm-b} % B Data
 
-The capability-domain "Data" has the following capability-areas:
+The pillar "Data" has the following components:
 
 \begin{itemize}[leftmargin=.5in]
   \item [\ref{ch:ekgmm-b-1}] \nameref{ch:ekgmm-b-1}
@@ -9,7 +10,28 @@ The capability-domain "Data" has the following capability-areas:
   \item [\ref{ch:ekgmm-b-4}] \nameref{ch:ekgmm-b-4}
 \end{itemize}
 
-\setcounter{chapter}{0}
+\paragraph{Levels}
+
+\begin{description}[nosep,font=\bfseries]
+
+    \item [1. \glsfmtshort{ekg} Initiation, \glsfmtshort{mvp}]
+    Core data management capabilities (operating model, inventory, data architecture, business
+    glossary, pipeline management, etc.) are being performed.
+    Specific use cases are being implemented with specialist teams for the pilot initiative.
+    
+    \item [2. Extensible Platform (reusable components)]
+    Critical data elements are prioritized in the ontology.
+    Approach to identity and meaning resolution is established.
+    Use case trees are defined and modeled to capture shared data relationships.
+    The knowledge graph is becoming the central point for integration.
+
+    \item [3. Enterprise Ready]
+    Inventory is embedded into the \gls{ekg} and linked to governance.
+    Data is expressed as formal ontologies, onboarded into the \gls{ekg} and searchable.
+    Data flows are defined and modeled.
+    The \gls{ekg} is the authoritative source for data.
+
+\end{description}
 
 \input{../../ekg-mm/sections/b-data-1-data-strategy.tex}
 \input{../../ekg-mm/sections/b-data-2-data-architecture.tex}
