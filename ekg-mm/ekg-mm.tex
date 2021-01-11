@@ -29,6 +29,13 @@
 
 \RequirePackage{maturity-model-stuff}
 
+%
+% The following two lines make sure that chapter numbers
+% start with 1 within each part.
+%
+\RequirePackage{chngcntr}
+\counterwithin*{chapter}{part}
+
 \makeglossaries
 \setabbreviationstyle[acronym]{long-short}
 \loadGlossaries
