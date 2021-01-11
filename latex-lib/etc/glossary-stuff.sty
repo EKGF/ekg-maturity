@@ -6,7 +6,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{glossary-stuff}[2019/12/09 agnos.ai - all glossary related stuff]
 
-\RequirePackage{hyperref} % must be loaded before package glossaries
+\RequirePackage{link-stuff} % must be loaded before package glossaries
 
 %
 % Even though we're not generating a glossary for a standalone document we still need
@@ -21,6 +21,9 @@
 % See https://tex.stackexchange.com/questions/399310/is-it-possible-to-use-acrfull-acrshort-in-the-subsection-etc-commands
 %
 \RequirePackage[automake]{glossaries-extra}
+\setabbreviationstyle[acronym]{long-short}% glossaries-extra.sty
+
+\setabbreviationstyle[acronym]{long-short}
 
 %
 % Define the additional glossaries
@@ -58,17 +61,18 @@
 }
 
 \newcommand{\insertGlossaries}{%
-\input{../glossary.tex}%
-\input{../glossary-business.tex}%
-\input{../glossary-ontologies.tex}%
+  \typeout{Inserting the glossaries}%
+  \input{../glossary.tex}%
+  \input{../glossary-business.tex}%
+  \input{../glossary-ontologies.tex}%
 }
 
 \newcommand{\loadGlossaries}{%
+  \typeout{Loading the glossaries}%
   \loadglsentries{../glossary.tex}%
   \loadglsentries{../glossary-business.tex}%
   \loadglsentries{../glossary-ontologies.tex}%
 }
-
 
 \newcommand{\busterm}[1]{\textit{\gls{#1}}}
 \newcommand{\Busterm}[1]{\textit{\Gls{#1}}}

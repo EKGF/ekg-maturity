@@ -7,14 +7,9 @@ infra:
 
 agnos-ai:
   - customer-assets/agnos-ai/*
-  - agnos-*
-  - *-agnos
-  - *-agnos-ai
-
-ekgf:
-  - customer-assets/ekgf/*
-  - ekgf-*
-  - *-ekgf
+  - any: ['agnos-*']
+  - any: ['*-agnos/**/*']
+  - any: ['*-agnos-ai/**/*']
 
 ekg-mm-intro:
   - ekg-mm/sections/ekg-mm-intro*

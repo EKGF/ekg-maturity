@@ -4,18 +4,21 @@ This repository contains the LaTeX based source documents of EKG/MM, the Maturit
 
 == Where to find the content?
 
-The "raw" LaTeX source documents (see LaTeX below for an explanation) can be found in the link:ekg-mm[/content] directory
-and more specifically in the link:ekg-mm/sections[/content/sections] directory.
+The "raw" LaTeX source documents (see LaTeX below for an explanation) can be
+found in the link:ekg-mm[/content] directory and more specifically in the
+link:ekg-mm/sections[/content/sections] directory.
 
 == LaTeX
 
-https://www.latex-project.org/about/[LaTeX], which is pronounced «Lah-tech» or «Lay-tech» (to rhyme
-ith «blech» or «Bertolt Brecht»), is a document preparation system for high-quality typesetting.
-It is most often used for medium-to-large technical or scientific documents but it can be used for
-almost any form of publishing.
+https://www.latex-project.org/about/[LaTeX], which is pronounced «Lah-tech»
+or «Lay-tech» (to rhyme with «blech» or «Bertolt Brecht»), is a document
+preparation system for high-quality typesetting.
+It is most often used for medium-to-large technical or scientific documents
+but it can be used for almost any form of publishing.
 
-LaTeX is not a word processor! Instead, LaTeX encourages authors not to worry too much about the appearance of
-their documents but to concentrate on getting the right content. 
+LaTeX is not a word processor! Instead, LaTeX encourages authors not to worry
+too much about the appearance of their documents but to concentrate on getting
+the right content. 
 
 See https://www.latex-project.org/about/
 
@@ -27,8 +30,9 @@ This repository resides on Github:
 
 === clone
 
-For advanced users who contribute often to this repository, it's best to create a so-called "clone" of this git
-repository on the local drive which allows any given LaTeX editor to be used locally to create new content.
+For advanced users who contribute often to this repository, it's best to
+create a so-called "clone" of this git repository on the local drive which
+allows any given LaTeX editor to be used locally to create new content.
 
 First, install git and/or Github Desktop.
 

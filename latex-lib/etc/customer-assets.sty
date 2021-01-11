@@ -5,6 +5,8 @@
 
 \RequirePackage{xspace}
 \RequirePackage{picture-stuff}
+\RequirePackage{color-stuff}
+\RequirePackage{sectsty}
 
 \providecommand{\customerCode}{agnos}% provide a default for \customerCode, it may not be defined when running on Overleaf
 
@@ -19,14 +21,44 @@
 }
 
 %%
+%% Now activate the colors.
+%%
+%% The primary or secondary color may have been set in variables.tex so make sure
+%% that we set those colors globally
+%%
+\makeatletter
+\newcommand{\globalcolor}[1]{%
+  \color{#1}\global\let\default@color\current@color
+}
+\makeatother
+
+\allsectionsfont{\color{primaryHeading1}}
+\partfont{\color{primaryHeading1}}  % sets colour of chapters
+\chapterfont{\color{primaryHeading1}}  % sets colour of chapters
+\sectionfont{\color{primaryHeading1}}  % sets colour of sections
+\subsectionfont{\color{primaryHeading2}}  % sets colour of sections
+\subsubsectionfont{\color{primaryHeading3}}  % sets colour of sections
+
+\AtBeginDocument{\globalcolor{primary}}
+
+\pagenumbering{Alph}% Invisible page numbering trick to avoid error before we do the title page
+\hypersetup{pageanchor=false}
+
+%%
 %% Use the customer specific title-page.tex file if it exists in the customer-assets directory
 %%
-\typeout{Including title-page.tex}
+\typeout{customer-assets.sty: Including title-page.tex}
 \IfFileExists{../customer-assets/\customerCode/title-page.tex}{%
+  \typeout{customer-assets.sty:  - Using \customerCode/title-page.tex}
   \renewcommand{\importTitlePage}{\input{../customer-assets/\customerCode/title-page.tex}}%
 }{%
-  \renewcommand{\importTitlePage}{\input{title-page.tex}}%
+  \typeout{customer-assets.sty:  - Using default title-page.tex}
+\renewcommand{\importTitlePage}{\input{title-page.tex}}%
 }
+
+\hypersetup{pageanchor=true}% switch it back on (switched off for title page)
+\pagenumbering{arabic}
+\clearpage\setcounter{page}{1}
 
 \makeatletter
 \providecommand*{\input@path}{}
