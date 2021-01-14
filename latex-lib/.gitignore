@@ -50,3 +50,4 @@ out/
 *.pandoc.docx
 .idea
 *.fdb_latexmk
+*.xdy

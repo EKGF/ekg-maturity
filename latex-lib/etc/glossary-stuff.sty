@@ -6,13 +6,14 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{glossary-stuff}[2019/12/09 agnos.ai - all glossary related stuff]
 
-\RequirePackage{link-stuff} % must be loaded before package glossaries
+\RequirePackage{link-stuff} % hyperref must be loaded before package glossaries
+                            % and package babel needs to be loaded before package glossaries-extra
 
 %
 % Even though we're not generating a glossary for a standalone document we still need
 % to import the package because the core text of the document may contain glossary commands like \glsxtrshort
 %
-\RequirePackage[toc,acronyms]{glossaries}
+\RequirePackage[toc,acronyms,xindy={language=english},nonumberlist,nopostdot,style=altlist,nogroupskip]{glossaries}
 %\makeglossaries % this line has to be put into the main doc unfortunately
 \RequirePackage{glossary-mcols}
 
@@ -20,10 +21,13 @@
 % Allows for using \glsfmtfull in \section and \chapter etc
 % See https://tex.stackexchange.com/questions/399310/is-it-possible-to-use-acrfull-acrshort-in-the-subsection-etc-commands
 %
-\RequirePackage[automake]{glossaries-extra}
+\RequirePackage[
+    toc=true,
+    nopostdot=true,
+    noredefwarn=false,
+    translate=babel
+]{glossaries-extra}
 \setabbreviationstyle[acronym]{long-short}% glossaries-extra.sty
-
-\setabbreviationstyle[acronym]{long-short}
 
 %
 % Define the additional glossaries
@@ -54,24 +58,33 @@
 \newcommand{\insertPrintGlossary}{%
   \typeout{Inserting printGlossary commands}%
   \clearpage%
-  \printglossary[type=\glsdefaulttype]%
-  \printglossary[type=\acronymtype,style=mcolindex,title=Acronyms,toctitle=Acronyms]%
+  \printglossary[type=acronym,style=mcolindex,title=Acronyms,toctitle=Acronyms]%
+  \printglossary[type=main,title=General Terms,toctitle=List of general terms]%
   \printglossary[type=bus,title=Business Terms,toctitle=List of Business Terms]%
   \printglossary[type=ont,title=Ontologies,toctitle=List of Ontologies]%
 }
 
 \newcommand{\insertGlossaries}{%
-  \typeout{Inserting the glossaries}%
-  \input{../glossary.tex}%
+  \typeout{glossary-stuff.sty: Inserting the glossaries}%
+  \input{../acronyms.tex}%
+  \input{../glossary-main.tex}%
   \input{../glossary-business.tex}%
   \input{../glossary-ontologies.tex}%
 }
 
 \newcommand{\loadGlossaries}{%
-  \typeout{Loading the glossaries}%
-  \loadglsentries{../glossary.tex}%
-  \loadglsentries{../glossary-business.tex}%
-  \loadglsentries{../glossary-ontologies.tex}%
+}
+
+\newcommand{\loadGlossariesX}{%
+  \typeout{glossary-stuff.sty: Loading the glossaries}%
+  \typeout{glossary-stuff.sty: - ../acronyms.tex}%
+  \loadglsentries[\acronymtype]{../acronyms.tex}%
+  \typeout{glossary-stuff.sty: - ../glossary-main.tex}%
+  \loadglsentries[main]{../glossary-main.tex}%
+  \typeout{glossary-stuff.sty: - ../glossary-business.tex}%
+  \loadglsentries[bus]{../glossary-business.tex}%
+  \typeout{glossary-stuff.sty: - ../glossary-ontologies.tex}%
+  \loadglsentries[ont]{../glossary-ontologies.tex}%
 }
 
 \newcommand{\busterm}[1]{\textit{\gls{#1}}}
