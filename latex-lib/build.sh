@@ -441,11 +441,11 @@ function copyToGoogleDriveLocal() {
         ekg-mm)
           targetDirectory+="/service-group/ekg-mm"
           ;;
-        kg-method)
-          targetDirectory+="/service-group/kg-method"
+        ekg-method)
+          targetDirectory+="/service-group/ekg-method"
           ;;
-        kg-discover)
-          targetDirectory+="/service-group/kg-discover"
+        ekg-discover)
+          targetDirectory+="/service-group/ekg-discover"
           ;;
         *)
           targetDirectory+="/service-group/generated-docs"
