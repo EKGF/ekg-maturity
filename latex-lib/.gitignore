@@ -20,6 +20,7 @@
 *.pdf
 *.run.xml
 *.synctex.gz
+*.synctex
 *.tdo
 *.sta
 *.gz

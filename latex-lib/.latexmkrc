@@ -184,38 +184,18 @@ sub makeGlossaries{
 #
 # 'alg', 'acr', 'acn'
 #
-#add_cus_dep( 'acn', 'acr', 0, 'makeAcronymGlossary' );
-add_cus_dep( 'acn', 'acr', 0, 'makeGlossaries' );
+add_cus_dep('acn', 'acr', 0, 'makeGlossaries');
 $clean_ext .= " alg acr acn";
 push @generated_exts, 'alg', 'acr', 'acn';
-sub makeAcronymGlossary{
-    my ($base_name, $path) = fileparse( $_[0] );
-    print "makeAcronymGlossary ${basename}\n";
-    pushd $path;
-#   my $return = system "makeglossaries $base_name";
-    my $return = system "makeindex -s \"$_[0].ist\" -t \"$_[0].alg\" -o \"$_[0].acr\" \"$_[0].acn\"" ;
-    popd;
-    return $return;
-}
 
 #
 # Main Glossary "main" (./glossary-main.tex)
 #
 # 'glg', 'gls', 'glo'
 #
+add_cus_dep('glo', 'gls', 0, 'makeGlossaries');
 $clean_ext .= " glg gls glo";
 push @generated_exts, 'glg', 'gls', 'glo';
-#add_cus_dep('glo', 'gls', 0, 'makeMainGlossary');
-add_cus_dep('glo', 'gls', 0, 'makeGlossaries');
-sub makeMainGlossary{
-    my ($base_name, $path) = fileparse( $_[0] );
-    print "makeMainGlossary ${base_name}\n";
-    pushd $path;
-#   my $return = system "makeglossaries $base_name";
-    my $return = system "makeindex -s \"$_[0].ist\" -t \"$_[0].glg\" -o \"$_[0].gls\" \"$_[0].glo\"" ;
-    popd;
-    return $return;
-}
 
 #
 # Ontologies Glossary "ont" (./glossary-ontologies.tex)
@@ -224,19 +204,9 @@ sub makeMainGlossary{
 #
 # Also see statement: \newglossary[olg]{ont}{old}{odn}{Ontologies}
 #
-#add_cus_dep( 'oln', 'old', 0, 'makeOntologiesGlossary' );
-add_cus_dep( 'oln', 'old', 0, 'makeGlossaries' );
+add_cus_dep('oln', 'old', 0, 'makeGlossaries');
 $clean_ext .= " olg old odn";
 push @generated_exts, 'olg', 'old', 'odn';
-sub makeOntologiesGlossary{
-    my ($base_name, $path) = fileparse( $_[0] );
-    print "makeOntologiesGlossary ${base_name}\n";
-    pushd $path;
-#   my $return = system "makeglossaries $base_name";
-    my $return = system "makeindex -s \"$_[0].ist\" -t \"$_[0].olg\" -o \"$_[0].old\" \"$_[0].odn\"" ;
-    popd;
-    return $return;
-}
 
 #
 # Business Glossary "bus" (./glossary-business.tex)
@@ -245,23 +215,11 @@ sub makeOntologiesGlossary{
 #
 # Also see statement: \newglossary[tlg]{bus}{tld}{tdn}{Business Terms}
 #
-#add_cus_dep( 'tdn', 'tld', 0, 'makeOntologiesGlossary' );
-add_cus_dep( 'tdn', 'tld', 0, 'makeGlossaries' );
+add_cus_dep('tdn', 'tld', 0, 'makeGlossaries');
 $clean_ext .= " tlg tld tdn";
 push @generated_exts, 'tlg', 'tld', 'tdn';
-sub makeBusinessGlossary{
-    my ($base_name, $path) = fileparse( $_[0] );
-    print "makeBusinessGlossary: ${base_name}\n";
-    pushd $path;
-#   my $return = system "makeglossaries $base_name";
-    my $return = system "makeindex -s \"$_[0].ist\" -t \"$_[0].tlg\" -o \"$_[0].tld\" \"$_[0].tdn\"" ;
-    popd;
-    return $return;
-}
 
 $clean_ext .= " aux fls log glsdefs tdo ist run.xml xdy";
-
-# print "clean ext: ${clean_ext}\n";
 
 ($document_customer_code, $document_customer_code_short) = getCustomerCode();
 
@@ -309,7 +267,6 @@ $jobname =~ tr/./-/s;
 
 print "Job name: ${jobname}\n";
 
-#$lualatex = "lualatex --synctex=1 --output_directory=${out_dir} --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P";
 $lualatex = "lualatex --synctex=1 --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P";
 
 @generated_exts = (@generated_exts, 'synctex.gz');

@@ -1,6 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{whitepaper-style-doc}[2019/09/30 A document class for a large kg-whitepaper style doc]
 
+\PassOptionsToPackage{final}{graphicx} % this line needs to be here if we want pictures to show up in draft mode
+                                       % some packages load graphicx without options so we need to pass the final
+                                       % option to graphicx with PassOptionsToPackage
+
 \RequirePackage{xkeyval}% supports \DeclareOptionX, \ExecuteOptionsX, \ProcessOptionsX\
 \RequirePackage{ifthen}
 \RequirePackage{agnos-keywords}
@@ -59,7 +63,6 @@
 \RequirePackage{xkeyval}
 %\RequirePackage{ifdraft}
 \RequirePackage{index-stuff}
-\RequirePackage{todo-stuff}
 \RequirePackage{picture-stuff}
 \RequirePackage{xstring}
 \RequirePackage{subfiles}
@@ -107,13 +110,12 @@
 %
 % Insert the following at the beginning of the document
 %
-\AtBeginDocument{\global\expandafter\let \csname @nodocument\endcsname \relax\insertGlossaries{}\typeout{Inserting Glossary}}
 \AtBeginDocument{\global\expandafter\let \csname @nodocument\endcsname \relax\insertTitlePage{}\typeout{Inserting Title Page}}
 \AtBeginDocument{\global\expandafter\let \csname @nodocument\endcsname \relax\insertTableOfContents{}\typeout{Inserting Table of Contents}}
 %
 % Insert the following at the end of the document
 %
-%\AtEndDocument{\global\expandafter\let \csname @nodocument\endcsname \relax\insertPrintGlossary} % \insertPrintGlossary is defined in glossary-stuff.cls
+\AtEndDocument{\global\expandafter\let \csname @nodocument\endcsname \relax\insertPrintGlossary} % \insertPrintGlossary is defined in glossary-stuff.cls
 \AtEndDocument{\global\expandafter\let \csname @nodocument\endcsname \relax\insertPrintBibliography}
 \AtEndDocument{\global\expandafter\let \csname @nodocument\endcsname \relax\insertPrintIndex}
 \AtEndDocument{\global\expandafter\let \csname @nodocument\endcsname \relax\insertPrintTodos}
