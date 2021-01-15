@@ -20,6 +20,7 @@
 *.pdf
 *.run.xml
 *.synctex.gz
+*.synctex
 *.tdo
 *.sta
 *.gz
@@ -50,3 +51,4 @@ out/
 *.pandoc.docx
 .idea
 *.fdb_latexmk
+*.xdy

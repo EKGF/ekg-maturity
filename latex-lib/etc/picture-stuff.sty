@@ -4,12 +4,14 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{picture-stuff}[2020/12/23 agnos.ai - All picture related stuff]
 
-\RequirePackage{graphicx}% this package must be before svg
+\RequirePackage[final]{graphicx}% this package must be before svg
 %\RequirePackage{svg}
 \newcommand{\home}{/Users/jacobus/Work/kg-whitepaper}
 \providecommand{\transparent}[1]{} % see manual
 % \pdfsuppresswarningpagegroup=1 % hot fix if required, see manual
 \RequirePackage{relsize} % required for adjusting text using relscale
+\typeout{picture-stuff.sty: Customer Code: \customerCode}
+\typeout{picture-stuff.sty: Document Name: \documentName}
 \graphicspath{%
 {\home/images}%
 {\documentName/images}%

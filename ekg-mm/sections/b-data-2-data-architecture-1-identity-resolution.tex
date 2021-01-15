@@ -30,15 +30,15 @@ The knowledge graph becomes the Rosetta stone for identity resolution.
 
 \end{core-questions}
 
-\subsection*{Common Principles for \glsfmtshort{kgiri}}
+\subsection*{Common Principles for \glsfmtshort{ekgiri}}
 
 \begin{itemize}
   \item All URLs have no meaning (opaque and meaningless)
   \item Never have only one central service (authority) to "mint" the URL - everyone can create their own
-        \glsfmtshort{kgiri}s based on the policy
-  \item Goal is to maximize proliferation of \glsfmtshort{kgiri}s across the organizational ecosystem
-  \item \glsfmtshort{kgiri}s are universally unique and permanent (no reuse and no elimination)
-  \item \glsfmtshort{kgiri} naming conventions (domain and host names) have to be sustainable forever
+        \glsfmtshort{ekgiri}s based on the policy
+  \item Goal is to maximize proliferation of \glsfmtshort{ekgiri}s across the organizational ecosystem
+  \item \glsfmtshort{ekgiri}s are universally unique and permanent (no reuse and no elimination)
+  \item \glsfmtshort{ekgiri} naming conventions (domain and host names) have to be sustainable forever
         (i.e.\ don't use company name because it might change if a merger or acquisition happens)
 \end{itemize}
 
@@ -52,17 +52,17 @@ The knowledge graph becomes the Rosetta stone for identity resolution.
 
   \item [concepts] Describe and agree on the identifying properties of the entity (primary key
         attributes) and how IRIs will be constructed
-  \item [registration] Establish host and domain names for \glsfmtshort{kgiri}s (per EKG platform deployments)
-  \item [policy] Align approach with the \glsfmtshort{kgiri} policy (add establish policy to policy section) --
-        i.e.\ must have one, structure of \glsfmtshort{kgiri}/hashing standard, maintain in inventory --
+  \item [registration] Establish host and domain names for \glsfmtshort{ekgiri}s (per EKG platform deployments)
+  \item [policy] Align approach with the \glsfmtshort{ekgiri} policy (add establish policy to policy section) --
+        i.e.\ must have one, structure of \glsfmtshort{ekgiri}/hashing standard, maintain in inventory --
         goal is as short as possible (Short, opaque, meaningless) --
         must decide and agree on standard (format and encoding)
   \item [mapping] All onboarding of in-scope data sources and their \glsxtrshort{etl} pipelines must implement policy
-        (generate the right \glsfmtshort{kgiri}s).
-        Ensure that all \glsfmtshort{kgiri}s look the same (create and implement rules/formula for conversion)
+        (generate the right \glsfmtshort{ekgiri}s).
+        Ensure that all \glsfmtshort{ekgiri}s look the same (create and implement rules/formula for conversion)
   \item [resolution] Define and implement (\href{https://www.w3.org/TR/owl-ref/\#sameAs-def}{owl:sameAs}) process for
-        resolving identical objects from multiple datasets into merged \glsfmtshort{kgiri} (fully supporting
-        multiple \glsfmtshort{kgiri}s per object)
+        resolving identical objects from multiple datasets into merged \glsfmtshort{ekgiri} (fully supporting
+        multiple \glsfmtshort{ekgiri}s per object)
 
 \end{scoring}
 
@@ -73,17 +73,17 @@ The knowledge graph becomes the Rosetta stone for identity resolution.
   \item [strategy] Develop strategy for ALL data (no longer compartmentalized) –- strategy covers all domains across
         the ecosystem
   \item [creation] Implement the model the IRI properties (per concept) into the \glsfmtshort{ekg}\todo{Improve sentence}
-  \item Mapping of content to \glsfmtshort{kgiri} is standardized using standard software routines
-  \item Other systems also generate \glsfmtshort{kgiri}s (extend mapping of \glsfmtshort{kgiri}s to other systems and
+  \item Mapping of content to \glsfmtshort{ekgiri} is standardized using standard software routines
+  \item Other systems also generate \glsfmtshort{ekgiri}s (extend mapping of \glsfmtshort{ekgiri}s to other systems and
         applications within the organization to prepare for enterprise conversion)
-  \item Implement ability to look-up existing \glsfmtshort{kgiri}s (reference hub) to allow other systems to
+  \item Implement ability to look-up existing \glsfmtshort{ekgiri}s (reference hub) to allow other systems to
         link/integrate to KG (prerequisite for enterprise-wide KG)
-  \item [policy] Policy for the proliferation of \glsfmtshort{kgiri}s (if the goal is a standard for creating for
+  \item [policy] Policy for the proliferation of \glsfmtshort{ekgiri}s (if the goal is a standard for creating for
         identification -- is the standard endorsed, mandated and implemented)\todo{Improve sentence} -- includes policy
         for domain names (unchangeable) and commitment from executive management to register the top-level domain
-  \item [policy] policy for synchronization of \glsfmtshort{kgiri} with policy for objects (ontologies)\todo{unclear}
+  \item [policy] policy for synchronization of \glsfmtshort{ekgiri} with policy for objects (ontologies)\todo{unclear}
   \item [policy] policy for creation and control (only authorized systems are allowed) and policy for who is
-        eligible to create \glsfmtshort{kgiri}s (i.e. a certificate needed to assign and only certain processes are
+        eligible to create \glsfmtshort{ekgiri}s (i.e. a certificate needed to assign and only certain processes are
         eligible for certificates)
 
 \end{scoring}
@@ -93,11 +93,11 @@ The knowledge graph becomes the Rosetta stone for identity resolution.
 \begin{scoring}
 
   \item Security procedures (i.e. specific crypto-security certificates) implemented to ensure control over
-        \glsfmtshort{kgiri} assignment process
-  \item Implement standard \glsfmtshort{kgiri} class hierarchy structure to enable multi-location linkage (shift from
+        \glsfmtshort{ekgiri} assignment process
+  \item Implement standard \glsfmtshort{ekgiri} class hierarchy structure to enable multi-location linkage (shift from
         URL “flavor” to URN “flavor” as defined in the IRI standard)\todo{needs work}
   \item All inbound data flows (into the \glsfmtshort{ekg}) are using a "Lookup Service" to convert "Strings to Things"
-        (i.e. mapping traditional identifiers to \glsfmtshort{kgiri}s in a model-driven way)
+        (i.e. mapping traditional identifiers to \glsfmtshort{ekgiri}s in a model-driven way)
 
 \end{scoring}
 

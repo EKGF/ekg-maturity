@@ -1,7 +1,7 @@
 %
 % This file sets up a title page, include this file right after the \begin{document} statement.
 %
-\RequirePackage{graphicx}
+\RequirePackage[final]{graphicx}
 \RequirePackage{ifdraft}
 \RequirePackage{array}
 \RequirePackage{multirow}
@@ -11,7 +11,22 @@
 \RequirePackage{picture-stuff}
 \RequirePackage{customer-assets}
 
-\typeout{Generating title page, using title \thetitle}
+\makeatletter
+\DeclareRobustCommand\ckeckfor[1]{%
+  \begingroup
+  \expandafter\ifx\csname#1\endcsname\relax\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi
+  {%
+    \expandafter\endgroup\expandafter\ifx\csname#1\endcsname\relax\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi
+  }{\endgroup\@firstoftwo}%
+}%
+\makeatother
+
+\ckeckfor{thetitle}{%
+    \typeout{Generating title page, using title \thetitle}%
+}{%
+    \typeout{title-page.tex: ERROR: you did not define the titlepage var}%
+}
+
 
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}

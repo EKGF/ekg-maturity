@@ -34,19 +34,19 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: 'public'
-          path: './out/*.pdf'
+          path: '${{ matrix.document_main }}/${{ matrix.customer }}-*.pdf'
       - name: Store Members Only PDF
         if: ${{ matrix.members_only == 'yes' && matrix.customer == 'ekgf' }}
         uses: actions/upload-artifact@v2
         with:
           name: 'members-only'
-          path: './out/*-members-only*.pdf'
+          path: '${{ matrix.document_main }}/${{ matrix.customer }}-*-members-only*.pdf'
       - name: Store PDF with agnos.ai logo
         if: ${{ matrix.customer == 'agnos-ai' }}
         uses: actions/upload-artifact@v2
         with:
           name: 'agnos.ai'
-          path: './out/agnos-*.pdf'
+          path: '${{ matrix.document_main }}/${{ matrix.customer }}-*.pdf'
       - name: Upload PDF to Google Drive agnos.ai
         if: ${{ matrix.customer == 'agnos-ai' }}
         run: |
@@ -56,9 +56,9 @@ jobs:
           echo "REFRESH_TOKEN=${{ secrets.AGNOS_GDRIVE_REFRESH_TOKEN }}" >> "${HOME}/.googledrive.conf"
           source ${HOME}/.profile
           export PATH=${PATH}:$HOME/.google-drive-upload/bin
-          cd ./out
+          cd ${{ matrix.document_main }}/
           echo "Generated PDF files, these files will now be uploaded:"
-          ls -al agnos-*.pdf
+          ls -al ${{ matrix.customer }}-*.pdf
           gupload \
             --quiet \
             --overwrite \
@@ -66,7 +66,7 @@ jobs:
             --skip-internet-check \
             --root-dir "11-0r7WEB6bi7no2n7vQfFQMkmOS0RVso" \
             --hide \
-            agnos-*.pdf
+            ${{ matrix.customer }}-*.pdf
       - name: Upload PDF to Google Drive EKGF
         if: ${{ matrix.customer == 'ekgf' }}
         run: |
@@ -76,9 +76,9 @@ jobs:
           echo "REFRESH_TOKEN=${{ secrets.AGNOS_GDRIVE_REFRESH_TOKEN }}" >> "${HOME}/.googledrive.conf"
           source ${HOME}/.profile
           export PATH=${PATH}:$HOME/.google-drive-upload/bin
-          cd ./out
+          cd ${{ matrix.document_main }}/
           echo "Generated PDF files, these files will now be uploaded:"
-          ls -al ekgf-*.pdf
+          ls -al ${{ matrix.customer }}-*.pdf
           gupload \
             --quiet \
             --overwrite \
@@ -86,6 +86,6 @@ jobs:
             --skip-internet-check \
             --root-dir "0ACknmC_fYtNyUk9PVA" \
             --hide \
-            ekgf-*.pdf
+            ${{ matrix.customer }}-*.pdf
 
 

@@ -10,41 +10,59 @@
 #
 use File::Basename;
 use experimental 'smartmatch';
-$pdf_mode = 4;  # generate PDF using lualatex
+$pdf_mode = 4;              # generate PDF using lualatex
 $bibtex_use = 2;
 $postscript_mode = $dvi_mode = 0;
+$max_repeat = 10;
+$do_cd = 1;
+$force_mode = 1 ;
+$recorder = 1;              # turn recorder option on (.fls file generated)
+$ENV{'SILENT'} //= 0;       # Run latexmk silently, not output to text
+$silent = $ENV{'SILENT'};
+$quiet  = $ENV{'SILENT'};
+$ENV{'max_print_line'} = 2000;
+$log_wrap = 2000;
+$ENV{'error_line'} = 254;
+$ENV{'half_error_line'} = 238;
+$ENV{'openout_any'} = 'a';
+#$out_dir = '../out';
+#$aux_dir = $out_dir;
+#$tmpdir  = $out_dir;
+#$ENV{'TEXINPUTS'} = ".:${out_dir}/:$ENV{'TEXINPUTS'}";
+#$biber = "biber %O --output_directory=${out_dir} --bblencoding=utf8 -u -U --output_safechars %B";
+$biber = "biber %O --bblencoding=utf8 -u -U --output_safechars %B";
 #
 # Specify which PDF viewer you want to use (Skim is the best one on a Mac)
 #
 $pdf_previewer = 'open -a Skim';
 
 sub findMainDoc() {
-    my $mainDocName = 'ekg-mm';
-    my $mainDocFileName = "${mainDocName}/ekg-mm.tex";
+    my $document_name = 'ekg-mm'; # just a default, could be anything
+    my $document_file = "${document_name}/${document_name}.tex";
 
     if($ENV{'latex_document_main'}) {
-        $mainDocFileName = $ENV{'latex_document_main'};
+        $document_file = $ENV{'latex_document_main'};
         # If the env var latex_document_main happens to be just the directory name of the
         # document's content root then assume that the main file in that root has the same name
-        if (-d $mainDocFileName) {
-            $documentName = $mainDocFileName;
-            $mainDocFileName = $mainDocFileName . '/' . ${mainDocFileName} . '.tex';
-        } elsif (-f $mainDocFileName) {
-            my @array = split /\//, $mainDocFileName, 2;
-            $documentName = $array[0];
+        if (-d $document_file) {
+            $document_name = $document_file;
+            $document_file = $document_file . '/' . ${document_file} . '.tex';
+        } elsif (-f $document_file) {
+            my @array = split /\//, $document_file, 2;
+            $document_name = $array[0];
         }
     }
 
-    if (! -e $mainDocFileName) {
-        die "${mainDocFileName} does not exist"
+    if (! -e $document_file) {
+        die "${document_file} does not exist"
     }
-    $ENV{'latex_document_main'} = $mainDocFileName;
-    @default_files = ($mainDocFileName);
+    $ENV{'latex_document_main'} = $document_file;
+    @default_files = ($document_file);
 
-    print "Main document file name: ${mainDocFileName}\n";
+    print "Main document file: ${document_file}\n";
     print "Main document name: ${document_name}\n";
 
-    return ($mainDocFileName, $documentName);
+    return ($document_file, $document_name);
 }
 
 sub getCustomerCode() {
@@ -102,7 +120,7 @@ sub tchomp {
 sub readVersion {
     my $versionFileName = "./${document_name}/VERSION";
     if (-s $versionFileName) {
-        $mainDocFileName = $document_name;
+        $document_file = $document_name;
     } else {
         print "Could not find ${versionFileName}, so using ./VERSION\n";
         $versionFileName = 'VERSION';
@@ -144,79 +162,64 @@ sub getVersionSuffix() {
     return ${suffix};
 }
 
-sub makeglossaries ($$$) {
-  my ($base_name, $path) = fileparse( $_[0] );
-  my $from_ext = $_[1];
-  my $to_ext = $_[2];
-  print "from ${from_ext} to ${to_ext}\n";
-  my @args = ();
-  pushd $path;
-  if ( $silent ) {
-    @args = ('makeglossaries', '-q', "$base_name");
-  } else {
-    @args = ("makeglossaries", "$base_name");
-  };
-  print "@args\n";
-  system(@args);
-  my $return = $?;
-  popd;
-  return $return;
+($document_file, $document_name) = findMainDoc();
+
+sub makeGlossaries{
+    my ($base_name, $path) = fileparse( $_[0] );
+    print "makeGlossaries base_name=${base_name} path=${path}\n";
+    pushd $path;
+    my $return = system "makeglossaries $base_name";
+    if (-z "${base_name}.glo" ) {
+       open GLS, ">${base_name}.gls";
+       close GLS;
+    }
+    popd;
+#    return $return;
+    return 0;
 }
 
-sub acn2acr {
-    makeglossaries($_[0], 'acn', 'acr');
-}
 
-sub glo2gls {
-    makeglossaries($_[0], 'glo', 'gls');
-}
+#
+# Acronym Glossary "acronym" (./acronym.tex)
+#
+# 'alg', 'acr', 'acn'
+#
+add_cus_dep('acn', 'acr', 0, 'makeGlossaries');
+$clean_ext .= " alg acr acn";
+push @generated_exts, 'alg', 'acr', 'acn';
 
-#sub tld2tdn {
-#    makeglossaries($_[0], 'tld', 'tdn');
-#}
+#
+# Main Glossary "main" (./glossary-main.tex)
+#
+# 'glg', 'gls', 'glo'
+#
+add_cus_dep('glo', 'gls', 0, 'makeGlossaries');
+$clean_ext .= " glg gls glo";
+push @generated_exts, 'glg', 'gls', 'glo';
 
-#sub old2odn {
-#    makeglossaries($_[0], 'old', 'odn');
-#}
+#
+# Ontologies Glossary "ont" (./glossary-ontologies.tex)
+#
+# 'olg', 'old', 'odn'
+#
+# Also see statement: \newglossary[olg]{ont}{old}{odn}{Ontologies}
+#
+add_cus_dep('oln', 'old', 0, 'makeGlossaries');
+$clean_ext .= " olg old odn";
+push @generated_exts, 'olg', 'old', 'odn';
 
-($mainDocFileName, $document_name) = findMainDoc();
+#
+# Business Glossary "bus" (./glossary-business.tex)
+#
+# 'tlg', 'tld', 'tdn'
+#
+# Also see statement: \newglossary[tlg]{bus}{tld}{tdn}{Business Terms}
+#
+add_cus_dep('tdn', 'tld', 0, 'makeGlossaries');
+$clean_ext .= " tlg tld tdn";
+push @generated_exts, 'tlg', 'tld', 'tdn';
 
-$do_cd = 1;
-$out_dir = '../out';
-$aux_dir = '../out';
-$tmpdir  = '../out';
-$force_mode = 1 ;
-# turn recorder option on (.fls file generated)
-$recorder = 1;
-
-# Run latexmk silently, not output to text
-$ENV{'SILENT'} //= 0;
-$silent     = $ENV{'SILENT'};
-$quiet      = $ENV{'SILENT'};
-
-$ENV{'max_print_line'} = 2000;
-$log_wrap = 2000;
-$ENV{'error_line'} = 254;
-$ENV{'half_error_line'} = 238;
-$ENV{'openout_any'} = 'a';
-
-add_cus_dep( 'acn', 'acr', 0, 'acn2acr' );
-$clean_ext .= " acn acr";
-push @generated_exts, 'acr';
-
-add_cus_dep( 'glo', 'gls', 0, 'glo2gls' );
-$clean_ext .= " glo gls";
-
-add_cus_dep( 'tld', 'tdn', 0, 'tld2tdn' ); # search for glossary-business
-$clean_ext .= " tld tds";
-
-add_cus_dep( 'old', 'odn', 0, 'old2odn' ); # search for glossary-ontologies
-$clean_ext .= " old odn";
-
-$clean_ext .= " alg glg";
-$clean_ext .= " aux fls log glsdefs tdo";
-
-# print "clean ext: ${clean_ext}\n";
+$clean_ext .= " aux fls log glsdefs tdo ist run.xml xdy";
 
 ($document_customer_code, $document_customer_code_short) = getCustomerCode();
 
@@ -227,9 +230,9 @@ $latex_document_mode = lc($ENV{'latex_document_mode'} || 'draft');
 print "latex_document_mode=${latex_document_mode}";
 if("${latex_document_mode}" eq 'final') {
     print "We're not in draft mode, creating the final version\n";
-    $jobname = "$document_customer_code-${mainDocName}";
+    $jobname = "$document_customer_code-${document_name}";
 } else {
-    $jobname = "$document_customer_code-${mainDocName}-${latex_document_mode}";
+    $jobname = "$document_customer_code-${document_name}-${latex_document_mode}";
 }
 #
 # Remove duplicate customer codes
@@ -264,7 +267,7 @@ $jobname =~ tr/./-/s;
 
 print "Job name: ${jobname}\n";
 
-$lualatex = 'lualatex --synctex=1 --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P';
+$lualatex = "lualatex --synctex=1 --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P";
 
 @generated_exts = (@generated_exts, 'synctex.gz');
 

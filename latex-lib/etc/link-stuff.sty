@@ -26,7 +26,7 @@
 \RequirePackage{xparse}
 \RequirePackage{hyperref}
 \hypersetup{
-  colorlinks=true, linkcolor=darkgray, citecolor=darkgray, 
+  colorlinks=true, linkcolor=darkgray, citecolor=darkgray,
   filecolor=darkgray, urlcolor=darkgray, plainpages=false, unicode,
   hypertexnames=false % hypertexnames=false is needed when you do things like \setcounter{part}{0}
 }
@@ -58,13 +58,13 @@
 %
 % Use as follows:
 %
-% blah blah (see \chapterref{pt:ekg-mm}{Maturity Model}{\glsfmtshort{kgmethod}})
+% blah blah (see \chapterref{pt:ekg-mm}{Maturity Model}{\glsfmtshort{ekgmethod}})
 %
 \newcommand{\chapterref}[3]{%
   \iflabelexists{#1}{%
     \hyperref{chapter~\ref*{#1}, \Nameref*{#1}}\xspace%
   }{%
-    chapter~"#2" of the #3-document\xspace%
+    chapter~"#2" of the document \enquote{#3}\xspace%
   }%
 }
 
