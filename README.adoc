@@ -32,7 +32,7 @@ git subtree push --prefix=latex-lib latex-lib main
 ----
 
 Before you do such a push, please check what the differences are between your local copy of the
-repo and the remote latex-lib repo as follows:
+repo and the remote git latex-lib repo as follows:
 
 [source,asciidoc]
 ----
