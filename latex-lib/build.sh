@@ -444,8 +444,8 @@ function copyToGoogleDriveLocal() {
         ekg-method)
           targetDirectory+="/service-group/ekg-method"
           ;;
-        ekg-discover)
-          targetDirectory+="/service-group/ekg-discover"
+        ekg-usecases)
+          targetDirectory+="/service-group/ekg-usecases"
           ;;
         *)
           targetDirectory+="/service-group/generated-docs"
