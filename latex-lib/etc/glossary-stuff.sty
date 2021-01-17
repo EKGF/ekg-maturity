@@ -6,7 +6,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{glossary-stuff}[2019/12/09 agnos.ai - all glossary related stuff]
 
-\RequirePackage{ifdraft}
+\RequirePackage[\documentMode]{ifdraft}
 \RequirePackage{link-stuff} % hyperref must be loaded before package glossaries
                             % and package babel needs to be loaded before package glossaries-extra
 
@@ -53,7 +53,7 @@
 \newglossary[olg]{ont}{old}{odn}{Ontologies}
 
 %
-% \insertPrintGlossary is a command that whitepaper-style-doc.sty is inserting at the end of the document.
+% \insertPrintGlossary is a command that whitepaper-style-doc.cls is inserting at the end of the document.
 %
 % NOTE: this works but still causes a warning:
 %       "Package glossaries Warning: No \printglossary or \printglossaries found."

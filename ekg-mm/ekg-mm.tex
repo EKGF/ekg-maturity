@@ -8,20 +8,10 @@
 %
 % The above are so called "magic comments" used by editors like TexStudio
 %
-\providecommand{\documentName}{ekg-mm}% provide a default for \documentName
+\makeatletter\def\input@path{{../etc/}}\makeatother
+\documentclass{whitepaper-style-doc}
 
-\makeatletter\def\input@path{{etc/}{../etc/}{../../etc/}{images/}{./images/}{../images/}{../../images/}}\makeatother
-
-%
-% Document Class is whitepaper-style-doc, specify '--final' or '--draft' on the command line of the build script
-%
-\ifdefined\DocumentClassOptions
-  \typeout{Using the following  document class options: \DocumentClassOptions}
-\else
-  \typeout{Building the document in DRAFT mode}
-  \def\DocumentClassOptions{draft}
-\fi
-\documentclass[\DocumentClassOptions]{whitepaper-style-doc}
+\loadGlossaries
 
 \RequirePackage{maturity-model-stuff}
 

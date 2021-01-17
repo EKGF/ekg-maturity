@@ -6,7 +6,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{todo-stuff}[2019/09/16 agnos.ai - ability to add notes and such]
 
-\RequirePackage{ifdraft}
+\RequirePackage[\documentMode]{ifdraft}
 \RequirePackage{xargs}               % Use more than one optional parameter in a new commands
 %
 \setlength{\marginparwidth}{2cm}
@@ -24,6 +24,6 @@
 \newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
 
 %
-% \insertPrintTodos is a command that whitepaper-style-doc.sty is inserting at the end of the document.
+% \insertPrintTodos is a command that whitepaper-style-doc.cls is inserting at the end of the document.
 %
 \newcommand{\insertPrintTodos}{\ifoptionfinal{}{\newpage\listoftodos[Notes]}}
