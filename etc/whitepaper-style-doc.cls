@@ -22,6 +22,10 @@
                                        % some packages load graphicx without options so we need to pass the final
                                        % option to graphicx with PassOptionsToPackage
 
+\PassOptionsToPackage{final}{graphicx} % this line needs to be here if we want pictures to show up in draft mode
+                                       % some packages load graphicx without options so we need to pass the final
+                                       % option to graphicx with PassOptionsToPackage
+
 \RequirePackage{xkeyval}% supports \DeclareOptionX, \ExecuteOptionsX, \ProcessOptionsX\
 \RequirePackage{ifthen}
 \RequirePackage{agnos-keywords}

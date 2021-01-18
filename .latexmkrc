@@ -25,6 +25,24 @@ $log_wrap = 2000;
 $ENV{'error_line'} = 254;
 $ENV{'half_error_line'} = 238;
 $ENV{'openout_any'} = 'a';
+#$out_dir = '../out';
+#$aux_dir = $out_dir;
+#$tmpdir  = $out_dir;
+#$ENV{'TEXINPUTS'} = ".:${out_dir}/:$ENV{'TEXINPUTS'}";
+#$biber = "biber %O --output_directory=${out_dir} --bblencoding=utf8 -u -U --output_safechars %B";
+$biber = "biber %O --bblencoding=utf8 -u -U --output_safechars %B";
+$max_repeat = 10;
+$do_cd = 1;
+$force_mode = 1 ;
+$recorder = 1;              # turn recorder option on (.fls file generated)
+$ENV{'SILENT'} //= 0;       # Run latexmk silently, not output to text
+$silent = $ENV{'SILENT'};
+$quiet  = $ENV{'SILENT'};
+$ENV{'max_print_line'} = 2000;
+$log_wrap = 2000;
+$ENV{'error_line'} = 254;
+$ENV{'half_error_line'} = 238;
+$ENV{'openout_any'} = 'a';
 $biber = "biber %O --bblencoding=utf8 -u -U --output_safechars %B";
 #
 # Specify which PDF viewer you want to use (Skim is the best one on a Mac)
