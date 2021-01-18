@@ -4,7 +4,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{paper-stuff}[2019/09/16 agnos.ai - all paper related stuff]
 
-\RequirePackage{ifdraft}
+\RequirePackage[\documentMode]{ifdraft}
 
 \ifoptionfinal{% final mode without TODOs in the right margin
 \RequirePackage[a4paper, top=2cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}

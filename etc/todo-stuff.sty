@@ -6,16 +6,17 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{todo-stuff}[2019/09/16 agnos.ai - ability to add notes and such]
 
-\RequirePackage{ifdraft}
+\RequirePackage[\documentMode]{ifdraft}
 \RequirePackage{xargs}               % Use more than one optional parameter in a new commands
 %
 \setlength{\marginparwidth}{2cm}
-\RequirePackage{ifdraft}
-%\ifoptionfinal{% draft mode with TODOs
-%  \RequirePackage[disable]{todonotes}
-%}{ % final mode without TODOs
+\ifoptionfinal{% draft mode with TODOs
+  \typeout{todo-stuff.sty: no TODOs in final mode}%
+  \RequirePackage[disable]{todonotes}
+}{ % final mode without TODOs
+  \typeout{todo-stuff.sty: print TODOs in draft mode}
   \RequirePackage[obeyFinal,colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
-%}
+}
 \newcommandx{\TODO}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
 \newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
 \newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
@@ -24,6 +25,6 @@
 \newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
 
 %
-% \insertPrintTodos is a command that whitepaper-style-doc.sty is inserting at the end of the document.
+% \insertPrintTodos is a command that whitepaper-style-doc.cls is inserting at the end of the document.
 %
 \newcommand{\insertPrintTodos}{\ifoptionfinal{}{\newpage\listoftodos[Notes]}}

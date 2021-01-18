@@ -4,18 +4,18 @@
 #
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
-function getAllMainDocNames() {
+function getAllTexDirectories() {
 
-  (
-    cd "${SCRIPT_DIR}"
-    echo -n "$(pwd) ./out "
-    for directory in */ ; do
-      directory="${directory/\//}" # strips the slash
-      if [[ -f "${directory}/${directory}.tex" ]] ; then
-        echo -n "${directory} "
-      fi
-    done
-  )
+  find . -type f -name '*.tex' | sed -E 's|/[^/]+$||' | sort -u
+  # (
+  #   cd "${SCRIPT_DIR}"
+  #   for directory in */ ./out ; do
+  #     directory="${directory/\//}" # strips the slash
+  #     if [[ -f "${directory}/${directory}.tex" ]] ; then
+  #       echo -n "${directory} "
+  #     fi
+  #   done
+  # )
 }
 
 function cleanTopLevelDocDirectory() {
@@ -25,8 +25,8 @@ function cleanTopLevelDocDirectory() {
   (
     cd "${directory}" || return 1
 
-    rm *.{acn,acr,alg,aux,bbl,bcf,blg,fdb_latexmk,fls,glg,glo,gls,glsdefs,glsdef,idx,labelTags,log,odn,old,olg,run.xml,synctex.gz,tdn,tld,tlg,tex.bbl,tex.blg,ilg,ind,ist,tdo,log,out,sta,toc,pdf} >/dev/null 2>&1
-    rm -rf .texpadtmp/ >/dev/null 2>&1
+    rm -v *.{acn,acr,alg,aux,bbl,bcf,blg,fdb_latexmk,fls,glg,glo,gls,glsdefs,glsdef,idx,labelTags,log,odn,old,olg,run.xml,synctex.gz,tdn,tld,tlg,tex.bbl,tex.blg,ilg,ind,ist,tdo,log,out,sta,toc,pdf} >/dev/null 2>&1
+    rm -vrf .texpadtmp/ >/dev/null 2>&1
   )
 
   return 0
@@ -34,7 +34,7 @@ function cleanTopLevelDocDirectory() {
 
 function cleanAll() {
 
-  for topLevelDocDirectory in $(getAllMainDocNames) ; do
+  for topLevelDocDirectory in $(getAllTexDirectories) ; do
     cleanTopLevelDocDirectory "${topLevelDocDirectory}" || return $?
   done
 
