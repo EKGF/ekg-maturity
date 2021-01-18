@@ -22,15 +22,15 @@
 \RequirePackage{use-case-tikz-stuff}
 \RequirePackage{listofitems}
 
-\newcommand{\importTitlePage}{}
+\newcommand*{\importTitlePage}{}
 
-\newcommand{\usecaseLabel}{undefined}
-\newcommand{\usecaseTitle}{What Use Case?}
+\newcommand*{\usecaseLabel}{undefined}
+\newcommand*{\usecaseTitle}{What Use Case?}
 
-\newcommand{\importMainUseCaseDocument}[1]{%
+\newcommand*{\importMainUseCaseDocument}[1]{%
   \getUseCaseDirectoryName{#1}%
   \global\edef\usecaseMainDocument{../use-cases/\usecaseDirectoryName/\usecaseDirectoryName.tex}%
-%  \typeout{importMainUseCaseDocument: Importing \usecaseMainDocument}%
+%  \typeout{use-case-subfile.sty: Importing \usecaseMainDocument}%
   \input{\usecaseMainDocument}%
 }
 
@@ -41,37 +41,37 @@
 % Sets \usecaseImportedDocument to hold the full (but relative) file name of the imported doc.
 %
 \newcommand*{\importUseCaseSubFile}[2]{%
- \typeout{importUseCaseSubFile: #1 use case label=#1, file to import=#2}
+ \typeout{use-case-subfile.sty: #1 use case label=#1, file to import=#2}
   \getUseCaseDirectoryName{#1}%
   \global\edef\usecaseImportedDocument{../use-cases/\usecaseDirectoryName/#2}%
   \IfFileExists{\usecaseImportedDocument}{%
-    \typeout{importUseCaseSubFile: Importing \usecaseImportedDocument (file exists)}%
+    \typeout{use-case-subfile.sty: Importing \usecaseImportedDocument (file exists)}%
     \input{\usecaseImportedDocument}%
   }{%
     \global\edef\usecaseImportedDocument{../\usecaseImportedDocument}%
     \IfFileExists{\usecaseImportedDocument}{%
-      \typeout{importUseCaseSubFile: Importing \usecaseImportedDocument (file exists)}%
+      \typeout{use-case-subfile.sty: Importing \usecaseImportedDocument (file exists)}%
       \input{\usecaseImportedDocument}%
     }{%
-      \typeout{importUseCaseSubFile: File not found: \usecaseImportedDocument}%
+      \typeout{use-case-subfile.sty: File not found: \usecaseImportedDocument}%
       \stop%
     }%
   }%
 }
 
-\newcommand{\importUseCaseAsSection}[1]{%
+\newcommand*{\importUseCaseAsSection}[1]{%
   \readUseCaseTitleFromFile{#1}%
   \expandafter\section\expandafter{\usecaseTitle}\label{\usecaseLabel}%
   \importMainUseCaseDocument{\usecaseLabel}%
 }
 
-\newcommand{\importUseCaseAsSubSection}[1]{%
+\newcommand*{\importUseCaseAsSubSection}[1]{%
   \readUseCaseTitleFromFile{#1}%
   \expandafter\subsection\expandafter{\usecaseTitle}\label{\usecaseLabel}%
   \importMainUseCaseDocument{\usecaseLabel}%
 }
 
-\newcommand{\importUseCaseAsSubSubSection}[1]{%
+\newcommand*{\importUseCaseAsSubSubSection}[1]{%
   \readUseCaseTitleFromFile{#1}%
   \expandafter\subsubsection\expandafter{\usecaseTitle}\label{\usecaseLabel}%
   \importMainUseCaseDocument{\usecaseLabel}%

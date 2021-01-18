@@ -14,7 +14,7 @@
 # The --draft option is the default option but if you want to build both the final and the draft version of a doc
 # you need to specify both --draft and --final.
 #
-SCRIPT_DIR="$(cd $(dirname "${BASH_SOURCE[0]}") && pwd -P)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
 #
 # Global vars that are exported into environment of subshells
@@ -27,14 +27,53 @@ export half_error_line=238
 #
 skip_pandoc=0
 
+function documentName() {
+
+  basename "$1" ".tex"
+}
+
+function jobName() {
+
+  local -r customerCode="$1"
+  local -r mode="$2"
+  local -r documentName="$3"
+  local -r version="$4"
+
+  echo -n "${customerCode}-${documentName}"
+
+  [[ "${mode}" == "draft" ]] && echo -n "-draft"
+
+  echo -n "-${version}"
+}
+
+function version() {
+
+  local -r file="$1"
+  local -r dir=$(dirname "${file}")
+
+  if [[ -f "${dir}/VERSION" ]] ; then
+    head -n1 "${dir}/VERSION" | tr . -
+  elif [[ -f "VERSION" ]] ; then
+    head -n1 VERSION | tr . -
+  else
+    echo "UNKNOWN VERSION"
+  fi
+}
+
 function runLaTex() {
 
   local -r mode="$1"
   local -r run="$2"
   local -r customerCode="$3"
   local -r file="$4.tex"
+  local -r documentName="$(documentName "${file}")"
+  local -r version="$(version "${file}")"
+  local -r jobName=$(jobName "${customerCode}" "${mode}" "${documentName}" "${version}")
   local skipGeneratingPdf="--draftmode" # this is NOT the same as draft mode inside the doc itself
-  local latexCommand="\def\customerCode{${customerCode}} \def\documentVersion{UNKNOWN VERSION}"
+  local latexCommand="\def\customerCode{${customerCode}}"
+
+  latexCommand+=" \def\documentName{${documentName}}"
+  latexCommand+=" \def\documentVersion{${version}}"
 
   if [[ ${run} -eq 4 ]] ; then
     skipGeneratingPdf=""
@@ -55,24 +94,30 @@ function runLaTex() {
 
   if ((run == 1)) ; then
     lualatex \
+      --synctex=1 \
       --output-format=pdf \
-      --file-line-error \
       --shell-escape \
       --halt-on-error \
-      --recorder \
+      --file-line-error \
+      --file-line-error \
       --interaction=nonstopmode \
+      --recorder \
+      --jobname "${jobName}" \
       ${skipGeneratingPdf} ${latexCommand} | \
       grep -v "LaTeX Warning: Reference .* on page .* undefined on input line .*" | \
       grep -v "LaTeX Warning: Citation .* on page .* undefined on input line .*" | \
       grep -v "^$"
   else
     lualatex \
+      --synctex=1 \
       --output-format=pdf \
-      --file-line-error \
       --shell-escape \
       --halt-on-error \
-      --recorder \
+      --file-line-error \
+      --file-line-error \
       --interaction=nonstopmode \
+      --recorder \
+      --jobname "${jobName}" \
       ${skipGeneratingPdf} ${latexCommand}
   fi
 #  | \
@@ -87,51 +132,73 @@ function runLaTex() {
 
 function runBiber() {
 
-  local -r file="$1"
+  local -r mode="$1"
+  local -r customerCode="$2"
+  local -r file="$3.tex"
+  local -r documentName="$(documentName "${file}")"
+  local -r version="$(version "${file}")"
+  local -r jobName=$(jobName "${customerCode}" "${mode}" "${documentName}" "${version}")
 
   echo "*******************"
-  echo "******************* biber ${file}"
+  echo "******************* biber ${jobName}"
   echo "*******************"
-  if [[ ! -f "${file}.bcf" ]] ; then
-    echo "Not running Biber because there's no ${file}.bcf file"
-    echo "******************* biber did not run on ${file}"
+  if [[ ! -f "${jobName}.bcf" ]] ; then
+    echo "Not running Biber because there's no ${jobName}.bcf file"
+    echo "******************* biber did not run on ${jobName}"
   else
-    biber --debug --noconf ${file}
+    (
+      biber --debug --noconf ${jobName}
+    )
     local rc=$?
-    echo "******************* biber rc=${rc} ${file}"
+    echo "******************* biber rc=${rc} ${jobName}"
   fi
   return ${rc}
 }
 
 function runMakeGlossaries() {
 
-  local -r file="$1"
+  local -r mode="$1"
+  local -r customerCode="$2"
+  local -r file="$3.tex"
+  local -r documentName="$(documentName "${file}")"
+  local -r version="$(version "${file}")"
+  local -r jobName=$(jobName "${customerCode}" "${mode}" "${documentName}" "${version}")
+
   local rc=0
 
   echo "*******************"
-  echo "******************* makeglossaries ${file}"
+  echo "******************* makeglossaries \"${jobName}\""
   echo "*******************"
 
 #  if head -n 1 "${file}.aux" | grep -q "relax" ; then
 #    echo "No need to run makeglossaries"
 #    echo "******************* makeglossaries did not need to run on ${file}"
 #  else
-    makeglossaries ${file}
+    makeglossaries "${jobName}"
     rc=$?
-    echo "******************* makeglossaries rc=${rc} ${file}"
+    echo "******************* makeglossaries rc=${rc} ${jobName}"
 #  fi
 
   return ${rc}
 }
 
 function runMakeIndex() {
-  local file="$1"
+
+  local -r mode="$1"
+  local -r customerCode="$2"
+  local -r file="$3.tex"
+  local -r documentName="$(documentName "${file}")"
+  local -r version="$(version "${file}")"
+  local -r jobName=$(jobName "${customerCode}" "${mode}" "${documentName}" "${version}")
+
   echo "*******************"
-  echo "******************* makeindex ${file}"
+  echo "******************* makeindex ${jobName}"
   echo "*******************"
-  makeindex ${file}
+  (
+    makeindex -t ${jobName}.ilg -o ${jobName}.ind ${jobName}.idx
+  )
   local rc=$?
-  echo "******************* makeindex rc=${rc} ${file}"
+  echo "******************* makeindex rc=${rc} ${jobName}"
   return ${rc}
 }
 
@@ -141,6 +208,9 @@ function runPandoc() {
   local -r customerCode="$2"
   local -r file="$3.tex"
   local -r texFile="${file}"
+  local -r documentName="$(documentName "${file}")"
+  local -r version="$(version "${file}")"
+  local -r jobName=$(jobName "${customerCode}" "${mode}" "${documentName}" "${version}")
   local -r docxFile="${file/.tex/.pandoc.docx}"
 
   rm -f "${docxFile}" >/dev/null 2>&1
@@ -370,24 +440,23 @@ function docxOutputFileName() {
 
 function copyToOut() {
 
+  return 0
+
   local -r mode="$1"
   local -r customerCode="$2"
-  local -r mainFile="$3"
+  local -r file="$3.tex"
+  local -r documentName="$(documentName "${file}")"
+  local -r version="$(version "${file}")"
+  local -r jobName=$(jobName "${customerCode}" "${mode}" "${documentName}" "${version}")
 
   local -r customerCodeInFileName="$(getCustomerCodeInFileName "${customerCode}")"
-  local -r pandocDocxFile="${mainFile}.pandoc.docx"
+  local -r pandocDocxFile="${file}.pandoc.docx"
 
   if [[ ! -f "${mainFile}.pdf" ]] ; then
     echo "ERROR: Could not find ${mainFile}.pdf"
     return 1
   fi
 
-  mkdir -p "${SCRIPT_DIR}/out" >/dev/null 2>&1
-
-  if [[ ! -d "${SCRIPT_DIR}/out" ]] ; then
-    echo "ERROR: Could not create ${SCRIPT_DIR}/out"
-    return 1
-  fi
   cp -v "${mainFile}.pdf" "${SCRIPT_DIR}/out/$(pdfOutputFileName $@)"
 
   if [[ -f "${pandocDocxFile}" ]] ; then
@@ -489,18 +558,18 @@ function runBuildForMode() {
   local -r customerCode="$2"
   local -r mainFile="$3"
 
-  runLaTex ${mode} 1 "${customerCode}" "${mainFile}" || return $?
-  runBiber ${mainFile} || return $?
-  runLaTex ${mode} 2 "${customerCode}" "${mainFile}" || return $?
-  runMakeGlossaries ${mainFile} || return $?
-  runLaTex ${mode} 3 "${customerCode}" "${mainFile}" || return $?
-#    runMakeIndex ${mainFile} || return $?
-  runLaTex ${mode} 4 "${customerCode}" "${mainFile}" || return $?
+  runLaTex "${mode}" 1 "${customerCode}" "${mainFile}" || return $?
+  runBiber "${mode}" "${customerCode}" "${mainFile}" || return $?
+  runLaTex "${mode}" 2 "${customerCode}" "${mainFile}" || return $?
+  runMakeGlossaries "${mode}" "${customerCode}" "${mainFile}" || return $?
+  runLaTex "${mode}" 3 "${customerCode}" "${mainFile}" || return $?
+  runMakeIndex "${mode}" "${customerCode}" "${mainFile}" || return $?
+  runLaTex "${mode}" 4 "${customerCode}" "${mainFile}" || return $?
 
-  runPandoc ${mode} "${customerCode}" "${mainFile}" || return $?
+#  runPandoc "${mode}" "${customerCode}" "${mainFile}" || return $?
 
-  copyToOut ${mode} "${customerCode}" "${mainFile}" || return $?
-  copyToGoogleDriveLocal ${mode} "${customerCode}" "${mainFile}" || return $?
+#  copyToOut "${mode}" "${customerCode}" "${mainFile}" || return $?
+#  copyToGoogleDriveLocal "${mode}" "${customerCode}" "${mainFile}" || return $?
 
   return 0
 }
@@ -555,6 +624,8 @@ function runTheBuild() {
     fi
   done
 
+  mkdir -p "${SCRIPT_DIR}/out"
+
   local -r mainFile="$1"
   local    mainDir="${mainFile}"
 
@@ -597,27 +668,48 @@ function runTheBuild() {
     if ((buildDraftVersion)) && ((buildFinalVersion)) ; then
       runBuildForMode draft "${customerCode}" "${mainFile}" || return $?
       runBuildForMode final "${customerCode}" "${mainFile}" || return $?
+      openPdf draft "${customerCode}" "${mainFile}"
     elif ((buildFinalVersion)) ; then
       runBuildForMode final "${customerCode}" "${mainFile}" || return $?
+      openPdf final "${customerCode}" "${mainFile}"
     else
       runBuildForMode draft "${customerCode}" "${mainFile}" || return $?
+      openPdf draft "${customerCode}" "${mainFile}"
     fi
   }
 
-  if ((useLocalLaTeX)) ; then
-    if ((openThePdf)) ; then
-      if [[ -f "${mainFile}.pdf" ]] ; then
-        open "${mainFile}.pdf"
-      elif [[ -f "${mainDir}/${mainFile}.pdf" ]] ; then
-        open "${mainDir}/${mainFile}.pdf"
-      else
-        echo "ERROR: Could not find ${mainFile}.pdf"
-        echo "mainDir=${mainDir}"
-        echo "mainFile=${mainFile}"
-      fi
-    fi
-  fi
   return $?
+}
+
+function openPdf() {
+
+  ((openThePdf)) || return 0
+
+  if ((! useLocalLaTeX)) ; then
+    echo "ERROR: Cannot open PDF when not running in local mode, use option --local"
+    return 1
+  fi
+
+  local -r mode="$1"
+  local -r customerCode="$2"
+  local -r file="$3.tex"
+  local -r documentName="$(documentName "${file}")"
+  local -r version="$(version "${file}")"
+  local -r jobName=$(jobName "${customerCode}" "${mode}" "${documentName}" "${version}")
+
+  if [[ -f "../out/${jobName}.pdf" ]] ; then
+    open "../out/${jobName}.pdf"
+  elif [[ -f "${mainDir}/${jobName}.pdf" ]] ; then
+    open "${mainDir}/${jobName}.pdf"
+  else
+    echo "ERROR: Could not find ${jobName}.pdf"
+    echo "mainDir=${mainDir}"
+    echo "mainFile=${mainFile}"
+    echo "jobName=${jobName}"
+    return 1
+  fi
+
+  return 0
 }
 
 #

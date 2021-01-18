@@ -10,22 +10,7 @@
 \providecommand{\transparent}[1]{} % see manual
 % \pdfsuppresswarningpagegroup=1 % hot fix if required, see manual
 \RequirePackage{relsize} % required for adjusting text using relscale
-\typeout{picture-stuff.sty: Customer Code: \customerCode}
-\typeout{picture-stuff.sty: Document Name: \documentName}
-\graphicspath{%
-{\home/images}%
-{\documentName/images}%
-{../\documentName/images}%
-{../../\documentName/images}%
-{images/}%
-{../images/}%
-{../../images/}%
-{../customer-assets/\customerCode/}%
-{../../customer-assets/\customerCode/}%
-}
-\makeatletter\typeout{picture-stuff.sty: Graphics Path: \Ginput@path}\makeatother
-%\svgpath{{\home/images}{images/}{../images/}}
-%\svgsetup{inkscapepath=\home}
+\RequirePackage{path-stuff}
 \RequirePackage{float}
 \RequirePackage[\documentMode]{ifdraft}
 \RequirePackage{changepage}
