@@ -36,21 +36,28 @@
   \iflabelexists{#1}{%
     \textit{\nameref{#1}} {\tiny (\ref{#1} on page \pageref{#1})}%
   }{%
+    \typeout{use-case-stuff.sty: usecaseref #1 at \currfilename:\the\inputlineno}
     \readUseCaseTitleFromFile{#1}%
     \usecaseTitle {\tiny (not documented in this document)}%
+    \typeout{use-case-stuff.sty: usecaseref #1 b}
   }%
 }
 
-\newcommand{\usecaseTitleFileName}{}
+\newcommand*{\usecaseTitleFileName}{}
 
-\newread\titleFileIn
+\newread\titleFileIn % declaring a file handle called 'titleFileIn'
 
 %
-% Private function do not use
+% Private function do not use.
+% Does the actual reading of the title file for a given use case.
 %
-\newcommand{\privateDoTheActualRead}[1]{
+% See https://latexref.xyz/_005cread.html
+%
+\newcommand*{\privateDoTheActualRead}[1]{
+  \typeout{use-case-stuff.sty: reading \usecaseTitleFileName}
   \openin\titleFileIn=#1\relax
-  \read\titleFileIn to \usecaseTitle
+  \typeout{use-case-stuff.sty: title file handle is \the\titleFileIn}
+  \read\titleFileIn to\usecaseTitle
   \closein\titleFileIn
 }
 
@@ -58,24 +65,23 @@
 % Reads the title for the given use case from a file called <use case directory>/<use case name>-title.txt
 % and stores it in the global variable \usecaseTitle
 %
-\newcommand{\readUseCaseTitleFromFile}[1]{%
+\newcommand*{\readUseCaseTitleFromFile}[1]{%
   \global\edef\usecaseLabel{#1}%
-%  \typeout{readUseCaseTitleFromFile: #1 label=\usecaseLabel}
+  \typeout{use-case-stuff.sty: label=\usecaseLabel}
   \getUseCaseDirectoryName{#1}%
   \global\edef\usecaseTitleFileName{../use-cases/\usecaseDirectoryName/\usecaseDirectoryName-title.txt}%
-%  \typeout{readUseCaseTitleFromFile: #1 label=\usecaseLabel usecaseTitleFileName=\usecaseTitleFileName}%
+  \typeout{use-case-stuff.sty: title file=\usecaseTitleFileName}%
   \global\edef\usecaseTitle{Unknown Title}%
   \IfFileExists{\usecaseTitleFileName}{%
     \privateDoTheActualRead{\usecaseTitleFileName}%
-    \typeout{use-case-title-file.sty: label=\usecaseLabel, title=\usecaseTitle, file=\usecaseTitleFileName}%
   }{%
     \global\edef\usecaseTitleFileName{../\usecaseTitleFileName}%
     \IfFileExists{\usecaseTitleFileName}{%
       \privateDoTheActualRead{\usecaseTitleFileName}%
-      \typeout{use-case-title-file.sty: label=\usecaseLabel, title=\usecaseTitle, file=\usecaseTitleFileName}%
     }{%
-      \typeout{use-case-title-file.sty: File {\usecaseTitleFileName} not found}%
+      \typeout{use-case-stuff.sty: File {\usecaseTitleFileName} not found}%
     }%
   }%
+  \typeout{use-case-stuff.sty: title=\usecaseTitle}%
 }
 

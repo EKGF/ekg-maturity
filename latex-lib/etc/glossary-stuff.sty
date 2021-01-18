@@ -72,7 +72,7 @@
 % - nonumberlist
 %   Suppress the location lists for this glossary.
 %
-\newcommand{\insertPrintGlossary}{%
+\newcommand*{\insertPrintGlossary}{%
   \typeout{Inserting printGlossary commands.}%
   \typeout{Ignore the above message: 'This document will not have a glossary.'}%
   \clearpage%
@@ -84,12 +84,12 @@
     %
     % in draft mode we print all entries in all glossaries.
     %
-    \glsaddallunused %
-    \TODO[inline,color=green!40]{This is the DRAFT version so we print all entries of all glossaries}
+    \glsaddallunused%
+    \TODO[inline,color=green!40]{This is the DRAFT version so we print all entries of all glossaries}%
   }%
 }
 
-\newcommand{\insertGlossaries}{%
+\newcommand*{\insertGlossaries}{%
   \typeout{glossary-stuff.sty: Inserting the glossaries}%
   \input{../acronyms.tex}%
   \input{../glossary-main.tex}%
@@ -97,9 +97,9 @@
   \input{../glossary-ontologies.tex}%
 }
 
-\newcommand{\loadGlossaries}{%
-  \makeglossaries
-  \insertGlossaries
+\newcommand*{\loadGlossaries}{%
+  \makeglossaries%
+  \insertGlossaries%
   %\typeout{glossary-stuff.sty: Loading the glossaries}%
   %\typeout{glossary-stuff.sty: - ../acronyms.tex}%
   %\loadglsentries[acronym]{../acronyms.tex}%
@@ -111,11 +111,18 @@
   %\loadglsentries[ont]{../glossary-ontologies.tex}%
 }
 
-\newcommand{\busterm}[1]{\textit{\gls{#1}}}
-\newcommand{\Busterm}[1]{\textit{\Gls{#1}}}
+\newcommand*{\busterm}[1]{\textit{\gls{#1}}}
+\newcommand*{\Busterm}[1]{\textit{\Gls{#1}}}
 
-\newcommand{\ontology}[1]{\textit{\gls{#1}}}
-\newcommand{\Ontology}[1]{\textit{\Gls{#1}}}
+\newcommand*{\ontology}[1]{\textit{\gls{#1}}}
+\newcommand*{\Ontology}[1]{\textit{\Gls{#1}}}
+
+% adjust "index" style to allow multi-paragraph descriptions:
+\renewcommand*{\glstreeitem}{%
+ \parindent0pt\par\hangindent40pt%
+ \everypar{\parindent50pt\hangindent40pt}%
+}
+
 
 % adjust "index" style to allow multi-paragraph descriptions:
 \renewcommand{\glstreeitem}{%

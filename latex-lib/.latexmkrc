@@ -31,6 +31,19 @@ $ENV{'openout_any'} = 'a';
 #$ENV{'TEXINPUTS'} = ".:${out_dir}/:$ENV{'TEXINPUTS'}";
 #$biber = "biber %O --output_directory=${out_dir} --bblencoding=utf8 -u -U --output_safechars %B";
 $biber = "biber %O --bblencoding=utf8 -u -U --output_safechars %B";
+$max_repeat = 10;
+$do_cd = 1;
+$force_mode = 1 ;
+$recorder = 1;              # turn recorder option on (.fls file generated)
+$ENV{'SILENT'} //= 0;       # Run latexmk silently, not output to text
+$silent = $ENV{'SILENT'};
+$quiet  = $ENV{'SILENT'};
+$ENV{'max_print_line'} = 2000;
+$log_wrap = 2000;
+$ENV{'error_line'} = 254;
+$ENV{'half_error_line'} = 238;
+$ENV{'openout_any'} = 'a';
+$biber = "biber %O --bblencoding=utf8 -u -U --output_safechars %B";
 #
 # Specify which PDF viewer you want to use (Skim is the best one on a Mac)
 #
@@ -65,8 +78,11 @@ sub findMainDoc() {
     return ($document_file, $document_name);
 }
 
-sub getCustomerCode() {
+sub getCustomerCode($) {
 
+    my $document_name = $_[0];
+    my $document_name_suffix = (split '-', $document_name)[-1];
+    my $document_name_prefix = (split '-', $document_name)[0];
     my $defaultCustomerCode = 'ekgf';
 
     # If this runs in a Github Actions workflow then we can derive the best
@@ -82,14 +98,21 @@ sub getCustomerCode() {
             $defaultCustomerCode = lc($array[-2]);
         }
     }
+
+    if (-d "./customer-assets/${document_name_prefix}") {
+        $defaultCustomerCode = ${document_name_prefix};
+        $ENV{'latex_customer_code'} = $defaultCustomerCode;
+    }
+    if (-d "./customer-assets/${document_name_suffix}") {
+        $defaultCustomerCode = ${document_name_suffix};
+        $ENV{'latex_customer_code'} = $defaultCustomerCode;
+    }
     if (! $ENV{'latex_customer_code'}) {
         $ENV{'latex_customer_code'} = $defaultCustomerCode;
     }
-
     if("$ENV{'latex_customer_code'}" eq 'agnos') {
         $ENV{'latex_customer_code'} = 'agnos-ai'
     }
-
     if("$ENV{'latex_customer_code'}" eq 'agnos-ai') {
         $document_customer = 'agnos-ai';
         $document_customer_code_short = 'agnos';
@@ -221,13 +244,13 @@ push @generated_exts, 'tlg', 'tld', 'tdn';
 
 $clean_ext .= " aux fls log glsdefs tdo ist run.xml xdy";
 
-($document_customer_code, $document_customer_code_short) = getCustomerCode();
+($document_customer_code, $document_customer_code_short) = getCustomerCode(${document_name});
 
 #
 # Can't use spaces or dots in the file names unfortunately, tools like makeglossaries do not support it
 #
 $latex_document_mode = lc($ENV{'latex_document_mode'} || 'draft');
-print "latex_document_mode=${latex_document_mode}";
+print "Document Mode: ${latex_document_mode}\n";
 if("${latex_document_mode}" eq 'final') {
     print "We're not in draft mode, creating the final version\n";
     $jobname = "$document_customer_code-${document_name}";
@@ -237,8 +260,11 @@ if("${latex_document_mode}" eq 'final') {
 #
 # Remove duplicate customer codes
 #
-$jobname =~ s/${document_customer_code}-${document_customer_code}/${document_customer_code}/g ;
-$jobname =~ lc s/-${document_customer_code}-/-/g ;
+#print "document_customer_code=${document_customer_code}\n";
+$jobname =~ s/${document_customer_code}//g ;
+$jobname =~ s/--/-/g ;
+$jobname = "${document_customer_code}${jobname}" ;
+$jobname =~ s/--/-/g ;
 
 $latex_document_version = readVersion();
 $latex_document_version_suffix = getVersionSuffix();
@@ -247,10 +273,10 @@ $versionWithDashes = $latex_document_version;
 $versionWithDashes =~ tr/./-/s;
 print "Document Version: $latex_document_version...\n";
 
+$pre_tex_code = "${pre_tex_code}\\def\\documentMode{${latex_document_mode}}";
 $pre_tex_code = "${pre_tex_code}\\def\\documentName{$document_name}";
 $pre_tex_code = "${pre_tex_code}\\def\\customerCode{$document_customer_code}";
 $pre_tex_code = "${pre_tex_code}\\def\\documentVersion{$latex_document_version}";
-$pre_tex_code = "${pre_tex_code}\\def\\DocumentClassOptions{${latex_document_mode}}";
 
 if($ENV{'latex_document_members_only'} and "$ENV{'latex_document_members_only'}" eq 'yes') {
     $jobname = "${jobname}-members-only-${latex_document_version}";
@@ -264,13 +290,16 @@ if($ENV{'latex_document_members_only'} and "$ENV{'latex_document_members_only'}"
 # well.
 #
 $jobname =~ tr/./-/s;
+$jobname =~ s/--/-/g ;
 
 print "Job name: ${jobname}\n";
+#die "xxx";
 
 $lualatex = "lualatex --synctex=1 --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P";
 
-@generated_exts = (@generated_exts, 'synctex.gz');
+push @generated_exts, 'synctex.gz';
+push @generated_exts, 'synctex(busy)';
+push @generated_exts, 'run.xml';
+$clean_ext .= " synctex.gz synctex(busy) run.xml";
 
 print "\n\n$lualatex\n\n";
-
-# exit;

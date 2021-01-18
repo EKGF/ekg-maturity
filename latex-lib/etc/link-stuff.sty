@@ -26,8 +26,15 @@
 \RequirePackage{xparse}
 \RequirePackage{hyperref}
 \hypersetup{
-  colorlinks=true, linkcolor=darkgray, citecolor=darkgray,
-  filecolor=darkgray, urlcolor=darkgray, plainpages=false, unicode,
+  final,
+  debug,
+  colorlinks=true,
+  linkcolor=darkgray,
+  citecolor=darkgray,
+  filecolor=darkgray,
+  urlcolor=darkgray,
+  plainpages=false,
+  unicode,
   hypertexnames=false % hypertexnames=false is needed when you do things like \setcounter{part}{0}
 }
 \RequirePackage{nameref}
@@ -60,11 +67,19 @@
 %
 % blah blah (see \chapterref{pt:ekg-mm}{Maturity Model}{\glsfmtshort{ekgmethod}})
 %
-\newcommand{\chapterref}[3]{%
+\newcommand*{\chapterref}[3]{%
   \iflabelexists{#1}{%
     \hyperref{chapter~\ref*{#1}, \Nameref*{#1}}\xspace%
   }{%
     chapter~"#2" of the document \enquote{#3}\xspace%
+  }%
+}
+
+\newcommand*{\seechapter}[3]{%
+  \iflabelexists{#1}{%
+    \footnote{see \hyperref{chapter~\ref*{#1}, \Nameref*{#1}}}%
+  }{%
+    \footnote{see chapter~"#2" of the document \enquote{#3}}%
   }%
 }
 

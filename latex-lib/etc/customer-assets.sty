@@ -8,7 +8,7 @@
 \RequirePackage{color-stuff}
 \RequirePackage{sectsty}
 
-\providecommand{\customerCode}{agnos}% provide a default for \customerCode, it may not be defined when running on Overleaf
+\providecommand{\customerCode}{agnos-ai}% provide a default for \customerCode, it may not be defined when running on Overleaf
 
 %%
 %% Load the customer specific variables from variables.tex
@@ -16,7 +16,7 @@
 \IfFileExists{../customer-assets/\customerCode/variables.tex}{%
   \input{../customer-assets/\customerCode/variables.tex}%
 }{%
-  \typeout{ERROR: Could not find ../customer-assets/\customerCode/variables.tex}
+  \typeout{customer-assets.sty: ERROR: Could not find ../customer-assets/\customerCode/variables.tex}
   \stop
 }
 
@@ -60,10 +60,11 @@
 \pagenumbering{arabic}
 \clearpage\setcounter{page}{1}
 
-\makeatletter
-\providecommand*{\input@path}{}
-\edef\input@path{{./customer-assets/\customerCode/}{../customer-assets/\customerCode/}\input@path}% prepend
-\makeatother
+% this is already done in whitepaper-style-doc.cls:
+% \makeatletter
+% \providecommand*{\input@path}{}
+% \edef\input@path{{./customer-assets/\customerCode/}{../customer-assets/\customerCode/}\input@path}% prepend
+% \makeatother
 
 %%
 %% Load the somecust version of the header-and-footer-stuff
