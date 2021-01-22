@@ -15,6 +15,8 @@
 \RequirePackage{float}
 \RequirePackage[\documentMode]{ifdraft}
 \RequirePackage{changepage}
+\RequirePackage{adjustbox}
+\RequirePackage[absolute]{textpos}
 
 \newcommand{\adjustimg}{% Horizontal adjustment of image
   \checkoddpage%
@@ -27,7 +29,7 @@
 %
 % Import a banner picture and size it across the whole page
 %
-\newcommand{\bannerAcrossWholePage}[2]{%
+\newcommand*{\bannerAcrossWholePage}[2]{%
   \mbox{} \par%
   \ifoptionfinal{% final mode without TODOs so different right margin
     \noindent\centerimg[width=\dimexpr\paperwidth+3pt\relax,height=#1]{#2}%
@@ -36,3 +38,11 @@
   }%
 }
 
+\newcommand*{\bannerAcrossWholePageScaleByWidth}[1]{%
+  \mbox{} \par%
+  \ifoptionfinal{% final mode without TODOs so different right margin
+    \noindent\centerimg[width=\dimexpr\paperwidth+3pt\relax]{#1}%
+  }{% draft mode
+    \noindent\centerimg[width=\dimexpr\paperwidth+17pt\relax]{#1}%
+  }%
+}

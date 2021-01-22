@@ -59,6 +59,12 @@
   }%
 }
 
+\newcommand*{\importUseCaseAsChapter}[1]{%
+  \readUseCaseTitleFromFile{#1}%
+  \expandafter\chapter\expandafter{\usecaseTitle}\label{\usecaseLabel}%
+  \importMainUseCaseDocument{\usecaseLabel}%
+}
+
 \newcommand*{\importUseCaseAsSection}[1]{%
   \readUseCaseTitleFromFile{#1}%
   \expandafter\section\expandafter{\usecaseTitle}\label{\usecaseLabel}%

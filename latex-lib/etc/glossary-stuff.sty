@@ -49,7 +49,7 @@
 %
 % \newglossary[<log-ext>]{<name>}{<in-ext>}{<out-ext>}{<title>}[<counter>]
 %
-\newglossary[tlg]{bus}{tld}{tdn}{Business Terms}
+\newglossary[tlg]{concept}{tld}{tdn}{Concepts}
 \newglossary[olg]{ont}{old}{odn}{Ontologies}
 
 %
@@ -78,8 +78,8 @@
   \clearpage%
   \printglossary[type=acronym,style=mcolindex,title=Acronyms,toctitle=Acronyms]%
   \printglossary[type=main,style=mcoltree,title=General Terms,toctitle=List of general terms]%
-  \printglossary[type=concept,style=mcoltree,title=Business Terms,toctitle=List of Business Terms]%
-  \printglossary[type=ont,style=mcoltree,title=Ontologies,toctitle=List of Ontologies]%
+  \printglossary[type=concept,style=mcoltree,title=Concepts,toctitle=List of concepts \& business terms]%
+  \printglossary[type=ont,style=mcoltree,title=Ontologies,toctitle=List of ontologies]%
   \ifoptionfinal{}{%
     %
     % in draft mode we print all entries in all glossaries.
@@ -93,7 +93,7 @@
   \typeout{glossary-stuff.sty: Inserting the glossaries}%
   \input{../acronyms.tex}%
   \input{../glossary-main.tex}%
-  \input{../glossary-business.tex}%
+  \input{../glossary-concepts.tex}%
   \input{../glossary-ontologies.tex}%
 }
 
@@ -105,8 +105,8 @@
   %\loadglsentries[acronym]{../acronyms.tex}%
   %\typeout{glossary-stuff.sty: - ../glossary-main.tex}%
   %\loadglsentries[main]{../glossary-main.tex}%
-  %\typeout{glossary-stuff.sty: - ../glossary-business.tex}%
-  %\loadglsentries[bus]{../glossary-business.tex}%
+  %\typeout{glossary-stuff.sty: - ../glossary-concepts.tex}%
+  %\loadglsentries[concept]{../glossary-concepts.tex}%
   %\typeout{glossary-stuff.sty: - ../glossary-ontologies.tex}%
   %\loadglsentries[ont]{../glossary-ontologies.tex}%
 }
@@ -122,10 +122,3 @@
  \parindent0pt\par\hangindent40pt%
  \everypar{\parindent50pt\hangindent40pt}%
 }
-
-
-% adjust "index" style to allow multi-paragraph descriptions:
-\renewcommand{\glstreeitem}{%
- \parindent0pt\par\hangindent40pt
- \everypar{\parindent50pt\hangindent40pt}}
-

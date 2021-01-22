@@ -20,6 +20,7 @@
 \RequirePackage{parskip}
 \RequirePackage{subcaption}
 \RequirePackage{wrapfig}
+\RequirePackage{cutwin}
 \RequirePackage{floatflt}
 \RequirePackage{xargs}
 \RequirePackage{etoolbox}
@@ -69,32 +70,28 @@
 %
 \newcommand*{\chapterref}[3]{%
   \iflabelexists{#1}{%
-    \hyperref{chapter~\ref*{#1}, \Nameref*{#1}}\xspace%
+    \hyperref[{#1}]{chapter \textit{\ref*{#1} \enquote{\nameref*{#1}}} on page \pageref{#1}}%
   }{%
-    chapter~"#2" of the document \enquote{#3}\xspace%
+    chapter \textit{\enquote{#2}} of the document \textit{\enquote{#3}}%
   }%
 }
 
 \newcommand*{\seechapter}[3]{%
   \iflabelexists{#1}{%
-    \footnote{see \hyperref{chapter~\ref*{#1}, \Nameref*{#1}}}%
+    \footnote{see \hyperref[{#1}]{chapter \textit{\ref*{#1} \nameref*{#1}}}}%
   }{%
-    \footnote{see chapter~"#2" of the document \enquote{#3}}%
+    \footnote{see chapter \textit{#2} of the document \textit{\enquote{#3}}}%
   }%
 }
 
 \newcommand*{\secref}[1]{%
-  \hyperref[{#1}]{section~\ref*{#1}, "\nameref*{#1}"}\xspace%
+  \hyperref[{#1}]{section \textit{\ref*{#1}, \enquote{\nameref*{#1}}}}%
 }
 
-\newcommand*{\subsecref}[1]{%
-  \hyperref[{#1}]{section~\ref*{#1}, "\nameref*{#1}"}\xspace%
-}
+\newcommand*{\subsecref}[1]{\secref{#1}}
 
-\newcommand*{\subsubsecref}[1]{%
-  \hyperref[{#1}]{section~\ref*{#1}, "\nameref*{#1}"}\xspace%
-}
+\newcommand*{\subsubsecref}[1]{\subsecref{#1}}
 
 \newcommand*{\parref}[1]{%
-  \hyperref[{#1}]{paragraph~\ref*{#1}, "\nameref*{#1}"}\xspace%
+  \hyperref[{#1}]{paragraph \textit{\ref*{#1} \enquote{\nameref*{#1}}}}%
 }

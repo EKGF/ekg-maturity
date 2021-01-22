@@ -80,7 +80,7 @@
 % all \glsxtrshort{someterm} commands fail.
 %
 \import{../../}{glossary.tex}
-\import{../../}{glossary-business.tex}
+\import{../../}{glossary-concepts.tex}
 \import{../../}{glossary-ontologies.tex}
 \importTitlePage
 \typeout{use-case-standalone A1}
