@@ -4,8 +4,20 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{path-stuff}[2021/01/18 agnos.ai - Set the input and graphics path]
 
-\typeout{path-stuff.sty: Customer Code: \customerCode}
-\typeout{path-stuff.sty: Document Name: \documentName}
+\RequirePackage{grffile}
+\RequirePackage[final]{graphicx}% for \graphicspath macro
+
+
+\makeatletter
+\newcommand*{\printpaths}[0]{%
+  \typeout{path-stuff.sty: Customer Code: \customerCode}
+  \typeout{path-stuff.sty: Document Name: \documentName}
+  \typeout{path-stuff.sty: Input Path: \input@path}%
+  \typeout{path-stuff.sty: Graphics Path: \Ginput@path}%
+}
+\makeatother
+
+\printpaths% show state before
 
 %
 % Set the path to be used for \input statements. It also has to include all
@@ -25,10 +37,13 @@
   {../../\documentName/images/}%
   {../customer-assets/\customerCode/}%
   {../../customer-assets/\customerCode/}%
+  {../../../customer-assets/\customerCode/}%
 }
 \makeatother
 
-\graphicspath{%
+% \graphicspath{%
+\makeatletter
+\def\Ginput@path{%
   {./images/}%
   {../images/}%
   {../../images/}%
@@ -37,16 +52,11 @@
   {../../\documentName/images/}%
   {../customer-assets/\customerCode/}%
   {../../customer-assets/\customerCode/}%
+  {../../../customer-assets/\customerCode/}% this can happen when doc is under ./mnt/ekg-mm/ekg-mm for instance
 }
+\makeatother
 
-\makeatletter%
-\newcommand*{\printpaths}[0]{%
-  \typeout{path-stuff.sty: Input Path: \input@path}%
-  \typeout{path-stuff.sty: Graphics Path: \Ginput@path}%
-}
-\makeatother%
-
-\printpaths
+\printpaths% show state after
 
 %\svgpath{{\home/images}{images/}{../images/}}
 %\svgsetup{inkscapepath=\home}

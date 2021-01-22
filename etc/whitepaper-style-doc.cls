@@ -14,13 +14,7 @@
 % It also assumes that \customerCode is set (default is 'agnos-ai')
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{whitepaper-style-doc}[2019/09/30 A document class for a large ekg-whitepaper style doc]
-
-\makeatletter\def\input@path{{etc/}{../etc/}{../../etc/}{images/}{./images/}{../images/}{../../images/}}\makeatother
-
-\PassOptionsToPackage{final}{graphicx} % this line needs to be here if we want pictures to show up in draft mode
-                                       % some packages load graphicx without options so we need to pass the final
-                                       % option to graphicx with PassOptionsToPackage
+\ProvidesClass{whitepaper-style-doc}[2019/09/30 A document class for a large kg-whitepaper style doc]
 
 \PassOptionsToPackage{final}{graphicx} % this line needs to be here if we want pictures to show up in draft mode
                                        % some packages load graphicx without options so we need to pass the final

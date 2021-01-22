@@ -22,12 +22,21 @@
 %\usepackage[default]{lato}
 %\setmainfont[Ligatures=TeX]{Lato}
 
-\setmainfont[
-    Ligatures={Common, TeX},
-    BoldFont={Calibri Bold}, 
-    ItalicFont={Calibri Light Italic},
-    BoldItalicFont={Calibri Bold Italic}
-]{Calibri Light}
+\ifthenelse{\equal{\customerCode}{agnos-ai}}{
+    \setmainfont[
+        Path       = ../etc/fonts/,
+        Ligatures  = {Common, TeX},
+        BoldFont   = SofiaProBold.otf, 
+        ItalicFont = SofiaProRegularItalic.otf,
+    ]{SofiaProRegular.otf}
+}{
+    \setmainfont[
+        Ligatures={Common, TeX},
+        BoldFont={Calibri Bold}, 
+        ItalicFont={Calibri Light Italic},
+        BoldItalicFont={Calibri Bold Italic}
+    ]{Calibri Light}
+}
 
 % \usepackage[defaultfeatures={Ligatures={Common, TeX}}]{libertine}
 % \setsansfont{Linux Biolinum O}[Ligatures={Common,Rare}, Numbers=OldStyle]

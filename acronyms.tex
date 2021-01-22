@@ -1,0 +1,132 @@
+%%
+%% Acronyms
+%%
+%% \newacronym[⟨options⟩]{⟨label⟩}{⟨abbrv⟩}{⟨long⟩} is a short-cut for:
+%%
+%% \newglossaryentry{⟨label⟩}{type=\acronymtype,
+%%   name={⟨abbrv⟩},
+%%   description={⟨long⟩},
+%%   text={⟨abbrv⟩},
+%%   first={⟨long⟩ (⟨abbrv⟩)},
+%%   plural={⟨abbrv⟩s},
+%%   firstplural={⟨long⟩s (⟨abbrv⟩s)},
+%%   ⟨options⟩
+%% }
+%%
+%% Common keys:
+%%
+%% - name
+%%   The name of the entry (as it will appear in the glossary).
+%% - description
+%%   A brief description of this entry (to appear in the glossary).
+%% - text
+%%   How this entry will appear in the document text where the singular form is required. If this key is omitted the value of name will be used.
+%% - first
+%%   How this entry will appear in the document text the first time it is used, where the first use requires the singular form.
+%%   If this key is omitted the value of text is used.
+%% - plural
+%%   How this entry will appear in the document text where the plural form is required.
+%%   If this key is omitted, the value is obtained by appending the letter “s” to the value of the text key.
+%% - firstplural
+%%   How this entry will appear in the document text the first time it is used, where the first use requires the plural form.
+%%   If this field is omitted, the value is obtained by appending the letter “s” to the value of the first key.
+%% - symbol
+%%   This key is provided to allow the user to specify an associated symbol, but most glossary styles ignore this value.
+%% - sort
+%%   This value indicates how to sort this entry (analogous to using the @ character in the argument of \index, as described in §6.1.1.
+%%   Creating an Index (makeidx package)). If this key is omitted the value of name is used.
+%% - type
+%%   This is the glossary type to which this entry belongs (see §6.1.2. Defining New Glossaries).
+%%   If omitted the main (default) glossary is assumed.
+%%
+\newacronym{abac}{ABAC}{Attribute-based Access Control}
+\newacronym{ad}{AD}{Active Directory}
+\newacronym{agm}{AGM}{Annual General Meeting}
+\newacronym{aml}{AML}{Anti Money Laundering}
+\newacronym{anc}{ANC}{Anthony Coates}
+\newacronym{bdd}{BDD}{Behavior Driven Development}
+\newacronym{bpnm}{BPNM}{Business Process Model and Notation}
+\newacronym{cbcr}{CBCR}{Country by Country Reporting}
+\newacronym{cd}{CD}{Continuous Delivery}
+\newacronym{ci}{CI}{Continuous Integration}
+\newacronym{cmmn}{CMMN}{Case Management Model and Notation}
+\newacronym{cdo}{CDO}{Chief Data Officer}
+\newacronym{cio}{CIO}{Chief Information Officer}
+\newacronym{cto}{CTO}{Chief Technology Officer}
+\newacronym{coe}{CoE}{Center of Excellence}
+\newacronym{dag}{DAG}{Directed Acyclic Graph}
+\newacronym{dcam}{DCAM}{Data Management Capability Assessment Model}
+\newacronym{dgi}{DGI}{Data Governance Institute}
+\newacronym{dmn}{DMN}{Decision Model and Notation}
+\newacronym{eba}{EBA}{European Banking Authority}
+\newacronym{ebrf}{EBRF}{European Banking and Regulation Forum}
+\newacronym{edmc}{EDM Council}{Enterprise Data Management Council}
+\newacronym{edm}{EDM}{Enterprise Data Modeling}
+\newacronym[shortplural={EKGs},longplural={Enterprise Knowledge Graphs}]{ekg}{EKG}{Enterprise Knowledge Graph}
+\newacronym[see={[General Terms:]{ekg:platform}}]{ekgp}{EKG Platform}{Enterprise Knowledge Graph Platform\glsadd{ekg:platform}}
+
+% \newacronym[see={[Glossary:]{ekg:dataops}}]{ekgd}{EKG DataOps}{Enterprise Knowledge Graph DataOps\glsadd{ekg:dataops}}
+% \newacronym[see={[Glossary:]{ekg:storage}}]{ekgs}{EKG Storage}{Enterprise Knowledge Graph Storage\glsadd{ekg:storage}}
+% \newacronym[see={[Glossary:]{ekg:monitoring}}]{ekgm}{EKG Monitoring}{Enterprise Knowledge Graph Monitoring\glsadd{ekg:monitoring}}
+
+\newacronym{ekgf}{EKGF}{Enterprise Knowledge Graph Foundation}
+\newacronym{ekgiri}{EKG/IRI}{Enterprise Knowledge Graph IRI}
+\newacronym[see={[Glossary:]{ekg:platform}}]{ekgp}{EKG Platform}{Enterprise Knowledge Graph Platform}
+\newacronym{ekgbac}{EKGBAC}{Enterprise Knowledge Graph-based Access Control}
+\newacronym{ekgmethod}{EKG/\-Method}{Enter\-prise Know\-ledge Graph Meth\-od}
+\newacronym{ekgmm}{EKG/MM}{Maturity Model for the Enterprise Knowledge Graph}
+\newacronym{erd}{ERD}{Entity Relationship Diagram}
+\newacronym{etl}{ETL}{Extract Transform Load}
+\newacronym{fatca}{FATCA}{Foreign Account Tax Compliance Act}
+\newacronym{facta}{FACTA}{Fair and Accurate Credit Transactions Act}
+\newacronym{fca}{FCA}{Financial Conduct Authority}
+\newacronym{fibo}{FIBO}{Financial Industry Business Ontology}
+\newacronym{gcp}{GCP}{Google Cloud Platform}
+\newacronym{gdpr}{GDPR}{General Data Protection Regulations}
+\newacronym{gleif}{GLEIF}{Global Legal Entity Identifier Foundation}
+\newacronym{gsibs}{G-SIBS}{Global Systemically Important Banks}
+\newacronym{hnw}{HNW}{High Net Worth}
+\newacronym{iac}{IaC}{Infrastructure as Code}
+\newacronym{iri}{IRI}{Internationalized Resource Identifier}
+\newacronym{jag}{JAG}{Jacobus Geluk}
+\newacronym{jit}{JIT}{Just In Time}
+\newacronym{jvm}{JVM}{Java Virtual Machine}
+\newacronym{ldap}{LDAP}{Lightweight Directory Access Protocol}
+\newacronym{le}{LE}{Legal Entities}
+\newacronym{lei}{LEI}{Legal Entity Identifier}
+\newacronym{lob}{LOB}{Line of Business}
+\newacronym{mar}{MAR}{Market Abuse Regulation}
+\newacronym{mgc}{MGC}{Meeting of Group CEOs}
+\newacronym{mia}{MIA}{Michael Atkin}
+\newacronym{mvp}{MVP}{Minimum Viable Product}
+\newacronym{oidc}{OIDC}{OpenID Connect}
+\newacronym{odm}{ODM}{Office of Data Management}
+\newacronym{omg}{OMG}{Object Management Group}
+\newacronym{owl2}{OWL2}{Web Ontology Language}
+\newacronym{owl}{OWL2}{Web Ontology Language}
+\newacronym{pr}{PR}{Pull Request}
+\newacronym{rbac}{RBAC}{Role-based Access Control}
+\newacronym{rdbms}{RDBMS}{Relational Database Management System}
+\newacronym{rdf}{RDF}{Resource Description Framework}
+\newacronym{ris}{RIS}{Richard Stamp}
+\newacronym{roi}{ROI}{Return On Investment}
+\newacronym{saas}{SaaS}{Sofware as a Service}
+\newacronym{semat}{SEMAT}{Software Engineering Method and Theory}
+\newacronym{shacl}{SHACL}{Shapes Constraint Language}
+\newacronym{skos}{SKOS}{Simple Knowledge Organization System}
+\newacronym{smcr}{SMCR}{Senior Managers Certification Regime}
+\newacronym{sme}{SME}{Subject Matter Expert}
+\newacronym[longplural=Systems of Record]{sor}{SOR}{System of Record}
+\newacronym{sparql}{SPARQL}{SPARQL Protocol and RDF Query Language}
+\newacronym{sso}{SSO}{Single sign-on}
+\newacronym{tdd}{TDD}{Test Driven Development}
+\newacronym{uat}{UAT}{User Acceptance Testing}
+\newacronym{vm}{VM}{Virtual Machine}
+\newacronym{w3c}{W3C}{World Wide Web Consortium}
+\newacronym{wip}{WIP}{Work In Progress}
+\newacronym{paas}{PaaS}{Platform as a Service}
+\newacronym{sow}{SOW}{Statement Of Work}
+\newacronym{spa}{SPA}{Single-Page-Apps}
+\newacronym{oo}{OO}{Object Oriented}
+\newacronym{dom}{DOM}{Document Object Model}
+\newacronym{ttl}{TTL}{Turtle}
