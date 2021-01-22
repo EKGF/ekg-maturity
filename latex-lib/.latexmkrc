@@ -25,11 +25,6 @@ $log_wrap = 2000;
 $ENV{'error_line'} = 254;
 $ENV{'half_error_line'} = 238;
 $ENV{'openout_any'} = 'a';
-#$out_dir = '../out';
-#$aux_dir = $out_dir;
-#$tmpdir  = $out_dir;
-#$ENV{'TEXINPUTS'} = ".:${out_dir}/:$ENV{'TEXINPUTS'}";
-#$biber = "biber %O --output_directory=${out_dir} --bblencoding=utf8 -u -U --output_safechars %B";
 $biber = "biber %O --bblencoding=utf8 -u -U --output_safechars %B";
 $max_repeat = 10;
 $do_cd = 1;
@@ -232,11 +227,11 @@ $clean_ext .= " olg old odn";
 push @generated_exts, 'olg', 'old', 'odn';
 
 #
-# Business Glossary "bus" (./glossary-business.tex)
+# Concepts Glossary "concept" (./glossary-concepts.tex)
 #
 # 'tlg', 'tld', 'tdn'
 #
-# Also see statement: \newglossary[tlg]{bus}{tld}{tdn}{Business Terms}
+# Also see statement: \newglossary[tlg]{concept}{tld}{tdn}{Concepts}
 #
 add_cus_dep('tdn', 'tld', 0, 'makeGlossaries');
 $clean_ext .= " tlg tld tdn";
