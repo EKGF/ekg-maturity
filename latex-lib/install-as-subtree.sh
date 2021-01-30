@@ -184,6 +184,11 @@ function createSymlinks() {
   symlinkToFile build.sh || return $?
   symlinkToFile build-all.sh || return $?
   symlinkToFile clean.sh || return $?
+  symlinkToFile acronyms.tex || return $?
+  symlinkToFile bibliography.bib || return $?
+  symlinkToFile glossary-concepts.tex || return $?
+  symlinkToFile glossary-main.tex || return $?
+  symlinkToFile glossary-ontologies.tex || return $?
 
   return 0
 }
