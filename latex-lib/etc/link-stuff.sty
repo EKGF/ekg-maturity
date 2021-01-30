@@ -5,6 +5,7 @@
 \ProvidesPackage{link-stuff}[2019/09/16 agnos.ai - all link related stuff]
 
 \RequirePackage{index-stuff} % imakeidx needs to be loaded before hyperref (to make links in the index pages work)
+\RequirePackage{bibliography-stuff} % hyperref should be loaded after biblatex
 
 \RequirePackage[numbered,open,openlevel=2]{bookmark}
 \RequirePackage{appendix}
@@ -28,6 +29,7 @@
 \RequirePackage{hyperref}
 \hypersetup{
   final,
+  draft=false,
   debug,
   colorlinks=true,
   linkcolor=darkgray,
