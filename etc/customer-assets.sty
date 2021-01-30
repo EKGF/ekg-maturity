@@ -3,22 +3,21 @@
 
 \typeout{Start of customer-assets}
 
+\providecommand{\customerCode}{agnos-ai}% provide a default for \customerCode, it may not be defined when running on Overleaf
+
 \RequirePackage{xspace}
 \RequirePackage{picture-stuff}
 \RequirePackage{color-stuff}
 \RequirePackage{sectsty}
+\RequirePackage{path-stuff}
 
-\providecommand{\customerCode}{agnos-ai}% provide a default for \customerCode, it may not be defined when running on Overleaf
-
+\makeatletter
+\typeout{customer-assets.sty: trying to load variables.tex using this path: \input@path}
+\makeatother\typeout{customer-assets.sty: current file: \currfileabspath}
 %%
 %% Load the customer specific variables from variables.tex
 %%
-\IfFileExists{../customer-assets/\customerCode/variables.tex}{%
-  \input{../customer-assets/\customerCode/variables.tex}%
-}{%
-  \typeout{customer-assets.sty: ERROR: Could not find ../customer-assets/\customerCode/variables.tex}
-  \stop
-}
+\input{variables.tex}
 
 %%
 %% Now activate the colors.

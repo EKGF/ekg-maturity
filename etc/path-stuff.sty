@@ -26,18 +26,21 @@
 %
 \makeatletter
 \def\input@path{%
-  {./etc/}%
+  {../../../etc/}% has to be checked before ../etc due to git subtree repo's under ./mnt
+  {../../etc/}% has to be checked before ../etc due to git subtree repo's under ./mnt
   {../etc/}%
-  {../../etc/}%
-  {./images/}%
-  {../images/}%
+  {./etc/}%
+  {../../../images/}%
   {../../images/}%
-  {./\documentName/images/}%
-  {../\documentName/images/}%
+  {../images/}%
+  {./images/}%
+  {../../../\documentName/images/}%
   {../../\documentName/images/}%
-  {../customer-assets/\customerCode/}%
-  {../../customer-assets/\customerCode/}%
+  {../\documentName/images/}%
+  {./\documentName/images/}%
   {../../../customer-assets/\customerCode/}%
+  {../../customer-assets/\customerCode/}%
+  {../customer-assets/\customerCode/}%
 }
 \makeatother
 
