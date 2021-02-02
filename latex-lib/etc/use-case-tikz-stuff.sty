@@ -78,7 +78,7 @@
     \fi
     \caption{Use Case Tree: \tmpUsecaseTitle}%
     \label{#2-tree}%
-    \index{\string\tmpUsecaseTitle}%
+    \index{Use Case!\string\tmpUsecaseTitle}%
   \end{figure}%
 }
 
@@ -105,13 +105,13 @@
 %  \typeout{usecaseDeclare: options=#1, label=#2, label-no-prefix=\usecaseLabelNoPrefix{#2}, title=\usecaseTitle}%
   \ifhaspageref%
     \node[rectangle split, rectangle split parts=2] (\usecaseLabelNoPrefix{#2}) {%
-      \usecaseTitle\index{\usecaseTitle}%
+      \usecaseTitle\index{Use Case!\usecaseTitle}%
       \nodepart{two}{%
         \tiny Page ~\pageref{#2}%
       }%
     }%
   \else%
-    \node (\usecaseLabelNoPrefix{#2}) {\usecaseTitle\index{\usecaseTitle}}%
+    \node (\usecaseLabelNoPrefix{#2}) {\usecaseTitle\index{Use Case!\usecaseTitle}}%
   \fi%
   ;%
 }

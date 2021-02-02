@@ -58,9 +58,18 @@ sub findMainDoc() {
         } elsif (-f $document_file) {
             my @array = split /\//, $document_file, 2;
             $document_name = $array[0];
+        } elsif (-f "../${document_file}") {
+            my @array = split /\//, $document_file, 2;
+            $document_name = $array[0];
         }
     }
 
+    if (-f "../${document_file}") {
+        my @array = split /\//, $document_file, 2;
+        $document_name = $array[0];
+        $document_file = $array[1];
+        $do_cd = 0;
+    }
     if (! -e $document_file) {
         die "${document_file} does not exist"
     }
@@ -94,11 +103,11 @@ sub getCustomerCode($) {
         }
     }
 
-    if (-d "./customer-assets/${document_name_prefix}") {
+    if (-d "./customer-assets/${document_name_prefix}" || -d "../customer-assets/${document_name_prefix}") {
         $defaultCustomerCode = ${document_name_prefix};
         $ENV{'latex_customer_code'} = $defaultCustomerCode;
     }
-    if (-d "./customer-assets/${document_name_suffix}") {
+    if (-d "./customer-assets/${document_name_suffix}" || -d "../customer-assets/${document_name_suffix}") {
         $defaultCustomerCode = ${document_name_suffix};
         $ENV{'latex_customer_code'} = $defaultCustomerCode;
     }
@@ -136,12 +145,13 @@ sub tchomp {
 # if you run latexmk locally it uses your user id.
 #
 sub readVersion {
-    my $versionFileName = "./${document_name}/VERSION";
-    if (-s $versionFileName) {
-        $document_file = $document_name;
+    my $versionFileName;
+    if (-f "./${document_name}/VERSION") {
+        $versionFileName = "./${document_name}/VERSION";
+    } elsif (-f "./VERSION") {
+        $versionFileName = "./VERSION";
     } else {
-        print "Could not find ${versionFileName}, so using ./VERSION\n";
-        $versionFileName = 'VERSION';
+        die "Could not find VERSION file";
     }
     open my $versionFileHandle, '<', $versionFileName or die "Failed to open ${versionFileName}: $!\n";
     my ($version, @lines) = <$versionFileHandle>;
@@ -288,9 +298,18 @@ $jobname =~ tr/./-/s;
 $jobname =~ s/--/-/g ;
 
 print "Job name: ${jobname}\n";
-#die "xxx";
 
-$lualatex = "lualatex --synctex=1 --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P";
+$lualatex_bin = "lualatex";
+if (-f "/Library/TeX/texbin/lualatex") {
+    $lualatex_bin = "/Library/TeX/texbin/lualatex";
+}
+$lualatex = "${lualatex_bin} --synctex=1 --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P";
+
+$kpsewhich = "kpsewhich %S";
+if (-f "/Library/TeX/texbin/kpsewhich") {
+    $kpsewhich = "/Library/TeX/texbin/kpsewhich %S";
+    $ENV{'PATH'} = "$ENV{'PATH'}:/Library/TeX/texbin/";
+}
 
 push @generated_exts, 'synctex.gz';
 push @generated_exts, 'synctex(busy)';

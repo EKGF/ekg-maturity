@@ -15,10 +15,20 @@
 % Bibliography, all references are in the bibliography.bib file.
 %
 %\RequirePackage[backend=biber,style=numeric]{biblatex}
-\RequirePackage[backend=biber,style=alphabetic]{biblatex}
+\RequirePackage[
+    backend=biber,
+    style=alphabetic-verb,
+    indexing=true,
+    backref=true,
+    backrefstyle=three,
+    hyperref=true
+]{biblatex}
 \addbibresource{../bibliography.bib}
 
 %
 % \insertPrintBibliography is a command that whitepaper-style-doc.cls is inserting at the end of the document.
 %
 \newcommand{\insertPrintBibliography}{\clearpage\printbibliography[title=References,heading=bibintoc]\label{sec:bibliography}}
+
+\renewcommand*{\bibfont}{\small}
+\appto{\citesetup}{\tiny}
