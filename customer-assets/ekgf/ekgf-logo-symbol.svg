@@ -39,12 +39,12 @@
     <circle
        cx="80"
        cy="40"
-       r="7"
+       r="8"
        id="circle6" />
     <circle
        cx="125"
        cy="40"
-       r="7"
+       r="8"
        id="circle8" />
     <circle
        cx="170"
