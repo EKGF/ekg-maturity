@@ -1,12 +1,13 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{tikz-stuff}[2019/09/16 agnos.ai - all TiKz related stuff]
 
+\RequirePackage{color-stuff} % get xcolor package before tikz
 \RequirePackage{tikz}
 \RequirePackage{tikz-3dplot}
 \RequirePackage{pgfkeys}
 \RequirePackage{xparse}
 \RequirePackage[linguistics]{forest}
-\RequirePackage{color-stuff}
+\RequirePackage{tkz-euclide}
 
 \usetikzlibrary{graphs}
 \usetikzlibrary{graphdrawing}
@@ -24,6 +25,8 @@
 \usetikzlibrary{shapes.arrows}
 \usetikzlibrary{shapes.geometric}
 \usetikzlibrary{shadows.blur}
+\usetikzlibrary{matrix}
+\usetikzlibrary{matrix.skeleton}
 \usegdlibrary{trees,layered,force}
 \usepgfmodule{oo}
 

@@ -325,7 +325,7 @@ function runInkScape() {
     echo "WARNING: Cannot convert SVG files to PDF and pdf_tex files because inkscape is not installed"
     if [[ "$(uname)" == Darwin ]] ; then
       echo "Installing Inkscape"
-      brew cask install inkscape
+      brew install --cask inkscape
       if ! command -v inkscape >/dev/null 2>&1 ; then
         echo "ERROR: Could not install inkscape"
         return 1
@@ -358,7 +358,7 @@ function runInkScape() {
     return 1
   fi
 
-  for customerAssetDir in $(ls -1 -F | grep / | sed "s@/@@") ; do
+  for customerAssetDir in $(ls -1 */ | grep '/:' | sed 's@/:@@') ; do
     pushd ${customerAssetDir} >/dev/null 2>&1
     if ls --  *.svg >/dev/null 2>&1 ; then
       for svgFile in *.svg ; do

@@ -61,6 +61,8 @@
 % \apptocmd{\@sect}{\gdef\currentname{#7\xspace}}{}{}
 % \makeatother
 
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\textit{\ref*{#1}~\nameref{#1}}}}
+
 %
 % Produce a reference to another chapter in another "book". If that chapter is available in the same book then
 % the link works and shows a page number. If it isn't then it just shows the name of the chapter and the name of the

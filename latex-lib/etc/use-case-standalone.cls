@@ -68,7 +68,10 @@
 \author{\agnos}
 \date{\today}
 
-\newcommand{\importMainUseCaseDocument}{\input{../use-cases/\usecaseLabel/\usecaseLabel.tex}}
+\newcommand{\importMainUseCaseDocument}{
+  \typeout{ZZZZZZZZZZZ ../use-cases/\usecaseLabel/\usecaseLabel.tex}
+  \input{../use-cases/\usecaseLabel/\usecaseLabel.tex}
+}
 
 \newcommand{\importUseCaseSubFile}[1]{%
   \import{../use-cases/\usecaseLabel/}{#1}%
@@ -81,6 +84,7 @@
 %
 \import{../../}{glossary.tex}
 \import{../../}{glossary-concepts.tex}
+\import{../../}{glossary-ekg.tex}
 \import{../../}{glossary-ontologies.tex}
 \importTitlePage
 \typeout{use-case-standalone A1}

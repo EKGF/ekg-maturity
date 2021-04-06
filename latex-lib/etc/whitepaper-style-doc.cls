@@ -133,7 +133,7 @@
 
 \newcommand{\insertTableOfContents}{%
   \setcounter{tocdepth}{3}%
-  \renewcommand\contentsname{Table of Contents}%
+  \renewcommand\contentsname{Contents}%
   \tableofcontents%
   \clearpage%
 }

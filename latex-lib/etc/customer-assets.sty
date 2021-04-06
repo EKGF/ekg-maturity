@@ -10,6 +10,8 @@
 \RequirePackage{color-stuff}
 \RequirePackage{sectsty}
 \RequirePackage{path-stuff}
+\RequirePackage[abspath]{currfile}
+\RequirePackage{link-stuff}
 
 \makeatletter
 \typeout{customer-assets.sty: trying to load variables.tex using this path: \input@path}
@@ -46,13 +48,14 @@
 %%
 %% Use the customer specific title-page.tex file if it exists in the customer-assets directory
 %%
+\providecommand{\importTitlePage}{}
 \typeout{customer-assets.sty: Including title-page.tex}
 \IfFileExists{../customer-assets/\customerCode/title-page.tex}{%
   \typeout{customer-assets.sty:  - Using \customerCode/title-page.tex}
   \renewcommand{\importTitlePage}{\input{../customer-assets/\customerCode/title-page.tex}}%
 }{%
   \typeout{customer-assets.sty:  - Using default title-page.tex}
-\renewcommand{\importTitlePage}{\input{title-page.tex}}%
+  \renewcommand{\importTitlePage}{\input{title-page.tex}}%
 }
 
 \hypersetup{pageanchor=true}% switch it back on (switched off for title page)

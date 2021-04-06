@@ -22,15 +22,12 @@
 \RequirePackage{use-case-tikz-stuff}
 \RequirePackage{listofitems}
 
-\newcommand*{\importTitlePage}{}
-
-\newcommand*{\usecaseLabel}{undefined}
-\newcommand*{\usecaseTitle}{What Use Case?}
+%\newcommand*{\usecaseLabel}{undefined}
+%\newcommand*{\usecaseTitle}{What Use Case?}
 
 \newcommand*{\importMainUseCaseDocument}[1]{%
-  \getUseCaseDirectoryName{#1}%
-  \global\edef\usecaseMainDocument{../use-cases/\usecaseDirectoryName/\usecaseDirectoryName.tex}%
-%  \typeout{use-case-subfile.sty: Importing \usecaseMainDocument}%
+  \getUseCaseDirectory{#1}%
+  \typeout{use-case-subfile.sty: Importing \usecaseMainDocument}%
   \input{\usecaseMainDocument}%
 }
 
@@ -41,13 +38,18 @@
 % Sets \usecaseImportedDocument to hold the full (but relative) file name of the imported doc.
 %
 \newcommand*{\importUseCaseSubFile}[2]{%
+  \typeout{EEEEEEEEE 1}
  \typeout{use-case-subfile.sty: #1 use case label=#1, file to import=#2}
-  \getUseCaseDirectoryName{#1}%
-  \global\edef\usecaseImportedDocument{../use-cases/\usecaseDirectoryName/#2}%
+  \getUseCaseDirectory{#1}%
+  \typeout{EEEEEEEEE 2}
+  \global\edef\usecaseImportedDocument{../use-cases/\usecaseDirectory/#2}%
+  \typeout{EEEEEEEEE 3}
   \IfFileExists{\usecaseImportedDocument}{%
+    \typeout{EEEEEEEEE 4}
     \typeout{use-case-subfile.sty: Importing \usecaseImportedDocument (file exists)}%
     \input{\usecaseImportedDocument}%
   }{%
+    \typeout{EEEEEEEEE 5}
     \global\edef\usecaseImportedDocument{../\usecaseImportedDocument}%
     \IfFileExists{\usecaseImportedDocument}{%
       \typeout{use-case-subfile.sty: Importing \usecaseImportedDocument (file exists)}%
@@ -57,6 +59,7 @@
       \stop%
     }%
   }%
+  \typeout{EEEEEEEEE 6}
 }
 
 \newcommand*{\importUseCaseAsChapter}[1]{%
@@ -73,7 +76,9 @@
 
 \newcommand*{\importUseCaseAsSubSection}[1]{%
   \readUseCaseTitleFromFile{#1}%
-  \expandafter\subsection\expandafter{\usecaseTitle}\label{\usecaseLabel}%
+  \typeout{CCCCCCCCC 2 id=\usecaseId, label=\usecaseLabel, title=\usecaseTitle}
+%  \expandafter\subsection\expandafter{\usecaseTitle}\label{\usecaseLabel}%
+  \typeout{CCCCCCCCC 3 \usecaseLabel}
   \importMainUseCaseDocument{\usecaseLabel}%
 }
 
