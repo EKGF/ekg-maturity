@@ -188,6 +188,7 @@ function createSymlinks() {
   symlinkToFile bibliography.bib || return $?
   symlinkToFile glossary-concepts.tex || return $?
   symlinkToFile glossary-main.tex || return $?
+  symlinkToFile glossary-ekg.tex || return $?
   symlinkToFile glossary-ontologies.tex || return $?
 
   return 0
