@@ -1,0 +1,67 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{version-history-stuff}[2020/01/07 agnos.ai - version history stuff]
+
+\newenvironment{version-history}{%
+    \section*{Version History}%
+    \begin{center}%
+        \let\freewidth\relax%
+        \newlength{\freewidth}%
+        \setlength{\freewidth}{\dimexpr\textwidth-8\tabcolsep}%
+        \renewcommand{\arraystretch}{1.5}%
+        \begin{tabular}{
+            p{0.08\freewidth} 
+            p{0.10\freewidth} 
+            p{0.52\freewidth} 
+            p{0.30\freewidth}
+        }%
+            \textbf{Version} & \textbf{Date} & \textbf{Description} & \textbf{Author} \\ [0.5ex]%
+            \toprule%
+}
+{
+            \bottomrule%
+        \end{tabular}%
+    \end{center}%
+}
+
+\newenvironment{status-log}{%
+    \section{Status Log}%
+    \begin{center}%
+        \let\freewidth\relax%
+        \newlength{\freewidth}%
+        \setlength{\freewidth}{\dimexpr\textwidth-8\tabcolsep}%
+        \renewcommand{\arraystretch}{1.5}%
+        \begin{tabular}{
+            p{0.10\freewidth} 
+            p{0.60\freewidth} 
+            p{0.30\freewidth}
+        }%
+            \textbf{Date} & \textbf{Description} & \textbf{Author} \\ [0.5ex]%
+            \toprule%
+}
+{
+            \bottomrule%
+        \end{tabular}%
+    \end{center}%
+}
+
+\newenvironment{decision-log}{%
+    \section{Decision Log}%
+    \begin{center}%
+        \let\freewidth\relax%
+        \newlength{\freewidth}%
+        \setlength{\freewidth}{\dimexpr\textwidth-8\tabcolsep}%
+        \renewcommand{\arraystretch}{1.5}%
+        \begin{tabular}{
+            p{0.08\freewidth} 
+            p{0.10\freewidth} 
+            p{0.52\freewidth} 
+            p{0.30\freewidth}
+        }%
+            \textbf{Version} & \textbf{Date} & \textbf{Description} & \textbf{Executive} \\ [0.5ex]%
+            \toprule%
+}
+{
+            \bottomrule%
+        \end{tabular}%
+    \end{center}%
+}

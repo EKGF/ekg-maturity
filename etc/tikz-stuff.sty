@@ -1,0 +1,71 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tikz-stuff}[2019/09/16 agnos.ai - all TiKz related stuff]
+
+\RequirePackage{color-stuff} % get xcolor package before tikz
+\RequirePackage{tikz}
+\RequirePackage{tikz-3dplot}
+\RequirePackage{pgfkeys}
+\RequirePackage{xparse}
+\RequirePackage[linguistics]{forest}
+\RequirePackage{tkz-euclide}
+
+\usetikzlibrary{graphs}
+\usetikzlibrary{graphdrawing}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{bending}
+\usetikzlibrary{quotes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{angles}
+\usetikzlibrary{shapes}
+\usetikzlibrary{shapes.arrows}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{matrix}
+\usetikzlibrary{matrix.skeleton}
+\usegdlibrary{trees,layered,force}
+\usepgfmodule{oo}
+
+
+\tikzset{%
+>=latex
+}
+
+\def\centerarc[#1](#2)(#3:#4:#5)% Syntax: [draw options] (center) (initial angle:final angle:radius)
+{ \draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }
+
+\def\centerarcpath[#1](#2)(#3:#4:#5)% Syntax: [draw options] (center) (initial angle:final angle:radius)
+{ \path[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }
+
+% Define block styles for tikz diagrams
+\tikzstyle{decision}  = [diamond, draw, fill=red!20, text width=4.5em, text badly centered, node distance=5cm, inner sep=0pt]
+\tikzstyle{block}     = [rectangle, draw, fill=blue!20, node distance=5cm, text width=10em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line}      = [draw, -latex']
+\tikzstyle{cloud}     = [draw, ellipse,fill=green!20, node distance=3cm, minimum height=4em]
+\tikzstyle{round}     = [draw, circle, fill=orange!40, node distance=4cm, minimum height=2em]
+
+%
+% Styles for flow charts, copied from https://github.com/pierre-luc/flowtex/blob/master/tex/flowtex.sty
+%
+\tikzstyle{flowstartstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=rose, fill=rose!80]
+\tikzstyle{flowio}        = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=yellow, fill=yellow!80]
+\tikzstyle{flowprocess}   = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=limpet, fill=limpet!80]
+\tikzstyle{flowapi}       = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=peach, fill=peach!80]
+\tikzstyle{flowdecision}  = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=green, fill=green!80, text width=2.5cm]
+\tikzstyle{flowarrow}     = [thick, ->, >=stealth, draw=coffee]
+
+%% LABELS DEFINITIONS
+\tikzstyle{orangeLabel}   = [rectangle, rounded corners, text centered, draw=orange, fill=orange!80]
+\tikzstyle{peachLabel}    = [rectangle, rounded corners, text centered, draw=peach, fill=peach!80]
+\tikzstyle{roseLabel}     = [rectangle, rounded corners, text centered, draw=rose, fill=rose!80]
+\tikzstyle{greenLabel}    = [rectangle, rounded corners, text centered, draw=green, fill=green!80]
+\tikzstyle{coffeeLabel}   = [rectangle, rounded corners, text centered, draw=coffee, fill=coffee!80]
+\tikzstyle{serenityLabel} = [rectangle, rounded corners, text centered, draw=serenity, fill=serenity!80]
+\tikzstyle{yellowLabel}   = [rectangle, rounded corners, text centered, draw=yellow, fill=yellow!80]
+\tikzstyle{redLabel}      = [rectangle, rounded corners, text centered, draw=red, fill=red!80]
+\tikzstyle{blueLabel}     = [rectangle, rounded corners, text centered, draw=blue, fill=blue!80]
+\tikzstyle{limpetLabel}   = [rectangle, rounded corners, text centered, draw=limpet, fill=limpet!80]
