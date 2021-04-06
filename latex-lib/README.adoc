@@ -43,6 +43,5 @@ Pull the latest changes from latex-lib into your own repo with:
 
 [source,asciidoc]
 ----
-git fetch latex-lib
-git subtree pull --prefix latex-lib latex-lib main --squash
+git fetch latex-lib && git subtree pull --prefix=latex-lib latex-lib main --squash
 ----
