@@ -84,7 +84,7 @@ function runLaTex() {
   elif [[ "${mode}" == "final" ]] ; then
     latexCommand+="\def\DocumentClassOptions{final} \input{"${file}'}'
   else
-    echo "ERROR: Unknown draft/final mode"
+    echo "ERROR: Unknown draft/final mode" >&2
     return 1
   fi
 
@@ -245,7 +245,7 @@ function runPandoc() {
   local -r rc=$?
 
   if ((rc > 0)) ; then
-    echo "ERROR: pandoc failed with error code ${rc}"
+    echo "ERROR: pandoc failed with error code ${rc}" >&2
   fi
 
   return ${rc}
@@ -283,12 +283,12 @@ function runInkScapeOnSVGFile() {
     # Quick fix, run inkscape in dbus-run-session to avoid the ugly dbus messages (and it seems to speed up a little too)
     #
     if ! dbus-run-session inkscape "${svgFile}" -D --export-filename="${pdfFile}" --export-type="pdf" --export-latex ; then
-      echo "ERROR: Error occurred with inkscape ${svgFile}"
+      echo "ERROR: Error occurred with inkscape ${svgFile}" >&2
       return 1
     fi
   else
     if ! inkscape "${svgFile}" -D --export-filename="${pdfFile}" --export-type="pdf" --export-latex ; then
-      echo "ERROR: Error occurred with inkscape ${svgFile}"
+      echo "ERROR: Error occurred with inkscape ${svgFile}" >&2
       return 1
     fi
   fi
@@ -306,12 +306,12 @@ function runInkScapeOnVSDXFile() {
     # Quick fix, run inkscape in dbus-run-session to avoid the ugly dbus messages (and it seems to speed up a little too)
     #
     if ! dbus-run-session inkscape "$(pwd)/${vsdxFile}" -D --export-filename="$(pwd)/${vsdxFile/.vsdx/.pdf}" --export-type="pdf" --export-latex ; then
-      echo "ERROR: Error occurred with inkscape $(pwd)/${vsdxFile}"
+      echo "ERROR: Error occurred with inkscape $(pwd)/${vsdxFile}" >&2
       return 1
     fi
   else
     if ! inkscape "$(pwd)/${vsdxFile}" -D --export-filename="$(pwd)/${vsdxFile/.vsdx/.pdf}" --export-type="pdf" --export-latex ; then
-      echo "ERROR: Error occurred with inkscape $(pwd)/${vsdxFile}"
+      echo "ERROR: Error occurred with inkscape $(pwd)/${vsdxFile}" >&2
       return 1
     fi
   fi
@@ -323,61 +323,39 @@ function runInkScape() {
 
   if ! command -v inkscape >/dev/null 2>&1 ; then
     echo "WARNING: Cannot convert SVG files to PDF and pdf_tex files because inkscape is not installed"
-    if [[ "$(uname)" == Darwin ]] ; then
+    if [[ "$(uname)" == "Darwin" ]] ; then
       echo "Installing Inkscape"
       brew install --cask inkscape
       if ! command -v inkscape >/dev/null 2>&1 ; then
-        echo "ERROR: Could not install inkscape"
+        echo "ERROR: Could not install inkscape" >&2
         return 1
       fi
     else
+      echo "WARNING: Cannot run inkscape on this platform to generate pdf_svg files"
       return 0
     fi
   fi
 
-  if ! cd images ; then
-    echo "ERROR: Could not find images directory"
-    return 1
-  fi
+  local base
+  local dir
 
-  if ls -- *.svg >/dev/null 2>&1 ; then
-    for svgFile in *.svg ; do
-      runInkScapeOnSVGFile "${svgFile}" || return $?
-    done
-  fi
-  if ls -- *.vsdx >/dev/null 2>&1 ; then
-    for vsdxFile in *.vsdx ; do
-      runInkScapeOnVSDXFile "${vsdxFile}" || return $?
-    done
-  fi
+  while read -r vectorImageFile ; do
+    base="$(basename "${vectorImageFile}")"
+    dir="$(dirname "${vectorImageFile}")"
+    (
+      cd "${dir}" || return 1
+      if [[ "${base}" =~ *.svg ]] ; then
+        runInkScapeOnSVGFile "${base}"
+      else
+        runInkScapeOnVSDXFile "${base}"
+      fi
+      return $?
+    ) || return $?
+  done < <(
+    find . -name '*.svg' -or -name '*.vsdx'
+  )
 
-  cd ..
-
-  if ! cd customer-assets ; then
-    echo "ERROR: Could not find customer-assets directory"
-    return 1
-  fi
-
-  for customerAssetDir in $(ls -1 */ | grep '/:' | sed 's@/:@@') ; do
-    pushd ${customerAssetDir} >/dev/null 2>&1
-    if ls --  *.svg >/dev/null 2>&1 ; then
-      for svgFile in *.svg ; do
-        [[ "xx${svgFile}xx" == "xx*.svgxx" ]] && continue
-        runInkScapeOnSVGFile "${svgFile}" || return $?
-      done
-    fi
-    if ls -- *.vsdx >/dev/null 2>&1 ; then
-      for vsdxFile in *.vsdx ; do
-        [[ "xx${vsdxFile}xx" == "xx*.vsdxxx" ]] && continue
-        runInkScapeOnVSDXFile "${vsdxFile}" || return $?
-      done
-    fi
-    popd >/dev/null 2>&1
-  done
-
-  cd ..
-
-  return 0
+  return $?
 }
 
 function getCustomerCodeInFileName() {
@@ -453,7 +431,7 @@ function copyToOut() {
   local -r pandocDocxFile="${file}.pandoc.docx"
 
   if [[ ! -f "${mainFile}.pdf" ]] ; then
-    echo "ERROR: Could not find ${mainFile}.pdf"
+    echo "ERROR: Could not find ${mainFile}.pdf" >&2
     return 1
   fi
 
@@ -498,7 +476,7 @@ function copyToGoogleDriveLocal() {
   local -r pandocDocxFile="${mainFile}.pandoc.docx"
 
   if [[ ! -f "${mainFile}.pdf" ]] ; then
-    echo "ERROR: Could not find ${mainFile}.pdf"
+    echo "ERROR: Could not find ${mainFile}.pdf" >&2
     return 1
   fi
 
@@ -541,7 +519,7 @@ function copyToGoogleDriveLocal() {
   mkdir -p "${targetDirectory}" >/dev/null 2>&1
 
   if [[ ! -d "${targetDirectory}" ]] ; then
-    echo "ERROR: Could not create ${targetDirectory}"
+    echo "ERROR: Could not create ${targetDirectory}" >&2
     return 1
   fi
 
@@ -614,7 +592,7 @@ function runTheBuild() {
     elif [[ "$1" == "--customer" ]] ; then
       customerCode="$2"
       if [[ ! -d "${SCRIPT_DIR}/customer-assets/${customerCode}" ]] ; then
-        echo "ERROR: Could not find directory ./customer-assets/${customerCode}"
+        echo "ERROR: Could not find directory ./customer-assets/${customerCode}" >&2
         exit 1
       fi
       customerOption="--customer ${customerCode}"
@@ -631,7 +609,7 @@ function runTheBuild() {
 
   if [[ ! -f "${mainDir}/${mainFile}.tex" ]] ; then
     if [[ ! -f "${mainFile}.tex" ]] ; then
-      echo "ERROR: Could not find ${mainFile}/${mainFile}.tex"
+      echo "ERROR: Could not find ${mainFile}/${mainFile}.tex" >&2
       return 1
     fi
     mainDir="$(pwd)"
@@ -644,7 +622,7 @@ function runTheBuild() {
         installFontsInDarwin || return $?
       fi
     else
-      echo "ERROR: Could not find lualatex on your PATH"
+      echo "ERROR: Could not find lualatex on your PATH" >&2
       return 1
     fi
   elif isRunningInDockerContainer ; then
@@ -686,7 +664,7 @@ function openPdf() {
   ((openThePdf)) || return 0
 
   if ((! useLocalLaTeX)) ; then
-    echo "ERROR: Cannot open PDF when not running in local mode, use option --local"
+    echo "ERROR: Cannot open PDF when not running in local mode, use option --local" >&2
     return 1
   fi
 
@@ -702,7 +680,7 @@ function openPdf() {
   elif [[ -f "${mainDir}/${jobName}.pdf" ]] ; then
     open "${mainDir}/${jobName}.pdf"
   else
-    echo "ERROR: Could not find ${jobName}.pdf"
+    echo "ERROR: Could not find ${jobName}.pdf" >&2
     echo "mainDir=${mainDir}"
     echo "mainFile=${mainFile}"
     echo "jobName=${jobName}"
