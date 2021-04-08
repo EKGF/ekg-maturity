@@ -28,7 +28,8 @@ $ENV{'openout_any'} = 'a';
 $biber = "biber %O --bblencoding=utf8 -u -U --output_safechars %B";
 $max_repeat = 10;
 $do_cd = 1;
-$force_mode = 1 ;
+$force_mode = 1 ;           # If nonzero, continue processing past minor latex errors including
+                            # unrecognized cross references. Equivalent to specifying the -f option.
 $recorder = 1;              # turn recorder option on (.fls file generated)
 $ENV{'SILENT'} //= 0;       # Run latexmk silently, not output to text
 $silent = $ENV{'SILENT'};
@@ -43,7 +44,23 @@ $biber = "biber %O --bblencoding=utf8 -u -U --output_safechars %B";
 # Specify which PDF viewer you want to use (Skim is the best one on a Mac)
 #
 $pdf_previewer = 'open -a Skim';
+$ENV{'TEXINPUTS'}='./etc//:../etc//:../../etc//:' . $ENV{'TEXINPUTS'}; 
+$ENV{'BSTINPUTS'}='.//:../:../../:' . $ENV{'BSTINPUTS'};
+$ENV{'TZ'}='Europe/London';
 
+print "default_files=@default_files  $_[0]\n";
+foreach (@default_files) {
+  print "$_\n";
+}
+print "\%O=%O\n";
+print "\%O=%S\n";
+
+#
+# Find the main doc and derive some values from it.
+# 
+# NOTE: Can't use spaces or dots in the file names unfortunately,
+# tools like makeglossaries do not support it
+#
 sub findMainDoc() {
     my $document_name = 'ekg-mm'; # just a default, could be anything
     my $document_file = "${document_name}/${document_name}.tex";
@@ -151,7 +168,10 @@ sub readVersion {
     } elsif (-f "./VERSION") {
         $versionFileName = "./VERSION";
     } else {
-        die "Could not find VERSION file";
+        $versionFileName = "./${document_name}/VERSION";
+        open(my $fh, '>', $versionFileName) or die "Could not open file ${$versionFileName} $!";
+        print $fh "1.0\n";
+        close $fh;
     }
     open my $versionFileHandle, '<', $versionFileName or die "Failed to open ${versionFileName}: $!\n";
     my ($version, @lines) = <$versionFileHandle>;
@@ -251,9 +271,6 @@ $clean_ext .= " aux fls log glsdefs tdo ist run.xml xdy";
 
 ($document_customer_code, $document_customer_code_short) = getCustomerCode(${document_name});
 
-#
-# Can't use spaces or dots in the file names unfortunately, tools like makeglossaries do not support it
-#
 $latex_document_mode = lc($ENV{'latex_document_mode'} || 'draft');
 print "Document Mode: ${latex_document_mode}\n";
 if("${latex_document_mode}" eq 'final') {
@@ -285,10 +302,10 @@ $pre_tex_code = "${pre_tex_code}\\def\\documentVersion{$latex_document_version}"
 
 if($ENV{'latex_document_members_only'} and "$ENV{'latex_document_members_only'}" eq 'yes') {
     $jobname = "${jobname}-members-only-${latex_document_version}";
-    $pre_tex_code = "${pre_tex_code}\\def\\membersOnly{yes} "
+    $pre_tex_code = "${pre_tex_code}\\def\\membersOnly{yes}"
 } else {
     $jobname = "${jobname}-${latex_document_version}";
-    $pre_tex_code = "${pre_tex_code}\\def\\membersOnly{no} "
+    $pre_tex_code = "${pre_tex_code}\\def\\membersOnly{no}"
 }
 #
 # Remove all dots from the latex job name since utilities like makeindex cannot handle them
@@ -296,6 +313,7 @@ if($ENV{'latex_document_members_only'} and "$ENV{'latex_document_members_only'}"
 #
 $jobname =~ tr/./-/s;
 $jobname =~ s/--/-/g ;
+$jobname =~ s@/@-@g ;
 
 print "Job name: ${jobname}\n";
 
