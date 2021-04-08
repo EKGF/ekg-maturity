@@ -8,10 +8,12 @@
 
 \tikzset{% \tikzstyle is deprecated
   usecase/.style={
-    draw,
+    draw=none, % draw=none means no borders
     rectangle,
-    burntorange,
-    left color=orange!30,
+%    burntorange,
+    primaryHeading1,
+    left color=primaryHeading1!60,
+    right color=primaryHeading1!20,
     text=violet,
     text centered,
     text width=4em,
@@ -19,71 +21,141 @@
     minimum size=20pt,
     font=\scriptsize
   },
+  usecasecompact/.style={
+    draw=none,
+    rectangle,
+%    burntorange,
+%    primaryHeading1,
+    left color=primaryHeading1!60,
+    right color=primaryHeading1!20,
+%    text=violet,
+    text=primaryText!80,
+    text centered,
+    text width=3em,
+    align=center,
+    minimum size=10pt,
+    font=\tiny
+  },
   usecaselink/.style={
-    draw, burntorange, thick
+    draw,
+    %    burntorange,
+    primaryHeading1!80,
+    thick
+  },
+  usecasetree vertical/.style={
+    layered layout,
+    sibling distance=1cm,
+    level distance=3cm,
+    node distance=20cm,
+    grow=right,
+    rounded corners,
+    >={Diamond[open]},
+    every edge/.style={usecaselink},
+    every node/.style={usecase},
+  },
+  usecasetree horizontal/.style={
+    layered layout,
+    sibling distance=1cm,
+    level distance=3cm,
+    node distance=20cm,
+    rounded corners,
+    >={Diamond[open]},
+    every edge/.style={usecaselink},
+    every node/.style={usecase},
+  },
+  usecasetree vertical compact/.style={
+    layered layout,
+    sibling distance=1cm,
+    level distance=3cm,
+    node distance=20cm,
+    grow=right,
+    rounded corners,
+    >={Diamond[open]},
+    every edge/.style={usecaselink},
+    every node/.style={usecase},
+    sibling distance=0.2cm,
+    level distance=1cm,
+    node distance=2cm,
+    every node/.style={usecasecompact}
+  },
+  usecasetree horizontal compact/.style={
+    layered layout,
+    sibling distance=0.2cm,
+    level distance=1cm,
+    node distance=2cm,
+    rounded corners,
+    >={Diamond[open]},
+    every edge/.style={usecaselink},
+    every node/.style={usecasecompact}
+  },
+  invisible/.style={
+    draw=none,
+    fill=none,
+    minimum size=0pt,
+    text width=0pt
   }
 }
 
-\newif\ifisverticaltree\isverticaltreefalse
+%% Define the 'verticaltree' option
+\newif\ifverticaltree\verticaltreefalse
 
-%% Define your keys
-\pgfqkeys{/usecasetree declaration}{%
-  isverticaltree/.is if=isverticaltree,
+\pgfkeys{
+  /usecasetree declaration/.cd,
+  verticaltree/.is if=verticaltree
 }
 
+%% Define the 'compact' option
+\newif\ifcompact\compactfalse
+
+\pgfkeys{
+  /usecasetree declaration/.cd,
+  compact/.is if=compact
+}
+
+\newcommand{\bs}{\symbol{'134}}
+
 \newcommand{\usecasetree}[3][]{%
-  \typeout{usecasetree1: #1 aa #2}
-  \pgfqkeys{/usecasetree declaration}{%
+%  \typeout{HHHHHHHHHHH 1}
+  \typeout{use-case-tikz-stuff.sty: \string\usecasetree[#1]:#2}
+  \pgfkeys{
+    /usecasetree declaration/.cd,
     % set the default values first
-    isverticaltree=false,%
-    % then set the given options like 'isverticaltree'
+    verticaltree=false,%
+    compact=false,%
+    % then set the given options like 'verticaltree' and 'compact'
     #1%
   }%
+%  \typeout{HHHHHHHHHHH 2}
   \readUseCaseTitleFromFile{#2}%
-  \edef\tmpUsecaseTitle{\usecaseTitle}% save in tmp var because #2 in tikzpicture calls out to readUseCaseTitleFromFile
-  \typeout{usecasetree: options=#1, label=#2, title=\tmpUsecaseTitle}%
+%  \edef\tmpUsecaseTitle{\usecaseTitle}% save in tmp var because #2 in tikzpicture calls out to readUseCaseTitleFromFile
   \begin{figure}[H]%
     \setlength{\abovecaptionskip}{1pt}
     \setlength{\belowcaptionskip}{-0.0cm}
     \setlength{\fboxrule}{0pt}%
     \centering%
     \fboxsep = 10pt%
-    \ifisverticaltree%
-      \fbox{\begin{tikzpicture}[
-        layered layout,
-        sibling distance=1cm,
-        level distance=3cm,
-        node distance=20cm,
-        every edge/.style={usecaselink},
-        every node/.style={usecase},
-        grow=right,
-        rounded corners,
-        >={Diamond[open]}
-      ]
-        #3
-      \end{tikzpicture}}
+    \ifverticaltree%
+      \ifcompact
+        \fbox{\begin{tikzpicture}[usecasetree vertical compact]\node[invisible](\usecaseLabelNoPrefix{#2}){};#3\end{tikzpicture}}
+      \else
+        \fbox{\begin{tikzpicture}[usecasetree vertical]\node[invisible](\usecaseLabelNoPrefix{#2}){};#3\end{tikzpicture}}
+      \fi
     \else
-      \fbox{\begin{tikzpicture}[
-        layered layout,
-        sibling distance=1cm,
-        level distance=3cm,
-        node distance=20cm,
-        every edge/.style={usecaselink},
-        every node/.style={usecase},
-        rounded corners,
-        >={Diamond[open]}
-      ]
-        #3
-      \end{tikzpicture}}
+      \ifcompact
+        \fbox{\begin{tikzpicture}[usecasetree horizontal compact]\node[invisible](\usecaseLabelNoPrefix{#2}){};#3\end{tikzpicture}}
+      \else
+        \fbox{\begin{tikzpicture}[usecasetree horizontal]\node[invisible](\usecaseLabelNoPrefix{#2}){};#3\end{tikzpicture}}
+      \fi
     \fi
-    \caption{Use Case Tree: \tmpUsecaseTitle}%
+    \caption{Use Case Tree: \usecaseTitle}%
     \label{#2-tree}%
-    \index{Use Case!\string\tmpUsecaseTitle}%
+    \index{use case!\string\usecaseTitle}%
   \end{figure}%
+%  \typeout{HHHHHHHHHHH 4}
 }
 
 \newcommand{\uclink}[2]{%
-%  \typeout{uclink: from=\usecaseLabelNoPrefix{#1}, to=\usecaseLabelNoPrefix{#2}}%
+  \typeout{uclink: from=\usecaseLabelNoPrefix{#1}, to=\usecaseLabelNoPrefix{#2}}%
   \draw (\usecaseLabelNoPrefix{#1}) edge[<-] (\usecaseLabelNoPrefix{#2});%
 }
 
@@ -102,16 +174,17 @@
     #1%
   }%
   \readUseCaseTitleFromFile{#2}%
-%  \typeout{usecaseDeclare: options=#1, label=#2, label-no-prefix=\usecaseLabelNoPrefix{#2}, title=\usecaseTitle}%
   \ifhaspageref%
+    \typeout{use-case-tikz-stuff.sty: declaring TikZ node \usecaseLabelNoPrefix{#2} with page ref}
     \node[rectangle split, rectangle split parts=2] (\usecaseLabelNoPrefix{#2}) {%
-      \usecaseTitle\index{Use Case!\usecaseTitle}%
+      \usecaseTitle\index{use case!\usecaseTitle}%
       \nodepart{two}{%
         \tiny Page ~\pageref{#2}%
       }%
     }%
   \else%
-    \node (\usecaseLabelNoPrefix{#2}) {\usecaseTitle\index{Use Case!\usecaseTitle}}%
+    \typeout{use-case-tikz-stuff.sty: declaring TikZ node \usecaseLabelNoPrefix{#2}}
+    \node (\usecaseLabelNoPrefix{#2}) {\usecaseTitle\index{use case!\usecaseTitle}}%
   \fi%
   ;%
 }

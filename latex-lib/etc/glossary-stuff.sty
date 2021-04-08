@@ -77,7 +77,7 @@
   \typeout{Ignore the above message: 'This document will not have a glossary.'}%
   \clearpage%
   \printglossary[type=acronym,style=mcolindex,title=Acronyms,toctitle=Acronyms]%
-  \printglossary[type=main,style=mcoltree,title=General Terms,toctitle=List of general terms]%
+  \printglossary[type=main,style=mcoltree,title=Glossary,toctitle=Glossary]%
   \printglossary[type=concept,style=mcoltree,title=Concepts,toctitle=List of concepts \& business terms]%
   \printglossary[type=ont,style=mcoltree,title=Ontologies,toctitle=List of ontologies]%
   \ifoptionfinal{}{%
@@ -93,11 +93,13 @@
   \typeout{glossary-stuff.sty: Inserting the glossaries}%
   \input{../acronyms.tex}%
   \input{../glossary-main.tex}%
+  \input{../glossary-ekg.tex}%
   \input{../glossary-concepts.tex}%
   \input{../glossary-ontologies.tex}%
 }
 
 \newcommand*{\loadGlossaries}{%
+  \renewcommand{\glossarypreamble}{\footnotesize}
   \makeglossaries%
   \insertGlossaries%
   %\typeout{glossary-stuff.sty: Loading the glossaries}%
