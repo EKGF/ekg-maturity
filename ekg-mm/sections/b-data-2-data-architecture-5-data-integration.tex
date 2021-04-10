@@ -5,7 +5,7 @@ business consumption and enhanced utility.
 The process of integrating data from multiple sources begins with the ingestion process and may include activities
 such as data profiling, cleansing/remediation, cross-referencing transformation and field mapping.
 
-\kgmmekgrationalesection
+\ekgmmContextSection
 
 Data integration is challenging because data from multiple sources can have different file formats, data structures,
 definitions and contextual meanings.
@@ -37,8 +37,6 @@ different values, identities and definitions that existed at various times in th
 
 The goal is not always a single source of data - but rather the ability to choose the right authoritative source
 for the appropriate context.
-
-\begin{members-only}
 
 \kgmmscoringsection
 
@@ -81,7 +79,8 @@ for the appropriate context.
           There are no man-in-the-middle systems.
           The goal is direct from the authoritative source to the target system for in-scope use cases.
           Must get the most granular data directly from the authoritative sources.
-    \item All data sets are self-describing and include all metadata (defined data object)
+    \item All datasets are "self-describing" and include all metadata (defined data object),
+          the so-called \glspl{ekg:sdd}.
     \item [policy] all data is obtained from the \gls{ekg} as the authoritative source.
           Do not go directly to the originating source of the data.
     \item Entitlement policies and classification requirements are on-boarded into the \gls{ekg}
@@ -114,5 +113,3 @@ for the appropriate context.
          reporting, entitlement, quality control)
 
 \end{scoring}
-
-\end{members-only}

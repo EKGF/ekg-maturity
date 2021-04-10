@@ -19,4 +19,4 @@
 %
 % New command that avoids having to repeat an indexed word
 %
-\newcommand{\iindex}[1]{#1\index{#1}}
+\newcommand{\iindex}[1]{\lowercase{\def\temp{#1}}#1\expandafter\index\expandafter{\temp}}
