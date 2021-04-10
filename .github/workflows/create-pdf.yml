@@ -67,9 +67,9 @@ jobs:
         # TODO: Figure out how to delete old PDFs from Google Drive
         #
         env:
-          CLIENT_ID: ${{ secrets.GDRIVE_CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.GDRIVE_CLIENT_SECRET }}
-          REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
+          CLIENT_ID: ${{ secrets.AGNOS_GDRIVE_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.AGNOS_GDRIVE_CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.AGNOS_GDRIVE_REFRESH_TOKEN }}
         run: |
           curl --compressed -Ls https://github.com/labbots/google-drive-upload/raw/master/install.sh | sh -s
           echo "CLIENT_ID=${{ secrets.AGNOS_GDRIVE_CLIENT_ID }}" > "${HOME}/.googledrive.conf"
