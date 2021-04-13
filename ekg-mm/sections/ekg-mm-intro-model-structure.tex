@@ -1,8 +1,8 @@
 \pagebreak
 \section{Maturity Model Structure}\label{sec:ekg-mm-structure}
 
-Without showing the levels, here is an overview of taxonomy of pillars, components, 
-capabilities and measurements.
+Without showing the levels, here is an overview of the taxonomy of pillars, components,
+capabilities, and measurements.
 
 %
 % Most of the rest of this file has been copied & pasted from the Excel spreadsheet
@@ -78,35 +78,36 @@ capabilities and measurements.
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[ht]
     \centering\fontsize{7pt}{8pt}\selectfont
+    \setlength\tabcolsep{2pt}
     \begin{tabular}{@{}cclcl@{}}
-    % \toprule
-    \textbf{Pillar} & \textbf{Component} & & \textbf{Capability} & \textbf{Measureable ability}                                                   \\
+    \textbf{Pillar} & \textbf{Component} & & \textbf{Capability} & \textbf{Measurable ability}                                            \\
     \cellPB         & \cellCB            & \labelKB{1-1} & \cellMB Linking EKG to strategic business and organizational objectives        \\
     \cellPB         & \cellCB            & \labelKB{1-2} & \cellMB Prioritization of strategic use cases and financial models             \\
-    \cellPB         & \labelCB{3}{1}     & \labelKB{1-3} & \cellMB Incremental steps to address the challenges of data fragmentation      \\
-    \cellPB         & \cellCB            & \labelKB{2-1} & \cellMB Shared understanding of markets, products and clients                  \\
+    \cellPB         & \cellCB            & \labelKB{1-3} & \cellMB Incremental steps to address the challenges of data fragmentation      \\
+    \cellPB         & \labelCB{4}{1}     & \labelKB{1-4} & \cellMB Performance-improving journeys that cut through organizational silos   \\
+    \cellPB         & \cellCB            & \labelKB{2-1} & \cellMB Shared understanding of markets, products, and clients                 \\
     \cellPB         & \cellCB            & \labelKB{2-2} & \cellMB Alignment of business capabilities with EKG pathway                    \\
     \cellPB         & \labelCB{3}{2}     & \labelKB{2-3} & \cellMB Adopt alternative organizational and operational approaches            \\
     \cellPB         & \cellCB            & \labelKB{3-1} & \cellMB Measure a process to manage performance                                \\
     \cellPB         & \cellCB            & \labelKB{3-2} & \cellMB Identify \& assess potential risks and create mitigation plans         \\
     \labelPB{9}{a}  & \labelCB{3}{3}     & \labelKB{3-3} & \cellMB Managed flow of goods, services \& information between businesses      \\
     \cellPD         & \cellCD            & \labelKD{1-1} & \cellMD EKG as the semantic data fabric for the organization                   \\
-    \cellPD         & \labelCD{2}{1}     & \labelKD{1-2} & \cellMD Business rationale, justification and ROI of the EKG                   \\
+    \cellPD         & \labelCD{2}{1}     & \labelKD{1-2} & \cellMD Business rationale, justification and \gls{roi} of the EKG             \\
     \cellPD         & \cellCD            & \labelKD{2-1} & \cellMD Standards for ensuring content is identified and resolvable            \\
     \cellPD         & \cellCD            & \labelKD{2-2} & \cellMD Standards and tools for ensuring the shared meaning of data            \\
-    \cellPD         & \cellCD            & \labelKD{2-3} & \cellMD Cataloguing content, sources, provenance and lineage in the EKG        \\
+    \cellPD         & \cellCD            & \labelKD{2-3} & \cellMD Cataloguing content, sources, provenance, and lineage in the EKG       \\
     \cellPD         & \cellCD            & \labelKD{2-4} & \cellMD Process for ensuring that glossaries are linked to ontologies          \\
     \cellPD         & \labelCD{5}{2}     & \labelKD{2-5} & \cellMD Patterns and approaches for moving and transforming data               \\
     \cellPD         & \cellCD            & \labelKD{3-1} & \cellMD Strategy and approach for managing data quality                        \\
     \cellPD         & \cellCD            & \labelKD{3-2} & \cellMD Approach and rules to validate fit-for-purpose data quality            \\
-    \cellPD         & \labelCD{3}{3}     & \labelKD{3-3} & \cellMD Checkpoints and conrol processes for managing data quality             \\
+    \cellPD         & \labelCD{3}{3}     & \labelKD{3-3} & \cellMD Checkpoints and control processes for managing data quality            \\
     \cellPD         & \cellCD            & \labelKD{4-1} & \cellMD Structure and approach for the EKG Center of Excellence                \\
-    \cellPD         & \cellCD            & \labelKD{4-2} & \cellMD Policies, procedures and standards for managing the data lifecycle     \\
+    \cellPD         & \cellCD            & \labelKD{4-2} & \cellMD Policies, procedures, and standards for managing the data lifecycle    \\
     \cellPD         & \cellCD            & \labelKD{4-3} & \cellMD Management of the data production and manufacturing process            \\
     \cellPD         & \cellCD            & \labelKD{4-4} & \cellMD Enterprise knowledge graph access control mechanisms                   \\
-    \cellPD         & \cellCD            & \labelKD{4-5} & \cellMD Identification and tracking of critical data attributes and uses       \\
+    \cellPD         & \cellCD            & \labelKD{4-5} & \cellMD Identification and tracking of \glsfmtlongpl{cde} and uses             \\
     \labelPD{16}{b} & \labelCD{6}{4}     & \labelKD{4-6} & \cellMD Creation and implementation of the data control environment            \\
-    \cellPT         & \cellCT            & \labelKT{1-1} & \cellMT Plans for physical infrastructure, applications and automation         \\
+    \cellPT         & \cellCT            & \labelKT{1-1} & \cellMT Plans for physical infrastructure, applications, and automation        \\
     \cellPT         & \cellCT            & \labelKT{1-2} & \cellMT Platforms and tools for storage and integration                        \\
     \cellPT         & \cellCT            & \labelKT{1-3} & \cellMT Technology considerations related to process redesign                  \\
     \cellPT         & \labelCT{4}{1}     & \labelKT{1-4} & \cellMT Reducing the costs of human errors and repurposing talent              \\
@@ -119,7 +120,7 @@ capabilities and measurements.
     \cellPO         & \cellCO            & \labelKO{1-1} & \cellMO Organizational mandate and strategic support for the EKG               \\
     \cellPO         & \cellCO            & \labelKO{1-2} & \cellMO EKG alignment with the views and values of the organization            \\
     \cellPO         & \cellCO            & \labelKO{1-3} & \cellMO Funding process and resource allocation for the EKG                    \\
-    \cellPO         & \cellCO            & \labelKO{1-4} & \cellMO CIO support for EKG (where EKG fits in the overall technology stack)   \\
+    \cellPO         & \cellCO            & \labelKO{1-4} & \cellMO CIO support for EKG (where EKG fits in the overall \gls{technology-stack})   \\
     \cellPO         & \cellCO            & \labelKO{1-5} & \cellMO Alignment of EKG with business architecture                            \\
     \cellPO         & \labelCO{6}{1}     & \labelKO{1-6} & \cellMO Process for aligning EKG with organizational accountabilities          \\
     \cellPO         & \cellCO            & \labelKO{2-1} & \cellMO Identification/prioritization of EKG use case requirements             \\
@@ -129,12 +130,12 @@ capabilities and measurements.
     \cellPO         & \labelCO{5}{2}     & \labelKO{2-5} & \cellMO Identification and management of skill sets needed for the EKG         \\
     \cellPO         & \cellCO            & \labelKO{3-1} & \cellMO Process for extracting/transforming data from source-to-EKG            \\
     \cellPO         & \cellCO            & \labelKO{3-2} & \cellMO Approach to concept modeling and transformation                        \\
-    \cellPO         & \cellCO            & \labelKO{3-3} & \cellMO Rules and standards for building, testing and maintaining the EKG      \\
-    \cellPO         & \cellCO            & \labelKO{3-4} & \cellMO Methodology for facilitating end user access to data                   \\
+    \cellPO         & \cellCO            & \labelKO{3-3} & \cellMO Rules and standards for building, testing, and maintaining the EKG     \\
+    \cellPO         & \cellCO            & \labelKO{3-4} & \cellMO Methodology for facilitating end-user access to data                   \\
     \cellPO         & \labelCO{5}{3}     & \labelKO{3-5} & \cellMO Requirements and accountabilities for managing the EKG platform        \\
     \cellPO         & \cellCO            & \labelKO{4-1} & \cellMO Build versus buy decisions                                             \\
     \cellPO         & \cellCO            & \labelKO{4-2} & \cellMO Empowerment, adaptability and failure tolerance                        \\
-    \cellPO         & \labelCO{3}{4}     & \labelKO{4-3} & \cellMO Alignment with technology, business and operations                     \\
+    \cellPO         & \labelCO{3}{4}     & \labelKO{4-3} & \cellMO Alignment with technology, business, and operations                    \\
     \cellPO         & \cellCO            & \labelKO{5-1} & \cellMO Coordination with privacy, legal, security, records management         \\
     \cellPO         & \cellCO            & \labelKO{5-2} & \cellMO Acquisition and licensing of vendor products                           \\
     \cellPO         & \cellCO            & \labelKO{5-3} & \cellMO Skills acquisition, retention and training                             \\

@@ -159,7 +159,7 @@ sub tchomp {
 # Process the VERSION file in the main content directory of the repo and if not found then check the root directory
 # of the repo. It should be a one-line file with the major and minor version number separated by a dot.
 # This code then adds the Github Actions run number to it (taken from the environment variable GITHUB_RUN_NUMBER) or
-# if you run latexmk locally it uses your user id.
+# if you run latexmk locally it uses your user-id.
 #
 sub readVersion {
     my $versionFileName;

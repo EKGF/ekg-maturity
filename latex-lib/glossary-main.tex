@@ -20,6 +20,21 @@
     description={Transactional data}
 }
 
+\newglossaryentry{cde}{
+    type=\glsdefaulttype,
+    name={Critical data element},
+    plural={Critical data elements},
+    description={
+        this concept is defined in many different ways. One way is to say that "critical data elements are
+        those data elements that are critical to success in a specific business area".
+        This could be a regulatory area such as BCBS 239 or the enterprise as a whole or any other use case area.
+        In an \gls{ekg} context, especially at the higher levels of \gls{ekgmm} maturity,
+        \myuline{all data is critical} since the criticality of data is always dependent on the context.
+        For any given data point, there is a raison d'être in a given context.
+        See also \chapterref{sec:ekgmm-b-4-5}{Critical Data Elements}{\glsfmtshort{ekgmm}}.
+    }
+}
+
 \newglossaryentry{temporal}{
     type=\glsdefaulttype,
     name={Temporal},
@@ -29,45 +44,77 @@
 \newglossaryentry{edgc}{
     type=\glsdefaulttype,
     name={Enterprise Data Governance Council},
-    description={An enterprise governing body responsible for the data governance strategy,
-    setting the organization-wide data policies and standards, and communicating them
-    to enforce the data governance program}
+    description={%
+        is an enterprise governing body responsible for the data governance strategy,
+        setting the organization-wide data policies and standards, and communicating them
+        to enforce the data governance program
+    }
 }
 
-\newglossaryentry{data-stewards}{
+\newglossaryentry{data-steward}{
     type=\glsdefaulttype,
-    name={Data Stewards},
-    description={One who establishes data requirements and assesses the
-    quality of the data in the data stores}
+    name={Data Steward},
+    plural={Data Stewards},
+    description={%
+        One who establishes data requirements and assesses the
+        quality of the data in the data stores
+    }
 }
 
 \newglossaryentry{bitemporality}{
     name={Bi-temporality},
     type=\glsdefaulttype,
-    description={Bi-temporality is a feature of a system (or an Ontology) that allows for the recording of timestamps along two time lines:
-    the time when the event was happening in the real world and the time when the event was recorded. See also "multi-temporality".}
+    description={%
+        a feature of a system (or an Ontology) that allows for the recording of timestamps along two timelines:
+        the time when the event was happening in the real world and the time when the event was recorded.
+        See also "multi-temporality".
+    }
 }
 
 \newglossaryentry{system-architecture}{
     type=\glsdefaulttype,
     name={system architecture},
-    description={
-        A system architecture is the conceptual model that defines the structure, behavior, and more views of a system.
+    description={%
+        the conceptual model that defines the structure, behavior, and more views of a system.
     }
 }
 
-\newglossaryentry{bitemporality}{
-    name={Bi-temporality},%
-    type=\glsdefaulttype,%
-    description={Bi-temporality is a feature of a system (or an Ontology) that allows for the recording of timestamps along two time lines:
-    the time when the event was happening in the real world and the time when the event was recorded. See also "multi-temporality".}
-}
-
-\newglossaryentry{system-architecture}{
+\newglossaryentry{organizational-accountability} {
     type=\glsdefaulttype,
-    name={system architecture},
-    description={
-        A system architecture is the conceptual model that defines the structure, behavior, and more views of a system.
+    name={organizational accountability},
+    plural={organizational accountabilities},
+    description={%
+        is about defining the company's mission, values, and goals,
+        as well as everyone's role in working toward them.
+        It's about holding employees and executives responsible for accomplishing these goals, completing assignments,
+        and making decisions that deliver on these expectations.
     }
 }
 
+\newglossaryentry{technology-stack} {
+    type=\glsdefaulttype,
+    name={technology stack},
+    plural={technology stacks},
+    description={%
+        ...
+    }
+}
+
+\newglossaryentry{data-incongruence} {
+    type=\glsdefaulttype,
+    name={data incongruence},
+    plural={data incongruences},
+    description={%
+        ...
+    }
+}
+
+\newglossaryentry{operating-model} {
+    type=\glsdefaulttype,
+    name={operating model},
+    plural={operating models},
+    description={%
+        is both an abstract and visual representation of how an organization delivers value to its customers or
+        beneficiaries as well as how an organization actually runs itself.
+    }
+}

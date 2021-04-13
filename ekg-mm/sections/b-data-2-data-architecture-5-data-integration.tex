@@ -3,12 +3,12 @@
 Data integration is the process of combining data from different sources into a single, unified view for
 business consumption and enhanced utility.
 The process of integrating data from multiple sources begins with the ingestion process and may include activities
-such as data profiling, cleansing/remediation, cross-referencing transformation and field mapping.
+such as data profiling, cleansing/remediation, cross-referencing transformation, and field mapping.
 
 \ekgmmContextSection
 
 Data integration is challenging because data from multiple sources can have different file formats, data structures,
-definitions and contextual meanings.
+definitions, and contextual meanings.
 Using the knowledge graph during data integration standardizes the meaning of data and makes the content understandable
 to both humans and machines.
 Embedding referenceable meaning into the data using machine-readable standards facilitates automatic validation and
@@ -16,7 +16,7 @@ assurance of data quality.
 Registering data integration activities into the knowledge graph generates full data transparency across
 linked processes.
 Finally, ontology-based metadata representations make it possible to embed business rules and accommodate
-different values, identities and definitions that existed at various times in the entity lifecycle.
+different values, identities, and definitions that existed at various times in the entity lifecycle.
 
 \kgmmcorequestionssection
 
@@ -24,10 +24,10 @@ different values, identities and definitions that existed at various times in th
 
   \item [\thesection.1] Are the data integration activities, their systems, repositories, and connections
                         known and tracked
-  \item [\thesection.2] Are data integration activities linked to data inventory, business glossaries and data models
-  \item [\thesection.3] Are all data integration input and output datasets documented, tracked and governed
+  \item [\thesection.2] Are data integration activities linked to data inventory, business glossaries, and data models
+  \item [\thesection.3] Are all data integration input and output datasets documented, tracked, and governed
   \item [\thesection.4] Are there reusable standards and defined business rules for performing data integration
-  \item [\thesection.5] Are data integration patterns, tools and technologies defined, governed and used
+  \item [\thesection.5] Are data integration patterns, tools, and technologies defined, governed, and used
   \item [\thesection.6] Has the firm established a central data integration function
                         (i.e. integration Center of Excellence) to manage \glsxtrshort{etl} across both
                         internal and external data pipelines
@@ -57,12 +57,12 @@ for the appropriate context.
     \item There is a defined governance process for change management and testing (clear picture of all the
           dependencies for data integration).
           If there are changes to authoritative sources -- do we know the downstream implications (tracked and tested)
-    \item Are all technology stacks known and supported by current teams (are all key systems under the
+    \item Are all \glspl{technology-stack} known and supported by current teams (are all key systems under the
           management and governance of the organization -- should not have ghost systems that are not controlled
           as part of the integration process)
     \item Entitlement policies and classification rules (i.e. security, PII, business sensitive) are
           defined and verified
-    \item Data quality requirements are defined, documented and verified
+    \item Data quality requirements are defined, documented, and verified
 
 \end{scoring}
 
@@ -70,7 +70,7 @@ for the appropriate context.
 
 \begin{scoring}
 
-    \item All information (above) are identified, precisely defined and on-boarded into the knowledge graph
+    \item All information (above) are identified, precisely defined, and on-boarded into the knowledge graph
     \item Able to do datapoint lineage (detailed and complete view of the data integration landscape)
     \item Start making the \gls{ekg} the central point for data integration (the \gls{ekg} becomes the Rosetta stone of
           integration) -- onboard systems, convert to RDF, integrate into \gls{ekg} (defined as the
@@ -79,8 +79,7 @@ for the appropriate context.
           There are no man-in-the-middle systems.
           The goal is direct from the authoritative source to the target system for in-scope use cases.
           Must get the most granular data directly from the authoritative sources.
-    \item All datasets are "self-describing" and include all metadata (defined data object),
-          the so-called \glspl{ekg:sdd}.
+    \item All datasets are "\glspl{ekg:sdd}".
     \item [policy] all data is obtained from the \gls{ekg} as the authoritative source.
           Do not go directly to the originating source of the data.
     \item Entitlement policies and classification requirements are on-boarded into the \gls{ekg}
@@ -93,7 +92,7 @@ for the appropriate context.
 \begin{scoring}
 
     \item Data is precisely defined (granular level) - expressed as formal ontologies - and on-boarded into the \gls{ekg}
-    \item All data flows are modeled and defined and registered in the \gls{ekg} (full lineage in the \gls{ekg} for all
+    \item All data flows are modeled, defined, and registered in the \gls{ekg} (full lineage in the \gls{ekg} for all
           in-scope applications)
     \item Start to make the \gls{ekg} the authoritative source (set-up to facilitate decommissioning of systems).
           The \gls{ekg} is structured to become the “new” system for in-scope applications (as soon as all

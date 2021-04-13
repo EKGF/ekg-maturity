@@ -22,7 +22,7 @@ Using a knowledge graph for fine-grained access control reduces complexity and e
 
   \item [\thesection.1] Are the rules for entitlement and access control documented and verified for defined circumstances
   \item [\thesection.2] Are entitlement rules and application logic expressed in machine-executable format
-  \item [\thesection.3] How are entitlement permissions (and changes) administered, tracked and audited
+  \item [\thesection.3] How are entitlement permissions (and changes) administered, tracked, and audited
   \item [\thesection.4] At what level are entitlements managed (i.e. datapoint, platform, applications, role)
   \item [\thesection.5] Are entitlement classifications linked to lineage, dataflow and transformation processes
   \item [\thesection.6] Are entitlements and access control linked to \glspl{sor}
@@ -39,7 +39,7 @@ Using a knowledge graph for fine-grained access control reduces complexity and e
         imported from systems like Active Directory or LDAP and the like “shadow IT”) –-
         KG is not yet the authoritative source
   \item Administration requires manual evaluation
-  \item Rule-based access control [RBAC] (conventional state of the art) implemented for the limited KG use cases
+  \item \glsfirst{rbac} (conventional state of the art) implemented for the limited KG use cases
 
 \end{scoring}
 
@@ -63,17 +63,17 @@ Using a knowledge graph for fine-grained access control reduces complexity and e
 
 \begin{scoring}
 
-    \item \Glsfirst{ekgbac} –- artifacts = demonstration of \gls{ekgbac}
+    \item \glsfmtshort{ekgbac} –- artifacts = demonstration of \gls{ekgbac}
           (onboarded the organizational management use case; organizational units, employees, contractors are in
           the KG and linked to HR) –- KG must know who you are, roles and access rights before level 3
-    \item KG must be linked to all people, processes and data (organizational management landscape use case)
+    \item All people, processes and data (organizational management landscape use case) are linked
     \item Law, regulation, internal policies and requirements of original data owner are modeled as ontology
           plus business logic (and corresponding data is onboarded)
     \item Entitlements are automatically enforced based (on executable policy)
     \item Must be able to push entitlement policies into the KG
-    \item EKG covers all domains (all jurisdictions) for the scope of use cases (scope of assessment) –-
+    \item The EKG covers all domains and all jurisdictions for the scope of its use cases –-
           complete overview of all related regulations, laws and policies;
-          all factors that have an impact on E decisions are known and part of the EKG
+          all factors that have an impact on enterprise decisions are known and part of the EKG
     \item EKG uses data from many sources; systems owners will participate as long as they are confident that
           the requirements are equivalent (EKG and existing system must be kept in alignment for each data source
     \item Entitlement requirements are linked to the actual transactions and “things” that need to be protected
@@ -86,7 +86,7 @@ Using a knowledge graph for fine-grained access control reduces complexity and e
 
   \item Entitlements are linked to AI and reasoning capability to ensure that all entitlement decisions are
         in line with business objectives and organizational goals
-  \item Entitlements becomes more “intelligent” and allow for flexible analysis on the value of
+  \item Entitlements become more “intelligent” and allow for flexible analysis on the value of
         activities and decisions (i.e. is this a smart thing for us to do)
   \item Artifacts = KG must use advanced AI capabilities; must see evidence of AI algorithms
         (show us that you have \iindex{AI} capabilities (must have onboarded the organizational objectives,
