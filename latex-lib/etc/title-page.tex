@@ -1,0 +1,34 @@
+%
+% This file sets up a title page, include this file right after the \begin{document} statement.
+%
+% Requires \usepackage{ifdraft}
+%
+\makeatletter
+
+\begin{titlepage}
+  \begin{center}
+    \IfFileExists{../customer-assets/\customerCode/\customerCode-logo-wide.pdf_tex}{
+      \noindent\makebox[\linewidth]{
+        \typeout{Importing ../customer-assets/\customerCode/\customerCode-logo-wide.pdf_tex}
+        \def\svgwidth{\linewidth}
+        \input{../customer-assets/\customerCode/\customerCode-logo-wide.pdf_tex} %\\[8ex]
+      }
+    }{
+      \typeout{ERROR: Could not find ../customer-assets/\customerCode/\customerCode-logo-wide.pdf_tex}
+    }
+    {\huge \bfseries  \@title }\\[4ex]
+    {\large \subtitleLineA}\\
+    {\large \subtitleLineB}\\[50ex]
+    %{\LARGE  \@author}
+    %\\[50ex]
+    {\large \@date}\\[1ex]
+    {\large Version \documentVersion}\\[1ex]
+    \ifoptionfinal{\large FINAL}{\large DRAFT}
+  \end{center}
+\end{titlepage}
+
+\makeatother
+
+
+
+

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500');
+        .balls { fill: #ff9900}
+        .text { font-family: 'Roboto', sans-serif ; font-size: 40px ; fill: white }
+    </style>
+
+    <g id="orangeballs" class="balls">
+        <circle
+        cx="30"
+        cy="60"
+        r="12" />
+        <circle
+        cx="80"
+        cy="40"
+        r="7" />
+        <circle
+        cx="125"
+        cy="40"
+        r="7"  />
+        <circle
+        cx="170"
+        cy="80"
+        r="12"/>
+        <circle
+        cx="170"
+        cy="150"
+        r="12" />
+        <circle
+        cx="100"
+        cy="180"
+        r="12" />
+        <circle
+        cx="50"
+        cy="150"
+        r="18" />
+        <circle
+        cx="100"
+        cy="100"
+        r="18" />
+    </g>
+    <g class="lines" stroke-width="2.2" stroke="#ff9900">
+        <line x1="100" y1="100" x2="30" y2="60"  />
+        <line x1="100" y1="100" x2="80" y2="40"  />
+        <line x1="100" y1="100" x2="125" y2="40"  />
+        <line x1="125" y1="40" x2="170" y2="80"  />
+        <line x1="100" y1="100" x2="50" y2="150"  />
+        <line x1="100" y1="100" x2="170" y2="150"  />
+        <line x1="100" y1="180" x2="170" y2="150"  />
+        <line x1="170" y1="80" x2="170" y2="150"  />
+        <line x1="100" y1="180" x2="50" y2="150"  />
+    </g>
+    <g class="text">
+        <text class="text" x="200" y="60">Enterprise</text>
+        <text class="text" x="200" y="105">Knowledge</text>
+        <text class="text" x="200" y="150">Graph</text>
+        <text class="text" x="200" y="195">Foundation</text>
+    </g>
+
+</svg>

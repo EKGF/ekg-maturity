@@ -1,0 +1,65 @@
+%
+% Set the right paths for \input and \includegraphics statements
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{path-stuff}[2021/01/18 agnos.ai - Set the input and graphics path]
+
+\RequirePackage{grffile}
+\RequirePackage[final]{graphicx}% for \graphicspath macro
+
+
+\makeatletter
+\newcommand*{\printpaths}[0]{%
+  \typeout{path-stuff.sty: Customer Code: \customerCode}
+  \typeout{path-stuff.sty: Document Name: \documentName}
+  \typeout{path-stuff.sty: Input Path: \input@path}%
+  \typeout{path-stuff.sty: Graphics Path: \Ginput@path}%
+}
+\makeatother
+
+\printpaths% show state before
+
+%
+% Set the path to be used for \input statements. It also has to include all
+% relevant image directories since SVG files are imported via a .pdf_tex file
+% that is imported via an \input statement, not an \includegraphics statement.
+%
+\makeatletter
+\def\input@path{%
+  {../../../etc/}% has to be checked before ../etc due to git subtree repo's under ./mnt
+  {../../etc/}% has to be checked before ../etc due to git subtree repo's under ./mnt
+  {../etc/}%
+  {./etc/}%
+  {../../../images/}%
+  {../../images/}%
+  {../images/}%
+  {./images/}%
+  {../../../\documentName/images/}%
+  {../../\documentName/images/}%
+  {../\documentName/images/}%
+  {./\documentName/images/}%
+  {../../../customer-assets/\customerCode/}%
+  {../../customer-assets/\customerCode/}%
+  {../customer-assets/\customerCode/}%
+}
+\makeatother
+
+% \graphicspath{%
+\makeatletter
+\def\Ginput@path{%
+  {./images/}%
+  {../images/}%
+  {../../images/}%
+  {./\documentName/images/}%
+  {../\documentName/images/}%
+  {../../\documentName/images/}%
+  {../customer-assets/\customerCode/}%
+  {../../customer-assets/\customerCode/}%
+  {../../../customer-assets/\customerCode/}% this can happen when doc is under ./mnt/ekg-mm/ekg-mm for instance
+}
+\makeatother
+
+\printpaths% show state after
+
+%\svgpath{{\home/images}{images/}{../images/}}
+%\svgsetup{inkscapepath=\home}

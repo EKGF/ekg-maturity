@@ -1,0 +1,24 @@
+%
+% Table stuff
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{table-stuff}[2019/09/16 agnos.ai - all table related stuff]
+
+%\RequirePackage{array}
+%\RequirePackage{supertabular}
+%\RequirePackage{tabu}
+\RequirePackage{longtable}
+\RequirePackage{makecell}
+\RequirePackage{environ}
+\RequirePackage{hhline}
+\RequirePackage{booktabs}
+\RequirePackage{multirow}
+\RequirePackage{tablefootnote}
+\RequirePackage{adjustbox}
+
+%%
+%% Not really table-related but it shows your text in one box, use this for any "Notes"
+%%
+\newcommand{\notebox}[1]{\fbox{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{Note:~#1}}}
+
+\newcommand{\questionbox}[1]{\fbox{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{Question:~#1}}}

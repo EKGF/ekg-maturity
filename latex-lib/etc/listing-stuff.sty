@@ -1,0 +1,54 @@
+%
+% All stuff related to showing a code listing
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{listing-stuff}[2019/09/16 agnos.ai - All listing related stuff]
+
+\RequirePackage{font-stuff}
+\RequirePackage[final]{listings}
+
+% http://tex.stackexchange.com/q/43526
+% fix the apparently deliberate but undocumented behaviour of disabling escapes other than mathescape in TextStyle (used by \lstinline)
+% there may be a good reason why this is disabled by default, so beware in case it causes any problems
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\lsthk@TextStyle}{\let\lst@DefEsc\@empty}{}{}{\errmessage{failed to patch}}
+\makeatother
+
+\lstdefinelanguage{turtle}{%
+  columns=fullflexible,
+  keywordstyle=\color{blue},
+  morekeywords={@prefix,@base,@forSome,@forAll,@keywords, GRAPH},
+  morecomment=[l]{\#},
+  tabsize=2,
+  alsoletter={-?}, % allowed in names
+  morecomment=[s][\color{blue}]{<}{>},
+  %numberstyle=\color{black},
+  morestring=[b][\color{black}]\",
+}
+%
+% sets the font for lstlisting environments to a monospace font, and sets an
+% escape sequence that can be used to inject arbitrary LaTeX code into an
+% lstlisting environment
+%
+\lstset{%
+  basicstyle=\small\ttfamily,
+  frame=single,
+  backgroundcolor=\color{lighter-gray},
+  commentstyle=\color{green},
+  breaklines=false,
+  keepspaces=true,
+  tabsize=2,
+  columns=fullflexible,
+  escapeinside={|}{|},
+  language=turtle
+}
+%
+% create an alternative font to use for escaped sequences inside lstlisting
+% environments
+%
+\newcommand{\innerlisting}[1]{%
+  {\small\ttfamily\color{blue}#1}%
+}
+
+\newcommand{\code}[1]{\colorbox{lighter-gray}{\texttt{#1}}}

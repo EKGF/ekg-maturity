@@ -1,0 +1,62 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{maturity-model-stuff}[2020/12/11 agnos.ai - all EKG/MM related macros]
+
+\RequirePackage{tikz-stuff}
+\RequirePackage{tocloft}
+\RequirePackage{environ}
+\RequirePackage{ifthen}
+
+\ifthenelse{\isundefined{\membersOnly}}{
+    \typeout{maturity-model-stuff: The membersOnly variable was not defined, setting it to 'no'}
+    \def\membersOnly{no}
+}{
+    \typeout{maturity-model-stuff: The membersOnly variable was set to "\membersOnly"}
+}
+
+\ifthenelse{\equal{\membersOnly}{yes}}{
+    \typeout{maturity-model-stuff: Generating content for Members Only}
+    \NewEnviron{members-only}{\BODY}[]
+}{
+    \typeout{maturity-model-stuff: Generating content that is not exclusive to Members Only}
+    \NewEnviron{members-only}{}[]
+}
+
+\renewcommand{\customerCopyright}{\copyright~\the\year~Enterprise Knowledge Graph Foundation \& agnos.ai UK Ltd, All rights reserved.\xspace}
+
+\tikzset{
+    arrow/.style={% define the style for the arrows between the user story components
+        draw,
+        blue!40,
+        very thick,
+        >=stealth
+    },
+    usc/.style={% define the style of each user story component (usc)
+        draw=green!60,
+        rectangle,
+        fill=green!5,
+        semithick,
+        minimum height=2em,
+        text width=11em,
+        align=center,
+        rounded corners,
+        font=\normalsize
+    }
+}
+
+
+\newenvironment{core-questions}[1]{%
+    \begin{itemize}[leftmargin=.5in,font=\bfseries]%
+}{%
+    \end{itemize}%
+}
+
+\newenvironment{scoring}[1]{%
+    \begin{itemize}[leftmargin=1.5in,font=\bfseries]%
+}{%
+    \end{itemize}%
+}
+
+\setlength{\cftchapnumwidth}{4em}% Set numwidth of chapter
+\setlength{\cftsecnumwidth}{\cftchapnumwidth}% Set numwidth of section
+\setlength{\cftsubsecnumwidth}{\cftsecnumwidth}% Make subsection numwidth the same as section
+\setlength{\cftsubsecindent}{\cftsecindent}% Make subsection indent the same as section

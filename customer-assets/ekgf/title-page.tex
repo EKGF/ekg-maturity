@@ -1,0 +1,102 @@
+%
+% This file sets up a title page, include this file right after the \begin{document} statement.
+%
+\RequirePackage{grffile}
+\RequirePackage[final]{graphicx}
+\RequirePackage[\documentMode]{ifdraft}
+\RequirePackage{array}
+\RequirePackage{multirow}
+\RequirePackage{makecell}
+\RequirePackage{titling}
+\RequirePackage{color-stuff}
+\RequirePackage{picture-stuff}
+\RequirePackage{customer-assets}
+
+%%
+%% Set the colors of the headings first
+%%
+%% TODO: Move this to the appropriate .sty file later (header-stuff.sty)
+%%
+\RequirePackage{sectsty}
+\partfont{\color{primaryHeading1}}        % sets colour of parts
+\chapterfont{\color{primaryHeading1}}     % sets colour of chapters
+\sectionfont{\color{primaryHeading2}}     % sets colour of sections
+\subsectionfont{\color{primaryHeading3}}  % sets colour of subsections
+%%
+%% End of header-stuff
+%%
+
+%%
+%% Set the primary color for all normal text
+%%
+\AtBeginDocument{\color{primaryText}}
+
+\makeatletter
+\DeclareRobustCommand\ckeckfor[1]{%
+  \begingroup
+  \expandafter\ifx\csname#1\endcsname\relax\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi
+  {%
+    \expandafter\endgroup\expandafter\ifx\csname#1\endcsname\relax\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi
+  }{\endgroup\@firstoftwo}%
+}%
+\makeatother
+
+\ckeckfor{thetitle}{%
+    \typeout{Generating title page, using title \thetitle}%
+}{%
+    \typeout{title-page.tex: ERROR: you did not define the titlepage var}%
+}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\newcommand{\cellTitle}{\textbf{\fontsize{15}{18}\selectfont \textcolor{primaryHeading1} \thetitle}}
+%\newcommand{\cellDepartment}{\textbf{\textcolor{primarySubText}{\fontsize{15}{18}\selectfont DMA}}}
+\newcommand{\cellSubtitle}{\textit{\small \textcolor{primarySubText}{\subtitleLineA}} \\ \textit{\small \textcolor{primarySubText}{\subtitleLineB}}}
+%\textcolor{primaryHeading1}
+
+% \newgeometry{margin=0in}
+%   \begin{titlepage}
+%     \thispagestyle{empty}
+%     \vspace*{0.8in}
+%     \begin{minipage}[t]{\dimexpr\paperwidth-54.4pt\relax}
+%       \begin{flushright}
+%         \textbf{\fontsize{15}{18}\selectfont \textcolor{primaryHeading1} \thetitle} \\
+%         \textit{\small \textcolor{primarySubText}{\subtitleLineA}} \\
+%         \textit{\small \textcolor{primarySubText}{\subtitleLineB}} \\
+%         {\scriptsize \textcolor{primarySubText}{\today, Version \documentVersion, \ifoptionfinal{FINAL}{DRAFT}, Confidential}}\\[1cm]
+%       \end{flushright}
+%     \end{minipage}
+%     %
+%     % Import the banner and size it across the whole page
+%     %
+%     \bannerAcrossWholePageScaleByWidth{\customerCode-front-page-image}
+%   \end{titlepage}
+% \restoregeometry
+
+\begin{titlepage}
+  \thispagestyle{empty}
+  \vspace*{-1.8cm}
+  \setlength\tabcolsep{0pt}
+  \noindent\begin{tabular}{@{}L{\dimexpr .5\textwidth}@{}R{\dimexpr .5\textwidth}@{}}
+    % \hline
+     \vspace*{-5mm}
+     \multirow{3}{5cm}[\normalbaselineskip]{
+        \def\svgwidth{5cm}
+        \input{./\customerCode-logo-wide.pdf_tex}
+    } & {\cellTitle} \\ % \cline{2-2}
+    & \makecell*[r]{\cellSubtitle} \\ % \cline{2-2}
+    & {\scriptsize \textcolor{primarySubText}{%
+      \today, Version \documentVersion, \ifoptionfinal{FINAL}{DRAFT}, Confidential}%
+    } \\ % \hline
+  \end{tabular}\\[1cm]
+  %
+  % Import the banner and size it across the whole page
+  %
+  \bannerAcrossWholePage{130pt}{\customerCode-front-page-image}
+\end{titlepage}
+
+\pagenumbering{arabic}
+\clearpage\setcounter{page}{1}
+
+

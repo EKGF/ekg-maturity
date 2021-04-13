@@ -1,0 +1,126 @@
+%
+% All glossary related stuff
+%
+% Good guide: http://tug.ctan.org/macros/latex/contrib/glossaries/glossariesbegin.html
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{glossary-stuff}[2019/12/09 agnos.ai - all glossary related stuff]
+
+\RequirePackage[\documentMode]{ifdraft}
+\RequirePackage{link-stuff} % hyperref must be loaded before package glossaries
+                            % and package babel needs to be loaded before package glossaries-extra
+
+%
+% Even though we're not generating a glossary for a standalone document we still need
+% to import the package because the core text of the document may contain glossary commands like \glsxtrshort
+%
+%\RequirePackage[
+%    toc,
+%    acronyms,
+%    xindy={language=english},
+%    nonumberlist,
+%    nopostdot,
+%    style=altlist,
+%    nogroupskip
+%]{glossaries}
+
+%
+% Allows for using \glsfmtfull in \section and \chapter etc
+% See https://tex.stackexchange.com/questions/399310/is-it-possible-to-use-acrfull-acrshort-in-the-subsection-etc-commands
+%
+\RequirePackage[
+    toc=true,
+    acronyms,
+    %nonumberlist=false,
+    undefaction=warn, % set to undefaction=error when you want to crash for non-existing glossary entries
+    style=index,
+    nogroupskip,
+    nopostdot=true,
+    noredefwarn=false,
+    %translate=babel
+]{glossaries-extra}
+
+\setabbreviationstyle[acronym]{long-short}% glossaries-extra.sty
+
+\RequirePackage{glossary-mcols}
+
+%
+% Define the additional glossaries (acronym and main glossary are already defined)
+%
+% \newglossary[<log-ext>]{<name>}{<in-ext>}{<out-ext>}{<title>}[<counter>]
+%
+\newglossary[tlg]{concept}{tld}{tdn}{Concepts}
+\newglossary[olg]{ont}{old}{odn}{Ontologies}
+
+%
+% \insertPrintGlossary is a command that whitepaper-style-doc.cls is inserting at the end of the document.
+%
+% NOTE: this works but still causes a warning:
+%       "Package glossaries Warning: No \printglossary or \printglossaries found."
+%
+% - type
+%   The glossary to print. If omitted, the main (default) glossary is assumed.
+% - style
+%   The glossary style to use. There are a lot of predefined styles to choose from, such as list,
+%   long or tree.
+% - title
+%   Overrides the default title for this glossary.
+% - toctitle
+%   Overrides the default title for the table of contents.
+% - numberedsection
+%   Put this glossary in a numbered section (instead of an unnumbered section).
+% - nonumberlist
+%   Suppress the location lists for this glossary.
+%
+\newcommand*{\insertPrintGlossary}{%
+  \typeout{Inserting printGlossary commands.}%
+  \typeout{Ignore the above message: 'This document will not have a glossary.'}%
+  \clearpage%
+  \printglossary[type=acronym,style=mcolindex,title=Acronyms,toctitle=Acronyms]%
+  \printglossary[type=main,style=mcoltree,title=Glossary,toctitle=Glossary]%
+  \printglossary[type=concept,style=mcoltree,title=Concepts,toctitle=List of concepts \& business terms]%
+  \printglossary[type=ont,style=mcoltree,title=Ontologies,toctitle=List of ontologies]%
+  \ifoptionfinal{}{%
+    %
+    % in draft mode we print all entries in all glossaries.
+    %
+    \glsaddallunused%
+    \TODO[inline,color=green!40]{This is the DRAFT version so we print all entries of all glossaries}%
+  }%
+}
+
+\newcommand*{\insertGlossaries}{%
+  \typeout{glossary-stuff.sty: Inserting the glossaries}%
+  \input{../acronyms.tex}%
+  \input{../glossary-main.tex}%
+  \input{../glossary-ekg.tex}%
+  \input{../glossary-concepts.tex}%
+  \input{../glossary-ontologies.tex}%
+}
+
+\newcommand*{\loadGlossaries}{%
+  \renewcommand{\glossarypreamble}{\footnotesize}
+  \makeglossaries%
+  \insertGlossaries%
+  %\typeout{glossary-stuff.sty: Loading the glossaries}%
+  %\typeout{glossary-stuff.sty: - ../acronyms.tex}%
+  %\loadglsentries[acronym]{../acronyms.tex}%
+  %\typeout{glossary-stuff.sty: - ../glossary-main.tex}%
+  %\loadglsentries[main]{../glossary-main.tex}%
+  %\typeout{glossary-stuff.sty: - ../glossary-concepts.tex}%
+  %\loadglsentries[concept]{../glossary-concepts.tex}%
+  %\typeout{glossary-stuff.sty: - ../glossary-ontologies.tex}%
+  %\loadglsentries[ont]{../glossary-ontologies.tex}%
+}
+
+\newcommand*{\busterm}[1]{\textit{\gls{#1}}}
+\newcommand*{\Busterm}[1]{\textit{\Gls{#1}}}
+
+\newcommand*{\ontology}[1]{\textit{\gls{#1}}}
+\newcommand*{\Ontology}[1]{\textit{\Gls{#1}}}
+
+% adjust "index" style to allow multi-paragraph descriptions:
+\renewcommand*{\glstreeitem}{%
+ \parindent0pt\par\hangindent40pt%
+ \everypar{\parindent50pt\hangindent40pt}%
+}

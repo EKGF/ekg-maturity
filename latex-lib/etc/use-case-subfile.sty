@@ -1,0 +1,89 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{use-case-subfile}[2019/09/17 A package for showing a use-case as a chapter in the given main document]
+
+\RequirePackage{xkeyval}
+\RequirePackage{import}
+\RequirePackage[\documentMode]{ifdraft}
+\RequirePackage{paper-stuff}
+\RequirePackage{font-stuff}
+\RequirePackage{color-stuff}
+\RequirePackage{listing-stuff}
+\RequirePackage{tikz-stuff}
+\RequirePackage{link-stuff}
+\RequirePackage{table-stuff}
+\ifthenelse{\equal{\customerCode}{somecust}}
+{\RequirePackage{header-and-footer-stuff-somecust}}
+{\RequirePackage{header-and-footer-stuff}}%
+\RequirePackage{index-stuff}
+\RequirePackage{xstring}
+\RequirePackage{subfiles}
+\RequirePackage{label-stuff}
+\RequirePackage{use-case-stuff}
+\RequirePackage{use-case-tikz-stuff}
+\RequirePackage{listofitems}
+
+%\newcommand*{\usecaseLabel}{undefined}
+%\newcommand*{\usecaseTitle}{What Use Case?}
+
+\newcommand*{\importMainUseCaseDocument}[1]{%
+  \getUseCaseDirectory{#1}%
+  \typeout{use-case-subfile.sty: Importing \usecaseMainDocument}%
+  \input{\usecaseMainDocument}%
+}
+
+%
+% Import any file from a use-cases/<usecase>/<filename> directory.
+% Assumes that \usecaseLabel is set as uc:<usecase>.
+% Expects <filename> to be the only parameter.
+% Sets \usecaseImportedDocument to hold the full (but relative) file name of the imported doc.
+%
+\newcommand*{\importUseCaseSubFile}[2]{%
+  \typeout{EEEEEEEEE 1}
+ \typeout{use-case-subfile.sty: #1 use case label=#1, file to import=#2}
+  \getUseCaseDirectory{#1}%
+  \typeout{EEEEEEEEE 2}
+  \global\edef\usecaseImportedDocument{../use-cases/\usecaseDirectory/#2}%
+  \typeout{EEEEEEEEE 3}
+  \IfFileExists{\usecaseImportedDocument}{%
+    \typeout{EEEEEEEEE 4}
+    \typeout{use-case-subfile.sty: Importing \usecaseImportedDocument (file exists)}%
+    \input{\usecaseImportedDocument}%
+  }{%
+    \typeout{EEEEEEEEE 5}
+    \global\edef\usecaseImportedDocument{../\usecaseImportedDocument}%
+    \IfFileExists{\usecaseImportedDocument}{%
+      \typeout{use-case-subfile.sty: Importing \usecaseImportedDocument (file exists)}%
+      \input{\usecaseImportedDocument}%
+    }{%
+      \typeout{use-case-subfile.sty: File not found: \usecaseImportedDocument}%
+      \stop%
+    }%
+  }%
+  \typeout{EEEEEEEEE 6}
+}
+
+\newcommand*{\importUseCaseAsChapter}[1]{%
+  \readUseCaseTitleFromFile{#1}%
+  \expandafter\chapter\expandafter{\usecaseTitle}\label{\usecaseLabel}%
+  \importMainUseCaseDocument{\usecaseLabel}%
+}
+
+\newcommand*{\importUseCaseAsSection}[1]{%
+  \readUseCaseTitleFromFile{#1}%
+  \expandafter\section\expandafter{\usecaseTitle}\label{\usecaseLabel}%
+  \importMainUseCaseDocument{\usecaseLabel}%
+}
+
+\newcommand*{\importUseCaseAsSubSection}[1]{%
+  \readUseCaseTitleFromFile{#1}%
+  \typeout{CCCCCCCCC 2 id=\usecaseId, label=\usecaseLabel, title=\usecaseTitle}
+%  \expandafter\subsection\expandafter{\usecaseTitle}\label{\usecaseLabel}%
+  \typeout{CCCCCCCCC 3 \usecaseLabel}
+  \importMainUseCaseDocument{\usecaseLabel}%
+}
+
+\newcommand*{\importUseCaseAsSubSubSection}[1]{%
+  \readUseCaseTitleFromFile{#1}%
+  \expandafter\subsubsection\expandafter{\usecaseTitle}\label{\usecaseLabel}%
+  \importMainUseCaseDocument{\usecaseLabel}%
+}
