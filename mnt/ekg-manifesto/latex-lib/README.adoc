@@ -1,0 +1,86 @@
+= latex-lib
+
+Some LaTeX goodies.
+
+This repo is pulled into other repositories via the `git subtree add` command,
+see https://hpc.uni.lu/blog/2014/understanding-git-subtree/[this article].
+
+To set up your own repo for a new LaTeX document use this command from the root of your repo:
+
+If you prefer using HTTPS urls:
+
+[source,asciidoc]
+----
+git remote add -f latex-lib https://github.com/agnos-ai/latex-lib.git
+git subtree add --prefix=latex-lib --squash latex-lib/main
+----
+
+If you prefer using SSH urls:
+
+[source,asciidoc]
+----
+git remote add -f latex-lib git@github.com:agnos-ai/latex-lib.git
+git subtree add --prefix=latex-lib --squash latex-lib/main
+----
+
+Here's how to push changes that you may have made in the latex-lib files, as they're part
+of your source repo, back to the latex-lib repo (if you have push rights to that repo):
+
+[source,asciidoc]
+----
+git subtree push --prefix=latex-lib latex-lib main
+----
+
+Before you do such a push, please check what the differences are between your local copy of the
+repo and the remote git latex-lib repo as follows:
+
+[source,asciidoc]
+----
+git diff latex-lib/main main:latex-lib
+----
+
+Pull the latest changes from latex-lib into your own repo with:
+
+[source,asciidoc]
+----
+git fetch latex-lib && git subtree pull --prefix=latex-lib latex-lib main --squash
+----
+
+== EKG/MM
+
+You can do the same for other repositories and merge them into your own, for instance
+the EKG/MM repository at https://github.com/EKGF/ekg-mm, you should however import
+such a content repo under the /mnt directory (mnt stands for "mount", analogous to
+mounting a file system in Unix), see the `--prefix` option below.
+
+If you prefer using HTTPS urls:
+
+[source,asciidoc]
+----
+git remote add -f ekg-mm https://github.com/EKGF/ekg-mm.git
+git subtree add --prefix=mnt/ekg-mm --squash ekg-mm/main
+----
+
+If you prefer using SSH urls:
+
+[source,asciidoc]
+----
+git remote add -f latex-lib git@github.com:EKGF/ekg-mm.git
+git subtree add --prefix=mnt/ekg-mm --squash ekg-mm/main
+----
+
+Push:
+
+[source,asciidoc]
+----
+git subtree push --prefix=mnt/ekg-mm ekg-mm main
+----
+
+Pull:
+
+[source,asciidoc]
+----
+git fetch ekg-mm && git subtree pull --prefix=mnt/ekg-mm ekg-mm main --squash
+----
+
+

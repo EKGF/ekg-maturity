@@ -1,0 +1,101 @@
+%
+% All bookmarks, cross-references, hyperlink related stuff
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{link-stuff}[2019/09/16 agnos.ai - all link related stuff]
+
+\RequirePackage{index-stuff} % imakeidx needs to be loaded before hyperref (to make links in the index pages work)
+\RequirePackage{bibliography-stuff} % hyperref should be loaded after biblatex
+
+\RequirePackage[numbered,open,openlevel=2]{bookmark}
+\RequirePackage{appendix}
+
+\RequirePackage{overleaf-stuff}
+\ifx\notRunningOnOverleaf % For some reason xurl.sty cannot be loaded by Overleaf
+  \RequirePackage{xurl}% has to be loaded before the hyperref package
+\fi
+
+\RequirePackage{csquotes}
+\RequirePackage[american]{babel}
+\RequirePackage{import}
+\RequirePackage{parskip}
+\RequirePackage{subcaption}
+\RequirePackage{wrapfig}
+\RequirePackage{cutwin}
+\RequirePackage{floatflt}
+\RequirePackage{xargs}
+\RequirePackage{etoolbox}
+\RequirePackage{xparse}
+\RequirePackage{hyperref}
+\hypersetup{
+  final,
+  draft=false,
+  debug,
+  colorlinks=true,
+  linkcolor=darkgray,
+  citecolor=darkgray,
+  filecolor=darkgray,
+  urlcolor=darkgray,
+  plainpages=false,
+  unicode,
+  hypertexnames=false % hypertexnames=false is needed when you do things like \setcounter{part}{0}
+}
+\RequirePackage{nameref}
+\GetTitleStringSetup{expand}
+
+\makeatletter
+\newcommand{\iflabelexists}[3]{\@ifundefined{r@#1}{#3}{#2}}
+\makeatother
+
+%
+% Get the name of the current chapter/section/subsection/etc (without the number)
+%
+% \makeatletter
+% \newcommand*{\currentname}{\@currentlabelname\xspace} % depends on package nameref
+% \makeatother
+
+% does not work for \part:
+% \makeatletter
+% \apptocmd{\@part}{\gdef\currentname{#1\xspace}}{}{}
+% \apptocmd{\@chapter}{\gdef\currentname{#1\xspace}}{}{}
+% \apptocmd{\@sect}{\gdef\currentname{#7\xspace}}{}{}
+% \makeatother
+
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\textit{\ref*{#1}~\nameref{#1}}}}
+
+%
+% Produce a reference to another chapter in another "book". If that chapter is available in the same book then
+% the link works and shows a page number. If it isn't then it just shows the name of the chapter and the name of the
+% book.
+%
+% Use as follows:
+%
+% blah blah (see \chapterref{pt:ekg-mm}{Maturity Model}{\glsfmtshort{ekgmethod}})
+%
+\newcommand*{\chapterref}[3]{%
+  \iflabelexists{#1}{%
+    \hyperref[{#1}]{chapter \textit{\ref*{#1} \enquote{\nameref*{#1}}} on page \pageref{#1}}%
+  }{%
+    chapter \textit{\enquote{#2}} of the document \textit{\enquote{#3}}%
+  }%
+}
+
+\newcommand*{\seechapter}[3]{%
+  \iflabelexists{#1}{%
+    \footnote{see \hyperref[{#1}]{chapter \textit{\ref*{#1} \nameref*{#1}}}}%
+  }{%
+    \footnote{see chapter \textit{#2} of the document \textit{\enquote{#3}}}%
+  }%
+}
+
+\newcommand*{\secref}[1]{%
+  \hyperref[{#1}]{section \textit{\ref*{#1}, \enquote{\nameref*{#1}}}}%
+}
+
+\newcommand*{\subsecref}[1]{\secref{#1}}
+
+\newcommand*{\subsubsecref}[1]{\subsecref{#1}}
+
+\newcommand*{\parref}[1]{%
+  \hyperref[{#1}]{paragraph \textit{\ref*{#1} \enquote{\nameref*{#1}}}}%
+}

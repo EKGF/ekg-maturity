@@ -1,0 +1,30 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{label-stuff}[2019/09/16 agnos.ai - label tricks]
+
+\RequirePackage[\documentMode]{ifdraft}
+%\ifoptionfinal{}{\RequirePackage[inner]{showlabels}}
+
+%\ifoptionfinal{}{%
+%  %
+%  % This will only get executed when the document is NOT in final state
+%  %
+%  \RequirePackage{tocloft}%
+%  %
+%  % create a new list incl. counter
+%  %
+%  \newlistof{labelTagCounter}{labelTags}{List of \textbackslash labeltags}%
+%  %
+%  % redefine the  label command
+%  %
+%  \let\myLabel\label%
+%  \renewcommand{\label}[1]{%
+%    \refstepcounter{labelTagCounter}% step the counter
+%    \addcontentsline{labelTags}{labelTagCounter}{\thelabelTagCounter:\quad#1}% add item to list
+%    \myLabel{#1}% now execute the original label command
+%  }%
+%  %
+%  \AtEndDocument{%
+%    \cleardoublepage%
+%    \listoflabelTagCounter% print the list
+%  }%
+%}

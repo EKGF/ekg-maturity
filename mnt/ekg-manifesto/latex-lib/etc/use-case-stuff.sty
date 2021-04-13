@@ -1,0 +1,152 @@
+%
+% Some generic macros dealing with use cases, to be imported in more specific packages
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{use-case-stuff}[2019/10/01 agnos.ai - Some generic macros dealing with use cases, to be imported in more specific packages]
+
+\RequirePackage{link-stuff}
+\RequirePackage[abspath]{currfile}
+\usepackage{luacode} % for luacode environment and \luastring macro
+
+%% Lua-side code
+\begin{luacode}
+  function myreplace(s,a,b)
+    x = string.gsub(s,a,b)
+    tex.sprint ( x )
+  end
+\end{luacode}
+
+%
+% Get the use case id without the "uc:" prefix
+%
+\newcommand{\usecaseLabelNoPrefix}[1]{%
+  \directlua{%
+    myreplace(\luastring{#1},\luastring{uc:},\luastring{})
+  }%
+}
+
+\pgfkeysdef{/handlers/.unknown}{
+  ERROR: Unknown key `\pgfkeyscurrentkey'.
+}
+%
+%
+% handler to use \typeout instead of \show (based on code of '.show code' handler)
+%
+\pgfkeysdef{/handlers/.typeout usecase}{
+    \typeout{use-case-stuff.sty: Use Case:}
+    \typeout{use-case-stuff.sty:  - path: \pgfkeyscurrentpath}
+    \typeout{use-case-stuff.sty:  - id: \pgfkeysvalueof{\pgfkeyscurrentpath/id}}
+    \typeout{use-case-stuff.sty:  - label: \pgfkeysvalueof{\pgfkeyscurrentpath/label}}
+    \typeout{use-case-stuff.sty:  - directory: \pgfkeysvalueof{\pgfkeyscurrentpath/directory}}
+    \typeout{use-case-stuff.sty:  - main document: \pgfkeysvalueof{\pgfkeyscurrentpath/main document}}
+    \typeout{use-case-stuff.sty:  - title file: \pgfkeysvalueof{\pgfkeyscurrentpath/title file}}
+}
+
+%
+% Define the pkgkeys key tree, every use case ends up under /usecase/<id>:
+%
+%   /usecase/<id>/id            also accessible as \usecaseId
+%                               (when it's the current use case)
+%   /usecase/<id>/label         ,, \usecaseLabel
+%   /usecase/<id>/directory     ,, \usecaseDirectory
+%   /usecase/<id>/main document ,, \usecaseMainDocument
+%   /usecase/<id>/title file    ,, \usecaseTitleFile
+%
+% There's also:
+%
+%   /usecase/current=<id of use case to make current>
+%   /usecase/current/label=<label of use case to make current>
+%   /usecase/current/typeout (logs the keys of the current use case)
+%
+\pgfqkeys{/usecase}{%
+  current/label/.code={
+    \typeout{use-case-stuff.sty: Setting current use case to: #1 (=label)}%
+    \pgfqkeys{/usecase}{current=\usecaseLabelNoPrefix{#1}}
+  },
+  current/typeout/.code={
+    \def\tmpid{\pgfkeysvalueof{/usecase/current/id}}
+    \pgfkeys{/usecase/\tmpid/.typeout usecase}
+  },
+  current/.code={%
+    \typeout{use-case-stuff.sty: Setting current use case to: #1 (=id)}%
+    \typeout{use-case-stuff.sty: Setting directory to: ../use-cases/#1}%
+    \typeout{use-case-stuff.sty: Setting main document to: ../use-cases/#1/#1.tex}%
+    \pgfkeys{
+      /usecase/.cd,
+      current/id/.initial/.expanded=#1,
+      #1/.is family,
+      #1/.cd,
+      id/.initial/.expanded=#1,
+      id/.get=\usecaseId,
+      label/.initial/.expanded={uc:#1},
+      label/.get=\usecaseLabel,
+      directory/.initial/.expanded={../use-cases/#1},
+      directory/.get=\usecaseDirectory,
+      main document/.initial/.expanded={../use-cases/#1/#1.tex},
+      main document/.get=\usecaseMainDocument,
+      title file/.initial/.expanded={../use-cases/#1/#1-title.txt},
+      title file/.get=\usecaseTitleFile
+    },
+  }
+}
+
+%
+% Call \getUseCaseDirectory{\usecaseLabel} to derive the directory
+% name from it and store it in \usecaseDirectory
+%
+\newcommand{\getUseCaseDirectory}[1]{%
+  \edef\tmpa{\noexpand#1}
+  \pgfqkeys{/usecase}{current/label=\tmpa, current/typeout}
+}
+
+%
+% New macro for all references to a use case
+%
+\newcommandx{\usecaseref}[1]{%
+  \iflabelexists{#1}{%
+    \textit{\nameref{#1}} {\tiny (\ref{#1} on page \pageref{#1})}%
+  }{%
+    \typeout{use-case-stuff.sty: usecaseref #1 at \currfilename:\the\inputlineno}
+    \readUseCaseTitleFromFile{#1}%
+    \usecaseTitle {\tiny (not documented in this document)}%
+    \typeout{use-case-stuff.sty: usecaseref #1 b}
+  }%
+}
+
+\newcommand*{\usecaseTitleFile}{}
+
+\newread\titleFileIn % declaring a file handle called 'titleFileIn'
+
+%
+% Private function do not use.
+% Does the actual reading of the title file for a given use case.
+%
+% See https://latexref.xyz/_005cread.html
+%
+\newcommand*{\privateDoTheActualRead}[1]{
+  \typeout{use-case-stuff.sty: reading \usecaseTitleFile}
+  \openin\titleFileIn=#1\relax
+  % \typeout{use-case-stuff.sty: title file handle is \the\titleFileIn}
+  \read\titleFileIn to\usecaseTitle
+  \closein\titleFileIn
+}
+
+%
+% Reads the title for the given use case from a file called <use case directory>/<use case name>-title.txt
+% and stores it in the global variable \usecaseTitle
+%
+\newcommand*{\readUseCaseTitleFromFile}[1]{%
+  \pgfqkeys{/usecase}{current/label=#1, current/typeout}
+  \IfFileExists{\usecaseTitleFile}{%
+    \privateDoTheActualRead{\usecaseTitleFile}%
+  }{%
+    \global\edef\usecaseTitleFile{../\usecaseTitleFile}%
+    \IfFileExists{\usecaseTitleFile}{%
+      \privateDoTheActualRead{\usecaseTitleFile}%
+    }{%
+      \typeout{use-case-stuff.sty: File {\usecaseTitleFile} not found}%
+    }%
+  }%
+  \typeout{use-case-stuff.sty: title=\usecaseTitle}%
+}
+

@@ -1,0 +1,96 @@
+name: Create PDF
+on: [push]
+
+jobs:
+  create-pdf:
+    strategy:
+      matrix:
+        customer_code: [ 'ekgf' ]
+        document_main: [ 'ekg-manifesto' ]
+        document_mode: [ 'draft', 'final' ]
+        include:
+          - document_main: 'ekg-manifesto'
+            folder: '0ACknmC_fYtNyUk9PVA'
+            channel: 'ekg-manifesto-latest'
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Set up Git repository
+        uses: actions/checkout@v2
+      -
+        name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        env:
+          TERM: 'xterm-256color'
+          OSFONTDIR: ${GITHUB_WORKSPACE}/etc/fonts
+          REPOSITORY_NAME: ${{ github.event.repository.name }}
+          latex_document_main: ${{ matrix.document_main }}
+          latex_customer_code: ${{ matrix.customer_code }}
+          latex_document_mode: ${{ matrix.document_mode }}
+        with:
+          root_file: '${{ matrix.document_main }}/${{ matrix.document_main }}.tex'
+          latexmk_use_lualatex: true
+          extra_system_packages: ncurses git
+      -
+        name: Find name of PDF
+        id: pdf
+        run: |
+          cd "./${{ matrix.document_main }}"
+          file=$(ls -1 $(pwd)/*.pdf | head -n 1)
+          echo "Generated PDF: ${file}"
+          echo "::set-output name=file::${file}"
+      -
+        name: Upload PDF to job page
+        uses: actions/upload-artifact@v2
+        with:
+          #
+          # name: leaving out the document name here so that all agnos docs end up in one zip file
+          #
+          name: ${{ matrix.customer_code }}
+          #
+          # path: unfortunately we cannot use ${{ steps.pdf.outputs.file }} here because the ekg-manifesto directory
+          #       in the repo is not a real directory but a symlink to /mnt/ekg-manifesto. The problem with that is that
+          #       the upload-artifact code cannot deal with that. Using a glob pattern like below is the fix for
+          #       that
+          #
+          path: "./**/${{ matrix.document_main }}/${{ matrix.customer_code }}-*.pdf"
+          if-no-files-found: error
+      -
+        name: Upload PDF to Github Actions job page
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'public'
+          path: '${{ matrix.document_main }}/${{ matrix.customer_code }}-*.pdf'
+      -
+        name: Upload PDF to Google Drive
+        #
+        # TODO: Figure out how to delete old PDFs from Google Drive
+        #
+        env:
+          CLIENT_ID: ${{ secrets.AGNOS_GDRIVE_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.AGNOS_GDRIVE_CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.AGNOS_GDRIVE_REFRESH_TOKEN }}
+        run: |
+          curl --compressed -Ls https://github.com/labbots/google-drive-upload/raw/master/install.sh | sh -s
+          echo "CLIENT_ID=${{ secrets.AGNOS_GDRIVE_CLIENT_ID }}" > "${HOME}/.googledrive.conf"
+          echo "CLIENT_SECRET=${{ secrets.AGNOS_GDRIVE_CLIENT_SECRET }}" >> "${HOME}/.googledrive.conf"
+          echo "REFRESH_TOKEN=${{ secrets.AGNOS_GDRIVE_REFRESH_TOKEN }}" >> "${HOME}/.googledrive.conf"
+          source ${HOME}/.profile
+          export PATH=${PATH}:$HOME/.google-drive-upload/bin
+          echo "Uploading ${{ steps.pdf.outputs.file }} into folder ${{ matrix.folder }}"
+          gupload \
+            --quiet \
+            --overwrite \
+            --config "${HOME}/.googledrive.conf" \
+            --skip-internet-check \
+            --root-dir "${{ matrix.folder }}" \
+            --hide \
+            "${{ steps.pdf.outputs.file }}"
+          rm -f "${HOME}/.googledrive.conf"
+      -
+        name: Upload to slack step
+        uses: adrey/slack-file-upload-action@master
+        with:
+          token: "${{ secrets.SLACK_TOKEN }}"
+          path: "${{ steps.pdf.outputs.file }}"
+          channel: "${{ matrix.channel }}"

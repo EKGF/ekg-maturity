@@ -1,0 +1,39 @@
+%
+% All overleaf related stuff
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{overleaf-stuff}[2019/12/27 agnos.ai - all overleaf related stuff]
+%
+% The \homepath macro works on Mac OS X and on Overleaf and gives us the home path of the current user.
+% We use that to detect whether we're running on overleaf of not.
+%
+\makeatletter
+\begingroup\endlinechar=-1\relax
+\everyeof{\noexpand}%
+\edef\x{\endgroup\def\noexpand\homepath{%
+\@@input|"kpsewhich --var-value=HOME" }}\x
+\makeatother
+
+\def\overleafhome{/tmp}% change as appropriate
+
+\typeout{Current home path is \homepath}
+
+\ifx\homepath\overleafhome
+\typeout{We are running on Overleaf}
+\else
+\typeout{We are not running on Overleaf}
+\fi
+
+\newcommand{\whenRunningOnOverleafDo}[1]{
+\ifx\homepath\overleafhome
+#1
+\fi
+}
+
+\newcommand{\whenNotRunningOnOverleafDo}[1]{
+\ifx\homepath\overleafhome
+\else
+#1
+\fi
+}
+
