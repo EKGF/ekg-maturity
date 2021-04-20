@@ -109,6 +109,76 @@
     }
 }
 
+\newglossaryentry{object}{
+    name={Object},%
+    type=\glsdefaulttype,%
+    description={A knowledge resource, that is intended to be referenceable and shared.
+    It does not include structured values (\textit{blank nodes}) used in only one place.}
+}
+
+\newglossaryentry{uri}{
+    name={URI},%
+    type=\glsdefaulttype,%
+    first="Uniform Resource Identifier",
+    description={A Uniform Resource Identifier (URI) is a compact sequence of
+    characters that identifies an abstract or physical resource. See https://www.ietf.org/rfc/rfc3986.txt.}
+}
+
+\newglossaryentry{iri}{
+    name={IRI},%
+    type=\glsdefaulttype,%
+    first="Internationalised Resource Identifier (IRI)",
+    description={
+        The \gls{w3c} \gls{rdf} 1.1 standard, the most fundamental standard that underpins any \gls{ekg},
+        The IRI standard is a superset of the older \gls{uri} standard.
+    }
+}
+
+\newglossaryentry{ekgiri}{
+    name={EKG/IRI},%
+    text={EKG/IRI\glsadd{iri}},
+    type=\glsdefaulttype,%
+    first="Enterprise Knowledge Graph IRI (EKG/IRI)",
+    description={
+        An \gls{iri} that forms the identity of an object in the \gls{ekg}.
+        Any given object in an \gls{ekg} has an EKG/IRI for which special rules are defined by the \gls{ekgf}.
+        Not to be confused by \glspl{canonical-identifier}.
+    }
+}
+
+\newglossaryentry{canonical-identifier}{
+    name={Canonical Identifier},%
+    type=\glsdefaulttype,%
+    description={A permanent identifier for an object, distinguished within an \gls{ekg}.}
+}
+
+\newglossaryentry{property}{
+    name={Canonical Identifier},
+    type=\glsdefaulttype,%
+    description={An identified and fully-defined linkage between an object and values.}
+}
+
+\newglossaryentry{ontology}{
+    name={Ontology},
+    type=\glsdefaulttype,%
+    description={A machine-readable, managed and identified set of properties and related definitions.}
+}
+
+\newglossaryentry{data-point}{
+    name={Data Point},
+    type=\glsdefaulttype,%
+    description={A fact representing the value(s) of a property for an object in some context.
+    Each value may be a simple data (e.g. a number, string or date) or another object.
+    The combination of object, property and value is a \textit{triple}.}
+}
+
+\newglossaryentry{dataset}{
+    name={Dataset},
+    type=\glsdefaulttype,%
+    description={A collection of data, published or curated by a single agent,
+    and available for access or download in one or more serializations or formats.}
+}
+
 \newglossaryentry{operating-model} {
     type=\glsdefaulttype,
     name={operating model},

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # WARNING: This script is being replaced by latexmk (and it's init file .latexmkrc). This script still works but
 #          is no longer supported and not used in Github Actions workflows.
@@ -53,10 +53,13 @@ function version() {
 
   if [[ -f "${dir}/VERSION" ]] ; then
     head -n1 "${dir}/VERSION" | tr . -
+  elif [[ -f "../VERSION" ]] ; then
+    head -n1 "../VERSION" | tr . -
   elif [[ -f "VERSION" ]] ; then
-    head -n1 VERSION | tr . -
+    head -n1 "VERSION" | tr . -
   else
-    echo "UNKNOWN VERSION"
+    echo "0.1" > "VERSION"
+    echo "0-1"
   fi
 }
 
@@ -73,20 +76,14 @@ function runLaTex() {
   local latexCommand="\def\customerCode{${customerCode}}"
 
   latexCommand+=" \def\documentName{${documentName}}"
-  latexCommand+=" \def\documentVersion{${version}}"
+  latexCommand+=" \def\documentVersion{${version//-/.}}"
 
   if [[ ${run} -eq 4 ]] ; then
     skipGeneratingPdf=""
   fi
 
-  if [[ "${mode}" == "draft" ]] ; then
-    latexCommand+="\def\DocumentClassOptions{} \input{"${file}'}'
-  elif [[ "${mode}" == "final" ]] ; then
-    latexCommand+="\def\DocumentClassOptions{final} \input{"${file}'}'
-  else
-    echo "ERROR: Unknown draft/final mode" >&2
-    return 1
-  fi
+  latexCommand+="\def\documentMode{${mode}}"
+  latexCommand+="\input{"${file}'}'
 
   echo "*******************"
   echo "******************* lualatex run ${run} ${mode} ${customerCode} ${file}"
@@ -245,7 +242,7 @@ function runPandoc() {
   local -r rc=$?
 
   if ((rc > 0)) ; then
-    echo "ERROR: pandoc failed with error code ${rc}" >&2
+    echo "ERROR: pandoc failed with error code ${rc}"
   fi
 
   return ${rc}
@@ -283,12 +280,17 @@ function runInkScapeOnSVGFile() {
     # Quick fix, run inkscape in dbus-run-session to avoid the ugly dbus messages (and it seems to speed up a little too)
     #
     if ! dbus-run-session inkscape "${svgFile}" -D --export-filename="${pdfFile}" --export-type="pdf" --export-latex ; then
-      echo "ERROR: Error occurred with inkscape ${svgFile}" >&2
+      echo "ERROR: Error occurred with inkscape ${svgFile}"
       return 1
     fi
   else
-    if ! inkscape "${svgFile}" -D --export-filename="${pdfFile}" --export-type="pdf" --export-latex ; then
-      echo "ERROR: Error occurred with inkscape ${svgFile}" >&2
+    if ! inkscape "${svgFile}" \
+       --export-area-drawing \
+       --export-filename="${pdfFile}" \
+       --export-pdf-version=1.5 \
+       --export-type="pdf" \
+       --export-latex ; then
+      echo "ERROR: Error occurred with inkscape ${svgFile}"
       return 1
     fi
   fi
@@ -306,12 +308,12 @@ function runInkScapeOnVSDXFile() {
     # Quick fix, run inkscape in dbus-run-session to avoid the ugly dbus messages (and it seems to speed up a little too)
     #
     if ! dbus-run-session inkscape "$(pwd)/${vsdxFile}" -D --export-filename="$(pwd)/${vsdxFile/.vsdx/.pdf}" --export-type="pdf" --export-latex ; then
-      echo "ERROR: Error occurred with inkscape $(pwd)/${vsdxFile}" >&2
+      echo "ERROR: Error occurred with inkscape $(pwd)/${vsdxFile}"
       return 1
     fi
   else
     if ! inkscape "$(pwd)/${vsdxFile}" -D --export-filename="$(pwd)/${vsdxFile/.vsdx/.pdf}" --export-type="pdf" --export-latex ; then
-      echo "ERROR: Error occurred with inkscape $(pwd)/${vsdxFile}" >&2
+      echo "ERROR: Error occurred with inkscape $(pwd)/${vsdxFile}"
       return 1
     fi
   fi
@@ -323,39 +325,61 @@ function runInkScape() {
 
   if ! command -v inkscape >/dev/null 2>&1 ; then
     echo "WARNING: Cannot convert SVG files to PDF and pdf_tex files because inkscape is not installed"
-    if [[ "$(uname)" == "Darwin" ]] ; then
+    if [[ "$(uname)" == Darwin ]] ; then
       echo "Installing Inkscape"
       brew install --cask inkscape
       if ! command -v inkscape >/dev/null 2>&1 ; then
-        echo "ERROR: Could not install inkscape" >&2
+        echo "ERROR: Could not install inkscape"
         return 1
       fi
     else
-      echo "WARNING: Cannot run inkscape on this platform to generate pdf_svg files"
       return 0
     fi
   fi
 
-  local base
-  local dir
+  if ! cd images ; then
+    echo "ERROR: Could not find images directory"
+    return 1
+  fi
 
-  while read -r vectorImageFile ; do
-    base="$(basename "${vectorImageFile}")"
-    dir="$(dirname "${vectorImageFile}")"
-    (
-      cd "${dir}" || return 1
-      if [[ "${base}" =~ *.svg ]] ; then
-        runInkScapeOnSVGFile "${base}"
-      else
-        runInkScapeOnVSDXFile "${base}"
-      fi
-      return $?
-    ) || return $?
-  done < <(
-    find . -name '*.svg' -or -name '*.vsdx'
-  )
+  if ls -- *.svg >/dev/null 2>&1 ; then
+    for svgFile in *.svg ; do
+      runInkScapeOnSVGFile "${svgFile}" || return $?
+    done
+  fi
+  if ls -- *.vsdx >/dev/null 2>&1 ; then
+    for vsdxFile in *.vsdx ; do
+      runInkScapeOnVSDXFile "${vsdxFile}" || return $?
+    done
+  fi
 
-  return $?
+  cd ..
+
+  if ! cd customer-assets ; then
+    echo "ERROR: Could not find customer-assets directory"
+    return 1
+  fi
+
+  for customerAssetDir in $(ls -1 */ | grep '/:' | sed 's@/:@@') ; do
+    pushd ${customerAssetDir} >/dev/null 2>&1
+    if ls --  *.svg >/dev/null 2>&1 ; then
+      for svgFile in *.svg ; do
+        [[ "xx${svgFile}xx" == "xx*.svgxx" ]] && continue
+        runInkScapeOnSVGFile "${svgFile}" || return $?
+      done
+    fi
+    if ls -- *.vsdx >/dev/null 2>&1 ; then
+      for vsdxFile in *.vsdx ; do
+        [[ "xx${vsdxFile}xx" == "xx*.vsdxxx" ]] && continue
+        runInkScapeOnVSDXFile "${vsdxFile}" || return $?
+      done
+    fi
+    popd >/dev/null 2>&1
+  done
+
+  cd ..
+
+  return 0
 }
 
 function getCustomerCodeInFileName() {
@@ -431,7 +455,7 @@ function copyToOut() {
   local -r pandocDocxFile="${file}.pandoc.docx"
 
   if [[ ! -f "${mainFile}.pdf" ]] ; then
-    echo "ERROR: Could not find ${mainFile}.pdf" >&2
+    echo "ERROR: Could not find ${mainFile}.pdf"
     return 1
   fi
 
@@ -476,7 +500,7 @@ function copyToGoogleDriveLocal() {
   local -r pandocDocxFile="${mainFile}.pandoc.docx"
 
   if [[ ! -f "${mainFile}.pdf" ]] ; then
-    echo "ERROR: Could not find ${mainFile}.pdf" >&2
+    echo "ERROR: Could not find ${mainFile}.pdf"
     return 1
   fi
 
@@ -519,7 +543,7 @@ function copyToGoogleDriveLocal() {
   mkdir -p "${targetDirectory}" >/dev/null 2>&1
 
   if [[ ! -d "${targetDirectory}" ]] ; then
-    echo "ERROR: Could not create ${targetDirectory}" >&2
+    echo "ERROR: Could not create ${targetDirectory}"
     return 1
   fi
 
@@ -551,15 +575,29 @@ function runBuildForMode() {
 
   return 0
 }
+
+function defaultCustomerCode() {
+
+  local gitRepoOrgName="$(git config --get remote.origin.url | sed 's!^.*github.com[:/]\(.*\)/.*$!\1!g')"
+
+  gitRepoOrgName="${gitRepoOrgName,,}"
+
+  if [[ -n "${gitRepoOrgName}" ]] ; then
+    echo "${gitRepoOrgName}"
+    return 0
+  fi
+  echo "agnos.ai"
+}
+
 function runTheBuild() {
 
-  local customerCode="agnos"
+  local customerCode="$(defaultCustomerCode)"
 
   if [[ $# -lt 1 ]] ; then
     echo "Usage: $0 [--local] [--draft] [--final] [--skip-pandoc] [--open] [--customer <customer code>] <name of main doc>"
     echo ""
     echo "The --draft option is the default but if you want to both draft and final versions of the document then specify them both."
-    echo "The default customer code is ${customerCode}."
+    echo "The default customer code is \"${customerCode}\"."
     return 1
   fi
 
@@ -592,7 +630,7 @@ function runTheBuild() {
     elif [[ "$1" == "--customer" ]] ; then
       customerCode="$2"
       if [[ ! -d "${SCRIPT_DIR}/customer-assets/${customerCode}" ]] ; then
-        echo "ERROR: Could not find directory ./customer-assets/${customerCode}" >&2
+        echo "ERROR: Could not find directory ./customer-assets/${customerCode}"
         exit 1
       fi
       customerOption="--customer ${customerCode}"
@@ -609,7 +647,7 @@ function runTheBuild() {
 
   if [[ ! -f "${mainDir}/${mainFile}.tex" ]] ; then
     if [[ ! -f "${mainFile}.tex" ]] ; then
-      echo "ERROR: Could not find ${mainFile}/${mainFile}.tex" >&2
+      echo "ERROR: Could not find ${mainFile}/${mainFile}.tex"
       return 1
     fi
     mainDir="$(pwd)"
@@ -622,7 +660,7 @@ function runTheBuild() {
         installFontsInDarwin || return $?
       fi
     else
-      echo "ERROR: Could not find lualatex on your PATH" >&2
+      echo "ERROR: Could not find lualatex on your PATH"
       return 1
     fi
   elif isRunningInDockerContainer ; then
@@ -659,12 +697,24 @@ function runTheBuild() {
   return $?
 }
 
+function openPdfForReal() {
+
+  local -r pdf="$1"
+
+  if [[ -d /Applications/Skim.app ]] ; then
+    open -a "Skim" "${pdf}"
+    return $?
+  fi
+
+  open "${pdf}"
+}
+
 function openPdf() {
 
   ((openThePdf)) || return 0
 
   if ((! useLocalLaTeX)) ; then
-    echo "ERROR: Cannot open PDF when not running in local mode, use option --local" >&2
+    echo "ERROR: Cannot open PDF when not running in local mode, use option --local"
     return 1
   fi
 
@@ -676,11 +726,13 @@ function openPdf() {
   local -r jobName=$(jobName "${customerCode}" "${mode}" "${documentName}" "${version}")
 
   if [[ -f "../out/${jobName}.pdf" ]] ; then
-    open "../out/${jobName}.pdf"
+    openPdfForReal "../out/${jobName}.pdf"
   elif [[ -f "${mainDir}/${jobName}.pdf" ]] ; then
-    open "${mainDir}/${jobName}.pdf"
+    openPdfForReal "${mainDir}/${jobName}.pdf"
+  elif [[ -f "../${mainDir}/${jobName}.pdf" ]] ; then
+    openPdfForReal "../${mainDir}/${jobName}.pdf"
   else
-    echo "ERROR: Could not find ${jobName}.pdf" >&2
+    echo "ERROR: Could not find ${jobName}.pdf"
     echo "mainDir=${mainDir}"
     echo "mainFile=${mainFile}"
     echo "jobName=${jobName}"
