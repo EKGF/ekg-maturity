@@ -1,9 +1,10 @@
 \section{Data Quality Business Rules}\label{sec:ekgmm-b-3-2} % B.3.2 Business Rules
+\index{data quality}
 
 Data Quality business rules ensure that the data is fit for its intended purpose.
 Subject matter experts specify the criteria used to validate and enforce data integrity.
 The criteria are translated into agreed specifications (i.e. business rules) which are later codified for
-data profiling\index{Data Profiling} or measuring conformity.
+\iindex{data profiling} or measuring conformity.
 Data quality business rules can also be embedded into data capture systems to ensure validity at source.
 
 \ekgmmContextSection
@@ -23,8 +24,8 @@ enters the system.
 \begin{core-questions}
 
   \item [\thesection.1] Are data quality business rules specified, formalized, and expressed in a standardized manner
-  \item [\thesection.2] Is there a clear line of business accountability (owned, funded, and governed) for the
-                        data quality rules
+  \item [\thesection.2] Is there a clear line of business \iindex{accountability} (owned, funded, and governed) for the
+                        \iindex{data quality} rules
   \item [\thesection.3] Is there a centrally managed repository of business rules\improve{explain that it does not
                         necessarily have to be central as long as it is agreed and enforced at the right scope}
   \item [\thesection.4] Is there a clearly defined mechanism for logging additions and performing updates
@@ -52,12 +53,12 @@ enters the system.
 \begin{scoring}
 
   \item A defined architecture exists to translate business rules into machine-executable code (some rules will be
-        \iindex{OWL} expressions, some will be \iindex{SHACL shapes} and constraints, some will be translated into
+        OWL\index{OWL} expressions, some will be SHACL shapes\index{SHACL} and constraints, some will be translated into
         workflow logic)
-  \item Business provenance\index{Provenance} and lineage\index{Lineage} are traceable across the
-        data supply chain\index{Data Supply Chain} and evaluated against defined business rules (all business rules
-        must be traceable and understandable in context -- must understand the purpose and importance of the rule)
-  \item Business rules for in-scope use cases are implemented in the EKG
+  \item Business \iindex{provenance} and \iindex{lineage} are traceable across the \iindex{data supply chain} and
+        evaluated against defined business rules (all business rules must be traceable and understandable in
+        context -- must understand the purpose and importance of the rule)
+  \item Business rules for in-scope use cases are implemented in the \gls{ekg}
 
 \end{scoring}
 
@@ -70,7 +71,7 @@ enters the system.
     \item [Performance] The value of business rules are related to business concepts (products, financial performance,
           organizational objectives) -- able to trace the core relationship between the business objectives and
           the data quality business rules (correlation between rules and outcomes are known, able to be queried and
-          traceable within the EKG)
+          traceable within the \gls{ekg})
 
 \end{scoring}
 
@@ -78,10 +79,10 @@ enters the system.
 
 \begin{scoring}
 
-    \item Business rules are combined with \iindex{AI} capability for compliance (dynamic optimization of
+    \item Business rules are combined with \gls{ai} capability for compliance (dynamic optimization of
           business rules)
-    \item Model-driven (senior management can begin to optimize business objectives using business rules in the EKG --
-          i.e. alignment of business rules with “what if” scenarios)
+    \item Model-driven (senior management can begin to optimize business objectives using business rules in
+          the \gls{ekg} -- i.e. alignment of business rules with “what if” scenarios)
 
 \end{scoring}
 

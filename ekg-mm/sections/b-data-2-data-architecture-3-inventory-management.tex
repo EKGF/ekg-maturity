@@ -1,10 +1,10 @@
 \section{Inventory Management}\label{sec:ekgmm-b-2-3} % B.2.3 Inventory Management
 
-A \iindex{Data Inventory} is a repository of data assets\index{Data Assets} for the organization (also known as a
-data catalog\index{Data Catalog} or metadata repository\index{Metadata Repository}).
-The inventory contains information about what data exists, where it resides (“data-at-rest”)\index{Data-at-Rest},
-responsible parties, upstream/downstream usage, how it moves (“data in motion”)\index{Data-in-Motion}, classifications,
-quality designations, availability, and other useful metrics.
+A \iindex{Data Inventory} is a repository of \iindex{data assets} for the organization (also known as a
+\iindex{data catalog} or \iindex{metadata repository}).
+The inventory contains information about what data exists, where it resides (“\iindex{data-at-rest}”),
+responsible parties, upstream/downstream usage, how it moves (“\iindex{data-in-motion}”), classifications,
+quality designations, availability, and other useful \iindex{metrics}.
 The contents are cataloged at physical, logical, and business levels using defined organizational standards.
 Consistently documenting data is the backbone of an effective data management program.
 Policies and controls are required to ensure the inventory remains accurate and relevant.
@@ -59,14 +59,14 @@ in ways that were not previously possible.
 
 \begin{scoring}
 
-  \item Use case trees\index{Use Case Tree} (taxonomies and dependencies) are defined, standardized, and implemented
+  \item \glspl{uct} are defined, standardized, and implemented
   \item All upstream data sources are linked to the authorized systems of record and distribution points
   \item Policy mandating the use of \glspl{sor} and documentation of data flow is implemented
   \item Entitlements have been defined in the graph (governing access to sources of data in the inventory)
   \item Classifications (i.e. criticality, security, privacy) are aligned with the use case tree and captured in the
         knowledge graph
-  \item Governance requirements (i.e. use cases, accountability, data sources, data flows, SLAs) are modeled and
-        registered into the knowledge graph
+  \item Governance requirements (i.e. use cases, \iindex{accountability}, data sources, data flows, \glspl{sla})
+        are modeled and registered into the knowledge graph
 
 \end{scoring}
 
@@ -77,8 +77,8 @@ in ways that were not previously possible.
   \item Data inventory is centralized in the graph and linked to governance for defined use cases
   \item Ontologies and data models (including change history and transformations) are registered in the knowledge graph
   \item Entitlements are calculated within the inventory and enforced at the datapoint level
-  \item Data quality is automatically calculated (fine-grained with dynamic value resolution) within the inventory
-        for each use case
+  \item \iindex{Data quality} is automatically calculated (fine-grained with dynamic value resolution) within
+        the inventory for each use case
   \item Data retention rules are registered in the graph and automatically enforced
   \item Full audit trail for all upstream and downstream data usage is registered in the graph
   \item Data elements, calculation methods, and \glspl{cde} are linked to individual regulatory requirements
