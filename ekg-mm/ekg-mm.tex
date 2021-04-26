@@ -28,79 +28,12 @@
 \begin{document}
 
 \typeout{ekg-mm =================================> Intro}
-
-\input{../ekg-mm/sections/ekg-mm-intro.tex}
+\input{../ekg-mm/parts/0-intro.tex}
 
 \typeout{ekg-mm =================================> Capabilities}
-
-\input{../ekg-mm/sections/ekg-mm.tex}
+\input{../ekg-mm/ekg-mm-capabilities.tex}
 
 \typeout{ekg-mm =================================> Appendices}
-\bookmarksetupnext{level=-1}
-\bookmarksetup{bold=false, color=black}
-\appendix
-\addappheadtotoc
-\appendixpage
-\renewcommand\thechapter{\Alph{chapter}}
-\renewcommand\thesection{\arabic{section}}
-\renewcommand\thesubsection{\thesection.\arabic{subsection}}
-\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
-
-\typeout{ekg-mm =================================> Appendix: Principles}
-\input{../ekg-manifesto/chapters/principles.tex}
-
-\typeout{ekg-mm =================================> Appendix: Process}
-\input{../ekg-mm/sections/appendix-process.tex}
-
-\typeout{ekg-mm =================================> Appendix: History}
-
-\chapter{History}
-
-\begin{version-history}
-    0.1 & 01/03/2019 & \agnos started with the \glsfmtshort{ekgmm} initiative & Michael Atkin, Jacobus Geluk \\
-    0.1 & 01/01/2020 & \agnos donated IP to \glsfmtshort{ekgmm} to EKGF ``as is'' & Jacobus Geluk \\
-    0.2 & 01/01/2021 & Started with new delivery process & Mike Atkin, Dennis Wisnosky \\
-    0.3 & 08/04/2021 & Business pillar workgroup deciding top-level structure & Lars Magnusson, Carl Mattocks, Jeffrey Wallk \textit{et al}. \\ % \hline
-\end{version-history}
-
-\section*{Contributors}
-
-All contributors in alphabetical order.
-
-TODO: Many people have not been added yet!! Work in progress!!
-
-\begin{table}[ht]
-    \small
-    \let\freewidth\relax%
-    \newlength{\freewidth}%
-    \setlength{\freewidth}{\dimexpr\textwidth-8\tabcolsep}%
-    \renewcommand{\arraystretch}{1.5}%
-    \begin{tabular}{
-        @{}
-        p{0.30\freewidth}
-        p{0.30\freewidth}
-        p{0.30\freewidth}
-        @{}
-    }
-        \textbf{Contributor} & \textbf{Org} & \textbf{Role} \\ \toprule
-        \href{https://www.linkedin.com/in/diane-alexander-pmp-ssbb/}{Diane Alexander} & \href{https://factorfirm.com/}{Factor} & Business Pillar \\
-        \href{https://www.linkedin.com/in/matkin/}{Michael Atkin} & Columbia University & EKGF Founder \newline EKG/MM Initiator \newline Data Pillar \\
-        \href{https://www.linkedin.com/in/jgeluk/}{Jacobus Geluk} & \agnos & EKGF Founder \newline EKG/MM Initiator \newline Business/Data/Tech pillars \\
-        \href{https://www.linkedin.com/in/howard-knowles-57815b6/}{Howard Knowles} & \agnos & Technology Pillar \\
-        \href{https://www.linkedin.com/in/ross-leher-4471971/}{Ross Leher} & \href{https://www.wandinc.com}{WAND} & Business Pillar \\
-        \href{https://www.linkedin.com/in/marylevins/}{Mary Levins} & \href{http://www.sierracreekconsulting.com/}{Sierra Creek Consulting} & Business \& Data Pillar \\
-        \href{https://www.linkedin.com/in/larsmmagnusson/}{Lars Magnusson} & Ericsson & Business Pillar \\
-        \href{https://www.linkedin.com/in/carlmattocks/}{Carl Mattocks} & GE & Business Pillar \\
-        \href{https://www.linkedin.com/in/jeduardomtz/}{Eduardo Martinez} & BMO & Business Pillar \\
-        \href{https://www.linkedin.com/in/avinash-patil-4229564/}{Avinash Patil} & Tata Consultancy Services & Business Pillar \\
-        \href{https://www.linkedin.com/in/peterivett/}{Pete Rivett} & OMG \newline \agnos & EKGF Founder \& Vice President \newline Data Pillar \\
-        \href{https://www.linkedin.com/in/msls07/}{Marina Severinovskaya} & Citi & Business \& Data Pillar \\
-        \href{https://www.linkedin.com/in/carlos-tubbax-975058118/}{Carlos Tubbax} & \href{https://www.uantwerpen.be/en/staff/carlos-tubbax/}{University of Antwerp} & Business Pillar \\
-        \href{https://www.linkedin.com/in/jeffreywallk/}{Jeffrey Wallk} & \href{https://www.enablingvalue.com}{Value Enablement Group} & Business Pillar \\
-        \href{https://www.linkedin.com/in/denniswisnosky/}{Dennis Wisnosky} & Wizdom & EKGF Founder \& Chair \newline EKG/MM Process \\
-        \href{https://www.linkedin.com/in/jeanninewisnoskystehlin/}{Jeannine~Wisnosky Stehlin} & Wizdom & EKGF Director of operations \newline EKG/MM Process \\
-        \bottomrule
-    \end{tabular}
-\end{table}
+\input{../ekg-mm/ekg-mm-appendices.tex}
 
 \end{document}
