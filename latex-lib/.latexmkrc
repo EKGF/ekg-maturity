@@ -10,6 +10,8 @@
 #
 use File::Basename;
 use experimental 'smartmatch';
+use warnings FATAL => "all";
+no warnings 'experimental::smartmatch';
 $pdf_mode = 4;              # generate PDF using lualatex
 $bibtex_use = 2;
 $postscript_mode = $dvi_mode = 0;
@@ -44,16 +46,18 @@ $biber = "biber %O --bblencoding=utf8 -u -U --output_safechars %B";
 # Specify which PDF viewer you want to use (Skim is the best one on a Mac)
 #
 $pdf_previewer = 'open -a Skim';
-$ENV{'TEXINPUTS'}='./etc//:../etc//:../../etc//:' . $ENV{'TEXINPUTS'}; 
-$ENV{'BSTINPUTS'}='.//:../:../../:' . $ENV{'BSTINPUTS'};
-$ENV{'TZ'}='Europe/London';
+$texinputs = $ENV{'TEXINPUTS'} || '';
+$ENV{'TEXINPUTS'} = "./etc/:../etc/:../../etc/:${texinputs}";
+$bstinputs = $ENV{'BSTINPUTS'} || '';
+$ENV{'BSTINPUTS'} = "./:../:../../:${bstinputs}";
+$ENV{'TZ'} = 'Europe/London';
 
+print "Tex Inputs: $ENV{'TEXINPUTS'}\n";
+print "Bst Inputs: $ENV{'BSTINPUTS'}\n";
 print "default_files=@default_files  $_[0]\n";
-foreach (@default_files) {
-  print "$_\n";
-}
-print "\%O=%O\n";
-print "\%O=%S\n";
+#foreach (@default_files) {
+#  print "$_\n";
+#}
 
 #
 # Find the main doc and derive some values from it.
@@ -178,6 +182,17 @@ sub readVersion {
     close $versionFileHandle or die "Failed to close ${versionFileName}: $!\n";
     $version = tchomp($version);
     $version = tchomp($version);
+    #
+    # Replace the dots with dashes
+    #
+    $version =~ tr/./-/s;
+    #
+    # Replace the slashes with dashes
+    #
+    $version =~ tr@/@-@s;
+    #
+    # Just before passing the documentVersion to lualatex, we replace the dashes with dots
+    #
     return $version;
 }
 
@@ -201,7 +216,7 @@ sub getVersionSuffix() {
     }
     my $branchName = getCurrentBranchName();
     if ($branchName ~~ ['main', 'master']) {
-        print "No git branch name in the name of the generated PDF file because we're on ${branchName}\n";
+        print "Git Branch: No git branch name in the name of the generated PDF file because we're on ${branchName}\n";
     } elsif ($branchName eq '') {
         ;
     } else {
@@ -274,7 +289,7 @@ $clean_ext .= " aux fls log glsdefs tdo ist run.xml xdy";
 $latex_document_mode = lc($ENV{'latex_document_mode'} || 'draft');
 print "Document Mode: ${latex_document_mode}\n";
 if("${latex_document_mode}" eq 'final') {
-    print "We're not in draft mode, creating the final version\n";
+    print "Document Mode: We're not in draft mode, creating the final version\n";
     $jobname = "$document_customer_code-${document_name}";
 } else {
     $jobname = "$document_customer_code-${document_name}-${latex_document_mode}";
@@ -291,14 +306,15 @@ $jobname =~ s/--/-/g ;
 $latex_document_version = readVersion();
 $latex_document_version_suffix = getVersionSuffix();
 $latex_document_version = "${latex_document_version}${latex_document_version_suffix}";
-$versionWithDashes = $latex_document_version;
-$versionWithDashes =~ tr/./-/s;
-print "Document Version: $latex_document_version...\n";
+$latex_document_version_dotted = $latex_document_version;
+$latex_document_version_dotted =~ tr/-/./s;
+print "Document Version: $latex_document_version_dotted (dotted version)\n";
+print "Document Version: $latex_document_version\n";
 
 $pre_tex_code = "${pre_tex_code}\\def\\documentMode{${latex_document_mode}}";
 $pre_tex_code = "${pre_tex_code}\\def\\documentName{$document_name}";
 $pre_tex_code = "${pre_tex_code}\\def\\customerCode{$document_customer_code}";
-$pre_tex_code = "${pre_tex_code}\\def\\documentVersion{$latex_document_version}";
+$pre_tex_code = "${pre_tex_code}\\def\\documentVersion{$latex_document_version_dotted}";
 
 if($ENV{'latex_document_members_only'} and "$ENV{'latex_document_members_only'}" eq 'yes') {
     $jobname = "${jobname}-members-only-${latex_document_version}";
@@ -321,6 +337,7 @@ $lualatex_bin = "lualatex";
 if (-f "/Library/TeX/texbin/lualatex") {
     $lualatex_bin = "/Library/TeX/texbin/lualatex";
 }
+
 $lualatex = "${lualatex_bin} --synctex=1 --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P";
 
 $kpsewhich = "kpsewhich %S";
