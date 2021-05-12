@@ -46,10 +46,13 @@ Pull the latest changes from latex-lib into your own repo with:
 git fetch latex-lib && git subtree pull --prefix=latex-lib latex-lib main --squash
 ----
 
-== EKG/MM
+== Other Repositories
 
-You can do the same for other repositories and merge them into your own, for instance
-the EKG/MM repository at https://github.com/EKGF/ekg-mm, you should however import
+You can do the same for other repositories and merge them into your own:
+
+=== EKG/MM
+
+Take for instance the EKG/MM repository at https://github.com/EKGF/ekg-mm, you should however import
 such a content repo under the /mnt directory (mnt stands for "mount", analogous to
 mounting a file system in Unix), see the `--prefix` option below.
 
@@ -57,7 +60,7 @@ If you prefer using HTTPS urls:
 
 [source,asciidoc]
 ----
-git remote add -f ekg-mm https://github.com/EKGF/ekg-mm.git
+git remote add -f ekg-mm https://github.com/EKGF/ekg-mm.git &&
 git subtree add --prefix=mnt/ekg-mm --squash ekg-mm/main
 ----
 
@@ -65,7 +68,7 @@ If you prefer using SSH urls:
 
 [source,asciidoc]
 ----
-git remote add -f latex-lib git@github.com:EKGF/ekg-mm.git
+git remote add -f ekg-mm git@github.com:EKGF/ekg-mm.git &&
 git subtree add --prefix=mnt/ekg-mm --squash ekg-mm/main
 ----
 
@@ -83,4 +86,39 @@ Pull:
 git fetch ekg-mm && git subtree pull --prefix=mnt/ekg-mm ekg-mm main --squash
 ----
 
+=== EKG/Manifesto
+
+Or take for instance the EKG/Manifesto repository at https://github.com/EKGF/ekg-manifesto, you should however import
+such a content repo under the /mnt directory (mnt stands for "mount", analogous to
+mounting a file system in Unix), see the `--prefix` option below.
+
+If you prefer using HTTPS urls:
+
+[source,asciidoc]
+----
+git remote add -f ekg-manifesto https://github.com/EKGF/ekg-manifesto.git &&
+git subtree add --prefix=mnt/ekg-manifesto --squash ekg-manifesto/main
+----
+
+If you prefer using SSH urls:
+
+[source,asciidoc]
+----
+git remote add -f ekg-manifesto git@github.com:EKGF/ekg-manifesto.git &&
+git subtree add --prefix=mnt/ekg-manifesto --squash ekg-manifesto/main
+----
+
+Push:
+
+[source,asciidoc]
+----
+git subtree push --prefix=mnt/ekg-manifesto ekg-manifesto main
+----
+
+Pull:
+
+[source,asciidoc]
+----
+git fetch ekg-manifesto && git subtree pull --prefix=mnt/ekg-manifesto ekg-manifesto main --squash
+----
 
