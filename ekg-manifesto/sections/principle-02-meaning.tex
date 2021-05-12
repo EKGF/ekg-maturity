@@ -3,15 +3,21 @@
 The meaning of every \gls{data-point} must be directly resolvable 
 to a machine-readable mathematical definition.
 
-A \gls{data-point} combines an object with the value of a \textit{property} in some context. 
+A \gls{data-point} combines an object\,---\,using its \gls{ekg:iri} as its identifier\,---\,with the value
+of a \textit{property} in some context.
 Hence data is expressed at its most granular level for both data at rest and data in motion.
 
-A \gls{property} itself is an object, with its own identity, which is defined through further properties 
-based on logic that allow information to be rigorously combined, queried and inferred. 
-These properties that define properties are standardized by the W3C and are grouped 
-into \textit{ontologies} for management purposes.
-However the machine-readable logic does not replace natural language definitions that 
-link the properties and statements to the real world.
+The property itself is always an \gls{iri}, often called "predicate-IRI", that refers to an object\footnote{%
+    the official term in the \gls{rdf} standard for this object is "resource"%
+} that represents "the meaning" of the given \gls{data-point}.
+This object has its own identity and is defined through further properties
+based on logic that allow information to be rigorously combined, queried and inferred.
+These properties that define properties\,---\,also called "axioms"\,---\,are standardized by means of the \glsfirst{owl2}
+by the \gls{w3c} and are grouped into \textit{"OWL ontologies"} for management purposes.
+
+% JAG>PER I don't think the sentence below is useful or makes sense...
+%However the machine-readable logic does not replace natural language definitions that
+%link the properties and statements to the real world.
 
 \paragraph{Rationale} Expressing data at a granular level allows ultimate flexibility 
 for it to be sliced, diced, combined and aggregated. This capability to combine and 
