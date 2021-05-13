@@ -2,22 +2,22 @@
 
 Any object in the \glsfmtshort{ekg} is identified with at least one \iindex{universally unique}, \iindex{opaque},
 permanent and \iindex{web-resolvable} "canonical" identifier in the form of an \glsfmtshort{iri} for
-the \glsfmtshort{ekg} i.e. an \gls{ekgiri}.
+the \glsfmtshort{ekg} i.e. an \gls{ekg:iri}.
 
-The \gls{ekgiri} identifier is permanent, will be proliferated across the company's universe (including ecosystem),
+The \gls{ekg:iri} identifier is permanent, will be proliferated across the company's universe (including ecosystem),
 and will be used for the expression of facts about the object including relationships between objects.
 
-Additional non-canonical identifiers (and therefore not called \glspl{ekgiri}) may also be assigned,
+Additional non-canonical identifiers (and therefore not called \glspl{ekg:iri}) may also be assigned,
 and \myuline{they} \myuline{may} be human-readable (i.e. non-opaque), "external" to
 the organization's \glsfmtshort{ekg}, more \iindex{transient} and reassignable.
 
 \textit{Resolving} an identifier\index{identifier resolution} can be done in three ways:
 \begin{enumerate}
     \item using it in a query submitted or routed via an internet protocol e.q. a "lookup service" that translates
-          one or more "features" of a given existing object to an \gls{ekgiri}.
+          one or more "features" of a given existing object to an \gls{ekg:iri}.
     \item constructing it via a standardised policy from key components and applying a hash and optionally
-          signing it\,---\,where the object represented by the \gls{ekgiri} may or may not already exist.
-    \item constructing it by giving the object an \gls{ekgiri} based on a random number in case the \gls{ekg} is
+          signing it\,---\,where the object represented by the \gls{ekg:iri} may or may not already exist.
+    \item constructing it by giving the object an \gls{ekg:iri} based on a random number in case the \gls{ekg} is
           the authoritative source for the given object.
 \end{enumerate}
 
@@ -30,18 +30,18 @@ and unchanging one, which can for example make the mapping of identities a many-
 \paragraph{Implications}
 
 \begin{itemize}
-    \item There should be a mapping or service to resolve other names, keys or \glspl{iri} to the \gls{ekgiri}.
-    \item Since it is immutable, the \gls{ekgiri} will have to be \textit{opaque} i.e. not be a human-readable
+    \item There should be a mapping or service to resolve other names, keys or \glspl{iri} to the \gls{ekg:iri}.
+    \item Since it is immutable, the \gls{ekg:iri} will have to be \textit{opaque} i.e. not be a human-readable
           since even human names, company names, customer numbers, Social Security Numbers can change over time.
     \item Objects that already have a well-established \gls{rdf}-compliant and \gls{linked-data} compliant identifier
-          may not necessarily need an additional \gls{ekgiri}.
+          may not necessarily need an additional \gls{ekg:iri}.
           In fact, they may already have one that is external to the company's \gls{ekg}.
           It is in many cases recommended to even give those well-established objects from well-established external
-          datasets a company \gls{ekgiri}. Examples of such objects are \glspl{lei} and \glspl{figi}.
+          datasets a company \gls{ekg:iri}. Examples of such objects are \glspl{lei} and \glspl{figi}.
           The \gls{ekgf} will maintain a list of these for convenience.
     \item The use of multiple identities generally means that an \gls{ekg} should \textit{not}
           use the \gls{una} (where use of a different identifier would imply a different object).
-          However the \gls{una} \textit{would} apply specifically to the \gls{ekgiri},
+          However the \gls{una} \textit{would} apply specifically to the \gls{ekg:iri},
           and this should be ensured by any service.
 \end{itemize}
   
