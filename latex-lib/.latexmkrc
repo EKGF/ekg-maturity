@@ -199,7 +199,7 @@ sub readVersion {
 sub getCurrentBranchName() {
     my $branchName = `git rev-parse --symbolic-full-name --abbrev-ref HEAD`;
     if ( $? == -1 ) {
-        print "git not in path, can't determine branch name\n";
+        print "WARNING: git not in path, can't determine branch name\n";
         return '';
     }
     $branchName = tchomp($branchName);
@@ -308,6 +308,7 @@ $latex_document_version_suffix = getVersionSuffix();
 $latex_document_version = "${latex_document_version}${latex_document_version_suffix}";
 $latex_document_version_dotted = $latex_document_version;
 $latex_document_version_dotted =~ tr/-/./s;
+$latex_document_version_dotted =~ tr@/@_@s;
 print "Document Version: $latex_document_version_dotted (dotted version)\n";
 print "Document Version: $latex_document_version\n";
 
