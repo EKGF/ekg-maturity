@@ -22,11 +22,15 @@
 
 \newglossaryentry{cde}{
     type=\glsdefaulttype,
-    name={Critical data element},
+    name={critical data element},
+    text={Critical data element},
+    first={Critical Data Element (CDE)},
     plural={Critical data elements},
-    description={
-        this concept is defined in many different ways. One way is to say that "critical data elements are
-        those data elements that are critical to success in a specific business area".
+    firstplural={Critical Data Elements (CDEs)},
+    description={%
+        this concept is defined in many different ways.
+        One way is to say that "critical data elements are those data elements that are critical to success in a
+        specific business area".
         This could be a regulatory area such as BCBS 239 or the enterprise as a whole or any other use case area.
         In an \gls{ekg} context, especially at the higher levels of \gls{ekgmm} maturity,
         \myuline{all data is critical} since the criticality of data is always dependent on the context.
@@ -62,8 +66,9 @@
 }
 
 \newglossaryentry{bitemporality}{
-    name={Bi-temporality},
+    name={bi-temporality},
     type=\glsdefaulttype,
+    text={Bi-temporality},
     description={%
         a feature of a system (or an Ontology) that allows for the recording of timestamps along two timelines:
         the time when the event was happening in the real world and the time when the event was recorded.
@@ -119,64 +124,89 @@
 \newglossaryentry{uri}{
     name={URI},%
     type=\glsdefaulttype,%
-    first="Uniform Resource Identifier",
-    description={A Uniform Resource Identifier (URI) is a compact sequence of
-    characters that identifies an abstract or physical resource. See https://www.ietf.org/rfc/rfc3986.txt.}
+    first="Uniform Resource Identifier (URI)",
+    firstplural="Uniform Resource Identifiers (URIs)",
+    description={%
+        a Uniform Resource Identifier (URI) is a compact sequence of characters that identifies an abstract or
+        physical resource.
+        See \url{https://www.ietf.org/rfc/rfc3986.txt} and \gls{iri}.
+    }
 }
 
 \newglossaryentry{iri}{
     name={IRI},%
     type=\glsdefaulttype,%
     first="Internationalised Resource Identifier (IRI)",
-    description={
-        The \gls{w3c} \gls{rdf} 1.1 standard, the most fundamental standard that underpins any \gls{ekg},
-        The IRI standard is a superset of the older \gls{uri} standard.
+    firstplural="Internationalised Resource Identifiers (IRIs)",
+    description={%
+        an Internationalized Resource Identifier is defined similarly to a \glsxtrshort{uri},
+        but the character set is extended to the Universal Coded Character Set.
+        Therefore, it can contain any Latin and non-Latin characters except the reserved characters.
+        Instead of extending the definition of \glsxtrshort{uri},
+        the term IRI was introduced to allow for a clear distinction and avoid incompatibilities.
+        IRIs are meant to replace URIs in identifying resources in situations where the Universal Coded Character Set
+        is supported.
+        By definition, every URI is an IRI.
+        Furthermore, there is a defined surjective mapping of IRIs to URIs:
+        Every IRI can be mapped to exactly one URI, but different IRIs might map to the same URI.
+        Therefore, the conversion back from a URI to an IRI may not produce the original IRI.
+        The IRI standard is a superset of the older \gls{uri} standard (IRI ⊃ URI).
+        See also \gls{ekg:iri}.
     }
 }
 
-\newglossaryentry{ekgiri}{
-    name={EKG/IRI},%
-    text={EKG/IRI\glsadd{iri}},
+\newglossaryentry{linked-data}{
+    name={linked data},% how it appears in the glossary
     type=\glsdefaulttype,%
-    first="Enterprise Knowledge Graph IRI (EKG/IRI)",
-    description={
-        An \gls{iri} that forms the identity of an object in the \gls{ekg}.
-        Any given object in an \gls{ekg} has an EKG/IRI for which special rules are defined by the \gls{ekgf}.
-        Not to be confused by \glspl{canonical-identifier}.
+    text={Linked Data},% how it appears in the doc
+    description={%
+        the collection of interrelated datasets on the Web.
+        Linked Data is a concept defined by Tim Berners-Lee and the \gls{w3c} that is part of what they call
+        "the Semantic Web" or "the Web of Data".
+        Tim Berners-Lee started the idea in 2006 by defining 4 simple rules:
+        \url{https://www.w3.org/DesignIssues/LinkedData.html}.
     }
-}
-
-\newglossaryentry{canonical-identifier}{
-    name={Canonical Identifier},%
-    type=\glsdefaulttype,%
-    description={A permanent identifier for an object, distinguished within an \gls{ekg}.}
 }
 
 \newglossaryentry{property}{
-    name={Canonical Identifier},
+    name={property},
     type=\glsdefaulttype,%
-    description={An identified and fully-defined linkage between an object and values.}
+    text={property},
+    description={%
+        an identified and fully-defined linkage between an object and values.
+        Or in \gls{rdf} terminology, a relation between subject resources and object resources.
+        See \url{https://www.w3.org/TR/rdf-schema/\#ch_property}.
+    }
 }
 
 \newglossaryentry{ontology}{
-    name={Ontology},
+    name={ontology},% how it appears in the glossary
     type=\glsdefaulttype,%
-    description={A machine-readable, managed and identified set of properties and related definitions.}
+    text={Ontology},% how it appears in the text
+    description={
+        a machine-readable, managed and identified set of properties and related definitions.
+    }
 }
 
 \newglossaryentry{data-point}{
-    name={Data Point},
+    name={data point},% how it appears in the glossary
     type=\glsdefaulttype,%
-    description={A fact representing the value(s) of a property for an object in some context.
-    Each value may be a simple data (e.g. a number, string or date) or another object.
-    The combination of object, property and value is a \textit{triple}.}
+    text={Data Point},% how it appears in the text
+    description={%
+        a fact representing the value(s) of a property for an object in some context.
+        Each value may be a simple data (e.g. a number, string or date) or another object.
+        The combination of object, property and value is a \textit{triple}.
+    }
 }
 
 \newglossaryentry{dataset}{
-    name={Dataset},
+    name={dataset},
     type=\glsdefaulttype,%
-    description={A collection of data, published or curated by a single agent,
-    and available for access or download in one or more serializations or formats.}
+    text={Dataset},
+    description={%
+        a collection of data, published or curated by a single agent,
+        and available for access or download in one or more serializations or formats.
+    }
 }
 
 \newglossaryentry{operating-model} {
@@ -191,7 +221,8 @@
 
 \newglossaryentry{lighthouse-project} {
     type=\glsdefaulttype,
-    name={Lighthouse project},
+    name={lighthouse project},
+    text={Lighthouse project},
     plural={Lighthouse projects},
     description={%
         Lighthouse projects simply focus on implementation, fast delivery and creating a positive culture for
@@ -205,7 +236,8 @@
 
 \newglossaryentry{low-code} {
     type=\glsdefaulttype,
-    name={Low-Code},
+    name={low-code},
+    text={Low-Code},
     description={%
         is a software development approach that requires little to no coding in order to build applications and processes.
         In an \gls{ekg} context, low-code\,---\,or actually it's more like "no-code"\,---\,development is achieved by
