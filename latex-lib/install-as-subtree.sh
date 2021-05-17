@@ -34,7 +34,10 @@ function checkGit() {
 
 function _git() {
   echo "git $*"
-  "${git_bin}" $@
+  (
+    set -x
+    "${git_bin}" $@
+  )
   return $?
 }
 
@@ -104,7 +107,7 @@ function pullLatest() {
   echo "Pull Latest ${remote_name} and mount at ${mount_point}" >&2
 
   _git fetch "${remote_name}" || return $?
-  _git subtree pull --prefix "${mount_point}" "${remote_name}" "${remote_branch}" --squash
+  _git subtree pull --prefix="${mount_point}" "${remote_name}" "${remote_branch}" --squash
 
   if [[ "${remote_name}" == "latex-lib" ]] ; then
     createSymlinks || return $?
