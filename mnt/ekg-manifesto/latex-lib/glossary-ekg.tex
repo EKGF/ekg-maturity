@@ -1,0 +1,212 @@
+%%
+%% The main glossary (but only the ekg related terms of the main glossary),
+%% use this for any terms that are NOT:
+%%
+%% - Concepts (use glossary-concepts.tex for that)
+%% - Ontologies (use glossary-ontologies.tex for that)
+%%
+%% Do also not store any customer specific terms here, use
+%% glossary-<customer-code>.tex for that.
+%%
+\newacronym[see={[Glossary:]{ekg:ekg}}]{ekg}{EKG}{Enterprise Knowledge Graph}% ekg the acronym
+%\newglossaryentry{ekg}{% ekg the acronym
+%    type=\acronymtype,
+%    name={EKG},
+%    description={Enterprise Knowledge Graph},
+%    first={Enterprise Knowledge Graph (EKG)\glsadd{ekg:ekg}},
+%    shortplural={EKGs},
+%    longplural={Enterprise Knowledge Graphs},
+%    see=[Glossary:]{ekg:ekg}
+%}
+
+\newglossaryentry{ekg:ekg}{% ekg:ekg the glossary entry
+    type=\glsdefaulttype,
+    name={EKG},
+    description={%
+        much like "the web" is a virtual concept, an EKG is a virtual concept that combines all
+        information and knowledge of an enterprise or ecosystem.
+    }
+}
+
+\newglossaryentry{ekg:coe}{
+    type=\glsdefaulttype,
+    name={\gls{coe} for the \gls{ekg}},
+    description={%
+        the group of people that is overseeing the \gls{ekg}
+    }
+}
+
+\newglossaryentry{ekg:architecture:system}{
+    type=\glsdefaulttype,
+    name={EKG system architecture},
+    description={%
+        the logical \gls{system-architecture} of \gls{ekg} is divided into multiple layers or environments.
+    }
+}
+
+\newglossaryentry{ekg:platform}{
+    type=\glsdefaulttype,
+    name={EKG/Platform},
+    parent={ekg:architecture:system},
+    description={%
+        a logical \gls{system-architecture} component, the layer of software services that provide
+        and serve the \gls{ekg} to end-users and other systems.
+        The platform logically is a set services that enforce any of the specified policies in the
+        \glspl{ekg:sdd} that have been published in the \gls{ekg}.
+    }
+}
+
+\newglossaryentry{ekg:storage}{
+    type=\glsdefaulttype,
+    name={EKG/Storage},
+    text={EKG/Storage},
+    parent={ekg:architecture:system},
+    description={%
+        a logical \gls{system-architecture} component, the layer of data-storage services such as a "Triplestore"
+        or an "Object Store" that serve the various other layers in the \gls{ekg:architecture:system}.
+    }
+}
+
+\newacronym[see={[Glossary:]{ekg:storage:objectstore}}]{s3}{S3}{Simple Storage Service}
+
+%\newglossaryentry{s3}{% s3 the acronym, refers to "object store"
+%    type=\acronymtype,
+%    name={S3},
+%    text={S3},
+%    description={Simple Storage Service},
+%    first={Simple Storage Service (S3)\glsadd{ekg:storage:objectstore}},
+%    shortplural={S3-services},
+%    longplural={S3-services},
+%    see=[Glossary:]{ekg:storage:objectstore}
+%}
+\newglossaryentry{ekg:storage:objectstore}{
+    type=\glsdefaulttype,
+    name={object store},
+    text={object store},
+    description={%
+        "object store" in the context of \gls{ekg:architecture:system} refers to "object storage" or
+        "cloud object storage"
+        (such as \href{https://aws.amazon.com/what-is-cloud-object-storage/}{Amazon's AWS \gls{s3} service}).
+        the \gls{ekg:storage} layer of \gls{ekg:architecture:system} always contains an object store (supporting the
+        s3 api, usually the product \href{https://min.io}{MinIO} is used for that).
+        Many backend storage mechanisms can be supported e.g. NAS, HDFS, Azure, Google Storage etc.
+    }
+}
+
+\newglossaryentry{ekg:dataops}{
+    type=\glsdefaulttype,
+    name={EKG/DataOps},
+    text={EKG/DataOps},
+    first={EKG/DataOps\glsadd{ekg:dataops:practice}\glsadd{ekg:dataops:environment}},
+    description={%
+        the word EKG/DataOps has two meanings: a) it stands for a "practice" (see \gls{ekg:dataops:practice}) and
+        b) it serves as the name of a logical \gls{system-architecture} component,
+        the environment in which all "DataOps Pipelines" are running.
+    }
+}
+
+\newglossaryentry{ekg:dataops:practice}{
+    type=\glsdefaulttype,
+    name={practice},
+    text={EKG/DataOps Practice},
+    parent={ekg:dataops},
+    description={%
+        the DataOps practice is one of the practices that the \gls{ekg:coe} executes...\improve{add definition of DataOps}
+    }
+}
+
+\newglossaryentry{ekg:dataops:environment}{
+    type=\glsdefaulttype,
+    name={EKG/DataOps Environment},
+    text={EKG/DataOps Environment},
+    parent={ekg:architecture:system},
+    description={%
+        a logical \gls{system-architecture} component, the environment where \glspl{ekg:dataops:pipeline} run.
+    }
+}
+
+\newglossaryentry{ekg:dataops:pipeline}{
+    type=\glsdefaulttype,
+    name={pipeline},
+    text={EKG/DataOps Pipeline},
+    parent={ekg:dataops},
+    description={%
+        a DataOps pipeline in the \gls{ekg:dataops:environment} is a series of programs, called "steps",
+        that are run in sequence where the first step captures data in any given format from a given source
+        and the last step produces an output file in any given format.
+    }
+}
+
+\newglossaryentry{ekg:monitoring}{
+    type=\glsdefaulttype,
+    name={EKG/Monitoring},
+    description={..todo..}
+}
+
+\newglossaryentry{ekg:sdd}{
+    type=\glsdefaulttype,
+    name={self-describing dataset},
+    text={self-describing dataset},
+    description={%
+        An \gls{ekg} is logically composed of a set of \textit{self-describing datasets} that provide information about
+        lineage, provenance, pedigree, maturity, quality, governance, entitlement policies, retention policies,
+        security labels, IP policies, pricing policies, caching policies, organizational ownership, accountabilities,
+        data quality feedback loop, issue management policies and so forth.
+        Any given system owner that connects their data to the \gls{ekg} becomes in fact a publisher of a
+        self-describing dataset and can therefore control how \myuline{their} data is handled by the \gls{ekg:platform}.
+        The \gls{ekg:platform} consists of services that enforce any of the specified policies in the
+        self-describing dataset.
+        At the technical level, datasets can be files or streams or API definitions etc.
+    }
+}
+
+\newglossaryentry{ekg:predicate}{
+    type=\glsdefaulttype,
+    name={predicate},
+    text={predicate},
+    description={%
+        asserting an "\gls{rdf} triple" says that some relationship\,---\,indicated by the predicate\,---\,holds
+        between the resources denoted by the subject and object.
+        This statement corresponding to an RDF triple is known as an RDF statement.
+        The predicate itself is an \gls{iri} and denotes a property, that is,
+        a resource that can be thought of as a binary relation.
+    }
+}
+
+\newglossaryentry{ekg:iri}{
+    name={EKG/IRI},%
+    text={EKG/IRI\glsadd{iri}},
+    type=\glsdefaulttype,%
+    first="Enterprise Knowledge Graph IRI (EKG/IRI)",
+    firstplural="Enterprise Knowledge Graph IRIs (EKG/IRI)",
+    description={
+        An \gls{iri} that forms the identity of an object in the \gls{ekg}.
+        Any given object in an \gls{ekg} has an EKG/IRI for which special rules are defined by the \gls{ekgf}.
+        Not to be confused by \glspl{canonical-identifier}.
+    }
+}
+
+\newglossaryentry{ekg:iri:predicate}{
+    type=\glsdefaulttype,
+    name={predicate-IRI},
+    text={predicate-IRI},
+    description={%
+        see \gls{ekg:predicate}
+    }
+}
+
+\newglossaryentry{canonical-identifier}{ % TODO: Since this is an EKG specific explanation we should prefix it with ekg:
+    name={canonical identifier},%
+    type=\glsdefaulttype,%
+    text={Canonical Identifier},%
+    description={A permanent identifier for an object, distinguished within an \gls{ekg}.}
+}
+
+\newglossaryentry{ekg:use-case}{
+    type=\glsdefaulttype,
+    name={\gls{ekg} use case},
+    text={\gls{ekg} use case},
+    description={%
+        TODO
+    }
+}

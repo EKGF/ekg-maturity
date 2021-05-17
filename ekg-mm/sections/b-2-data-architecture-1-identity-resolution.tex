@@ -1,0 +1,100 @@
+\section{Identity Resolution}\label{sec:ekg-mm-b-2-1} % B.2.1 Identity Resolution
+
+Identity resolution is a process of combining multiple identifiers across devices, spreadsheets, repositories, and
+platforms into a cohesive profile.
+The process includes searching across disparate datasets and analyzing content to find (and resolve) matches based
+on available data records and attributes.
+Identity resolution is complicated by distinctions in both structure and meaning because various information systems
+can vary in quality, completeness, format, and nomenclature.
+
+\ekgmmContextSection
+
+Without standards for describing identity attributes, the process of resolution can be both time-consuming and risky.
+The knowledge graph uses formal descriptions (ontologies) of the terms in any domain as well as the relationship
+between terms.
+The use of ontologies and graph capability not only allows you to resolve multiple identifiers into a single,
+harmonized profile\,---\,it allows you to create associations across multiple identities with one master ID.
+The knowledge graph becomes the Rosetta stone for identity resolution.
+
+\kgmmcorequestionssection
+
+\begin{core-questions}
+
+  \item [\thesection.1] Is there a standard process for identifying (inventory) and resolving (cross-referencing)
+                        identification schemes
+  \item [\thesection.2] Does the firm maintain an inventory of identifiers for all strategic data assets
+  \item [\thesection.3] Is the identification and meaning of data assets linked to the authorized \glspl{sor}
+  \item [\thesection.4] Are versioning and time stamp management consistent across all data assets
+  \item [\thesection.5] Is the method of generating and controlling identifiers aligned with governance process
+                        (i.e. defined by policy, verified, implemented, and audited)
+
+\end{core-questions}
+
+\subsection*{Common Principles for \glsfmtshort{ekg:iri}}
+
+\begin{itemize}
+  \item All URLs have no meaning (opaque and meaningless)
+  \item Never have only one central service (authority) to "mint" the URL - everyone can create their own
+        \glsfmtshort{ekg:iri}s based on the policy
+  \item Goal is to maximize proliferation of \glsfmtshort{ekg:iri}s across the organizational ecosystem
+  \item \glsfmtshort{ekg:iri}s are universally unique and permanent (no reuse and no elimination)
+  \item \glsfmtshort{ekg:iri} naming conventions (domain and host names) have to be sustainable forever
+        (i.e.\ don't use company name because it might change if a merger or acquisition happens)
+\end{itemize}
+
+\kgmmscoringsection
+
+\kgmmscoringlevelOne
+
+\begin{scoring}
+
+  \item [concepts] Describe and agree on the identifying properties of the entity (primary key
+        attributes) and how IRIs will be constructed
+  \item [registration] Establish host and domain names for \glsfmtshort{ekg:iri}s (per \gls{ekg:platform} deployments)
+  \item [policy] Align approach with the \glsfmtshort{ekg:iri} policy (add establish policy to policy section) --
+        i.e.\ must have one, structure of \glsfmtshort{ekg:iri}/hashing standard, maintain in inventory --
+        goal is as short as possible (Short, opaque, meaningless) --
+        must decide and agree on standard (format and encoding)
+  \item [mapping] All onboarding of in-scope data sources and their \glsxtrshort{etl} pipelines must implement policy
+        (generate the right \glsfmtshort{ekg:iri}s).
+        Ensure that all \glsfmtshort{ekg:iri}s look the same (create and implement rules/formula for conversion)
+  \item [resolution] Define and implement (\href{https://www.w3.org/TR/owl-ref/\#sameAs-def}{owl:sameAs}) process for
+        resolving identical objects from multiple datasets into merged \glsfmtshort{ekg:iri} (fully supporting
+        multiple \glsfmtshort{ekg:iri}s per object)
+
+\end{scoring}
+
+\kgmmscoringlevelTwo
+
+\begin{scoring}
+
+  \item [strategy] Develop strategy for ALL data (no longer compartmentalized) –- strategy covers all domains across
+        the ecosystem
+  \item [creation] Implement the model the IRI properties (per concept) into the \glsfmtshort{ekg}\todo{Improve sentence}
+  \item Mapping of content to \glsfmtshort{ekg:iri} is standardized using standard software routines
+  \item Other systems also generate \glsfmtshort{ekg:iri}s (extend mapping of \glsfmtshort{ekg:iri}s to other systems and
+        applications within the organization to prepare for enterprise conversion)
+  \item Implement ability to look-up existing \glsfmtshort{ekg:iri}s (reference hub) to allow other systems to
+        link/integrate to KG (prerequisite for enterprise-wide KG)
+  \item [policy] Policy for the proliferation of \glsfmtshort{ekg:iri}s (if the goal is a standard for creating for
+        identification\,---\,is the standard endorsed, mandated and implemented)\todo{Improve sentence}\,---\,includes policy
+        for domain names (unchangeable) and commitment from executive management to register the top-level domain
+  \item [policy] policy for synchronization of \glsfmtshort{ekg:iri} with policy for objects (ontologies)\todo{unclear}
+  \item [policy] policy for creation and control (only authorized systems are allowed) and policy for who is
+        eligible to create \glsfmtshort{ekg:iri}s (i.e. a certificate needed to assign and only certain processes are
+        eligible for certificates)
+
+\end{scoring}
+
+\kgmmscoringlevelThree
+
+\begin{scoring}
+
+  \item Security procedures (i.e. specific crypto-security certificates) implemented to ensure control over
+        \glsfmtshort{ekg:iri} assignment process
+  \item Implement standard \glsfmtshort{ekg:iri} class hierarchy structure to enable multi-location linkage (shift from
+        URL “flavor” to URN “flavor” as defined in the IRI standard)\todo{needs work}
+  \item All inbound data flows (into the \glsfmtshort{ekg}) are using a "Lookup Service" to convert "Strings to Things"
+        (i.e. mapping traditional identifiers to \glsfmtshort{ekg:iri}s in a model-driven way)
+
+\end{scoring}

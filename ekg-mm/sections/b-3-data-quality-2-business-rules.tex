@@ -1,0 +1,97 @@
+\section[Business Rules]{Data Quality Business Rules}% B.3.2 Business Rules
+\label{sec:ekg-mm-b-3-2}
+\label{sec:ekg-mm-data-quality-business-rules}
+\index{data quality}
+
+Data Quality business rules ensure that the data is fit for its intended purpose.
+Subject matter experts specify the criteria used to validate and enforce data integrity.
+The criteria are translated into agreed specifications (i.e. business rules) which are later codified for
+\iindex{data profiling} or measuring conformity.
+Data quality business rules can also be embedded into data capture systems to ensure validity at source.
+
+\ekgmmContextSection
+
+Data quality is an integrated feature of the knowledge graph.
+Data quality rules are linked to structured business vocabularies\todo{or better: ontologies} to ensure that meaning
+is shared and not obscured by vague terms or cryptic codes.
+The logic of business rules and policies are\change{is} captured and expressed as executable models and consistently
+enforced across all systems and processes.
+These quality constraints (models) allow firms to measure the quality of the data and perform verification across
+disparate systems.
+In the mature \gls{ekg}, violations of logic or integrity are identified and prevented before data
+enters the system.
+
+\kgmmcorequestionssection
+
+\begin{core-questions}
+
+  \item [\thesection.1] Are data quality business rules specified, formalized, and expressed in a standardized manner
+  \item [\thesection.2] Is there a clear line of business \iindex{accountability} (owned, funded, and governed) for the
+                        \iindex{data quality} rules
+  \item [\thesection.3] Is there a centrally managed repository of business rules\improve{explain that it does not
+                        necessarily have to be central as long as it is agreed and enforced at the right scope}
+  \item [\thesection.4] Is there a clearly defined mechanism for logging additions and performing updates
+  \item [\thesection.5] Are the business rules aligned with business applications and traceable to source systems
+  \item [\thesection.6] Are the data quality business rules automated and expressed in a machine-executable format
+
+\end{core-questions}
+
+\kgmmscoringsection
+
+\kgmmscoringlevelOne
+
+\begin{scoring}
+
+  \item \hyperref[sec:ekg-mm-data-quality-business-rules]{Data quality business rules} (conditions) have been defined,
+        documented and, verified by \glspl{sme} (process for evaluation and acceptance defined)
+  \item Business rules are aligned with in-scope use cases and specific user stories
+  \item Business rules are standardized and registered into a repository with a defined mechanism for logging
+        additions and performing updates
+
+\end{scoring}
+
+\kgmmscoringlevelTwo
+
+\begin{scoring}
+
+  \item A defined architecture exists to translate business rules into machine-executable code (some rules will be
+        OWL\index{OWL} expressions, some will be SHACL shapes\index{SHACL} and constraints, some will be translated into
+        workflow logic)
+  \item Business \iindex{provenance} and \iindex{lineage} are traceable across the \iindex{data supply chain} and
+        evaluated against defined business rules (all business rules must be traceable and understandable in
+        context\,---\,must understand the purpose and importance of the rule)
+  \item Business rules for in-scope use cases are implemented in the \gls{ekg}
+
+\end{scoring}
+
+\kgmmscoringlevelThree
+
+\begin{scoring}
+
+    \item [Metrics] The measurement criteria are defined for data quality business rules (which rules are executed,
+          how often, improvement)
+    \item [Performance] The value of business rules are related to business concepts (products, financial performance,
+          organizational objectives)\,---\,able to trace the core relationship between the business objectives and
+          the data quality business rules (correlation between rules and outcomes are known, able to be queried and
+          traceable within the \gls{ekg})
+
+\end{scoring}
+
+\kgmmscoringlevelFour
+
+\begin{scoring}
+
+    \item Business rules are combined with \gls{ai} capability for compliance (dynamic optimization of
+          business rules)
+    \item Model-driven (senior management can begin to optimize business objectives using business rules in
+          the \gls{ekg}\,---\,i.e. alignment of business rules with “what if” scenarios)
+
+\end{scoring}
+
+\kgmmscoringlevelFive
+
+\begin{scoring}
+
+    \item All business rules are driven by business objectives (objectives are in the \gls{ekg} with appropriate scorecards)
+
+\end{scoring}

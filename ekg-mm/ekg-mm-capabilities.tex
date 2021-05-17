@@ -1,0 +1,17 @@
+
+\bgroup
+
+\renewcommand{\thepart}{\Alph{part}}
+\renewcommand{\thechapter}{\thepart.\arabic{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+\setcounter{part}{0} % we start with part A now
+
+\input{../../ekg-mm/parts/a-business.tex}
+\input{../../ekg-mm/parts/b-data.tex}
+\input{../../ekg-mm/parts/c-technology.tex}
+\input{../../ekg-mm/parts/d-organization.tex}
+
+\egroup

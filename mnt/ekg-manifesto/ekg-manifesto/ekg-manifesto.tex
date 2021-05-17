@@ -1,0 +1,49 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = en_US
+% !TeX root = ekg-manifesto/ekg-manifesto.tex
+% !TEX program = lualatex
+% !TEX options = -synctex=1 -interaction=nonstopmode -file-line-error "%DOC%"
+% !BIB program = biber
+% !BIB options = "%DOCFILE%" -bblencoding=utf8 -u -U --output_safechars "%DOCFILE%"
+%
+% The above are so called "magic comments" used by editors like TexStudio
+%
+\makeatletter\def\input@path{{../etc/}}\makeatother
+\documentclass{whitepaper-style-doc}
+
+\loadGlossaries
+
+%
+% The following two lines make sure that chapter numbers
+% start with 1 within each part.
+%
+\RequirePackage{chngcntr}
+\counterwithin*{chapter}{part}
+
+%
+% Title page variables
+%
+\title{\glsfmtshort{ekgmanifesto}}
+\def\subtitleLineA{Manifesto \& Principles}
+\def\subtitleLineB{for the \glsfmtlong{ekg}}
+\author{EKGF}
+\date{\today}
+
+\typeout{ekg-manifesto =================================> Start Document}
+\begin{document}
+
+\input{../ekg-manifesto/chapters/manifesto.tex}
+\input{../ekg-manifesto/chapters/principles.tex}
+
+\typeout{ekg-manifesto =================================> Appendices}
+\bookmarksetupnext{level=-1}
+\bookmarksetup{bold=false, color=black}
+\appendix
+\addappheadtotoc
+\appendixpage
+\renewcommand\thechapter{\Alph{chapter}}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\end{document}

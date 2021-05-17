@@ -1,0 +1,30 @@
+\part{Intro}
+
+\bgroup
+
+% \renewcommand{\thechapter}{\thepart.\arabic{chapter}}
+% \renewcommand{\thesection}{\thechapter.\arabic{section}}
+% \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+% \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+\input{../ekg-mm/chapters/ekg-mm-executive-summary.tex}
+\input{../ekg-mm/chapters/ekg-foundation.tex}
+%
+% Adding the "strategic objectives" chapter in draft mode
+%
+\ifoptionfinal{}{
+    \input{../ekg-mm/chapters/ekg-mm-strategic-objectives.tex}
+}
+\input{../ekg-mm/chapters/ekg-mm-structure.tex}
+\input{../ekg-mm/chapters/ekg-mm-overview.tex}
+%
+% Adding the essence chapter in draft mode
+%
+\ifoptionfinal{}{
+    \input{../ekg-mm/chapters/ekg-mm-essence.tex}
+}
+
+\egroup
+
+
+
