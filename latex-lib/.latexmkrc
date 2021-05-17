@@ -215,8 +215,8 @@ sub getVersionSuffix() {
         $suffix = "${suffix}.$ENV{'GITHUB_RUN_NUMBER'}";
     }
     my $branchName = getCurrentBranchName();
-    if ($branchName ~~ ['main', 'master']) {
-        print "Git Branch: No git branch name in the name of the generated PDF file because we're on ${branchName}\n";
+    if ($branchName ~~ ['main', 'master', 'HEAD']) {
+        print "No git branch name in the name of the generated PDF file because we're on ${branchName}\n";
     } elsif ($branchName eq '') {
         ;
     } else {

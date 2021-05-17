@@ -165,11 +165,24 @@
     name={predicate},
     text={predicate},
     description={%
-        asserting an RDF triple says that some relationship, indicated by the predicate, holds between the
-        resources denoted by the subject and object.
+        asserting an "\gls{rdf} triple" says that some relationship\,---\,indicated by the predicate\,---\,holds
+        between the resources denoted by the subject and object.
         This statement corresponding to an RDF triple is known as an RDF statement.
         The predicate itself is an \gls{iri} and denotes a property, that is,
         a resource that can be thought of as a binary relation.
+    }
+}
+
+\newglossaryentry{ekg:iri}{
+    name={EKG/IRI},%
+    text={EKG/IRI\glsadd{iri}},
+    type=\glsdefaulttype,%
+    first="Enterprise Knowledge Graph IRI (EKG/IRI)",
+    firstplural="Enterprise Knowledge Graph IRIs (EKG/IRI)",
+    description={
+        An \gls{iri} that forms the identity of an object in the \gls{ekg}.
+        Any given object in an \gls{ekg} has an EKG/IRI for which special rules are defined by the \gls{ekgf}.
+        Not to be confused by \glspl{canonical-identifier}.
     }
 }
 
@@ -182,4 +195,18 @@
     }
 }
 
+\newglossaryentry{canonical-identifier}{ % TODO: Since this is an EKG specific explanation we should prefix it with ekg:
+    name={canonical identifier},%
+    type=\glsdefaulttype,%
+    text={Canonical Identifier},%
+    description={A permanent identifier for an object, distinguished within an \gls{ekg}.}
+}
 
+\newglossaryentry{ekg:use-case}{
+    type=\glsdefaulttype,
+    name={\gls{ekg} use case},
+    text={\gls{ekg} use case},
+    description={%
+        TODO
+    }
+}
