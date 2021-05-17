@@ -37,7 +37,7 @@ function jobName() {
   local -r customerCode="$1"
   local -r mode="$2"
   local -r documentName="$3"
-  local -r version="$4"
+  local -r version="${4//./-}"
 
   echo -n "${customerCode}-${documentName}"
 
@@ -50,17 +50,25 @@ function version() {
 
   local -r file="$1"
   local -r dir=$(dirname "${file}")
+  local version=''
 
   if [[ -f "${dir}/VERSION" ]] ; then
-    head -n1 "${dir}/VERSION" | tr . -
+    version="$(head -n1 "${dir}/VERSION")"
   elif [[ -f "../VERSION" ]] ; then
-    head -n1 "../VERSION" | tr . -
+    version="$(head -n1 "../VERSION")"
   elif [[ -f "VERSION" ]] ; then
-    head -n1 "VERSION" | tr . -
+    version="$(head -n1 "VERSION")"
   else
     echo "0.1" > "VERSION"
-    echo "0-1"
+    version="0.1"
   fi
+
+  if [[ -z "${GITHUB_RUN_NUMBER}" ]] ; then
+    version+=".${USER}"
+  else
+    version+=".${GITHUB_RUN_NUMBER}"
+  fi
+  echo "${version//[$'\t\r\n']}"
 }
 
 function runLaTex() {
@@ -75,8 +83,10 @@ function runLaTex() {
   local skipGeneratingPdf="--draftmode" # this is NOT the same as draft mode inside the doc itself
   local latexCommand="\def\customerCode{${customerCode}}"
 
+  echo "Document Version: ${version}" >&2
+
   latexCommand+=" \def\documentName{${documentName}}"
-  latexCommand+=" \def\documentVersion{${version//-/.}}"
+  latexCommand+=" \def\documentVersion{${version}}"
 
   if [[ ${run} -eq 4 ]] ; then
     skipGeneratingPdf=""
@@ -201,13 +211,13 @@ function runMakeIndex() {
 
 function runPandoc() {
 
-  local -r mode="$1"
+# local -r mode="$1"
   local -r customerCode="$2"
   local -r file="$3.tex"
   local -r texFile="${file}"
-  local -r documentName="$(documentName "${file}")"
-  local -r version="$(version "${file}")"
-  local -r jobName=$(jobName "${customerCode}" "${mode}" "${documentName}" "${version}")
+# local -r documentName="$(documentName "${file}")"
+# local -r version="$(version "${file}")"
+# local -r jobName=$(jobName "${customerCode}" "${mode}" "${documentName}" "${version}")
   local -r docxFile="${file/.tex/.pandoc.docx}"
 
   rm -f "${docxFile}" >/dev/null 2>&1
@@ -250,14 +260,8 @@ function runPandoc() {
 
 function cleanTopLevelDocDirectory() {
 
-  local -r docName="$1"
-
-  (
-    cd "${SCRIPT_DIR}/${docName}" || return 1
-
-    rm *.{acn,acr,alg,aux,bbl,bcf,blg,fdb_latexmk,fls,glg,glo,gls,glsdefs,glsdef,idx,labelTags,log,odn,old,olg,pdf,run.xml,synctex.gz,tdn,tld,tlg,tex.bbl,tex.blg,ilg,ind,ist,tdo,log,out,sta,toc,pdf} >/dev/null 2>&1
-    rm -rf .texpadtmp/ >/dev/null 2>&1
-  )
+  rm *.{acn,acr,alg,aux,bbl,bcf,blg,fdb_latexmk,fls,glg,glo,gls,glsdefs,glsdef,idx,labelTags,log,odn,old,olg,pdf,run.xml,synctex.gz,tdn,tld,tlg,tex.bbl,tex.blg,ilg,ind,ist,tdo,log,out,sta,toc,pdf} >/dev/null 2>&1
+  rm -rf .texpadtmp/ >/dev/null 2>&1
 
   return $?
 }
@@ -267,20 +271,20 @@ function runInkScapeOnSVGFile() {
   local -r svgFile="$(pwd)/$1"
   local -r pdfFile="${svgFile/.svg/.pdf}"
 
-  echo -n "Processing SVG file: ${svgFile}"
+  echo -n "InkScape: Processing SVG file: ${svgFile}" >&2
 
   if [[ ${svgFile} -ot ${pdfFile} ]] ; then
-    echo " was already done"
+    echo " was already done" >&2
     return 0
   fi
-  echo ""
+  echo "" >&2
 
   if [[ "$(uname)" == "Linux" ]] ; then
     #
     # Quick fix, run inkscape in dbus-run-session to avoid the ugly dbus messages (and it seems to speed up a little too)
     #
     if ! dbus-run-session inkscape "${svgFile}" -D --export-filename="${pdfFile}" --export-type="pdf" --export-latex ; then
-      echo "ERROR: Error occurred with inkscape ${svgFile}"
+      echo "ERROR: Error occurred with inkscape ${svgFile}" >&2
       return 1
     fi
   else
@@ -290,7 +294,7 @@ function runInkScapeOnSVGFile() {
        --export-pdf-version=1.5 \
        --export-type="pdf" \
        --export-latex ; then
-      echo "ERROR: Error occurred with inkscape ${svgFile}"
+      echo "ERROR: Error occurred with inkscape ${svgFile}" >&2
       return 1
     fi
   fi
@@ -302,18 +306,19 @@ function runInkScapeOnVSDXFile() {
 
   local -r vsdxFile="$1"
 
-  echo "Processing SVG file: ${vsdxFile}"
+  echo "InkScape: Processing VSDX file: ${vsdxFile}" >&2
+
   if [[ "$(uname)" == "Linux" ]] ; then
     #
     # Quick fix, run inkscape in dbus-run-session to avoid the ugly dbus messages (and it seems to speed up a little too)
     #
     if ! dbus-run-session inkscape "$(pwd)/${vsdxFile}" -D --export-filename="$(pwd)/${vsdxFile/.vsdx/.pdf}" --export-type="pdf" --export-latex ; then
-      echo "ERROR: Error occurred with inkscape $(pwd)/${vsdxFile}"
+      echo "ERROR: Error occurred with inkscape $(pwd)/${vsdxFile}" >&2
       return 1
     fi
   else
     if ! inkscape "$(pwd)/${vsdxFile}" -D --export-filename="$(pwd)/${vsdxFile/.vsdx/.pdf}" --export-type="pdf" --export-latex ; then
-      echo "ERROR: Error occurred with inkscape $(pwd)/${vsdxFile}"
+      echo "ERROR: Error occurred with inkscape $(pwd)/${vsdxFile}" >&2
       return 1
     fi
   fi
@@ -321,48 +326,18 @@ function runInkScapeOnVSDXFile() {
   return 0
 }
 
-function runInkScape() {
+function runInkScapeInDir() {
 
-  if ! command -v inkscape >/dev/null 2>&1 ; then
-    echo "WARNING: Cannot convert SVG files to PDF and pdf_tex files because inkscape is not installed"
-    if [[ "$(uname)" == Darwin ]] ; then
-      echo "Installing Inkscape"
-      brew install --cask inkscape
-      if ! command -v inkscape >/dev/null 2>&1 ; then
-        echo "ERROR: Could not install inkscape"
-        return 1
-      fi
-    else
-      return 0
+  local -r directory="$1"
+
+  (
+    if ! cd "${directory}" ; then
+      echo "ERROR: Could not find directory ${directory}" >&2
+      return 1
     fi
-  fi
+    echo "InkScape: checking directory $(pwd)" >&2
 
-  if ! cd images ; then
-    echo "ERROR: Could not find images directory"
-    return 1
-  fi
-
-  if ls -- *.svg >/dev/null 2>&1 ; then
-    for svgFile in *.svg ; do
-      runInkScapeOnSVGFile "${svgFile}" || return $?
-    done
-  fi
-  if ls -- *.vsdx >/dev/null 2>&1 ; then
-    for vsdxFile in *.vsdx ; do
-      runInkScapeOnVSDXFile "${vsdxFile}" || return $?
-    done
-  fi
-
-  cd ..
-
-  if ! cd customer-assets ; then
-    echo "ERROR: Could not find customer-assets directory"
-    return 1
-  fi
-
-  for customerAssetDir in $(ls -1 */ | grep '/:' | sed 's@/:@@') ; do
-    pushd ${customerAssetDir} >/dev/null 2>&1
-    if ls --  *.svg >/dev/null 2>&1 ; then
+    if ls -- *.svg >/dev/null 2>&1 ; then
       for svgFile in *.svg ; do
         [[ "xx${svgFile}xx" == "xx*.svgxx" ]] && continue
         runInkScapeOnSVGFile "${svgFile}" || return $?
@@ -374,12 +349,43 @@ function runInkScape() {
         runInkScapeOnVSDXFile "${vsdxFile}" || return $?
       done
     fi
-    popd >/dev/null 2>&1
-  done
 
-  cd ..
+    for subdir in $(ls -1F  | grep '/') ; do
+      runInkScapeInDir "./${subdir}" || return $?
+    done
 
-  return 0
+    return 0
+  )
+
+  return $?
+}
+
+function runInkScape() {
+
+  (
+    cd ..
+    echo "InkScape: Running InkScape, current directory is $(pwd)" >&2
+
+    if ! command -v inkscape >/dev/null 2>&1 ; then
+      echo "WARNING: Cannot convert SVG files to PDF and pdf_tex files because inkscape is not installed" >&2
+      if [[ "$(uname)" == Darwin ]] ; then
+        echo "InkScape: Installing..." >&2
+        brew install --cask inkscape
+        if ! command -v inkscape >/dev/null 2>&1 ; then
+          echo "ERROR: Could not install inkscape" >&2
+          return 1
+        fi
+      else
+        return 0
+      fi
+    fi
+
+    runInkScapeInDir . || return $?
+  )
+  local -r rc=$?
+  echo "InkScape: Done" >&2
+
+  return ${rc}
 }
 
 function getCustomerCodeInFileName() {
@@ -438,32 +444,6 @@ function docxOutputFileName() {
   # TODO: Add version number to file name
   #
   echo -n "${customerCodeInFileName} - ${mainFileStripped} - ${mode}.docx"
-}
-
-function copyToOut() {
-
-  return 0
-
-  local -r mode="$1"
-  local -r customerCode="$2"
-  local -r file="$3.tex"
-  local -r documentName="$(documentName "${file}")"
-  local -r version="$(version "${file}")"
-  local -r jobName=$(jobName "${customerCode}" "${mode}" "${documentName}" "${version}")
-
-  local -r customerCodeInFileName="$(getCustomerCodeInFileName "${customerCode}")"
-  local -r pandocDocxFile="${file}.pandoc.docx"
-
-  if [[ ! -f "${mainFile}.pdf" ]] ; then
-    echo "ERROR: Could not find ${mainFile}.pdf"
-    return 1
-  fi
-
-  cp -v "${mainFile}.pdf" "${SCRIPT_DIR}/out/$(pdfOutputFileName $@)"
-
-  if [[ -f "${pandocDocxFile}" ]] ; then
-    cp -v "${pandocDocxFile}" "${SCRIPT_DIR}/out/$(docxOutputFileName $@)"
-  fi
 }
 
 function googleDriveSharedDrivesRoot() {
@@ -567,10 +547,10 @@ function runBuildForMode() {
   runLaTex "${mode}" 3 "${customerCode}" "${mainFile}" || return $?
   runMakeIndex "${mode}" "${customerCode}" "${mainFile}" || return $?
   runLaTex "${mode}" 4 "${customerCode}" "${mainFile}" || return $?
+  runLaTex "${mode}" 5 "${customerCode}" "${mainFile}" || return $?
 
 #  runPandoc "${mode}" "${customerCode}" "${mainFile}" || return $?
 
-#  copyToOut "${mode}" "${customerCode}" "${mainFile}" || return $?
 #  copyToGoogleDriveLocal "${mode}" "${customerCode}" "${mainFile}" || return $?
 
   return 0
@@ -640,17 +620,17 @@ function runTheBuild() {
     fi
   done
 
-  mkdir -p "${SCRIPT_DIR}/out"
-
   local -r mainFile="$1"
   local    mainDir="${mainFile}"
 
-  if [[ ! -f "${mainDir}/${mainFile}.tex" ]] ; then
-    if [[ ! -f "${mainFile}.tex" ]] ; then
-      echo "ERROR: Could not find ${mainFile}/${mainFile}.tex"
-      return 1
-    fi
-    mainDir="$(pwd)"
+  if ! cd "${mainDir}" ; then
+    echo "ERROR: Directory ${mainDir} does not exist" >&2
+    return 1
+  fi
+
+  if [[ ! -f "${mainFile}.tex" ]] ; then
+    echo "ERROR: Could not find ${mainFile}/${mainFile}.tex" >&2
+    return 1
   fi
 
   if ((useLocalLaTeX)) ; then
@@ -660,39 +640,38 @@ function runTheBuild() {
         installFontsInDarwin || return $?
       fi
     else
-      echo "ERROR: Could not find lualatex on your PATH"
+      echo "ERROR: Could not find lualatex on your PATH" >&2
       return 1
     fi
   elif isRunningInDockerContainer ; then
-    echo "Running in the docker container"
+    echo "Running in the docker container" >&2
     installFontsInLinux || return $?
   elif [[ "$(uname)" == "Darwin" ]] || [[ "$(uname)" == "Linux" ]]  ; then
     runInDocker "${customerCode}"
     return $?
   else
-    echo "Running on an unknown platform"
+    echo "ERROR: Running on an unknown platform" >&2
     return 1
   fi
 
   runInkScape || return $?
 
-  cleanTopLevelDocDirectory "${mainFile}" || return $?
+  (
+    cd ..
+    cleanTopLevelDocDirectory "${mainFile}" || return $?
+  ) || return $?
 
-  {
-    cd "${mainDir}" || return $?
-
-    if ((buildDraftVersion)) && ((buildFinalVersion)) ; then
-      runBuildForMode draft "${customerCode}" "${mainFile}" || return $?
-      runBuildForMode final "${customerCode}" "${mainFile}" || return $?
-      openPdf draft "${customerCode}" "${mainFile}"
-    elif ((buildFinalVersion)) ; then
-      runBuildForMode final "${customerCode}" "${mainFile}" || return $?
-      openPdf final "${customerCode}" "${mainFile}"
-    else
-      runBuildForMode draft "${customerCode}" "${mainFile}" || return $?
-      openPdf draft "${customerCode}" "${mainFile}"
-    fi
-  }
+  if ((buildDraftVersion)) && ((buildFinalVersion)) ; then
+    runBuildForMode draft "${customerCode}" "${mainFile}" || return $?
+    runBuildForMode final "${customerCode}" "${mainFile}" || return $?
+    openPdf draft "${customerCode}" "${mainFile}"
+  elif ((buildFinalVersion)) ; then
+    runBuildForMode final "${customerCode}" "${mainFile}" || return $?
+    openPdf final "${customerCode}" "${mainFile}"
+  else
+    runBuildForMode draft "${customerCode}" "${mainFile}" || return $?
+    openPdf draft "${customerCode}" "${mainFile}"
+  fi
 
   return $?
 }
