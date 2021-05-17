@@ -207,12 +207,34 @@ sub getCurrentBranchName() {
     return ${branchName};
 }
 
-sub getVersionSuffix() {
+sub starts_with {
+    return substr($_[0], 0, length($_[1])) eq $_[1];
+}
+
+sub getVersionString() {
+    my $prefix = '';
     my $suffix = '';
-    if (! $ENV{'GITHUB_RUN_NUMBER'}) {
-        $suffix = "${suffix}.$ENV{'USER'}";
+    my $gitref = $ENV{'GITHUB_REF'};
+    #
+    # If we are running in a job that is being triggered by a push with a tag then
+    # assume that the tag is the version number
+    #
+    if (starts_with($gitref, 'refs/tags/')) {
+        my $tag = $gitref;
+        $tag =~ s@refs/tags/@@;
+        $suffix = "${tag}";
     } else {
-        $suffix = "${suffix}.$ENV{'GITHUB_RUN_NUMBER'}";
+        #
+        # Else, read the version number from the VERSION file and add the
+        # job run number at the end so that it looks like '0.1.123' or so.
+        # If run locally, then use the userid instead: '0.1.youruserid'.
+        #
+        $suffix = readVersion();
+        if (! $ENV{'GITHUB_RUN_NUMBER'}) {
+            $suffix = "${suffix}.$ENV{'USER'}";
+        } else {
+            $suffix = "${suffix}.$ENV{'GITHUB_RUN_NUMBER'}";
+        }
     }
     my $branchName = getCurrentBranchName();
     if ($branchName ~~ ['main', 'master', 'HEAD']) {
@@ -222,7 +244,7 @@ sub getVersionSuffix() {
     } else {
         $suffix = "${suffix}-${branchName}";
     }
-    return ${suffix};
+    return "${prefix}${suffix}";
 }
 
 ($document_file, $document_name) = findMainDoc();
