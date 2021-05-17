@@ -216,7 +216,7 @@ sub getVersionSuffix() {
     }
     my $branchName = getCurrentBranchName();
     if ($branchName ~~ ['main', 'master', 'HEAD']) {
-        print "No git branch name in the name of the generated PDF file because we're on ${branchName}\n";
+        print "Git Branch: No git branch name in the name of the generated PDF file because we're on ${branchName}\n";
     } elsif ($branchName eq '') {
         ;
     } else {
@@ -303,9 +303,7 @@ $jobname =~ s/--/-/g ;
 $jobname = "${document_customer_code}${jobname}" ;
 $jobname =~ s/--/-/g ;
 
-$latex_document_version = readVersion();
-$latex_document_version_suffix = getVersionSuffix();
-$latex_document_version = "${latex_document_version}${latex_document_version_suffix}";
+$latex_document_version = getVersionString();
 $latex_document_version_dotted = $latex_document_version;
 $latex_document_version_dotted =~ tr/-/./s;
 $latex_document_version_dotted =~ tr@/@_@s;
