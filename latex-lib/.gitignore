@@ -33,12 +33,11 @@
 *.mtc
 *.mtc1
 .fdb_latexmk
+!images/*.pdf
+!images/*.pdf_tex
 images/svg-inkscape/
 svg-inkscape/
 ekg-mm/images/svg-inkscape/
-/images/*.pdf
-/images/*.pdf_tex
-/customer-assets/**/*.pdf_tex
 out/
 /.project
 .uuid
