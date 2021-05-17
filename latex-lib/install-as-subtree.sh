@@ -40,6 +40,8 @@ function _git() {
 
 function getRemoteUrl() {
 
+  local -r remote_name="$1"
+
   "${git_bin}" remote get-url "${remote_name}" 2>/dev/null
 }
 
@@ -62,7 +64,7 @@ function addGitRemote() {
   else
     _git remote add -f "${remote_name}" "${github_url_https}" 2>/dev/null
   fi
-  checkGitRemote "$(getRemoteUrl)"
+  checkGitRemote "$(getRemoteUrl "${remote_name}")"
 }
 
 function getSubTrees() {
@@ -74,6 +76,12 @@ function addSubtree() {
   local -r remote_name="$1"
   local -r mount_point="$2"
   local -r remote_branch="$3"
+
+  local -r remoteUrl="$(getRemoteUrl "${remote_name}")"
+
+  if ! checkGitRemote "${remoteUrl}" ; then
+    addGitRemote || return $?
+  fi
 
   if getSubTrees | grep -q "${mount_point}" ; then
     echo "Subtree ${mount_point} has already been installed" >&2
@@ -97,6 +105,12 @@ function pullLatest() {
 
   _git fetch "${remote_name}" || return $?
   _git subtree pull --prefix "${mount_point}" "${remote_name}" "${remote_branch}" --squash
+
+  if [[ "${remote_name}" == "latex-lib" ]] ; then
+    createSymlinks || return $?
+  fi
+
+  return 0
 }
 
 # https://unix.stackexchange.com/a/521984
@@ -216,22 +230,21 @@ function main() {
 
   checkGit || return $?
 
-  local -r remoteUrl="$(getRemoteUrl)"
+  local -r remoteUrl="$(getRemoteUrl "${remote_name}")"
 
   if ! checkGitRemote "${remoteUrl}" ; then
     addGitRemote || return $?
   fi
 
-  pullLatest latex-lib latex-lib main || return $?
+#  pullLatest latex-lib latex-lib main || return $?
 
-  createSymlinks || return $?
+#  createSymlinks || return $?
 
-  if [[ -d mnt/ekg-manifesto ]] ; then
-    pullLatest ekg-manifesto mnt/ekg-manifesto main || return $?
-  fi
-  if [[ -d mnt/ekg-mm ]] ; then
-    pullLatest ekg-mm mnt/ekg-mm main || return $?
-  fi
+  for mount_point in $(getSubTrees) ; do
+    remote_name=${mount_point/mnt\//}
+    remote_branch="main"
+    pullLatest "${remote_name}" "${mount_point}" "${remote_branch}" || return $?
+  done
 
   return 0
 }
