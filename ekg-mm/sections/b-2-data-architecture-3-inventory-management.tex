@@ -1,13 +1,7 @@
-\section{Inventory Management}\label{sec:ekg-mm-b-2-3} % B.2.3 Inventory Management
-
-A \iindex{Data Inventory} is a repository of \iindex{data assets} for the organization (also known as a
-\iindex{data catalog} or \iindex{metadata repository}).
-The inventory contains information about what data exists, where it resides (“\iindex{data-at-rest}”),
-responsible parties, upstream/downstream usage, how it moves (“\iindex{data-in-motion}”), classifications,
-quality designations, availability, and other useful \iindex{metrics}.
-The contents are cataloged at physical, logical, and business levels using defined organizational standards.
-Consistently documenting data is the backbone of an effective data management program.
-Policies and controls are required to ensure the inventory remains accurate and relevant.
+%
+% B.2.3 Inventory Management
+%
+\ekgmmCapability{b-2-3}{inventory-management}{Inventory Management}
 
 \ekgmmContextSection
 
@@ -18,7 +12,7 @@ assisted and contextual search and navigation.
 The unique ability of the knowledge graph to connect data with metadata enables users to perform flexible queries
 in ways that were not previously possible.
 
-\kgmmcorequestionssection
+\ekgmmcorequestionssection
 
 \begin{core-questions}
 
@@ -34,11 +28,11 @@ in ways that were not previously possible.
 
 \end{core-questions}
 
-\kgmmscoringsection
+\ekgmmscoringsection
 
 (concepts are inherited as levels progress)
 
-\kgmmscoringlevelOne
+\ekgmmscoringlevelOne
 
 \begin{scoring}
 
@@ -55,7 +49,7 @@ in ways that were not previously possible.
 
 \end{scoring}
 
-\kgmmscoringlevelTwo
+\ekgmmscoringlevelTwo
 
 \begin{scoring}
 
@@ -70,14 +64,14 @@ in ways that were not previously possible.
 
 \end{scoring}
 
-\kgmmscoringlevelThree
+\ekgmmscoringlevelThree
 
 \begin{scoring}
 
   \item Data inventory is centralized in the graph and linked to governance for defined use cases
   \item Ontologies and data models (including change history and transformations) are registered in the knowledge graph
   \item Entitlements are calculated within the inventory and enforced at the datapoint level
-  \item \iindex{Data quality} is automatically calculated (fine-grained with dynamic value resolution) within
+  \item Data Quality\index{data!quality} is automatically calculated (fine-grained with dynamic value resolution) within
         the inventory for each use case
   \item Data retention rules are registered in the graph and automatically enforced
   \item Full audit trail for all upstream and downstream data usage is registered in the graph
@@ -85,7 +79,7 @@ in ways that were not previously possible.
 
 \end{scoring}
 
-\kgmmscoringlevelFour
+\ekgmmscoringlevelFour
 
 \begin{scoring}
 

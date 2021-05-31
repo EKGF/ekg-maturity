@@ -1,20 +1,14 @@
-\section{Critical Data Elements}\label{sec:ekg-mm-b-4-5} % B.4.5 Classification Management
-
-\glsreset{cde}\Glspl{cde} are designated as having a material impact on a business process, regulatory report,
-financial calculation or risk measure.
-The designation of a data element as critical means it is important enough to be governed by organizational policy.
-\Gls{cde} management is implemented as a negotiation process between producers and consumers that require
-precision of meaning, understanding of data flow, capture of business rules and the management of quality based on
-how the data will be used.
-Many firms use the term \gls{cde} to describe various things such as data attributes, business concepts,
-derived processes and physical expressions.
-This confusion over nomenclature about concepts makes it difficult to distinguish granular data from how it is
-assembled into business measures and how it is expressed in physical data repositories.
+%
+% B.4.5 Classification Management
+%
+\ekgmmCapability{b-4-5}{classification-management}{Classification Management}
 
 \ekgmmContextSection
 
-In the \glsxtrshort{ekg}\improve[inline]{%
-    We should be more explicit about this by saying that \glspl{cde}
+In the \glsxtrshort{ekg}, \glsfmtlongpl{cde} are defined by data quality business rules\index{data!quality!rules}
+and expressed as machine-executable models\index{executable models}.\improve{i.e. ontologies}
+\improve[inline]{%
+    JAG>We should be more explicit about this by saying that \glspl{cde}
     basically do not exist as such anymore, a data element is deemed critical from the point of view of the
     enterprise perhaps but that's just one viewpoint, one context.
     In the \gls{ekg} we have to serve any viewpoint.
@@ -24,15 +18,13 @@ In the \glsxtrshort{ekg}\improve[inline]{%
     This has to do with the "single version of the truth delusion".
     It's of course fine to label certain data elements as "critical" but it should be tied to the use case.
     Data element X is critical for use case Y.},
-\glsfmtlongpl{cde} are defined by \iindex{data quality} business rules and expressed as
-machine-executable models.\improve{i.e. ontologies}
 These rules are automatically executed across systems, processes and applications to ensure consistency.
 Data is linked to the ontology and resolved to a single identifier to mitigate confusion about meaning when the
 data is onboarded or transformed.
 The \glsxtrshort{ekg} is able to trace data flow and verify that criticality is aligned with \glspl{sor}
 and agreed usage.
 
-\kgmmcorequestionssection
+\ekgmmcorequestionssection
 
 \begin{core-questions}
 
