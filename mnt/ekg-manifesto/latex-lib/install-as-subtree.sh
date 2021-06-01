@@ -5,14 +5,7 @@
 #
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
-github_org="agnos-ai"
-remote_name="latex-lib"
-remote_branch="main"
-github_repo="${github_org}/${remote_name}"
-github_url_https="https://github.com/${github_repo}.git"
-github_url_ssh="git@github.com:${github_repo}.git"
 prefer_ssh=1
-subtree_dir="${remote_name}" # the directory into which the subtree repo will appear in your repo
 git_bin=""
 
 function checkGit() {
@@ -33,36 +26,62 @@ function checkGit() {
 }
 
 function _git() {
-  echo "git $*"
-  "${git_bin}" $@
+  (
+    set -x
+    "${git_bin}" $@
+  )
   return $?
 }
 
 function getRemoteUrl() {
 
+  local -r remote_name="$1"
+
   "${git_bin}" remote get-url "${remote_name}" 2>/dev/null
+}
+
+function getGithubUrl() {
+
+  local -r remote_org="$1"
+  local -r remote_name="$2"
+  local -r github_repo="${remote_org}/${remote_name}"
+
+  if ((prefer_ssh)) ; then
+    echo "git@github.com:${github_repo}.git"
+  else
+    echo "https://github.com/${github_repo}.git"
+  fi
 }
 
 function checkGitRemote() {
 
-  local -r remoteUrl="$1"
+  local -r remote_org="$1"
+  local -r remote_name="$2"
+  local -r remote_url="$3"
+  local -r github_url="$(getGithubUrl "${remote_org}" "${remote_name}")"
 
-  [[ "${remoteUrl}" == "${github_url_https}" ]] && return 0
-  [[ "${remoteUrl}" == "${github_url_ssh}" ]] && return 0
+  [[ "${remote_url}" == "${github_url}" ]] && return 0
+
+  echo "ERROR: Registered url is ${remote_url} whilst preferred url is ${github_url}" >&2
 
   return 1
 }
 
 function addGitRemote() {
 
-  echo "Add git remote" >&2
+  local -r remote_org="$1"
+  local -r remote_name="$2"
+  local -r github_url="$(getGithubUrl "${remote_org}" "${remote_name}")"
 
-  if ((prefer_ssh)) ; then
-    _git remote add -f "${remote_name}" "${github_url_ssh}" 2>/dev/null
-  else
-    _git remote add -f "${remote_name}" "${github_url_https}" 2>/dev/null
-  fi
-  checkGitRemote "$(getRemoteUrl)"
+  echo "Add git remote ${remote_name} at ${github_url}" >&2
+
+  _git remote add -f "${remote_name}" "${github_url}" 2>/dev/null || true
+
+  local -r remote_url="$(getRemoteUrl "${remote_name}")"
+
+  echo "Actual remote url registered: ${remote_url}"
+
+  checkGitRemote "${remote_org}" "${remote_name}" "${remote_url}"
 }
 
 function getSubTrees() {
@@ -71,32 +90,46 @@ function getSubTrees() {
 
 function addSubtree() {
 
-  local -r remote_name="$1"
-  local -r mount_point="$2"
-  local -r remote_branch="$3"
+  local -r remote_org="$1"
+  local -r remote_name="$2"
+  local -r mount_point="$3"
+  local -r remote_branch="$4"
+
+  local -r remote_url="$(getRemoteUrl "${remote_name}")"
+
+  if ! checkGitRemote "${remote_org}" "${remote_name}" "${remote_url}" ; then
+    addGitRemote "${remote_org}" "${remote_name}" || return $?
+  fi
 
   if getSubTrees | grep -q "${mount_point}" ; then
     echo "Subtree ${mount_point} has already been installed" >&2
     return 0
   fi
 
-  echo "Add subtree ${mount_point}" >&2
+  echo "Add subtree ${remote_name}/${remote_branch} at mount point ${mount_point}" >&2
 
   _git subtree add --prefix="${mount_point}" --squash "${remote_name}/${remote_branch}"
 }
 
 function pullLatest() {
 
-  local -r remote_name="$1"
-  local -r mount_point="$2"
-  local -r remote_branch="$3"
+  local -r remote_org="$1"
+  local -r remote_name="$2"
+  local -r mount_point="$3"
+  local -r remote_branch="$4"
 
-  addSubtree "$1" "$2" "$3" || return $?
+  addSubtree "$1" "$2" "$3" "$4" || return $?
 
-  echo "Pull Latest ${remote_name} and mount at ${mount_point}" >&2
+  echo "Pull Latest ${remote_org}/${remote_name} and mount at ${mount_point}" >&2
 
   _git fetch "${remote_name}" || return $?
-  _git subtree pull --prefix "${mount_point}" "${remote_name}" "${remote_branch}" --squash
+  _git subtree pull --prefix="${mount_point}" "${remote_name}" "${remote_branch}" --squash
+
+  if [[ "${remote_name}" == "latex-lib" ]] ; then
+    createSymlinks || return $?
+  fi
+
+  return 0
 }
 
 # https://unix.stackexchange.com/a/521984
@@ -214,24 +247,19 @@ function createSymlinks() {
 
 function main() {
 
+  local remote_org
+  local remote_name
+  local remote_branch
+
   checkGit || return $?
 
-  local -r remoteUrl="$(getRemoteUrl)"
-
-  if ! checkGitRemote "${remoteUrl}" ; then
-    addGitRemote || return $?
-  fi
-
-  pullLatest latex-lib latex-lib main || return $?
-
-  createSymlinks || return $?
-
-  if [[ -d mnt/ekg-manifesto ]] ; then
-    pullLatest ekg-manifesto mnt/ekg-manifesto main || return $?
-  fi
-  if [[ -d mnt/ekg-mm ]] ; then
-    pullLatest ekg-mm mnt/ekg-mm main || return $?
-  fi
+  for mount_point in $(getSubTrees) ; do
+    remote_name=${mount_point/mnt\//}
+    remote_branch="main"
+    remote_org="EKGF"
+    [[ "${remote_name}" == "latex-lib" ]] && remote_org="agnos-ai"
+    pullLatest "${remote_org}" "${remote_name}" "${mount_point}" "${remote_branch}" || return $?
+  done
 
   return 0
 }
