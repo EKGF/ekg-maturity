@@ -42,6 +42,11 @@
 
 \setabbreviationstyle[acronym]{long-short}% glossaries-extra.sty
 
+%
+% \glsreverse shows an abbreviation in short-long format rather than long-short
+%
+\newcommand{\glsreverse}[1]{\glsxtrshort{#1} (\glsxtrlong{#1})}
+
 \RequirePackage{glossary-mcols}
 
 %
