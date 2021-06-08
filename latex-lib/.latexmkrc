@@ -214,7 +214,7 @@ sub starts_with {
 sub getVersionString() {
     my $prefix = '';
     my $suffix = '';
-    my $gitref = $ENV{'GITHUB_REF'};
+    my $gitref = $ENV{'GITHUB_REF'} || '';
     #
     # If we are running in a job that is being triggered by a push with a tag then
     # assume that the tag is the version number
