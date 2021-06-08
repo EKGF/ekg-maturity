@@ -1,36 +1,83 @@
 %%
-%% The main glossary (but only the ekg related terms of the main glossary),
+%% The main glossary (but only the EKG related terms of the main glossary),
 %% use this for any terms that are NOT:
 %%
 %% - Concepts (use glossary-concepts.tex for that)
+%% - Business Terms (use glossary-business.tex for that)
 %% - Ontologies (use glossary-ontologies.tex for that)
 %%
 %% Do also not store any customer specific terms here, use
 %% glossary-<customer-code>.tex for that.
 %%
-\newacronym[see={[Glossary:]{ekg:ekg}}]{ekg}{EKG}{Enterprise Knowledge Graph}% ekg the acronym
-%\newglossaryentry{ekg}{% ekg the acronym
-%    type=\acronymtype,
-%    name={EKG},
-%    description={Enterprise Knowledge Graph},
-%    first={Enterprise Knowledge Graph (EKG)\glsadd{ekg:ekg}},
-%    shortplural={EKGs},
-%    longplural={Enterprise Knowledge Graphs},
-%    see=[Glossary:]{ekg:ekg}
-%}
+%% \newglossaryentry{⟨label⟩}{
+%%   type=\acronymtype,
+%%   name={⟨abbrv⟩},
+%%   description={⟨long⟩},
+%%   text={⟨abbrv⟩},
+%%   first={⟨long⟩ (⟨abbrv⟩)},
+%%   plural={⟨abbrv⟩s},
+%%   firstplural={⟨long⟩s (⟨abbrv⟩s)},
+%%   ⟨options⟩
+%% }
+%%
+%% Common keys:
+%%
+%% - name
+%%   The name of the entry (as it will appear in the glossary).
+%% - description
+%%   A brief description of this entry (to appear in the glossary).
+%% - text
+%%   How this entry will appear in the document text where the singular form is required.
+%%   If this key is omitted the value of name will be used.
+%% - first
+%%   How this entry will appear in the document text the first time it is used,
+%%   where the first use requires the singular form.
+%%   If this key is omitted the value of text is used.
+%% - plural
+%%   How this entry will appear in the document text where the plural form is required.
+%%   If this key is omitted, the value is obtained by appending the letter “s” to the value of the text key.
+%% - firstplural
+%%   How this entry will appear in the document text the first time it is used,
+%%   where the first use requires the plural form.
+%%   If this field is omitted, the value is obtained by appending the letter “s” to the value of the first key.
+%% - symbol
+%%   This key is provided to allow the user to specify an associated symbol, but most glossary styles ignore this value.
+%% - sort
+%%   This value indicates how to sort this entry (analogous to using the @ character in the argument of \index.
+%%   Creating an Index (makeidx package)). If this key is omitted the value of name is used.
+%% - type
+%%   This is the glossary type to which this entry belongs.
+%%   If omitted the main (default) glossary is assumed.
+%%
+%\newacronym[see={[Glossary:]{ekg:ekg}}]{ekg}{EKG}{Enterprise Knowledge Graph}% ekg the acronym
+%\newacronym[shortplural={EKGs},longplural={Enterprise Knowledge Graphs}]{ekg}{EKG}{Enterprise Knowledge Graph}
+\newglossaryentry{ekg}{% ekg the acronym
+    type=\acronymtype, % notice this, this is not a normal glossary entry but an acronym
+    name={EKG},
+    text={EKG},
+    short={EKG},
+    description={Enterprise Knowledge Graph},
+    first={Enterprise Knowledge Graph (EKG)\glsadd{ekg:ekg}},
+    firstplural={Enterprise Knowledge Graphs (EKGs)\glsadd{ekg:ekg}},
+    shortplural={EKGs},
+    longplural={Enterprise Knowledge Graphs},
+    see=[Glossary:]{ekg:ekg}
+}
 
 \newglossaryentry{ekg:ekg}{% ekg:ekg the glossary entry
     type=\glsdefaulttype,
     name={EKG},
     description={%
-        much like "the web" is a virtual concept, an EKG is a virtual concept that combines all
-        information and knowledge of an enterprise or ecosystem.
+        much like "the web" is a virtual concept, an \glsfirst{ekg} is a virtual concept that combines all
+        information and knowledge of an enterprise\,---\,at any level in the organization\,---\,or ecosystem.
     }
 }
 
 \newglossaryentry{ekg:coe}{
     type=\glsdefaulttype,
     name={\gls{coe} for the \gls{ekg}},
+    plural={\glspl{coe} for the \gls{ekg}},
+%    firstplural={\glsreset{coe}\glspl{coe} for the \gls{ekg}},
     description={%
         the group of people that is overseeing the \gls{ekg}
     }
@@ -40,17 +87,18 @@
     type=\glsdefaulttype,
     name={EKG system architecture},
     description={%
-        the logical \gls{system-architecture} of \gls{ekg} is divided into multiple layers or environments.
+        the logical \gls{system-architecture} of \gls{ekg} is divided into multiple layers or environments such as
+        \gls{ekg:platform}, \gls{ekg:storage} and \gls{ekg:dataops:environment}.
     }
 }
 
+\newacronym[see={[General Terms:]{ekg:platform}}]{ekgp}{EKG/\-Platform}{Enterprise Knowledge Graph Platform\glsadd{ekg:platform}}
 \newglossaryentry{ekg:platform}{
     type=\glsdefaulttype,
     name={EKG/Platform},
-    parent={ekg:architecture:system},
     description={%
-        a logical \gls{system-architecture} component, the layer of software services that provide
-        and serve the \gls{ekg} to end-users and other systems.
+        a logical \gls{system-architecture} component (see \gls{ekg:architecture:system}),
+        the layer of software services that provide and serve the \gls{ekg} to end-users and other systems.
         The platform logically is a set services that enforce any of the specified policies in the
         \glspl{ekg:sdd} that have been published in the \gls{ekg}.
     }
@@ -60,7 +108,6 @@
     type=\glsdefaulttype,
     name={EKG/Storage},
     text={EKG/Storage},
-    parent={ekg:architecture:system},
     description={%
         a logical \gls{system-architecture} component, the layer of data-storage services such as a "Triplestore"
         or an "Object Store" that serve the various other layers in the \gls{ekg:architecture:system}.
@@ -69,16 +116,17 @@
 
 \newacronym[see={[Glossary:]{ekg:storage:objectstore}}]{s3}{S3}{Simple Storage Service}
 
-%\newglossaryentry{s3}{% s3 the acronym, refers to "object store"
-%    type=\acronymtype,
-%    name={S3},
-%    text={S3},
-%    description={Simple Storage Service},
-%    first={Simple Storage Service (S3)\glsadd{ekg:storage:objectstore}},
-%    shortplural={S3-services},
-%    longplural={S3-services},
-%    see=[Glossary:]{ekg:storage:objectstore}
-%}
+\newglossaryentry{s3}{% s3 the acronym, refers to "object store"
+    type=\acronymtype,
+    name={S3},
+    text={S3},
+    description={Simple Storage Service},
+    first={Simple Storage Service (S3)\glsadd{ekg:storage:objectstore}},
+    shortplural={S3-services},
+    longplural={S3-services},
+    see=[Glossary:]{ekg:storage:objectstore}
+}
+
 \newglossaryentry{ekg:storage:objectstore}{
     type=\glsdefaulttype,
     name={object store},
@@ -90,6 +138,17 @@
         the \gls{ekg:storage} layer of \gls{ekg:architecture:system} always contains an object store (supporting the
         s3 api, usually the product \href{https://min.io}{MinIO} is used for that).
         Many backend storage mechanisms can be supported e.g. NAS, HDFS, Azure, Google Storage etc.
+    }
+}
+
+\newglossaryentry{ekg:method}{
+    type=\glsdefaulttype,
+    name={EKG/Method},
+    text={EKG/Method},
+    first={EKG/Method},
+    description={%
+        a methodological approach to the development of an \glsxtrfull{ekg}, covering all practices from the definition
+        of desired business outcomes to deployment of \glsxtrshort{ekg} use cases that deliver on these outcomes and beyond.
     }
 }
 
@@ -109,31 +168,37 @@
     type=\glsdefaulttype,
     name={practice},
     text={EKG/DataOps Practice},
-    parent={ekg:dataops},
     description={%
-        the DataOps practice is one of the practices that the \gls{ekg:coe} executes...\improve{add definition of DataOps}
+        the DataOps practice,\,---\,as defined by the \gls{ekg:method}\,---\,is one of the practices
+        that the \gls{ekg:coe} executes.
     }
 }
 
 \newglossaryentry{ekg:dataops:environment}{
     type=\glsdefaulttype,
-    name={EKG/DataOps Environment},
-    text={EKG/DataOps Environment},
-    parent={ekg:architecture:system},
+    name={EKG/DataOps environment},
+    text={EKG/DataOps environment},
     description={%
         a logical \gls{system-architecture} component, the environment where \glspl{ekg:dataops:pipeline} run.
+        Since \glspl{ekg:dataops:pipeline} can run anywhere and any given data provider can publish their own
+        data as a \gls{ekg:sdd} in any technical or physical environment, the actual DataOps "environment"
+        is just a logical concept that does not necessarily map one-to-one to a particular physical environment.
     }
 }
 
 \newglossaryentry{ekg:dataops:pipeline}{
     type=\glsdefaulttype,
-    name={pipeline},
-    text={EKG/DataOps Pipeline},
-    parent={ekg:dataops},
+    name={EKG/DataOps pipeline},
+    text={EKG/DataOps pipeline},
+    plural={EKG/DataOps pipelines},
     description={%
         a DataOps pipeline in the \gls{ekg:dataops:environment} is a series of programs, called "steps",
-        that are run in sequence where the first step captures data in any given format from a given source
-        and the last step produces an output file in any given format.
+        that are run in sequence\,---\,hence the name pipeline\,---\,where the first step captures the data
+        from a given source and the last step produces an \gls{ekg:sdd} (for "inbound pipelines") or
+        any other type of artifact (for "outbound pipelines").
+        Each DataOps pipeline step takes an input and produces an output based on its configuration which usually
+        refers to a model that instructs the DataOps pipeline step how to process the data.
+        Crafting these models is the main activity in the \gls{ekg:dataops:practice}.
     }
 }
 
@@ -182,9 +247,12 @@
     first="Enterprise Knowledge Graph IRI (EKG/IRI)",
     firstplural="Enterprise Knowledge Graph IRIs (EKG/IRI)",
     description={
-        An \gls{iri} that forms the identity of an object in the \gls{ekg}.
-        Any given object in an \gls{ekg} has an EKG/IRI for which special rules are defined by the \gls{ekgf}.
-        Not to be confused by \glspl{canonical-identifier}.
+        A special type of identifier, based on the \gls{iri}-standard, that forms the
+        identity of an object in the \gls{ekg}.
+        Any given object in an \gls{ekg} has at least one EKG/IRI for which special rules are defined by the \gls{ekgf}
+        to allow interoperability between various instances of the \gls{ekg:platform}. For instance, an EKG/IRI has
+        to be universally unique, opaque (as in "meaningless") and resolvable (for the duration of the life-cycle of
+        the thing or object it represents).
     }
 }
 
@@ -200,8 +268,8 @@
 \newglossaryentry{canonical-identifier}{ % TODO: Since this is an EKG specific explanation we should prefix it with ekg:
     name={canonical identifier},%
     type=\glsdefaulttype,%
-    text={Canonical Identifier},%
-    description={A permanent identifier for an object, distinguished within an \gls{ekg}.}
+    text={canonical identifier},%
+    description={an alternative name for \gls{ekg:iri}}
 }
 
 \newglossaryentry{ekg:use-case}{
