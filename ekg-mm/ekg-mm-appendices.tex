@@ -17,6 +17,13 @@
 \typeout{ekg-mm =================================> Appendix: Business Strategy}
 \input{../ekg-mm/chapters/ekg-mm-business-strategy-intro.tex}
 
+%
+% Adding the essence appendix in draft mode
+%
+\ifoptionfinal{}{
+    \input{../ekg-mm/chapters/ekg-mm-essence.tex}
+}
+
 \typeout{ekg-mm =================================> Appendix: Process}
 \input{../ekg-mm/appendices/process.tex}
 
@@ -28,3 +35,4 @@
 
 \typeout{ekg-mm =================================> Appendix: Corporate Members}
 \input{../ekg-mm/appendices/corporate-members.tex}
+
