@@ -40,7 +40,14 @@
     %translate=babel
 ]{glossaries-extra}
 
-\setabbreviationstyle[acronym]{long-short}% glossaries-extra.sty
+\setabbreviationstyle[acronym]{long-short-sm}% glossaries-extra.sty
+%\renewcommand*{\glsxtrabbreviationfont}[1]{\textit{#1}}
+\renewcommand{\glsfirstlonguserfont}[1]{\emph{#1}}
+
+%
+% \glsreverse shows an abbreviation in short-long format rather than long-short
+%
+\newcommand{\glsreverse}[1]{\glsxtrshort{#1} (\glsxtrlong{#1})}
 
 \RequirePackage{glossary-mcols}
 

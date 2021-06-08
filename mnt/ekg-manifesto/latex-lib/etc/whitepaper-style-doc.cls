@@ -110,7 +110,7 @@
 % Quotations
 %
 \newcommand{\somequote}[3]{%
-  \begin{quote}\itshape\large``#1''\end{quote}%
+  \begin{quote}\itshape\large\enquote{#1\xspace}\end{quote}%
   \begin{flushright}%
     - #2\footnote{\url{#3}}%
   \end{flushright}%
