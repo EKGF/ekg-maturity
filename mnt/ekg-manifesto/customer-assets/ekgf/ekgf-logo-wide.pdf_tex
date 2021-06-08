@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{301.36816406bp}%
+    \setlength{\unitlength}{417.70605469bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,13 +50,13 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.41033568)%
+  \begin{picture}(1,0.32608696)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{ekgf-logo-wide.pdf}}%
-    \put(0.45293437,0.3374746){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Enterprise\end{tabular}}}}%
-    \put(0.45293437,0.22548534){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Knowledge\end{tabular}}}}%
-    \put(0.45293437,0.11349607){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Graph\end{tabular}}}}%
-    \put(0.45293437,0.0015068){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Foundation\end{tabular}}}}%
+    \put(0.32678483,0.24423645){\color[rgb]{0.03137255,0.06666667,0.1254902}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Enterprise}\end{tabular}}}}%
+    \put(0.32678483,0.163438){\color[rgb]{0.03137255,0.06666667,0.1254902}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Knowledge}\end{tabular}}}}%
+    \put(0.32678483,0.08263956){\color[rgb]{0.03137255,0.06666667,0.1254902}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Graph}\end{tabular}}}}%
+    \put(0.32678483,0.00184111){\color[rgb]{0.03137255,0.06666667,0.1254902}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Foundation}\end{tabular}}}}%
   \end{picture}%
 \endgroup%
