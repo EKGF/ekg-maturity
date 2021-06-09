@@ -94,6 +94,34 @@
   % Import the banner and size it across the whole page
   %
   \bannerAcrossWholePage{130pt}{\customerCode-front-page-image}
+
+  \iftoggle{showLicenceCreativeCommonsBySa}{
+      \mbox{}
+      \vfill
+      \footnotesize
+      \textcolor{primarySubText}{
+          \copyright~\the\year~by~\authorLegalName.\newline
+          \href{\documentGitRepo}{\thetitle}~is licensed under
+          \href{http://creativecommons.org/licenses/by-sa/4.0/}{
+              \textit{Attribution-ShareAlike 4.0 International}
+          }.
+          \href{https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1}{
+            \def\svgwidth{9px}
+            \input{cc.pdf_tex}
+          }
+          \href{https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1}{
+              \def\svgwidth{9px}
+              \input{by.pdf_tex}
+          }
+          \href{https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1}{
+              \def\svgwidth{9px}
+              \input{sa.pdf_tex}
+          }
+          \newline
+          To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-sa/4.0/}.
+      }
+  }
+
 \end{titlepage}
 
 \pagenumbering{arabic}

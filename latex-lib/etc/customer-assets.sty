@@ -12,6 +12,10 @@
 \RequirePackage{path-stuff}
 \RequirePackage[abspath]{currfile}
 \RequirePackage{link-stuff}
+\RequirePackage{etoolbox}
+
+\providetoggle{showLicenceCreativeCommonsBySa}
+\settoggle{showLicenceCreativeCommonsBySa}{false}
 
 \makeatletter
 \typeout{customer-assets.sty: trying to load variables.tex using this path: \input@path}
