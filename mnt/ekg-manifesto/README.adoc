@@ -19,7 +19,7 @@ link:https://ekgf.slack.com/archives/C01TZV0M36J[#ekg-manifesto-latest]
 where both PDFs are published every time someone pushes
 a change into this repository.
 
-NOTE: Soon we'll also be publishing this content as HTML.
+TIP: Soon we'll also be publishing this content as HTML.
 
 
 
