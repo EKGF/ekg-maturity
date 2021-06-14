@@ -20,12 +20,13 @@ by the \gls{w3c} and are grouped into \textit{"OWL ontologies"} for management p
 %link the properties and statements to the real world.
 
 \paragraph{Rationale} Expressing data at a granular level allows ultimate flexibility
-for it to be sliced, diced, combined and aggregated. This capability to combine and
-infer information is further enhanced by the use of \gls{property} definitions built on logic.
+for it to be sliced, diced, combined and aggregated.
+This capability to combine and infer information is further enhanced by the use of \gls{property} definitions
+built on logic.
 Having the properties themselves be objects that can be looked up means that all data
 is self-defining and carries its meaning with it.
-Since the information is self-defining there is no fixed schema for the \gls{ekgf}
-as a whole and it can non-disruptively incorpate additional knowledge.
+Since the information is self-defining there is no fixed schema for the \gls{ekg}
+as a whole and it can non-disruptively incorporate additional knowledge.
 
 \paragraph{Implications} Some further discovery, with subject matter experts and
 creators of source systems, is often needed to truly understand what a given
@@ -33,7 +34,48 @@ set of data really means and what can be inferred from it.
 In other words you cannot rely on the name of a column in a spreadsheet.
 A deceptively simple column name such as "number of European customers" leaves
 open the meaning of "European" and "customer" and timing (when does one start
-and stop being a customer?). And different sources could have different
-interpretations of that same name.
+and stop being a customer?).
+And different sources could have different interpretations of that same name.
 The benefit is consistency, accuracy and the ability to make sound business decisions.
+
+\paragraph{Advanced} at higher levels of \gls{ekg:platform} maturity the term \gls{data-point} may in fact become a more
+complex data structure that is used "on the wire" that represents the \gls{data-point} at a more "holistic" level,
+supporting \enquote{\glsfirst{mvot}}.
+Since an \gls{ekg} supports many datasets that have overlapping information coming from multiple sources, there
+could be:
+\begin{enumerate}
+    \item multiple \gls{ekg} identifiers (\glspl{ekg:iri}) for the same object
+    \begin{itemize}
+        \item One object can have multiple identifiers that can be linked together
+              \footnote{%
+                  for instance via owl:sameAs i.e.
+                  "\href{https://www.w3.org/TR/owl2-syntax/\#Individual_Equality}{Individual Equality}"
+              } and therefore be rightfully addressable with any of these identifiers.
+    \end{itemize}
+    \item multiple definitions of meaning
+    \begin{itemize}
+        \item One property of an object can have multiple definitions of meaning,
+              for instance "legal name" can be defined in multiple ontologies and be semantically equivalent
+              \footnote{%
+                  See
+                  \href{https://www.w3.org/TR/owl2-syntax/\#Equivalent_Object_Properties}{Equivalent Object Properties}
+                  or
+                  \href{https://www.w3.org/TR/owl2-syntax/\#Equivalent_Data_Properties}{Equivalent Data Properties}
+              } or one property can be defined as a subproperty of another but broader semantic definition
+              \footnote{%
+                  See \href{https://www.w3.org/TR/owl2-syntax/\#Data_Subproperties}{Data Subproperties}
+              }.
+    \end{itemize}
+    \item multiple equal or different values coming from multiple sources
+
+    \item multiple versions over time of those values (temporality)
+\end{enumerate}
+
+For each of these four "axes"\,---\,identity, meaning, source, temporality\,---\,you could have multiple
+options to choose from even while logically, from a user perspective, it's the same data point.
+Advanced client applications, services or AIs can use these \glspl{data-point} to perform last-minute "at the edge"
+computations around finding the right value from the right timeline and source with the right quality for the given
+context.
+
+
 
