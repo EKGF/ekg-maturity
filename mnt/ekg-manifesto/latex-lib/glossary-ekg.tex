@@ -101,7 +101,7 @@
         a logical \gls{system-architecture} component (see \gls{ekg:architecture:system}),
         the layer of software services that provide and serve the \gls{ekg} to end-users and other systems.
         The platform logically is a set services that enforce any of the specified policies in the
-        \glspl{ekg:sdd} that have been published in the \gls{ekg}.
+        \glspl{sdd} that have been published in the \gls{ekg}.
     }
 }
 
@@ -182,7 +182,7 @@
     description={%
         a logical \gls{system-architecture} component, the environment where \glspl{ekg:dataops:pipeline} run.
         Since \glspl{ekg:dataops:pipeline} can run anywhere and any given data provider can publish their own
-        data as a \gls{ekg:sdd} in any technical or physical environment, the actual DataOps "environment"
+        data as a \gls{sdd} in any technical or physical environment, the actual DataOps "environment"
         is just a logical concept that does not necessarily map one-to-one to a particular physical environment.
     }
 }
@@ -195,7 +195,7 @@
     description={%
         a DataOps pipeline in the \gls{ekg:dataops:environment} is a series of programs, called "steps",
         that are run in sequence\,---\,hence the name pipeline\,---\,where the first step captures the data
-        from a given source and the last step produces an \gls{ekg:sdd} (for "inbound pipelines") or
+        from a given source and the last step produces an \gls{sdd} (for "inbound pipelines") or
         any other type of artifact (for "outbound pipelines").
         Each DataOps pipeline step takes an input and produces an output based on its configuration which usually
         refers to a model that instructs the DataOps pipeline step how to process the data.
