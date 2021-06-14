@@ -1,0 +1,118 @@
+\chapter{Mapping to FAIR data principles}
+
+\section{Findable}
+
+\begin{itemize}
+    \item[F1] (Meta)data are assigned a globally unique and persistent identifier
+    \item[F2] Data are described with rich metadata (defined by R1 below)
+    \item[F3] Metadata clearly and explicitly include the identifier of the data they describe
+    \item[F4] (Meta)data are registered or indexed in a searchable resource
+\end{itemize}
+
+\paragraph{Differences}
+
+\gls{ekg} Principles are slightly more specific or prescriptive:
+
+\begin{itemize}
+    \item Metadata (objects) and data (objects) can potentially have multiple identifiers (but at least one).
+    \item Those identifiers do not necessarily be "persistent" as long as they are (always) resolvable (through HTTP).
+    \item The \gls{ekg} identifiers (\glspl{ekg:iri}) of data objects (but not necessarily metadata objects) should be
+          "opaque" as in "meaningless", (relatively) safe to be emailed around, stored in other platforms,
+          maximising "proliferation".
+    \item FAIR principle F3 would be phrased the other way around: the data described by metadata refers to it via
+          the metadata identifier (i.e. the predicate-IRI).
+    \item FAIR principle F4 slightly differs as well, the \gls{ekg} Principles require metadata to be directly
+          resolvable (via HTTP) machine-readable definitions of the semantics in verifiable formal logic
+          (preferably OWL 2).
+\end{itemize}
+
+\section{Accessible}
+
+Once the user finds the required data, they need to know how they can be accessed,
+possibly including authentication and authorisation.
+
+\begin{itemize}
+    \item[A1] (Meta)data are retrievable by their identifier using a standardised communications protocol
+    \item[A1.1] The protocol is open, free, and universally implementable
+    \item[A1.2] The protocol allows for an authentication and authorisation procedure, where necessary
+    \item[A2] Metadata are accessible, even when the data are no longer available
+\end{itemize}
+
+\paragraph{Differences}
+
+\gls{ekg} Principles are slightly more specific or prescriptive:
+
+\begin{itemize}
+    \item \textit{"using a standardised communications protocol"} would be explicitly the HTTP protocol
+          (or actually HTTPS/TLS) as a minimum requirement and in addition to that any other protocol,
+          standardised or not.
+    \item \textit{"metadata are accessible"} would be more explicit for the \gls{ekg}:
+          all metadata has to be accessible through IRIs that are always "resolvable" via the HTTP protocol.
+          In other words, make sure that all your OWL 2 ontologies or RDFS schema vocabularies are placed on
+          highly available durable infrastructure that can always be accessed via HTTP.
+\end{itemize}
+
+\section{Interoperable}
+
+The data usually need to be integrated with other data.
+In addition, the data need to interoperate with applications or workflows for analysis, storage, and processing.
+
+\begin{itemize}
+    \item[I1] (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation.
+    \item[I2] (Meta)data use vocabularies that follow FAIR principles
+    \item[I3] (Meta)data include qualified references to other (meta)data
+\end{itemize}
+
+\paragraph{Differences}
+
+\gls{ekg} Principles are slightly more specific or prescriptive:
+
+\begin{itemize}
+    \item In the \gls{ekg} the metadata that describes meaning i.e. the semantics
+          (there are also many other types of metadata) that
+          \textit{formal and broadly applicable language for knowledge representation}
+          has to be preferably OWL 2 or at least \href{https://www.w3.org/TR/rdf-schema/}{RDF Schema} or SHACL.
+\end{itemize}
+
+
+\section{Reusable}
+
+The ultimate goal of FAIR is to optimise the reuse of data.
+To achieve this, metadata and data should be well-described so that they can be replicated and/or
+combined in different settings.
+
+\begin{itemize}
+    \item[R1] Meta(data) are richly described with a plurality of accurate and relevant attributes
+    \item[R1.1] (Meta)data are released with a clear and accessible data usage license
+    \item[R1.2] (Meta)data are associated with detailed provenance
+    \item[R1.3] (Meta)data meet domain-relevant community standards
+\end{itemize}
+
+The principles refer to three types of entities: data (or any digital object),
+metadata (information about that digital object), and infrastructure.
+For instance, principle F4 defines that both metadata and data are registered or indexed in a
+searchable resource (the infrastructure component).
+
+\paragraph{Differences}
+
+\gls{ekg} Principles are slightly more specific or prescriptive:
+
+\begin{itemize}
+    \item \textit{optimization of the reuse of data is the ultimate goal}.
+          It's an important goal for \gls{ekg} as well but reuse of knowledge and whole use cases\,---\,%
+          with everything that comes with it\,---\,is an even higher level goal.
+          Furthermore, overall connectedness of all data and knowledge is an equally important goal.
+    \item \textit{metadata and data should be well-described} but should also be as "unbiased" as possible, not designed
+          for one particular (set of) use case(s) but designed to represent the version of the truth that a given data
+          source provides with the highest level of integrity.
+          See principle \ref{sec:ekg-principle-self-describing} \nameref{sec:ekg-principle-self-describing}.
+    \item \textit{Meta(data) are richly described with a plurality of accurate and relevant attributes}.
+          \enquote{\textit{Richly described}} would not be specific enough for \gls{ekg}.
+          It would have to be \textit{directly resolvable to a machine-readable definition in verifiable formal logic}.
+    \item For all types of recognised metadata, which is metadata that services of the various \gls{ekg} platforms can
+          recognise, the EKGF will specify accepted standards or define standards itself or in
+          collaboration with partners like the \gls{omg}.
+          Since an \gls{ekg} is a collection of \glspl{ekg:sdd}, each dataset will have its various types of metadata
+          organized in a structured way.
+\end{itemize}
+

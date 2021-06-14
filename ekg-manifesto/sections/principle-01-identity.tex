@@ -1,20 +1,21 @@
 \section{Identity}\label{sec:ekg-principles-identity}
 
 Any object in the \glsfmtshort{ekg} is identified with at least one \iindex{universally unique}, \iindex{opaque},
-permanent and \iindex{web-resolvable} identifier in the form of an \glsfmtshort{iri} for
-the \glsfmtshort{ekg} i.e. an \gls{ekg:iri}.
+permanent, non-reassignable and \iindex{web-resolvable} identifier in the form of an \glsreverse{iri}
+for the \glsfmtshort{ekg}\,---\,i.e. an \gls{ekg:iri}.
 
 The \gls{ekg:iri} identifier is permanent, will be proliferated across the company's universe (including ecosystem),
 and will be used for the expression of facts about the object including relationships between objects.
 
-Additional non-canonical identifiers (and therefore not called \glspl{ekg:iri}) may also be assigned,
-and \myuline{they} \myuline{may} be human-readable (i.e. non-opaque), "external" to
-the organization's \glsfmtshort{ekg}, more \iindex{transient} and reassignable.
+Additional non-\glsfmtshort{ekg} identifiers may also be assigned, and they may be human-readable,
+"external" to the organization's \glsfmtshort{ekg} and be \iindex{transient} and reassignable.
 
 \textit{Resolving} an identifier\index{identifier resolution} can be done in three ways:
+
 \begin{enumerate}
-    \item using it in a query submitted or routed via an internet protocol e.q. a "lookup service" that translates
-          one or more "features" of a given existing object to an \gls{ekg:iri}.
+    \item using it in a transaction\,---\,i.e. a query or update statement\,---\,submitted or routed via an
+          internet protocol to a "lookup service" that translates one or more given "features" of an
+          object to an \gls{ekg:iri}.
     \item constructing it via a standardised policy from key components and applying a hash and optionally
           signing it\,---\,where the object represented by the \gls{ekg:iri} may or may not already exist.
     \item constructing it by giving the object an \gls{ekg:iri} based on a random number in case the \gls{ekg} is
@@ -26,6 +27,11 @@ the organization's \glsfmtshort{ekg}, more \iindex{transient} and reassignable.
 While the semantic web technologies\,---\,like \gls{rdf}\,---\,generally allow for many and varied \glspl{iri},
 and this is still encouraged when integrating systems, there is benefit in being able to rely on one canonical
 and unchanging one, which can for example make the mapping of identities a many-to-one rather than a many-to-many task.
+
+In addition to that, to enhance the likelihood that various \glspl{ekg}\,---\,across departments, organizations or
+ecosystems\,---\,can interoperate easily with each other, the use of standardized \glspl{ekg:iri} needs to be
+encouraged since various \glspl{ekg} can come to the same identifiers independently, drastically increasing the
+number of links across \glspl{ekg}.
 
 \paragraph{Implications}
 
