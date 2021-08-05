@@ -22,7 +22,7 @@
 
 \newcommand{\ekgmmCapabilityTagline}[1]{\input{../../ekg-mm/fragments-capability-tagline/#1.tex}}
 \newcommand{\ekgmmCapabilityTaglineLarge}[1]{\textit{\large \ekgmmCapabilityTagline{#1}}}
-\newcommand{\ekgmmCapabilitySummary}[1]{\input{../../ekg-mm/fragments-capability-summary/#1.tex}}
+\newcommand{\ekgmmCapabilityDescription}[1]{\input{../../ekg-mm/fragments-capability-summary/#1.tex}}
 
 \newcommand{\ekgmmCapabilityItem}[1]{%
     \item [\ref{sec:ekg-mm-#1}]~\nameref{sec:ekg-mm-#1}\,---\,\input{../../ekg-mm/fragments-capability-tagline/#1.tex}%
@@ -30,8 +30,9 @@
 
 \newcommand{\ekgmmCapability}[3]{%
     \section{#3}\label{sec:ekg-mm-#1}\label{sec:ekg-mm-#2}%
+    \subsection*{Description}%
     \ekgmmCapabilityTaglineLarge{#1}%
     \par%
-    \ekgmmCapabilitySummary{#1}%
+    \ekgmmCapabilityDescription{#1}%
 }
 
