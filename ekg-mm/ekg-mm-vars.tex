@@ -2,17 +2,16 @@
 \settoggle{showLicenceCreativeCommonsBySa}{true}
 
 \newcommand{\documentGitRepo}{https://github.com/EKGF/ekg-mm}
-\newcommand{\ekgmmContextSection} {\subsection*{\glsfmtshort{ekg} Context}}
-\newcommand{\ekgmmHowEKGRequiresThisCapability} {\subsubsection*{How \glsfmtshort{ekg} requires this capability}}
-\newcommand{\ekgmmHowEKGAffectsThisCapability} {\subsubsection*{How \glsfmtshort{ekg} affects this capability}}
-\newcommand{\ekgmmcorequestionssection}  {\subsection*{Core Questions}}
-\newcommand{\ekgmmscoringsection}        {\subsection*{Scoring}}
+\newcommand{\ekgmmCapabilitySectionContributionToEnterprise}{\subsection*{Contribution to the Enterprise}}
+\newcommand{\ekgmmCapabilitySectionContributionToEKG}{\subsection*{Contribution to the \glsfmtshort{ekg}}}
+\newcommand{\ekgmmCapabilitySectionDimensions}{\subsection*{Dimensions}}
+\newcommand{\ekgmmCapabilitySectionLevelsOneFive}{\subsection*{Levels 1\textendash5}}
 
 \def\ekgmmLevelOneLabel{\glsfmtshort{ekg} Initiation\,---\,Lighthouse Project}
-\def\ekgmmLevelTwoLabel{Extensible Platform\,---\,reusable components}
-\def\ekgmmLevelThreeLabel{Enterprise Ready\,---\,default data hub}
-\def\ekgmmLevelFourLabel{Strategic Asset\,---\,operational utility}
-\def\ekgmmLevelFiveLabel{Operational Ecosystem\,---\,continuous development}
+\def\ekgmmLevelTwoLabel{Extensible Platform\,---\,Reusable Components}
+\def\ekgmmLevelThreeLabel{Enterprise Ready\,---\,Default Data Hub}
+\def\ekgmmLevelFourLabel{Strategic Asset\,---\,Operational Utility}
+\def\ekgmmLevelFiveLabel{Operational Ecosystem\,---\,Continuous Improvement}
 
 \newcommand{\ekgmmscoringlevelOne}  {\paragraph*{Level 1: \glsfmtshort{ekg} Initiation}}
 \newcommand{\ekgmmscoringlevelTwo}  {\paragraph*{Level 2: Extensible Platform}}
@@ -22,10 +21,20 @@
 
 \newcommand{\ekgmmCapabilityTagline}[1]{\input{../../ekg-mm/fragments-capability-tagline/#1.tex}}
 \newcommand{\ekgmmCapabilityTaglineLarge}[1]{\textit{\large \ekgmmCapabilityTagline{#1}}}
-\newcommand{\ekgmmCapabilityDescription}[1]{\input{../../ekg-mm/fragments-capability-summary/#1.tex}}
+\newcommand{\ekgmmCapabilitySectionDescription}[1]{\input{../../ekg-mm/fragments-capability-summary/#1.tex}}
 
 \newcommand{\ekgmmCapabilityItem}[1]{%
     \item [\ref{sec:ekg-mm-#1}]~\nameref{sec:ekg-mm-#1}\,---\,\input{../../ekg-mm/fragments-capability-tagline/#1.tex}%
+}
+
+\newcommand{\ekgmmCapabilityContributionToEnterprise}[1]{%
+    \ekgmmCapabilitySectionContributionToEnterprise%
+    \input{../../ekg-mm/fragments-capability-contribution-to-enterprise/#1.tex}%
+}
+
+\newcommand{\ekgmmCapabilityContributionToEKG}[1]{%
+    \ekgmmCapabilitySectionContributionToEKG%
+    \input{../../ekg-mm/fragments-capability-contribution-to-ekg/#1.tex}%
 }
 
 \newcommand{\ekgmmCapability}[3]{%
@@ -33,6 +42,6 @@
     \subsection*{Description}%
     \ekgmmCapabilityTaglineLarge{#1}%
     \par%
-    \ekgmmCapabilityDescription{#1}%
+    \ekgmmCapabilitySectionDescription{#1}%
 }
 
