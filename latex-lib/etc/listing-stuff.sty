@@ -6,6 +6,11 @@
 
 \RequirePackage{font-stuff}
 \RequirePackage[final]{listings}
+\RequirePackage{xcolor}
+\RequirePackage{listings}
+\RequirePackage{realboxes}
+\RequirePackage{fancyvrb} % fancyvrb for '\Verb' macro
+\RequirePackage{luacode}
 
 % http://tex.stackexchange.com/q/43526
 % fix the apparently deliberate but undocumented behaviour of disabling escapes other than mathescape in TextStyle (used by \lstinline)
@@ -14,6 +19,12 @@
 \makeatletter
 \patchcmd{\lsthk@TextStyle}{\let\lst@DefEsc\@empty}{}{}{\errmessage{failed to patch}}
 \makeatother
+
+\newcommand{\code}[1]{\colorbox{lighter-gray}{\texttt{#1}}}
+
+%\definecolor{mygray}{rgb}{0.8,0.8,0.8}
+
+%\lstset{basicstyle=\ttfamily, breaklines = true, backgroundcolor=\color{mygray}}
 
 \lstdefinelanguage{turtle}{%
   columns=fullflexible,
@@ -51,4 +62,20 @@
   {\small\ttfamily\color{blue}#1}%
 }
 
-\newcommand{\code}[1]{\colorbox{lighter-gray}{\texttt{#1}}}
+\begin{luacode}
+-- the following code employs Lua's powerful "string.gsub" function
+function color_lstinline (s)
+   s = string.gsub (s, "\\lstinline%b||", "\\Colorbox{lighter-gray}{%0}")
+   s = string.gsub (s, "\\[vV]erb%b||", "\\Colorbox{lighter-gray}{%0}")
+   return s
+end
+\end{luacode}
+
+%% Define 2 LaTeX macros to switch operation of Lua function on and off
+\newcommand{\ColorLstinlineOn}{%
+  \directlua{luatexbase.add_to_callback ("process_input_buffer", color_lstinline, "color_lstinline")}%
+}
+\newcommand{\ColorLstinlineOff}{%
+  \directlua{luatexbase.remove_from_callback ("process_input_buffer", "color_lstinline")}%
+}
+\AtBeginDocument{\ColorLstinlineOn} % Default: activate the Lua function
