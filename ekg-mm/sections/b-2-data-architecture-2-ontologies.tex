@@ -90,6 +90,7 @@ The following criteria for each level are abbreviated: each item is shorthand fo
     \item Ontology coverage for each use case in scope of the project;
           project includes minimal number of ontologies and classes not justified by a use case
     \item Definitions catalogued and under change management
+
 \end{itemize}
 
 \ekgmmscoringlevelTwo
@@ -109,5 +110,44 @@ The following criteria for each level are abbreviated: each item is shorthand fo
     \item Access to at least one trained \gls{ekg:ontologist}
 \end{itemize}
 
-\TODO[inline]{Finish scoring levels for EKG/MM capability level 3 and higher}
+\ekgmmscoringlevelThree
 
+\begin{itemize}
+    \item Modeling of required data and constraints by use case, including for stored and communicated data
+    \item Automated validation of ontologies (for guideline compliance, and for logical consistency),
+          with results as triples
+    \item Automated testing and validation of test data with ontologies (per use case)
+    \item Separation of concerns to support enterprise management such as bi-temporality, transactions and events
+    \item Automated transformation of ontologies to use common serialization and metadata
+    \item Automated checking of ontologies against different profiles (e.g. OWL-RL) to check for technology support
+    \item Automated checking of ontologies against different best practices
+    \item Ontology source changes linked to automated KGOps for testing and deployment
+    \item Impact analysis identifies ontology breaking changes which require fixes to existing EKG data
+    \item EKG-wide ontology browsing and searching
+    \item Follow-your-nose UI starting from any ontology element URI
+    \item Follow-your-nose API starting from any ontology element URI
+    \item Trained ontologist available to each project (possibly via \gls{ekg:coe})
+\end{itemize}
+
+\ekgmmscoringlevelFour
+
+\begin{itemize}
+    \item Separation of ontologies from vocabularies, with multiple vocabularies for different communities
+          mapped to the same concepts
+    \item Ontology architecture management process, including use of patterns and modularity
+    \item Generation of logic into business language
+    \item Automated fixes to existing EKG data in response to ontology breaking changes
+    \item Basic ontology metrics and reporting, including usage in data
+    \item Generation of ontologies/shapes for external interchange
+\end{itemize}
+
+\ekgmmscoringlevelFour
+
+\begin{itemize}
+    \item Sophisticated ontology metrics and reporting, including trends
+    \item Matching and differencing of ontologies from different sources
+    \item Automated matching of ontologies with vocabularies
+    \item Generation of validation code for external interchange
+    \item Wizard for developing ontologies from business questions
+    \item Inducing of ontologies from instance data
+\end{itemize}
