@@ -328,7 +328,8 @@ $jobname =~ s/--/-/g ;
 $latex_document_version = getVersionString();
 $latex_document_version_dotted = $latex_document_version;
 $latex_document_version_dotted =~ tr/-/./s;
-$latex_document_version_dotted =~ tr@/@_@s;
+$latex_document_version_dotted =~ tr/_/./s;
+$latex_document_version_dotted =~ tr@/@.@s;
 print "Document Version: $latex_document_version_dotted (dotted version)\n";
 print "Document Version: $latex_document_version\n";
 
