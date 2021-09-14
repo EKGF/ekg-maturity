@@ -50,10 +50,10 @@ capabilities, and the measurable abilities or summaries.
 \def\cellPC{\cellcolor{pillarTechnologyColor}}
 \def\cellPD{\cellcolor{pillarOrganizationColor}}
 
-\def\cellCA{\cellcolor{componentBusinessColor}}
-\def\cellCB{\cellcolor{componentDataColor}}
-\def\cellCC{\cellcolor{componentTechnologyColor}}
-\def\cellCD{\cellcolor{componentOrganizationColor}}
+\def\cellCB{\cellcolor{componentBusinessColor}}
+\def\cellCD{\cellcolor{componentDataColor}}
+\def\cellCT{\cellcolor{componentTechnologyColor}}
+\def\cellCO{\cellcolor{componentOrganizationColor}}
 
 \def\cellKA{\cellcolor{capabilityBusinessColor}}
 \def\cellKB{\cellcolor{capabilityDataColor}}
@@ -79,66 +79,62 @@ capabilities, and the measurable abilities or summaries.
     \centering\fontsize{7pt}{8pt}\selectfont
     \setlength\tabcolsep{2pt}
     \begin{tabular}{@{}cclcl@{}}
-    \textbf{Pillar} & \textbf{Component} & & \textbf{Capability} & \textbf{Measurable ability}                                              \\
-    \cellPA         & \cellCA            & \labelKA{1-1} & \taglineA{1-1} \\
-    \cellPA         & \cellCA            & \labelKA{1-2} & \taglineA{1-2} \\
+    \textbf{Pillar} & \textbf{Component} & & \textbf{Capability} & \textbf{Measurable ability} \\
+    % A. Business
+    \cellPA         & \cellCB            & \labelKA{1-1} & \taglineA{1-1} \\ % A.1 Business Strategy Actuation
+    \cellPA         & \cellCB            & \labelKA{1-2} & \taglineA{1-2} \\
     \cellPA         & \labelCB{3}{1}     & \labelKA{1-3} & \taglineA{1-3} \\
-    \cellPA         & \cellCA            & \labelKA{2-1} & \taglineA{2-1} \\
-    \cellPA         & \cellCA            & \labelKA{2-2} & \taglineA{2-2} \\
+    \cellPA         & \cellCB            & \labelKA{2-1} & \taglineA{2-1} \\ % A.2 Business Model Elaboration
+    \cellPA         & \cellCB            & \labelKA{2-2} & \taglineA{2-2} \\
     \cellPA         & \labelCB{3}{2}     & \labelKA{2-3} & \taglineA{2-3} \\
-    \cellPA         & \cellCA            & \labelKA{3-1} & \taglineA{3-1} \\
-    \cellPA         & \cellCA            & \labelKA{3-2} & \taglineA{3-2} \\
-    \cellPA         & \cellCA            & \labelKA{3-2} & \taglineA{3-3} \\
-    \cellPA         & \cellCA            & \labelKA{3-4} & \taglineA{3-4} \\
-    \labelPB{10}{a} & \labelCB{5}{3}     & \labelKA{3-5} & \taglineA{3-5} \\
-    \cellPB         & \cellCB            & \labelKB{1-1} & \taglineB{1-1} \\
+    \cellPA         & \cellCB            & \labelKA{3-1} & \taglineA{3-1} \\ % A.3 Business Enablers
+    \cellPA         & \cellCB            & \labelKA{3-2} & \taglineA{3-2} \\
+    \cellPA         & \cellCB            & \labelKA{3-3} & \taglineA{3-3} \\
+    \cellPA         & \cellCB            & \labelKA{3-4} & \taglineA{3-4} \\
+    \labelPB{11}{a} & \labelCB{5}{3}     & \labelKA{3-5} & \taglineA{3-5} \\
+    % B. Data
+    \cellPB         & \cellCD            & \labelKB{1-1} & \taglineB{1-1} \\ % B.1 Data Strategy
     \cellPB         & \labelCD{2}{1}     & \labelKB{1-2} & \taglineB{1-2} \\
-    \cellPB         & \cellCB            & \labelKB{2-1} & \taglineB{2-1} \\
-    \cellPB         & \cellCB            & \labelKB{2-2} & \taglineB{2-2} \\
-    \cellPB         & \cellCB            & \labelKB{2-3} & \taglineB{2-3} \\
-    \cellPB         & \cellCB            & \labelKB{2-4} & \taglineB{2-4} \\
-    \cellPB         & \labelCD{5}{2}     & \labelKB{2-5} & \taglineB{2-5} \\
-    \cellPB         & \cellCB            & \labelKB{3-1} & \taglineB{3-1} \\
-    \cellPB         & \cellCB            & \labelKB{3-2} & \taglineB{3-2} \\
-    \cellPB         & \labelCD{3}{3}     & \labelKB{3-3} & \taglineB{3-3} \\
-    \cellPB         & \cellCB            & \labelKB{4-1} & \taglineB{4-1} \\
-    \cellPB         & \cellCB            & \labelKB{4-2} & \taglineB{4-2} \\
-    \cellPB         & \cellCB            & \labelKB{4-3} & \taglineB{4-3} \\
-    \cellPB         & \cellCB            & \labelKB{4-4} & \taglineB{4-4} \\
-    \cellPB         & \cellCB            & \labelKB{4-5} & \taglineB{4-5} \\
-    \labelPD{16}{b} & \labelCD{6}{4}     & \labelKB{4-6} & \taglineB{4-6} \\
-    \cellPC         & \cellCC            & \labelKC{1-1} & \taglineC{1-1} \\
-    \cellPC         & \cellCC            & \labelKC{1-2} & \taglineC{1-2} \\
-    \cellPC         & \cellCC            & \labelKC{1-3} & \taglineC{1-3} \\
+    \cellPB         & \cellCD            & \labelKB{2-1} & \taglineB{2-1} \\ % B.2 Data Architecture
+    \cellPB         & \labelCD{2}{2}     & \labelKB{2-2} & \taglineB{2-2} \\
+    \cellPB         & \labelCD{1}{3}     & \labelKB{3-1} & \taglineB{3-1} \\ % B.3 Data Quality
+    \cellPB         & \cellCD            & \labelKB{4-1} & \taglineB{4-1} \\ % B.4 Data Governance
+    \cellPB         & \cellCD            & \labelKB{4-2} & \taglineB{4-2} \\
+    \cellPB         & \cellCD            & \labelKB{4-3} & \taglineB{4-3} \\
+    \labelPD{9}{b}  & \labelCD{4}{4}     & \labelKB{4-4} & \taglineB{4-4} \\
+    % C. Technology
+    \cellPC         & \cellCT            & \labelKC{1-1} & \taglineC{1-1} \\ % C.1 Technology Strategy
+    \cellPC         & \cellCT            & \labelKC{1-2} & \taglineC{1-2} \\
+    \cellPC         & \cellCT            & \labelKC{1-3} & \taglineC{1-3} \\
     \cellPC         & \labelCT{4}{1}     & \labelKC{1-4} & \taglineC{1-4} \\
-    \cellPC         & \cellCC            & \labelKC{2-1} & \taglineC{2-1} \\
-    \cellPC         & \cellCC            & \labelKC{2-2} & \taglineC{2-2} \\
+    \cellPC         & \cellCT            & \labelKC{2-1} & \taglineC{2-1} \\ % C.2 Technology Execution
+    \cellPC         & \cellCT            & \labelKC{2-2} & \taglineC{2-2} \\
     \cellPC         & \labelCT{3}{2}     & \labelKC{2-3} & \taglineC{2-3} \\
-    \cellPC         & \cellCC            & \labelKC{3-1} & \taglineC{3-1} \\
-    \cellPC         & \cellCC            & \labelKC{3-2} & \taglineC{3-2} \\
+    \cellPC         & \cellCT            & \labelKC{3-1} & \taglineC{3-1} \\ % C.3 ?
+    \cellPC         & \cellCT            & \labelKC{3-2} & \taglineC{3-2} \\
     \labelPT{10}{c} & \labelCT{3}{3}     & \labelKC{3-3} & \taglineC{3-3} \\
-    \cellPD         & \cellCD            & \labelKD{1-1} & \taglineD{1-1} \\
-    \cellPD         & \cellCD            & \labelKD{1-2} & \taglineD{1-2} \\
-    \cellPD         & \cellCD            & \labelKD{1-3} & \taglineD{1-3} \\
-    \cellPD         & \cellCD            & \labelKD{1-4} & \taglineD{1-4} \\
-    \cellPD         & \cellCD            & \labelKD{1-5} & \taglineD{1-5} \\
+    \cellPD         & \cellCO            & \labelKD{1-1} & \taglineD{1-1} \\
+    \cellPD         & \cellCO            & \labelKD{1-2} & \taglineD{1-2} \\
+    \cellPD         & \cellCO            & \labelKD{1-3} & \taglineD{1-3} \\
+    \cellPD         & \cellCO            & \labelKD{1-4} & \taglineD{1-4} \\
+    \cellPD         & \cellCO            & \labelKD{1-5} & \taglineD{1-5} \\
     \cellPD         & \labelCO{6}{1}     & \labelKD{1-6} & \taglineD{1-6} \\
-    \cellPD         & \cellCD            & \labelKD{2-1} & \taglineD{2-1} \\
-    \cellPD         & \cellCD            & \labelKD{2-2} & \taglineD{2-2} \\
-    \cellPD         & \cellCD            & \labelKD{2-3} & \taglineD{2-3} \\
-    \cellPD         & \cellCD            & \labelKD{2-4} & \taglineD{2-4} \\
+    \cellPD         & \cellCO            & \labelKD{2-1} & \taglineD{2-1} \\
+    \cellPD         & \cellCO            & \labelKD{2-2} & \taglineD{2-2} \\
+    \cellPD         & \cellCO            & \labelKD{2-3} & \taglineD{2-3} \\
+    \cellPD         & \cellCO            & \labelKD{2-4} & \taglineD{2-4} \\
     \cellPD         & \labelCO{5}{2}     & \labelKD{2-5} & \taglineD{2-5} \\
-    \cellPD         & \cellCD            & \labelKD{3-1} & \taglineD{3-1} \\
-    \cellPD         & \cellCD            & \labelKD{3-2} & \taglineD{3-2} \\
-    \cellPD         & \cellCD            & \labelKD{3-3} & \taglineD{3-3} \\
-    \cellPD         & \cellCD            & \labelKD{3-4} & \taglineD{3-4} \\
+    \cellPD         & \cellCO            & \labelKD{3-1} & \taglineD{3-1} \\
+    \cellPD         & \cellCO            & \labelKD{3-2} & \taglineD{3-2} \\
+    \cellPD         & \cellCO            & \labelKD{3-3} & \taglineD{3-3} \\
+    \cellPD         & \cellCO            & \labelKD{3-4} & \taglineD{3-4} \\
     \cellPD         & \labelCO{5}{3}     & \labelKD{3-5} & \taglineD{3-5} \\
-    \cellPD         & \cellCD            & \labelKD{4-1} & \taglineD{4-1} \\
-    \cellPD         & \cellCD            & \labelKD{4-2} & \taglineD{4-2} \\
+    \cellPD         & \cellCO            & \labelKD{4-1} & \taglineD{4-1} \\
+    \cellPD         & \cellCO            & \labelKD{4-2} & \taglineD{4-2} \\
     \cellPD         & \labelCO{3}{4}     & \labelKD{4-3} & \taglineD{4-3} \\
-    \cellPD         & \cellCD            & \labelKD{5-1} & \taglineD{5-1} \\
-    \cellPD         & \cellCD            & \labelKD{5-2} & \taglineD{5-2} \\
-    \cellPD         & \cellCD            & \labelKD{5-3} & \taglineD{5-3} \\
+    \cellPD         & \cellCO            & \labelKD{5-1} & \taglineD{5-1} \\
+    \cellPD         & \cellCO            & \labelKD{5-2} & \taglineD{5-2} \\
+    \cellPD         & \cellCO            & \labelKD{5-3} & \taglineD{5-3} \\
     \labelPO{23}{d} & \labelCO{4}{5}     & \labelKD{5-4} & \taglineD{5-4}
     \end{tabular}\label{tab:ekgmm-structure}
 \end{table}
