@@ -1,0 +1,153 @@
+%
+% B.2.1 Ontologies
+%
+\ekgmmCapability{b-2-1}{ontologies}{Ontologies}
+
+\ekgmmCapabilitySectionContributionToEnterprise
+
+An ontology is about:
+
+\begin{itemize}
+    \item explicit meanings and relationships; the terms used are less important
+    \item a combination of definitions in both text and logic
+\end{itemize}
+
+An ontology can be the basis of, but is broader than:
+\begin{itemize}
+    \item a taxonomy
+    \item a vocabulary
+    \item a data or object model
+    \item a conceptual model
+    \item a specific serialization format
+\end{itemize}
+
+Ontologies can be expressed at different levels of sophistication, with different scopes,
+and in a combination of languages.
+The basic structures include:
+
+\begin{itemize}[leftmargin=.8in,font=\itshape]
+    \item [individual] a representation of a business object or item which is the subject of information to be managed.
+                       An individual usually has a unique identity.
+                       For example \lstinline|Person X| or \lstinline|Shipment Y|.
+                       Many such individuals might represent the same real world object.
+    \item [data value] strings, numbers, dates which represent the data.
+    \item [property]   a type of data point that may be associated with individuals.
+                       An individual, a property and a value\,---\,which may be a data value or another
+                       individual\,---\, form a triple.\newline
+                       For example person \lstinline|X hasBirthDate D| or person \lstinline|X hasMother Y|.
+                       Triples whose value is another individual form relationships.
+                       Properties may have generalizations, for example hasMother is a subProperty of hasParent.
+    \item [class]      a category applied to individuals, that determines what you can do with them,
+                       the properties you can expect to see, and the rules that might apply;
+                       an individual may be a member of many classes associated;
+                       classes may have generalizations.
+                       Note that, unlike more traditional approaches, properties are independent of classes though
+                       they may be used to infer class membership.
+                       For example, given the triple \lstinline|X hasMother Y| you may be able to infer that both
+                       \lstinline|X| and \lstinline|Y| are members of the class \lstinline|Person|,
+                       or at least \lstinline|Animal|.
+    \item [ontology]   grouping of the above for management and identification purposes.
+\end{itemize}
+
+%\ekgmmCapabilityContributionToEKG{b-2-1}
+
+%\ekgmmCapabilityContributionToEnterprise{b-2-1}
+
+\ekgmmCapabilitySectionDimensions
+
+\begin{itemize}
+    \item How much of the enterprise data is covered by ontologies?
+    \item How well is ontology coverage mapped to business need?
+    \item To what extent are concepts independent of but mapped to terminology/vocabulary?
+    \item Level of sophistication of textual and logic definitions
+    \item Level of tooling is available and used
+    \item Level of training and trained people
+    \item Level of process (including change management), guidelines and standards
+    \item Level of modularity and reuse - internal and external
+    \item Extent of examples and tests
+    \item Extent of traceability with different logical and physical data models
+\end{itemize}
+
+\ekgmmCapabilitySectionLevels
+
+The following criteria for each level are abbreviated: each item is shorthand for:
+
+\begin{itemize}
+    \item documented process
+    \item trained participants
+    \item implemented process and/or technology
+    \item monitoring and improvement
+\end{itemize}
+
+\ekgmmCapabilitySectionLevelsOneFive
+
+\ekgmmscoringlevelOne
+
+\begin{itemize}
+    \item Minimal ontologies which could be as simple as a list of classes and properties used in graphs
+    \item Basic metadata (definition, label) for each class and property
+    \item Each individual (in data) has at least one explicit class
+    \item Ontology coverage for each use case in scope of the project;
+          project includes minimal number of ontologies and classes not justified by a use case
+    \item Definitions catalogued and under change management
+
+\end{itemize}
+
+\ekgmmscoringlevelTwo
+
+\begin{itemize}
+    \item Ontologies expressed in a standard ontology language (could be as simple as \gls{ekg:rdf-schema})
+    \item Common (shared or mapped) concepts across \gls{ekg} projects
+    \item Ability to see ontology usage by use cases, vocabularies and datasets
+    \item Namespace scheme established and used for new ontologies in the \gls{ekg}
+    \item Ontology guidelines in place and implemented, including common metadata
+    \item Documented approach for external ontologies, including selection and adaptation
+    \item Annotated example files for documentation and training
+    \item Test files based on use cases covering all used ontology elements
+    \item Ontology change management includes impact analysis and stakeholder approval
+    \item Tooling for ontology diagrams and documentation
+    \item Automated basic checking of ontology syntax
+    \item Access to at least one trained \gls{ekg:ontologist}
+\end{itemize}
+
+\ekgmmscoringlevelThree
+
+\begin{itemize}
+    \item Modeling of required data and constraints by use case, including for stored and communicated data
+    \item Automated validation of ontologies (for guideline compliance, and for logical consistency),
+          with results as triples
+    \item Automated testing and validation of test data with ontologies (per use case)
+    \item Separation of concerns to support enterprise management such as bi-temporality, transactions and events
+    \item Automated transformation of ontologies to use common serialization and metadata
+    \item Automated checking of ontologies against different profiles (e.g. OWL-RL) to check for technology support
+    \item Automated checking of ontologies against different best practices
+    \item Ontology source changes linked to automated KGOps for testing and deployment
+    \item Impact analysis identifies ontology breaking changes which require fixes to existing EKG data
+    \item EKG-wide ontology browsing and searching
+    \item Follow-your-nose UI starting from any ontology element URI
+    \item Follow-your-nose API starting from any ontology element URI
+    \item Trained ontologist available to each project (possibly via \gls{ekg:coe})
+\end{itemize}
+
+\ekgmmscoringlevelFour
+
+\begin{itemize}
+    \item Separation of ontologies from vocabularies, with multiple vocabularies for different communities
+          mapped to the same concepts
+    \item Ontology architecture management process, including use of patterns and modularity
+    \item Generation of logic into business language
+    \item Automated fixes to existing EKG data in response to ontology breaking changes
+    \item Basic ontology metrics and reporting, including usage in data
+    \item Generation of ontologies/shapes for external interchange
+\end{itemize}
+
+\ekgmmscoringlevelFour
+
+\begin{itemize}
+    \item Sophisticated ontology metrics and reporting, including trends
+    \item Matching and differencing of ontologies from different sources
+    \item Automated matching of ontologies with vocabularies
+    \item Generation of validation code for external interchange
+    \item Wizard for developing ontologies from business questions
+    \item Inducing of ontologies from instance data
+\end{itemize}

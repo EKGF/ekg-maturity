@@ -1,0 +1,118 @@
+%
+% B.2.2 Business Terminology (formerly called Business Glossary)
+%
+\ekgmmCapability{b-2-2}{business-terminology}{Business Terminology}
+\index{business!glossary}
+\index{business!terminology}
+
+\ekgmmCapabilitySectionContributionToEnterprise
+
+Parts of large organizations, and the others they communicate with, often have their own local business language.
+Likewise, operational systems\,---\,including their data warehouses and content repositories\,---\,use
+data models and predefined physical schemas that are designed to serve specific purposes.
+The ability of the knowledge graph to link this terminology with its actual meaning defined via ontologies at
+its most granular (atomic) level\index{granular data} eliminates confusion over meaning when data is validated
+or transformed.
+Standalone business glossaries provide useful input but the terms need to be reconciled to their
+enterprise-level meaning via the \gls{ekg}.
+
+\ekgmmCapabilitySectionDimensions
+
+%\begin{core-questions}
+%
+%  \item [\thesection.1] Are there multiple (official) business glossaries for lines of business or functions
+%  \item [\thesection.2] Are there internal standards for content, format, and use of the business glossaries
+%  \item [\thesection.3] Is the business meaning of the data verified by accountable subject matter experts
+%  \item [\thesection.4] If the organization maintains multiple business glossaries, how are they reconciled,
+%                        verified, maintained and governed
+%  \item [\thesection.5] Are the glossaries mapped to all expressions of the data in various systems
+%                        (how is this maintained)
+%  \item [\thesection.4] Are the business glossaries accessible and searchable from the corporate intranet
+%
+%\end{core-questions}
+
+\ekgmmCapabilitySectionLevelsOneFive
+
+Core Data Management Requirements: The organization has one (or many) officially designated glossaries,
+front-to-back \gls{sme} review and verification, official glossaries are captured in an inventory,
+there is a defined policy mandating that all glossaries have verified definitions,
+all glossaries are maintained with a defined mechanism for \iindex{change management},
+all in-scope domains are covered (and all content is included), mapped to processes and expressions
+(lineage and transformation), \iindex{governance} (\iindex{ownership}, \iindex{transformation}, logic,
+allowable values, \iindex{audit trail})
+
+\ekgmmscoringlevelOne
+
+\begin{scoring}
+
+  \item Business terms for \glspl{ekg:use-case} are captured and mapped to an \iindex{ontology}
+        (possibly as simple labels)
+
+%  \item The organization has one (or many) officially designated glossaries
+%  \item Front-to-back SME review and verification
+%  \item Official glossaries are captured in an inventory
+%  \item There is a defined policy mandating that all glossaries have verified definitions
+%  \item All glossaries are maintained with a defined mechanism for change management
+%  \item All in-scope domains are covered (and all content is included)
+%  \item Mapped to processes and expressions (lineage and transformation)
+%  \item Governance (ownership, transformation, logic, allowable values, audit trail)
+
+\end{scoring}
+
+\ekgmmscoringlevelTwo
+
+\begin{scoring}
+
+  \item Relevant terms (for \glspl{ekg:use-case}) are associated with the use case independently of
+  their corresponding ontologies
+
+%  \item All concepts for any KG use case are covered by the glossary
+%  \item Process exists to add new terms (and updating) into the official glossaries
+
+\end{scoring}
+
+\ekgmmscoringlevelThree
+
+\begin{scoring}
+
+  \item Existing glossaries within the organization, within the scope of supported use cases,
+        are mapped to ontologies and imported into the \gls{ekg}
+  \item Terms are grouped into vocabularies for reuse in different communities
+  \item Natural language used for definitions links to other terms used
+  \item Ontology logic is presented to business as natural language
+  \item Terms are searchable via the knowledge graph interface
+
+%  \item Relevant terms (for KG use cases) are expressed as RDF and imported into the knowledge graph
+%  \item Relevant terms are linked to their corresponding ontologies
+
+\end{scoring}
+
+\ekgmmscoringlevelFour
+
+\begin{scoring}
+
+  \item \gls{ekg} is the authoritative source for all terms, scoped by community, context and use case
+  \item The governance processes for all new terms (and changes) are managed directly within the \gls{ekg}
+  \item The results of ontology inferencing are presented in business natural language
+  \item Data usage (per term) is accessible
+
+%  \item All glossaries within the organization are expressed as RDF and imported into the knowledge graph
+%  \item All glossaries are searchable via the knowledge graph interface
+%  \item The governance process (including all metadata) for glossaries are on-boarded into the knowledge graph
+%        [passive, linked to existing governance tool, read-only]
+
+\end{scoring}
+
+\ekgmmscoringlevelFive
+
+\begin{scoring}
+
+  \item Terminology is used to support \gls{nlp} of unstructured data for the \gls{ekg}
+
+%  \item The \glsxtrlong{ekg:platform} is the authoritative source for all glossaries
+%  \item All glossary terms are derived directly from the ontologies
+%  \item The governance processes for all new terms (and changes) are managed directly within the \glsxtrshort{ekg}
+%  \item Data usage (per glossary term) is monitored and reported
+
+\end{scoring}
+
