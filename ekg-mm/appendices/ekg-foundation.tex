@@ -3,9 +3,9 @@
 \index{\glsfmtshort{ekg}!foundation}
 \index{EKGF}
 
-This document\,---\,the \glsfirst{ekgmm}\,---\,is one of the key "artifacts" produced by the \glsxtrfull{ekgf}.
+This document\,---\,the \glsfirst{ekgmm}\,---\,is one of the key artifacts produced by the \glsxtrfull{ekgf}.
 
-\paragraph{Vision \& Expectation Management}
+\paragraph{Vision and Expectation Management}
 
 It captures our thinking around \myuline{the vision of \gls{ekg}},
 how it affects your business and what can be expected of it at certain levels of capability maturity.
@@ -17,88 +17,82 @@ clustered per capability\,---\,that are not \myuline{directly} related to any gi
 
 \paragraph{\glsfmtlong{uct}}
 
-For instance, if it is your company's strategy to be able to have real-time risk-insights at all levels
-of your organization then we can separate the specific functional requirements of that very large "use case" from
+For instance, if it is your company's strategy to be able to have real-time risk insights at all levels
+of your organization then we can separate the specific functional requirements of that very large use case from
 all the \glspl{nfr} that would come into place around your data management and governance practices, the state of
 your technology landscape, the culture of your organization and so forth.
-In this example, the use case "Real-time risk management"\,---\,as the top-level strategic use case\,---\,would be
-broken down into various "sub-use cases" resulting in a so-called \enquote{\glsfirst{uct}}.
+In this example, the use case \textit{Real-time risk management}\,---\,as the top-level strategic use case\,---\,would
+be broken down into various \textit{sub-use cases} resulting in a so-called \textit{\enquote{\glsfirst{uct}}}.
 Each node in that tree represents some functionality\,---\,a capability so you will.
 How does this relate to the \gls{ekgmm}? Well, per use case in that tree structure you can determine how realistic
 it is to actually be able to implement that use case in relation to the level of maturity of the organization as a
 whole and more specifically in relation to any of the capabilities that are being covered in this document.
 
-\paragraph{Use Cases replace Silos}
+\paragraph{Use Cases Replace Silos}
 
-There is another major point to make about the \glsxtrfull{uct} is that it is the backbone component-structure
+Another major point to make about the \glsxtrfull{uct} is that it is the backbone component-structure
 of your \gls{ekg}.
 In a way you could see them as the \gls{ekg}'s equivalent of your current siloed application- and data-landscape.
 Rather than building a new silo everytime for every new use case, you would "build" new use cases in the \gls{ekg}.
-Use cases are "logical silos" in that sense. In a data-centric \gls{ekg} world, there are no more independent
-"applications" that are run as separate systems.
-Just this particular change alone has major implications on how things are organised.
+Use cases are \textit{logical silos} in that sense.
+In a data-centric \gls{ekg} world, there are no more independent applications that are run as separate systems.
+Just this particular change alone has major implications on how things are organized.
 The \gls{ekgmm} covers these\,---\,and many other\,---\,implications.
 
-\paragraph{Capabilities as use cases}
+\paragraph{Capabilities as Use Cases}
 
 The \gls{ekgmm} is about the generic capabilities and how they may evolve over time and how some of them are
 required to be available at a certain level of maturity.
-That being said, almost every capabality that we describe in this document is in itself also a use case.
+That being said, almost every capability that we describe in this document is in itself also a use case.
 Many if not most of these capabilities will more and more depend on high quality detailed and "holistic" data.
 
-\paragraph{Other artifacts}
+\paragraph{Other Artifacts}
 
-\begin{basedescript}{%
-    \desclabelstyle{\multilinelabel}
-    \desclabelwidth{3cm}
-}
-    \item[EKG/Manifesto] The EKG/Manifesto is a combination of long term vision statements\,---\,the "Why"\,---\,%
-                         combined with the underlying principles for \gls{ekg}\,---\,the "How".
-    \item[EKG/Method]    The assumption is that each organization in a data-intensive industry will end up owning their
-                         own \gls{ekg}\,---\,possibly shared across organizations\,---\,and therefore requires
-                         oversight by a group of people\,---\,however organised\,---\,that we call
-                         the \gls{ekg:coe}.
+\begin{description}[font=\bfseries,leftmargin=0cm]
+    \item[\gls{ekgmanifesto}] The \gls{ekgmanifesto} is a combination of long term vision statements\,---\,the
+                              "Why"\,---\, combined with the underlying principles for \gls{ekg}\,---\,the "How".
+    \item[\gls{ekgmethod}]    The assumption is that each organization in a data-intensive industry will end up
+                              owning their own \gls{ekg}\,---\,possibly shared across organizations\,---\,and therefore
+                              requires oversight by a group of people\,---\,however organized\,---\,that we call
+                              the \gls{ekg:coe}.
 
-    EKG/Method describes all the practices of the \gls{ekg:coe}, from inception to production.
-    \item[EKG/Catalog]   The EKG/Catalog describes all the common use cases (and some of their "sub-use cases")
-                         for \gls{ekg}. The goal is to also publish these use cases on the ekgf.org website under the
-                         so-called "use case portal" and make them available for download as modules, basically
-                         the same kind of ecosystem of reusable components as any other successful technology-stack
-                         has.
-                         This is comparable to what \href{https://central.sonatype.org/}{"Maven Central"} is for the
-                         Java world or what \href{https://docs.npmjs.com/about-npm}{"npmjs.com"} is for the
-                         JavaScript world.
-\end{basedescript}
+                              \gls{ekgmethod} describes all the practices of the \gls{ekg:coe},
+                              from inception to production.
+    \item[EKG/Catalog]        The EKG/Catalog describes all the common use cases (and some of their "sub-use cases")
+                              for \gls{ekg}.
+                              The goal is to also publish these use cases on the ekgf.org website under the so-called
+                              "use case portal" and make them available for download as modules, basically the same
+                              kind of ecosystem of reusable components as any other successful technology-stack has.
+                              This is comparable to what \href{https://central.sonatype.org/}{"Maven Central"} is for
+                              the Java world or what \href{https://docs.npmjs.com/about-npm}{"npmjs.com"} is for the
+                              JavaScript world.
+\end{description}
 
 \paragraph{Use Case Central}
 
-One of the primary goals that the foundation is working towards to is\'---\'as briefly mentioned above\'---\'to publish
+One of the primary goals that the Foundation is working towards is\'---\'as briefly mentioned above\'---\'to publish
 use cases on the \href{https://ekgf.org}{ekgf.org} website, initially just as a searchable catalog of use cases,
 just text basically, but soon after as a graph, as part of an \gls{ekg}.
-Some members of the foundation\,---\,in particular \agnos and \eccenca\,---\,already have \gls{ekg} infrastructure
+Some members of the Foundation\,---\,in particular \agnos and \eccenca\,---\,already have \gls{ekg} infrastructure
 running in production that allows them to run "no-code" or "\gls{low-code}" use cases as full transactional applications.
-The idea is to standardise this, to publish use cases as "reusable components", with all their dependencies, ready
+The idea is to standardize this, to publish use cases as "reusable components", with all their dependencies, ready
 for immediate deployment, just like one would do in the Java/JVM world or in the JavaScript world or with any
 other successful technology stack.
 
 \paragraph{Portals}
 
-The foundation is still in its start-up phase, depending on its corporate members for funding
-(see Appendix \nameref{appendix:ekgf-corporate-members}).
-Plans are to invest in the development of a more advanced website that consists of various "portals" focussing
+The Foundation is still in its start-up phase.
+Plans are to invest in the development of a more advanced website that consists of various "portals" focusing
 on serving a specific need for a specific audience:
 
-\begin{basedescript}{%
-    \desclabelstyle{\multilinelabel}
-    \desclabelwidth{2cm}
-}
+\begin{description}[font=\bfseries,nosep,leftmargin=!,labelwidth=\widthof{\bfseries Member Directory \& Services}]
     \item[Use Cases]
         \begin{itemize}
             \item Short term:
             \begin{itemize}
                 \item Audience: Business Executive, Vendor
                     \begin{itemize}
-                        \item Understand the business problems that can, and have, been addressed;
+                        \item Understand the business problems that can, and have, been addressed
                         \item Use a framework for structuring projects
                         \item Get directed to relevant reuse points in other portals (e.g. for ontologies)
                     \end{itemize}
@@ -107,7 +101,7 @@ on serving a specific need for a specific audience:
             \begin{itemize}
                 \item Audience: Executive, Vendor, Knowledge Graph Engineer
                     \begin{itemize}
-                        \item Identify, select, download \& provision production-ready use cases.
+                        \item Identify, select, download \& provision production-ready use cases
                     \end{itemize}
             \end{itemize}
         \end{itemize}
@@ -159,34 +153,30 @@ on serving a specific need for a specific audience:
         \end{itemize}
     \item[Member Directory \& Services]
         \begin{itemize}
-            \item Connect with people \& parties with the knowledge to help
+            \item Connect with people and parties with the knowledge to help
                   (see also appendix \nameref{appendix:ekgf-corporate-members})
             \item Promote your knowledge and skills
         \end{itemize}
-\end{basedescript}
+\end{description}
 
 \paragraph{Persona Stories}
 
-The foundation recognises different types of "personas" that it needs to serve:
+The Foundation recognizes different types of "personas" that it needs to serve:
 
-\begin{basedescript}{%
-    \desclabelstyle{\multilinelabel}
-    \desclabelwidth{2cm}
-}
+\begin{description}[font=\bfseries,leftmargin=!,labelwidth=\widthof{\bfseries Technical Architect}]
     \item[\texttt{<as a>}]      \texttt{<I want to>}
-    \item[Business Executive]   realize the benefits and minimize the risks of \gls{ekg} by having access to
+    \item[Business Executive]   Realize the benefits and minimize the risks of \gls{ekg} by having access to
                                 proven methods, best practices and a community of experts.
-    \item[Vendor]               make it easy for organizations to understand and successfully adopt my product across
+    \item[Vendor]               Make it easy for organizations to understand and successfully adopt my product across
                                 multiple industry sectors.
-    \item[Modeler]              have access to a proven and consistent set of deployable use cases,
+    \item[Modeler]              Have access to a proven and consistent set of deployable use cases,
                                 models \& ontologies that can be used with my organization’s \gls{ekg}.
-    \item[Technical Architect]  have access to components and interfaces with supporting technology architectures
+    \item[Technical Architect]  Have access to components and interfaces with supporting technology architectures
                                 that I can assemble and deploy within my environment.
-    \item[Consultant]           have access to\,---\,and contribute to\,---\,\gls{ekg}-related best practices
+    \item[Consultant]           Have access to\,---\,and contribute to\,---\,\gls{ekg}-related best practices
                                 (e.g. \glsfmtshort{ekgmethod} \& \glsfmtshort{ekgmm}) as well as a community of
                                 potential customers and skilled associates.
     \item[Academic]             The chance to make a meaningful and recognized contribution that builds upon
                                 frameworks to address pressing business needs.
-    \item[\glsxtrshort{ekg} Engineer] be informed about best practices, role descriptions, education
-                                \& certifications.
-\end{basedescript}
+    \item[\glsxtrshort{ekg} Engineer] be informed about best practices, role descriptions, education and certifications.
+\end{description}
