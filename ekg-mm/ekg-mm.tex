@@ -15,6 +15,16 @@
 
 \loadGlossaries
 
+\newcommand\chapterNoNumber[1]{
+    \chapter*{#1}
+    \addcontentsline{toc}{chapter}{#1}
+    \markboth{#1}{#1}}
+
+\newcommand\sectionNoNumber[1]{
+    \section*{#1}
+    \addcontentsline{toc}{section}{#1}
+    \markboth{#1}{#1}}
+
 %
 % Title page variables
 %
