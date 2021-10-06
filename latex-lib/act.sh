@@ -2,17 +2,24 @@
 #
 # run the act utility (which runs the Github Actions in the .github directory locally)
 #
+# Mac OS X:
+# - Install "act" with "brew install act"
+#
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
 act_bin=""
 
 function checkAct() {
 
+  local linux_image="ghcr.io/catthehacker/ubuntu:full-latest"
+
   cd "${SCRIPT_DIR}" || return $?
 
   echo "========================== check environment"
 
-  echo "-P ubuntu-latest=nektos/act-environments-ubuntu:18.04" > "${SCRIPT_DIR}/.actrc"
+  dockr image pull "${linux_image}"
+
+  echo "-P ubuntu-latest=${linux_image}" > "${SCRIPT_DIR}/.actrc"
 
   act_bin="$(command -v act)"
 
