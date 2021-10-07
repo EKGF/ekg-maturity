@@ -14,11 +14,11 @@ An ontology is about:
 
 An ontology can be the basis of, but is broader than:
 \begin{itemize}
-    \item a taxonomy
-    \item a vocabulary
-    \item a data or object model
-    \item a conceptual model
-    \item a specific serialization format
+    \item a taxonomy\index{taxonomy}
+    \item a vocabulary\index{vocabulary}
+    \item a data or object model\index{data!model}\index{object model}
+    \item a conceptual model\index{conceptual model}
+    \item a specific serialization format\index{serialization format}
 \end{itemize}
 
 Ontologies can be expressed at different levels of sophistication, with different scopes,
@@ -27,22 +27,23 @@ The basic structures include:
 
 \begin{itemize}[leftmargin=.8in,font=\itshape]
     \item [individual] a representation of a business object or item which is the subject of information to be managed.
-                       An individual usually has a unique identity.
+                       An individual\index{individual} usually has a unique identity.\index{identity}
                        For example \lstinline|Person X| or \lstinline|Shipment Y|.
                        Many such individuals might represent the same real world object.
     \item [data value] strings, numbers, dates which represent the data.
     \item [property]   a type of data point that may be associated with individuals.
-                       An individual, a property and a value\,---\,which may be a data value or another
+                       An individual, a property\index{property} and a value\,---\,which may be a data value or another
                        individual\,---\, form a triple.\newline
                        For example person \lstinline|X hasBirthDate D| or person \lstinline|X hasMother Y|.
                        Triples whose value is another individual form relationships.
-                       Properties may have generalizations, for example hasMother is a subProperty of hasParent.
+                       Properties may have generalizations, for example \lstinline|hasMother| is a
+                       \lstinline|subProperty| of \lstinline|hasParent|.
     \item [class]      a category applied to individuals, that determines what you can do with them,
                        the properties you can expect to see, and the rules that might apply;
                        an individual may be a member of many classes associated;
                        classes may have generalizations.
-                       Note that, unlike more traditional approaches, properties are independent of classes though
-                       they may be used to infer class membership.
+                       Note that, unlike more traditional approaches, properties are independent of
+                       classes\index{class} though they may be used to infer\index{inference} class membership.
                        For example, given the triple \lstinline|X hasMother Y| you may be able to infer that both
                        \lstinline|X| and \lstinline|Y| are members of the class \lstinline|Person|,
                        or at least \lstinline|Animal|.
@@ -115,16 +116,18 @@ The following criteria for each level are abbreviated: each item is shorthand fo
 \begin{itemize}
     \item Modeling of required data and constraints by use case, including for stored and communicated data
     \item Automated validation of ontologies (for guideline compliance, and for logical consistency),
-          with results as triples
-    \item Automated testing and validation of test data with ontologies (per use case)
-    \item Separation of concerns to support enterprise management such as bi-temporality, transactions and events
+          with results as triples\index{triple}
+    \item Automated testing and validation of test data with ontologies (per use case)\index{use case}
+    \item Separation of concerns to support enterprise management such as
+          bi-temporality\index{temporality}\index{temporality!bi-temporality}, transactions and events
     \item Automated transformation of ontologies to use common serialization and metadata
-    \item Automated checking of ontologies against different profiles (e.g. OWL-RL) to check for technology support
+    \item Automated checking of ontologies against different profiles (e.g. OWL-RL)\index{OWL}
+          to check for technology support
     \item Automated checking of ontologies against different best practices
     \item Ontology source changes linked to automated KGOps for testing and deployment
     \item Impact analysis identifies ontology breaking changes which require fixes to existing EKG data
     \item EKG-wide ontology browsing and searching
-    \item Follow-your-nose UI starting from any ontology element URI
+    \item Follow-your-nose\index{follow-your-nose} UI starting from any ontology element URI
     \item Follow-your-nose API starting from any ontology element URI
     \item Trained ontologist available to each project (possibly via \gls{ekg:coe})
 \end{itemize}
