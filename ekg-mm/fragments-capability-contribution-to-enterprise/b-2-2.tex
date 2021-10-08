@@ -1,11 +1,10 @@
-Ontologies are needed to truly understand what a given set of data really means and what can be inferred from it.
-For example you cannot rely on the name of a column in a spreadsheet.
-A deceptively simple column name such as "number of European customers" leaves open the meaning of
-"European" and "customer" and timing (when does one start and stop being a customer?).
-And different sources could have different interpretations of that same name.
-The benefit is consistency, accuracy and the ability to make sound business decisions.
-Having the models themselves be resources that can be looked up means that all data is self-defining and
-carries its meaning with it.
-In an \gls{ekg} there is no fixed set of ontologies so it can non-disruptively incorporate additional knowledge.
-Ontologies allow data to be understood independent of the format/technology and the vocabulary used in
-different communities, saving misunderstandings and battles over which word to use.
+%
+% B.2.2 Business Vocabularies -- Contribution to the Enterprise
+%
+Parts of large organizations, and the others they communicate with, often have their own local business language.
+Likewise, operational systems\,---\,including their data warehouses and content repositories\,---\,use data models
+and predefined physical schemas that are designed to serve specific purposes.
+The ability of the knowledge graph to link this terminology with its actual meaning defined via ontologies at
+its most granular (atomic) level eliminates confusion over meaning when data is validated or transformed.
+Standalone business glossaries provide useful input but the terms need to be reconciled to their
+enterprise-level meaning via the \gls{ekg}.
