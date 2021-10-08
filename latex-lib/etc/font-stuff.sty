@@ -96,8 +96,8 @@
 \RequirePackage{hyphenat}
 \RequirePackage[font=scriptsize,labelfont=bf]{caption}
 %\RequirePackage[shortlabels,inline]{enumitem}
-\RequirePackage[shortlabels]{enumitem}
-\RequirePackage{mdwlist}
+\RequirePackage[shortlabels,inline]{enumitem}
+%\RequirePackage{mdwlist} % incompatable with the inline option of enumitem
 \RequirePackage{soul}% supports the \ul command for wrapped underlined lines
 
 \newlist{arrowlist}{itemize}{1}
@@ -106,3 +106,16 @@
 \RequirePackage{dingbat}
 
 
+\makeatletter
+% This command ignores the optional argument for itemize and enumerate lists
+\newcommand{\inlineitem}[1][]{%
+    \ifnum\enit@type=\tw@%
+        {\descriptionlabel{#1}}%
+        \hspace{\labelsep}%
+    \else%
+        \ifnum\enit@type=\z@%
+        \refstepcounter{\@listctr}\fi%
+        \quad\@itemlabel\hspace{\labelsep}%
+    \fi%
+}
+\makeatother
