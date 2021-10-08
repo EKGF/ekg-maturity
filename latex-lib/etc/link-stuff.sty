@@ -37,9 +37,19 @@
   filecolor=darkgray,
   urlcolor=darkgray,
   plainpages=false,
-  unicode,
+  unicode=true,
   hypertexnames=false % hypertexnames=false is needed when you do things like \setcounter{part}{0}
 }
+\def\DefaultOptionsofSubmit{print,name=Submit,noexport,bordercolor=blue}
+\def\DefaultOptionsofReset{print,name=Reset,noexport,bordercolor=blue}
+\def\DefaultOptionsofPushButton{print,bordercolor=blue}
+\def\DefaultOptionsofCheckBox{print,bordercolor=lightgray,height=.09in,width=.09in}
+\def\DefaultOptionsofText{print,bordercolor=blue}
+\def\DefaultOptionsofListBox{print,bordercolor=blue}
+\def\DefaultOptionsofComboBox{print,edit,sort,bordercolor=blue}
+\def\DefaultOptionsofPopdownBox{print,bordercolor=blue}
+\def\DefaultOptionsofRadio{print,notoggletooff,bordercolor=blue}
+
 \RequirePackage{nameref}
 \GetTitleStringSetup{expand}
 
@@ -118,3 +128,10 @@
 \newcommand*{\parref}[1]{%
   \hyperref[{#1}]{paragraph \textit{\ref*{#1} \enquote{\nameref*{#1}}}}%
 }
+
+%
+% \footnoteref command for refering to an already existing footnote
+%
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
