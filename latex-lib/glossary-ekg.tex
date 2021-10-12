@@ -232,8 +232,9 @@
     description={%
         an \gls{ekg} is logically composed of a set of \textit{self-describing datasets} that provide information about
         lineage, provenance, pedigree, maturity, quality, governance, entitlement policies, retention policies,
-        security labels, IP policies, pricing policies, caching policies, organizational ownership, accountabilities,
-        data quality feedback loop, issue management policies and so forth.
+        security labels, IP policies, pricing policies, caching policies,
+        organizational ownership\index{organizational!ownership}, accountabilities\index{accountability},
+        data quality feedback loop\index{data!quality feedback loop}, \iindex{issue management} policies and so forth.
         Any given system owner that connects their data to the \gls{ekg} becomes in fact a publisher of a
         self-describing dataset and can therefore control how \myuline{their} data is handled by the \gls{ekg:platform}.
         The \gls{ekg:platform} consists of services that enforce any of the specified policies in the
@@ -245,7 +246,7 @@
             on page \pageref{sec:ekg-principle-self-describing}.
         }{%
             See also principle \textit{5 Self-describing} in the \gls{ekgmanifesto}.
-        }
+        }\index{principles!Self-describing}
     }
 }
 
@@ -259,6 +260,20 @@
         This statement corresponding to an RDF triple is known as an RDF statement.
         The predicate itself is an \gls{iri} and denotes a property, that is,
         a resource that can be thought of as a binary relation.
+    }
+}
+
+\newglossaryentry{ekg:identifier}{
+    name={{EKG/ID}},%
+    text={{EKG/ID}},
+    type=\glsdefaulttype,%
+    first="Enterprise Knowledge Graph Identifier (EKG/ID)",
+    firstplural="Enterprise Knowledge Graph Identifiers (EKG/IDs)",
+    description={
+        A universally unique opaque (i.e. meaningless) number, either based on a hash or a random number, optionally
+        signed that uniquely identifies an object in the \gls{ekg}.
+        Usually the EKG/ID is part of an \gls{ekg:iri} but at higher levels of EKG maturity not necessarily so since
+        permanent resolvability of EKG/IDs will be guaranteed via future non-HTTP based standards.
     }
 }
 
