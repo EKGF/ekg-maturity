@@ -1,0 +1,171 @@
+\pagebreak
+\chapter{Overview}\label{ch:ekg-mm-overview}
+
+Without showing the levels of the maturity model, here is an overview of the taxonomy of pillars, components,
+capabilities, and the measurable abilities or summaries.
+
+%
+% Most of the rest of this file has been copied & pasted from the Excel spreadsheet
+% that MIA is maintaining, via the Tables Generator website 
+% at https://www.tablesgenerator.com/latex_tables#
+%
+% So there is no need to manually maintain this file, unless we decide to make
+% everything in this table a link and give up the spreadsheet.
+%
+% The following changes have been made to the generated output:
+%
+% 1. Remove "\color[HTML]{FFF} " which causes issues. 
+% 2. Insert the line \scriptsize just after \begin{table}[]
+% 3. In the first column, change text like "\textbf{A. Business}" into
+%    "\rotatebox{90}{\textbf{A. Business}}"
+%
+\bgroup
+
+\newcommand{\setComponentColor}[1]{
+    \colorlet{componentColor}{#1}
+}
+
+\newcommand{\componentLabel}[2]{
+    \cellcolor{#1}\textbf{\ref{#2}~\nameref{#2}}
+}
+
+\newcommand{\labelCB}[2]{%
+    \ifnum#1=1%
+        \componentLabel{componentBusinessColor}{ch:ekg-mm-a-#2}%
+    \else%
+        \multirow{-#1}{*}{\componentLabel{componentBusinessColor}{ch:ekg-mm-a-#2}}%
+    \fi%
+}
+
+\newcommand{\labelCO}[2]{%
+    \ifnum#1=1%
+    \componentLabel{componentOrganizationColor}{ch:ekg-mm-a-#2}%
+    \else%
+    \multirow{-#1}{*}{\componentLabel{componentOrganizationColor}{ch:ekg-mm-a-#2}}%
+    \fi%
+}
+
+\newcommand{\labelCD}[2]{%
+    \ifnum#1=1%
+    \componentLabel{componentDataColor}{ch:ekg-mm-c-#2}%
+    \else%
+    \multirow{-#1}{*}{\componentLabel{componentDataColor}{ch:ekg-mm-c-#2}}%
+    \fi%
+}
+
+\newcommand{\labelCT}[2]{%
+    \ifnum#1=1%
+    \componentLabel{componentTechnologyColor}{ch:ekg-mm-d-#2}%
+    \else%
+    \multirow{-#1}{*}{\componentLabel{componentTechnologyColor}{ch:ekg-mm-d-#2}}%
+    \fi%
+}
+
+\newcommand{\setPillarColor}[1]{%
+    \def\pillarColor{#1}%
+}
+
+\newcommand{\pillarLabel}[2]{%
+    \cellcolor{#1}{\rotatebox{90}{\fontsize{6.5pt}{8pt}\selectfont\textbf{\ref{#2}~\nameref{#2}}}}%
+}
+
+\newcommand{\labelPB}[2]{\multirow{-#1}{*}{\pillarLabel{pillarBusinessColor}{pt:ekg-mm-#2}}}
+\newcommand{\labelPO}[2]{\multirow{-#1}{*}{\pillarLabel{pillarOrganizationColor}{pt:ekg-mm-#2}}}
+\newcommand{\labelPD}[2]{\multirow{-#1}{*}{\pillarLabel{pillarDataColor}{pt:ekg-mm-#2}}}
+\newcommand{\labelPT}[2]{\multirow{-#1}{*}{\pillarLabel{pillarTechnologyColor}{pt:ekg-mm-#2}}}
+
+
+\def\cellPB{\cellcolor{pillarBusinessColor}}
+\def\cellPO{\cellcolor{pillarOrganizationColor}}
+\def\cellPD{\cellcolor{pillarDataColor}}
+\def\cellPT{\cellcolor{pillarTechnologyColor}}
+
+\def\cellCB{\cellcolor{componentBusinessColor}}
+\def\cellCO{\cellcolor{componentOrganizationColor}}
+\def\cellCD{\cellcolor{componentDataColor}}
+\def\cellCT{\cellcolor{componentTechnologyColor}}
+
+\def\cellKB{\cellcolor{capabilityBusinessColor}}
+\def\cellKO{\cellcolor{capabilityOrganizationColor}}
+\def\cellKD{\cellcolor{capabilityDataColor}}
+\def\cellKT{\cellcolor{capabilityTechnologyColor}}
+
+\def\cellMB{\cellcolor{measurementBusinessColor}}
+\def\cellMO{\cellcolor{measurementOrganizationColor}}
+\def\cellMD{\cellcolor{measurementDataColor}}
+\def\cellMT{\cellcolor{measurementTechnologyColor}}
+
+\newcommand{\labelKB}[1]{\cellKB~\ref{sec:ekg-mm-a-#1} & \cellKB~\nameref{sec:ekg-mm-a-#1}}
+\newcommand{\labelKO}[1]{\cellKO~\ref{sec:ekg-mm-b-#1} & \cellKO~\nameref{sec:ekg-mm-b-#1}}
+\newcommand{\labelKD}[1]{\cellKD~\ref{sec:ekg-mm-c-#1} & \cellKD~\nameref{sec:ekg-mm-c-#1}}
+\newcommand{\labelKT}[1]{\cellKT~\ref{sec:ekg-mm-d-#1} & \cellKT~\nameref{sec:ekg-mm-d-#1}}
+
+\newcommand{\taglineB}[1]{\cellMB \input{../../ekg-mm/fragments-capability-tagline/a-#1}}
+\newcommand{\taglineO}[1]{\cellMO \input{../../ekg-mm/fragments-capability-tagline/b-#1}}
+\newcommand{\taglineD}[1]{\cellMD \input{../../ekg-mm/fragments-capability-tagline/c-#1}}
+\newcommand{\taglineT}[1]{\cellMT \input{../../ekg-mm/fragments-capability-tagline/d-#1}}
+
+\begin{table}[ht]
+    \centering\fontsize{7.2pt}{8.5pt}\selectfont
+    \setlength\tabcolsep{2pt}
+    \begin{tabular}{@{}cclcl@{}}
+    \phantom{Pillar} & \textbf{Component} & & \textbf{Capability} & \textbf{Measurable ability} \\
+    % A. Business Pillar
+    \cellPB          & \cellCB            & \labelKB{1-1} & \taglineB{1-1} \\ % A.1 Business Strategy Actuation
+    \cellPB          & \cellCB            & \labelKB{1-2} & \taglineB{1-2} \\
+    \cellPB          & \labelCB{3}{1}     & \labelKB{1-3} & \taglineB{1-3} \\
+    \cellPB          & \cellCB            & \labelKB{2-1} & \taglineB{2-1} \\ % A.2 Business Model Elaboration
+    \cellPB          & \cellCB            & \labelKB{2-2} & \taglineB{2-2} \\
+    \cellPB          & \labelCB{3}{2}     & \labelKB{2-3} & \taglineB{2-3} \\
+    \cellPB          & \cellCB            & \labelKB{3-1} & \taglineB{3-1} \\ % A.3 Business Enablers
+    \cellPB          & \cellCB            & \labelKB{3-2} & \taglineB{3-2} \\
+    \cellPB          & \cellCB            & \labelKB{3-3} & \taglineB{3-3} \\
+    \labelPB{10}{a}  & \labelCB{4}{3}     & \labelKB{3-4} & \taglineB{3-4} \\
+    % B. Organization Pillar
+    \cellPO          & \cellCO            & \labelKO{1-1} & \taglineO{1-1} \\ % B.1 Executive Leadership
+    \cellPO          & \cellCO            & \labelKO{1-2} & \taglineO{1-2} \\
+    \cellPO          & \cellCO            & \labelKO{1-3} & \taglineO{1-3} \\
+    \cellPO          & \cellCO            & \labelKO{1-4} & \taglineO{1-4} \\
+    \cellPO          & \cellCO            & \labelKO{1-5} & \taglineO{1-5} \\
+    \cellPO          & \labelCO{6}{1}     & \labelKO{1-6} & \taglineO{1-6} \\
+    \cellPO          & \cellCO            & \labelKO{2-1} & \taglineO{2-1} \\ % B.2 Product Ownership
+    \cellPO          & \cellCO            & \labelKO{2-2} & \taglineO{2-2} \\
+    \cellPO          & \cellCO            & \labelKO{2-3} & \taglineO{2-3} \\
+    \cellPO          & \cellCO            & \labelKO{2-4} & \taglineO{2-4} \\
+    \cellPO          & \labelCO{5}{2}     & \labelKO{2-5} & \taglineO{2-5} \\
+    \cellPO          & \cellCO            & \labelKO{3-1} & \taglineO{3-1} \\ % B.3 EKG Delivery Management
+    \cellPO          & \cellCO            & \labelKO{3-2} & \taglineO{3-2} \\
+    \cellPO          & \cellCO            & \labelKO{3-3} & \taglineO{3-3} \\
+    \cellPO          & \cellCO            & \labelKO{3-4} & \taglineO{3-4} \\
+    \cellPO          & \labelCO{5}{3}     & \labelKO{3-5} & \taglineO{3-5} \\
+    \cellPO          & \cellCO            & \labelKO{4-1} & \taglineO{4-1} \\ % B.4 Organizational Culture
+    \cellPO          & \cellCO            & \labelKO{4-2} & \taglineO{4-2} \\
+    \cellPO          & \labelCO{3}{4}     & \labelKO{4-3} & \taglineO{4-3} \\
+    \cellPO          & \cellCO            & \labelKO{5-1} & \taglineO{5-1} \\ % B.5 Organizaitonal Capabilities
+    \cellPO          & \cellCO            & \labelKO{5-2} & \taglineO{5-2} \\
+    \cellPO          & \cellCO            & \labelKO{5-3} & \taglineO{5-3} \\
+    \labelPO{23}{d}  & \labelCO{4}{5}     & \labelKO{5-4} & \taglineO{5-4} \\
+    % C. Data Pillar
+    \cellPD          & \cellCD            & \labelKD{1-1} & \taglineD{1-1} \\ % C.1 Data Strategy
+    \cellPD          & \labelCD{2}{1}     & \labelKD{1-2} & \taglineD{1-2} \\
+    \cellPD          & \cellCD            & \labelKD{2-1} & \taglineD{2-1} \\ % C.2 Data Architecture
+    \cellPD          & \cellCD            & \labelKD{2-2} & \taglineD{2-2} \\
+    \cellPD          & \cellCD            & \labelKD{2-3} & \taglineD{2-3} \\
+    \cellPD          & \labelCD{4}{2}     & \labelKD{2-4} & \taglineD{2-4} \\
+    \cellPD          & \labelCD{1}{3}     & \labelKD{3-1} & \taglineD{3-1} \\ % C.3 Data Quality
+    \cellPD          & \cellCD            & \labelKD{4-1} & \taglineD{4-1} \\ % C.4 Data Governance
+    \cellPD          & \cellCD            & \labelKD{4-2} & \taglineD{4-2} \\
+    \cellPD          & \cellCD            & \labelKD{4-3} & \taglineD{4-3} \\
+    \labelPD{11}{b}  & \labelCD{4}{4}     & \labelKD{4-4} & \taglineD{4-4} \\
+    % D. Technology Pillar
+    \cellPT          & \labelCT{1}{1}     & \labelKT{1-1} & \taglineT{1-1} \\ % D.1 Technology Strategy
+    \cellPT          & \cellCT            & \labelKT{2-1} & \taglineT{2-1} \\ % D.2 Technology Execution
+    \cellPT          & \cellCT            & \labelKT{2-2} & \taglineT{2-2} \\
+    \cellPT          & \labelCT{3}{2}     & \labelKT{2-3} & \taglineT{2-3} \\
+    \cellPT          & \cellCT            & \labelKT{3-1} & \taglineT{3-1} \\ % D.3 User Interface
+    \cellPT          & \cellCT            & \labelKT{3-2} & \taglineT{3-2} \\
+    \labelPT{7}{c}   & \labelCT{3}{3}     & \labelKT{3-3} & \taglineT{3-3} \\
+    \end{tabular}\label{tab:ekg-mm-structure}
+\end{table}
+
+\egroup

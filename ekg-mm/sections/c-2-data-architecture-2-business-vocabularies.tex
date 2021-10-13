@@ -1,0 +1,97 @@
+%
+% C.2.2 Business Vocabularies (formerly called Business Terminology (formerly called Business Glossary))
+%
+\ekgmmCapability{c-2-2}{business-vocabularies}{Business Vocabularies}
+\index{business!vocabularies}
+\index{business!glossary}
+\index{business!terminology}
+
+\ekgmmCapabilityContributionToEnterprise{c-2-2}
+
+\ekgmmCapabilityContributionToEKG{c-2-2}
+
+\begin{maturity-dimensions}
+
+  \item The organization has one (or many) officially designated glossaries\index{glossary}\index{glossary!designated glossary}
+  \item Level of review by \glspl{sme}
+  \item Level of change management including \iindex{versioning}, approval, \iindex{audit trail}
+  \item Level of communication and ready availability
+  \item Terms have a full business definition
+  \item Business definitions also use a vocabulary with cross references
+  \item Definitions traced to their source with change triggering
+  \item Level of examples including edge case instances, which can expose vagueness or ambiguity
+  \item All terms mapped to an \iindex{ontology} definition\index{ontology!definition}
+  \item Level of review by ontology experts\index{ontology!experts}
+  \item Level of review by application/data experts
+  \item Level of coverage of use cases\index{use case}
+  \item Relationship to official business glossaries\index{business!glossary} or data dictionaries\index{data!dictionary}
+  \item Mapping to business models including processes, objectives, \glspl{kpi}
+  \item Segregation of vocabularies by community
+  \item Reuse of glossaries across communities
+  \item Support for different natural languages
+  \item Searchability
+  \item Completeness of reverse mapping from ontologies to in-scope glossary for terms and definitions
+  \item Generation of glossaries from ontologies
+  \item Relationship amongst terms (synonyms, abbreviations)
+  \item Export to alternative representations e.g. web page, spreadsheet
+  \item Managing proper nouns (names of business entities, products etc) and mapping to individuals in the \gls{ekg}
+  
+\end{maturity-dimensions}
+
+\ekgmmCapabilitySectionLevelsOneFive
+
+\begin{level-assessment}{c-2-2}{1}
+
+  \item Business terms for \glspl{ekg:use-case} are captured and mapped to an \iindex{ontology}
+        (possibly as simple labels)
+
+\end{level-assessment}
+
+\begin{level-assessment}{c-2-2}{2}
+
+  \item Relevant terms (for \glspl{ekg:use-case}) are associated with the use case independently of
+  their corresponding ontologies
+
+\end{level-assessment}
+
+\begin{level-assessment}{c-2-2}{3}
+
+  \item Existing glossaries within the organization, within the scope of supported use cases,
+        are mapped to ontologies and imported into the \gls{ekg}
+  \item Terms are grouped into vocabularies for reuse in different communities
+  \item Vocabularies include local textual definitions as well as being mapped to ontologies
+  \item Community level vocabularies able to import common vocabularies reusable in many communities:
+        allow for multiple levels from local to global
+  \item Support for synonyms and abbreviations within vocabularies
+  \item Vocabularies use general principles of modularity\index{principles!Modularity}
+  \item Ontologies presented to different communities in their own language
+  \item Natural language used for definitions links to other terms used
+  \item Terms are searchable via the knowledge graph interface
+  \item Generate vocabularies from existing data models or ontologies
+  \item Ontology logic is presented to business as natural language
+
+\end{level-assessment}
+
+\begin{level-assessment}{c-2-2}{4}
+
+  \item Ontology logic\index{ontology!logic} is presented to business as natural language\index{natural language}
+  \item \Gls{ekg} is the \iindex{authoritative source} for all terms, scoped by community, context and \iindex{use case}
+  \item The governance processes for all new terms (and changes) are managed directly within the \gls{ekg}
+  \item The results of ontology inferencing are presented in business natural language
+  \item Use of ontology logic to validate use of vocabulary terms
+  \item Management of homonyms and disambiguation of terms\,---\,through being mapped to different concepts
+  \item Use of business terms in natural language queries\index{natural language!queries}
+  \item Techniques for disambiguation e.g. allowing business users to select the intended meaning
+  \item Use of textual analytics to suggest modifications to vocabulary/ontology (lemmatization)
+  \item Use of vocabularies to match internal databases or external data sources for linked data,
+        and establish \lstinline|sameAs| links\index{\lstinline|sameAs|}
+
+\end{level-assessment}
+
+\begin{level-assessment}{c-2-2}{5}
+
+  \item Terminology is used to support \gls{nlp} of unstructured data for the \gls{ekg}
+  \item Use of reference data from KG to support entity resolution
+
+\end{level-assessment}
+

@@ -1,9 +1,15 @@
 %
-% C.3.3 Change Management -- Summary
+% C.3.3 Data Quality Execution -- Summary
 %
-\TODO[inline]{JAG>Create summary for C.3.3 Change Management}
-
-\TODO[inline]{%
-    JAG>Change Management just for User Experience? Should be under "C.2 Technology Execution" perhaps?
-}
+Implementation of the data quality program\index{data!quality!program} is a control process mechanism for organizations.
+\index{control process}
+It is driven by the execution of business rules at the point of data capture (validation).\improve{%
+    JAG>Actually it shouldn't be done just after data capture. First convert raw source data to RDF, then transform%
+    to all the relevant ontologies and then run any business rules for curation or enrichment purposes. And for datasets
+    where the EKG itself is authoritative we need to run the business rules during a transaction.}
+Key components include data profiling, root cause analysis, data remediation and issue management.
+The primary objective of the data quality program is to accurately and consistently represent the concepts and
+values needed to meet the needs of consumers.
+A well-orchestrated data quality program requires communication and operational coordination across the
+organizational landscape.
 

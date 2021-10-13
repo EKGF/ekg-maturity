@@ -1,0 +1,77 @@
+%
+% C.2.3 Datasets
+%
+\ekgmmCapability{c-2-3}{datasets}{Datasets}
+
+\ekgmmCapabilityContributionToEnterprise{c-2-3}
+
+\ekgmmCapabilityContributionToEKG{c-2-3}
+
+\begin{maturity-dimensions}
+
+  \item Do one or more data inventories exist
+  \item Is the inventory based on defined standards (for both meaning and format)
+  \item Is defined and in-scope data (both breadth and depth) covered in the inventories
+  \item Is the data inventory linked to \glspl{sor} and authorized data distribution points
+  \item Is the inventory linked to the business meaning of the data and expressed using standards
+  \item Is the creation and maintenance of the data inventory mandated by policy and incorporated
+        into the data strategy
+  \item Is the quality of the content in the inventory measured, reported to involved stakeholders,
+        and used for process enhancement
+
+\end{maturity-dimensions}
+
+\ekgmmCapabilitySectionLevelsOneFive
+
+(concepts are inherited as levels progress)
+
+\begin{level-assessment}{c-2-3}{1}
+
+  \item Sources, data sets, and metadata are onboarded and expressed as formal ontologies
+  \item Authoritative (upstream) data sources and (downstream) consumers are documented and verified by users,
+        data, and technology
+  \item The inventory of applications is defined and selected for graph applications
+  \item Requirements and dependencies for each outbound data flow are documented and verified (implementation in the
+        graph is not a requirement)
+  \item Business glossaries for in-scope use cases are defined and verified in the graph (including a list of
+        data sources and datasets)
+  \item Policy implemented mandating inventory maintenance and only authorizing the use of data that has been logged
+        into the inventory
+
+\end{level-assessment}
+
+\begin{level-assessment}{c-2-3}{2}
+
+  \item \glspl{uct} are defined, standardized, and implemented
+  \item All upstream data sources are linked to the authorized systems of record and distribution points
+  \item Policy mandating the use of \glspl{sor} and documentation of data flow is implemented
+  \item Entitlements have been defined in the graph (governing access to sources of data in the inventory)
+  \item Classifications (i.e. criticality, security, privacy) are aligned with the use case tree and captured in the
+        knowledge graph
+  \item Governance requirements (i.e. use cases, \iindex{accountability}, data sources, data flows, \glspl{sla})
+        are modeled and registered into the knowledge graph
+
+\end{level-assessment}
+
+\begin{level-assessment}{c-2-3}{3}
+
+  \item Data inventory is centralized in the graph and linked to governance for defined use cases
+  \item Ontologies and data models (including change history and transformations) are registered in the knowledge graph
+  \item Entitlements are calculated within the inventory and enforced at the datapoint level
+  \item Data Quality\index{data!quality} is automatically calculated (fine-grained with dynamic value resolution) within
+        the inventory for each use case
+  \item Data retention rules are registered in the graph and automatically enforced
+  \item Full audit trail for all upstream and downstream data usage is registered in the graph
+  \item Data elements, calculation methods, and \glspl{cde} are linked to individual regulatory requirements
+
+\end{level-assessment}
+
+\begin{level-assessment}{c-2-3}{4}
+
+  \item Connected inventory has been extended to include real-time (transactional) data
+  \item Inventory is extended to external suppliers and third parties along the supply chain
+  \item The inventory is fully integrated with machine learning to optimize data flow
+  \item The “value of data” is calculated and classified within the organizational inventory
+
+\end{level-assessment}
+
