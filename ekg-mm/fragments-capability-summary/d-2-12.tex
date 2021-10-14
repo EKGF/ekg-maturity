@@ -1,4 +1,25 @@
 %
 % D.2.12 Knowledge Graph Federation -- Summary
 %
+\ifoptionfinal{
 \TODO[inline]{Create summary for \thesection}
+}{
+Knowledge Graphs can be built from combined data sources from a queryable service layer and API.
+Enterprises inherently have this need as their data footprints are vast,
+and usually do not store their data in a single source instance.
+Federation can be applied to the knowledge graph by leveraging linked data facilities.
+Various query protocols such as the SPARQL query language has a SERVICE facility to combine remote endpoints,
+and GraphQL can combine APIs.
+Regardless of the query protocol used, federation provides a link that abstracts the underlying system in a
+way that seamlessly ties sources together.
+A knowledge graph provides capabilities to federate queries on the backend.
+If the knowledge graph is discoverable via a service or endpoint,
+a client can also federate remote knowledge graphs not only in server backends,
+but even in browser based faceted implementations.
+
+Combining sources with federation is usually done in a select/read goal, but not create/update/delete.
+No assumptions should be made when queries are performed via federation that they are done in a transacted manner.
+An extension of federation is virtualization, which will be discussed in further section.
+Virtualization provides linked data transformation from a source not designed for knowledge graph
+in a materialized or ad-hoc manner using a mapping facility.
+}

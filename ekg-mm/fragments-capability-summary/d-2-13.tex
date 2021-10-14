@@ -1,4 +1,34 @@
 %
 % D.2.13 Knowledge Graph Virtualization -- Summary
 %
+\ifoptionfinal{
 \TODO[inline]{Create summary for \thesection}
+}{
+Virtualization provides knowledge graphs the capability to source data not designed for linked data concepts
+like relational data sources.
+By the use of RDF mapping languages relational data is mapped to knowledge graphs leveraging tools that
+implement RML, R2RML, OBDA, YARRRML, and D2RQ specifications.
+Lossless conversion to an RDF data model can be achieved by defining terms to relational schema
+definitions of columns, type, and tables in mapping definitions.
+Depending on the tool used to performe the virtualization,
+data can be materialized into RDF files and/or ad-hoc on demand.
+A knowledge graph virtualization tool that operates on relational data will execute a SQL query and
+convert the results to RDF.
+If the results of the virtualization is materialized, the query executed and the results stored as RDF files.
+If the virtualization is performed ad-hoc and not stored, the query will be excused to the source system each
+time the query is performed.
+If there is a large resultset expected from virtualization,
+it usually more performant to materialize the data and load the RDF into a knowledge graph.
+If a small detail based result set that  is susceptible to change is expected from the virtualization,
+then ad-hoc is desirable.
+Virtualization also can be done on heterogeneous data outside of the knowledge graph,
+before an RDF mapping language is applied.
+Data virtualization can be used to allow multiple data sources to be combined and queried as a single data source.
+External data virtualization can be used to get past limitations for example with R2RML which defines a
+single data source.
+Many relational data and knowledge graph virtualization tools also support Spark.
+Mapping can be very prescriptive to an ontology from a source system, or less.
+The less prescriptive approach is to allow data simply to be converted to an RDF model,
+later to be modified by SPARQL queries.
+The more prescriptive approach requires more diligence in model mapping.
+}
