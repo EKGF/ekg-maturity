@@ -1,6 +1,67 @@
 %
-% D.2.1 Use Case Requirements -- Summary
+% D.2.1 Data/Systems Integration -- Summary
 %
-\TODO[inline]{JAG>Create summary for D.2.1 Use Case Requirements}
+\ifoptionfinal{
+    \TODO[inline]{Create summary for \thesection}
+}{
+%% THIS IS DRAFT
+Within an \gls{ekg} there is a need to map and combine data using ontologies as a basis for the integration of
+classes/concepts to achieve wisdom through a common view \& model(s).
+\Glspl{ekg}\,---\,when most mature\,---\,fully implement a DIKW pyramid to achieve this unity of heterogenous sources.
+DIKW stands for data, information, knowledge, and wisdom, and the pyramid is formed in that order.
+Graphs provide a operational structure to allow for chaining and integrating data to create information/data
+integration via linking data throughout the DIKW pyramid.
 
+RDF serializable materialized data or direct import queries enables data to be integrated into and within a
+knowledge graph.
+Extract, transform, and load processes are necessary.
+Often these processes are abbreviated as ETL or ELT since the mapping/transform may occur once after a
+load process is performed.
+Often data when materialized is stored in various RDF serialization formats such as:
+RDF/XML, JSON-LD, Turtle/TTL, NQUADS, NTriples, TriG, Trix, and n3.
+The tools used in the ETL/ELT process should support manipulating data in these common standardized
+knowledge graph formats.
+Another common format that data comes in the materialization process is CSV/TSV.
+Comma \& Tab separated values have been used as defacto within machine learning an analytics spaces
+because of their simplicity and many tools in the ecosystem support CSV/TSV.
+Since they are are so common your ETL/ELT process should support CSV/TSV as well as RDF and
+there is a good chance your partners will offer files in this format,
+especially if there is no direct data access connection such as JDBC available.
 
+ETL/ELT needs to be orchestrated with data pipelines and scheduling software.
+The simplest example would be using CRON with batch scripts,
+more elaborate open source examples would be using a Dev/MLOps framework such as
+Github Actions, Jenkins, Sansa-Stack, Airflow-CWL, Apache NiFi, Linked Data Pipes, and/or various vendor pipes.
+
+Notes:
+\begin{itemize}
+\item Need to add section on outbound such GraphQL, JDBC , not just inbound ETL/ELT perspective.
+\item Section on pull / push based on changed event notifications / deltas are tracked / incremental or ACID modify
+\item Data should be secured in a way that a ETL / ELT job can be re-executed ,
+      often a date is used to as criteria, and the data is locked down with various permissions
+\item Provenance on the data is needed to keep data orderly and sensitive data categorized / governed.
+\item Include information around streaming vs batch perspective
+\item Include dimensions of maturity for levels.
+\item distinguish batch vs realtime, are changes transacted or not, ledger approach block chain (Fluree is an example)
+\item Data mapping via inferencing or explicit - need to elaborate
+\item unstructured data extraction/ingestion - not covered at all
+\item data masking and encryption is a challenge, to ETL and fine grained access control
+\item user notification on update freshness of extractions proactively at minimum it should be visible
+\item external systems may eventually become dependent on the kg, so thoughts on data masking externally may be necessary and approaches therein
+\item Data Quality mention the need , and correction management
+\item ML Knowledge Completion (edited)
+\item What should also be mentioned here is that the current way of thinking usually is to create one common view
+      (which is also suggested a bit here).
+      Where many datasets from many data-sources are all combined via all kinds of complicated ETL processes
+      with big DAGs into one output dataset. That’s still creating “one version of the truth” whereas in EKG
+      you can load each “self-describing dataset (SDD)” (see principles) that represents ONE source next
+      to all other SDDs of all other sources in the EKG. So the EKG has all versions of the truth next to
+      each other available. Each ETL pipeline that creates one of those SDDs is usually relatively
+      straight-forward and if you do it “right” then the SDD that represents the data coming from one
+      given source is highly reusable, not modelled to just support one use case but any use case.
+      At query time the right named graphs (or databases) will be used to get the data from the
+      right SDD for the given context and use case.
+\end{itemize}
+\TODO[inline]{Process the notes in \thesection}
+%% END OF DRAFT
+}
