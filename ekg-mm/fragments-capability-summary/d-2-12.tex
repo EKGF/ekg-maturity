@@ -1,25 +1,33 @@
 %
 % D.2.12 Knowledge Graph Federation -- Summary
 %
-\ifoptionfinal{
-\TODO[inline]{Create summary for \thesection}
-}{
-Knowledge Graphs can be built from combined data sources from a queryable service layer and API.
+\glslocalreset{ekg}\Glspl{ekg} can be built from combined data sources from a queryable service layer and \gls{api}.
 Enterprises inherently have this need as their data footprints are vast,
 and usually do not store their data in a single source instance.
-Federation can be applied to the knowledge graph by leveraging linked data facilities.
-Various query protocols such as the SPARQL query language has a SERVICE facility to combine remote endpoints,
-and GraphQL can combine APIs.
+
+At higher levels of \gls{ekg} platform maturity, all access to the \gls{ekg} is provided by a service layer\,---\,generally
+called the \gls{ekg:platform}\,---\,that takes care of federation of any request to any backend data source using any technology.
+
+The federation facilities provided by the \gls{ekg:platform} are leveraging the principles of the linked data standard\cite{linked-data}
+as originally defined by Sir Tim Berners-Lee\index{tim berners-lee} in 2005.
+However, the original linked data standard does not provide many of the facilities that are required for mission-critical
+enterprise use cases such as model-driven entitlement enforcement, automatic selection of the right version of the truth
+for the given context and so forth.
+
+Various query protocols have built-in federation facilties, for instance the SPARQL\index{sparql} query language has a
+facility\,---\,via the \lstinline|SERVICE| keyword\,---\,to federate a query across multiple remote endpoints and
+the GraphQL\index{graphql} query language can combine \glspl{api} of multiple remote systems.
 Regardless of the query protocol used, federation provides a link that abstracts the underlying system in a
 way that seamlessly ties sources together.
-A knowledge graph provides capabilities to federate queries on the backend.
-If the knowledge graph is discoverable via a service or endpoint,
+
+An \gls{ekg:platform} provides capabilities to federate queries on the backend.
+
+The \gls{ekg:platform} is discoverable by other services, \glspl{ekg} or browsers
 a client can also federate remote knowledge graphs not only in server backends,
 but even in browser based faceted implementations.
 
 Combining sources with federation is usually done in a select/read goal, but not create/update/delete.
 No assumptions should be made when queries are performed via federation that they are done in a transacted manner.
-An extension of federation is virtualization, which will be discussed in further section.
+An extension of federation is \iindex{virtualization}, which will be discussed in further section.
 Virtualization provides linked data transformation from a source not designed for knowledge graph
 in a materialized or ad-hoc manner using a mapping facility.
-}
