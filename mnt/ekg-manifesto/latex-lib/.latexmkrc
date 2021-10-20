@@ -5,7 +5,7 @@
 #
 # - latex_document_main: the root directory of the document or the full file name of its main doc
 # - latex_customer_code: customer code such as "agnos" or "ekgf"
-# - latex_document_mode: "draft" or "final"
+# - latex_document_mode: "editors-version" or "release-version"
 # - latex_document_members_only: "yes" or "no"
 #
 use File::Basename;
@@ -310,8 +310,7 @@ $clean_ext .= " aux fls log glsdefs tdo ist run.xml xdy";
 
 $latex_document_mode = lc($ENV{'latex_document_mode'} || 'draft');
 print "Document Mode: ${latex_document_mode}\n";
-if("${latex_document_mode}" eq 'final') {
-    print "Document Mode: We're not in draft mode, creating the final version\n";
+if("${latex_document_mode}" eq 'release-version') {
     $jobname = "$document_customer_code-${document_name}";
 } else {
     $jobname = "$document_customer_code-${document_name}-${latex_document_mode}";

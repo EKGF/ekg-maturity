@@ -13,7 +13,7 @@
 \RequirePackage{relsize} % required for adjusting text using relscale
 \RequirePackage{path-stuff}
 \RequirePackage{float}
-\RequirePackage[\documentMode]{ifdraft}
+\RequirePackage{release-stuff}
 \RequirePackage{changepage}
 \RequirePackage{adjustbox}
 \RequirePackage[absolute]{textpos}
@@ -32,18 +32,18 @@
 %
 \newcommand*{\bannerAcrossWholePage}[2]{%
   \mbox{} \par%
-  \ifoptionfinal{% final mode without TODOs so different right margin
+  \ifoptionfinal{% release-mode without TODOs so different right margin
     \noindent\centerimg[width=\dimexpr\paperwidth+3pt\relax,height=#1]{#2}%
-  }{% draft mode
+  }{% editors-version
     \noindent\centerimg[width=\dimexpr\paperwidth+17pt\relax,height=#1]{#2}%
   }%
 }
 
 \newcommand*{\bannerAcrossWholePageScaleByWidth}[1]{%
   \mbox{} \par%
-  \ifoptionfinal{% final mode without TODOs so different right margin
+  \ifoptionfinal{% release-mode without TODOs so different right margin
     \noindent\centerimg[width=\dimexpr\paperwidth+3pt\relax]{#1}%
-  }{% draft mode
+  }{% editors-version
     \noindent\centerimg[width=\dimexpr\paperwidth+17pt\relax]{#1}%
   }%
 }

@@ -3,7 +3,7 @@
 %
 \RequirePackage{grffile}
 \RequirePackage[final]{graphicx}
-\RequirePackage[\documentMode]{ifdraft}
+\RequirePackage{release-stuff}
 \RequirePackage{array}
 \RequirePackage{multirow}
 \RequirePackage{makecell}
@@ -78,18 +78,17 @@
   \thispagestyle{empty}
   \vspace*{-1.8cm}
   \setlength\tabcolsep{0pt}
+%  \noindent\begin{tabular}{|@{}L{\dimexpr .5\textwidth}|@{}R{\dimexpr .5\textwidth}@{}|}
   \noindent\begin{tabular}{@{}L{\dimexpr .5\textwidth}@{}R{\dimexpr .5\textwidth}@{}}
-    % \hline
+%    \hline
      \vspace*{-5mm}
-     \multirow{3}{5cm}[\normalbaselineskip]{
+     \multirow{4}{5cm}[\normalbaselineskip]{
         \def\svgwidth{5cm}
         \input{./\customerCode-logo-wide.pdf_tex}
-    } & {\cellTitle} \\ % \cline{2-2}
-    & \makecell*[r]{\cellSubtitle} \\ % \cline{2-2}
-    & {\scriptsize \textcolor{primarySubText}{%
-      \today, Version \documentVersion \ifoptionfinal{}{~(with comments \& to-dos)}
-     }%
-    } \\ % \hline
+     } & {\cellTitle} \\ % \cline{2-2}
+     & \makecell*[r]{\cellSubtitle} \\ % \cline{2-2}
+     & {\scriptsize \textcolor{primarySubText}{\today, Version \documentVersion}} \\ % \cline{2-2}
+     & {\scriptsize \textcolor{primarySubText}{\ifoptionfinal{}{(editor's version with comments \& to-dos)}}} \\ % \hline
   \end{tabular}\\[1cm]
   %
   % Import the banner and size it across the whole page
@@ -101,7 +100,7 @@
       \vfill
       \footnotesize
       \textcolor{primarySubText}{
-          \copyright~\the\year~by~\authorLegalName.\newline
+          \copyright~\the\year~\authorLegalName.\newline
           \href{\documentGitRepo}{\thetitle}~is licensed under
           \href{http://creativecommons.org/licenses/by-sa/4.0/}{
               \textit{Attribution-ShareAlike 4.0 International}
