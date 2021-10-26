@@ -1,9 +1,6 @@
 \pagebreak
 \chapter{Overview}\label{ch:ekg-mm-overview}
-
-Without showing the levels of the maturity model, here is an overview of the taxonomy of pillars, components,
-capabilities, and the measurable abilities or summaries.
-
+\vspace{-5cm}
 %
 % Most of the rest of this file has been copied & pasted from the Excel spreadsheet
 % that MIA is maintaining, via the Tables Generator website 
@@ -39,9 +36,9 @@ capabilities, and the measurable abilities or summaries.
 
 \newcommand{\labelCO}[2]{%
     \ifnum#1=1%
-    \componentLabel{componentOrganizationColor}{ch:ekg-mm-a-#2}%
+    \componentLabel{componentOrganizationColor}{ch:ekg-mm-b-#2}%
     \else%
-    \multirow{-#1}{*}{\componentLabel{componentOrganizationColor}{ch:ekg-mm-a-#2}}%
+    \multirow{-#1}{*}{\componentLabel{componentOrganizationColor}{ch:ekg-mm-b-#2}}%
     \fi%
 }
 
@@ -105,9 +102,11 @@ capabilities, and the measurable abilities or summaries.
 \newcommand{\taglineD}[1]{\cellMD \input{../../ekg-mm/fragments-capability-tagline/c-#1}}
 \newcommand{\taglineT}[1]{\cellMT \input{../../ekg-mm/fragments-capability-tagline/d-#1}}
 
-\begin{table}[ht]
-    \centering\fontsize{7.2pt}{8.5pt}\selectfont
-    \setlength\tabcolsep{2pt}
+\begin{table}
+    \caption{The taxonomy of pillars, components,
+        capabilities, and the measurable abilities or summaries.}
+    \centering\fontsize{7.2pt}{8.3pt}\selectfont
+    \setlength\tabcolsep{1pt}
     \begin{tabular}{@{}cclcl@{}}
     \phantom{Pillar} & \textbf{Component} & & \textbf{Capability} & \textbf{Measurable ability} \\
     % A. Business Pillar
@@ -145,7 +144,7 @@ capabilities, and the measurable abilities or summaries.
     \cellPO          & \cellCO            & \labelKO{5-1} & \taglineO{5-1} \\ % B.5 Organizaitonal Capabilities
     \cellPO          & \cellCO            & \labelKO{5-2} & \taglineO{5-2} \\
     \cellPO          & \cellCO            & \labelKO{5-3} & \taglineO{5-3} \\
-    \labelPO{23}{d}  & \labelCO{4}{5}     & \labelKO{5-4} & \taglineO{5-4} \\
+    \labelPO{23}{b}  & \labelCO{4}{5}     & \labelKO{5-4} & \taglineO{5-4} \\
     % C. Data Pillar
     \cellPD          & \cellCD            & \labelKD{1-1} & \taglineD{1-1} \\ % C.1 Data Strategy
     \cellPD          & \labelCD{2}{1}     & \labelKD{1-2} & \taglineD{1-2} \\
@@ -157,16 +156,29 @@ capabilities, and the measurable abilities or summaries.
     \cellPD          & \cellCD            & \labelKD{4-1} & \taglineD{4-1} \\ % C.4 Data Governance
     \cellPD          & \cellCD            & \labelKD{4-2} & \taglineD{4-2} \\
     \cellPD          & \cellCD            & \labelKD{4-3} & \taglineD{4-3} \\
-    \labelPD{11}{b}  & \labelCD{4}{4}     & \labelKD{4-4} & \taglineD{4-4} \\
+    \labelPD{11}{c}  & \labelCD{4}{4}     & \labelKD{4-4} & \taglineD{4-4} \\
     % D. Technology Pillar
     \cellPT          & \labelCT{1}{1}     & \labelKT{1-1} & \taglineT{1-1} \\ % D.1 Technology Strategy
     \cellPT          & \cellCT            & \labelKT{2-1} & \taglineT{2-1} \\ % D.2 Technology Execution
     \cellPT          & \cellCT            & \labelKT{2-2} & \taglineT{2-2} \\
-    \cellPT          & \labelCT{3}{2}     & \labelKT{2-3} & \taglineT{2-3} \\
+    \cellPT          & \cellCT            & \labelKT{2-3} & \taglineT{2-3} \\
+    \cellPT          & \cellCT            & \labelKT{2-4} & \taglineT{2-4} \\
+    \cellPT          & \cellCT            & \labelKT{2-5} & \taglineT{2-5} \\
+    \cellPT          & \cellCT            & \labelKT{2-6} & \taglineT{2-6} \\
+    \cellPT          & \cellCT            & \labelKT{2-7} & \taglineT{2-7} \\
+    \cellPT          & \cellCT            & \labelKT{2-8} & \taglineT{2-8} \\
+    \cellPT          & \cellCT            & \labelKT{2-9} & \taglineT{2-9} \\
+    \cellPT          & \cellCT            & \labelKT{2-10} & \taglineT{2-10} \\
+    \cellPT          & \cellCT            & \labelKT{2-11} & \taglineT{2-11} \\
+    \cellPT          & \cellCT            & \labelKT{2-12} & \taglineT{2-12} \\
+    \cellPT          & \labelCT{13}{2}    & \labelKT{2-13} & \taglineT{2-13} \\
     \cellPT          & \cellCT            & \labelKT{3-1} & \taglineT{3-1} \\ % D.3 User Interface
     \cellPT          & \cellCT            & \labelKT{3-2} & \taglineT{3-2} \\
-    \labelPT{7}{c}   & \labelCT{3}{3}     & \labelKT{3-3} & \taglineT{3-3} \\
+    \cellPT          & \cellCT            & \labelKT{3-3} & \taglineT{3-3} \\
+    \cellPT          & \cellCT            & \labelKT{3-4} & \taglineT{3-4} \\
+    \cellPT          & \cellCT            & \labelKT{3-5} & \taglineT{3-5} \\
+    \labelPT{20}{d}  & \labelCT{6}{3}     & \labelKT{3-6} & \taglineT{3-6} \\
     \end{tabular}\label{tab:ekg-mm-structure}
 \end{table}
-
+\clearpage
 \egroup
