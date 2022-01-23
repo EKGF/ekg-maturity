@@ -69,18 +69,18 @@
     type=\glsdefaulttype,
     name={EKG},
     description={%
-        much like "the web" is a virtual concept, an \glsfirst{ekg} is a virtual concept that combines all
+        much like "the web" is a virtual concept, an \glsentryshort{ekg} is a virtual concept that combines all
         information and knowledge of an enterprise\,---\,at any level in the organization\,---\,or ecosystem.
     }
 }
 
 \newglossaryentry{ekg:coe}{
     type=\glsdefaulttype,
-    name={\gls{coe} for the \gls{ekg}},
-    plural={\glspl{coe} for the \gls{ekg}},
+    name={\glsentryshort{coe} for the \glsentryshort{ekg}},
+    plural={\glsentryplural{coe} for the \glsentryshort{ekg}},
 %    firstplural={\glsreset{coe}\glspl{coe} for the \gls{ekg}},
     description={%
-        the group of people that is overseeing the \gls{ekg}
+        the group of people that is overseeing the \glsentryshort{ekg}
     }
 }
 
@@ -88,7 +88,7 @@
     type=\glsdefaulttype,
     name={EKG system architecture},
     description={%
-        the logical \gls{system-architecture} of \gls{ekg} is divided into multiple layers or environments such as
+        the logical \gls{system-architecture} of \glsentryshort{ekg} is divided into multiple layers or environments such as
         \gls{ekg:platform}, \gls{ekg:storage} and \gls{ekg:dataops:environment}.
     }
 }
@@ -101,7 +101,7 @@
         a logical \gls{system-architecture} component (see \gls{ekg:architecture:system}),
         the layer of software services that provide and serve the \gls{ekg} to end-users and other systems.
         The platform logically is a set services that enforce any of the specified policies in the
-        \glspl{ekg:sdd} that have been published in the \gls{ekg}.
+        \glspl{sdd} that have been published in the \gls{ekg}.
     }
 }
 
@@ -182,7 +182,7 @@
     description={%
         a logical \gls{system-architecture} component, the environment where \glspl{ekg:dataops:pipeline} run.
         Since \glspl{ekg:dataops:pipeline} can run anywhere and any given data provider can publish their own
-        data as a \gls{ekg:sdd} in any technical or physical environment, the actual DataOps "environment"
+        data as a \gls{sdd} in any technical or physical environment, the actual DataOps "environment"
         is just a logical concept that does not necessarily map one-to-one to a particular physical environment.
     }
 }
@@ -195,7 +195,7 @@
     description={%
         a DataOps pipeline in the \gls{ekg:dataops:environment} is a series of programs, called "steps",
         that are run in sequence\,---\,hence the name pipeline\,---\,where the first step captures the data
-        from a given source and the last step produces an \gls{ekg:sdd} (for "inbound pipelines") or
+        from a given source and the last step produces an \gls{sdd} (for "inbound pipelines") or
         any other type of artifact (for "outbound pipelines").
         Each DataOps pipeline step takes an input and produces an output based on its configuration which usually
         refers to a model that instructs the DataOps pipeline step how to process the data.
@@ -209,14 +209,28 @@
     description={..todo..}
 }
 
+\newglossaryentry{sdd}{% sdd the acronym
+    type=\acronymtype, % notice this, this is not a normal glossary entry but an acronym
+    name={SDD},
+    text={SDD},
+    short={SDD},
+    description={self-describing dataset},
+    long={self-describing dataset},
+    first={self-describing dataset (SDD)\glsadd{ekg:sdd}},
+    firstplural={self-describing datasets (SDDs)\glsadd{ekg:sdd}},
+    shortplural={SDDs},
+    longplural={self-describing datasets},
+    see=[Glossary:]{ekg:sdd}
+}
+
 \newglossaryentry{ekg:sdd}{
     type=\glsdefaulttype,
-    name={self-describing dataset},
+    name={self-describing dataset (SDD)},
     text={self-describing dataset},
     longplural={self-describing datasets},
     firstplural={self-describing datasets (SDDs)},
     description={%
-        An \gls{ekg} is logically composed of a set of \textit{self-describing datasets} that provide information about
+        an \gls{ekg} is logically composed of a set of \textit{self-describing datasets} that provide information about
         lineage, provenance, pedigree, maturity, quality, governance, entitlement policies, retention policies,
         security labels, IP policies, pricing policies, caching policies, organizational ownership, accountabilities,
         data quality feedback loop, issue management policies and so forth.
@@ -225,6 +239,13 @@
         The \gls{ekg:platform} consists of services that enforce any of the specified policies in the
         self-describing dataset.
         At the technical level, datasets can be files or streams or API definitions etc.
+        \iflabelexists{sec:ekg-principle-self-describing}{%
+            See also principle
+            \textit{\ref{sec:ekg-principle-self-describing}~\nameref{sec:ekg-principle-self-describing}}
+            on page \pageref{sec:ekg-principle-self-describing}.
+        }{%
+            See also principle \textit{5 Self-describing} in the EKG/Manifesto.
+        }
     }
 }
 
@@ -275,8 +296,8 @@
 
 \newglossaryentry{ekg:use-case}{
     type=\glsdefaulttype,
-    name={\gls{ekg} use case},
-    text={\gls{ekg} use case},
+    name={\glsentryshort{ekg} use case},
+    text={\glsentryshort{ekg} use case},
     description={%
         TODO
     }
