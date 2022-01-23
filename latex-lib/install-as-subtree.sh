@@ -79,7 +79,12 @@ function addGitRemote() {
 
   local -r remote_url="$(getRemoteUrl "${remote_name}")"
 
-  echo "Actual remote url registered: ${remote_url}"
+  if [[ -z "${remote_url}" ]] ; then
+    echo "ERROR: Could not fetch the remote url for ${remote_name}"
+    return 1
+  fi
+
+  echo "Actual remote url registered: ${remote_url}" >&2
 
   checkGitRemote "${remote_org}" "${remote_name}" "${remote_url}"
 }
