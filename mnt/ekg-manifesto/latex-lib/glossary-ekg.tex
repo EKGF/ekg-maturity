@@ -69,18 +69,18 @@
     type=\glsdefaulttype,
     name={EKG},
     description={%
-        much like "the web" is a virtual concept, an \glsfirst{ekg} is a virtual concept that combines all
+        much like "the web" is a virtual concept, an \glsentryshort{ekg} is a virtual concept that combines all
         information and knowledge of an enterprise\,---\,at any level in the organization\,---\,or ecosystem.
     }
 }
 
 \newglossaryentry{ekg:coe}{
     type=\glsdefaulttype,
-    name={\gls{coe} for the \gls{ekg}},
-    plural={\glspl{coe} for the \gls{ekg}},
+    name={\glsentryshort{coe} for the \glsentryshort{ekg}},
+    plural={\glsentryplural{coe} for the \glsentryshort{ekg}},
 %    firstplural={\glsreset{coe}\glspl{coe} for the \gls{ekg}},
     description={%
-        the group of people that is overseeing the \gls{ekg}
+        the group of people that is overseeing the \glsentryshort{ekg}
     }
 }
 
@@ -88,7 +88,7 @@
     type=\glsdefaulttype,
     name={EKG system architecture},
     description={%
-        the logical \gls{system-architecture} of \gls{ekg} is divided into multiple layers or environments such as
+        the logical \gls{system-architecture} of \glsentryshort{ekg} is divided into multiple layers or environments such as
         \gls{ekg:platform}, \gls{ekg:storage} and \gls{ekg:dataops:environment}.
     }
 }
@@ -209,14 +209,28 @@
     description={..todo..}
 }
 
+\newglossaryentry{sdd}{% sdd the acronym
+    type=\acronymtype, % notice this, this is not a normal glossary entry but an acronym
+    name={SDD},
+    text={SDD},
+    short={SDD},
+    description={self-describing dataset},
+    long={self-describing dataset},
+    first={self-describing dataset (SDD)\glsadd{ekg:sdd}},
+    firstplural={self-describing datasets (SDDs)\glsadd{ekg:sdd}},
+    shortplural={SDDs},
+    longplural={self-describing datasets},
+    see=[Glossary:]{ekg:sdd}
+}
+
 \newglossaryentry{ekg:sdd}{
     type=\glsdefaulttype,
-    name={self-describing dataset},
+    name={self-describing dataset (SDD)},
     text={self-describing dataset},
     longplural={self-describing datasets},
     firstplural={self-describing datasets (SDDs)},
     description={%
-        An \gls{ekg} is logically composed of a set of \textit{self-describing datasets} that provide information about
+        an \gls{ekg} is logically composed of a set of \textit{self-describing datasets} that provide information about
         lineage, provenance, pedigree, maturity, quality, governance, entitlement policies, retention policies,
         security labels, IP policies, pricing policies, caching policies, organizational ownership, accountabilities,
         data quality feedback loop, issue management policies and so forth.
@@ -225,6 +239,13 @@
         The \gls{ekg:platform} consists of services that enforce any of the specified policies in the
         self-describing dataset.
         At the technical level, datasets can be files or streams or API definitions etc.
+        \iflabelexists{sec:ekg-principle-self-describing}{%
+            See also principle
+            \textit{\ref{sec:ekg-principle-self-describing}~\nameref{sec:ekg-principle-self-describing}}
+            on page \pageref{sec:ekg-principle-self-describing}.
+        }{%
+            See also principle \textit{5 Self-describing} in the EKG/Manifesto.
+        }
     }
 }
 
@@ -275,8 +296,8 @@
 
 \newglossaryentry{ekg:use-case}{
     type=\glsdefaulttype,
-    name={\gls{ekg} use case},
-    text={\gls{ekg} use case},
+    name={\glsentryshort{ekg} use case},
+    text={\glsentryshort{ekg} use case},
     description={%
         TODO
     }

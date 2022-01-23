@@ -113,6 +113,10 @@
   \begin{quote}\itshape\large\enquote{#1}\end{quote}%
   \begin{flushright}\footnotesize- #2\footnote{\url{#3}}\end{flushright}%
 }
+\newcommand{\citequote}[2]{%
+  \begin{quote}\itshape\large\enquote{#1}\end{quote}%
+  \begin{flushright}\textcite{#2}\end{flushright}%
+}
 
 %%
 %% Convoluted way to convert the value of \jobname (which has a different "Catcode" than normal strings, see
@@ -151,3 +155,15 @@
 \AtEndDocument{\global\expandafter\let \csname @nodocument\endcsname \relax\insertPrintBibliography}
 \AtEndDocument{\global\expandafter\let \csname @nodocument\endcsname \relax\insertPrintIndex}
 \AtEndDocument{\global\expandafter\let \csname @nodocument\endcsname \relax\insertPrintTodos}
+%
+%
+% \ifdocumentname{ekg-manifesto}{
+%    do nothing
+% }{
+%    As a reference, we include the manifesto chapter here...
+% }
+%
+\newcommand{\ifdocumentname}[3]{%
+  \ifthenelse{\equal{\detokenize{#1}}{\detokenize{\documentName}}}{#2}{#3}%
+}
+
