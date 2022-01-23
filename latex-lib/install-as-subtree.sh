@@ -229,7 +229,6 @@ function createSymlinks() {
   symlinkToDir etc || return $?
   symlinkToFile .actrc || return $?
   symlinkToFile .env || return $?
-  symlinkToFile .gitignore || return $?
   symlinkToFile .latexmkrc || return $?
   symlinkToFile act.sh || return $?
   symlinkToFile build.sh || return $?
