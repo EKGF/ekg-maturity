@@ -37,7 +37,18 @@ function getRemoteUrl() {
 
   local -r remote_name="$1"
 
-  "${git_bin}" remote get-url "${remote_name}" 2>/dev/null
+  echo "Fetching remote url for ${remote_name}" >&2
+
+  local -r remote_url=$("${git_bin}" remote get-url "${remote_name}" 2>/dev/null) rc=$?
+
+  if ((rc != 0)) ; then
+    echo "ERROR: Could not fetch the remote url for ${remote_name} (rc=${rc})" >&2
+    return 1
+  fi
+
+  echo "Remote url for ${remote_name} is ${remote_url}" >&2
+  echo -n "${remote_url}"
+  return 0
 }
 
 function getGithubUrl() {
@@ -77,12 +88,9 @@ function addGitRemote() {
 
   _git remote add -f "${remote_name}" "${github_url}" 2>/dev/null || true
 
-  local -r remote_url="$(getRemoteUrl "${remote_name}")"
+  local -r remote_url="$(getRemoteUrl "${remote_name}")" rc=$?
 
-  if [[ -z "${remote_url}" ]] ; then
-    echo "ERROR: Could not fetch the remote url for ${remote_name}"
-    return 1
-  fi
+  ((rc == 0)) || return ${rc}
 
   echo "Actual remote url registered: ${remote_url}" >&2
 
@@ -100,7 +108,9 @@ function addSubtree() {
   local -r mount_point="$3"
   local -r remote_branch="$4"
 
-  local -r remote_url="$(getRemoteUrl "${remote_name}")"
+  local -r remote_url="$(getRemoteUrl "${remote_name}")" rc=$?
+
+  ((rc == 0)) || return ${rc}
 
   if ! checkGitRemote "${remote_org}" "${remote_name}" "${remote_url}" ; then
     addGitRemote "${remote_org}" "${remote_name}" || return $?
