@@ -40,11 +40,61 @@
   unicode,
   hypertexnames=false % hypertexnames=false is needed when you do things like \setcounter{part}{0}
 }
+\def\DefaultOptionsofSubmit{print,name=Submit,noexport,bordercolor=blue}
+\def\DefaultOptionsofReset{print,name=Reset,noexport,bordercolor=blue}
+\def\DefaultOptionsofPushButton{print,bordercolor=blue}
+\def\DefaultOptionsofCheckBox{print,bordercolor=lightgray,height=.09in,width=.09in}
+\def\DefaultOptionsofText{print,bordercolor=blue}
+\def\DefaultOptionsofListBox{print,bordercolor=blue}
+\def\DefaultOptionsofComboBox{print,edit,sort,bordercolor=blue}
+\def\DefaultOptionsofPopdownBox{print,bordercolor=blue}
+\def\DefaultOptionsofRadio{print,notoggletooff,bordercolor=blue}
+
 \RequirePackage{nameref}
 \GetTitleStringSetup{expand}
 
 \makeatletter
 \newcommand{\iflabelexists}[3]{\@ifundefined{r@#1}{#3}{#2}}
+\makeatother
+
+%\RequirePackage{luacode} % for luacode environment and \luastring macro
+%
+%%% Lua-side code
+%\begin{luacode}
+%  function betterurl(text)
+%    label = text:gsub(".", "%1\\allowbreak{}")
+%
+%    label = label:gsub("~", "\\textasciitilde")
+%    label = label:gsub("&", "\\&")
+%
+%    -- insert other URL symbols here
+%
+%    url = text
+%
+%    tex.print("\\href{" .. url .. "}{\\texttt{" .. label .. "}}")
+%  end
+%\end{luacode}
+%\renewcommand{\url}[1]{\luadirect{betterurl(\luastringN{#1})}}
+
+%
+% Define the \currentname macro based on https://tex.stackexchange.com/a/75179/194082
+%
+\RequirePackage{etoolbox}
+\makeatletter
+\newif\if@parts
+\@ifundefined{part}{\@partsfalse}{\@partstrue}
+\if@parts
+\apptocmd{\@part}{\gdef\currentname{#1\xspace}}{}{}
+\apptocmd{\@spart}{\gdef\currentname{#1\xspace}}{}{}
+\fi
+\newif\if@chapters
+\@ifundefined{chapter}{\@chaptersfalse}{\@chapterstrue}
+\if@chapters
+\apptocmd{\@chapter}{\gdef\currentname{#1\xspace}}{}{}
+\apptocmd{\@schapter}{\gdef\currentname{#1\xspace}}{}{}
+\fi
+\apptocmd{\@sect}{\gdef\currentname{#7\xspace}}{}{}
+\def\currentname{---Still no title given---}
 \makeatother
 
 %\RequirePackage{luacode} % for luacode environment and \luastring macro
@@ -118,3 +168,10 @@
 \newcommand*{\parref}[1]{%
   \hyperref[{#1}]{paragraph \textit{\ref*{#1} \enquote{\nameref*{#1}}}}%
 }
+
+%
+% \footnoteref command for refering to an already existing footnote
+%
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother

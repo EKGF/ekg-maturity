@@ -229,7 +229,6 @@ function createSymlinks() {
   symlinkToDir etc || return $?
   symlinkToFile .actrc || return $?
   symlinkToFile .env || return $?
-  symlinkToFile .gitignore || return $?
   symlinkToFile .latexmkrc || return $?
   symlinkToFile act.sh || return $?
   symlinkToFile build.sh || return $?
@@ -252,6 +251,10 @@ function main() {
   local remote_branch
 
   checkGit || return $?
+
+  for mount_point in $(getSubTrees) ; do
+    echo "sub tree: ${mount_point}" >&2
+  done
 
   for mount_point in $(getSubTrees) ; do
     remote_name=${mount_point/mnt\//}

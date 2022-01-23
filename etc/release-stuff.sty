@@ -1,0 +1,11 @@
+%
+% How to deal with editors-version (draft) and release-version (final)
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{release-stuff}[2021/10/20 agnos.ai - dealing with the ifdraft package]
+
+\RequirePackage{ifthen}
+
+\ifthenelse{\equal{\documentMode}{release-version}}
+{\RequirePackage[final]{ifdraft}}
+{\RequirePackage[draft]{ifdraft}}

@@ -6,7 +6,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{glossary-stuff}[2019/12/09 agnos.ai - all glossary related stuff]
 
-\RequirePackage[\documentMode]{ifdraft}
+\RequirePackage{release-stuff}
 \RequirePackage{link-stuff} % hyperref must be loaded before package glossaries
                             % and package babel needs to be loaded before package glossaries-extra
 
@@ -89,7 +89,7 @@
   \printglossary[type=ont,style=mcoltree,title=Ontologies,toctitle=List of ontologies]%
   \ifoptionfinal{}{%
     %
-    % in draft mode we print all entries in all glossaries.
+    % in editors-version we print all entries in all glossaries.
     %
     \glsaddallunused%
     \TODO[inline,color=green!40]{This is the DRAFT version so we print all entries of all glossaries}%
