@@ -6,13 +6,13 @@
 # Build all content using a docker container or using your local LaTeX (Texlive/MacTex) installation (if you provide
 # the --local option).
 #
-# Usage: ./build.sh [--local] [--draft] [--final] [--skip-pandoc] <name of main doc without extension>
+# Usage: ./build.sh [--local] [--editors-version] [--release-version] [--skip-pandoc] <name of main doc without extension>
 #
 # This script assumes that your main doc is in a sub directory of the same name,
 # for instance "./ekg-mm/ekg-mm.tex"
 #
-# The --draft option is the default option but if you want to build both the final and the draft version of a doc
-# you need to specify both --draft and --final.
+# The --editors-version option is the default option but if you want both the release-version and the editors-version
+# of a doc you need to specify both --editors-version and --release-version.
 #
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
@@ -80,7 +80,7 @@ function runLaTex() {
   local -r documentName="$(documentName "${file}")"
   local -r version="$(version "${file}")"
   local -r jobName=$(jobName "${customerCode}" "${mode}" "${documentName}" "${version}")
-  local skipGeneratingPdf="--draftmode" # this is NOT the same as draft mode inside the doc itself
+  local skipGeneratingPdf="--draftmode" # this is NOT the same as editors-version inside the doc itself
   local latexCommand="\def\customerCode{${customerCode}}"
 
   echo "Document Version: ${version}" >&2
@@ -574,9 +574,10 @@ function runTheBuild() {
   local customerCode="$(defaultCustomerCode)"
 
   if [[ $# -lt 1 ]] ; then
-    echo "Usage: $0 [--local] [--draft] [--final] [--skip-pandoc] [--open] [--customer <customer code>] <name of main doc>"
+    echo "Usage: $0 [--local] [--editors-version] [--release-version] [--skip-pandoc] [--open] [--customer <customer code>] <name of main doc>"
     echo ""
-    echo "The --draft option is the default but if you want to both draft and final versions of the document then specify them both."
+    echo "The --editors-version option is the default but if you want to both the editors-version and the"
+    echo "release-version of the document then specify them both."
     echo "The default customer code is \"${customerCode}\"."
     return 1
   fi
@@ -593,13 +594,13 @@ function runTheBuild() {
     if [[ "$1" == "--local" ]] ; then
       useLocalLaTeX=1
       shift
-    elif [[ "$1" == "--draft" ]] ; then
+    elif [[ "$1" == "--editors-version" ]] ; then
       buildDraftVersion=1
-      draftOption="--draft"
+      draftOption="--editors-version"
       shift
-    elif [[ "$1" == "--final" ]] ; then
+    elif [[ "$1" == "--release-version" ]] ; then
       buildFinalVersion=1
-      finalOption="--final"
+      finalOption="--release-version"
       shift
     elif [[ "$1" == "--skip-pandoc" ]] ; then
       skip_pandoc=1
@@ -662,15 +663,15 @@ function runTheBuild() {
   ) || return $?
 
   if ((buildDraftVersion)) && ((buildFinalVersion)) ; then
-    runBuildForMode draft "${customerCode}" "${mainFile}" || return $?
-    runBuildForMode final "${customerCode}" "${mainFile}" || return $?
+    runBuildForMode editors-version "${customerCode}" "${mainFile}" || return $?
+    runBuildForMode release-version "${customerCode}" "${mainFile}" || return $?
     openPdf draft "${customerCode}" "${mainFile}"
   elif ((buildFinalVersion)) ; then
-    runBuildForMode final "${customerCode}" "${mainFile}" || return $?
-    openPdf final "${customerCode}" "${mainFile}"
+    runBuildForMode release-version "${customerCode}" "${mainFile}" || return $?
+    openPdf release-version "${customerCode}" "${mainFile}"
   else
-    runBuildForMode draft "${customerCode}" "${mainFile}" || return $?
-    openPdf draft "${customerCode}" "${mainFile}"
+    runBuildForMode editors-version "${customerCode}" "${mainFile}" || return $?
+    openPdf editors-version "${customerCode}" "${mainFile}"
   fi
 
   return $?

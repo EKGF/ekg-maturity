@@ -13,7 +13,7 @@ jobs:
       matrix:
         customer_code: [ 'ekgf' ]
         document_main: [ 'ekg-manifesto' ]
-        document_mode: [ 'draft', 'final' ]
+        document_mode: [ 'editors-version', 'release-version' ]
         include:
           - document_main: 'ekg-manifesto'
             folder: '0ACknmC_fYtNyUk9PVA'
