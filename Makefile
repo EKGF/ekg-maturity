@@ -15,4 +15,7 @@ ${EKG_MM_PDF}:
 
 open: ${EKG_MM_PDF}
 
+install:
+	brew install mactex
+	./latex-lib/install-as-subtree.sh
 
