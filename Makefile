@@ -15,7 +15,19 @@ ${EKG_MM_PDF}:
 
 open: ${EKG_MM_PDF}
 
-install:
+install-macos:
 	brew install mactex
+	brew install --cask skim
 	./latex-lib/install-as-subtree.sh
+	cp -R etc/fonts/*.ttf ~/Library/Fonts/
+
+install-linux:
+	./latex-lib/install-as-subtree.sh
+	cp -R etc/fonts/*.ttf /usr/local/share/fonts
+
+release-version:
+	latex_document_mode=release-version latex_document_main=ekg-mm latex_customer_code=ekgf latexmk -gg -pvc
+
+editors-version:
+	latex_document_mode=editors-version latex_document_main=ekg-mm latex_customer_code=ekgf latexmk -gg -pvc
 

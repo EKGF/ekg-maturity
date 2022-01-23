@@ -66,6 +66,18 @@ cd ekg-mm
 ./latex-lib/install-as-subtree.sh
 ----
 
+MacOS users should do this instead:
+
+[source]
+----
+cd ~ # go to your home directory or the directory where you want your git clones to be
+git clone https://github.com/EKGF/ekg-mm
+cd ekg-mm
+make install-macos
+./latex-lib/install-as-subtree.sh
+----
+
+
 == Create PDFs
 
 Various PDF documents are generated from the content in this repository.
