@@ -267,6 +267,18 @@ function main() {
 
   checkGit || return $?
 
+  local -r remote_url="$(git config --get remote.origin.url 2>/dev/null)"
+
+  echo "Remote URL is ${remote_url}" >&2
+
+  if [[ "${remote_url}" =~ "git@github.com" ]] ; then
+    echo "Your preferred method to fetch git content is SSH" >&2
+  else
+    echo "Your preferred method to fetch git content is HTTPS" >&2
+  fi
+  addGitRemote "agnos-ai" "latex-lib"
+  addGitRemote "EKGF" "ekg-manifesto"
+
   for mount_point in $(getSubTrees) ; do
     echo "sub tree: ${mount_point}" >&2
   done
