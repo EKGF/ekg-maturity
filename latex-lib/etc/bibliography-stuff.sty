@@ -10,6 +10,7 @@
 \ProvidesPackage{bibliography-stuff}[2019/12/27 agnos.ai - all bibliography related stuff]
 
 \RequirePackage{link-stuff} % according to xurl docs we need to load xurl before biblatex
+\RequirePackage{ulem} % because we use \normalem below
 
 %
 % Bibliography, all references are in the bibliography.bib file.
@@ -23,12 +24,17 @@
     backrefstyle=three,
     hyperref=true
 ]{biblatex}
+\RequirePackage{url}
 \addbibresource{../bibliography.bib}
+
+%%% --- The following two lines are what needs to be added --- %%%
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
 
 %
 % \insertPrintBibliography is a command that whitepaper-style-doc.cls is inserting at the end of the document.
 %
-\newcommand{\insertPrintBibliography}{\clearpage\printbibliography[title=References,heading=bibintoc]\label{sec:bibliography}}
+\newcommand{\insertPrintBibliography}{\clearpage\normalem\printbibliography[title=References,heading=bibintoc]\label{sec:bibliography}}
 
 \renewcommand*{\bibfont}{\small}
 \appto{\citesetup}{\tiny}
