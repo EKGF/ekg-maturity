@@ -254,6 +254,10 @@ function main() {
   checkGit || return $?
 
   for mount_point in $(getSubTrees) ; do
+    echo "sub tree: ${mount_point}" >&2
+  done
+
+  for mount_point in $(getSubTrees) ; do
     remote_name=${mount_point/mnt\//}
     remote_branch="main"
     remote_org="EKGF"
