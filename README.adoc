@@ -46,7 +46,7 @@ NOTE: See also https://www.latex-project.org/about/
 
 == Github
 
-This repository resides on Github as https://github.com/EKGF/ekg-mm.
+This repository resides on GitHub as https://github.com/EKGF/ekg-mm.
 
 === How to clone?
 
@@ -54,75 +54,53 @@ For advanced users who often contribute to this repository, it's best to
 create a so-called `git clone` of this git repository on the local drive which
 allows any given LaTeX editor to be used locally to create new content.
 
-First, install git and/or Github Desktop.
+First, install git and/or GitHub Desktop.
 
-How to create a clone of the github repo:
-
-[source]
-----
-cd ~ # go to your home directory or the directory where you want your git clones to be
-git clone https://github.com/EKGF/ekg-mm
-cd ekg-mm
-./latex-lib/install-as-subtree.sh
-----
-
-MacOS users should do this instead:
+How to create a clone of the GitHub repo:
 
 [source]
 ----
 cd ~ # go to your home directory or the directory where you want your git clones to be
 git clone https://github.com/EKGF/ekg-mm
 cd ekg-mm
-make install-macos
-./latex-lib/install-as-subtree.sh
+make install
 ----
 
-
-== Create PDFs
+=== How to create a new version of the PDFs?
 
 Various PDF documents are generated from the content in this repository.
 
-=== Prerequisites
+=== How to view generated PDFs?
 
-* Docker for Mac or Docker for Windows
-* PDF viewer that can automatically reload the generated document so that you can keep the PDF viewer open in another window
+Get a PDF viewer that can automatically reload the generated document
+so that you can keep the PDF viewer open in another window while it
+is being regenerated continuously during editing.
+
+==== Mac OS
+
 ** use Preview.app on Mac
-** or install Skim (download https://skim-app.sourceforge.io/[here])
+** or install Skim (download https://skim-app.sourceforge.io/[here] or type `make install`)
 
-=== Docker
+==== Linux
 
-* From project root, run:
+TODO
 
-* The `./build-all.sh` command will build all documents using your local Docker installation.
- It can take a long time. Use the `./build.sh` command to build individual documents.
-* The docker image is several GBs large so it will take time to download the first time.
- It will be cached on your machine's docker registry.
-* The PDF files will be generated and stored in the link:./out[./out] directory.
+==== Windows
 
-=== LaTeX compiler
-
-==== Mac OS X
-
-On Mac OS X install LaTeX as follows:
-
-----
-brew install --cask mactex-no-gui # see https://formulae.brew.sh/cask/mactex-no-gui
-sudo tlmgr texdoc # used by IntelliJ editor and other editors for documentation of packages
-sudo tlmgr update --self
-sudo tlmgr update --all
-----
+TODO
 
 == Editors
 
 Any text editor will do. Edit the `.tex` files in this repository, they're just
 ASCII files.
 
-=== IntelliJ Idea / CLion
+=== IntelliJ Idea or CLion
 
-* IntelliJ has by far the best "git merge" options of any tool out there,if you're planning to write a lot of content
- then it makes sense to install the "community edition" (free) and get used to IntelliJ.
-* https://github.com/Hannah-Sten/TeXiFy-IDEA[TeXiFy Intellij plugin] - allow you to compile the document just like
- it's a source code of any programming language.
+* IntelliJ has by far the best "git merge" options of any tool out there,
+  if you're planning to write a lot of content then it makes sense to
+  install the "community edition" (free) and get used to IntelliJ.
+* https://github.com/Hannah-Sten/TeXiFy-IDEA[TeXiFy Intellij plugin] - allows
+  you to compile the document just like it's a source code of any programming language.
 
 == Build steps
 
@@ -136,17 +114,7 @@ For instance, for the `release-version` of EKGF's `ekg-mm` document:
 
 [source]
 ----
-latex_document_mode=release-version latex_document_main=ekg-mm latex_customer_code=ekgf latexmk -gg -pvc
+make release-version
 ----
 
-The value for the variable `latex_document_main` must be one of the top level
-directories in this repository such as `ekg-mm` or `ekg-manifesto`.
 
-The value for the variable `latex_document_mode` is either `editors-version` or `release-version`.
-
-To generate a document with different styling you could use any of the names under
-the directory `customer-assets` such as `ekgf`.
-
-It is recommended to install the Adobe Acrobat Reader or preferably Skim since
-those PDF viewers support automatic refresh when you generated a new version of
-the document.

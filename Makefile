@@ -17,10 +17,11 @@ else
     OPEN_RELEASE_VERSION_TARGET := open-release-version-macos
     endif
 endif
-
+CURRENT_BRANCH := $(shell git branch --show-current)
 EKG_MM_VERSION := $(shell cat ekg-mm/VERSION)
-EKG_MM_EDITORS_VERSION := $(subst .,-,$(subst _,-,ekg-mm/ekgf-ekg-mm-editors-version-${EKG_MM_VERSION}-${USER}.pdf))
-EKG_MM_RELEASE_VERSION := $(subst .,-,$(subst _,-,ekg-mm/ekgf-ekg-mm-release-version-${EKG_MM_VERSION}-${USER}.pdf))
+PDF_FILE_NAME_SUFFIX := $(EKG_MM_VERSION)-$(USER)-$(CURRENT_BRANCH)
+EKG_MM_EDITORS_VERSION := $(subst .,-,$(subst _,-,ekg-mm/ekgf-ekg-mm-editors-version-$(PDF_FILE_NAME_SUFFIX))).pdf
+EKG_MM_RELEASE_VERSION := $(subst .,-,$(subst _,-,ekg-mm/ekgf-ekg-mm-$(PDF_FILE_NAME_SUFFIX))).pdf
 
 .PHONY: all
 all: $(EKG_MM_EDITORS_VERSION) $(EKG_MM_RELEASE_VERSION)
@@ -28,6 +29,7 @@ all: $(EKG_MM_EDITORS_VERSION) $(EKG_MM_RELEASE_VERSION)
 .PHONY: info
 info:
 	@echo "VERSION: ${EKG_MM_VERSION}"
+	@echo "Suffix: ${PDF_FILE_NAME_SUFFIX}"
 	@echo "Release Version: ${EKG_MM_RELEASE_VERSION}"
 	@echo "Editors Version: ${EKG_MM_EDITORS_VERSION}"
 
@@ -63,10 +65,16 @@ open-release-version: $(OPEN_RELEASE_VERSION_TARGET)
 
 .PHONY: install-macos
 install-macos:
-	brew install mactex
+	#brew install mactex
+	brew install --cask mactex-no-gui # see https://formulae.brew.sh/cask/mactex-no-gui
+	sudo tlmgr texdoc # used by IntelliJ editor and other editors for documentation of packages
+	sudo tlmgr update --self
+	sudo tlmgr update --all
+
 	brew install --cask skim
 	./latex-lib/install-as-subtree.sh
 	cp -R etc/fonts/*.ttf ~/Library/Fonts/
+	@echo "Exit this terminal and open a new one because your PATH has changed"
 
 .PHONY: install-linux
 install-linux:
