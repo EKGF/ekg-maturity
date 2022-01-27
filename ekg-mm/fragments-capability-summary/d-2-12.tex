@@ -1,12 +1,26 @@
 %
 % D.2.12 Knowledge Graph Federation -- Summary
 %
-\glslocalreset{ekg}\Glspl{ekg} can be built from combined data sources from a queryable service layer and \gls{api}.
-Enterprises inherently have this need as their data footprints are vast,
-and usually do not store their data in a single source instance.
+An \glslocalreset{ekg}\gls{ekg} can be seen by end-users as "one thing",
+a "holistic" collection of all connected data, similar to the web.
 
-At higher levels of \gls{ekg} platform maturity, all access to the \gls{ekg} is provided by a service layer\,---\,generally
+However, as also specified in principle \Nameref{sec:ekg-principle-distributed}, the \gls{ekg} is distributed by
+nature, assuming that it is not realistic in very large organizations or even eco-systems to have only one physical
+implementation of a fully centralized \gls{ekg}.
+That means that different parts of the \gls{ekg} are served by different installations or
+deployments owned and controlled by different parts of the organization or even other organizations.
+
+Each deployment can be configured to connect to any number of "backend" data sources
+(or destinations/sinks), some of which can be real triple stores (aka RDF Databases, quad stores or semantic graph databases)
+and some of which can be relational databases, key/value stores or any other database technologies.
+Or even just services with \glspl{api} that are used to get or store data.
+
+At higher levels of \gls{ekg} platform maturity, all access to the \gls{ekg} is provided via this service layer\,---\,generally
 called the \gls{ekg:platform}\,---\,that takes care of federation of any request to any backend data source using any technology.
+
+All that technology is however hidden for the user.
+In that sense an \gls{ekg:platform} is just a \gls{soa} layer\footnote{See \url{https://en.wikipedia.org/wiki/Service-oriented_architecture}}.
+However, it is a fully model-driven \gls{soa} layer and one that works with all other known deployments of the \gls{ekg:platform}.
 
 The federation facilities provided by the \gls{ekg:platform} are leveraging the principles of the linked data standard\cite{linked-data}
 as originally defined by Sir Tim Berners-Lee\index{tim berners-lee} in 2005.
@@ -26,8 +40,6 @@ The \gls{ekg:platform} is discoverable by other services, \glspl{ekg} or browser
 a client can also federate remote knowledge graphs not only in server backends,
 but even in browser based faceted implementations.
 
-Combining sources with federation is usually done in a select/read goal, but not create/update/delete.
-No assumptions should be made when queries are performed via federation that they are done in a transacted manner.
 An extension of federation is \iindex{virtualization}, which will be discussed in further section.
 Virtualization provides linked data transformation from a source not designed for knowledge graph
 in a materialized or ad-hoc manner using a mapping facility.

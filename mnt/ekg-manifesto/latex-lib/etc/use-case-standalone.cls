@@ -5,7 +5,7 @@
 
 \RequirePackage{xkeyval}
 \RequirePackage{import}
-\RequirePackage[\documentMode]{ifdraft}
+\RequirePackage{release-stuff}
 \RequirePackage{paper-stuff}
 \RequirePackage{font-stuff}
 \RequirePackage{color-stuff}

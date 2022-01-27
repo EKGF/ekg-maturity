@@ -1,16 +1,54 @@
 %
 % D.2.13 Knowledge Graph Virtualization -- Summary
 %
-\ifoptionfinal{
-\TODO[inline]{Create summary for \thesection}
-}{
+(Work in progress)
+
 Virtualization provides knowledge graphs the capability to source data not designed for linked data concepts
 like relational data sources.
-By the use of RDF mapping languages relational data is mapped to knowledge graphs leveraging tools that
-implement RML, R2RML, OBDA, YARRRML, and D2RQ specifications.
+
+It is one of the many techniques that are available in the arsenal of \gls{ekg} engineers to get data from a given
+source to be "connected" to all other data in the \gls{ekg}.
+
+Generally these are the options at a high level:
+
+\begin{itemize}
+    \item The \gls{ekg} itself is the authoritative source of a given dataset.
+    \begin{itemize}
+        \item The dataset is complex
+        \begin{itemize}
+            \item Use a triple store (no virtualization needed)
+        \end{itemize}
+        \item The dataset has a very large volume (> hundreds of billions of facts)
+        \begin{itemize}
+            \item Use a specialized database type and apply virtualization.
+        \end{itemize}
+    \end{itemize}
+    \item The \gls{ekg} is not the authoritative source of a given dataset.
+    \begin{itemize}
+        \item The data is relatively clean and there is either a real-time requirement or a massive volume of data.
+        \begin{itemize}
+            \item Virtualization\,---\,as provided by various vendors like \stardog and \ontotextgraphdb\,---\,may be a
+            good option because it gives an easy path from \iindex{SPARQL} to whichever backend database,
+            translating SPARQL "on-the-fly" to \iindex{SQL} or other query languages.
+        \end{itemize}
+        \item None of the above:
+        \begin{itemize}
+            \item Process all data from the given source in one batch \gls{etl} pipeline,
+            store it in a triple store controlled by the \gls{ekg:platform} and serve it from there.
+            No virtualization needed, therefore more opportunities to enhance quality in the pipeline (since
+            virtualization often comes at the price of being less flexible in terms of available options to enhance
+            data quality).
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+By the use of RDF mapping languages, relational data is mapped to semantic knowledge graphs leveraging tools that
+implement RML\index{tool!RML}, R2RML\index{tool!R2RML}, OBDA\index{tool!R2RML}, YARRRML\index{tool!YARRRML},
+D2RQ\index{tool!D2RQ} and many vendor specifications.
+
 Lossless conversion to an RDF data model can be achieved by defining terms to relational schema
 definitions of columns, type, and tables in mapping definitions.
-Depending on the tool used to performe the virtualization,
+Depending on the tool used to perform the virtualization,
 data can be materialized into RDF files and/or ad-hoc on demand.
 A knowledge graph virtualization tool that operates on relational data will execute a SQL query and
 convert the results to RDF.
@@ -31,4 +69,4 @@ Mapping can be very prescriptive to an ontology from a source system, or less.
 The less prescriptive approach is to allow data simply to be converted to an RDF model,
 later to be modified by SPARQL queries.
 The more prescriptive approach requires more diligence in model mapping.
-}
+

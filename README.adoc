@@ -13,7 +13,7 @@ link:http://creativecommons.org/licenses/by-sa/4.0/[Creative Commons Attribution
 == Where is this published?
 
 From this git repository we generate a PDF document.
-Two in fact: the "draft" version which contains annotations and "todo's" and a version without those annotations.
+Two in fact: the "editors-version" which contains annotations and "todo's" and the "release-version" without those annotations.
 
 You can find the published version at https://ekgf.org/maturitymodel.
 
@@ -65,6 +65,18 @@ git clone https://github.com/EKGF/ekg-mm
 cd ekg-mm
 ./latex-lib/install-as-subtree.sh
 ----
+
+MacOS users should do this instead:
+
+[source]
+----
+cd ~ # go to your home directory or the directory where you want your git clones to be
+git clone https://github.com/EKGF/ekg-mm
+cd ekg-mm
+make install-macos
+./latex-lib/install-as-subtree.sh
+----
+
 
 == Create PDFs
 
@@ -120,17 +132,17 @@ the `latexmk` command which is bundled with your LaTeX installation.
 To launch the default PDF viewer after each "build" if you run the `latexmk` command
 with the `-pvc` option:
 
-For instance, for EKGF's `ekg-mm` document in `final` mode:
+For instance, for the `release-version` of EKGF's `ekg-mm` document:
 
 [source]
 ----
-latex_document_mode=final latex_document_main=ekg-mm latex_customer_code=ekgf latexmk -gg -pvc
+latex_document_mode=release-version latex_document_main=ekg-mm latex_customer_code=ekgf latexmk -gg -pvc
 ----
 
 The value for the variable `latex_document_main` must be one of the top level
 directories in this repository such as `ekg-mm` or `ekg-manifesto`.
 
-The value for the variable `latex_document_mode` is either `draft` or `final`.
+The value for the variable `latex_document_mode` is either `editors-version` or `release-version`.
 
 To generate a document with different styling you could use any of the names under
 the directory `customer-assets` such as `ekgf`.

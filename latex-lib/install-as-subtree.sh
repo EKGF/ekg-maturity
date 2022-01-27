@@ -37,7 +37,18 @@ function getRemoteUrl() {
 
   local -r remote_name="$1"
 
-  "${git_bin}" remote get-url "${remote_name}" 2>/dev/null
+  echo "Fetching remote url for ${remote_name}" >&2
+
+  local -r remote_url=$("${git_bin}" remote get-url "${remote_name}" 2>/dev/null) rc=$?
+
+  if ((rc != 0)) ; then
+    echo "ERROR: Could not fetch the remote url for ${remote_name} (rc=${rc})" >&2
+    return 1
+  fi
+
+  echo "Remote url for ${remote_name} is ${remote_url}" >&2
+  echo -n "${remote_url}"
+  return 0
 }
 
 function getGithubUrl() {
@@ -77,9 +88,11 @@ function addGitRemote() {
 
   _git remote add -f "${remote_name}" "${github_url}" 2>/dev/null || true
 
-  local -r remote_url="$(getRemoteUrl "${remote_name}")"
+  local -r remote_url="$(getRemoteUrl "${remote_name}")" rc=$?
 
-  echo "Actual remote url registered: ${remote_url}"
+  ((rc == 0)) || return ${rc}
+
+  echo "Actual remote url registered: ${remote_url}" >&2
 
   checkGitRemote "${remote_org}" "${remote_name}" "${remote_url}"
 }
@@ -95,7 +108,9 @@ function addSubtree() {
   local -r mount_point="$3"
   local -r remote_branch="$4"
 
-  local -r remote_url="$(getRemoteUrl "${remote_name}")"
+  local -r remote_url="$(getRemoteUrl "${remote_name}")" rc=$?
+
+  ((rc == 0)) || return ${rc}
 
   if ! checkGitRemote "${remote_org}" "${remote_name}" "${remote_url}" ; then
     addGitRemote "${remote_org}" "${remote_name}" || return $?
@@ -229,7 +244,6 @@ function createSymlinks() {
   symlinkToDir etc || return $?
   symlinkToFile .actrc || return $?
   symlinkToFile .env || return $?
-  symlinkToFile .gitignore || return $?
   symlinkToFile .latexmkrc || return $?
   symlinkToFile act.sh || return $?
   symlinkToFile build.sh || return $?
@@ -252,6 +266,22 @@ function main() {
   local remote_branch
 
   checkGit || return $?
+
+  local -r remote_url="$(git config --get remote.origin.url 2>/dev/null)"
+
+  echo "Remote URL is ${remote_url}" >&2
+
+  if [[ "${remote_url}" =~ "git@github.com" ]] ; then
+    echo "Your preferred method to fetch git content is SSH" >&2
+  else
+    echo "Your preferred method to fetch git content is HTTPS" >&2
+  fi
+  addGitRemote "agnos-ai" "latex-lib"
+  addGitRemote "EKGF" "ekg-manifesto"
+
+  for mount_point in $(getSubTrees) ; do
+    echo "sub tree: ${mount_point}" >&2
+  done
 
   for mount_point in $(getSubTrees) ; do
     remote_name=${mount_point/mnt\//}

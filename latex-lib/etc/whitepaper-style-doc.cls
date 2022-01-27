@@ -3,12 +3,12 @@
 %
 % Can be configured via options in the calling doc like this:
 %
-% \documentclass[draft,book]{whitepaper-style-doc}
+% \documentclass[editors-version,book]{whitepaper-style-doc}
 %
-% or, if no options like 'draft' and 'book' are given, it takes
+% or, if no options like 'editors-version' and 'book' are given, it takes
 % the values from these vars (which may be set in the .latexmkrc file)
 %
-% \documentMode{draft} or \documentMode{final}
+% \documentMode{editors-version} or \documentMode{release-version}
 % \documentClass{book} or \documentClass{article}
 %
 % It also assumes that \customerCode is set (default is 'agnos-ai')
@@ -16,7 +16,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{whitepaper-style-doc}[2019/09/30 A document class for a large kg-whitepaper style doc]
 
-\PassOptionsToPackage{final}{graphicx} % this line needs to be here if we want pictures to show up in draft mode
+\PassOptionsToPackage{final}{graphicx} % this line needs to be here if we want pictures to show up in editors-version
                                        % some packages load graphicx without options so we need to pass the final
                                        % option to graphicx with PassOptionsToPackage
 
@@ -25,18 +25,18 @@
 \RequirePackage{agnos-keywords}
 \RequirePackage{text-box-stuff}
 
-\providecommand{\documentMode}{draft}
+\providecommand{\documentMode}{editors-version}
 \providecommand{\documentClass}{book}
 \providecommand{\customerCode}{agnos-ai}
 \providecommand{\documentName}{\jobname}% provide a default for \documentName
 
-\DeclareOptionX{final}{
-  \typeout{whitepaper-style-doc.cls: Building the document in FINAL mode}
-  \renewcommand{\documentMode}{final}
+\DeclareOptionX{release-version}{
+  \typeout{whitepaper-style-doc.cls: Building the release-version of the document}
+  \renewcommand{\documentMode}{release-version}
 }
-\DeclareOptionX{draft}{
-  \typeout{whitepaper-style-doc.cls: Building the document in DRAFT mode}
-  \renewcommand{\documentMode}{draft}
+\DeclareOptionX{editors-version}{
+  \typeout{whitepaper-style-doc.cls: Building the editors-version of the document}
+  \renewcommand{\documentMode}{editors-version}
 }
 \DeclareOptionX{book}{
   \typeout{whitepaper-style-doc.cls: Using document class 'book'}
@@ -50,7 +50,7 @@
 
 %\DeclareOptionX*{\PackageWarning{use-case-standalone}{`\CurrentOption' ignored}}% For unknown options
 %
-% Process the above options, passing 'draft' as a default
+% Process the above options, passing 'editors-version' as a default
 %
 \ExecuteOptionsX{}
 \ProcessOptionsX\relax
@@ -71,7 +71,7 @@
 %
 \LoadClass[\documentMode,10pt,oneside]{\documentClass}
 
-\RequirePackage[\documentMode]{ifdraft}
+\RequirePackage{release-stuff}
 \RequirePackage{paper-stuff}
 \RequirePackage{font-stuff}
 \RequirePackage{color-stuff}
@@ -93,7 +93,7 @@
 
 \RequirePackage{header-and-footer-stuff}%
 \RequirePackage{xkeyval}
-% \RequirePackage[\documentMode]{ifdraft}
+% \RequirePackage{release-stuff}
 \RequirePackage{index-stuff}
 \RequirePackage{picture-stuff}
 \RequirePackage{xstring}

@@ -113,13 +113,13 @@ while (($#)) ; do
     localOption="--local"
     echo "Running the build using local TexLive installation"
     shift
-  elif [[ "$1" == "--draft" ]] ; then
-    draftOption="--draft"
-    echo "Building the draft versions of the documents"
+  elif [[ "$1" == "--editors-version" ]] ; then
+    draftOption="--editors-version"
+    echo "Building the editors-version of the document"
     shift
-  elif [[ "$1" == "--final" ]] ; then
-    finalOption="--final"
-    echo "Building the final versions of the documents"
+  elif [[ "$1" == "--release-version" ]] ; then
+    finalOption="--release-version"
+    echo "Building the release-version of the document"
     shift
   else
     echo "ERROR: Unknown option $1"
