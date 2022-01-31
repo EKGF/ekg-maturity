@@ -22,6 +22,7 @@ EKG_MM_VERSION := $(shell cat ekg-mm/VERSION)
 PDF_FILE_NAME_SUFFIX := $(EKG_MM_VERSION)-$(USER)-$(CURRENT_BRANCH)
 EKG_MM_EDITORS_VERSION := $(subst .,-,$(subst _,-,ekg-mm/ekgf-ekg-mm-editors-version-$(PDF_FILE_NAME_SUFFIX))).pdf
 EKG_MM_RELEASE_VERSION := $(subst .,-,$(subst _,-,ekg-mm/ekgf-ekg-mm-$(PDF_FILE_NAME_SUFFIX))).pdf
+MKDOCS = $(shell asdf where python)/bin/mkdocs
 
 .PHONY: all
 all: $(EKG_MM_EDITORS_VERSION) $(EKG_MM_RELEASE_VERSION)
@@ -100,3 +101,44 @@ $(EKG_MM_EDITORS_VERSION): editors-version
 clean:
 	@echo "Removing all generated files"
 	@cd ekg-mm && rm -f *.acn *.acr *.alg *.aux *.bbl *.bcf *.blg *.fdb* *.fls *.gl? *.idx *.ilg *.ind *.ist *.log *.odn *.ol? *.pdf *.run.xml *.sync* *.tdn *.tl? *.toc
+
+.PHONY: docs-install
+docs-install:
+	brew upgrade asdf || brew install asdf
+	asdf plugin add python || true
+	asdf plugin add nodejs || true
+	asdf local python latest
+	asdf local nodejs 12.17.0
+	asdf exec python -m pip install --upgrade pip
+	pip install --upgrade mkdocs
+	pip install --upgrade mkdocs-material
+	pip install --upgrade mkdocs-localsearch
+	pip install --upgrade mdx-spanner
+	pip install --upgrade mkdocs-awesome-pages-plugin
+	pip install --upgrade mkdocs-macros-plugin
+	brew upgrade cairo || brew install cairo
+	brew upgrade freetype || brew install freetype
+	brew upgrade libffi || brew install libffi
+	brew upgrade libjpeg || brew install libjpeg
+	brew upgrade libpng || brew install libpng
+	brew upgrade zlib || brew install zlib
+
+.PHONY: docs-build
+docs-build:
+	${MKDOCS} build
+
+.PHONY: docs-serve
+docs-serve:
+	${MKDOCS} serve --livereload --strict --theme material
+
+.PHONY: docs-serve-debug
+docs-serve-debug:
+	${MKDOCS} serve --livereload --strict --theme material --verbose
+
+.PHONY: docs-deploy
+docs-deploy:
+	${MKDOCS} gh-deploy --verbose
+
+docs/index.html: $(wildcard docs/*.md) mkdocs.yml
+	${MKDOCS} build
+	open site/index.html

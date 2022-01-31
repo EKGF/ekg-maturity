@@ -1,0 +1,82 @@
+site_name: EKG/MM
+site_description: Maturity Model for the Enterprise Knowledge Graph (EKG)
+repo_name: 'ekgf/ekg-mm'
+repo_url: https://github.com/ekgf/ekg-mm
+site_url: https://maturity-model.ekgf.org
+site_dir: site
+site_author: Enterprise Knowledge Graph Foundation
+copyright: Copyright &copy; 2022 Enterprise Knowledge Graph Foundation
+edit_uri: ''
+# Navigation
+# nav: omitted, because we're using the awesome-pages plugin (https://squidfunk.github.io/mkdocs-material/plugins/awesome-pages/)
+extra_css:
+  - stylesheets/extra.css
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+  logo: assets/favicon.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  features:
+    - search.highlight
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/EKG_Foundation
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/EKGF
+    - icon: fontawesome/brands/github
+      link: https://github.com/ekgf/ekg-mm
+plugins:
+  - search:
+      prebuild_index: true
+      lang:
+        - en
+  - awesome-pages:
+      filename: .pages.yaml
+      collapse_single_pages: false
+      strict: true
+  - macros:
+      module_name: docs/main
+markdown_extensions:
+  - toc:
+      permalink: true
+  - mdx_spanner
+  - def_list
+  - abbr
+  - admonition
+  - attr_list
+  - footnotes
+  - tables
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
