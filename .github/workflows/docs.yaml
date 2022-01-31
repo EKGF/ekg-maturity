@@ -19,6 +19,12 @@ jobs:
         key: ${{ github.ref }}
         path: .cache
     -
-      run: pip install mkdocs-material
+      run: |
+        pip install --upgrade mkdocs
+        pip install --upgrade mkdocs-material
+        pip install --upgrade mkdocs-localsearch
+        pip install --upgrade mdx-spanner
+        pip install --upgrade mkdocs-awesome-pages-plugin
+        pip install --upgrade mkdocs-macros-plugin
     -
       run: mkdocs gh-deploy --force
