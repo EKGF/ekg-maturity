@@ -101,7 +101,6 @@ jobs:
       -
         name: Upload to slack step
         uses: adrey/slack-file-upload-action@master
-        if: ${{ github.ref == 'refs/heads/xxxmain' }}
         with:
           token: "${{ secrets.SLACK_TOKEN }}"
           path: "${{ steps.pdf.outputs.file }}"
@@ -120,6 +119,9 @@ jobs:
     needs: [create-pdf]
     steps:
       -
+        name: Set up Git repository
+        uses: actions/checkout@v2.4.0
+      -
         name: Download Artifacts produced by create-pdf job
         uses: actions/download-artifact@v2
         with:
@@ -127,11 +129,13 @@ jobs:
       -
         name: Show Artifacts
         run: |
-          unzip *.zip
-          ls -al *.pdf
+          pwd
+          find . -name '*.zip' || true
+          unzip *.zip  || true
+          ls -al *.pdf  || true
           mv ekgf-ekg-mm-editors-version-*.pdf docs/assets/ekgf-ekg-mm-editors-version.pdf
-          mv ekgf-ekg-mm-*.pdf docs/assets/ekgf-ekg-mm.pdf
-          ls -al docs/assets
+          mv ekgf-ekg-mm-*.pdf docs/assets/ekgf-ekg-manifesto.pdf
+          ls -al docs/assets  || true
       -
         uses: actions/cache@v2
         if: ${{ github.ref == 'refs/heads/main' }}

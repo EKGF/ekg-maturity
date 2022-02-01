@@ -66,13 +66,11 @@ open-release-version: $(OPEN_RELEASE_VERSION_TARGET)
 
 .PHONY: install-macos
 install-macos:
-	#brew install mactex
-	brew install --cask mactex-no-gui # see https://formulae.brew.sh/cask/mactex-no-gui
-	sudo tlmgr texdoc # used by IntelliJ editor and other editors for documentation of packages
+	brew list --cask -1 | grep -q mactex || brew install --cask mactex-no-gui # see https://formulae.brew.sh/cask/mactex-no-gui
 	sudo tlmgr update --self
 	sudo tlmgr update --all
-
-	brew install --cask skim
+	sudo tlmgr install texdoc # used by IntelliJ editor and other editors for documentation of packages
+	brew list --cask -1 | grep -q skim || brew install --cask skim
 	./latex-lib/install-as-subtree.sh
 	cp -R etc/fonts/*.ttf ~/Library/Fonts/
 	@echo "Exit this terminal and open a new one because your PATH has changed"
