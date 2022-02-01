@@ -129,13 +129,8 @@ jobs:
       -
         name: Show Artifacts
         run: |
-          pwd
-          find . -name '*.zip' || true
-          unzip *.zip  || true
-          ls -al *.pdf  || true
-          mv ekgf-ekg-mm-editors-version-*.pdf docs/assets/ekgf-ekg-mm-editors-version.pdf
-          mv ekgf-ekg-mm-*.pdf docs/assets/ekgf-ekg-manifesto.pdf
-          ls -al docs/assets  || true
+          mv -v ekgf-ekg-mm-editors-version-*.pdf docs/assets/ekgf-ekg-mm-editors-version.pdf
+          mv -v ekgf-ekg-mm-*.pdf docs/assets/ekgf-ekg-mm.pdf
       -
         uses: actions/cache@v2
         if: ${{ github.ref == 'refs/heads/main' }}

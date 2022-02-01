@@ -95,13 +95,14 @@ be able to answer queries such as:
 - *Which Airbnb listings are best suited for working nomads?*
 - *What are the most popular Italian restaurants in New York?*
 
+![Airbnb](image/places-experiences-events-homes-etc.png){ align=right width="400"}
+
 Answering these queries may help travelers plan their trips
 much better and, in turn, Airbnb may increase its 
 customer value proposition. 
 
 As a means to answer all these customer queries, 
-Airbnb uses a knowledge graph represented by this figure:
-![Airbnb](image/places-experiences-events-homes-etc.png){ align=right width="400"}
+Airbnb uses a knowledge graph represented by the figure on the right.
 
 As explained by Chang (2018)[^3], semantic web knowledge graphs 
 offer the ability of structuring and adding meaning to data 
@@ -113,14 +114,28 @@ knowledge graph than it is with a relational database.
 Another advantage of knowledge graphs compared to 
 relational databases is that new relationships between concepts 
 or objects can be added to a knowledge graph in a much more 
-flexible and simpler fashion. 
+flexible and simpler fashion.
+![Mexican Food](image/mexican-food-san-francisco.png){ align=right width="400"}
+![Missionn District](image/mission-district.png){ align=right width="400"}
 For instance, knowledge graphs can link the concept _surfing_ as 
 a sport to the concept surfing which Hawaii is known for. 
 So, if a customer asks Airbnb’s website for _surfing destinations_, 
-Hawaii may appear on the query results. 
+Hawaii may appear on the query results.
 This kind of associations might be far more difficult in a 
 relational environment especially if the data about them 
 come from different sources with different schemas.
 
 [^3]: [Spencer Chang: Scaling Knowledge Access and Retrieval at Airbnb](https://medium.com/airbnb-engineering/scaling-knowledge-access-and-retrieval-at-airbnb-665b6ba21e95)
 
+
+By connecting data about places, experiences, homes, restaurants, 
+etc. as illustrated here, Airbnb is able to answer
+complicated user queries[^4] such as What events, restaurants and 
+homes are located in Mission District in San Francisco? as shown 
+on the right and below.
+
+In this way, Airbnb is moving forward into becoming an end-to-end 
+travel platform that serves its customers throughout their entire 
+journeys instead of only renting listings out.
+
+[^4]: [Xiaoya Wei: Contextualizing Airbnb by Building Knowledge Graph](https://medium.com/airbnb-engineering/contextualizing-airbnb-by-building-knowledge-graph-b7077e268d5a)
