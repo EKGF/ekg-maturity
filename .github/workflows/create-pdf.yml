@@ -101,6 +101,7 @@ jobs:
       -
         name: Upload to slack step
         uses: adrey/slack-file-upload-action@master
+        if: ${{ github.ref == 'refs/heads/xxxmain' }}
         with:
           token: "${{ secrets.SLACK_TOKEN }}"
           path: "${{ steps.pdf.outputs.file }}"
@@ -113,3 +114,39 @@ jobs:
           files: ${{ steps.pdf.outputs.file }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  website:
+    runs-on: ubuntu-latest
+    needs: create-pdf
+    steps:
+      -
+        name: Download Artifacts produced by create-pdf job
+        uses: actions/download-artifact@v2
+        with:
+          name: 'public'
+      -
+        name: Show Artifacts
+        run: |
+          unzip *.zip
+          ls -al *.pdf
+          mv ekgf-ekg-mm-editors-version-*.pdf docs/assets/ekgf-ekg-mm-editors-version.pdf
+          mv ekgf-ekg-mm-*.pdf docs/assets/ekgf-ekg-mm.pdf
+          ls -al docs/assets
+      -
+        uses: actions/cache@v2
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+      -
+        name: Install all MkDocs dependencies
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          pip install --upgrade mkdocs
+          pip install --upgrade mkdocs-material
+          pip install --upgrade mkdocs-localsearch
+          pip install --upgrade mdx-spanner
+          pip install --upgrade mkdocs-awesome-pages-plugin
+          pip install --upgrade mkdocs-macros-plugin
+      -
+        run: mkdocs gh-deploy --force
