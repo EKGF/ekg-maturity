@@ -17,22 +17,30 @@ else
     OPEN_RELEASE_VERSION_TARGET := open-release-version-macos
     endif
 endif
+DOC_ORG_NAME := ekgf
+DOC_ROOT_NAME := ekg-mm
 CURRENT_BRANCH := $(shell git branch --show-current)
-EKG_MM_VERSION := $(shell cat ekg-mm/VERSION)
-PDF_FILE_NAME_SUFFIX := $(EKG_MM_VERSION)-$(USER)-$(CURRENT_BRANCH)
-EKG_MM_EDITORS_VERSION := $(subst .,-,$(subst _,-,ekg-mm/ekgf-ekg-mm-editors-version-$(PDF_FILE_NAME_SUFFIX))).pdf
-EKG_MM_RELEASE_VERSION := $(subst .,-,$(subst _,-,ekg-mm/ekgf-ekg-mm-$(PDF_FILE_NAME_SUFFIX))).pdf
+DOC_VERSION := $(shell cat $(DOC_ROOT_NAME)/VERSION)
+PDF_FILE_NAME_SUFFIX := $(subst -main,,$(DOC_VERSION)-$(USER)-$(CURRENT_BRANCH))
+PDF_EDITORS_VERSION := $(subst .,-,$(subst _,-,$(DOC_ROOT_NAME)/$(DOC_ORG_NAME)-$(DOC_ROOT_NAME)-editors-version-$(PDF_FILE_NAME_SUFFIX))).pdf
+PDF_RELEASE_VERSION := $(subst .,-,$(subst _,-,$(DOC_ROOT_NAME)/$(DOC_ORG_NAME)-$(DOC_ROOT_NAME)-$(PDF_FILE_NAME_SUFFIX))).pdf
+PDF_ASSET_EDITORS_VERSION := docs/assets/$(DOC_ORG_NAME)-$(DOC_ROOT_NAME)-editors-version.pdf
+PDF_ASSET_RELEASE_VERSION := docs/assets/$(DOC_ORG_NAME)-$(DOC_ROOT_NAME).pdf
 MKDOCS = $(shell asdf where python)/bin/mkdocs
 
 .PHONY: all
-all: $(EKG_MM_EDITORS_VERSION) $(EKG_MM_RELEASE_VERSION)
+all: $(PDF_EDITORS_VERSION) $(PDF_RELEASE_VERSION)
 
 .PHONY: info
 info:
-	@echo "VERSION: ${EKG_MM_VERSION}"
-	@echo "Suffix: ${PDF_FILE_NAME_SUFFIX}"
-	@echo "Release Version: ${EKG_MM_RELEASE_VERSION}"
-	@echo "Editors Version: ${EKG_MM_EDITORS_VERSION}"
+	@echo "MkDocs: ${MKDOCS}"
+	@echo "Document Version: ${DOC_VERSION}"
+	@echo "Git Branch: ${CURRENT_BRANCH}"
+	@echo "PDF Suffix: ${PDF_FILE_NAME_SUFFIX}"
+	@echo "Release Version: ${PDF_RELEASE_VERSION}"
+	@echo "Editor's Version: ${PDF_EDITORS_VERSION}"
+	@echo "Release Version in assets directory: ${PDF_ASSET_RELEASE_VERSION}"
+	@echo "Editor's Version in assets directory: ${PDF_ASSET_EDITORS_VERSION}"
 
 .PHONY: open-editors-version-windows
 open-editors-version-windows:
@@ -43,8 +51,8 @@ open-editors-version-linux:
 	@echo "We did not implement this yet for Linux"
 
 .PHONY: open-editors-version-macos
-open-editors-version-macos: $(EKG_MM_EDITORS_VERSION)
-	skim $(EKG_MM_EDITORS_VERSION)
+open-editors-version-macos: $(PDF_EDITORS_VERSION)
+	skim $(PDF_EDITORS_VERSION)
 
 .PHONY: open-release-version-windows
 open-release-version-windows:
@@ -55,8 +63,8 @@ open-release-version-linux:
 	@echo "We did not implement this yet for Linux"
 
 .PHONY: open-release-version-macos
-open-release-version-macos: $(EKG_MM_RELEASE_VERSION)
-	skim $(EKG_MM_RELEASE_VERSION)
+open-release-version-macos: $(PDF_RELEASE_VERSION)
+	skim $(PDF_RELEASE_VERSION)
 
 .PHONY: open-editors-version
 open-editors-version: $(OPEN_EDITORS_VERSION_TARGET)
@@ -84,21 +92,21 @@ install-linux:
 install: $(INSTALL_TARGET)
 
 .PHONY: release-version
-release-version:
-	latex_document_mode=release-version latex_document_main=ekg-mm latex_customer_code=ekgf latexmk -gg -pvc
+release-version: $(PDF_RELEASE_VERSION)
 
-$(EKG_MM_RELEASE_VERSION): release-version
+$(PDF_RELEASE_VERSION): $(wildcard $(DOC_ROOT_NAME)/**/*.tex)
+	latex_document_mode=release-version latex_document_main=$(DOC_ROOT_NAME) latex_customer_code=$(DOC_ORG_NAME) latexmk -gg
 
 .PHONY: editors-version
-editors-version:
-	latex_document_mode=editors-version latex_document_main=ekg-mm latex_customer_code=ekgf latexmk -gg -pvc
+editors-version: $(PDF_EDITORS_VERSION)
 
-$(EKG_MM_EDITORS_VERSION): editors-version
+$(PDF_EDITORS_VERSION): $(wildcard $(DOC_ROOT_NAME)/**/*.tex)
+	latex_document_mode=editors-version latex_document_main=$(DOC_ROOT_NAME) latex_customer_code=$(DOC_ORG_NAME) latexmk -gg
 
 .PHONY: clean
 clean:
 	@echo "Removing all generated files"
-	@cd ekg-mm && rm -f *.acn *.acr *.alg *.aux *.bbl *.bcf *.blg *.fdb* *.fls *.gl? *.idx *.ilg *.ind *.ist *.log *.odn *.ol? *.pdf *.run.xml *.sync* *.tdn *.tl? *.toc
+	@cd $(DOC_ROOT_NAME) && rm -f *.acn *.acr *.alg *.aux *.bbl *.bcf *.blg *.fdb* *.fls *.gl? *.idx *.ilg *.ind *.ist *.log *.odn *.ol? *.pdf *.run.xml *.sync* *.tdn *.tl? *.toc
 
 .PHONY: docs-install
 docs-install:
@@ -123,20 +131,54 @@ docs-install:
 
 .PHONY: docs-build
 docs-build:
-	${MKDOCS} build
+	$(MKDOCS) build
 
 .PHONY: docs-serve
-docs-serve:
-	${MKDOCS} serve --livereload --strict --theme material
+docs-serve: docs-assets
+	$(MKDOCS) serve --livereload --strict --watch-theme
 
 .PHONY: docs-serve-debug
 docs-serve-debug:
-	${MKDOCS} serve --livereload --strict --theme material --verbose
+	$(MKDOCS) serve --livereload --strict --watch-theme --verbose
 
 .PHONY: docs-deploy
 docs-deploy:
-	${MKDOCS} gh-deploy --verbose
+	$(MKDOCS) gh-deploy --verbose
 
 docs/index.html: $(wildcard docs/*.md) mkdocs.yml
-	${MKDOCS} build
+	$(MKDOCS) build
 	open site/index.html
+
+.PHONY: docs-assets
+docs-assets: $(PDF_ASSET_EDITORS_VERSION) $(PDF_ASSET_RELEASE_VERSION)
+
+.PHONY: docs-sync-from
+docs-sync-from: docs-sync-from-ekg-mm docs-sync-from-ekg-manifesto
+
+.PHONY: docs-sync-to
+docs-sync-to: docs-sync-to-ekg-mm docs-sync-to-ekg-manifesto
+
+.PHONY: docs-sync
+docs-sync: docs-sync-from docs-sync-to
+
+.PHONY: docs-sync-from-ekg-mm
+docs-sync-from-ekg-mm: $(wildcard ../ekg-mm/docs-overrides/*)
+	rsync --checksum --recursive --update --itemize-changes --verbose ../ekg-mm/docs-overrides/ docs-overrides/
+
+.PHONY: docs-sync-to-ekg-mm
+docs-sync-to-ekg-mm: $(wildcard ../ekg-mm/Makefile)
+	cd ../ekg-mm && make docs-sync-from
+
+.PHONY: docs-sync-from-ekg-manifesto
+docs-sync-from-ekg-manifesto: $(wildcard ../ekg-manifesto/docs-overrides/*)
+	rsync --checksum --recursive --update --itemize-changes --verbose ../ekg-manifesto/docs-overrides/ docs-overrides/
+
+.PHONY: docs-sync-to-ekg-manifesto
+docs-sync-to-ekg-manifesto: $(wildcard ../ekg-manifesto/Makefile)
+	cd ../ekg-manifesto && make docs-sync-from
+
+$(PDF_ASSET_EDITORS_VERSION): $(PDF_EDITORS_VERSION)
+	cp -v $< $@
+
+$(PDF_ASSET_RELEASE_VERSION): $(PDF_RELEASE_VERSION)
+	cp -v $< $@

@@ -14,9 +14,10 @@ extra_css:
 theme:
   name: material
   language: en
+  custom_dir: docs-overrides/
   icon:
+    logo: ekgf-logo-symbol
     repo: fontawesome/brands/github
-  logo: assets/favicon.png
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -40,6 +41,11 @@ theme:
     - navigation.indexes
 extra:
   generator: false
+  giscus:
+    repo_id: 'MDEwOlJlcG9zaXRvcnkzMTk3MTE4MzM='
+    category:
+      name: 'General'
+      id: 'DIC_kwDOEw5qWc4CA98b'
   social:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/EKG_Foundation
