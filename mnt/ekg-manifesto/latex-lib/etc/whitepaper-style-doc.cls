@@ -3,12 +3,12 @@
 %
 % Can be configured via options in the calling doc like this:
 %
-% \documentclass[draft,book]{whitepaper-style-doc}
+% \documentclass[editors-version,book]{whitepaper-style-doc}
 %
-% or, if no options like 'draft' and 'book' are given, it takes
+% or, if no options like 'editors-version' and 'book' are given, it takes
 % the values from these vars (which may be set in the .latexmkrc file)
 %
-% \documentMode{draft} or \documentMode{final}
+% \documentMode{editors-version} or \documentMode{release-version}
 % \documentClass{book} or \documentClass{article}
 %
 % It also assumes that \customerCode is set (default is 'agnos-ai')
@@ -25,16 +25,16 @@
 \RequirePackage{agnos-keywords}
 \RequirePackage{text-box-stuff}
 
-\providecommand{\documentMode}{draft}
+\providecommand{\documentMode}{editors-version}
 \providecommand{\documentClass}{book}
 \providecommand{\customerCode}{agnos-ai}
 \providecommand{\documentName}{\jobname}% provide a default for \documentName
 
-\DeclareOptionX{final}{
+\DeclareOptionX{release-version}{
   \typeout{whitepaper-style-doc.cls: Building the release-version of the document}
   \renewcommand{\documentMode}{release-version}
 }
-\DeclareOptionX{draft}{
+\DeclareOptionX{editors-version}{
   \typeout{whitepaper-style-doc.cls: Building the editors-version of the document}
   \renewcommand{\documentMode}{editors-version}
 }
@@ -50,7 +50,7 @@
 
 %\DeclareOptionX*{\PackageWarning{use-case-standalone}{`\CurrentOption' ignored}}% For unknown options
 %
-% Process the above options, passing 'draft' as a default
+% Process the above options, passing 'editors-version' as a default
 %
 \ExecuteOptionsX{}
 \ProcessOptionsX\relax
@@ -110,8 +110,10 @@
 % Quotations
 %
 \newcommand{\somequote}[3]{%
-  \begin{quote}\itshape\large\enquote{#1}\end{quote}%
-  \begin{flushright}\footnotesize- #2\footnote{\url{#3}}\end{flushright}%
+  \begin{quote}\itshape\large\enquote{#1\xspace}\end{quote}%
+  \begin{flushright}%
+    - #2\footnote{\url{#3}}%
+  \end{flushright}%
 }
 \newcommand{\citequote}[2]{%
   \begin{quote}\itshape\large\enquote{#1}\end{quote}%

@@ -11,8 +11,8 @@
 # This script assumes that your main doc is in a sub directory of the same name,
 # for instance "./ekg-mm/ekg-mm.tex"
 #
-# The --editors-version option is the default option but if you want both the release-version and the editors-version
-# of a doc you need to specify both --editors-version and --release-version.
+# The --editors-version option is the default option but if you want to build both the release-version and
+# the editors-version of a doc you need to specify both --editors-version and --release-version.
 #
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
@@ -41,7 +41,7 @@ function jobName() {
 
   echo -n "${customerCode}-${documentName}"
 
-  [[ "${mode}" == "draft" ]] && echo -n "-draft"
+  [[ "${mode}" == "editors-version" ]] && echo -n "-editors-version"
 
   echo -n "-${version}"
 }
@@ -576,8 +576,8 @@ function runTheBuild() {
   if [[ $# -lt 1 ]] ; then
     echo "Usage: $0 [--local] [--editors-version] [--release-version] [--skip-pandoc] [--open] [--customer <customer code>] <name of main doc>"
     echo ""
-    echo "The --editors-version option is the default but if you want to both the editors-version and the"
-    echo "release-version of the document then specify them both."
+    echo "The --editors-version option is the default but if you want to both the editors-version and the release-version"
+    echo "of the document then specify them both."
     echo "The default customer code is \"${customerCode}\"."
     return 1
   fi
@@ -665,7 +665,7 @@ function runTheBuild() {
   if ((buildDraftVersion)) && ((buildFinalVersion)) ; then
     runBuildForMode editors-version "${customerCode}" "${mainFile}" || return $?
     runBuildForMode release-version "${customerCode}" "${mainFile}" || return $?
-    openPdf draft "${customerCode}" "${mainFile}"
+    openPdf editors-version "${customerCode}" "${mainFile}"
   elif ((buildFinalVersion)) ; then
     runBuildForMode release-version "${customerCode}" "${mainFile}" || return $?
     openPdf release-version "${customerCode}" "${mainFile}"
@@ -768,9 +768,9 @@ function runInDocker() {
   #
   if ((openThePdf)) ; then
     if ((buildDraftVersion)) ; then
-      open "${SCRIPT_DIR}/out/$(pdfOutputFileName draft "${customerCode}" "${mainFile}")"
+      open "${SCRIPT_DIR}/out/$(pdfOutputFileName editors-version "${customerCode}" "${mainFile}")"
     else
-      open "${SCRIPT_DIR}/out/$(pdfOutputFileName final "${customerCode}" "${mainFile}")"
+      open "${SCRIPT_DIR}/out/$(pdfOutputFileName release-version "${customerCode}" "${mainFile}")"
     fi
   fi
   return ${rc}
