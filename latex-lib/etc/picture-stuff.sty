@@ -32,7 +32,7 @@
 %
 \newcommand*{\bannerAcrossWholePage}[2]{%
   \mbox{} \par%
-  \ifoptionfinal{% release-mode without TODOs so different right margin
+  \ifoptionfinal{% release-version without TODOs so different right margin
     \noindent\centerimg[width=\dimexpr\paperwidth+3pt\relax,height=#1]{#2}%
   }{% editors-version
     \noindent\centerimg[width=\dimexpr\paperwidth+17pt\relax,height=#1]{#2}%
@@ -41,7 +41,7 @@
 
 \newcommand*{\bannerAcrossWholePageScaleByWidth}[1]{%
   \mbox{} \par%
-  \ifoptionfinal{% release-mode without TODOs so different right margin
+  \ifoptionfinal{% release-version without TODOs so different right margin
     \noindent\centerimg[width=\dimexpr\paperwidth+3pt\relax]{#1}%
   }{% editors-version
     \noindent\centerimg[width=\dimexpr\paperwidth+17pt\relax]{#1}%
