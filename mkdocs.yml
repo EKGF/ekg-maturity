@@ -1,7 +1,7 @@
 site_name: EKG/MM
 site_description: Maturity Model for the Enterprise Knowledge Graph (EKG)
 repo_name: 'ekgf/ekg-mm'
-repo_url: https://github.com/ekgf/ekg-mm
+repo_url: https://github.com/EKGF/ekg-mm
 site_url: https://maturity-model.ekgf.org
 site_dir: site
 site_author: Enterprise Knowledge Graph Foundation
@@ -21,11 +21,15 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: indigo
+      accent: light-blue
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: indigo
+      accent: deep orange
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
@@ -52,10 +56,14 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/EKGF
     - icon: fontawesome/brands/github
-      link: https://github.com/ekgf/ekg-mm
+      link: https://github.com/EKGF/ekg-mm
+extra_javascript:
+  - "javascript/images_dark.js"
+  - "javascript/refresh_on_toggle_dark_light.js"
 plugins:
+  - include-markdown
+  - git-revision-date
   - search:
-      prebuild_index: true
       lang:
         - en
   - awesome-pages:
@@ -64,6 +72,23 @@ plugins:
       strict: true
   - macros:
       module_name: docs/main
+  - build_plantuml:
+      render: "server" # or "local" for local rendering
+      bin_path: "/usr/local/bin/plantuml" # ignored when render: server
+      server: "http://www.plantuml.com/plantuml" # offical plantuml server
+      output_format: "svg" # or "png"
+      diagram_root: "docs/diagrams" # should reside under docs_dir
+      output_folder: "out"
+      input_folder: "src"
+      input_extensions: "" # comma separated list of extensions to parse, by default every file is parsed
+      theme_enabled: true
+      theme_folder: "include/themes"
+      theme_light: "light.puml"
+      theme_dark: "dark.puml"
+#  - exclude:
+#      glob:
+#        - diagrams/include/C4/*
+
 markdown_extensions:
   - toc:
       permalink: true
@@ -71,17 +96,20 @@ markdown_extensions:
   - def_list
   - abbr
   - admonition
+  - mdx_emdash
   - attr_list
   - footnotes
   - tables
   - md_in_html
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
+  - pymdownx.smartsymbols
   - pymdownx.snippets:
       check_paths: true
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:

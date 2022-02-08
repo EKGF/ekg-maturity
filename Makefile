@@ -4,21 +4,28 @@ ifeq ($(OS),Windows_NT)
     INSTALL_TARGET := install-windows
     OPEN_EDITORS_VERSION_TARGET := open-editors-version-windows
     OPEN_RELEASE_VERSION_TARGET := open-release-version-windows
+    MKDOCS := mkdocs
 else
     YOUR_OS := $(shell sh -c 'uname 2>/dev/null || echo Unknown')
-    ifeq ($(YOUR_OS), Linux)
+ifeq ($(YOUR_OS), Linux)
     INSTALL_TARGET := install-linux
     OPEN_EDITORS_VERSION_TARGET := open-editors-version-linux
     OPEN_RELEASE_VERSION_TARGET := open-release-version-linux
-    endif
-    ifeq ($(YOUR_OS), Darwin)
+ifneq ($(wildcard /home/runner/.*),)
+	MKDOCS := mkdocs
+else
+	MKDOCS := $(shell asdf where python)/bin/mkdocs
+endif
+endif
+ifeq ($(YOUR_OS), Darwin)
     INSTALL_TARGET := install-macos
     OPEN_EDITORS_VERSION_TARGET := open-editors-version-macos
     OPEN_RELEASE_VERSION_TARGET := open-release-version-macos
-    endif
+	MKDOCS := $(shell asdf where python)/bin/mkdocs
+endif
 endif
 DOC_ORG_NAME := ekgf
-DOC_ROOT_NAME := ekg-mm
+DOC_ROOT_NAME := $(shell basename `git rev-parse --show-toplevel`)
 CURRENT_BRANCH := $(shell git branch --show-current)
 DOC_VERSION := $(shell cat $(DOC_ROOT_NAME)/VERSION)
 PDF_FILE_NAME_SUFFIX := $(subst -main,,$(DOC_VERSION)-$(USER)-$(CURRENT_BRANCH))
@@ -26,10 +33,15 @@ PDF_EDITORS_VERSION := $(subst .,-,$(subst _,-,$(DOC_ROOT_NAME)/$(DOC_ORG_NAME)-
 PDF_RELEASE_VERSION := $(subst .,-,$(subst _,-,$(DOC_ROOT_NAME)/$(DOC_ORG_NAME)-$(DOC_ROOT_NAME)-$(PDF_FILE_NAME_SUFFIX))).pdf
 PDF_ASSET_EDITORS_VERSION := docs/assets/$(DOC_ORG_NAME)-$(DOC_ROOT_NAME)-editors-version.pdf
 PDF_ASSET_RELEASE_VERSION := docs/assets/$(DOC_ORG_NAME)-$(DOC_ROOT_NAME).pdf
-MKDOCS = $(shell asdf where python)/bin/mkdocs
+PAT_MKDOCS_INSIDERS := $(shell cat ../.secrets/PAT_MKDOCS_INSIDERS.txt 2>/dev/null)
+ifeq ($(PAT_MKDOCS_INSIDERS),)
+	MKDOCS_CONFIG_FILE := 'mkdocs.outsiders.yml'
+else
+	MKDOCS_CONFIG_FILE := 'mkdocs.yml'
+endif
 
 .PHONY: all
-all: $(PDF_EDITORS_VERSION) $(PDF_RELEASE_VERSION)
+all: docs-build
 
 .PHONY: info
 info:
@@ -108,46 +120,102 @@ clean:
 	@echo "Removing all generated files"
 	@cd $(DOC_ROOT_NAME) && rm -f *.acn *.acr *.alg *.aux *.bbl *.bcf *.blg *.fdb* *.fls *.gl? *.idx *.ilg *.ind *.ist *.log *.odn *.ol? *.pdf *.run.xml *.sync* *.tdn *.tl? *.toc
 
+.PHONY: install
+install: docs-install
+
 .PHONY: docs-install
-docs-install:
-	brew upgrade asdf || brew install asdf
-	asdf plugin add python || true
-	asdf plugin add nodejs || true
-	asdf local python latest
-	asdf local nodejs 12.17.0
-	asdf exec python -m pip install --upgrade pip
-	pip install --upgrade mkdocs
-	pip install --upgrade mkdocs-material
-	pip install --upgrade mkdocs-localsearch
-	pip install --upgrade mdx-spanner
-	pip install --upgrade mkdocs-awesome-pages-plugin
-	pip install --upgrade mkdocs-macros-plugin
+docs-install: docs-install-brew-packages docs-install-python-packages
+
+.PHONY: docs-install-brew-packages
+docs-install-brew-packages: docs-install-brew
+	@echo "Install packages via HomeBrew:"
 	brew upgrade cairo || brew install cairo
 	brew upgrade freetype || brew install freetype
 	brew upgrade libffi || brew install libffi
 	brew upgrade libjpeg || brew install libjpeg
 	brew upgrade libpng || brew install libpng
 	brew upgrade zlib || brew install zlib
+	brew upgrade plantuml || brew install plantuml
+
+.PHONY: docs-install-brew
+ifeq ($(YOUR_OS), Linux)
+docs-install-brew: docs-install-brew-linux
+endif
+ifeq ($(YOUR_OS), Windows)
+docs-install-brew: docs-install-brew-windows
+endif
+ifeq ($(YOUR_OS), Darwin)
+docs-install-brew: docs-install-brew-macos
+endif
+
+.PHONY: docs-install-brew-linux
+docs-install-brew-linux:
+	@if ! command -v brew >/dev/null 2>&1 ; then echo "Install HomeBrew" ; exit 1 ; fi
+
+.PHONY: docs-install-brew-windows
+docs-install-brew-windows:
+	@if ! command -v brew >/dev/null 2>&1 ; then echo "Install HomeBrew" ; exit 1 ; fi
+
+.PHONY: docs-install-brew-macos
+docs-install-brew-macos:
+	@if ! command -v brew >/dev/null 2>&1 ; then echo "Install HomeBrew" ; exit 1 ; fi
+
+.PHONY: docs-install-asdf
+docs-install-asdf: docs-install-brew
+	@echo "Install the asdf package manager:"
+	brew upgrade asdf || brew install asdf
+	asdf plugin add python || true
+	asdf plugin add nodejs || true
+
+.PHONY: docs-install-python
+docs-install-python: docs-install-asdf
+	@echo "Install packages via asdf:"
+	asdf install
+	asdf exec python -m pip install --upgrade pip
+
+.PHONY: docs-install-python-packages
+ifneq ($(wildcard /home/runner/.*),)
+docs-install-python-packages:
+else
+docs-install-python-packages: docs-install-python
+endif
+	@echo "Install packages via pip:"
+	asdf exec python -m pip install --upgrade pip
+	asdf exec python -m pip install --upgrade wheel
+#	asdf exec python -m pip install --upgrade plantuml-markdown
+	asdf exec python -m pip install --upgrade mkdocs-build-plantuml-plugin
+	asdf exec python -m pip install --upgrade mkdocs
+	asdf exec python -m pip install --upgrade mkdocs-localsearch
+	asdf exec python -m pip install --upgrade mkdocs-include-markdown-plugin
+	asdf exec python -m pip install --upgrade mkdocs-awesome-pages-plugin
+	asdf exec python -m pip install --upgrade mkdocs-macros-plugin
+	asdf exec python -m pip install --upgrade mkdocs-mermaid2-plugin
+	asdf exec python -m pip install --upgrade mkdocs-git-revision-date-plugin
+	asdf exec python -m pip install --upgrade mkdocs-minify-plugin
+	asdf exec python -m pip install --upgrade mkdocs-redirects
+	asdf exec python -m pip install --upgrade mdx-spanner
+	asdf exec python -m pip install --upgrade markdown-emdash
+ifeq ($(PAT_MKDOCS_INSIDERS),)
+	asdf exec python -m pip install --upgrade --force-reinstall mkdocs-material
+else
+	asdf exec python -m pip install --upgrade --force-reinstall git+https://$(PAT_MKDOCS_INSIDERS)@github.com/squidfunk/mkdocs-material-insiders.git
+endif
 
 .PHONY: docs-build
 docs-build:
-	$(MKDOCS) build
+	$(MKDOCS) build --config-file $(MKDOCS_CONFIG_FILE)
 
 .PHONY: docs-serve
 docs-serve: docs-assets
-	$(MKDOCS) serve --livereload --strict --watch-theme
+	$(MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict
 
 .PHONY: docs-serve-debug
 docs-serve-debug:
-	$(MKDOCS) serve --livereload --strict --watch-theme --verbose
+	$(MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict --verbose
 
 .PHONY: docs-deploy
 docs-deploy:
-	$(MKDOCS) gh-deploy --verbose
-
-docs/index.html: $(wildcard docs/*.md) mkdocs.yml
-	$(MKDOCS) build
-	open site/index.html
+	$(MKDOCS) gh-deploy --config-file $(MKDOCS_CONFIG_FILE) --verbose
 
 .PHONY: docs-assets
 docs-assets: $(PDF_ASSET_EDITORS_VERSION) $(PDF_ASSET_RELEASE_VERSION)
