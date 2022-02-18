@@ -1,4 +1,5 @@
 [//]: # (this file is not placed in the ./docs directory to avoid MkDocs warnings)
+*[ERP]: Enterprise Resource Planning
 *[HTML]: Hyper Text Markup Language, a W3C standard
 *[W3C]: World Wide Web Consortium
 *[BDD]: Behavior Driven Development

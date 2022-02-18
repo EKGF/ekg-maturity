@@ -123,6 +123,7 @@ function replaceStuff() {
   replace 's@\\iindex{\(.*\)}@\1@g'
   replace 's@\\href{\([^}]*\)}{\([^}]*\)}@[\2](\1)@g'
   replace 's@\\textit{\([^}]*\)}@_\1_@g'
+  replace 's@\\textbf{\([^}]*\)}@**\1**@g'
   replace 's@\\myuline{\([^}]*\)}@<ins>\1</ins>@g'
   replace 's@\\enquote{\([^}]*\)}@"\1"@g'
   replace 's@\\texttt{\([^}]*\)}@\`\1\`@g'
