@@ -15,6 +15,9 @@ theme:
   name: material
   language: en
   custom_dir: docs-overrides/
+  font:
+    text: Roboto
+    code: Roboto Mono
   icon:
     logo: ekgf-logo-symbol
     repo: fontawesome/brands/github
@@ -24,14 +27,18 @@ theme:
       primary: indigo
       accent: light-blue
       toggle:
-        icon: material/toggle-switch-off-outline
+#        icon: material/toggle-switch-off-outline
+#        icon: material/lightbulb-outline
+        icon: material/weather-sunny
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: indigo
       accent: deep orange
       toggle:
-        icon: material/toggle-switch
+#        icon: material/toggle-switch
+#        icon: material/lightbulb
+        icon: material/weather-night
         name: Switch to light mode
   features:
     - search.highlight
@@ -40,9 +47,11 @@ theme:
     - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.expand
+#   - navigation.sections
+#    - navigation.expand
     - navigation.indexes
+    - toc.follow
+    - content.code.annotate
 extra:
   generator: false
   giscus:
@@ -57,21 +66,28 @@ extra:
       link: https://www.linkedin.com/company/EKGF
     - icon: fontawesome/brands/github
       link: https://github.com/EKGF/ekg-mm
+  analytics:
+    provider: google
+    property: G-E2T299FBZG
 extra_javascript:
   - "javascript/images_dark.js"
   - "javascript/refresh_on_toggle_dark_light.js"
+  - "https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/mkdocs-graphviz.js"
 plugins:
-  - include-markdown
-  - git-revision-date
   - search:
       lang:
         - en
-  - awesome-pages:
-      filename: .pages.yaml
-      collapse_single_pages: false
-      strict: true
-  - macros:
-      module_name: docs/main
+  - include-markdown
+  - git-revision-date
+  - exclude:
+      glob:
+        - "*.tmp"
+        - "*.sparql"
+        - "*.gz"
+        - diagrams/src/*
+      regex:
+        - '.*\.(tmp|bin|tar)$'
+        - '_.*\.md$'
   - build_plantuml:
       render: "server" # or "local" for local rendering
       bin_path: "/usr/local/bin/plantuml" # ignored when render: server
@@ -85,9 +101,12 @@ plugins:
       theme_folder: "include/themes"
       theme_light: "light.puml"
       theme_dark: "dark.puml"
-#  - exclude:
-#      glob:
-#        - diagrams/include/C4/*
+  - awesome-pages:
+      filename: .pages.yaml
+      collapse_single_pages: false
+      strict: true
+  - macros:
+      module_name: docs/main
 
 markdown_extensions:
   - toc:
@@ -101,10 +120,21 @@ markdown_extensions:
   - footnotes
   - tables
   - md_in_html
+  - mkdocs_graphviz
   - pymdownx.smartsymbols
   - pymdownx.snippets:
+      base_path:
+        - .
+        - docs
       check_paths: true
+      auto_append:
+        - abbreviations.md
   - pymdownx.details
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -114,3 +144,4 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.tilde
