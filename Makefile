@@ -13,23 +13,23 @@ ifeq ($(YOUR_OS), Linux)
     OPEN_EDITORS_VERSION_TARGET := open-editors-version-linux
     OPEN_RELEASE_VERSION_TARGET := open-release-version-linux
 ifneq ($(wildcard /home/runner/.*),) # this means we're running in Github Actions
-		MKDOCS := mkdocs
-		PIP := pip
+	MKDOCS := mkdocs
+	PIP := pip
 else
-		MKDOCS := $(shell asdf where python)/bin/mkdocs
-		PIP := $(shell asdf where python)/bin/python -m pip
+	MKDOCS := $(shell asdf where python)/bin/mkdocs
+	PIP := $(shell asdf where python)/bin/python -m pip
 endif
 endif
 ifeq ($(YOUR_OS), Darwin)
     INSTALL_TARGET := install-macos
     OPEN_EDITORS_VERSION_TARGET := open-editors-version-macos
     OPEN_RELEASE_VERSION_TARGET := open-release-version-macos
-		MKDOCS := $(shell asdf where python)/bin/mkdocs
-		PIP := $(shell asdf where python)/bin/python -m pip
+	MKDOCS := $(shell asdf where python)/bin/mkdocs
+	PIP := $(shell asdf where python)/bin/python -m pip
 endif
 endif
 DOC_ORG_NAME := ekgf
-DOC_ROOT_NAME := $(shell basename `git rev-parse --show-toplevel`)
+DOC_ROOT_NAME := $(shell cat .doc-name-root)
 CURRENT_BRANCH := $(shell git branch --show-current)
 DOC_VERSION := $(shell cat $(DOC_ROOT_NAME)/VERSION)
 PDF_FILE_NAME_SUFFIX := $(subst -main,,$(DOC_VERSION)-$(USER)-$(CURRENT_BRANCH))
