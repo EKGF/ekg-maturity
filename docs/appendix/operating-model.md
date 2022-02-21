@@ -1,3 +1,10 @@
+---
+title: Operating Model
+summary: Operating Model
+authors:
+  - Carlos Tubbax
+some_url: https://maturity-model.ekgf.org/appendix/operating-model/
+---
 # Business Operating Model
 
 !!! note "Ross, Weill, Robertson (2006)"
@@ -56,26 +63,26 @@ table~\ref{tab:ekg-mm-business-operating-model-quadrants}.
 
 <figure markdown>
 
-| &#8203                                           | &#8203                                    | **Coordination**                                           | **Unification**                                                                                |
-|--------------------------------------------|-------------------------------------|------------------------------------------------------------|------------------------------------------------------------------------------------------------|
-| <span>**Business Process Integration**</span> | <span>**High**</span>                | Shared customers, products or suppliers                    | Customers or suppliers may be local or global                                                  |
-|                                            |                                     | Impact on other business unit transactions                 | Globally integrated business processes often with support of enterprise systems                |
-|                                            |                                     | Operationally unique business units or functions           | Business units with similar or overlapping responsibilities                                    |
-|                                            |                                     | Autonomous business management                             | Centralized management often applying functional/process/business unit matrix                  |
-|                                            |                                     | Business unit control over process design                  | High level process owners design standardized processes                                        |
-|                                            |                                     | Shared customer/supplier data                              | Centrally mandated database                                                                    |
-|                                            |                                     | Consensus process for design of IT infrastructure services | IT decisions made centrally                                                                    |
-|                                            | _  _                                | IT application decisions made in business units            |                                                                                                |
-|                                            | <span>**Low**</span>  | **Diversification**                                        | **Replication**                                                                                |
-|                                            |                                     | Few if any shared customers or suppliers                   | Few if any shared customers or suppliers                                                       |
-|                                            |                                     | Independent transactions                                   | Independent transactions are aggregated at high level                                          |
-|                                            |                                     | Operationally unique business units                        | Operationally similar business units                                                           ||
-|                                            |                                     | Autonomous business management                             | Autonomous business unit leaders with limited direction over processes                         |
-|                                            |                                     | Business unit control over process design                  | Centralized control over business process design                                               |
-|                                            |                                     | Few data standards across business units                   | Standardized data definitions, but data locally owned with some aggregation at corporate level |
-| _ _                                        | _ _                                 | Most IT decisions made within business units               | Centrally mandated IT services                                                                 |
-|                                            |                                     | **Low**                                                    | **High**                                                                                       |
-|                                            |  | **Business Process Standardization** | ~~                                                                                             |
+| &#8203                                        | &#8203                | **Coordination**                                           | **Unification**                                                                                |
+|-----------------------------------------------|-----------------------|------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| <span>**Business Process Integration**</span> | <span>**High**</span> | Shared customers, products or suppliers                    | Customers or suppliers may be local or global                                                  |
+|                                               |                       | Impact on other business unit transactions                 | Globally integrated business processes often with support of enterprise systems                |
+|                                               |                       | Operationally unique business units or functions           | Business units with similar or overlapping responsibilities                                    |
+|                                               |                       | Autonomous business management                             | Centralized management often applying functional/process/business unit matrix                  |
+|                                               |                       | Business unit control over process design                  | High level process owners design standardized processes                                        |
+|                                               |                       | Shared customer/supplier data                              | Centrally mandated database                                                                    |
+|                                               |                       | Consensus process for design of IT infrastructure services | IT decisions made centrally                                                                    |
+|                                               | _  _                  | IT application decisions made in business units            |                                                                                                |
+|                                               | <span>**Low**</span>  | **Diversification**                                        | **Replication**                                                                                |
+|                                               |                       | Few if any shared customers or suppliers                   | Few if any shared customers or suppliers                                                       |
+|                                               |                       | Independent transactions                                   | Independent transactions are aggregated at high level                                          |
+|                                               |                       | Operationally unique business units                        | Operationally similar business units                                                           ||
+|                                               |                       | Autonomous business management                             | Autonomous business unit leaders with limited direction over processes                         |
+|                                               |                       | Business unit control over process design                  | Centralized control over business process design                                               |
+|                                               |                       | Few data standards across business units                   | Standardized data definitions, but data locally owned with some aggregation at corporate level |
+| _ _                                           | _ _                   | Most IT decisions made within business units               | Centrally mandated IT services                                                                 |
+|                                               |                       | **Low**                                                    | **High**                                                                                       |
+|                                               |                       | **Business Process Standardization**                       | ~~                                                                                             |
   <figcaption>Figure 1: Operating Model Quadrant<br />©22005 MIT Sloan school of business</figcaption>
 </figure>
 
@@ -166,65 +173,25 @@ However, it does not offer the benefits of integration and standardization acros
 The opportunities for growth of each operating model are shown in
 table~\ref{tab:ekg-mm-business-operating-model-different}.
 
-\noindent\begin{table}[!htbp]
-             \centering
-             \let\freewidth\relax%
-             \newlength{\freewidth}%
-             \setlength{\freewidth}{\dimexpr (\textwidth-3em)-8\tabcolsep}%
-             \renewcommand{\arraystretch}{1.5}%
-             \begin{tabular}{
-                 @{}p{0.04\freewidth}@{}
-                 @{}p{0.03\freewidth}@{}
-                 @{\hspace{1em}}p{0.5\freewidth}@{\hspace{1em}}
-                 @{\hspace{1em}}p{0.5\freewidth}
-             }%
-                 \cline{3-4}
-                 \multirow{9}{2em}{\rotatebox[origin=c]{90}{\bf \Large Business Process Integration}}
-                 & & **Coordination**
-                 & **Unification** \\
-                 &   \raisebox{-.5\normalbaselineskip}[0pt][0pt]{\rotatebox[origin=c]{90}{\bf \large High}}
-                 &   \tabitem **Organic:**
-                 stream of product innovations easily made available to existing customers
-                 using existing integrated channels.
-                 &   \tabitem **Organic:**
-                 leverage economies of scale by introducing existing products/services in new markets;
-                 grow product line incrementally. \\
-                 & & \tabitem **Acquisition:**
-                 can acquire new customers for existing products but must integrate data.
-                 &   \tabitem **Acquisition:**
-                 can acquire competitors to leverage existing foundation;
-                 must rip and replace infrastructure. \\ [1em]
-                 \cline{3-4}
-                 & & **Diversification**
-                 & **Replication** \\
-                 & & \tabitem **Organic:**
-                 small business units may feed core business;
-                 company grows through business unit growth
-                 &   \tabitem **Organic:**
-                 replicate best practices in markets;
-                 innovations extended globally \\
-                 & & \tabitem **Acquisition:**
-                 unlimited opportunities;
-                 must ensure shareholder value
-                 &   \tabitem **Acquisition:**
-                 can acquire competitors to expand market reach;
-                 must rip and replace \\ [1em]
-                 \cline{3-4}
-                 & \raisebox{1.5\normalbaselineskip}[0pt][0pt]{\rotatebox[origin=c]{90}{\bf \large Low}}
-                 & {\bf \large Low} & \hfill {\bf \large High} \\
-                 & & \multicolumn{2}{c}{\bf \Large Business Process Standardization} \\
-                 & & & \hfill {\footnotesize (c)2005 MIT Sloan Center for Information Systems Research.} \\
-             \end{tabular}
-             \caption{Different operating models position companies for different types of growth}
-             
-\end{table}%
+<figure markdown>
+| &#8203                                        | &#8203                | **Coordination**                                                                                                           | **Unification**                                                                                                                     |
+|-----------------------------------------------|-----------------------|----------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| <span>**Business Process Integration**</span> | <span>**High**</span> | **Organic:** stream of product innovations easily made available to existing customers using existing integrated channels. | **Organic:** leverage economies of scale by introducing existing products/services in new markets; grow product line incrementally. |
+|                                               | _ _                   | **Acquisition:** can acquire new customers for existing products but must integrate data.                                  | **Acquisition:** can acquire competitors to leverage existing foundation; must rip and replace infrastructure.                      |
+|                                               |  <span>**Low**</span> | **Diversification**                                                                                                        | **Replication**                                                                                                                     |
+|                                               |                       | **Organic:** small business units may feed core business; company grows through business unit growth                       | **Organic:** replicate best practices in markets; innovations extended globally                                                     |
+| _ _                                           | _ _                   | **Acquisition:** unlimited opportunities; must ensure shareholder value                                                    | **Acquisition:** can acquire competitors to expand market reach; must rip and replace                                               |
+|                                               |                       | **Low**                                                                                                                    | **High**                                                                                                                            |
+|                                               |                       | **Business Process Standardization**                                                                                       | ~~                                                                                                                                  |
+  <figcaption>Figure 2: Different operating models position companies for different types of growth<br />©2005 MIT Center for Information Systems Research</figcaption>
+</figure>
 
 Business units of a company can also adopt different operating models to respond to conflicting demands.
 For instance, Diversification companies may benefit from allowing their own business units to adopt their
 own operating models as these business units are highly independent.
 An example of a Diversification company whose business units adopted different operating models is
-Johnson \& Johnson.
-J\&J’s U.S. pharmaceutical group applies a Coordination operating model in which there is a single touchpoint
+Johnson & Johnson.
+J&J’s U.S. pharmaceutical group applies a Coordination operating model in which there is a single touchpoint
 with health-care practitioners while their subsidiary Janssen Pharmaceuticals
 implements a Replication operating model in Europe with highly standardized, low cost processes.
 This gives freedom to each business unit to implement a different operating model depending on its
