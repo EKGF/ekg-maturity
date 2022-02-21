@@ -12,10 +12,9 @@ in the [./docs](./docs) directory.
 - [![Create PDF](https://github.com/EKGF/ekg-mm/actions/workflows/create-pdf.yml/badge.svg)](https://github.com/EKGF/ekg-mm/actions/workflows/create-pdf.yml)
 - [https://maturity-model.ekgf.org](https://maturity-model.ekgf.org)
 
-
 ## License
 
-![GitHub](https://img.shields.io/github/license/EKGF/ekg-mm?style=for-the-badge)
+[![GitHub](https://img.shields.io/github/license/EKGF/ekg-mm?style=for-the-badge)](http://creativecommons.org/licenses/by-sa/4.0/)
 
 This work is licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
