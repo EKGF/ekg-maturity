@@ -8,54 +8,58 @@
 # - latex_document_mode: "editors-version" or "release-version"
 # - latex_document_members_only: "yes" or "no"
 #
+# use strict;
 use File::Basename;
 use experimental 'smartmatch';
 use warnings FATAL => "all";
 no warnings 'experimental::smartmatch';
-$pdf_mode = 4;              # generate PDF using lualatex
-$bibtex_use = 2;
-$postscript_mode = $dvi_mode = 0;
-$max_repeat = 10;
-$do_cd = 1;
-$force_mode = 1 ;
-$recorder = 1;              # turn recorder option on (.fls file generated)
-$ENV{'SILENT'} //= 0;       # Run latexmk silently, not output to text
-$silent = $ENV{'SILENT'};
-$quiet  = $ENV{'SILENT'};
+
+#
+# The global variables that are NOT declared using 'my' are LaTeXMk variables, don't put 'my ' in front of them.
+#
+$::pdf_mode = 4;               # generate PDF using lualatex
+$::bibtex_use = 2;
+$::postscript_mode = $::dvi_mode = 0;
+$::max_repeat = 10;
+$::do_cd = 1;
+$::force_mode = 1 ;            # If nonzero, continue processing past minor latex errors including
+                               # unrecognized cross references. Equivalent to specifying the -f option.
+$::recorder = 1;               # turn recorder option on (.fls file generated)
+$ENV{'SILENT'} //= 0;          # Run latexmk silently, not output to text
+$::silent = $ENV{'SILENT'};
+$::quiet  = $ENV{'SILENT'};
 $ENV{'max_print_line'} = 2000;
-$log_wrap = 2000;
+$::log_wrap = 2000;
 $ENV{'error_line'} = 254;
 $ENV{'half_error_line'} = 238;
 $ENV{'openout_any'} = 'a';
-$biber = "biber %O --bblencoding=utf8 -u -U --output_safechars %B";
-$max_repeat = 10;
-$do_cd = 1;
-$force_mode = 1 ;           # If nonzero, continue processing past minor latex errors including
-                            # unrecognized cross references. Equivalent to specifying the -f option.
-$recorder = 1;              # turn recorder option on (.fls file generated)
-$ENV{'SILENT'} //= 0;       # Run latexmk silently, not output to text
-$silent = $ENV{'SILENT'};
-$quiet  = $ENV{'SILENT'};
-$ENV{'max_print_line'} = 2000;
-$log_wrap = 2000;
-$ENV{'error_line'} = 254;
-$ENV{'half_error_line'} = 238;
-$ENV{'openout_any'} = 'a';
-$biber = "biber %O --bblencoding=utf8 -u -U --output_safechars %B";
+$::biber = "biber %O --bblencoding=utf8 -u -U --output_safechars %B";
+$::clean_ext = '';
+@::generated_exts = ();
+$::jobname = '';
+
 #
 # Specify which PDF viewer you want to use (Skim is the best one on a Mac)
 #
-$pdf_previewer = 'open -a Skim';
-$texinputs = $ENV{'TEXINPUTS'} || '';
-$ENV{'TEXINPUTS'} = "./etc/:../etc/:../../etc/:${texinputs}";
-$bstinputs = $ENV{'BSTINPUTS'} || '';
-$ENV{'BSTINPUTS'} = "./:../:../../:${bstinputs}";
+$::pdf_previewer = 'open -a Skim';
+$::texinputs = $ENV{'TEXINPUTS'} || '';
+$ENV{'TEXINPUTS'} = "./etc/:../etc/:../../etc/:${::texinputs}";
+$::bstinputs = $ENV{'BSTINPUTS'} || '';
+$ENV{'BSTINPUTS'} = "./:../:../../:${::bstinputs}";
 $ENV{'TZ'} = 'Europe/London';
+
+#
+# Variables that are declared with 'my' are not part of LaTexMK's settings
+#
+my $document_customer_code = '';
+my $document_customer_code_short = '';
+my $document_name = '';
+my $document_file = '';
 
 print "Tex Inputs: $ENV{'TEXINPUTS'}\n";
 print "Bst Inputs: $ENV{'BSTINPUTS'}\n";
-print "default_files=@default_files  $_[0]\n";
-#foreach (@default_files) {
+print "default_files=@::default_files  $_[0]\n";
+#foreach (@::default_files) {
 #  print "$_\n";
 #}
 
@@ -66,8 +70,8 @@ print "default_files=@default_files  $_[0]\n";
 # tools like makeglossaries do not support it
 #
 sub findMainDoc() {
-    my $document_name = 'ekg-mm'; # just a default, could be anything
-    my $document_file = "${document_name}/${document_name}.tex";
+    $document_name = 'ekg-mm'; # just a default, could be anything
+    $document_file = "${document_name}/${document_name}.tex";
 
     if($ENV{'latex_document_main'}) {
         $document_file = $ENV{'latex_document_main'};
@@ -89,13 +93,13 @@ sub findMainDoc() {
         my @array = split /\//, $document_file, 2;
         $document_name = $array[0];
         $document_file = $array[1];
-        $do_cd = 0;
+        $::do_cd = 0;
     }
     if (! -e $document_file) {
         die "${document_file} does not exist"
     }
     $ENV{'latex_document_main'} = $document_file;
-    @default_files = ($document_file);
+    @::default_files = ($document_file);
 
     print "Main document file: ${document_file}\n";
     print "Main document name: ${document_name}\n";
@@ -105,10 +109,12 @@ sub findMainDoc() {
 
 sub getCustomerCode($) {
 
-    my $document_name = $_[0];
+    $document_name = $_[0];
     my $document_name_suffix = (split '-', $document_name)[-1];
     my $document_name_prefix = (split '-', $document_name)[0];
     my $defaultCustomerCode = 'ekgf';
+    my $document_customer = '';
+    $document_customer_code_short = '';
 
     # If this runs in a Github Actions workflow then we can derive the best
     # default customer code from the repository name by taking the organization code.
@@ -263,7 +269,6 @@ sub makeGlossaries{
     return 0;
 }
 
-
 #
 # Acronym Glossary "acronym" (./acronym.tex)
 #
@@ -308,7 +313,7 @@ $clean_ext .= " aux fls log glsdefs tdo ist run.xml xdy";
 
 ($document_customer_code, $document_customer_code_short) = getCustomerCode(${document_name});
 
-$latex_document_mode = lc($ENV{'latex_document_mode'} || 'draft');
+my $latex_document_mode = lc($ENV{'latex_document_mode'} || 'editors-version');
 print "Document Mode: ${latex_document_mode}\n";
 if("${latex_document_mode}" eq 'release-version') {
     $jobname = "$document_customer_code-${document_name}";
@@ -324,52 +329,52 @@ $jobname =~ s/--/-/g ;
 $jobname = "${document_customer_code}${jobname}" ;
 $jobname =~ s/--/-/g ;
 
-$latex_document_version = getVersionString();
-$latex_document_version_dotted = $latex_document_version;
+my $latex_document_version = getVersionString();
+my $latex_document_version_dotted = $latex_document_version;
 $latex_document_version_dotted =~ tr/-/./s;
 $latex_document_version_dotted =~ tr/_/./s;
 $latex_document_version_dotted =~ tr@/@.@s;
 print "Document Version: $latex_document_version_dotted (dotted version)\n";
 print "Document Version: $latex_document_version\n";
 
-$pre_tex_code = "${pre_tex_code}\\def\\documentMode{${latex_document_mode}}";
-$pre_tex_code = "${pre_tex_code}\\def\\documentName{$document_name}";
-$pre_tex_code = "${pre_tex_code}\\def\\customerCode{$document_customer_code}";
-$pre_tex_code = "${pre_tex_code}\\def\\documentVersion{$latex_document_version_dotted}";
+$::pre_tex_code = "$::pre_tex_code\\def\\documentMode{${latex_document_mode}}";
+$::pre_tex_code = "$::pre_tex_code\\def\\documentName{$document_name}";
+$::pre_tex_code = "$::pre_tex_code\\def\\customerCode{$document_customer_code}";
+$::pre_tex_code = "$::pre_tex_code\\def\\documentVersion{$latex_document_version_dotted}";
 
 if($ENV{'latex_document_members_only'} and "$ENV{'latex_document_members_only'}" eq 'yes') {
-    $jobname = "${jobname}-members-only-${latex_document_version}";
-    $pre_tex_code = "${pre_tex_code}\\def\\membersOnly{yes}"
+    $::jobname = "$::jobname-members-only-${latex_document_version}";
+    $::pre_tex_code = "$::pre_tex_code\\def\\membersOnly{yes}"
 } else {
-    $jobname = "${jobname}-${latex_document_version}";
-    $pre_tex_code = "${pre_tex_code}\\def\\membersOnly{no}"
+    $::jobname = "$::jobname-${latex_document_version}";
+    $::pre_tex_code = "$::pre_tex_code\\def\\membersOnly{no}"
 }
 #
 # Remove all dots from the latex job name since utilities like makeindex cannot handle them
 # well.
 #
-$jobname =~ tr/./-/s;
-$jobname =~ s/--/-/g ;
-$jobname =~ s@/@-@g ;
+$::jobname =~ tr/./-/s;
+$::jobname =~ s/--/-/g ;
+$::jobname =~ s@/@-@g ;
 
-print "Job name: ${jobname}\n";
+print "Job name: $::jobname\n";
 
-$lualatex_bin = "lualatex";
+$::lualatex_bin = "lualatex";
 if (-f "/Library/TeX/texbin/lualatex") {
-    $lualatex_bin = "/Library/TeX/texbin/lualatex";
+    $::lualatex_bin = "/Library/TeX/texbin/lualatex";
 }
 
-$lualatex = "${lualatex_bin} --synctex=1 --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P";
+$::lualatex = "$::lualatex_bin --synctex=1 --output-format=pdf --shell-escape --halt-on-error -file-line-error --interaction=nonstopmode %O %P";
 
-$kpsewhich = "kpsewhich %S";
+$::kpsewhich = "kpsewhich %S";
 if (-f "/Library/TeX/texbin/kpsewhich") {
-    $kpsewhich = "/Library/TeX/texbin/kpsewhich %S";
+    $::kpsewhich = "/Library/TeX/texbin/kpsewhich %S";
     $ENV{'PATH'} = "$ENV{'PATH'}:/Library/TeX/texbin/";
 }
 
-push @generated_exts, 'synctex.gz';
-push @generated_exts, 'synctex(busy)';
-push @generated_exts, 'run.xml';
-$clean_ext .= " synctex.gz synctex(busy) run.xml";
+push @::generated_exts, 'synctex.gz';
+push @::generated_exts, 'synctex(busy)';
+push @::generated_exts, 'run.xml';
+$::clean_ext .= " synctex.gz synctex(busy) run.xml";
 
-print "\n\n$lualatex\n\n";
+print "\n\n$::lualatex\n\n";

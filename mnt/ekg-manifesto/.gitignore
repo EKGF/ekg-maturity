@@ -1,5 +1,4 @@
 .DS_Store
-docs/__pycache__/
 .texpadtmp
 *.aux
 *.bbl
@@ -52,4 +51,4 @@ out/
 .idea
 *.fdb_latexmk
 *.xdy
-/ekg-mm/*.pdf
+/ekg-manifesto/*.pdf

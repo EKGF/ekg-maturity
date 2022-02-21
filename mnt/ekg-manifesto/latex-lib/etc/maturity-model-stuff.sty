@@ -43,9 +43,18 @@
     }
 }
 
-
+%
+% Definining the ``maturity-dimensions'' environment that generates a list of numbered dimensions
+% using the current section number (i.e. the capability number) as the prefix.
+%
 \newenvironment{maturity-dimensions}[1]{%
     \ekgmmCapabilitySectionDimensions
+    \begin{enumerate}[leftmargin=.5in,font=\itshape\scriptsize,label=\thesection.\theenumi]%
+}{%
+    \end{enumerate}%
+}
+
+\newenvironment{core-questions}[1]{%
     \begin{itemize}[leftmargin=.5in,font=\bfseries]%
 }{%
     \end{itemize}%
@@ -55,6 +64,32 @@
     \begin{itemize}[leftmargin=1.5in,font=\bfseries]%
 }{%
     \end{itemize}%
+}
+
+%
+% Defining the ``level-assessment'' environment that generates a list of PDF checkboxes
+%
+\newenvironment{level-assessment}[2]{%
+    \ifnum#2=1%
+    \ekgmmscoringlevelOne%
+    \fi%
+    \ifnum#2=2%
+    \ekgmmscoringlevelTwo%
+    \fi%
+    \ifnum#2=3%
+    \ekgmmscoringlevelThree%
+    \fi%
+    \ifnum#2=4%
+    \ekgmmscoringlevelFour%
+    \fi%
+    \ifnum#2=5%
+    \ekgmmscoringlevelFive%
+    \fi%
+    \begin{Form}%
+        \begin{enumerate}[label = {\CheckBox[name=#1-l#2-\theenumi]{}}]%
+        }{
+        \end{enumerate}%
+    \end{Form}%
 }
 
 \setlength{\cftchapnumwidth}{4em}% Set numwidth of chapter
