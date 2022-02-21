@@ -117,6 +117,8 @@ function replaceStuff() {
   replace 's@\\glsfirst{ekgmm}@EKG/MM@g'
 
   replace 's@\\chapter{\(.*\)}@# \1@g'
+  replace 's@\\section{\(.*\)}@## \1@g'
+  replace 's@\\section\*{\(.*\)}@## \1@g'
   replace 's@\\paragraph{\(.*\)}@### \1@g'
   replace 's@\\label{\(.*\)}@@g'
   replace 's@\\index{\(.*\)}@@g'

@@ -3,3 +3,29 @@
   --md-primary-fg-color--light: #4A23D9;
   --md-primary-fg-color--dark:  #25126A;
 }
+
+#rotate-text {
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  width: 30px;
+  transform: rotate(-90deg);
+  margin: 0px;
+  padding: 0px;
+  white-space: nowrap;
+}
+
+td
+{
+  vertical-align: bottom;
+  text-align: center;
+}
+
+td span
+{
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
