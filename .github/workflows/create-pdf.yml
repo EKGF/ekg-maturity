@@ -140,12 +140,18 @@ jobs:
       -
         name: Install all MkDocs dependencies
         if: ${{ github.ref == 'refs/heads/main' }}
-        run: |
-          pip install --upgrade mkdocs
-          pip install --upgrade mkdocs-material
-          pip install --upgrade mkdocs-localsearch
-          pip install --upgrade mdx-spanner
-          pip install --upgrade mkdocs-awesome-pages-plugin
-          pip install --upgrade mkdocs-macros-plugin
+        env:
+          PAT_MKDOCS_INSIDERS: ${{ secrets.PAT_MKDOCS_INSIDERS }}
+        run: make --environment-overrides docs-install-python-packages
       -
-        run: mkdocs gh-deploy --force
+        name: Build Site
+        if: ${{ github.ref != 'refs/heads/main' }}
+        env:
+          PAT_MKDOCS_INSIDERS: ${{ secrets.PAT_MKDOCS_INSIDERS }}
+        run: make --environment-overrides docs-build
+      -
+        name: Deploy Site
+        if: ${{ github.ref == 'refs/heads/main' }}
+        env:
+          PAT_MKDOCS_INSIDERS: ${{ secrets.PAT_MKDOCS_INSIDERS }}
+        run: make --environment-overrides docs-deploy

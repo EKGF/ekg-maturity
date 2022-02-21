@@ -10,10 +10,10 @@
 \RequirePackage{xargs}               % Use more than one optional parameter in a new commands
 %
 \setlength{\marginparwidth}{2cm}
-\ifoptionfinal{% editors-version with TODOs
-  \typeout{todo-stuff.sty: no TODOs in final mode}%
+\ifoptionfinal{% release-version without TODOs
+  \typeout{todo-stuff.sty: no TODOs in the release-version}%
   \RequirePackage[disable]{todonotes}
-}{ % release-mode without TODOs
+}{ % editors-version with TODOs
   \typeout{todo-stuff.sty: print TODOs in editors-version}
   \RequirePackage[obeyFinal,colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 }
