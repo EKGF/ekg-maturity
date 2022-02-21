@@ -1,10 +1,148 @@
 %
-% D.2.10 Identity Resolution -- Summary
+% D.2.10 Identifier Resolution -- Summary
 %
-Identity resolution is a process of combining multiple identifiers across devices, spreadsheets, repositories, and
+Identifier resolution is a process of combining multiple identifiers across devices, spreadsheets, repositories, and
 platforms into a cohesive profile.
 The process includes searching across disparate datasets and analyzing content to find (and resolve) matches based
 on available data records and attributes.
-Identity resolution is complicated by distinctions in both structure and meaning because various information systems
+Identifier resolution is complicated by distinctions in both structure and meaning because various information systems
 can vary in quality, completeness, format, and nomenclature.
 
+Scenario / Use Case -
+Use a URI for identification without considering impacts of impacts to unique identity by using an named identifier.
+
+If you will only have a single gremlin vehicle, ever for-sale then you could go with a URI for which there isn’t a
+concern for the uniqueness as it’s not possible another will come along.
+Or, it could be managed manually by checking for existence of the name of the vehicle prior and incrementing.\\
+First gremlin - \\
+{\footnotesize\url{<https://ekgf.org/cars/for-sale#gremlin>}}\\
+Second gremlin - \\
+{\footnotesize\url{<https://ekgf.org/cars/for-sale#gremlin2>}} \\
+Pro(s): Easy to implement \\
+Con(s): Chance of duplicates and collisions high \\
+
+Scenario / Use Case -
+Any and all attributes can be used to make the URI somewhat unique for identification and can be used for the URI
+
+URL Encoded name concatenated to the URI .
+
+    {\footnotesize\url{<https://ekgf.org/cars/for-sale#gremlinUsed%20Vintage%20Gremlin%20%237>} \\ \url{<http://purl.org/goodrelations/v1#name>} "Used Vintage Gremlin \#7”}
+
+Pro(s): Easy to implement \\
+Con(s): Chance of duplicates and collisions moderate, uses more details from the attributes.
+Discouraged, considered an anti-pattern for designing ontologies.
+
+Scenario / Use Case -
+Use a unique identifier from an external service in the URI .
+
+    {\footnotesize\url{<https://ekgf.org/cars/for-sale#gremlin>}}
+Could have a Vehicle Identification Number added to the URI, the organization responsible for VINs guarantees uniqueness
+    {\footnotesize\url{<https://ekgf.org/cars/for-sale#gremlinA3A465H399999>}}
+
+
+Pro(s): Easy to implement \\
+Con(s): Chance of duplicates and collisions moderate, uses more details from the attributes
+
+
+Scenario / Use Case -
+We can promote blank nodes to more explicit local resources in the form urn: and/or \_id:
+
+Perhaps we adopt urn:org:method:id, method could be base64, sha256, or others which would indicate the type.
+could also look like:
+
+create a blank node for VIN of the vehicle
+    {\footnotesize \_:A3A465H399999}
+
+    {\footnotesize\url{<urn:ekgf:vin:_:A3A465H399999>}}
+
+Pro(s): Gives a more normalized approach for blank nodes to be used with other systems.
+Or not-well defined canonical scheme. \\
+Con(s): Debatable utility if you have a namespace already, if possible use a prefix instead.
+
+Scenario / Use Case -
+We can use an iso8601 date timestamp for a unique identifier for the URI .
+
+iso8601 generated date/time \\
+2021-11-22T03:28:40+0000 \\
+URL Encoded \\
+{\url {2021-11-22T03%3A28%3A40%2B0000}} \\
+    {\footnotesize\url{<https://ekgf.org/cars/for-sale#gremlin2021-11-22T03%3A28%3A40%2B0000>}}
+
+Pro(s): Simple to implement with a timestamp, quite reasonable \\
+Con(s): There is still a very small chance of duplicates.
+
+Scenario / Use Case -
+We can use a UUID for a unique identifier for the URI .
+
+Generated the following UUID :
+    {\footnotesize e37b55e6-7447-4427-bcd8-9dae64750a1d }, concat to the URI .
+
+    {\footnotesize\url{<https://ekgf.org/cars/for-sale#gremline37b55e6-7447-4427-bcd8-9dae64750a1d>}}
+
+Pro(s): Simple to implement with a uuid, quite reasonable \\
+Con(s): Not repeatable, will need to store as each generated identifier is unique
+
+Scenario / Use Case -
+We can compute SHA 256 for which we can use as a basis of identity from attributes of an object.
+SHA hash values have the advantage of being reproducible vs UUIDs/iso8601 dates.
+
+In this example we compute SHA 256 from the name “Used Vintage Gremlin \#7”
+
+    {\footnotesize\url{<https://ekgf.org/cars/for-sale#gremlin>} \\ \url{<http://purl.org/goodrelations/v1#name>} "Used Vintage Gremlin \#7”}
+
+URIs with a SHA 256 will need an ALPHA character leading it as an URI cannot lead with a NUMERIC
+
+Attributes of an object can be used to make the object URI unique  by using a SHA 256. \\
+    {\footnotesize\url{<https://ekgf.org/cars/for-sale#gremline1752b9574895a962d4bfa554b98296d3acc06fdd5871f75f1c902ed3d5c13c3>}  \\ \url{<http://purl.org/goodrelations/v1#name>} "Used Vintage Gremlin \#7”}
+
+SHA256 can be regenerated in a one way manner vs UUID which cannot.
+UUIDs may need to  be managed once generated.
+
+Pro(s): Simple to implement like a uuid as SPARQL and various languages have support, quite reasonable, also
+repeatable one way \\
+Con(s): Some may find the length of the identifier an eyesore, that said the length is completely reasonable and safe
+for URIs if a bit challenging to type
+
+
+Scenario / Use Case -
+Use an AES (or other methods such as ChaCha ) encrypted querystring for additional security.
+
+It may be desirable to encrypt a query string / part of a URI to prevent tampering and obfuscating parameters.
+Note that this should not be relied on for access control, so username and password are perhaps not good candidates
+for encryption- instead http headers should be used per OWASP .
+
+If we take the VIN A3A465H399999 from the gremlin and create a SHA256 from the VIN .
+
+SHA 256 of A3A465H399999 \\
+
+{\footnotesize 27d68368497b314c6bae0fa8ae61fd2c78406c01f3202c0bd73a63f1065e668b }
+
+We then could encrypt the SHA 256 using a key !!!!!!!ekgfknowledgegraph!!!!!! mode ECB .
+Base64 encoded results are \\
+{\footnotesize agMNw71rsJcJOrMdTIVKEQqfwqmU56HtzZozR2DYjrvsyr9+bJXMfVZk2x0hqwz55njtWLMmzcwPqYDz6ovJW1tODpnWD60srd9046E/FWE=}
+Which could then be incorporated as part of the URI \\
+    {\scriptsize\url{<https://ekgf.org/cars/for-sale#gremlinagMNw71rsJcJOrMdTIVKEQqfwqmU56HtzZozR2DYjrvsyr9+bJXMfVZk2x0hqwz55njtWLMmzcwPqYDz6ovJW1tODpnWD60srd9046E/FWE=>}} \\
+Decrypted Base64 would yield \\
+{\scriptsize MjdkNjgzNjg0OTdiMzE0YzZiYWUwZmE4YWU2MWZkMmM3ODQwNmMwMWYzMjAyYzBiZDczYTYzZjEwNjVlNjY4Yg== } \\
+Converted to plain text from Base 64 would yield the SHA 256 of the VIN \\
+27d68368497b314c6bae0fa8ae61fd2c78406c01f3202c0bd73a63f1065e668b \\
+Querystring parameters besides an identifier, can also be handled by AES encryption
+
+Pro(s): Provides extra encryption for IRI/URI \\
+Con(s): Some may find the length of the identifier an eyesore, and the AES encryption excessive and perhaps if such \\
+encryption is required the information shouldn’t be in an URI
+
+Scenario / Use Case -
+Use a Decentralized Identifier / DID
+
+This could also include distributed identifier services from the w3c, the below is non registered but taken
+from a sha256 of a VIN,then encrypted using AES256 with key !!!!!!!ekgfknowledgegraph!!!!!!! using ECB mode from the
+previous encryption example.
+The format of a DID is :
+
+did:method:key \\
+{\footnotesize did:ekgf:agMNw71rsJcJOrMdTIVKEQqfwqmU56HtzZozR2DYjrvsyr9+bJXMfVZk2x0hqwz55njtWLMmzcwPqYDz6ovJW1tODpnWD60srd9046E/FWE= }
+
+Pro(s): Leverages an external organization to create the identifier, emerging as a standard. \\
+Con(s): Leverages an external organization to create the identifier, specs and software may need to be written for
+internal usage.
