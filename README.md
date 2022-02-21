@@ -3,6 +3,15 @@
 This repository contains the [LaTeX](https://www.latex-project.org/about/)
 based source documents of EKG/MM, the Maturity Model for the EKG.
 
+## PDF and Website
+
+The content in this repository is used to generate a PDF from the LaTeX content
+in the [./ekg-mm](./ekg-mm) directory and a website from the Markdown content
+in the [./docs](./docs) directory.
+
+- ![GitHub](https://img.shields.io/github/license/EKGF/ekg-mm?style=for-the-badge)
+- [https://maturity-model.ekgf.org](https://maturity-model.ekgf.org)
+
 ## License
 
 ![shield](https://img.shields.io/github/license/EKGF/ekg-mm.svg)
