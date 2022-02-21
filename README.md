@@ -9,14 +9,13 @@ The content in this repository is used to generate a PDF from the LaTeX content
 in the [./ekg-mm](./ekg-mm) directory and a website from the Markdown content
 in the [./docs](./docs) directory.
 
-- ![GitHub](https://img.shields.io/github/license/EKGF/ekg-mm?style=for-the-badge)
+- [![Create PDF](https://github.com/EKGF/ekg-mm/actions/workflows/create-pdf.yml/badge.svg)](https://github.com/EKGF/ekg-mm/actions/workflows/create-pdf.yml)
 - [https://maturity-model.ekgf.org](https://maturity-model.ekgf.org)
+
 
 ## License
 
-![shield](https://img.shields.io/github/license/EKGF/ekg-mm.svg)
-
-[x](http://creativecommons.org/licenses/by-sa/4.0/)
+![GitHub](https://img.shields.io/github/license/EKGF/ekg-mm?style=for-the-badge)
 
 This work is licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
