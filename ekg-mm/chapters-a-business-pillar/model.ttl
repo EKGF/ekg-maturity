@@ -1,0 +1,38 @@
+@base <https://maturity-model.ekgf.org/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+
+<capability-area-business-strategy-actuation>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Business Strategy Actuation" ;
+  ekgmm:iriLocalName "strategy-actuation" ;
+  ekgmm:inPillar     ekgmm:BusinessPillar ;
+  rdfs:comment """
+    _Business Strategy Actuation_ is a business identity oriented process that senses, understands and communicates 
+    business outcome-based assessment data to focus energy and resources on strategic objectives.
+    Actuation measurement values are used to assess whether strategic objectives and associated business goals
+    are being fulfilled.
+  """
+.
+
+<capability-area-business-model-elaboration>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Business Model Elaboration" ;
+  ekgmm:iriLocalName "business-model-elaboration" ;
+  ekgmm:inPillar     ekgmm:BusinessPillar ;
+  rdfs:comment       """
+    _Business Model Elaboration_ is the process of providing further detail of business strategy.
+    It may include decision rationale that explains how the business identity data infrastructure
+    and algorithms enable the how and why planned actions would create, deliver, and capture value.
+  """
+.
+
+<capability-area-business-enablers>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Business Enablers" ;
+  ekgmm:iriLocalName "business-enablers" ;
+  ekgmm:inPillar     ekgmm:BusinessPillar ;
+.

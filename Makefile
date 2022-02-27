@@ -205,6 +205,7 @@ endif
 	$(PIP) install --upgrade wheel
 	$(PIP) install --upgrade pipenv
 #	$(PIP) install --upgrade plantuml-markdown
+	$(PIP) install --upgrade mdutils
 	$(PIP) install --upgrade mkdocs-build-plantuml-plugin
 	$(PIP) install --upgrade mkdocs
 	$(PIP) install --upgrade mkdocs-localsearch
@@ -217,6 +218,7 @@ endif
 	$(PIP) install --upgrade mkdocs-git-revision-date-plugin
 	$(PIP) install --upgrade mkdocs-minify-plugin
 	$(PIP) install --upgrade mkdocs-redirects
+	$(PIP) install --upgrade mkdocs-gen-files
 	$(PIP) install --upgrade mdx-spanner
 	$(PIP) install --upgrade markdown-emdash
 ifeq ($(PAT_MKDOCS_INSIDERS),)
@@ -224,6 +226,12 @@ ifeq ($(PAT_MKDOCS_INSIDERS),)
 else
 	@$(PIP) install --upgrade --force-reinstall git+https://$(PAT_MKDOCS_INSIDERS)@github.com/squidfunk/mkdocs-material-insiders.git
 endif
+	$(PIP) install --upgrade git+https://github.com/EKGF/ekglib.git#egg=ekglib
+
+.PHONY: install-local-ekglib
+install-local-ekglib:
+	$(PIP) install --editable ../ekglib
+	./venv/bin/python -m pip install --editable ../ekglib
 
 .PHONY: docs-build
 docs-build:

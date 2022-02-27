@@ -6,7 +6,7 @@ hide:
 
 The Maturity Model for the Enterprise Knowledge Graph (EKG/MM) is one of the key initiatives
 of the [Enterprise Knowledge Graph Foundation](https://ekgf.org) being developed by a 
-community of [contributors](contributors.md).
+community of [contributors](other/contributors.md).
 
 The maturity model is the industry-standard definition of the capabilities required 
 for an enterprise knowledge graph at the various defined levels of maturity.

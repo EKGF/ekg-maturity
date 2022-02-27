@@ -1,0 +1,41 @@
+@base <https://maturity-model.ekgf.org/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+
+<capability-delivery-management-etl-data-movement>
+  a                  ekgmm:Capability ;
+  rdfs:label         "ETL Data-movement" ;
+  ekgmm:iriLocalName "etl-data-movement" ;
+  ekgmm:inArea       <capability-area-delivery-management>
+.
+
+<capability-delivery-management-ontologies-and-mapping>
+  a                  ekgmm:Capability ;
+  rdfs:label         "Ontologies & Mapping" ;
+  ekgmm:iriLocalName "ontologies-and-mapping" ;
+  ekgmm:inArea       <capability-area-delivery-management>
+.
+
+<capability-delivery-management-dataops-process>
+  a                  ekgmm:Capability ;
+  rdfs:label         "DataOps Process" ;
+  ekgmm:iriLocalName "dataops-process" ;
+  ekgmm:inArea       <capability-area-delivery-management>
+.
+
+<capability-delivery-management-user-interface-and-access>
+  a                  ekgmm:Capability ;
+  rdfs:label         "User Interface and Access" ;
+  ekgmm:iriLocalName "user-interface-and-access" ;
+  ekgmm:inArea       <capability-area-delivery-management>
+.
+
+<capability-delivery-management-ekg-platform-team>
+  a                  ekgmm:Capability ;
+  rdfs:label         "EKG/Platform Team" ;
+  ekgmm:iriLocalName "ekg-platform-team" ;
+  ekgmm:inArea       <capability-area-delivery-management>
+.

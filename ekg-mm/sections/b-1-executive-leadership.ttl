@@ -1,0 +1,48 @@
+@base <https://maturity-model.ekgf.org/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+
+<capability-executive-leadership-organizational-strategy>
+  a                  ekgmm:Capability ;
+  rdfs:label         "Organizational Strategy" ;
+  ekgmm:iriLocalName "organizational-strategy" ;
+  ekgmm:inArea       <capability-area-executive-leadership>
+.
+
+<capability-executive-leadership-organizational-policies>
+  a                  ekgmm:Capability ;
+  rdfs:label         "Organizational Policies" ;
+  ekgmm:iriLocalName "organizational-policies" ;
+  ekgmm:inArea       <capability-area-executive-leadership>
+.
+
+<capability-executive-leadership-funding-and-resources>
+  a                  ekgmm:Capability ;
+  rdfs:label         "Funding and Resources" ;
+  ekgmm:iriLocalName "funding-and-resources" ;
+  ekgmm:inArea       <capability-area-executive-leadership>
+.
+
+<capability-executive-leadership-technology-requirements>
+  a                  ekgmm:Capability ;
+  rdfs:label         "Technology Requirements" ;
+  ekgmm:iriLocalName "technology-requirements" ;
+  ekgmm:inArea       <capability-area-executive-leadership>
+.
+
+<capability-executive-leadership-organizational-processes>
+  a                  ekgmm:Capability ;
+  rdfs:label         "Organizational Processes" ;
+  ekgmm:iriLocalName "organizational-processes" ;
+  ekgmm:inArea       <capability-area-executive-leadership>
+.
+
+<capability-executive-leadership-organizational-governance>
+  a                  ekgmm:Capability ;
+  rdfs:label         "Organizational Governance" ;
+  ekgmm:iriLocalName "organizational-governance" ;
+  ekgmm:inArea       <capability-area-executive-leadership>
+.

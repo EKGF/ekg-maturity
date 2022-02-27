@@ -1,0 +1,41 @@
+@base <https://maturity-model.ekgf.org/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+
+<capability-product-ownership-usecase-requirements>
+  a                  ekgmm:Capability ;
+  rdfs:label         "Usecase Requirements" ;
+  ekgmm:iriLocalName "usecase-requirements" ;
+  ekgmm:inArea       <capability-area-product-ownership>
+.
+
+<capability-product-ownership-funding-and-budget>
+  a                  ekgmm:Capability ;
+  rdfs:label         "Funding & Budget" ;
+  ekgmm:iriLocalName "funding-and-budget" ;
+  ekgmm:inArea       <capability-area-product-ownership>
+.
+
+<capability-product-ownership-delivery-process>
+  a                  ekgmm:Capability ;
+  rdfs:label         "Delivery Process" ;
+  ekgmm:iriLocalName "delivery-process" ;
+  ekgmm:inArea       <capability-area-product-ownership>
+.
+
+<capability-product-ownership-measurement-criteria>
+  a                  ekgmm:Capability ;
+  rdfs:label         "Measurement Criteria" ;
+  ekgmm:iriLocalName "measurement-criteria" ;
+  ekgmm:inArea       <capability-area-product-ownership>
+.
+
+<capability-product-ownership-team-requirements-management>
+  a                  ekgmm:Capability ;
+  rdfs:label         "Team Requirements Management" ;
+  ekgmm:iriLocalName "team-requirements-management" ;
+  ekgmm:inArea       <capability-area-product-ownership>
+.

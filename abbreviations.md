@@ -11,3 +11,4 @@
 *[EKG]: Enterprise Knowledge Graph, an EKGF standard
 *[API]: Application Programming Interface
 *[SHACL]: Shapes Constraint Language, a W3C standard
+*[BAU]: Business as Usual

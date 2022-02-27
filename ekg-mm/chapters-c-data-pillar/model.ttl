@@ -1,0 +1,36 @@
+@base <https://maturity-model.ekgf.org/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+
+<capability-area-data-strategy>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Data Strategy" ;
+  ekgmm:iriLocalName "data-strategy" ;
+  ekgmm:inPillar     ekgmm:DataPillar ;
+.
+
+
+<capability-area-data-architecture>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Data Architecture" ;
+  ekgmm:iriLocalName "data-architecture" ;
+  ekgmm:inPillar     ekgmm:DataPillar ;
+.
+
+<capability-area-data-quality>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Data Quality" ;
+  ekgmm:iriLocalName "data-quality" ;
+  ekgmm:inPillar     ekgmm:DataPillar ;
+.
+
+<capability-area-data-governance>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Data Governance" ;
+  ekgmm:iriLocalName "data-governance" ;
+  ekgmm:inPillar     ekgmm:DataPillar ;
+.
+

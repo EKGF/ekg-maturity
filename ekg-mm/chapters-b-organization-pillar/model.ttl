@@ -1,0 +1,42 @@
+@base <https://maturity-model.ekgf.org/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+
+<capability-area-executive-leadership>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Executive Leadership" ;
+  ekgmm:iriLocalName "executive-leadership" ;
+  ekgmm:inPillar     ekgmm:OrganizationPillar ;
+.
+
+
+<capability-area-product-ownership>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Product Ownership" ;
+  ekgmm:iriLocalName "product-ownership" ;
+  ekgmm:inPillar     ekgmm:OrganizationPillar ;
+.
+
+<capability-area-delivery-management>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Delivery Management" ;
+  ekgmm:iriLocalName "delivery-management" ;
+  ekgmm:inPillar     ekgmm:OrganizationPillar ;
+.
+
+<capability-area-organizational-culture>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Organizational Culture" ;
+  ekgmm:iriLocalName "organizational-culture" ;
+  ekgmm:inPillar     ekgmm:OrganizationPillar ;
+.
+
+<capability-area-organizational-capabilities>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Organizational Capabilities" ;
+  ekgmm:iriLocalName "organizational-capabilities" ;
+  ekgmm:inPillar     ekgmm:OrganizationPillar ;
+.

@@ -1,7 +1,3 @@
----
-hide:
-- navigation
----
 # Other
 
 The Enterprise Knowledge Graph Foundation is working on multiple initiatives that

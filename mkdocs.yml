@@ -77,7 +77,7 @@ plugins:
       lang:
         - en
   - include-markdown
-  - git-revision-date
+#  - git-revision-date
   - exclude:
       glob:
         - "*.tmp"
@@ -106,6 +106,9 @@ plugins:
       strict: true
   - macros:
       module_name: docs/main
+  - gen-files:
+      scripts:
+        - docs/generate_maturity_model.py
 
 markdown_extensions:
   - toc:
