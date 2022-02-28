@@ -134,7 +134,7 @@ jobs:
           mv -v ekgf-ekg-mm-*.pdf docs/assets/ekgf-ekg-mm.pdf
       -
         name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: '3.10.2'
       -
