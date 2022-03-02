@@ -9,7 +9,7 @@
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Business Strategy Actuation" ;
   ekgmm:iriLocalName "strategy-actuation" ;
-  ekgmm:inPillar     ekgmm:BusinessPillar ;
+  ekgmm:inPillar     <business-pillar> ;
   rdfs:comment """
     _Business Strategy Actuation_ is a business identity oriented process that senses, understands and communicates 
     business outcome-based assessment data to focus energy and resources on strategic objectives.
@@ -22,7 +22,7 @@
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Business Model Elaboration" ;
   ekgmm:iriLocalName "business-model-elaboration" ;
-  ekgmm:inPillar     ekgmm:BusinessPillar ;
+  ekgmm:inPillar     <business-pillar> ;
   rdfs:comment       """
     _Business Model Elaboration_ is the process of providing further detail of business strategy.
     It may include decision rationale that explains how the business identity data infrastructure
@@ -34,5 +34,5 @@
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Business Enablers" ;
   ekgmm:iriLocalName "business-enablers" ;
-  ekgmm:inPillar     ekgmm:BusinessPillar ;
+  ekgmm:inPillar     <business-pillar> ;
 .

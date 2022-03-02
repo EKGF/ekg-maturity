@@ -5,3 +5,104 @@
 @prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 @prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
 
+<ekg-mm>
+  rdf:type           ekgmm:Model ;
+  rdfs:label         "EKG/MM" ;
+  ekgmm:iriLocalName "ekg-mm" ;
+.
+
+<business-pillar>
+  rdf:type                 ekgmm:Pillar ;
+  rdfs:label               "Business Pillar"@en ;
+  ekgmm:iriLocalName       "business" ;
+  ekgmm:pillarInModel      <ekg-mm> ;
+  rdfs:comment             """
+  ### Audience
+  
+  Addresses the audience of personas on the business-side of an enterprise, 
+  C-level, 
+  LOB execs,
+  corporate planners,
+  business architects,
+  management consultants and so forth.
+  """ ;
+  ekgmm:backgroundAndIntro "./business-pillar/background-and-intro.md" ;
+.
+
+<organization-pillar>
+  rdf:type            ekgmm:Pillar ;
+  rdfs:label          "Organization Pillar"@en ;
+  ekgmm:iriLocalName  "organization" ;
+  ekgmm:pillarInModel <ekg-mm> ;
+  rdfs:comment        """
+  ### Audience
+  
+  Addresses the audience of people that are neither business, data nor tech such as financial execs and experts, risk
+  execs and experts, program/portfolio/project managers, HR execs and experts and so forth.
+  """ ;
+.
+
+<data-pillar>
+  rdf:type            ekgmm:Pillar ;
+  rdfs:label          "Data Pillar"@en ;
+  ekgmm:iriLocalName  "data" ;
+  ekgmm:pillarInModel <ekg-mm> ;
+  rdfs:comment        """
+  ### Audience
+  
+  Addresses the audience of people in the data-management and data-governance departments.
+  """ ;
+.
+
+<technology-pillar>
+  rdf:type            ekgmm:Pillar ;
+  rdfs:label          "Technology Pillar"@en ;
+  ekgmm:iriLocalName  "technology" ;
+  ekgmm:pillarInModel <ekg-mm> ;
+  rdfs:comment        """
+  ### Audience
+  
+  Addresses the audience of technologists, technical architects, developers, infrastructure execs and experts,
+  security execs and experts etc.
+  """ ;
+.
+
+<level1>
+  rdf:type               ekgmm:Level ;
+  rdfs:label             "Level 1" ;
+  ekgmm:iriLocalTypeName "level" ;
+  ekgmm:iriLocalName     "1" ;
+  ekgmm:levelInModel     <ekg-mm> ;
+.
+
+<level2>
+  rdf:type               ekgmm:Level ;
+  rdfs:label             "Level 2" ;
+  ekgmm:iriLocalTypeName "level" ;
+  ekgmm:iriLocalName     "2" ;
+  ekgmm:levelInModel     <ekg-mm> ;
+.
+
+<level3>
+  rdf:type               ekgmm:Level ;
+  rdfs:label             "Level 3" ;
+  ekgmm:iriLocalTypeName "level" ;
+  ekgmm:iriLocalName     "3" ;
+  ekgmm:levelInModel     <ekg-mm> ;
+.
+
+<level4>
+  rdf:type               ekgmm:Level ;
+  rdfs:label             "Level 4" ;
+  ekgmm:iriLocalTypeName "level" ;
+  ekgmm:iriLocalName     "4" ;
+  ekgmm:levelInModel     <ekg-mm> ;
+.
+
+<level5>
+  rdf:type               ekgmm:Level ;
+  rdfs:label             "Level 5" ;
+  ekgmm:iriLocalTypeName "level" ;
+  ekgmm:iriLocalName     "5" ;
+  ekgmm:levelInModel     <ekg-mm> ;
+.

@@ -9,7 +9,7 @@
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Data Strategy" ;
   ekgmm:iriLocalName "data-strategy" ;
-  ekgmm:inPillar     ekgmm:DataPillar ;
+  ekgmm:inPillar     <data-pillar> ;
 .
 
 
@@ -17,20 +17,20 @@
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Data Architecture" ;
   ekgmm:iriLocalName "data-architecture" ;
-  ekgmm:inPillar     ekgmm:DataPillar ;
+  ekgmm:inPillar     <data-pillar> ;
 .
 
 <capability-area-data-quality>
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Data Quality" ;
   ekgmm:iriLocalName "data-quality" ;
-  ekgmm:inPillar     ekgmm:DataPillar ;
+  ekgmm:inPillar     <data-pillar> ;
 .
 
 <capability-area-data-governance>
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Data Governance" ;
   ekgmm:iriLocalName "data-governance" ;
-  ekgmm:inPillar     ekgmm:DataPillar ;
+  ekgmm:inPillar     <data-pillar> ;
 .
 

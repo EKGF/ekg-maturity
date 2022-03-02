@@ -211,6 +211,7 @@ endif
 	$(PIP) install --upgrade mkdocs-localsearch
 	$(PIP) install --upgrade mkdocs-graphviz
 	$(PIP) install --upgrade mkdocs-exclude
+	$(PIP) install --upgrade mkdocs-redirects
 	$(PIP) install --upgrade mkdocs-include-markdown-plugin
 	$(PIP) install --upgrade mkdocs-awesome-pages-plugin
 	$(PIP) install --upgrade mkdocs-macros-plugin
@@ -219,6 +220,7 @@ endif
 	$(PIP) install --upgrade mkdocs-minify-plugin
 	$(PIP) install --upgrade mkdocs-redirects
 	$(PIP) install --upgrade mkdocs-gen-files
+	$(PIP) install --upgrade mkdocs-exclude-search
 	$(PIP) install --upgrade mdx-spanner
 	$(PIP) install --upgrade markdown-emdash
 ifeq ($(PAT_MKDOCS_INSIDERS),)
@@ -229,7 +231,7 @@ endif
 	$(PIP) install --upgrade git+https://github.com/EKGF/ekglib.git#egg=ekglib
 
 .PHONY: install-local-ekglib
-install-local-ekglib:
+install-local-ekglib: docs-install-python-packages
 	$(PIP) install --editable ../ekglib
 	./venv/bin/python -m pip install --editable ../ekglib
 

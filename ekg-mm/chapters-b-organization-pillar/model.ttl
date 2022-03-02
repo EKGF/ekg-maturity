@@ -9,7 +9,7 @@
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Executive Leadership" ;
   ekgmm:iriLocalName "executive-leadership" ;
-  ekgmm:inPillar     ekgmm:OrganizationPillar ;
+  ekgmm:inPillar     <organization-pillar> ;
 .
 
 
@@ -17,26 +17,26 @@
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Product Ownership" ;
   ekgmm:iriLocalName "product-ownership" ;
-  ekgmm:inPillar     ekgmm:OrganizationPillar ;
+  ekgmm:inPillar     <organization-pillar> ;
 .
 
 <capability-area-delivery-management>
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Delivery Management" ;
   ekgmm:iriLocalName "delivery-management" ;
-  ekgmm:inPillar     ekgmm:OrganizationPillar ;
+  ekgmm:inPillar     <organization-pillar> ;
 .
 
 <capability-area-organizational-culture>
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Organizational Culture" ;
   ekgmm:iriLocalName "organizational-culture" ;
-  ekgmm:inPillar     ekgmm:OrganizationPillar ;
+  ekgmm:inPillar     <organization-pillar> ;
 .
 
 <capability-area-organizational-capabilities>
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Organizational Capabilities" ;
   ekgmm:iriLocalName "organizational-capabilities" ;
-  ekgmm:inPillar     ekgmm:OrganizationPillar ;
+  ekgmm:inPillar     <organization-pillar> ;
 .
