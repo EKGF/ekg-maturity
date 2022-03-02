@@ -12,3 +12,7 @@
 *[API]: Application Programming Interface
 *[SHACL]: Shapes Constraint Language, a W3C standard
 *[BAU]: Business as Usual
+*[SUDA]: Sense, Understand, Decide, Act
+*[OODA]: Observe, Orient, Decide, Act
+*[PDCA]: Plan, Do, Check, Act
+*[MOU]: Memorandum of Understanding
