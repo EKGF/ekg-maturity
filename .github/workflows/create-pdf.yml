@@ -27,7 +27,7 @@ jobs:
           echo "The branch or tag ref that triggered the workflow: $GITHUB_REF"
       -
         name: Set up Git repository
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
       -
         name: Compile LaTeX document
         uses: xu-cheng/latex-action@2.4.0
@@ -121,7 +121,7 @@ jobs:
     steps:
       -
         name: Set up Git repository
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       -
