@@ -1,0 +1,23 @@
+@base <https://maturity-model.ekgf.org/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+@prefix dct:       <http://purl.org/dc/terms/> .
+
+<capability-data-strategy-goals-and-objectives>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Goals & Objectives" ;
+  ekgmm:iriLocalName     "goals-and-objectives" ;
+  ekgmm:capabilityNumber "C.1.1" ;
+  ekgmm:inArea           <capability-area-data-strategy>
+.
+
+<capability-data-strategy-business-case>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Business Case" ;
+  ekgmm:iriLocalName     "business-case" ;
+  ekgmm:capabilityNumber "C.1.2" ;
+  ekgmm:inArea           <capability-area-data-strategy>
+.

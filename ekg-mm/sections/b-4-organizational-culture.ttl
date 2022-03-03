@@ -1,0 +1,32 @@
+@base <https://maturity-model.ekgf.org/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+@prefix dct:       <http://purl.org/dc/terms/> .
+
+<capability-organizational-culture-implementation-approach>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Implementation Approach" ;
+  ekgmm:iriLocalName     "implementation-approach" ;
+  ekgmm:capabilityNumber "B.4.1" ;
+  ekgmm:inArea           <capability-area-organizational-culture>
+.
+
+<capability-organizational-culture-agility-and-innovation>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Agility & Innovation" ;
+  ekgmm:iriLocalName     "agility-and-innovation" ;
+  ekgmm:capabilityNumber "B.4.2" ;
+  ekgmm:inArea           <capability-area-organizational-culture>
+.
+
+<capability-organizational-culture-ecosystem-collaboration>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Ecosystem Collaboration" ;
+  ekgmm:iriLocalName     "ecosystem-collaboration" ;
+  ekgmm:capabilityNumber "B.4.3" ;
+  ekgmm:inArea           <capability-area-organizational-culture>
+.
+
