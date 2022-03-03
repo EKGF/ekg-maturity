@@ -122,6 +122,8 @@ jobs:
       -
         name: Set up Git repository
         uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
       -
         name: Download Artifacts produced by create-pdf job
         uses: actions/download-artifact@v2

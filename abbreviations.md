@@ -1,18 +1,20 @@
 [//]: # (this file is not placed in the ./docs directory to avoid MkDocs warnings)
+*[API]: Application Programming Interface
+*[BAU]: Business as Usual
+*[BDD]: Behavior Driven Development
+*[DDD]: Domain Driven Design
+*[EKGF]: Enterprise Knowledge Graph Foundation
+*[EKG]: Enterprise Knowledge Graph, an EKGF standard
 *[ERP]: Enterprise Resource Planning
 *[HTML]: Hyper Text Markup Language, a W3C standard
-*[W3C]: World Wide Web Consortium
-*[BDD]: Behavior Driven Development
-*[RDF]: Resource Definition Framework, the standard that defines the basic building block of a semantic graph: the so-called "triple" i.e. an RDF-statement
-*[DDD]: Domain Driven Design
-*[SPARQL]: SPARQL Protocol and RDF Query Language, a W3C standard
 *[LUBM]: Lehigh University Benchmark
-*[SDD]: Self-describing dataset, an EKGF standard
-*[EKG]: Enterprise Knowledge Graph, an EKGF standard
-*[API]: Application Programming Interface
-*[SHACL]: Shapes Constraint Language, a W3C standard
-*[BAU]: Business as Usual
-*[SUDA]: Sense, Understand, Decide, Act
+*[MOU]: Memorandum of Understanding
 *[OODA]: Observe, Orient, Decide, Act
 *[PDCA]: Plan, Do, Check, Act
-*[MOU]: Memorandum of Understanding
+*[PR]: Pull Request
+*[RDF]: Resource Definition Framework, the standard that defines the basic building block of a semantic graph: the so-called "triple" i.e. an RDF-statement
+*[SDD]: Self-describing dataset, an EKGF standard
+*[SHACL]: Shapes Constraint Language, a W3C standard
+*[SPARQL]: SPARQL Protocol and RDF Query Language, a W3C standard
+*[SUDA]: Sense, Understand, Decide, Act
+*[W3C]: World Wide Web Consortium

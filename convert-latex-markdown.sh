@@ -127,6 +127,7 @@ function replaceStuff() {
   replace 's@\\textit{\([^}]*\)}@_\1_@g'
   replace 's@\\textbf{\([^}]*\)}@**\1**@g'
   replace 's@\\myuline{\([^}]*\)}@<ins>\1</ins>@g'
+  replace 's@\\underline{\([^}]*\)}@<ins>\1</ins>@g'
   replace 's@\\enquote{\([^}]*\)}@"\1"@g'
   replace 's@\\texttt{\([^}]*\)}@\`\1\`@g'
   replace 's@\\item @- @g'
