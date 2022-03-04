@@ -10,23 +10,23 @@
   a                      ekgmm:Capability ;
   rdfs:label             "Implementation Approach" ;
   ekgmm:iriLocalName     "implementation-approach" ;
+  ekgmm:inArea           <capability-area-organizational-culture> ;
   ekgmm:capabilityNumber "B.4.1" ;
-  ekgmm:inArea           <capability-area-organizational-culture>
 .
 
 <capability-organizational-culture-agility-and-innovation>
   a                      ekgmm:Capability ;
   rdfs:label             "Agility & Innovation" ;
   ekgmm:iriLocalName     "agility-and-innovation" ;
+  ekgmm:inArea           <capability-area-organizational-culture> ;
   ekgmm:capabilityNumber "B.4.2" ;
-  ekgmm:inArea           <capability-area-organizational-culture>
 .
 
 <capability-organizational-culture-ecosystem-collaboration>
   a                      ekgmm:Capability ;
   rdfs:label             "Ecosystem Collaboration" ;
   ekgmm:iriLocalName     "ecosystem-collaboration" ;
+  ekgmm:inArea           <capability-area-organizational-culture> ;
   ekgmm:capabilityNumber "B.4.3" ;
-  ekgmm:inArea           <capability-area-organizational-culture>
 .
 

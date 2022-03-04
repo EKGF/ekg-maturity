@@ -10,102 +10,102 @@
   a                      ekgmm:Capability ;
   rdfs:label             "Data Integration" ;
   ekgmm:iriLocalName     "data-integration" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.1" ;
-  ekgmm:inArea           <capability-area-technology-execution>
 .
 
 <capability-technology-execution-operations>
   a                      ekgmm:Capability ;
   rdfs:label             "Operations" ;
   ekgmm:iriLocalName     "operations" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.2" ;
-  ekgmm:inArea           <capability-area-technology-execution>
 .
 
 <capability-technology-execution-logging-systems-monitoring>
   a                      ekgmm:Capability ;
   rdfs:label             "Logging / Systems Monitoring" ;
   ekgmm:iriLocalName     "logging-systems-monitoring" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.3" ;
-  ekgmm:inArea           <capability-area-technology-execution>
 .
 
 <capability-technology-execution-business-continuity>
   a                      ekgmm:Capability ;
   rdfs:label             "Business Continuity" ;
   ekgmm:iriLocalName     "business-continuity" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.4" ;
-  ekgmm:inArea           <capability-area-technology-execution>
 .
 
 <capability-technology-execution-data-quality-implementation>
   a                      ekgmm:Capability ;
   rdfs:label             "Data Quality Implementation" ;
   ekgmm:iriLocalName     "data-quality-implementation" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.5" ;
-  ekgmm:inArea           <capability-area-technology-execution>
 .
 
 <capability-technology-execution-analytics>
   a                      ekgmm:Capability ;
   rdfs:label             "Analytics" ;
   ekgmm:iriLocalName     "analytics" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.6" ;
-  ekgmm:inArea           <capability-area-technology-execution>
 .
 
 <capability-technology-execution-inferencing-rules>
   a                      ekgmm:Capability ;
   rdfs:label             "Inferencing Rules" ;
   ekgmm:iriLocalName     "inferencing-rules" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.7" ;
-  ekgmm:inArea           <capability-area-technology-execution>
 .
 
 <capability-technology-execution-entitlement-management>
   a                      ekgmm:Capability ;
   rdfs:label             "Entitlement Management" ;
   ekgmm:iriLocalName     "entitlement-management" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.8" ;
-  ekgmm:inArea           <capability-area-technology-execution>
 .
 
 <capability-technology-execution-data-transformation-execution>
   a                      ekgmm:Capability ;
   rdfs:label             "Data Transformation Execution" ;
   ekgmm:iriLocalName     "data-transformation-execution" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.9" ;
-  ekgmm:inArea           <capability-area-technology-execution>
 .
 
 <capability-technology-execution-identity-resolution>
   a                      ekgmm:Capability ;
   rdfs:label             "Identity Resolution" ;
   ekgmm:iriLocalName     "identity-resolution" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.10" ;
-  ekgmm:inArea           <capability-area-technology-execution>
 .
 
 <capability-technology-execution-knowledge-graph-storage-retrieval>
   a                      ekgmm:Capability ;
   rdfs:label             "Knowledge Graph Storage & Retrieval" ;
   ekgmm:iriLocalName     "knowledge-graph-storage-retrieval" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.11" ;
-  ekgmm:inArea           <capability-area-technology-execution>
 .
 
 <capability-technology-execution-knowledge-graph-federation>
   a                      ekgmm:Capability ;
   rdfs:label             "Knowledge Graph Federation" ;
   ekgmm:iriLocalName     "knowledge-graph-federation" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.12" ;
-  ekgmm:inArea           <capability-area-technology-execution>
 .
 
 <capability-technology-execution-knowledge-graph-virtualization>
   a                      ekgmm:Capability ;
   rdfs:label             "Knowledge Graph Virtualization" ;
   ekgmm:iriLocalName     "knowledge-graph-virtualization" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.13" ;
-  ekgmm:inArea           <capability-area-technology-execution>
 .

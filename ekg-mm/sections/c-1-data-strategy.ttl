@@ -10,14 +10,14 @@
   a                      ekgmm:Capability ;
   rdfs:label             "Goals & Objectives" ;
   ekgmm:iriLocalName     "goals-and-objectives" ;
+  ekgmm:inArea           <capability-area-data-strategy> ;
   ekgmm:capabilityNumber "C.1.1" ;
-  ekgmm:inArea           <capability-area-data-strategy>
 .
 
 <capability-data-strategy-business-case>
   a                      ekgmm:Capability ;
   rdfs:label             "Business Case" ;
   ekgmm:iriLocalName     "business-case" ;
+  ekgmm:inArea           <capability-area-data-strategy> ;
   ekgmm:capabilityNumber "C.1.2" ;
-  ekgmm:inArea           <capability-area-data-strategy>
 .

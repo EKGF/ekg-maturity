@@ -7,36 +7,41 @@
 @prefix dct:       <http://purl.org/dc/terms/> .
 
 <capability-delivery-management-etl-data-movement>
-  a                  ekgmm:Capability ;
-  rdfs:label         "ETL Data-movement" ;
-  ekgmm:iriLocalName "etl-data-movement" ;
-  ekgmm:inArea       <capability-area-delivery-management>
+  a                      ekgmm:Capability ;
+  rdfs:label             "ETL Data-movement" ;
+  ekgmm:iriLocalName     "etl-data-movement" ;
+  ekgmm:inArea           <capability-area-delivery-management> ;
+  ekgmm:capabilityNumber "B.3.1" ;
 .
 
 <capability-delivery-management-ontologies-and-mapping>
-  a                  ekgmm:Capability ;
-  rdfs:label         "Ontologies & Mapping" ;
-  ekgmm:iriLocalName "ontologies-and-mapping" ;
-  ekgmm:inArea       <capability-area-delivery-management>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Ontologies & Mapping" ;
+  ekgmm:iriLocalName     "ontologies-and-mapping" ;
+  ekgmm:inArea           <capability-area-delivery-management> ;
+  ekgmm:capabilityNumber "B.3.2" ;
 .
 
 <capability-delivery-management-dataops-process>
-  a                  ekgmm:Capability ;
-  rdfs:label         "DataOps Process" ;
-  ekgmm:iriLocalName "dataops-process" ;
-  ekgmm:inArea       <capability-area-delivery-management>
+  a                      ekgmm:Capability ;
+  rdfs:label             "DataOps Process" ;
+  ekgmm:iriLocalName     "dataops-process" ;
+  ekgmm:inArea           <capability-area-delivery-management> ;
+  ekgmm:capabilityNumber "B.3.3" ;
 .
 
 <capability-delivery-management-user-interface-and-access>
-  a                  ekgmm:Capability ;
-  rdfs:label         "User Interface and Access" ;
-  ekgmm:iriLocalName "user-interface-and-access" ;
-  ekgmm:inArea       <capability-area-delivery-management>
+  a                      ekgmm:Capability ;
+  rdfs:label             "User Interface and Access" ;
+  ekgmm:iriLocalName     "user-interface-and-access" ;
+  ekgmm:inArea           <capability-area-delivery-management> ;
+  ekgmm:capabilityNumber "B.3.4" ;
 .
 
 <capability-delivery-management-ekg-platform-team>
-  a                  ekgmm:Capability ;
-  rdfs:label         "EKG/Platform Team" ;
-  ekgmm:iriLocalName "ekg-platform-team" ;
-  ekgmm:inArea       <capability-area-delivery-management>
+  a                      ekgmm:Capability ;
+  rdfs:label             "EKG/Platform Team" ;
+  ekgmm:iriLocalName     "ekg-platform-team" ;
+  ekgmm:inArea           <capability-area-delivery-management> ;
+  ekgmm:capabilityNumber "B.3.5" ;
 .

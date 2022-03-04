@@ -10,6 +10,6 @@
   a                      ekgmm:Capability ;
   rdfs:label             "Technology Architecture" ;
   ekgmm:iriLocalName     "technology-architecture" ;
+  ekgmm:inArea           <capability-area-technology-strategy> ;
   ekgmm:capabilityNumber "D.1.1" ;
-  ekgmm:inArea           <capability-area-technology-strategy>
 .

@@ -10,30 +10,30 @@
   a                      ekgmm:Capability ;
   rdfs:label             "Control Functions" ;
   ekgmm:iriLocalName     "control-functions" ;
+  ekgmm:inArea           <capability-area-organizational-capabilities> ;
   ekgmm:capabilityNumber "B.5.1" ;
-  ekgmm:inArea           <capability-area-organizational-capabilities>
 .
 
 <capability-organizational-capabilities-vendor-management>
   a                      ekgmm:Capability ;
   rdfs:label             "Vendor Management" ;
   ekgmm:iriLocalName     "vendor-management" ;
+  ekgmm:inArea           <capability-area-organizational-capabilities> ;
   ekgmm:capabilityNumber "B.5.2" ;
-  ekgmm:inArea           <capability-area-organizational-capabilities>
 .
 
 <capability-organizational-capabilities-talent-management>
   a                      ekgmm:Capability ;
   rdfs:label             "Talent Management" ;
   ekgmm:iriLocalName     "talent-management" ;
+  ekgmm:inArea           <capability-area-organizational-capabilities> ;
   ekgmm:capabilityNumber "B.5.3" ;
-  ekgmm:inArea           <capability-area-organizational-capabilities>
 .
 
 <capability-organizational-capabilities-knowledge-sharing>
   a                      ekgmm:Capability ;
   rdfs:label             "Knowledge Sharing" ;
   ekgmm:iriLocalName     "knowledge-sharing" ;
+  ekgmm:inArea           <capability-area-organizational-capabilities> ;
   ekgmm:capabilityNumber "B.5.4" ;
-  ekgmm:inArea           <capability-area-organizational-capabilities>
 .

@@ -10,7 +10,7 @@
   a                      ekgmm:Capability ;
   rdfs:label             "Business Rules" ;
   ekgmm:iriLocalName     "business-rules" ;
+  ekgmm:inArea           <capability-area-data-quality> ;
   ekgmm:capabilityNumber "C.3.1" ;
-  ekgmm:inArea           <capability-area-data-quality>
 .
 

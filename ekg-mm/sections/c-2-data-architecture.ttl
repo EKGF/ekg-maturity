@@ -10,30 +10,30 @@
   a                      ekgmm:Capability ;
   rdfs:label             "Ontologies" ;
   ekgmm:iriLocalName     "ontologies" ;
+  ekgmm:inArea           <capability-area-data-architecture> ;
   ekgmm:capabilityNumber "C.2.1" ;
-  ekgmm:inArea           <capability-area-data-architecture>
 .
 
 <capability-data-architecture-business-vocabularies>
   a                      ekgmm:Capability ;
   rdfs:label             "Business Vocabularies" ;
   ekgmm:iriLocalName     "business-vocabularies" ;
+  ekgmm:inArea           <capability-area-data-architecture> ;
   ekgmm:capabilityNumber "C.2.2" ;
-  ekgmm:inArea           <capability-area-data-architecture>
 .
 
 <capability-data-architecture-datasets>
   a                      ekgmm:Capability ;
   rdfs:label             "Datasets" ;
   ekgmm:iriLocalName     "datasets" ;
+  ekgmm:inArea           <capability-area-data-architecture> ;
   ekgmm:capabilityNumber "C.2.3" ;
-  ekgmm:inArea           <capability-area-data-architecture>
 .
 
 <capability-data-architecture-data-integration>
   a                      ekgmm:Capability ;
   rdfs:label             "Data Integration" ;
   ekgmm:iriLocalName     "data-integration" ;
+  ekgmm:inArea           <capability-area-data-architecture> ;
   ekgmm:capabilityNumber "C.2.4" ;
-  ekgmm:inArea           <capability-area-data-architecture>
 .

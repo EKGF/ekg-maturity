@@ -10,46 +10,46 @@
   a                      ekgmm:Capability ;
   rdfs:label             "Search" ;
   ekgmm:iriLocalName     "search" ;
+  ekgmm:inArea           <capability-area-user-interface> ;
   ekgmm:capabilityNumber "D.3.1" ;
-  ekgmm:inArea           <capability-area-user-interface>
 .
 
 <capability-user-interface-collaboration>
   a                      ekgmm:Capability ;
   rdfs:label             "Collaboration" ;
   ekgmm:iriLocalName     "collaboration" ;
+  ekgmm:inArea           <capability-area-user-interface> ;
   ekgmm:capabilityNumber "D.3.2" ;
-  ekgmm:inArea           <capability-area-user-interface>
 .
 
 <capability-user-interface-multilingual-support>
   a                      ekgmm:Capability ;
   rdfs:label             "Multilingual Support" ;
   ekgmm:iriLocalName     "multilingual-support" ;
+  ekgmm:inArea           <capability-area-user-interface> ;
   ekgmm:capabilityNumber "D.3.3" ;
-  ekgmm:inArea           <capability-area-user-interface>
 .
 
 <capability-user-interface-content-editing>
   a                      ekgmm:Capability ;
   rdfs:label             "Content Editing" ;
   ekgmm:iriLocalName     "content-editing" ;
+  ekgmm:inArea           <capability-area-user-interface> ;
   ekgmm:capabilityNumber "D.3.4" ;
-  ekgmm:inArea           <capability-area-user-interface>
 .
 
 <capability-user-interface-reporting>
   a                      ekgmm:Capability ;
   rdfs:label             "Reporting" ;
   ekgmm:iriLocalName     "reporting" ;
+  ekgmm:inArea           <capability-area-user-interface> ;
   ekgmm:capabilityNumber "D.3.5" ;
-  ekgmm:inArea           <capability-area-user-interface>
 .
 
 <capability-user-interface-visualization>
   a                      ekgmm:Capability ;
   rdfs:label             "Visualization" ;
   ekgmm:iriLocalName     "visualization" ;
+  ekgmm:inArea           <capability-area-user-interface> ;
   ekgmm:capabilityNumber "D.3.6" ;
-  ekgmm:inArea           <capability-area-user-interface>
 .
