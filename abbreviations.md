@@ -2,10 +2,12 @@
 *[API]: Application Programming Interface
 *[BAU]: Business as Usual
 *[BDD]: Behavior Driven Development
+*[COSO]: Committee of Sponsoring Organizations of the Treadway Commissions
 *[DDD]: Domain Driven Design
 *[EKGF]: Enterprise Knowledge Graph Foundation
 *[EKG]: Enterprise Knowledge Graph, an EKGF standard
 *[ERP]: Enterprise Resource Planning
+*[ERM]: Enterprise Risk Management
 *[HTML]: Hyper Text Markup Language, a W3C standard
 *[LUBM]: Lehigh University Benchmark
 *[MOU]: Memorandum of Understanding
