@@ -13,11 +13,11 @@
 .
 
 <business-pillar>
-  rdf:type                 ekgmm:Pillar ;
-  rdfs:label               "Business Pillar"@en ;
-  ekgmm:iriLocalName       "business" ;
-  ekgmm:pillarInModel      <ekg-mm> ;
-  dct:description          """
+  rdf:type            ekgmm:Pillar ;
+  rdfs:label          "Business Pillar"@en ;
+  ekgmm:iriLocalName  "business" ;
+  ekgmm:pillarInModel <ekg-mm> ;
+  dct:description     """
   ### Audience
   
   Addresses the audience of personas on the business-side of an enterprise, 
@@ -27,7 +27,6 @@
   business architects,
   management consultants and so forth.
   """ ;
-  ekgmm:backgroundAndIntro "./business-pillar/background-and-intro.md" ;
 .
 
 <organization-pillar>
