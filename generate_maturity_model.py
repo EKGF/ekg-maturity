@@ -2,9 +2,13 @@ import os
 import ekglib
 from pathlib import Path
 
-ekglib.maturity_model_parser.mkdocs_gen_files2(
-    model_root=Path('../ekg-mm').resolve(), 
+config = ekglib.maturity_model_parser.Config(
+    verbose=True,
+    mkdocs=False,
+    model_name="EKG/MM",
+    model_root=Path('../ekg-mm').resolve(),
     output_root=Path("./docs").resolve(),
     docs_root=Path(os.getcwd()) / "docs",
-    fragments_root=Path(os.getcwd()) / "docs-fragments"
+    fragments_root=Path(os.getcwd()) / "docs-fragments"    
 )
+ekglib.maturity_model_parser.run_with_config(config)
