@@ -1,6 +1,7 @@
 title: Other
 nav:
   - index.md
+  - PDFs: pdf.md
   - EKGF: https://ekgf.org
   - Manifesto: https://manifesto.ekgf.org
   - Maturity Model: https://maturity-model.ekgf.org

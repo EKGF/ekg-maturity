@@ -9,6 +9,7 @@
 <capability-business-enablers-operating-model>
   a                      ekgmm:Capability ;
   rdfs:label             "Operating Model" ;
+  rdfs:comment           "The desired level of business process integration & standardization." ;
   ekgmm:iriLocalName     "operating-model" ;
   ekgmm:capabilityNumber "A.3.1" ;
   ekgmm:inArea           <capability-area-business-enablers> ;
@@ -24,6 +25,7 @@
 <capability-business-enablers-performance-management>
   a                      ekgmm:Capability ;
   rdfs:label             "Performance Management" ;
+  rdfs:comment           "Measure business processes to manage performance." ;
   ekgmm:iriLocalName     "performance-management" ;
   ekgmm:capabilityNumber "A.3.2" ;
   ekgmm:inArea           <capability-area-business-enablers> ;
@@ -41,6 +43,7 @@
 <capability-business-enablers-risk-managements>
   a                      ekgmm:Capability ;
   rdfs:label             "Risk Management" ;
+  rdfs:comment           "Identify risk to mitigate or accept, with reaction plans." ;
   ekgmm:iriLocalName     "risk-management" ;
   ekgmm:capabilityNumber "A.3.3" ;
   ekgmm:inArea           <capability-area-business-enablers> ;
@@ -56,6 +59,7 @@
 <capability-business-enablers-supply-chain-managements>
   a                      ekgmm:Capability ;
   rdfs:label             "Supply Chain Management" ;
+  rdfs:comment           "Managed flow of goods, services & information between businesses." ;
   ekgmm:iriLocalName     "supply-chain-management" ;
   ekgmm:capabilityNumber "A.3.4" ;
   ekgmm:inArea           <capability-area-business-enablers> ;
@@ -71,6 +75,7 @@
 <capability-business-enablers-capability-map>
   a                      ekgmm:Capability ;
   rdfs:label             "Capability Map" ;
+  rdfs:comment           "Defining what a business does and which outcomes it wants to achieve." ;
   ekgmm:iriLocalName     "capability-map" ;
   ekgmm:capabilityNumber "A.3.5" ;
   ekgmm:inArea           <capability-area-business-enablers> ;

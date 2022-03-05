@@ -9,6 +9,7 @@
 <capability-business-strategy-actuation-business-vision>
   a                      ekgmm:Capability ;
   rdfs:label             "Business Vision" ;
+  rdfs:comment           "Communicating the essence of what a business wants to achieve." ;
   ekgmm:iriLocalName     "business-vision" ;
   ekgmm:inArea           <capability-area-business-strategy-actuation> ;
   ekgmm:capabilityNumber "A.1.1" ;
@@ -28,6 +29,7 @@
 <capability-business-strategy-actuation-business-goals>
   a                      ekgmm:Capability ;
   rdfs:label             "Business Goals" ;
+  rdfs:comment           "Specifying the Business Outcomes along the EKG journey to achieve the Business Vision." ;
   ekgmm:iriLocalName     "business-goals" ;
   ekgmm:inArea           <capability-area-business-strategy-actuation> ;
   ekgmm:capabilityNumber "A.1.2" ;
@@ -53,6 +55,7 @@
 <capability-business-strategy-actuation-business-tactics>
   a                      ekgmm:Capability ;
   rdfs:label             "Business Tactics" ;
+  rdfs:comment           "Ensuring that change capabilities are focused on business value realization." ;
   ekgmm:iriLocalName     "business-tactics" ;
   ekgmm:inArea           <capability-area-business-strategy-actuation> ;
   ekgmm:capabilityNumber "A.1.3" ;

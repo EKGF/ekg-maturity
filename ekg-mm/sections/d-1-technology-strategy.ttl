@@ -9,6 +9,7 @@
 <capability-technology-strategy-technology-architecture>
   a                      ekgmm:Capability ;
   rdfs:label             "Technology Architecture" ;
+  rdfs:comment           "Plans for physical infrastructure, applications, and automation." ;
   ekgmm:iriLocalName     "technology-architecture" ;
   ekgmm:inArea           <capability-area-technology-strategy> ;
   ekgmm:capabilityNumber "D.1.1" ;

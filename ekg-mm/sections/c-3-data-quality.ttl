@@ -9,6 +9,7 @@
 <capability-data-quality-business-rules>
   a                      ekgmm:Capability ;
   rdfs:label             "Business Rules" ;
+  rdfs:comment           "Strategy and approach for managing data quality." ;
   ekgmm:iriLocalName     "business-rules" ;
   ekgmm:inArea           <capability-area-data-quality> ;
   ekgmm:capabilityNumber "C.3.1" ;

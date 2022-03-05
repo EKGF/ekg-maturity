@@ -9,6 +9,7 @@
 <capability-business-model-elaboration-market-segmentation>
   a                      ekgmm:Capability ;
   rdfs:label             "Market Segmentation" ;
+  rdfs:comment           "Shared understanding of markets, products, and clients." ;
   ekgmm:iriLocalName     "market-segmentation" ;
   ekgmm:capabilityNumber "A.2.1" ;
   ekgmm:inArea           <capability-area-business-model-elaboration> ;
@@ -22,6 +23,7 @@
 <capability-business-model-elaboration-value-chain>
   a                      ekgmm:Capability ;
   rdfs:label             "Value Chain" ;
+  rdfs:comment           "Alignment of business capabilities with EKG pathway." ;
   ekgmm:iriLocalName     "value-chain" ;
   ekgmm:capabilityNumber "A.2.2" ;
   ekgmm:inArea           <capability-area-business-model-elaboration> ;
@@ -33,6 +35,7 @@
 <capability-business-model-elaboration-change-managements>
   a                      ekgmm:Capability ;
   rdfs:label             "Change Management" ;
+  rdfs:comment           "Manage operations change to a new state of sustainable value." ;
   ekgmm:iriLocalName     "change-management" ;
   ekgmm:capabilityNumber "A.2.3" ;
   ekgmm:inArea           <capability-area-business-model-elaboration> ;

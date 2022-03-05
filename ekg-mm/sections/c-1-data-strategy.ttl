@@ -9,6 +9,7 @@
 <capability-data-strategy-goals-and-objectives>
   a                      ekgmm:Capability ;
   rdfs:label             "Goals & Objectives" ;
+  rdfs:comment           "EKG as the semantic data mesh for the organization." ;
   ekgmm:iriLocalName     "goals-and-objectives" ;
   ekgmm:inArea           <capability-area-data-strategy> ;
   ekgmm:capabilityNumber "C.1.1" ;
@@ -17,6 +18,7 @@
 <capability-data-strategy-business-case>
   a                      ekgmm:Capability ;
   rdfs:label             "Business Case" ;
+  rdfs:comment           "Business rationale, justification and ROI of the EKG." ;
   ekgmm:iriLocalName     "business-case" ;
   ekgmm:inArea           <capability-area-data-strategy> ;
   ekgmm:capabilityNumber "C.1.2" ;

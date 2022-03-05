@@ -9,6 +9,7 @@
 <capability-data-architecture-ontologies>
   a                      ekgmm:Capability ;
   rdfs:label             "Ontologies" ;
+  rdfs:comment           "The _models_ that provide the structure and meaning for the information." ;
   ekgmm:iriLocalName     "ontologies" ;
   ekgmm:inArea           <capability-area-data-architecture> ;
   ekgmm:capabilityNumber "C.2.1" ;
@@ -17,6 +18,7 @@
 <capability-data-architecture-business-vocabularies>
   a                      ekgmm:Capability ;
   rdfs:label             "Business Vocabularies" ;
+  rdfs:comment           "Terms used to refer to the information by different business communities." ;
   ekgmm:iriLocalName     "business-vocabularies" ;
   ekgmm:inArea           <capability-area-data-architecture> ;
   ekgmm:capabilityNumber "C.2.2" ;
@@ -25,6 +27,7 @@
 <capability-data-architecture-datasets>
   a                      ekgmm:Capability ;
   rdfs:label             "Datasets" ;
+  rdfs:comment           "Coherent collections of information made available for access." ;
   ekgmm:iriLocalName     "datasets" ;
   ekgmm:inArea           <capability-area-data-architecture> ;
   ekgmm:capabilityNumber "C.2.3" ;
@@ -33,6 +36,7 @@
 <capability-data-architecture-data-integration>
   a                      ekgmm:Capability ;
   rdfs:label             "Data Integration" ;
+  rdfs:comment           "Unifying or relating different information concepts." ;
   ekgmm:iriLocalName     "data-integration" ;
   ekgmm:inArea           <capability-area-data-architecture> ;
   ekgmm:capabilityNumber "C.2.4" ;

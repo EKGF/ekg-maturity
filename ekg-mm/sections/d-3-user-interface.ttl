@@ -9,6 +9,7 @@
 <capability-user-interface-search>
   a                      ekgmm:Capability ;
   rdfs:label             "Search" ;
+  rdfs:comment           "Standards and tools for finding relevant data across the enterprise." ;
   ekgmm:iriLocalName     "search" ;
   ekgmm:inArea           <capability-area-user-interface> ;
   ekgmm:capabilityNumber "D.3.1" ;

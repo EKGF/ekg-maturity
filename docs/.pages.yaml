@@ -1,7 +1,6 @@
 nav:
   - intro
   - ...
-  - article
-  - pdf.md
   - appendix
+  - article
   - other

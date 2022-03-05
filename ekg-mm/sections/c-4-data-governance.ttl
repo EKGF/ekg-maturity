@@ -9,6 +9,7 @@
 <capability-data-governance-operating-model>
   a                      ekgmm:Capability ;
   rdfs:label             "Operating Model" ;
+  rdfs:comment           "Structure and approach for the EKG Center of Excellence." ;
   ekgmm:iriLocalName     "operating-model" ;
   ekgmm:inArea           <capability-area-data-governance> ;
   ekgmm:capabilityNumber "C.4.1" ;
@@ -17,6 +18,7 @@
 <capability-data-governance-data-management-policy>
   a                      ekgmm:Capability ;
   rdfs:label             "Data Management Policy" ;
+  rdfs:comment           "Policies, procedures, and standards for managing the data lifecycle." ;
   ekgmm:iriLocalName     "data-management-policy" ;
   ekgmm:inArea           <capability-area-data-governance> ;
   ekgmm:capabilityNumber "C.4.2" ;
@@ -25,6 +27,7 @@
 <capability-data-governance-classification-management>
   a                      ekgmm:Capability ;
   rdfs:label             "Classification Management" ;
+  rdfs:comment           "Management of the data production and manufacturing process." ;
   ekgmm:iriLocalName     "classification-management" ;
   ekgmm:inArea           <capability-area-data-governance> ;
   ekgmm:capabilityNumber "C.4.3" ;
@@ -33,6 +36,7 @@
 <capability-data-governance-risk-and-control-framework>
   a                      ekgmm:Capability ;
   rdfs:label             "Risk & Control Framework" ;
+  rdfs:comment           "Model-driven EKG access control mechanisms." ;
   ekgmm:iriLocalName     "risk-and-control-framework" ;
   ekgmm:inArea           <capability-area-data-governance> ;
   ekgmm:capabilityNumber "C.4.4" ;

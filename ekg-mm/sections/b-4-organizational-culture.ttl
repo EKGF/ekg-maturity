@@ -9,6 +9,7 @@
 <capability-organizational-culture-implementation-approach>
   a                      ekgmm:Capability ;
   rdfs:label             "Implementation Approach" ;
+  rdfs:comment           "Build versus buy decisions." ;
   ekgmm:iriLocalName     "implementation-approach" ;
   ekgmm:inArea           <capability-area-organizational-culture> ;
   ekgmm:capabilityNumber "B.4.1" ;
@@ -17,6 +18,7 @@
 <capability-organizational-culture-agility-and-innovation>
   a                      ekgmm:Capability ;
   rdfs:label             "Agility & Innovation" ;
+  rdfs:comment           "Empowerment, adaptability and failure tolerance." ;
   ekgmm:iriLocalName     "agility-and-innovation" ;
   ekgmm:inArea           <capability-area-organizational-culture> ;
   ekgmm:capabilityNumber "B.4.2" ;
@@ -25,6 +27,7 @@
 <capability-organizational-culture-ecosystem-collaboration>
   a                      ekgmm:Capability ;
   rdfs:label             "Ecosystem Collaboration" ;
+  rdfs:comment           "Alignment with technology, business, and operations." ;
   ekgmm:iriLocalName     "ecosystem-collaboration" ;
   ekgmm:inArea           <capability-area-organizational-culture> ;
   ekgmm:capabilityNumber "B.4.3" ;

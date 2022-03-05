@@ -9,6 +9,7 @@
 <capability-delivery-management-etl-data-movement>
   a                      ekgmm:Capability ;
   rdfs:label             "ETL Data-movement" ;
+  rdfs:comment           "Process for extracting/transforming data from source-to-EKG." ;
   ekgmm:iriLocalName     "etl-data-movement" ;
   ekgmm:inArea           <capability-area-delivery-management> ;
   ekgmm:capabilityNumber "B.3.1" ;
@@ -17,6 +18,7 @@
 <capability-delivery-management-ontologies-and-mapping>
   a                      ekgmm:Capability ;
   rdfs:label             "Ontologies & Mapping" ;
+  rdfs:comment           "Approach to concept modeling and transformation." ;
   ekgmm:iriLocalName     "ontologies-and-mapping" ;
   ekgmm:inArea           <capability-area-delivery-management> ;
   ekgmm:capabilityNumber "B.3.2" ;
@@ -25,6 +27,7 @@
 <capability-delivery-management-dataops-process>
   a                      ekgmm:Capability ;
   rdfs:label             "DataOps Process" ;
+  rdfs:comment           "Rules and standards for building, testing, and maintaining the EKG." ;
   ekgmm:iriLocalName     "dataops-process" ;
   ekgmm:inArea           <capability-area-delivery-management> ;
   ekgmm:capabilityNumber "B.3.3" ;
@@ -33,6 +36,7 @@
 <capability-delivery-management-user-interface-and-access>
   a                      ekgmm:Capability ;
   rdfs:label             "User Interface and Access" ;
+  rdfs:comment           "Methodology for facilitating end-user access to data." ;
   ekgmm:iriLocalName     "user-interface-and-access" ;
   ekgmm:inArea           <capability-area-delivery-management> ;
   ekgmm:capabilityNumber "B.3.4" ;
@@ -41,6 +45,7 @@
 <capability-delivery-management-ekg-platform-team>
   a                      ekgmm:Capability ;
   rdfs:label             "EKG/Platform Team" ;
+  rdfs:comment           "Requirements and accountabilities for managing the EKG/Platform." ;
   ekgmm:iriLocalName     "ekg-platform-team" ;
   ekgmm:inArea           <capability-area-delivery-management> ;
   ekgmm:capabilityNumber "B.3.5" ;
