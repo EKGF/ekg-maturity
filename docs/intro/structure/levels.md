@@ -1,4 +1,4 @@
-# The five maturity levels
+# The Five Maturity Levels
 
 This document will refer---for each capability---to the five maturity levels.
 
