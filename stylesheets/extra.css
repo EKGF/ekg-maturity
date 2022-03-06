@@ -29,3 +29,14 @@ td span
   transform: rotate(180deg);
   white-space: nowrap;
 }
+
+.md-typeset__table.mmtable
+{
+  border: 1px red solid ;
+}
+
+.md-typeset__table.mmtable td {
+    font-weight: bold;
+    background-color: #fff;
+    border-collapse: separate;
+}
