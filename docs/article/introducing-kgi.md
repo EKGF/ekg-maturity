@@ -1,38 +1,38 @@
 ---
-title: Introducing the EKG Matrix Pattern & KGI Value
-summary: Introducing the EKG Matrix Pattern & KGI Value
+title: Introducing the EKG Matrix Plot & KGI Value
+summary: Introducing the EKG Matrix Plot & KGI Value
 authors:
 - Carl Mattocks
 date: 2022-03-06
 some_url: https://maturity-model.ekgf.org/article/introducing-kgi/
 ---
-# Introducing the EKG Matrix Pattern & KGI Value
+# Introducing the EKG Matrix Plot & KGI Value
 
 The Enterprise Knowledge Graph (EKG) 0-5 Level Maturity Model is an industry-standard 
 knowledge management guideline with topics that support an evidence-rating system 
 for organizational use of Knowledge Graphs (KG). 
 
-In particular, it uses [Pillars](/pillar/) of meta-knowledge, each containing the domain 
-specific assessment criteria, needed to produce a business maturity metric for, 
-one or more essential capabilities and/or, specialization use cases and/or, 
-value streams e.g. Operational value streams and /or development value streams.
+In particular, it uses [Pillars](/pillar/) of meta-knowledge, each containing a 
+collection of subject area specific assessment criteria that are the related 
+dimension values of distinct maturity metrics.
 
+## EKG Matrix Plot
 
-## EKG Matrix Pattern
+An EKG Matrix is a scatterplot of grouped maturity metrics that can be used 
+to compute the Maturity Level of a particular business area.
+Which may be scoped as a group of value stream Business Use Cases that 
+graphed the build / operation of systems enabling capabilities. 
+Equally a Matrix Plot defined with a Business Capability Axis, 
+and a Dimension / Pillar Axis could provide group maturity metrics for 
+All Business Use Cases that are measured across specific 
+Pillars --- e.g. Organization, Data and Technology. 
 
-For instance, a granular evidence based Pattern for a single Business Use Case 
-may be produced via a Business Use Case Maturity Matrix utilizing a 
-Business Capability Axis, and a Domain (Organization, Data  and Technology) 
-Pillar Axis. 
-It may also be used when the assessment scope is for, all Business Value Streams 
-that is specific to a distinct subset of cross Domain / Pillar (D/P) capabilities. 
+!!! note
 
-Note: When an EKG matrix pattern encompasses two or more Business Use Case / 
-Domain / Pillar the Pattern will reflect a compound maturity metric:
+    Common vector elements are required to compute the sum of two or more Dimensions
 
-
-Business Use Case – **Enterprise Initiative Prioritization**<br/>
-EKG Matrix pattern identifies D/P Maturity Levels:  2, 2, 3, 3, 2, 2
+Business Use Case – [**Enterprise Initiative Prioritization**](https://catalog.ekgf.org//use-case/other/enterprise-initiative-prioritization/)<br/>
+EKG Matrix plot identifies Dimension/Pillar Maturity Levels:  2, 2, 3, 3, 2, 2
 
 | D/P | D/P | D/P | D/P | D/P | D/P |
 |-----|-----|-----|-----|-----|-----|
@@ -40,8 +40,8 @@ EKG Matrix pattern identifies D/P Maturity Levels:  2, 2, 3, 3, 2, 2
 | xXx | xXx |     |     | xXx | xXx |
 |     |     |     |     |     |     |
 
-Business Use Case – **Merger and Acquisition Evaluation and Integration**<br/>
-EKG Matrix pattern identifies D/P Maturity Levels:  3, 3, 4, 3, 3, 3
+Business Use Case – [**Merger and Acquisition Evaluation and Integration**](https://catalog.ekgf.org/use-case/other/merger-and-acquisition-evaluation-and-integration/)<br/>
+EKG Matrix plot identifies Dimension/Pillar Maturity Levels:  3, 3, 4, 3, 3, 3
 
 | D/P | D/P | D/P | D/P | D/P | D/P |
 |-----|-----|-----|-----|-----|-----|
@@ -50,8 +50,8 @@ EKG Matrix pattern identifies D/P Maturity Levels:  3, 3, 4, 3, 3, 3
 |     |     |     |     |     |     |
 |     |     |     |     |     |     |
 
-Business Use Case – **Identify Redundant Vendor Contracts**<br/>
-KG Matrix pattern identifies D/P Maturity Levels:  3, 3, 3, 3, 4, 3 
+Business Use Case – [**Identify Redundant Vendor Contracts**]()https://catalog.ekgf.org/use-case/other/identify-redundant-vendor-contracts/<br/>
+EKG Matrix plot identifies Dimension/Pillar Maturity Levels:  3, 3, 3, 3, 4, 3 
 
 | D/P | D/P | D/P | D/P | D/P | D/P |
 |-----|-----|-----|-----|-----|-----|
@@ -62,44 +62,55 @@ KG Matrix pattern identifies D/P Maturity Levels:  3, 3, 3, 3, 4, 3
 
 ## Knowledge Graph Indicator (KGI) Value
 
-When in scope for a named business (KG + Vector Value have a common Business Identifier) 
-domain specific assessment criteria may explicitly reference the evidence-rating of a 
-Knowledge Graph Indicator (KGI). 
-Wherein, the KGI is a type of Key Results Indicator (aka Key Risk Indicator) that 
-incorporates process outcome as a maturity factor. 
-Whereas, content of the KG construct --- that lays out how specific business objects, 
-events, situations are related --- has been subjected to a predefined treatment that 
-inherently increased the value of that knowledge when utilized for the identified 
-business capability. 
-Whereby, a business capability may have one or more value vectors that are unique to 
-their value chain. 
+When in scope, a Matrix Plot for a named business --- EKG + Dimension have a 
+common Business Identifier --- subject area specific assessment criteria may 
+explicitly reference the evidence-rating of a _Knowledge Graph Indicator_ (KGI). 
+Wherein, the KGI is a type of _Key Results Indicator_ that incorporates process 
+outcome as a maturity factor. 
+Whereas, content of the KG construct --- that lays out how specific 
+business objects, events, situations are related --- has been subjected to a 
+predefined treatment that inherently increased the value of that knowledge 
+when utilized for the identified business capability. 
+Whereby, a business capability may have one or more related dimension values 
+that are unique to their value chain (of countable dimensional spaces). 
 
 For example:
 
-- Business Impact Vector : Readability > Understandability > Influenceability
-- FAIR Principles Vector :  Findability +  Accessibility +  Interoperability
+- Business Impact Dimension : Readability > Understandability > Influenceability
+- FAIR Principles Dimension :  Findability +  Accessibility +  Interoperability
 
-## Evidence Rating
+!!! note
 
-Evidence rating is often a scale that indicates quality of evidence, such as, 
-high, moderate, low, and very low. Further, the method used to determine 
-quality of evidence level is published. 
-As in,
-- Formulaically, a process may be any combination of task, function, 
-  activity performed in a cycle that has a declared value + is specific to 
-  one or more Pillar domain
-- Semantically, a process outcome may be defined as a domain specific goal, 
-  objective, proposed value proposition or measurable result identified for 
-  a particular strategy, plan, tactic or use case
-- Cross Domain specific use cases can have different cycles and outcomes e.g.
-  - intellectual property safeguards
-  - data privacy protections 
-  - information security controls
-  - value chain definitions 
-- Quality of evidence that a KG was subjected to a predefined treatment may be:
-  1. Actual process outcome was verified by semantic matching with planned outcome
-  2. Process treatment was designed to enhance the value for a structure
-     composed of same types of business objects, events, situations
-  3. KGI Zone Parameters (which identify salient properties, such as, the 
-     beginning-edge and the ending-edge of the particular knowledge graph) 
-     are within stated tolerances
+    Matrix Plot for Systems Interoperability may have two axis --- workflow and dataset
+
+
+## Evidence Rating Dimension
+
+Evidence Rating Dimension is a countable dimensional space that indicates 
+_Quality of Evidence Level_, such as, 5=High, 4=Moderate, 2=Low, 1=Very Low, 0=none.
+Further, the method & criteria used to determine quality of evidence level is published. 
+As in:
+
+- Formulaically: a process may be any combination of task, function, 
+  activity performed in a cycle that has a declared value + is specific to one or 
+  more Pillar dimensions.
+- Semantically, a process outcome may be defined as a capability specific goal, 
+  objective, proposed value proposition or measurable result identified for a 
+  particular strategy, plan, tactic or use case.
+- Cross Pillar specific use cases can have different cycles and outcomes e.g.
+    - intellectual property safeguards
+    - data privacy protections
+    - information security controls
+    - value chain definitions
+
+Evidence that KG was subjected to a predefined treatment could be that at least one 
+critical Dimension has a level greater than 0 (none). 
+Which could include:
+
+1. Actual process outcome was verified by semantic matching with planned outcome
+2. Process treatment was designed to enhance the value for a structure composed 
+   of same types of business objects, events, situations
+3. KGI Zone Parameters (which identify salient properties, such as, the 
+   beginning-edge and the ending-edge of the particular knowledge graph) 
+   are within stated range tolerances
+
