@@ -18,26 +18,6 @@ infra:
   - /**/**.sh
   - /**/*.md
 
-agnos-ai:
-  - customer-assets/agnos-ai/*
-  - any: ['agnos-*']
-  - any: ['*-agnos/**/*']
-  - any: ['*-agnos-ai/**/*']
-
-ekg-mm-intro:
-  - ekg-mm/sections/ekg-mm-intro*
-
-ekg-mm-business:
-  - ekg-mm/sections/a-business*
-
-ekg-mm-data:
-  - ekg-mm/sections/b-data*
-
-ekg-mm-technology:
-  - ekg-mm/sections/c-technology*
-
-ekg-mm-organization:
-  - ekg-mm/sections/d-organization*
-
-
+diagram:
+  - /**/*.puml
 
