@@ -1,0 +1,201 @@
+@startuml
+
+!include ../include/themes/light.puml
+
+package CapabilityModel as "Abstract Capability Model" {
+  abstract class Model {
+      + name
+      + capabilities: Capability[]
+  }
+  abstract class Capability {
+      + name: rdfs:label
+      + tagline: rdfs:comment
+      + summary: dct:description
+      + parent: Optional<Capability>
+      + model: Model
+  }
+  Model "1" *-- "*" Capability
+  Capability *-- Capability: consists of\nlower level\ncapabilities >
+}
+package BusinessCapabilityModel as "Business Capability Model" {
+  note "defines <b>what</b>\na business\ndoes" as N1
+  class BusinessCapabilityMap {
+      + capabilities: BusinessCapability[]
+  }
+  class BusinessCapability {
+      + delivered_by: UseCase[]
+  }
+}
+
+package EKGMaturityModel as "EKG Maturity Model" {
+  note as N2
+    defines <b>what</b>
+    a business needs
+    for EKG maturity
+    and how it is
+    affected by EKG
+  end note
+  class MaturityModel {
+      + pillars: Pillar[]
+      + levels: Level[]
+  }
+  class Pillar {
+      + name
+      + summary: markdown_fragment
+      + audience: Persona[]
+      + areas: Area[]
+  }
+  class Area {
+      + capabilities: MaturityModelCapability
+  }
+  class Level {}
+  class MaturityModelCapability {
+      + contribution_to_ekg: markdown_fragment
+      + contribution_to_enterprise: markdown_fragment
+      + dimensions: Dimension[]
+  }
+}
+
+package Usecases {
+  class UseCase {
+      - vocabulary: Vocabulary
+      - stories: Story[]
+      - personas: Persona[]
+  }
+  class Story {
+      + as_a: Persona
+      + i_want_a: Feature
+      + delivering: Outcome
+  }
+  class Outcome {
+  }
+}
+package Vocabulary {
+  note as N3
+    define the language
+    in a context
+  end note
+  class "skos:ConceptScheme" as ConceptScheme {
+  }
+  class "skos:Concept" as skosConcept {
+    + skos:inScheme: ConceptScheme 
+  }
+  note top: any term for a concept
+  class TechnicalIdentifier {
+    + language
+  } 
+  note right of TechnicalIdentifier::language
+    JavaScript, JSON, REST,
+    SPARQL, SQL, etc
+  end note
+  class UseCaseVocabulary {
+    concepts: UseCaseConcept[]
+    usecases: UseCase[]
+  }
+  class UseCaseConcept {
+    vocabularies: UseCaseVocabulary[]
+    terms: skosConcept[]
+  }
+  class Persona {
+    + inherits_from: Persona[]
+  }
+}
+package Requirements {
+  class Dimension {
+      - value_range
+      - weighting
+      - priority
+      - monetary_impact
+      - reputation_impact
+      - attestation_or_evidence
+  }
+  class Plot {
+    - dimensions: Dimension
+    - usecases: UseCase[]
+    - unit: OrganizationalUnit
+    - assessments: Assessment
+  }
+  class Criterion {
+    + capability: MaturityModelCapability
+    + relevant_from: Level
+    + dimension: Dimension
+    + abc
+  }
+  Criterion -> Level : for
+  Criterion -> Dimension : for
+  Criterion -> MaturityModelCapability : for
+}
+package Assessments {
+  class Assessment {
+     Has a treatment\nbeen applied?
+     ..
+     - plot: Plot
+     - scope: AssessmentScope
+     - assessor: PersonOrSystem
+  }
+  class AssessmentScope {
+    - period
+    - goal/objective
+    - sponsor
+    - assessments: Assessment[]
+    - assessable_plots: Plot[]
+  }
+  class KGI {
+     Has a treatment\nbeen applied\nto the EKG?
+     ..
+  }
+  class Treatment {
+  }
+  class Treatise {
+  }
+}
+
+package BusinessCapabilityModel as "Business Capability Model" {
+  BusinessCapabilityMap -up-|> Model: specialization\nof <
+  BusinessCapability -up-|> Capability: specialization\nof <
+  BusinessCapabilityMap "1" *-- "*" BusinessCapability
+}
+
+package EKGMaturityModel as "EKG Maturity Model" {
+  MaturityModel -up-|> Model: specialization\nof <
+  MaturityModel "1" *-down-> "4" Pillar: the four\npillars
+  MaturityModel "1" *-down-> "5" Level: the five\nmaturity\nlevels
+  MaturityModel -> Dimension : all possible\ndimensions
+  Pillar "1" *-down-> "1..*" Area
+  Area "1" *-down-> "1..*" MaturityModelCapability
+  MaturityModelCapability -up-|> Capability
+  MaturityModelCapability -> Dimension: capability\nspecific\ndimensions
+}
+
+package Assessments {
+  Assessment -right-> AssessmentScope
+  'Assessment -> Plot
+  AssessmentScope -> "*" Plot : assessable\nplots >
+  KGI -up-|> Assessment : specialization of >
+  Assessment -up-|> Assessment : specialization of >
+  Assessment ..> MaturityModelCapability : assesses 1 of\nthe dimensions\nof >
+  Treatment -> KGI: explains the act\nthat is being\nmeasured >
+  Treatise -> Dimension: explains >
+  Treatise -> Treatment: explains the facts/\nevidence of the\ntreatment >
+  Plot -> "*" UseCase : limited\nto
+  Plot -> Dimension : limited\nto
+}
+
+package Usecases {
+  UseCase "0..*" -> "1..*" BusinessCapability : delivers
+  UseCase -> UseCase: depends\non >
+  UseCase -> Persona
+}
+
+package Vocabulary {
+  UseCaseConcept -up-> skosConcept
+  ConceptScheme "1..*" o-- "*" skosConcept
+  Persona -up-|> UseCaseConcept
+  skosConcept -> skosConcept: skos:broader
+  TechnicalIdentifier -up-|> skosConcept
+  
+}
+
+Usecases --+ Requirements
+
+@enduml

@@ -81,7 +81,16 @@ plugins:
       exclude:
         - fragment/*
   - include-markdown
-#  - git-revision-date
+  #- git-revision-date
+  - exclude:
+      glob:
+        - "*.tmp"
+        - "*.sparql"
+        - "*.gz"
+        - diagrams/src/*
+      regex:
+        - '.*\.(tmp|bin|tar)$'
+        - '_.*\.md$'
   - build_plantuml:
       render: "server" # or "local" for local rendering
       bin_path: "/usr/local/bin/plantuml" # ignored when render: server
@@ -99,16 +108,6 @@ plugins:
       filename: .pages.yaml
       collapse_single_pages: false
       strict: true
-  - exclude:
-      glob:
-        - "*.tmp"
-        - "*.sparql"
-        - "*.gz"
-        - diagrams/src/*
-        - fragment/*
-      regex:
-        - '.*\.(tmp|bin|tar)$'
-        - '_.*\.md$'
   - macros:
       module_name: docs/main
   - gen-files:
