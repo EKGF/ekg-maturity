@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://maturity-model.ekgf.org/article/meta-maturity-model/</loc>
+         <lastmod>2022-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://maturity-model.ekgf.org/article/value-proposition-of-ekg/</loc>
          <lastmod>2022-03-21</lastmod>
          <changefreq>daily</changefreq>
@@ -87,11 +92,6 @@
     </url>
     <url>
          <loc>https://maturity-model.ekgf.org/other/history/</loc>
-         <lastmod>2022-03-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://maturity-model.ekgf.org/other/pdf/</loc>
          <lastmod>2022-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
