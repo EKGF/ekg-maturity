@@ -118,6 +118,9 @@ create an IRI.
 For a given key "this is a key", the SHA256 hash would
 be `c9fc5d06292274fd98bcb57882657bf71de1eda4df902c519d915fc585b10190`.
 
+IRIs with a SHA 256 will need an ALPHA character leading it as an IRI cannot lead with a NUMERIC
+
+
 - `<https://your.org/id/sha256:c9fc5d06292274fd98bcb57882657bf71de1eda4df902c519d915fc585b10190>`
 
 | Pro                                                                                                                      | Con                                                                                            |
