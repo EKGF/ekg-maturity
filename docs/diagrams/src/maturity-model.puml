@@ -109,12 +109,6 @@ package Requirements {
       - reputation_impact
       - attestation_or_evidence
   }
-  class Plot {
-    - dimensions: Dimension
-    - usecases: UseCase[]
-    - unit: OrganizationalUnit
-    - assessments: Assessment
-  }
   class Criterion {
     + capability: MaturityModelCapability
     + relevant_from: Level
@@ -126,10 +120,14 @@ package Requirements {
   Criterion -> MaturityModelCapability : for
 }
 package Assessments {
+  class Plot {
+    - usecases: UseCase[]
+    - unit: OrganizationalUnit
+    - assessments: Assessment
+  }
   class Assessment {
      Has a treatment\nbeen applied?
      ..
-     - plot: Plot
      - scope: AssessmentScope
      - assessor: PersonOrSystem
   }
@@ -144,9 +142,15 @@ package Assessments {
      Has a treatment\nbeen applied\nto the EKG?
      ..
   }
+}
+
+package Evidence {
   class Treatment {
+    Treatment is a record that an
+    activity has been performed.
   }
   class Treatise {
+    a label applied to a bunch of facts
   }
 }
 
@@ -168,7 +172,7 @@ package EKGMaturityModel as "EKG Maturity Model" {
 }
 
 package Assessments {
-  Assessment -right-> AssessmentScope
+  Assessment -up-> AssessmentScope
   'Assessment -> Plot
   AssessmentScope -> "*" Plot : assessable\nplots >
   KGI -up-|> Assessment : specialization of >
