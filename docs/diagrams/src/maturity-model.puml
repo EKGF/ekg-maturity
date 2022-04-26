@@ -23,7 +23,10 @@ package BusinessCapabilityModel as "Business Capability Model" {
       + capabilities: BusinessCapability[]
   }
   class BusinessCapability {
+     A business capability defines WHAT a business does.
       + delivered_by: UseCase[]
+     - name
+     - outcome: markdown_fragment
   }
 }
 
@@ -58,6 +61,8 @@ package EKGMaturityModel as "EKG Maturity Model" {
 
 package Usecases {
   class UseCase {
+     A use case delivers\nor implements\na business capability
+      - delivers: BusinessCapability[]
       - vocabulary: Vocabulary
       - stories: Story[]
       - personas: Persona[]
@@ -67,8 +72,7 @@ package Usecases {
       + i_want_a: Feature
       + delivering: Outcome
   }
-  class Outcome {
-  }
+  UseCase --> "*" Story
 }
 package Vocabulary {
   note as N3
@@ -102,6 +106,7 @@ package Vocabulary {
 }
 package Requirements {
   class Dimension {
+      - capability: MaturityModelCapability
       - value_range
       - weighting
       - priority
@@ -139,19 +144,31 @@ package Assessments {
     - assessable_plots: Plot[]
   }
   class KGI {
-     Has a treatment\nbeen applied\nto the EKG?
-     ..
+    Is a score that reflects\nthe evidence.
+    Has a treatment been\napplied to the EKG?
+    - dimension: Dimension
   }
+  KGI --> Dimension
 }
 
 package Evidence {
+  class Event {
+    Event could be an action
+    or stimulus response.
+    - timestamp: Timestamp
+    - process: Optional<BusinessProcess>
+    - 
+  }
   class Treatment {
     Treatment is a record that an
     activity has been performed.
+    - events: Event[]
   }
   class Treatise {
     a label applied to a bunch of facts
   }
+  Treatment --> "1..*" Event
+  
 }
 
 package BusinessCapabilityModel as "Business Capability Model" {

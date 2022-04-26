@@ -10,7 +10,7 @@ skinparam HyperLinkColor        #lightgreen
 
 ' include the general skinparams for both, light and dark
 ' to overwrite with the given settings
-!include general.puml
+!include ./general.puml
 
 skinparam state {
     BackgroundColor #9397B2
