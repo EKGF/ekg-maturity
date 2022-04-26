@@ -2,7 +2,8 @@
 
 !!! warn
 
-    Work in progress
+    Work in progress, this is just the results of an initial
+    brainstorm session, needs to be worked out
 
 1. Do you have a Change Management plan and is it driving everything?
 2. Is your plan related to and driven by your value streams and how 

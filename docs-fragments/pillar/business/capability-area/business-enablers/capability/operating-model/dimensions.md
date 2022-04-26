@@ -2,7 +2,8 @@
 
 !!! warn
 
-    Work in progress
+    Work in progress, this is just the results of an initial
+    brainstorm session, needs to be worked out
 
 1. Has the organization identified its integration needs? Scale 1-5
 2. Has the organization identified its standardization needs? Scale 1-5

@@ -2,7 +2,8 @@
 
 !!! warn
 
-    Work in progress
+    Work in progress, this is just the results of an initial
+    brainstorm session, needs to be worked out
 
 1. Did you identify the value proposition of your organization? Scale 1-5
 2. Is your value proposition supported by value streams? Scale 1-5
