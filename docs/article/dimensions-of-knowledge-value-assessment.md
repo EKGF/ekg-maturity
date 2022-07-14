@@ -51,7 +51,7 @@ Such as:
 For Sustainability to be maintained at a certain rate or level,
 the objective would likely include all forms of Business Value
 that indicate the health and well-being of an enterprise. 
-More likely is that the core objective of having a _Value Proposition_
+The most likely core objective would be to have a _Value Proposition_
 that gives the customer the reason to choose their offering. 
 Another likely objective would be the [Value Stream Management](/pillar/business/capability-area/business-model-elaboration/capability/value-chain/dimensions)
 focused on the flow of Value Chain activities performed when 
@@ -127,7 +127,7 @@ embedded knowledge products / services that have a
 unique competitive advantage or social benefit. 
 That outcome may be also feature in a 
 _Value Driver Tree_ (also known as _KPI Tree_) 
-links all the Business Values to the Drivers
+that links the Business Values to the Drivers
 (e.g. embed into service) to help identify those which have 
 the greatest impact on total value
 
