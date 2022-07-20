@@ -12,7 +12,7 @@ All contributors in alphabetical order.
 | [Ross Leher](https://www.linkedin.com/in/ross-leher-4471971/)                     | [WAND](https://www.wandinc.com)                                            | Business Pillar                            |
 | [Mary Levins](https://www.linkedin.com/in/marylevins/)                            | [Sierra Creek Consulting](http://www.sierracreekconsulting.com/)           | Business & Data Pillar                     |
 | [Lars Magnusson](https://www.linkedin.com/in/larsmmagnusson/)                     | Ericsson                                                                   | Business Pillar                            |
-| [Carl Mattocks](https://www.linkedin.com/in/carlmattocks/)                        | GE, New York Power Authority                                               | Business Pillar                            |
+| [Carl Mattocks](author/carl-mattocks)                                             | GE, New York Power Authority                                               | Business Pillar                            |
 | [Eduardo Martinez](https://www.linkedin.com/in/jeduardomtz/)                      | BMO                                                                        | Business Pillar                            |
 | [Avinash Patil](https://www.linkedin.com/in/avinash-patil-4229564/)               | Tata Consultancy Services                                                  | Business Pillar                            |
 | [Pete Rivett](author/pete-rivett)                                                 | OMG                                                                        | EKGF Founder & Vice President Data Pillar  |
