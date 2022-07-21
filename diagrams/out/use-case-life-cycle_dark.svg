@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="325px" preserveAspectRatio="none" style="width:1222px;height:325px;background:#2E303E;" version="1.1" viewBox="0 0 1222 325" width="1222px" zoomAndPan="magnify"><defs><filter height="300%" id="f17yznimdd59xu" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="16" cy="123.246" fill="#222222" filter="url(#f17yznimdd59xu)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><g id="Identified"><rect fill="#9397B2" filter="url(#f17yznimdd59xu)" height="77.9063" rx="20" ry="20" style="stroke:#0077B6;stroke-width:0.5;" width="180" x="61" y="84.246"/><line style="stroke:#0077B6;stroke-width:0.5;" x1="61" x2="241" y1="116.2147" y2="116.2147"/><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="56" x="123" y="104.3847">Identified</text><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="140" x="70" y="136.3534">- name and description</text><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="152" x="70" y="150.3222">- added to use case tree</text></g><g id="Defined"><rect fill="#9397B2" filter="url(#f17yznimdd59xu)" height="119.8125" rx="20" ry="20" style="stroke:#0077B6;stroke-width:0.5;" width="124" x="276" y="63.246"/><line style="stroke:#0077B6;stroke-width:0.5;" x1="276" x2="400" y1="95.2147" y2="95.2147"/><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="47" x="314.5" y="83.3847">Defined</text><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69" x="285" y="115.3534">- outcomes</text><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="66" x="285" y="129.3222">- personas</text><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="65" x="285" y="143.2909">- concepts</text><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="51" x="285" y="157.2597">- stories</text><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="96" x="285" y="171.2284">- dependencies</text></g><g id="Proposed"><rect fill="#9397B2" filter="url(#f17yznimdd59xu)" height="63.9375" rx="20" ry="20" style="stroke:#0077B6;stroke-width:0.5;" width="108" x="435" y="91.246"/><line style="stroke:#0077B6;stroke-width:0.5;" x1="435" x2="543" y1="123.2147" y2="123.2147"/><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="58" x="460" y="111.3847">Proposed</text><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="80" x="444" y="143.3534">- chart phase</text></g><ellipse cx="824" cy="303.246" fill="none" filter="url(#f17yznimdd59xu)" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;"/><ellipse cx="824.5" cy="303.746" fill="#222222" rx="6" ry="6" style="stroke:none;stroke-width:1.0;"/><g id="Planned"><rect fill="#9397B2" filter="url(#f17yznimdd59xu)" height="63.9375" rx="20" ry="20" style="stroke:#0077B6;stroke-width:0.5;" width="110" x="578" y="91.246"/><line style="stroke:#0077B6;stroke-width:0.5;" x1="578" x2="688" y1="123.2147" y2="123.2147"/><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46" x="610" y="111.3847">Planned</text><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="82" x="587" y="143.3534">- on roadmap</text></g><g id="InProgress"><rect fill="#9397B2" filter="url(#f17yznimdd59xu)" height="63.9375" rx="20" ry="20" style="stroke:#0077B6;stroke-width:0.5;" width="107" x="723.5" y="91.246"/><line style="stroke:#0077B6;stroke-width:0.5;" x1="723.5" x2="830.5" y1="123.2147" y2="123.2147"/><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="64" x="745" y="111.3847">InProgress</text><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="79" x="732.5" y="143.3534">- build phase</text></g><g id="Delivered"><rect fill="#9397B2" filter="url(#f17yznimdd59xu)" height="50" rx="20" ry="20" style="stroke:#0077B6;stroke-width:0.5;" width="87" x="865.5" y="98.246"/><line style="stroke:#0077B6;stroke-width:0.5;" x1="865.5" x2="952.5" y1="130.2147" y2="130.2147"/><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="59" x="879.5" y="118.3847">Delivered</text></g><g id="Deployed"><rect fill="#9397B2" filter="url(#f17yznimdd59xu)" height="50" rx="20" ry="20" style="stroke:#0077B6;stroke-width:0.5;" width="87" x="987.5" y="98.246"/><line style="stroke:#0077B6;stroke-width:0.5;" x1="987.5" x2="1074.5" y1="130.2147" y2="130.2147"/><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="59" x="1001.5" y="118.3847">Deployed</text></g><g id="Deprecated"><rect fill="#9397B2" filter="url(#f17yznimdd59xu)" height="50" rx="20" ry="20" style="stroke:#0077B6;stroke-width:0.5;" width="100" x="1110" y="98.246"/><line style="stroke:#0077B6;stroke-width:0.5;" x1="1110" x2="1210" y1="130.2147" y2="130.2147"/><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="72" x="1124" y="118.3847">Deprecated</text></g><g id="Decommissioned"><rect fill="#9397B2" filter="url(#f17yznimdd59xu)" height="50" rx="20" ry="20" style="stroke:#0077B6;stroke-width:0.5;" width="133" x="961.5" y="213.246"/><line style="stroke:#0077B6;stroke-width:0.5;" x1="961.5" x2="1094.5" y1="245.2147" y2="245.2147"/><text fill="#03045E" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="105" x="975.5" y="233.3847">Decommissioned</text></g><!--MD5=[f33fdf7803c8c747854ecb2c224ee407]
+link *start to Identified--><g id="link_*start_Identified"><path d="M26.0195,123.246 C35.8586,123.246 45.6978,123.246 55.5369,123.246 " fill="none" id="*start-to-Identified" style="stroke:#FF9900;stroke-width:1.0;"/><polygon fill="#FF9900" points="60.6821,123.246,51.6821,119.246,55.6821,123.246,51.6821,127.246,60.6821,123.246" style="stroke:#FF9900;stroke-width:1.0;"/></g><!--MD5=[45f40f8af494d2b89a08591f4cc1946d]
+link Identified to Defined--><g id="link_Identified_Defined"><path d="M241.213,123.246 C251.086,123.246 260.959,123.246 270.833,123.246 " fill="none" id="Identified-to-Defined" style="stroke:#FF9900;stroke-width:1.0;"/><polygon fill="#FF9900" points="275.996,123.246,266.996,119.246,270.996,123.246,266.996,127.246,275.996,123.246" style="stroke:#FF9900;stroke-width:1.0;"/></g><!--MD5=[614507bae6a6a45953f77d054c4b57d9]
+link Defined to Proposed--><g id="link_Defined_Proposed"><path d="M400.229,123.246 C410.072,123.246 419.915,123.246 429.758,123.246 " fill="none" id="Defined-to-Proposed" style="stroke:#FF9900;stroke-width:1.0;"/><polygon fill="#FF9900" points="434.905,123.246,425.905,119.246,429.905,123.246,425.905,127.246,434.905,123.246" style="stroke:#FF9900;stroke-width:1.0;"/></g><!--MD5=[5160b5791cfe4c27fe789cf1c1697092]
+link Proposed to *end--><g id="link_Proposed_*end"><path d="M522.603,155.329 C533.981,164.974 547.087,175.179 560,183.246 C648.956,238.8209 768.262,282.8492 809.366,297.2395 " fill="none" id="Proposed-to-*end" style="stroke:#FF9900;stroke-width:1.0;"/><polygon fill="#FF9900" points="814.42,298.9969,807.232,292.2639,809.6971,297.3554,804.6056,299.8205,814.42,298.9969" style="stroke:#FF9900;stroke-width:1.0;"/><text fill="#EEEEEE" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="64" x="726" y="242.8847">Rejected</text></g><!--MD5=[589ea703b03a11617f1246ef3ebc171f]
+link Proposed to Planned--><g id="link_Proposed_Planned"><path d="M543.281,123.246 C553.13,123.246 562.978,123.246 572.827,123.246 " fill="none" id="Proposed-to-Planned" style="stroke:#FF9900;stroke-width:1.0;"/><polygon fill="#FF9900" points="577.977,123.246,568.977,119.246,572.977,123.246,568.977,127.246,577.977,123.246" style="stroke:#FF9900;stroke-width:1.0;"/></g><!--MD5=[62a3fcce59402c581fc7f9b606d56eb2]
+link Planned to InProgress--><g id="link_Planned_InProgress"><path d="M688.125,123.246 C698.078,123.246 708.031,123.246 717.984,123.246 " fill="none" id="Planned-to-InProgress" style="stroke:#FF9900;stroke-width:1.0;"/><polygon fill="#FF9900" points="723.189,123.246,714.189,119.246,718.189,123.246,714.189,127.246,723.189,123.246" style="stroke:#FF9900;stroke-width:1.0;"/></g><!--MD5=[d5fb7340d98dcbab615a0973ddf95cf9]
+link InProgress to Delivered--><g id="link_InProgress_Delivered"><path d="M830.625,123.246 C840.445,123.246 850.265,123.246 860.085,123.246 " fill="none" id="InProgress-to-Delivered" style="stroke:#FF9900;stroke-width:1.0;"/><polygon fill="#FF9900" points="865.22,123.246,856.22,119.246,860.22,123.246,856.22,127.246,865.22,123.246" style="stroke:#FF9900;stroke-width:1.0;"/></g><!--MD5=[89e4af9959dc45c39371853f3e6c7e1d]
+link Delivered to Deployed--><g id="link_Delivered_Deployed"><path d="M952.844,123.246 C962.636,123.246 972.429,123.246 982.222,123.246 " fill="none" id="Delivered-to-Deployed" style="stroke:#FF9900;stroke-width:1.0;"/><polygon fill="#FF9900" points="987.342,123.246,978.342,119.246,982.342,123.246,978.342,127.246,987.342,123.246" style="stroke:#FF9900;stroke-width:1.0;"/></g><!--MD5=[f72ea7c25214b01f86b09686fa6d69d0]
+link Deployed to Defined--><g id="link_Deployed_Defined"><path d="M1011.91,98.174 C1001.018,85.675 986.3,71.502 970,63.246 C878.223,16.761 844.047,34.495 741.5,26.246 C596.811,14.607 550.392,6 417,63.246 C412.816,65.042 408.653,67.106 404.553,69.365 " fill="none" id="Deployed-to-Defined" style="stroke:#FF9900;stroke-width:1.0;"/><polygon fill="#FF9900" points="400.129,71.889,409.9285,70.9044,404.4721,69.4117,405.9648,63.9553,400.129,71.889" style="stroke:#FF9900;stroke-width:1.0;"/><text fill="#EEEEEE" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="87" x="649.5" y="26.3847">new version</text></g><!--MD5=[4ee70e43bbad9e749a4b1251f603792d]
+link Deployed to Deprecated--><g id="link_Deployed_Deprecated"><path d="M1074.59,123.246 C1084.63,123.246 1094.67,123.246 1104.7,123.246 " fill="none" id="Deployed-to-Deprecated" style="stroke:#FF9900;stroke-width:1.0;"/><polygon fill="#FF9900" points="1109.95,123.246,1100.95,119.246,1104.95,123.246,1100.95,127.246,1109.95,123.246" style="stroke:#FF9900;stroke-width:1.0;"/></g><!--MD5=[a3f20f540f842388880e8c7ef8231215]
+link Deprecated to Decommissioned--><g id="link_Deprecated_Decommissioned"><path d="M1132.28,148.446 C1119.98,159.15 1105.3,171.865 1092,183.246 C1081.86,191.924 1070.76,201.323 1060.69,209.809 " fill="none" id="Deprecated-to-Decommissioned" style="stroke:#FF9900;stroke-width:1.0;"/><polygon fill="#FF9900" points="1056.74,213.137,1066.1968,210.3859,1060.56,209.9109,1061.035,204.274,1056.74,213.137" style="stroke:#FF9900;stroke-width:1.0;"/></g><!--MD5=[52ddb3a0afc15aa88902f6ef1b366e94]
+link Decommissioned to *end--><g id="link_Decommissioned_*end"><path d="M961.485,259.7874 C917.631,273.3307 863.779,289.9614 838.457,297.7812 " fill="none" id="Decommissioned-to-*end" style="stroke:#FF9900;stroke-width:1.0;"/><polygon fill="#FF9900" points="833.501,299.3119,843.2806,300.4775,838.2783,297.8362,840.9196,292.8339,833.501,299.3119" style="stroke:#FF9900;stroke-width:1.0;"/></g><!--MD5=[89684adb0a8facdaad0bdb45ccda3cc4]
+@startuml
+!define BG_MAIN_COLOR      #1A618C
+!define BG_SECONDARY_COLOR #616768
+!define BG_PACKAGE_COLOR   #7a209f
+!define BORDER_COLOR       #EEEEEE
+!define FONT_COLOR         #EEEEEE
+
+skinparam backgroundColor       #transparent
+skinparam backgroundColor       %hsl_color(232, 15, 21)
+skinparam HyperLinkColor        #lightgreen
+
+' include the general skinparams for both, light and dark
+' to overwrite with the given settings
+!define BORDER_THICKNESS 1
+
+skinparam Padding 4
+skinparam RoundCorner 40
+skinparam Shadowing true
+skinparam HyperlinkUnderline false
+skinparam handwritten false
+
+skinparam Default {
+'FontName "Open Sans Semibold"
+FontColor FONT_COLOR
+FontSize 12
+}
+
+skinparam Arrow {
+Color FONT_COLOR
+FontColor FONT_COLOR
+FontStyle Bold
+}
+
+skinparam package {
+FontColor FONT_COLOR
+BackgroundColor BG_MAIN_COLOR
+BorderColor BORDER_COLOR
+}
+skinparam node {
+FontColor FONT_COLOR
+BackgroundColor BG_PACKAGE_COLOR
+BorderColor BORDER_COLOR
+}
+skinparam component {
+BackgroundColor BG_MAIN_COLOR
+BorderColor BORDER_COLOR
+FontColor FONT_COLOR
+Style uml2
+}
+
+skinparam database {
+BackgroundColor BG_MAIN_COLOR
+BorderColor BORDER_COLOR
+FontColor FONT_COLOR
+}
+
+skinparam cloud {
+BackgroundColor BG_MAIN_COLOR
+BorderColor BORDER_COLOR
+FontColor FONT_COLOR
+}
+
+skinparam collections {
+BackgroundColor BG_MAIN_COLOR
+BorderColor BORDER_COLOR
+FontColor FONT_COLOR
+}
+skinparam Control {
+BackgroundColor BG_MAIN_COLOR
+BorderColor BORDER_COLOR
+FontColor FONT_COLOR
+}
+skinparam Boundary {
+BackgroundColor BG_MAIN_COLOR
+BorderColor BORDER_COLOR
+FontColor FONT_COLOR
+}
+skinparam Entity {
+BackgroundColor BG_MAIN_COLOR
+BorderColor BORDER_COLOR
+FontColor FONT_COLOR
+}
+skinparam interface {
+BackgroundColor BG_MAIN_COLOR
+BorderColor BORDER_COLOR
+FontColor FONT_COLOR
+}
+skinparam SequenceParticipantBorderThickness 3
+skinparam sequence {
+ParticipantBackgroundColor BG_MAIN_COLOR
+ParticipantBorderColor BORDER_COLOR
+ParticipantFontStyle normal
+ParticipantFontColor FONT_COLOR
+LifeLineBorderColor BORDER_COLOR
+LifeLineBackgroundColor BG_MAIN_COLOR
+ArrowColor FONT_COLOR
+ArrowBorderColor BORDER_COLOR
+ArrowFontColor FONT_COLOR
+ArrowThickness 3
+ActorBackgroundColor BG_MAIN_COLOR
+ActorBorderColor BORDER_COLOR
+ActorFontColor FONT_COLOR
+}
+
+' C4 Styling
+' ##################################
+
+skinparam rectangle<<person>> {
+StereotypeFontColor FONT_COLOR
+FontColor FONT_COLOR
+BackgroundColor BG_MAIN_COLOR
+BorderColor BORDER_COLOR
+BorderThickness BORDER_THICKNESS
+}
+
+skinparam rectangle<<external_person>> {
+StereotypeFontColor FONT_COLOR
+FontColor FONT_COLOR
+BackgroundColor BG_SECONDARY_COLOR
+BorderColor BORDER_COLOR
+BorderThickness BORDER_THICKNESS
+}
+
+skinparam rectangle<<system>> {
+StereotypeFontColor FONT_COLOR
+FontColor FONT_COLOR
+BackgroundColor BG_MAIN_COLOR
+BorderColor BORDER_COLOR
+BorderThickness BORDER_THICKNESS
+}
+
+skinparam rectangle<<external_system>> {
+StereotypeFontColor FONT_COLOR
+FontColor FONT_COLOR
+BackgroundColor BG_SECONDARY_COLOR
+BorderColor BORDER_COLOR
+BorderThickness BORDER_THICKNESS
+}
+
+skinparam database<<system>> {
+StereotypeFontColor FONT_COLOR
+FontColor FONT_COLOR
+BackgroundColor BG_MAIN_COLOR
+BorderColor BORDER_COLOR
+BorderThickness BORDER_THICKNESS
+}
+
+skinparam database<<external_system>> {
+StereotypeFontColor FONT_COLOR
+FontColor FONT_COLOR
+BackgroundColor BG_SECONDARY_COLOR
+BorderColor BORDER_COLOR
+BorderThickness BORDER_THICKNESS
+}
+
+skinparam rectangle<<boundary>> {
+Shadowing false
+StereotypeFontSize 0
+BackgroundColor BG_PACKAGE_COLOR
+StereotypeFontColor FONT_COLOR
+FontColor FONT_COLOR
+BorderColor BORDER_COLOR
+BorderStyle dashed
+BorderThickness BORDER_THICKNESS
+}
+skinparam rectangle<<container>> {
+Shadowing false
+StereotypeFontSize 14
+BackgroundColor BG_MAIN_COLOR
+StereotypeFontColor FONT_COLOR
+FontColor FONT_COLOR
+BorderColor BORDER_COLOR
+BorderThickness BORDER_THICKNESS
+}
+
+skinparam state {
+BackgroundColor #9397B2
+FontColor white
+AttributeFontColor #03045e
+BorderColor #0077b6
+}
+
+skinparam class {
+BackgroundColor #9397B2
+FontColor white
+AttributeFontColor #03045e
+BorderColor #0077b6
+}
+
+skinparam arrowColor #FF9900
+skinparam arrowThickness 1
+
+[*] -> Identified
+
+Identified -> Defined
+
+Defined -> Proposed
+
+Proposed -down-> [*]: Rejected
+
+Proposed -> Planned
+
+Planned -> InProgress
+
+InProgress -> Delivered
+
+Delivered -> Deployed
+
+Deployed -> Defined: new version
+
+Deployed -> Deprecated
+
+Deprecated -> Decommissioned
+
+Decommissioned -> [*]
+
+Identified: - name and description
+Identified: - added to use case tree
+
+Defined: - outcomes
+Defined: - personas
+Defined: - concepts
+Defined: - stories
+Defined: - dependencies
+
+Proposed: - chart phase
+
+Planned: - on roadmap
+
+InProgress: - build phase
+@enduml
+
+@startuml
+
+skinparam backgroundColor       #transparent
+skinparam backgroundColor       #2E303E
+skinparam HyperLinkColor        #lightgreen
+
+
+skinparam Padding 4
+skinparam RoundCorner 40
+skinparam Shadowing true
+skinparam HyperlinkUnderline false
+skinparam handwritten false
+
+skinparam Default {
+FontColor #EEEEEE
+FontSize 12
+}
+
+skinparam Arrow {
+Color #EEEEEE
+FontColor #EEEEEE
+FontStyle Bold
+}
+
+skinparam package {
+FontColor #EEEEEE
+BackgroundColor #1A618C
+BorderColor #EEEEEE
+}
+skinparam node {
+FontColor #EEEEEE
+BackgroundColor #7a209f
+BorderColor #EEEEEE
+}
+skinparam component {
+BackgroundColor #1A618C
+BorderColor #EEEEEE
+FontColor #EEEEEE
+Style uml2
+}
+
+skinparam database {
+BackgroundColor #1A618C
+BorderColor #EEEEEE
+FontColor #EEEEEE
+}
+
+skinparam cloud {
+BackgroundColor #1A618C
+BorderColor #EEEEEE
+FontColor #EEEEEE
+}
+
+skinparam collections {
+BackgroundColor #1A618C
+BorderColor #EEEEEE
+FontColor #EEEEEE
+}
+skinparam Control {
+BackgroundColor #1A618C
+BorderColor #EEEEEE
+FontColor #EEEEEE
+}
+skinparam Boundary {
+BackgroundColor #1A618C
+BorderColor #EEEEEE
+FontColor #EEEEEE
+}
+skinparam Entity {
+BackgroundColor #1A618C
+BorderColor #EEEEEE
+FontColor #EEEEEE
+}
+skinparam interface {
+BackgroundColor #1A618C
+BorderColor #EEEEEE
+FontColor #EEEEEE
+}
+skinparam SequenceParticipantBorderThickness 3
+skinparam sequence {
+ParticipantBackgroundColor #1A618C
+ParticipantBorderColor #EEEEEE
+ParticipantFontStyle normal
+ParticipantFontColor #EEEEEE
+LifeLineBorderColor #EEEEEE
+LifeLineBackgroundColor #1A618C
+ArrowColor #EEEEEE
+ArrowBorderColor #EEEEEE
+ArrowFontColor #EEEEEE
+ArrowThickness 3
+ActorBackgroundColor #1A618C
+ActorBorderColor #EEEEEE
+ActorFontColor #EEEEEE
+}
+
+
+skinparam rectangle<<person>> {
+StereotypeFontColor #EEEEEE
+FontColor #EEEEEE
+BackgroundColor #1A618C
+BorderColor #EEEEEE
+BorderThickness 1
+}
+
+skinparam rectangle<<external_person>> {
+StereotypeFontColor #EEEEEE
+FontColor #EEEEEE
+BackgroundColor #616768
+BorderColor #EEEEEE
+BorderThickness 1
+}
+
+skinparam rectangle<<system>> {
+StereotypeFontColor #EEEEEE
+FontColor #EEEEEE
+BackgroundColor #1A618C
+BorderColor #EEEEEE
+BorderThickness 1
+}
+
+skinparam rectangle<<external_system>> {
+StereotypeFontColor #EEEEEE
+FontColor #EEEEEE
+BackgroundColor #616768
+BorderColor #EEEEEE
+BorderThickness 1
+}
+
+skinparam database<<system>> {
+StereotypeFontColor #EEEEEE
+FontColor #EEEEEE
+BackgroundColor #1A618C
+BorderColor #EEEEEE
+BorderThickness 1
+}
+
+skinparam database<<external_system>> {
+StereotypeFontColor #EEEEEE
+FontColor #EEEEEE
+BackgroundColor #616768
+BorderColor #EEEEEE
+BorderThickness 1
+}
+
+skinparam rectangle<<boundary>> {
+Shadowing false
+StereotypeFontSize 0
+BackgroundColor #7a209f
+StereotypeFontColor #EEEEEE
+FontColor #EEEEEE
+BorderColor #EEEEEE
+BorderStyle dashed
+BorderThickness 1
+}
+skinparam rectangle<<container>> {
+Shadowing false
+StereotypeFontSize 14
+BackgroundColor #1A618C
+StereotypeFontColor #EEEEEE
+FontColor #EEEEEE
+BorderColor #EEEEEE
+BorderThickness 1
+}
+
+skinparam state {
+BackgroundColor #9397B2
+FontColor white
+AttributeFontColor #03045e
+BorderColor #0077b6
+}
+
+skinparam class {
+BackgroundColor #9397B2
+FontColor white
+AttributeFontColor #03045e
+BorderColor #0077b6
+}
+
+skinparam arrowColor #FF9900
+skinparam arrowThickness 1
+
+[*] -> Identified
+
+Identified -> Defined
+
+Defined -> Proposed
+
+Proposed -down-> [*]: Rejected
+
+Proposed -> Planned
+
+Planned -> InProgress
+
+InProgress -> Delivered
+
+Delivered -> Deployed
+
+Deployed -> Defined: new version
+
+Deployed -> Deprecated
+
+Deprecated -> Decommissioned
+
+Decommissioned -> [*]
+
+Identified: - name and description
+Identified: - added to use case tree
+
+Defined: - outcomes
+Defined: - personas
+Defined: - concepts
+Defined: - stories
+Defined: - dependencies
+
+Proposed: - chart phase
+
+Planned: - on roadmap
+
+InProgress: - build phase
+@enduml
+
+PlantUML version 1.2022.2beta6(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
