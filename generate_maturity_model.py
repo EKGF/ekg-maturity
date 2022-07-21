@@ -3,7 +3,7 @@ import ekglib
 from pathlib import Path
 
 config = ekglib.maturity_model_parser.Config(
-    verbose=True,
+    verbose=False,
     mkdocs=False,
     model_name="EKG/MM",
     model_root=Path('../ekg-mm').resolve(),
