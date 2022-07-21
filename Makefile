@@ -252,7 +252,7 @@ docs-serve-debug:
 	$(MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict --verbose
 
 .PHONY: docs-deploy
-docs-deploy:
+docs-deploy: docs-build
 	$(MKDOCS) gh-deploy --config-file $(MKDOCS_CONFIG_FILE) --verbose
 
 .PHONY: docs-assets
