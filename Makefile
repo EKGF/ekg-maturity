@@ -55,7 +55,7 @@ info:
 	@echo "Operating System: ${YOUR_OS}"
 	@echo "MkDocs: ${MKDOCS}"
 	@echo "MkDocs config file: ${MKDOCS_CONFIG_FILE}"
-	@echo "Python pip: ${PIP}"
+	@echo "Python pip: $(shell asdf where python)"
 	@echo "install target: ${INSTALL_TARGET}"
 	@echo "Document Version: ${DOC_VERSION}"
 	@echo "PDF Suffix: ${PDF_FILE_NAME_SUFFIX}"
@@ -201,38 +201,38 @@ else
 docs-install-python-packages: docs-install-asdf-packages
 endif
 	@echo "Install packages via pip:"
-	$(PIP) install --upgrade pip
-	$(PIP) install --upgrade wheel
-	$(PIP) install --upgrade pipenv
-#	$(PIP) install --upgrade plantuml-markdown
-	$(PIP) install --upgrade mdutils
-	$(PIP) install --upgrade mkdocs-build-plantuml-plugin
-	$(PIP) install --upgrade mkdocs
-	$(PIP) install --upgrade mkdocs-localsearch
-	$(PIP) install --upgrade mkdocs-graphviz
-	$(PIP) install --upgrade mkdocs-exclude
-	$(PIP) install --upgrade mkdocs-redirects
-	$(PIP) install --upgrade mkdocs-include-markdown-plugin
-	$(PIP) install --upgrade mkdocs-awesome-pages-plugin
-	$(PIP) install --upgrade mkdocs-macros-plugin
-	$(PIP) install --upgrade mkdocs-mermaid2-plugin
-	$(PIP) install --upgrade mkdocs-git-revision-date-plugin
-	$(PIP) install --upgrade mkdocs-minify-plugin
-	$(PIP) install --upgrade mkdocs-redirects
-	$(PIP) install --upgrade mkdocs-gen-files
-	$(PIP) install --upgrade mkdocs-exclude-search
-	$(PIP) install --upgrade mdx-spanner
-	$(PIP) install --upgrade markdown-emdash
+	$(shell asdf where python)/bin/python -m pip install --upgrade pip
+	$(shell asdf where python)/bin/python -m pip install --upgrade wheel
+	$(shell asdf where python)/bin/python -m pip install --upgrade pipenv
+#	$(shell asdf where python)/bin/python -m pip install --upgrade plantuml-markdown
+	$(shell asdf where python)/bin/python -m pip install --upgrade mdutils
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-build-plantuml-plugin
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-localsearch
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-graphviz
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-exclude
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-redirects
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-include-markdown-plugin
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-awesome-pages-plugin
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-macros-plugin
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-mermaid2-plugin
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-git-revision-date-plugin
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-minify-plugin
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-redirects
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-gen-files
+	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-exclude-search
+	$(shell asdf where python)/bin/python -m pip install --upgrade mdx-spanner
+	$(shell asdf where python)/bin/python -m pip install --upgrade markdown-emdash
 ifeq ($(PAT_MKDOCS_INSIDERS),)
-	$(PIP) install --upgrade --force-reinstall mkdocs-material
+	$(shell asdf where python)/bin/python -m pip install --upgrade --force-reinstall mkdocs-material
 else
-	@$(PIP) install --upgrade --force-reinstall git+https://$(PAT_MKDOCS_INSIDERS)@github.com/squidfunk/mkdocs-material-insiders.git
+	@$(shell asdf where python)/bin/python -m pip install --upgrade --force-reinstall git+https://$(PAT_MKDOCS_INSIDERS)@github.com/squidfunk/mkdocs-material-insiders.git
 endif
-	$(PIP) install --upgrade git+https://github.com/EKGF/ekglib.git#egg=ekglib
+	$(shell asdf where python)/bin/python -m pip install --upgrade git+https://github.com/EKGF/ekglib.git#egg=ekglib
 
 .PHONY: install-local-ekglib
 install-local-ekglib: docs-install-python-packages
-	$(PIP) install --editable ../ekglib
+	$(shell asdf where python)/bin/python -m pip install --editable ../ekglib
 	./venv/bin/python -m pip install --editable ../ekglib
 
 .PHONY: docs-build
