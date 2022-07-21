@@ -146,6 +146,7 @@ markdown_extensions:
         - abbreviations.md
   - pymdownx.details
   - pymdownx.mark
+  - pymdownx.magiclink
   - pymdownx.smartsymbols
   - pymdownx.emoji:
       emoji_generator: !!python/name:materialx.emoji.to_svg
