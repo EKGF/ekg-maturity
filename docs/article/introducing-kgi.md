@@ -50,7 +50,7 @@ EKG Matrix plot identifies Dimension/Pillar Maturity Levels:  3, 3, 4, 3, 3, 3
 |     |     |     |     |     |     |
 |     |     |     |     |     |     |
 
-Business Use Case – [**Identify Redundant Vendor Contracts**]()https://catalog.ekgf.org/use-case/other/identify-redundant-vendor-contracts/<br/>
+Business Use Case – [**Identify Redundant Vendor Contracts**](https://catalog.ekgf.org/use-case/other/identify-redundant-vendor-contracts/)<br/>
 EKG Matrix plot identifies Dimension/Pillar Maturity Levels:  3, 3, 3, 3, 4, 3 
 
 | D/P | D/P | D/P | D/P | D/P | D/P |
