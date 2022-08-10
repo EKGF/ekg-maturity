@@ -245,7 +245,7 @@ docs-serve: docs-assets
 
 .PHONY: docs-serve-no-update
 docs-serve-no-update: docs-assets
-	$(MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --strict
+	$(MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --strict --verbose
 
 .PHONY: docs-serve-debug
 docs-serve-debug:

@@ -1,10 +1,4 @@
-# How to contribute
-
-!!! note warning
-
-     some of the content on this page still assumes that we're generating one PDF file
-     as the deliverable. We're in the process of switching over to just generating this
-     website instead which requires some minor changes in the process described here.
+# How to contribute?
 
 ## Introduction
 
@@ -20,8 +14,7 @@ which establishes standard criteria for measuring and guiding progress
 on EKG adoption through asking practical questions of different
 involved stakeholders. 
 
-In its original form, it was a set of documents.
-In order to be able to scale this up to a larger community of collaborating teams, 
+In order to be able to scale to a larger community of collaborating teams, 
 each contributing content to the EKG/MM, we decided to "eat our own dogfood" 
 and apply the same principles as we advocate for software development and
 data management such as "work Agile" and "test everything".
@@ -60,7 +53,7 @@ The audience of critics is hopefully very large, any reader of our content shoul
 be able to add their comments somewhere.
 We have to make it as easy as possible for them to do so. 
 
-Unfortunately, the Issue Management function of private GitHub repositories ---
+Unfortunately, the Issue Management function of GitHub repositories ---
 like the [EKGF/ekg-mm](https://github.com/ekgf/ekg-mm) repository --- can only be
 used by people who have a GitHub account.
 
@@ -72,37 +65,6 @@ You can always see the status of your issue by clicking on it and checking
 the right side of the screen where you see links to the "Assignee"
 (the person who is going to work on your issue), the "Project"
 (the workgroup that’s planning and tracking your issue) and the "Linked pull requests". 
-
-### How to register?
-
-We are asking every potential contributor, even someone who just wants to give us
-some feedback (a "critic") to join the EKGF as a private member (free) or as a
-corporate member.
-
-Email with [registration@ekgf.org](mailto:registration@ekgf.org) to set it up,
-if you plan to participate as a contributor to the EKG/MM then please also
-supply your GitHub user-id.
-
-#### How to create a GitHub & Slack account?
-
-##### Slack
-
-If you already have a Slack account then join the EKGF workspace 
-here: [https://ekgf.slack.com/](https://ekgf.slack.com/).
-Otherwise, first create your Slack account [here](https://slack.com/get-started\#/create).
-
-##### GitHub
-
-Go to [https://github.com/join](https://github.com/join).
-
-Since you can associate multiple email addresses to your GitHub account we would
-suggest to initially create it with your private email address which then becomes
-your "primary email account" in GitHub.
-You can add your business email address(es) to your GitHub account later.
-
-Mail your GitHub account id (user-id) to
-[registration@ekgf.org](mailto:registration@ekgf.org) so that we can add you
-to the access control list of the [EKGF/ekg-mm repository](https://github.com/EKGF/ekg-mm).
 
 ### How to raise an issue?
 
