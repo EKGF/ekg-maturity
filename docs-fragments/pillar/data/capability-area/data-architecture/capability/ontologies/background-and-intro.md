@@ -52,91 +52,48 @@ The basic structures include:
 
 :   grouping of the above for management and identification purposes.
 
+# Contribution to the EKG
 
-# Maturity Dimensions
+Ontologies are the basis for [Principle Meaning](https://www.ekgf.org/principles):
 
-- How much of the enterprise data is covered by ontologies?
-- How well is ontology coverage mapped to business need?
-- To what extent are concepts independent of but mapped to terminology/vocabulary?
-- Level of sophistication of textual and logic definitions
-- Level of tooling is available and used
-- Level of training and trained people
-- Level of process (including change management), guidelines and standards
-- Level of modularity and reuse --- internal and external
-- Extent of examples and tests
-- Extent of traceability with different logical and physical data models
-    
+```
+The meaning of every data point must be directly resolvable to a
+machine-readable definition in verifiable formal logic.
+```
 
-# Maturity Levels
+The link to precise meaning serves to mitigate problems created using the 
+same word with multiple definitions;
+and the challenges of expressing conceptual nuance using multiple informal sentences.
+In the other direction, from ontology to vocabulary, it should be possible 
+to generate a business glossary directly from ontologies for a given scope.
+Since they should capture the meaning of concepts applicable to an organization,
+or an even broader ecosystem, the choice of concepts to include in an EKG 
+should be driven by business use cases.
+And different overlapping ontologies may be included and mapped to cover 
+different relevant aspects.
+Likewise, it should be possible to generate---and map to---models for more
+conventional tools from ontologies,
+by applying technology-specific rules.
 
-The following criteria for each level are abbreviated: each item is shorthand for:
+Semantic modeling also eliminates the problem of hard-coding assumptions 
+about the world into a single data model.
+And while multiple ontologies may coexist, they are able to be mapped
+and connected to each other.
+In a mature environment, the data modeling process drives technology implementation,
+by defining the detailed data structures and associated APIs.
+These components---along with functional code---are included as part
+of the testing suite within the EKG to facilitate rapid deployment.
 
-- documented process
-- trained participants
-- implemented process and/or technology
-- monitoring and improvement
+Different types of external data models are not needed in EKG but can 
+be mapped to or generated.
+In fact, physical data modelers are a community with their own vocabulary.
 
-## Maturity Level 1
+Constraints/shapes for models are applied by context (use case)---there 
+is no _Single Version of the Truth_ (SVOT) for the EKG as a whole.
+Different ontologies may be used for different contexts and mapped to 
+each other in the underlying knowledge graph.
 
-- [ ] Minimal ontologies which could be as simple as a list of classes and properties used in graphs
-- [ ] Basic metadata (definition, label) for each class and property
-- [ ] Each individual (in data) has at least one explicit class
-- [ ] Ontology coverage for each use case in scope of the project;
-  project includes minimal number of ontologies and classes not justified by a use case
-- [ ] Definitions catalogued and under change management
-
-## Maturity Level 2
-
-- [ ] Ontologies expressed in a standard ontology language (could be as simple as \gls{ekg:rdf-schema})
-- [ ] Common (shared or mapped) concepts across EKG projects
-- [ ] Ability to see ontology usage by use cases, vocabularies and datasets
-- [ ] Namespace scheme established and used for new ontologies in the EKG
-- [ ] Ontology guidelines in place and implemented, including common metadata
-- [ ] Documented approach for external ontologies, including selection and adaptation
-- [ ] Annotated example files for documentation and training
-- [ ] Test files based on use cases covering all used ontology elements
-- [ ] Ontology change management includes impact analysis and stakeholder approval
-- [ ] Tooling for ontology diagrams and documentation
-- [ ] Automated basic checking of ontology syntax
-- [ ] Access to at least one trained \gls{ekg:ontologist}
-
-## Maturity Level 3
-
-- [ ] Modeling of required data and constraints by use case, including for stored and communicated data
-- [ ] Automated validation of ontologies (for guideline compliance, and for logical consistency),
-  with results as triples
-- [ ] Automated testing and validation of test data with ontologies (per use case)
-- [ ] Separation of concerns to support enterprise management such as
-  bi-temporality, transactions and events
-- [ ] Automated transformation of ontologies to use common serialization and metadata
-- [ ] Automated checking of ontologies against different profiles (e.g. OWL-RL)
-  to check for technology support
-- [ ] Automated checking of ontologies against different best practices
-- [ ] Ontology source changes linked to automated [operations](/pillar/technology/capability-area/technology-execution/capability/operations/)
-  for testing and deployment
-- [ ] Impact analysis identifies ontology breaking changes which require fixes to existing EKG data
-- [ ] EKG-wide ontology browsing and searching
-- [ ] _Follow-your-nose_ UI starting from any ontology element URI[^predicate-iri]
-- [ ] _Follow-your-nose_ API starting from any ontology element URI[^predicate-iri]
-- [ ] Trained ontologist available to each project (ideally via the _EKG Center of Excellence_)
-
-## Maturity Level 4
-
-- [ ] Separation of ontologies from vocabularies, with multiple vocabularies for different communities
-  mapped to the same concepts
-- [ ] Ontology architecture management process, including use of patterns and modularity
-- [ ] Generation of logic into business language
-- [ ] Automated fixes to existing EKG data in response to ontology breaking changes
-- [ ] Basic ontology metrics and reporting, including usage in data
-- [ ] Generation of ontologies/shapes for external interchange
-
-## Maturity Level 5
-
-- [ ] Sophisticated ontology metrics and reporting, including trends
-- [ ] Matching and differencing of ontologies from different sources
-- [ ] Automated matching of ontologies with vocabularies
-- [ ] Generation of validation code for external interchange
-- [ ] Wizard for developing ontologies from business questions
-- [ ] Inducing of ontologies from instance data
-
-[^predicate-iri]: see also "predicate"
+Ontology elements are linked to by vocabularies and mapped to other
+data models and datasets to provide their meaning;
+and from Use Cases to provide their scope.
+These aspects are covered by those respective capabilities.

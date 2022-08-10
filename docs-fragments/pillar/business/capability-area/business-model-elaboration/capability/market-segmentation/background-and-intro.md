@@ -13,3 +13,9 @@ Market Segmentation practices today involve an intensive analysis through a mix 
 heuristics and benchmarking.
 The availability of and access to voluminous information though a multitude of digital sources has put
 additional emphasis on the ability of enterprises to dynamically tweak their Market Segmentation.
+
+# Contribution to the EKG
+
+The EKG can bring all possible internal and external detail information about customers, products, services,
+competition, sales volumes, customer requirements and many other details together forming a holistic and realistic,
+almost real-time view of the position of the company in their markets.

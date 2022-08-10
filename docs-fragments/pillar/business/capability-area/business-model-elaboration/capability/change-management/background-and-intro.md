@@ -24,3 +24,10 @@ coming to an end.
 AI, Bayesian Analysis, Game Theory, MCDA, and Heuristics can help, 
 but <ins>only</ins> if we can guide them properly using EKGs.
 
+# Contribution to the EKG
+
+The EKG should be updated to reflect changes made to the enterprise
+as a result of change projects.
+EKG governance is a set of change processes that should follow a 
+disciplined change approach to protect the integrity and value 
+of the knowledge graph.

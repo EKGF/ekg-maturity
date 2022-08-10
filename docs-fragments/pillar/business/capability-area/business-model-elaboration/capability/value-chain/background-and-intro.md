@@ -13,4 +13,9 @@ Digitalization and the increasing focus on consumer-centricity has pushed the
 imperatives of Value Chains to include more holistic collaborations in the
 business ecosystem --- reshaping provision of services and access to untapped pools of value.
 
+# Contribution to the EKG
+
+Having the Value Chain(s) of an organization defined can help with the selection, 
+definition and prioritization of the right use cases for the EKG.
+
 

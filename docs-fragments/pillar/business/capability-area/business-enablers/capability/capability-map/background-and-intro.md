@@ -73,3 +73,35 @@ Capabilities should follow certain principles as follows:
    While being useful in a stand-alone basis for discussion and planning, capabilities fulfil their biggest
    potential by being combined into a larger business capability map that represents the business ecosystem
    of an enterprise.
+
+# Contribution to the EKG
+
+The _Business Capability Map_ enables an enterprise to structure their 
+Enterprise Knowledge Graph.
+Each capability is a candidate to become a _use case_ for the EKG.
+
+A well-designed mature EKG is a facade in front of all technical and 
+organizational silos which means that---without any further structure---users 
+do not experience the negative effects of these silos anymore.
+In many ways that may be a good thing but having silos---or different
+perspectives---can also be necessary.
+The EKG allows an organization to rethink their silos without being
+held back by their current data or technology
+landscape (or "technical debt").
+
+The _Business Capability Map_ is the ideal initial structure for the 
+new EKG "silos".
+Business Capability Maps are usually rather coarse-grained and 
+visualized in a three-level hierarchy whereas the
+structure of the EKG goes much further than that.
+Translating each capability to a 
+_[use case](https://use-case-tree-method.ekgf.org/concept/usecase/)_ 
+is a good start but each of these use cases can be further broken down
+into smaller use cases where each use case becomes a 
+highly reusable component of the EKG.
+This leads to a hierarchical structure---a taxonomy so you will---of
+all use cases, also called _"the Use Case Tree"_ (UCT).
+This use case tree, at the higher levels, corresponds with the 
+Business Capability Map and allows a business and its executives 
+to "own" and control all the various parts of their EKG.
+
