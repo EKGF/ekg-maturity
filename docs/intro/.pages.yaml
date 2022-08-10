@@ -1,6 +1,7 @@
 title: Intro
 nav:
-  - index.md
+  - Intro: index.md
+  - executive-summary.md
   - preface.md
   - overview.md
   - ...
