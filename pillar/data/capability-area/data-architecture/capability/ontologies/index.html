@@ -746,6 +746,8 @@
     
       
     
+      
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -12103,6 +12105,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -12439,11 +12443,30 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../../../other/how-to-register/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to register?
+  </span>
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../../../other/process/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    How to contribute
+    How to contribute?
   </span>
 
       </a>
@@ -12537,6 +12560,46 @@ For example, given the triple <code>X hasMother Y</code> you may be able to infe
 <p>grouping of the above for management and identification purposes.</p>
 </dd>
 </dl>
+<h2 id="contribution-to-the-ekg">Contribution to the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr><a class="headerlink" href="#contribution-to-the-ekg" title="Permanent link">&para;</a></h2>
+<p>Ontologies are the basis for <a href="https://www.ekgf.org/principles">Principle Meaning</a>:</p>
+<div class="highlight"><pre><span></span><code>The meaning of every data point must be directly resolvable to a
+machine-readable definition in verifiable formal logic.
+</code></pre></div>
+<p>The link to precise meaning serves to mitigate problems created using the 
+same word with multiple definitions;
+and the challenges of expressing conceptual nuance using multiple informal sentences.
+In the other direction, from ontology to vocabulary, it should be possible 
+to generate a business glossary directly from ontologies for a given scope.
+Since they should capture the meaning of concepts applicable to an organization,
+or an even broader ecosystem, the choice of concepts to include in an <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> 
+should be driven by business use cases.
+And different overlapping ontologies may be included and mapped to cover 
+different relevant aspects.
+Likewise, it should be possible to generate&mdash;and map to&mdash;models for more
+conventional tools from ontologies,
+by applying technology-specific rules.</p>
+<p>Semantic modeling also eliminates the problem of hard-coding assumptions 
+about the world into a single data model.
+And while multiple ontologies may coexist, they are able to be mapped
+and connected to each other.
+In a mature environment, the data modeling process drives technology implementation,
+by defining the detailed data structures and associated APIs.
+These components&mdash;along with functional code&mdash;are included as part
+of the testing suite within the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> to facilitate rapid deployment.</p>
+<p>Different types of external data models are not needed in <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> but can 
+be mapped to or generated.
+In fact, physical data modelers are a community with their own vocabulary.</p>
+<p>Constraints/shapes for models are applied by context (use case)&mdash;there 
+is no <em>Single Version of the Truth</em> (SVOT) for the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> as a whole.
+Different ontologies may be used for different contexts and mapped to 
+each other in the underlying knowledge graph.</p>
+<p>Ontology elements are linked to by vocabularies and mapped to other
+data models and datasets to provide their meaning;
+and from Use Cases to provide their scope.
+These aspects are covered by those respective capabilities.</p>
+<!-- END INCLUDE -->
+
+<!-- BEGIN INCLUDE dimensions.md -->
 <h2 id="maturity-dimensions">Maturity Dimensions<a class="headerlink" href="#maturity-dimensions" title="Permanent link">&para;</a></h2>
 <ul>
 <li>How much of the enterprise data is covered by ontologies?</li>
@@ -12550,6 +12613,9 @@ For example, given the triple <code>X hasMother Y</code> you may be able to infe
 <li>Extent of examples and tests</li>
 <li>Extent of traceability with different logical and physical data models</li>
 </ul>
+<!-- END INCLUDE -->
+
+<!-- BEGIN INCLUDE levels.md -->
 <h2 id="maturity-levels">Maturity Levels<a class="headerlink" href="#maturity-levels" title="Permanent link">&para;</a></h2>
 <p>The following criteria for each level are abbreviated: each item is shorthand for:</p>
 <ul>
@@ -12564,7 +12630,7 @@ For example, given the triple <code>X hasMother Y</code> you may be able to infe
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Basic metadata (definition, label) for each class and property</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Each individual (in data) has at least one explicit class</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ontology coverage for each use case in scope of the project;
-  project includes minimal number of ontologies and classes not justified by a use case</li>
+      project includes minimal number of ontologies and classes not justified by a use case</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Definitions catalogued and under change management</li>
 </ul>
 <h3 id="maturity-level-2">Maturity Level 2<a class="headerlink" href="#maturity-level-2" title="Permanent link">&para;</a></h3>
@@ -12586,20 +12652,20 @@ For example, given the triple <code>X hasMother Y</code> you may be able to infe
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Modeling of required data and constraints by use case, including for stored and communicated data</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated validation of ontologies (for guideline compliance, and for logical consistency),
-  with results as triples</li>
+      with results as triples</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated testing and validation of test data with ontologies (per use case)</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Separation of concerns to support enterprise management such as
-  bi-temporality, transactions and events</li>
+      bi-temporality, transactions and events</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated transformation of ontologies to use common serialization and metadata</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated checking of ontologies against different profiles (e.g. OWL-RL)
-  to check for technology support</li>
+      to check for technology support</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated checking of ontologies against different best practices</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ontology source changes linked to automated <a href="/pillar/technology/capability-area/technology-execution/capability/operations/">operations</a>
-  for testing and deployment</li>
+      for testing and deployment</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Impact analysis identifies ontology breaking changes which require fixes to existing <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> data</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr>-wide ontology browsing and searching</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <em>Follow-your-nose</em> UI starting from any ontology element URI<sup id="fnref3:predicate-iri"><a class="footnote-ref" href="#fn:predicate-iri">1</a></sup></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <em>Follow-your-nose</em> <abbr title="Application Programming Interface">API</abbr> starting from any ontology element URI<sup id="fnref4:predicate-iri"><a class="footnote-ref" href="#fn:predicate-iri">1</a></sup></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <em>Follow-your-nose</em> UI starting from any ontology element URI<sup id="fnref:predicate-iri"><a class="footnote-ref" href="#fn:predicate-iri">1</a></sup></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <em>Follow-your-nose</em> <abbr title="Application Programming Interface">API</abbr> starting from any ontology element URI<sup id="fnref2:predicate-iri"><a class="footnote-ref" href="#fn:predicate-iri">1</a></sup></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Trained ontologist available to each project (ideally via the <em><abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Center of Excellence</em>)</li>
 </ul>
 <h3 id="maturity-level-4">Maturity Level 4<a class="headerlink" href="#maturity-level-4" title="Permanent link">&para;</a></h3>
@@ -12623,101 +12689,11 @@ For example, given the triple <code>X hasMother Y</code> you may be able to infe
 </ul>
 <!-- END INCLUDE -->
 
-<!-- BEGIN INCLUDE dimensions.md -->
-<h2 id="maturity-dimensions_1">Maturity Dimensions<a class="headerlink" href="#maturity-dimensions_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>How much of the enterprise data is covered by ontologies?</li>
-<li>How well is ontology coverage mapped to business need?</li>
-<li>To what extent are concepts independent of but mapped to terminology/vocabulary?</li>
-<li>Level of sophistication of textual and logic definitions</li>
-<li>Level of tooling is available and used</li>
-<li>Level of training and trained people</li>
-<li>Level of process (including change management), guidelines and standards</li>
-<li>Level of modularity and reuse &mdash; internal and external</li>
-<li>Extent of examples and tests</li>
-<li>Extent of traceability with different logical and physical data models</li>
-</ul>
-<!-- END INCLUDE -->
-
-<!-- BEGIN INCLUDE levels.md -->
-<h2 id="maturity-levels_1">Maturity Levels<a class="headerlink" href="#maturity-levels_1" title="Permanent link">&para;</a></h2>
-<p>The following criteria for each level are abbreviated: each item is shorthand for:</p>
-<ul>
-<li>documented process</li>
-<li>trained participants</li>
-<li>implemented process and/or technology</li>
-<li>monitoring and improvement</li>
-</ul>
-<h3 id="maturity-level-1_1">Maturity Level 1<a class="headerlink" href="#maturity-level-1_1" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Minimal ontologies which could be as simple as a list of classes and properties used in graphs</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Basic metadata (definition, label) for each class and property</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Each individual (in data) has at least one explicit class</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ontology coverage for each use case in scope of the project;
-      project includes minimal number of ontologies and classes not justified by a use case</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Definitions catalogued and under change management</li>
-</ul>
-<h3 id="maturity-level-2_1">Maturity Level 2<a class="headerlink" href="#maturity-level-2_1" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ontologies expressed in a standard ontology language (could be as simple as \gls{ekg:rdf-schema})</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Common (shared or mapped) concepts across <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> projects</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ability to see ontology usage by use cases, vocabularies and datasets</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Namespace scheme established and used for new ontologies in the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ontology guidelines in place and implemented, including common metadata</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Documented approach for external ontologies, including selection and adaptation</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Annotated example files for documentation and training</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Test files based on use cases covering all used ontology elements</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ontology change management includes impact analysis and stakeholder approval</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Tooling for ontology diagrams and documentation</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated basic checking of ontology syntax</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Access to at least one trained \gls{ekg:ontologist}</li>
-</ul>
-<h3 id="maturity-level-3_1">Maturity Level 3<a class="headerlink" href="#maturity-level-3_1" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Modeling of required data and constraints by use case, including for stored and communicated data</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated validation of ontologies (for guideline compliance, and for logical consistency),
-      with results as triples</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated testing and validation of test data with ontologies (per use case)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Separation of concerns to support enterprise management such as
-      bi-temporality, transactions and events</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated transformation of ontologies to use common serialization and metadata</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated checking of ontologies against different profiles (e.g. OWL-RL)
-      to check for technology support</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated checking of ontologies against different best practices</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ontology source changes linked to automated <a href="/pillar/technology/capability-area/technology-execution/capability/operations/">operations</a>
-      for testing and deployment</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Impact analysis identifies ontology breaking changes which require fixes to existing <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> data</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr>-wide ontology browsing and searching</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <em>Follow-your-nose</em> UI starting from any ontology element URI<sup id="fnref:predicate-iri"><a class="footnote-ref" href="#fn:predicate-iri">1</a></sup></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <em>Follow-your-nose</em> <abbr title="Application Programming Interface">API</abbr> starting from any ontology element URI<sup id="fnref2:predicate-iri"><a class="footnote-ref" href="#fn:predicate-iri">1</a></sup></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Trained ontologist available to each project (ideally via the <em><abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Center of Excellence</em>)</li>
-</ul>
-<h3 id="maturity-level-4_1">Maturity Level 4<a class="headerlink" href="#maturity-level-4_1" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Separation of ontologies from vocabularies, with multiple vocabularies for different communities
-  mapped to the same concepts</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ontology architecture management process, including use of patterns and modularity</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Generation of logic into business language</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated fixes to existing <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> data in response to ontology breaking changes</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Basic ontology metrics and reporting, including usage in data</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Generation of ontologies/shapes for external interchange</li>
-</ul>
-<h3 id="maturity-level-5_1">Maturity Level 5<a class="headerlink" href="#maturity-level-5_1" title="Permanent link">&para;</a></h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Sophisticated ontology metrics and reporting, including trends</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Matching and differencing of ontologies from different sources</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automated matching of ontologies with vocabularies</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Generation of validation code for external interchange</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Wizard for developing ontologies from business questions</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inducing of ontologies from instance data</li>
-</ul>
-<!-- END INCLUDE -->
-
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:predicate-iri">
-<p>see also "predicate"&#160;<a class="footnote-backref" href="#fnref:predicate-iri" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:predicate-iri" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:predicate-iri" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:predicate-iri" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>see also "predicate"&#160;<a class="footnote-backref" href="#fnref:predicate-iri" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:predicate-iri" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
