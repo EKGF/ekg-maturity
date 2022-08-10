@@ -18,7 +18,7 @@ The following criteria for each level are abbreviated: each item is shorthand fo
 
 ## Maturity Level 2
 
-- [ ] Ontologies expressed in a standard ontology language (could be as simple as \gls{ekg:rdf-schema})
+- [ ] Ontologies expressed in a standard ontology language (could be as simple as RDF Schema)
 - [ ] Common (shared or mapped) concepts across EKG projects
 - [ ] Ability to see ontology usage by use cases, vocabularies and datasets
 - [ ] Namespace scheme established and used for new ontologies in the EKG
@@ -29,7 +29,7 @@ The following criteria for each level are abbreviated: each item is shorthand fo
 - [ ] Ontology change management includes impact analysis and stakeholder approval
 - [ ] Tooling for ontology diagrams and documentation
 - [ ] Automated basic checking of ontology syntax
-- [ ] Access to at least one trained \gls{ekg:ontologist}
+- [ ] Access to at least one trained Ontologist
 
 ## Maturity Level 3
 
