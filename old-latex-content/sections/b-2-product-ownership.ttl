@@ -1,0 +1,52 @@
+@base <https://maturity.ekgf.org/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+@prefix dct:       <http://purl.org/dc/terms/> .
+
+<capability-product-ownership-usecase-requirements>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Usecase Requirements" ;
+  rdfs:comment           "Identification/prioritization of EKG usecase requirements." ;
+  ekgmm:iriLocalName     "usecase-requirements" ;
+  ekgmm:inArea           <capability-area-product-ownership> ;
+  ekgmm:capabilityNumber "B.2.1" ;
+.
+
+<capability-product-ownership-funding-and-budget>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Funding & Budget" ;
+  rdfs:comment           "Annual and multi-year funding process." ;
+  ekgmm:iriLocalName     "funding-and-budget" ;
+  ekgmm:inArea           <capability-area-product-ownership> ;
+  ekgmm:capabilityNumber "B.2.2" ;
+.
+
+<capability-product-ownership-delivery-process>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Delivery Process" ;
+  rdfs:comment           "Management of statements of work for business outcomes." ;
+  ekgmm:iriLocalName     "delivery-process" ;
+  ekgmm:inArea           <capability-area-product-ownership> ;
+  ekgmm:capabilityNumber "B.2.3" ;
+.
+
+<capability-product-ownership-measurement-criteria>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Measurement Criteria" ;
+  rdfs:comment           "Business metrics and criteria for evaluating the EKG." ;
+  ekgmm:iriLocalName     "measurement-criteria" ;
+  ekgmm:inArea           <capability-area-product-ownership> ;
+  ekgmm:capabilityNumber "B.2.4" ;
+.
+
+<capability-product-ownership-team-requirements-management>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Team Requirements Management" ;
+  rdfs:comment           "Identification and management of skill sets needed for the EKG." ;
+  ekgmm:iriLocalName     "team-requirements-management" ;
+  ekgmm:inArea           <capability-area-product-ownership> ;
+  ekgmm:capabilityNumber "B.2.5" ;
+.

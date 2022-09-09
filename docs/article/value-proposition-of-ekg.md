@@ -4,7 +4,7 @@ summary: Value proposition of EKG
 authors:
     - Carlos Tubbax
 date: 2022-01-31
-some_url: https://maturity-model.ekgf.org/article/value-proposition-of-ekg/
+some_url: https://maturity.ekgf.org/article/value-proposition-of-ekg/
 ---
 
 Antwerp, December 2021, Carlos Tubbax.

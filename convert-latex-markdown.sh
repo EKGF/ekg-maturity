@@ -104,7 +104,7 @@ function replaceStuff() {
   replace 's@\\glsxtrshort{\(.*\)}@\\gls{\1}@g'
   replace 's@\\gls{ekg}@EKG@g'
   replace 's@\\gls{ekgmm}@EKG/MM@g'
-  replace 's@\\gls{ekgmanifesto}@EKG/Manifesto@g'
+  replace 's@\\gls{ekgprinciples}@EKG/Manifesto@g'
   replace 's@\\gls{ekgmethod}@EKG/Method@g'
   replace 's@\\stardogcompany@Stardog@g'
   replace 's@\\stardog@Stardog@g'

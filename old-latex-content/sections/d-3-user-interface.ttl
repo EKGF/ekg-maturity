@@ -1,0 +1,56 @@
+@base <https://maturity.ekgf.org/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+@prefix dct:       <http://purl.org/dc/terms/> .
+
+<capability-user-interface-search>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Search" ;
+  rdfs:comment           "Standards and tools for finding relevant data across the enterprise." ;
+  ekgmm:iriLocalName     "search" ;
+  ekgmm:inArea           <capability-area-user-interface> ;
+  ekgmm:capabilityNumber "D.3.1" ;
+.
+
+<capability-user-interface-collaboration>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Collaboration" ;
+  ekgmm:iriLocalName     "collaboration" ;
+  ekgmm:inArea           <capability-area-user-interface> ;
+  ekgmm:capabilityNumber "D.3.2" ;
+.
+
+<capability-user-interface-multilingual-support>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Multilingual Support" ;
+  ekgmm:iriLocalName     "multilingual-support" ;
+  ekgmm:inArea           <capability-area-user-interface> ;
+  ekgmm:capabilityNumber "D.3.3" ;
+.
+
+<capability-user-interface-content-editing>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Content Editing" ;
+  ekgmm:iriLocalName     "content-editing" ;
+  ekgmm:inArea           <capability-area-user-interface> ;
+  ekgmm:capabilityNumber "D.3.4" ;
+.
+
+<capability-user-interface-reporting>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Reporting" ;
+  ekgmm:iriLocalName     "reporting" ;
+  ekgmm:inArea           <capability-area-user-interface> ;
+  ekgmm:capabilityNumber "D.3.5" ;
+.
+
+<capability-user-interface-visualization>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Visualization" ;
+  ekgmm:iriLocalName     "visualization" ;
+  ekgmm:inArea           <capability-area-user-interface> ;
+  ekgmm:capabilityNumber "D.3.6" ;
+.

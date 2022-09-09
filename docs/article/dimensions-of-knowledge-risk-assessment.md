@@ -4,7 +4,7 @@ summary: Dimensions of Knowledge Risk Assessment
 authors:
 - Carl Mattocks
 date: 2022-07-05
-some_url: https://maturity-model.ekgf.org/article/dimensions-of-knowledge-risk-assessment/
+some_url: https://maturity.ekgf.org/article/dimensions-of-knowledge-risk-assessment/
 ---
 # Dimensions of Knowledge Risk Assessment
 

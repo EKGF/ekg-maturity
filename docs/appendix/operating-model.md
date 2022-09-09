@@ -3,7 +3,7 @@ title: Operating Model
 summary: Operating Model
 authors:
   - Carlos Tubbax
-some_url: https://maturity-model.ekgf.org/appendix/operating-model/
+some_url: https://maturity.ekgf.org/appendix/operating-model/
 ---
 # Business Operating Model
 
@@ -59,7 +59,7 @@ companies need to answer the following two questions (Ross, Weil and Robertson (
 The first question determines integration requirements while the second one covers the standardization requirements
 of an organizations.
 Depending on these requirements, there are four different possible operating models as depicted in
-table~\ref{tab:ekg-mm-business-operating-model-quadrants}.
+table~\ref{tab:ekg-maturity-business-operating-model-quadrants}.
 
 <figure markdown>
 
@@ -171,7 +171,7 @@ The Diversification model imposes fewer constraints on the organic growth of ind
 fewer limits for business acquisitions.
 However, it does not offer the benefits of integration and standardization across business units.
 The opportunities for growth of each operating model are shown in
-table~\ref{tab:ekg-mm-business-operating-model-different}.
+table~\ref{tab:ekg-maturity-business-operating-model-different}.
 
 <figure markdown>
 | &#8203                                        | &#8203                | **Coordination**                                                                                                           | **Unification**                                                                                                                     |

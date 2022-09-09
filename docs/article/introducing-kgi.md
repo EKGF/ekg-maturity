@@ -4,7 +4,7 @@ summary: Introducing the EKG Matrix Plot & KGI Value
 authors:
 - Carl Mattocks
 date: 2022-03-06
-some_url: https://maturity-model.ekgf.org/article/introducing-kgi/
+some_url: https://maturity.ekgf.org/article/introducing-kgi/
 ---
 # Introducing the EKG Matrix Plot & KGI Value
 

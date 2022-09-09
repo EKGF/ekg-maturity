@@ -16,8 +16,8 @@ Wellness Monitoring, Knowledge Reasoning.
 
 ## Articles
 
-- Many contributions to the [Business Pillar](https://maturity-model.ekgf.org/pillar/business)
-- [Introducing the EKG Matrix Plot & KGI Value](http://maturity-model.ekgf.org/article/introducing-kgi/)
-- [Dimensions of Knowledge Value Assessment](http://maturity-model.ekgf.org/article/dimensions-of-knowledge-value-assessment/)
-- [Dimensions of Knowledge Risk Assessment](http://maturity-model.ekgf.org/article/dimensions-of-knowledge-risk-assessment/)
+- Many contributions to the [Business Pillar](https://maturity.ekgf.org/pillar/business)
+- [Introducing the EKG Matrix Plot & KGI Value](http://maturity.ekgf.org/article/introducing-kgi/)
+- [Dimensions of Knowledge Value Assessment](http://maturity.ekgf.org/article/dimensions-of-knowledge-value-assessment/)
+- [Dimensions of Knowledge Risk Assessment](http://maturity.ekgf.org/article/dimensions-of-knowledge-risk-assessment/)
 

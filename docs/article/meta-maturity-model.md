@@ -4,7 +4,7 @@ summary: Meta Maturity Model
 authors:
     - Jacobus Geluk
 date: 2022-03-09
-some_url: https://maturity-model.ekgf.org/article/meta-maturity-model/
+some_url: https://maturity.ekgf.org/article/meta-maturity-model/
 ---
 
 This is a work-in-progress article documenting our current thinking about

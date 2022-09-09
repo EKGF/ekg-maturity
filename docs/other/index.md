@@ -7,14 +7,14 @@ have lead to various websites:
 
 The main website of the Foundation: [https://ekgf.org](https://ekgf.org)
 
-## Manifesto
+## Principles
 
-The EKG/Manifesto: 
-[https://manifesto.ekgf.org](https://manifesto.ekgf.org), 
+The EKG/Principles: 
+[https://principles.ekgf.org](https://principles.ekgf.org), 
 this is a project that is being maintained in the GitHub repository 
-[EKGF/ekg-manifesto](https://github.com/EKGF/ekg-manifesto).
+[EKGF/ekg-principles](https://github.com/EKGF/ekg-principles).
 
-The EKG/Manifesto is a combination of long term vision statements---the
+The EKG/Principles website is a combination of long term vision statements---the
 "Why"--- combined with the underlying principles for EKG---the "How".
 
 You're welcome to contribute.
@@ -22,9 +22,9 @@ You're welcome to contribute.
 ## Maturity Model
 
 The Maturity Model for the Enterprise Knowledge Graph (EKG/MM): 
-[https://maturity-model.ekgf.org](https://maturity-model.ekgf.org),
+[https://maturity.ekgf.org](https://maturity.ekgf.org),
 this is a project that is being maintained in the GitHub repository 
-[EKGF/ekg-mm](https://github.com/EKGF/ekg-mm).
+[EKGF/ekg-maturity](https://github.com/EKGF/ekg-maturity).
 
 You're welcome to contribute.
 

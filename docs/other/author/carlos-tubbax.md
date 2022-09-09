@@ -5,10 +5,10 @@
 
 # Articles
 
-- [Value proposition of EKG](https://maturity-model.ekgf.org/article/value-proposition-of-ekg/)
+- [Value proposition of EKG](https://maturity.ekgf.org/article/value-proposition-of-ekg/)
 - [Modularity](https://use-case-tree-method.ekgf.org/objective/modularity/)
 - [Interoperability](https://use-case-tree-method.ekgf.org/objective/interoperability/)
-- [What is Business Strategy?](https://maturity-model.ekgf.org/appendix/business-strategy/)
-- [Enterprise Architecture](https://maturity-model.ekgf.org/appendix/enterprise-architecture/)
-- [Business Operating Model](https://maturity-model.ekgf.org/appendix/operating-model/)
+- [What is Business Strategy?](https://maturity.ekgf.org/appendix/business-strategy/)
+- [Enterprise Architecture](https://maturity.ekgf.org/appendix/enterprise-architecture/)
+- [Business Operating Model](https://maturity.ekgf.org/appendix/operating-model/)
 

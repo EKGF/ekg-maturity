@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: EKG/MM
 site_description: Maturity Model for the Enterprise Knowledge Graph (EKG)
-repo_name: 'ekgf/ekg-mm'
-repo_url: https://github.com/EKGF/ekg-mm
-site_url: https://maturity-model.ekgf.org
+repo_name: 'ekgf/ekg-maturity'
+repo_url: https://github.com/EKGF/ekg-maturity
+site_url: https://maturity.ekgf.org
 edit_uri: edit/main/docs/
 site_dir: site
 site_author: Enterprise Knowledge Graph Foundation
@@ -67,7 +67,7 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/EKGF
     - icon: fontawesome/brands/github
-      link: https://github.com/EKGF/ekg-mm
+      link: https://github.com/EKGF/ekg-maturity
   analytics:
     provider: google
     property: G-E2T299FBZG

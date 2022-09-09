@@ -1,0 +1,61 @@
+@base <https://maturity.ekgf.org/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+@prefix dct:       <http://purl.org/dc/terms/> .
+
+<capability-executive-leadership-organizational-strategy>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Organizational Strategy" ;
+  rdfs:comment           "Organizational mandate and strategic support for the EKG." ;
+  ekgmm:iriLocalName     "organizational-strategy" ;
+  ekgmm:inArea           <capability-area-executive-leadership> ;
+  ekgmm:capabilityNumber "B.1.1" ;
+.
+
+<capability-executive-leadership-organizational-policies>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Organizational Policies" ;
+  rdfs:comment           "EKG alignment with the views and values of the organization." ;
+  ekgmm:iriLocalName     "organizational-policies" ;
+  ekgmm:inArea           <capability-area-executive-leadership> ;
+  ekgmm:capabilityNumber "B.1.2" ;
+.
+
+<capability-executive-leadership-funding-and-resources>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Funding and Resources" ;
+  rdfs:comment           "Funding process and resource allocation for the EKG." ;
+  ekgmm:iriLocalName     "funding-and-resources" ;
+  ekgmm:inArea           <capability-area-executive-leadership> ;
+  ekgmm:capabilityNumber "B.1.3" ;
+.
+
+<capability-executive-leadership-technology-requirements>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Technology Requirements" ;
+  rdfs:comment           "CIO support for EKG (where EKG fits in the overall technology stack)." ;
+  ekgmm:iriLocalName     "technology-requirements" ;
+  ekgmm:inArea           <capability-area-executive-leadership> ;
+  ekgmm:capabilityNumber "B.1.4" ;
+.
+
+<capability-executive-leadership-organizational-processes>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Organizational Processes" ;
+  rdfs:comment           "Alignment of EKG with business architecture." ;
+  ekgmm:iriLocalName     "organizational-processes" ;
+  ekgmm:inArea           <capability-area-executive-leadership> ;
+  ekgmm:capabilityNumber "B.1.5" ;
+.
+
+<capability-executive-leadership-organizational-governance>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Organizational Governance" ;
+  rdfs:comment           "Process for aligning EKG with organizational accountabilities." ;
+  ekgmm:iriLocalName     "organizational-governance" ;
+  ekgmm:inArea           <capability-area-executive-leadership> ;
+  ekgmm:capabilityNumber "B.1.6" ;
+.

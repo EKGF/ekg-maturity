@@ -6,8 +6,8 @@
 
 ## Articles
 
-- Overseeing the [EKG Manifesto](https://manifesto.ekgf.org)
+- Overseeing the [EKG Principles](https://principles.ekgf.org)
 - Overseeing the [EKG Catalog](https://catalog.ekgf.org)
-- Overseeing the [Use Case Tree Method](https://use-case-tree-method.ekgf.org)
-- Overseeing the overall structure of the [Maturity Model](https://maturity-model.ekgf.org)
+- Overseeing the [EKG Method](https://method.ekgf.org)
+- Overseeing the overall structure of the [EKG Maturity Model](https://maturity.ekgf.org)
 

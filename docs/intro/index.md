@@ -15,6 +15,6 @@ It is necessary to be a member of the EKGF to be included in
 
 ## Structure
 
-![](../assets/ekg-mm-structure.png)
+![](../assets/ekg-maturity-structure.png)
 
 See [structure](./structure/) for more information.

@@ -2,42 +2,31 @@
 ifeq ($(OS),Windows_NT)
     YOUR_OS := Windows
     INSTALL_TARGET := install-windows
-    OPEN_EDITORS_VERSION_TARGET := open-editors-version-windows
-    OPEN_RELEASE_VERSION_TARGET := open-release-version-windows
     MKDOCS := mkdocs
     PIP := pip
 else
     YOUR_OS := $(shell sh -c 'uname 2>/dev/null || echo Unknown')
 ifeq ($(YOUR_OS), Linux)
     INSTALL_TARGET := install-linux
-    OPEN_EDITORS_VERSION_TARGET := open-editors-version-linux
-    OPEN_RELEASE_VERSION_TARGET := open-release-version-linux
 ifneq ($(wildcard /home/runner/.*),) # this means we're running in Github Actions
-	MKDOCS := mkdocs
-	PIP := pip
+		MKDOCS := mkdocs
+		PIP := pip
 else
-	MKDOCS := $(shell asdf where python)/bin/mkdocs
-	PIP := $(shell asdf where python)/bin/python -m pip
+		MKDOCS := $(shell asdf where python)/bin/mkdocs
+		PIP := $(shell asdf where python)/bin/python -m pip
 endif
 endif
 ifeq ($(YOUR_OS), Darwin)
     INSTALL_TARGET := install-macos
-    OPEN_EDITORS_VERSION_TARGET := open-editors-version-macos
-    OPEN_RELEASE_VERSION_TARGET := open-release-version-macos
-	MKDOCS := $(shell asdf where python)/bin/mkdocs
-	PIP := $(shell asdf where python)/bin/python -m pip
+		MKDOCS := $(shell asdf where python)/bin/mkdocs
+		PIP := $(shell asdf where python)/bin/python -m pip
 endif
 endif
 DOC_ORG_NAME := ekgf
-DOC_ROOT_NAME := $(shell cat .doc-name-root)
+DOC_ROOT_NAME := $(shell basename `git rev-parse --show-toplevel`)
 CURRENT_BRANCH := $(shell git branch --show-current)
 DOC_VERSION := $(shell cat $(DOC_ROOT_NAME)/VERSION)
-PDF_FILE_NAME_SUFFIX := $(subst -main,,$(DOC_VERSION)-$(USER)-$(CURRENT_BRANCH))
-PDF_EDITORS_VERSION := $(subst .,-,$(subst _,-,$(DOC_ROOT_NAME)/$(DOC_ORG_NAME)-$(DOC_ROOT_NAME)-editors-version-$(PDF_FILE_NAME_SUFFIX))).pdf
-PDF_RELEASE_VERSION := $(subst .,-,$(subst _,-,$(DOC_ROOT_NAME)/$(DOC_ORG_NAME)-$(DOC_ROOT_NAME)-$(PDF_FILE_NAME_SUFFIX))).pdf
-PDF_ASSET_EDITORS_VERSION := docs/assets/$(DOC_ORG_NAME)-$(DOC_ROOT_NAME)-editors-version.pdf
-PDF_ASSET_RELEASE_VERSION := docs/assets/$(DOC_ORG_NAME)-$(DOC_ROOT_NAME).pdf
-PAT_MKDOCS_INSIDERS := $(shell cat $(HOME)/.secrets/PAT_MKDOCS_INSIDERS.txt 2>/dev/null)
+PAT_MKDOCS_INSIDERS := $(shell cat ~/.secrets/PAT_MKDOCS_INSIDERS.txt 2>/dev/null)
 ifeq ($(PAT_MKDOCS_INSIDERS),)
 MKDOCS_CONFIG_FILE := 'mkdocs.outsiders.yml'
 $(info You don't have the $(HOME)/.secrets/PAT_MKDOCS_INSIDERS.txt file so we are using the open source version of MkDocs)
@@ -51,84 +40,16 @@ all: docs-build
 .PHONY: info
 info:
 	@echo "Git Branch: ${CURRENT_BRANCH}"
-	@echo "MkDocs: ${MKDOCS}"
 	@echo "Operating System: ${YOUR_OS}"
 	@echo "MkDocs: ${MKDOCS}"
 	@echo "MkDocs config file: ${MKDOCS_CONFIG_FILE}"
-	@echo "Python pip: $(shell asdf where python)"
+	@echo "Python pip: ${PIP}"
 	@echo "install target: ${INSTALL_TARGET}"
-	@echo "Document Version: ${DOC_VERSION}"
-	@echo "PDF Suffix: ${PDF_FILE_NAME_SUFFIX}"
-	@echo "Release Version: ${PDF_RELEASE_VERSION}"
-	@echo "Editor's Version: ${PDF_EDITORS_VERSION}"
-	@echo "Release Version in assets directory: ${PDF_ASSET_RELEASE_VERSION}"
-	@echo "Editor's Version in assets directory: ${PDF_ASSET_EDITORS_VERSION}"
-
-.PHONY: open-editors-version-windows
-open-editors-version-windows:
-	@echo "We did not implement this yet for Windows"
-
-.PHONY: open-editors-version-linux
-open-editors-version-linux:
-	@echo "We did not implement this yet for Linux"
-
-.PHONY: open-editors-version-macos
-open-editors-version-macos: $(PDF_EDITORS_VERSION)
-	skim $(PDF_EDITORS_VERSION)
-
-.PHONY: open-release-version-windows
-open-release-version-windows:
-	@echo "We did not implement this yet for Windows"
-
-.PHONY: open-release-version-linux
-open-release-version-linux:
-	@echo "We did not implement this yet for Linux"
-
-.PHONY: open-release-version-macos
-open-release-version-macos: $(PDF_RELEASE_VERSION)
-	skim $(PDF_RELEASE_VERSION)
-
-.PHONY: open-editors-version
-open-editors-version: $(OPEN_EDITORS_VERSION_TARGET)
-
-.PHONY: open-release-version
-open-release-version: $(OPEN_RELEASE_VERSION_TARGET)
-
-.PHONY: install-macos
-install-macos:
-	brew list --cask -1 | grep -q mactex || brew install --cask mactex-no-gui # see https://formulae.brew.sh/cask/mactex-no-gui
-	sudo tlmgr update --self
-	sudo tlmgr update --all
-	sudo tlmgr install texdoc # used by IntelliJ editor and other editors for documentation of packages
-	brew list --cask -1 | grep -q skim || brew install --cask skim
-	./latex-lib/install-as-subtree.sh
-	cp -R etc/fonts/*.ttf ~/Library/Fonts/
-	@echo "Exit this terminal and open a new one because your PATH has changed"
-
-.PHONY: install-linux
-install-linux:
-	./latex-lib/install-as-subtree.sh
-	cp -R etc/fonts/*.ttf /usr/local/share/fonts
-
-.PHONY: install
-install: $(INSTALL_TARGET)
-
-.PHONY: release-version
-release-version: $(PDF_RELEASE_VERSION)
-
-$(PDF_RELEASE_VERSION): $(wildcard $(DOC_ROOT_NAME)/**/*.tex)
-	latex_document_mode=release-version latex_document_main=$(DOC_ROOT_NAME) latex_customer_code=$(DOC_ORG_NAME) latexmk -gg
-
-.PHONY: editors-version
-editors-version: $(PDF_EDITORS_VERSION)
-
-$(PDF_EDITORS_VERSION): $(wildcard $(DOC_ROOT_NAME)/**/*.tex)
-	latex_document_mode=editors-version latex_document_main=$(DOC_ROOT_NAME) latex_customer_code=$(DOC_ORG_NAME) latexmk -gg
 
 .PHONY: clean
 clean:
-	@echo "Removing all generated files"
-	@cd $(DOC_ROOT_NAME) && rm -f *.acn *.acr *.alg *.aux *.bbl *.bcf *.blg *.fdb* *.fls *.gl? *.idx *.ilg *.ind *.ist *.log *.odn *.ol? *.pdf *.run.xml *.sync* *.tdn *.tl? *.toc
+	@echo Cleaning
+	@rm -rf site 2>/dev/null || true
 
 .PHONY: install
 install: docs-install
@@ -145,6 +66,7 @@ docs-install-brew-packages:
 	brew upgrade cairo || brew install cairo
 	brew upgrade freetype || brew install freetype
 	brew upgrade libffi || brew install libffi
+	brew upgrade pango || brew install pango
 	brew upgrade libjpeg || brew install libjpeg
 	brew upgrade libpng || brew install libpng
 	brew upgrade zlib || brew install zlib
@@ -198,93 +120,115 @@ ifneq ($(wildcard /home/runner/.*),)
 docs-install-python-packages: docs-install-asdf
 docs-install-python-packages: docs-install-asdf
 else
-docs-install-python-packages: docs-install-asdf-packages
+docs-install-python-packages: docs-install-asdf-packages docs-install-standard-python-packages docs-install-special-python-packages
 endif
-	@echo "Install packages via pip:"
-	$(shell asdf where python)/bin/python -m pip install --upgrade pip
-	$(shell asdf where python)/bin/python -m pip install --upgrade wheel
-	$(shell asdf where python)/bin/python -m pip install --upgrade pipenv
-#	$(shell asdf where python)/bin/python -m pip install --upgrade plantuml-markdown
-	$(shell asdf where python)/bin/python -m pip install --upgrade mdutils
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-build-plantuml-plugin
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-localsearch
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-graphviz
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-exclude
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-redirects
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-include-markdown-plugin
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-awesome-pages-plugin
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-macros-plugin
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-mermaid2-plugin
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-git-revision-date-plugin
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-minify-plugin
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-redirects
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-gen-files
-	$(shell asdf where python)/bin/python -m pip install --upgrade mkdocs-exclude-search
-	$(shell asdf where python)/bin/python -m pip install --upgrade mdx-spanner
-	$(shell asdf where python)/bin/python -m pip install --upgrade markdown-emdash
-ifeq ($(PAT_MKDOCS_INSIDERS),)
-	$(shell asdf where python)/bin/python -m pip install --upgrade --force-reinstall mkdocs-material
-else
-	@$(shell asdf where python)/bin/python -m pip install --upgrade --force-reinstall git+https://$(PAT_MKDOCS_INSIDERS)@github.com/squidfunk/mkdocs-material-insiders.git
-endif
-	$(shell asdf where python)/bin/python -m pip install --upgrade git+https://github.com/EKGF/ekglib.git#egg=ekglib
 
-.PHONY: install-local-ekglib
-install-local-ekglib: docs-install-python-packages
-	$(shell asdf where python)/bin/python -m pip install --editable ../ekglib
-	./venv/bin/python -m pip install --editable ../ekglib
+.PHONY: docs-install-standard-python-packages
+docs-install-standard-python-packages:
+	@echo "Install standard python packages via pip:"
+	$(PIP) install --upgrade pip
+	$(PIP) install --upgrade wheel
+	$(PIP) install --upgrade pipenv
+#	$(PIP) install --upgrade plantuml-markdown
+	$(PIP) install --upgrade mdutils
+	$(PIP) install --upgrade mkdocs-build-plantuml-plugin
+	$(PIP) install --upgrade mkdocs
+	$(PIP) install --upgrade mkdocs-localsearch
+	$(PIP) install --upgrade mkdocs-graphviz
+	$(PIP) install --upgrade mkdocs-exclude
+	$(PIP) install --upgrade mkdocs-exclude-search
+	$(PIP) install --upgrade mkdocs-include-markdown-plugin
+	$(PIP) install --upgrade mkdocs-awesome-pages-plugin
+	$(PIP) install --upgrade mkdocs-macros-plugin
+	$(PIP) install --upgrade mkdocs-mermaid2-plugin
+	$(PIP) install --upgrade mkdocs-git-revision-date-plugin
+	$(PIP) install --upgrade mkdocs-minify-plugin
+	$(PIP) install --upgrade mkdocs-redirects
+	$(PIP) install --upgrade mkdocs-gen-files
+	$(PIP) install --upgrade mkdocs-kroki-plugin
+	$(PIP) install --upgrade mdx-spanner
+	$(PIP) install --upgrade markdown-emdash
+
+.PHONY: docs-install-python-packages-via-requirements-txt
+docs-install-python-packages-via-requirements-txt:
+ifeq ($(PAT_MKDOCS_INSIDERS),)
+	@echo "ERROR: Can only run this when PAT_MKDOCS_INSIDERS is known"
+else
+	@echo "Install standard python packages according to requirements.txt:"
+	@PAT_MKDOCS_INSIDERS=$(PAT_MKDOCS_INSIDERS) $(PIP) install -r requirements.txt
+endif
+
+.PHONY: docs-install-special-python-packages
+docs-install-special-python-packages: docs-install-pdf-python-packages docs-install-mkdocs-insider-version-packages
+
+.PHONY: docs-install-pdf-python-packages
+docs-install-pdf-python-packages:
+	@echo "Install PDF python packages via pip:"
+	$(PIP) install --upgrade weasyprint
+	cd ../mkdocs-with-pdf && $(PIP) install -e .
+	#$(PIP) install --upgrade mkdocs-with-pdf
+	#$(PIP) install --upgrade weasyprint==52
+	#$(PIP) install --upgrade mkpdfs-mkdocs
+
+.PHONY: docs-install-mkdocs-insider-version-packages
+docs-install-mkdocs-insider-version-packages:
+ifeq ($(PAT_MKDOCS_INSIDERS),)
+	@echo "Install standard mkdocs python package via pip:"
+	$(PIP) install --upgrade --force-reinstall mkdocs-material
+else
+	@echo "Install special insiders version of mkdocs python package via pip:"
+	@$(PIP) install --upgrade --force-reinstall git+https://$(PAT_MKDOCS_INSIDERS)@github.com/squidfunk/mkdocs-material-insiders.git
+endif
 
 .PHONY: docs-build
 docs-build:
 	$(MKDOCS) build --config-file $(MKDOCS_CONFIG_FILE)
 
+.PHONY: docs-build-clean
+docs-build-clean:
+	$(MKDOCS) build --config-file $(MKDOCS_CONFIG_FILE) --clean
+
+.PHONY: docs-build-with-pdf
+docs-build-with-pdf:
+	ENABLE_PDF_EXPORT=1 $(MKDOCS) build --config-file $(MKDOCS_CONFIG_FILE)
+
 .PHONY: docs-serve
 docs-serve: docs-assets
 	$(MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict
-
-.PHONY: docs-serve-no-update
-docs-serve-no-update: docs-assets
-	$(MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --strict --verbose
 
 .PHONY: docs-serve-debug
 docs-serve-debug:
 	$(MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict --verbose
 
 .PHONY: docs-deploy
-docs-deploy: docs-build
+docs-deploy:
 	$(MKDOCS) gh-deploy --config-file $(MKDOCS_CONFIG_FILE) --verbose
 
 .PHONY: docs-assets
 docs-assets: $(PDF_ASSET_EDITORS_VERSION) $(PDF_ASSET_RELEASE_VERSION)
 
 .PHONY: docs-sync-from
-docs-sync-from: docs-sync-from-ekg-mm docs-sync-from-ekg-manifesto
+docs-sync-from: docs-sync-from-ekg-mm docs-sync-from-ekg-principles
 
 .PHONY: docs-sync-to
-docs-sync-to: docs-sync-to-ekg-mm docs-sync-to-ekg-manifesto
+docs-sync-to: docs-sync-to-ekg-mm docs-sync-to-ekg-principles
 
 .PHONY: docs-sync
 docs-sync: docs-sync-from docs-sync-to
 
-.PHONY: docs-sync-from-ekg-mm
-docs-sync-from-ekg-mm: $(wildcard ../ekg-mm/docs-overrides/*)
-	rsync --checksum --recursive --update --itemize-changes --verbose ../ekg-mm/docs-overrides/ docs-overrides/
+.PHONY: docs-sync-from-ekg-maturity
+docs-sync-from-ekg-maturity: $(wildcard ../ekg-maturity/docs-overrides/*)
+	rsync --checksum --recursive --update --itemize-changes --verbose ../ekg-maturity/docs-overrides/ docs-overrides/
 
-.PHONY: docs-sync-to-ekg-mm
-docs-sync-to-ekg-mm: $(wildcard ../ekg-mm/Makefile)
-	cd ../ekg-mm && make docs-sync-from
+.PHONY: docs-sync-to-ekg-maturity
+docs-sync-to-ekg-maturity: $(wildcard ../ekg-maturity/Makefile)
+	cd ../ekg-maturity && make docs-sync-from
 
-.PHONY: docs-sync-from-ekg-manifesto
-docs-sync-from-ekg-manifesto: $(wildcard ../ekg-manifesto/docs-overrides/*)
-	rsync --checksum --recursive --update --itemize-changes --verbose ../ekg-manifesto/docs-overrides/ docs-overrides/
+.PHONY: docs-sync-from-ekg-principles
+docs-sync-from-ekg-principles: $(wildcard ../ekg-principles/docs-overrides/*)
+	rsync --checksum --recursive --update --itemize-changes --verbose ../ekg-principles/docs-overrides/ docs-overrides/
 
-.PHONY: docs-sync-to-ekg-manifesto
-docs-sync-to-ekg-manifesto: $(wildcard ../ekg-manifesto/Makefile)
-	cd ../ekg-manifesto && make docs-sync-from
+.PHONY: docs-sync-to-ekg-principles
+docs-sync-to-ekg-principles: $(wildcard ../ekg-principles/Makefile)
+	cd ../ekg-principles && make docs-sync-from
 
-$(PDF_ASSET_EDITORS_VERSION): $(PDF_EDITORS_VERSION)
-	cp -v $< $@
-
-$(PDF_ASSET_RELEASE_VERSION): $(PDF_RELEASE_VERSION)
-	cp -v $< $@

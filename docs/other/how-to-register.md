@@ -27,4 +27,4 @@ You can add your business email address(es) to your GitHub account later.
 
 Mail your GitHub account id (user-id) to
 [registration@ekgf.org](mailto:registration@ekgf.org) so that we can add you
-to the access control list of the [EKGF/ekg-mm repository](https://github.com/EKGF/ekg-mm).
+to the access control list of the [EKGF/ekg-maturity repository](https://github.com/EKGF/ekg-maturity).

@@ -4,7 +4,7 @@ summary: Dimensions of Knowledge Value Assessment
 authors:
 - Carl Mattocks
 date: 2022-06-01
-some_url: https://maturity-model.ekgf.org/article/dimensions-of-knowledge-value-assessment/
+some_url: https://maturity.ekgf.org/article/dimensions-of-knowledge-value-assessment/
 ---
 # Dimensions of Knowledge Value Assessment
 

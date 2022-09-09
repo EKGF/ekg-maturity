@@ -3,7 +3,7 @@ title: Enterprise Architecture
 summary: Enterprise Architecture
 authors:
 - Carlos Tubbax
-some_url: https://maturity-model.ekgf.org/appendix/enterprise-architecture/
+some_url: https://maturity.ekgf.org/appendix/enterprise-architecture/
 ---
 # Enterprise Architecture
 

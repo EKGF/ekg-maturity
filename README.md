@@ -6,15 +6,15 @@ based source documents of EKG/MM, the Maturity Model for the EKG.
 ## PDF and Website
 
 The content in this repository is used to generate a PDF from the LaTeX content
-in the [./ekg-mm](./ekg-mm) directory and a website from the Markdown content
+in the [./ekg-maturity](./ekg-maturity) directory and a website from the Markdown content
 in the [./docs](./docs) directory.
 
-- [![Create PDF](https://github.com/EKGF/ekg-mm/actions/workflows/create-pdf.yml/badge.svg)](https://github.com/EKGF/ekg-mm/actions/workflows/create-pdf.yml)
-- [https://maturity-model.ekgf.org](https://maturity-model.ekgf.org)
+- [![Create PDF](https://github.com/EKGF/ekg-maturity/actions/workflows/create-pdf.yml/badge.svg)](https://github.com/EKGF/ekg-maturity/actions/workflows/create-pdf.yml)
+- [https://maturity.ekgf.org](https://maturity.ekgf.org)
 
 ## License
 
-[![GitHub](https://img.shields.io/github/license/EKGF/ekg-mm?style=for-the-badge)](http://creativecommons.org/licenses/by-sa/4.0/)
+[![GitHub](https://img.shields.io/github/license/EKGF/ekg-maturity?style=for-the-badge)](http://creativecommons.org/licenses/by-sa/4.0/)
 
 This work is licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
@@ -31,10 +31,10 @@ at [https://ekgf.org/maturitymodel](https://ekgf.org/maturitymodel).
 !!! note
 
     Please note that we're in the process of generating a website for the
-    maturity model here: [https://maturity-model.ekgf.org](https://maturity-model.ekgf.org)
+    maturity model here: [https://maturity.ekgf.org](https://maturity.ekgf.org)
 
 For members of the EKGF there's also a Slack channel called
-[#ekg-mm-latest](https://ekgf.slack.com/archives/C01TEL6GWEN)
+[#ekg-maturity-latest](https://ekgf.slack.com/archives/C01TEL6GWEN)
 where both PDFs are published every time someone pushes
 a change into this repository.
 
@@ -45,8 +45,8 @@ a change into this repository.
 ## Where to find the content?
 
 The "raw" LaTeX source documents (see LaTeX below for an explanation) can be
-found in the [/ekg-mm](ekg-mm) directory and more specifically in the
-[/ekg-mm/sections](ekg-mm/sections) directory.
+found in the [/ekg-maturity](ekg-maturity) directory and more specifically in the
+[/ekg-maturity/sections](ekg-maturity/sections) directory.
 
 ## LaTeX
 
@@ -66,7 +66,7 @@ the right content.
 
 ## Github
 
-This repository resides on GitHub as https://github.com/EKGF/ekg-mm.
+This repository resides on GitHub as https://github.com/EKGF/ekg-maturity.
 
 ### How to clone?
 
@@ -80,8 +80,8 @@ How to create a clone of the GitHub repo:
 
 ```shell
 cd ~ # go to your home directory or the directory where you want your git clones to be
-git clone https://github.com/EKGF/ekg-mm
-cd ekg-mm
+git clone https://github.com/EKGF/ekg-maturity
+cd ekg-maturity
 make install
 ```
 
@@ -129,7 +129,7 @@ the `latexmk` command which is bundled with your LaTeX installation.
 To launch the default PDF viewer after each "build" if you run the `latexmk` command
 with the `-pvc` option:
 
-For instance, for the `release-version` of EKGF's `ekg-mm` document:
+For instance, for the `release-version` of EKGF's `ekg-maturity` document:
 
 ```shell
 make release-version

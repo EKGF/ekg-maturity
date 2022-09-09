@@ -6,5 +6,5 @@
 
 ## Articles
 
-- Most content in the [Data Pillar](https://maturity-model.ekgf.org/pillar/data)
+- Most content in the [Data Pillar](https://maturity.ekgf.org/pillar/data)
 

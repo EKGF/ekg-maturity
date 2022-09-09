@@ -3,7 +3,7 @@ title: Business Strategy
 summary: Business Strategy
 authors:
   - Carlos Tubbax 
-some_url: https://maturity-model.ekgf.org/appendix/business-strategy/
+some_url: https://maturity.ekgf.org/appendix/business-strategy/
 ---
 # What is Business Strategy?
 

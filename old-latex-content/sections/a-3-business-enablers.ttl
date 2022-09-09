@@ -1,0 +1,87 @@
+@base <https://maturity.ekgf.org/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+@prefix dct:       <http://purl.org/dc/terms/> .
+
+<capability-business-enablers-operating-model>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Operating Model" ;
+  rdfs:comment           "The desired level of business process integration & standardization." ;
+  ekgmm:iriLocalName     "operating-model" ;
+  ekgmm:capabilityNumber "A.3.1" ;
+  ekgmm:inArea           <capability-area-business-enablers> ;
+  dct:description        """
+  _Operating Models_[^operating-model] are the foundations of execution, in support of an enterprise's strategy.
+  Enterprises use operating models to organize and coordinate their activities in order to most effectively engage
+  with their customers and business partners.
+  
+  [^operating-model]: See appendix [Operating Models](/appendix/operating-model/)
+  """
+.
+
+<capability-business-enablers-performance-management>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Performance Management" ;
+  rdfs:comment           "Measure business processes to manage performance." ;
+  ekgmm:iriLocalName     "performance-management" ;
+  ekgmm:capabilityNumber "A.3.2" ;
+  ekgmm:inArea           <capability-area-business-enablers> ;
+  dct:description        """
+!!! note "[ASCM](https://ASCM.org)"
+
+      _Enterprise Performance Management (EPM)_ --- The process of monitoring performance across the enterprise 
+      with the goal of improving business performance.
+      An EPM system integrates and analyzes data from many sources, including e-commerce systems,
+      front- and back-office applications, data warehouses, and external data sources.
+      Advanced EPM systems can support many performance methodologies, such as the _balanced scorecard_.
+"""
+.
+
+<capability-business-enablers-risk-managements>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Risk Management" ;
+  rdfs:comment           "Identify risk to mitigate or accept, with reaction plans." ;
+  ekgmm:iriLocalName     "risk-management" ;
+  ekgmm:capabilityNumber "A.3.3" ;
+  ekgmm:inArea           <capability-area-business-enablers> ;
+  dct:description        """
+!!! note "[ASCM](https://ASCM.org)"
+
+    _Risk management_ --- The identification, assessment, and prioritization of risks followed by coordinated and
+    economical application of resources to minimize, monitor, and control the probability and/or impact of
+    unfortunate events or to maximize the realization of opportunities.
+"""
+.
+
+<capability-business-enablers-supply-chain-managements>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Supply Chain Management" ;
+  rdfs:comment           "Managed flow of goods, services & information between businesses." ;
+  ekgmm:iriLocalName     "supply-chain-management" ;
+  ekgmm:capabilityNumber "A.3.4" ;
+  ekgmm:inArea           <capability-area-business-enablers> ;
+  dct:description        """
+!!! note "[ASCM](https://ASCM.org)"
+
+    _Supply chain management_ --- The design, planning, execution, control, and monitoring of supply
+    chain activities with the objective of creating net value, building a competitive infrastructure,
+    leveraging worldwide logistics, synchronizing supply with demand, and measuring performance globally.
+"""
+.
+
+<capability-business-enablers-capability-map>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Capability Map" ;
+  rdfs:comment           "Defining what a business does and which outcomes it wants to achieve." ;
+  ekgmm:iriLocalName     "capability-map" ;
+  ekgmm:capabilityNumber "A.3.5" ;
+  ekgmm:inArea           <capability-area-business-enablers> ;
+  dct:description        """
+Understanding _what_ a business does is at least as important as understanding _how_ it does it.
+Focusing on the _what_ rather than on the _how_ often provides the right level of abstraction
+of complex ecosystems in a way that can be easily digested by business executives and planning teams.
+"""
+.

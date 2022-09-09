@@ -1,0 +1,43 @@
+@base <https://maturity.ekgf.org/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+@prefix dct:       <http://purl.org/dc/terms/> .
+
+<capability-organizational-capabilities-control-functions>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Control Functions" ;
+  rdfs:comment           "Coordination with privacy, legal, security, records management." ;
+  ekgmm:iriLocalName     "control-functions" ;
+  ekgmm:inArea           <capability-area-organizational-capabilities> ;
+  ekgmm:capabilityNumber "B.5.1" ;
+.
+
+<capability-organizational-capabilities-vendor-management>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Vendor Management" ;
+  rdfs:comment           "Acquisition and licensing of vendor products." ;
+  ekgmm:iriLocalName     "vendor-management" ;
+  ekgmm:inArea           <capability-area-organizational-capabilities> ;
+  ekgmm:capabilityNumber "B.5.2" ;
+.
+
+<capability-organizational-capabilities-talent-management>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Talent Management" ;
+  rdfs:comment           "Skills acquisition, retention and training." ;
+  ekgmm:iriLocalName     "talent-management" ;
+  ekgmm:inArea           <capability-area-organizational-capabilities> ;
+  ekgmm:capabilityNumber "B.5.3" ;
+.
+
+<capability-organizational-capabilities-knowledge-sharing>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Knowledge Sharing" ;
+  rdfs:comment           "Ability of the organization to facilitate knowledge collaboration." ;
+  ekgmm:iriLocalName     "knowledge-sharing" ;
+  ekgmm:inArea           <capability-area-organizational-capabilities> ;
+  ekgmm:capabilityNumber "B.5.4" ;
+.

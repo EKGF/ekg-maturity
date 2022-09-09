@@ -54,7 +54,7 @@ be able to add their comments somewhere.
 We have to make it as easy as possible for them to do so. 
 
 Unfortunately, the Issue Management function of GitHub repositories ---
-like the [EKGF/ekg-mm](https://github.com/ekgf/ekg-mm) repository --- can only be
+like the [EKGF/ekg-maturity](https://github.com/ekgf/ekg-maturity) repository --- can only be
 used by people who have a GitHub account.
 
 As someone in the role of a critic, you don’t have to deal with "Agile"
@@ -75,11 +75,11 @@ an issue with the consistency of the story, anything that comes to mind.
 If you decide to let us benefit from your feedback then please follow these steps:
 
 - Go to the main page where all issues are shown:
-  [https://github.com/ekgf/ekg-mm/issues](https://github.com/ekgf/ekg-mm/issues) 
+  [https://github.com/ekgf/ekg-maturity/issues](https://github.com/ekgf/ekg-maturity/issues) 
 - Check if your issue is already raised by someone else, if so, 
   feel free to augment the discussion around that issue with your own concerns.
 - If it clearly is a new issue,
-  click the ["New Issue" button](https://github.com/EKGF/ekg-mm/issues/new).
+  click the ["New Issue" button](https://github.com/EKGF/ekg-maturity/issues/new).
 - Give it a concise title and clear description and ideally:
     - Copy paragraphs you don’t agree with into the issue
     - Copy the URL of the relevant page into the issue 
@@ -117,7 +117,7 @@ Here are some useful links.
 The idea is very simple though, we use the GitHub Projects facility. 
 Currently, we have a project for each pillar and a general project. 
 Here’s the main page for EKG/MM GitHub Projects: 
-[https://github.com/ekgf/ekg-mm/projects](https://github.com/ekgf/ekg-mm/projects)
+[https://github.com/ekgf/ekg-maturity/projects](https://github.com/ekgf/ekg-maturity/projects)
 
 What you see is a list of "project boards" where each project board 
 is owned by a workgroup in the entire Kanban process. 
@@ -126,7 +126,7 @@ This begins with planning.
 The planning process consists of various tasks:
 
 - Find open issues that are relevant to the workgroup in the list of issues:
-    - [open issues that have not yet been assigned to a project board](https://github.com/EKGF/ekg-mm/issues?q=is%3Aissue+is%3Aopen+no%3Aproject)
+    - [open issues that have not yet been assigned to a project board](https://github.com/EKGF/ekg-maturity/issues?q=is%3Aissue+is%3Aopen+no%3Aproject)
 - Link each issue that should be done by the workgroup to its
       corresponding project board.
       It will then appear at the bottom of the “To Do” column of that board.
@@ -226,7 +226,7 @@ We will now describe how each of these three tasks can be done.
 This is "Method A" as described above.
 First find the content file that you want to edit.
 All content is under the content root directory 
-[`/docs`](https://github.com/EKGF/ekg-mm/tree/main/docs).
+[`/docs`](https://github.com/EKGF/ekg-maturity/tree/main/docs).
 
 The arrow in the figure above shows the
 location of the "edit button" (ignore the other buttons). 
@@ -261,7 +261,7 @@ be `issue-123`.
 
 ### How to commit a change?
 
-![Committing changes](/assets/ekg-mm-process-commit-changes.png)
+![Committing changes](/assets/ekg-maturity-process-commit-changes.png)
 
 There are several ways to create a commit on a branch in a 
 git repository. It’s up to the "fixer" (usually called "developer"
@@ -314,10 +314,10 @@ and shows those differences on the PR-form.
 
 There are several places in the GitHub user interface where you 
 can start creating a PR but the most basic one shows up at the
-[branches page](https://github.com/ekgf/ekg-mm/branches) which
+[branches page](https://github.com/ekgf/ekg-maturity/branches) which
 shows all branches of the repository:
 
-- [https://github.com/ekgf/ekg-mm/branches](https://github.com/ekgf/ekg-mm/branches)
+- [https://github.com/ekgf/ekg-maturity/branches](https://github.com/ekgf/ekg-maturity/branches)
 
 On the right side of the table showing all the branches you either see an 
 existing PR for the given branch or a button:
