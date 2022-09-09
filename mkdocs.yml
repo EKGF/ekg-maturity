@@ -1,13 +1,14 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
-site_name: EKG/MM
+site_name: EKG/Mqturity
 site_description: Maturity Model for the Enterprise Knowledge Graph (EKG)
-repo_name: 'ekgf/ekg-maturity'
+repo_name: 'EKGF/ekg-maturity'
 repo_url: https://github.com/EKGF/ekg-maturity
 site_url: https://maturity.ekgf.org
 edit_uri: edit/main/docs/
 site_dir: site
 site_author: Enterprise Knowledge Graph Foundation
 copyright: Copyright &copy; 2022 Enterprise Knowledge Graph Foundation
+
 # Navigation
 # nav: omitted, because we're using the awesome-pages plugin (https://squidfunk.github.io/mkdocs-material/plugins/awesome-pages/)
 extra_css:
@@ -81,22 +82,13 @@ plugins:
         - en
   - exclude-search:
       exclude:
-        - fragment/*
+        - 'fragment/*'
   - include-markdown
-  #- git-revision-date
-  - exclude:
-      glob:
-        - "*.tmp"
-        - "*.sparql"
-        - "*.gz"
-        - diagrams/src/*
-      regex:
-        - '.*\.(tmp|bin|tar)$'
-        - '_.*\.md$'
+# - git-revision-date
   - build_plantuml:
       render: "server" # or "local" for local rendering
       bin_path: "/usr/local/bin/plantuml" # ignored when render: server
-      server: "http://www.plantuml.com/plantuml" # offical plantuml server
+      server: "http://www.plantuml.com/plantuml" # official plantuml server
       output_format: "svg" # or "png"
       diagram_root: "docs/diagrams" # should reside under docs_dir
       output_folder: "out"
@@ -107,18 +99,65 @@ plugins:
       theme_light: "light.puml"
       theme_dark: "dark.puml"
   - awesome-pages:
-      filename: .pages.yaml
+      filename: '.pages.yaml'
       collapse_single_pages: false
       strict: true
+  - exclude:
+      glob:
+        - "*.tmp"
+        - "*.sparql"
+        - "*.gz"
+        - 'diagrams/src/*'
+        - 'fragment/*'
+      regex:
+        - '.*\.(tmp|bin|tar)$'
+        - '_.*\.md$'
   - macros:
-      module_name: docs/main
+      module_name: 'docs/main'
+  - kroki:
+      ServerURL: https://kroki.io/
+      DownloadImages: false
+      DownloadDir: docs/diagrams/out
+#  - with-pdf:
+#      author: The Team
+#      copyright: Copyright &copy; 2018 - 2022 agnos.ai UK Ltd & Stealth Software Technologies, Inc --- Confidential
+#      cover: true
+#      back_cover: false
+#      cover_title: The Datapoint Protocol
+#      cover_subtitle: Pitch, Business Plan & Proposal
+#      #custom_template_path: TEMPLATES PATH
+#      toc_title: Table of Contents
+#      heading_shift: false
+#      toc_level: 1
+#      ordered_chapter_level: 3
+#      #excludes_children:
+#        #    - 'release-notes/:upgrading'
+#        #    - 'release-notes/:changelog'
+#        #
+#      exclude_pages:
+#        - pdf.md
+#        #convert_iframe:
+#        #    - src: IFRAME SRC
+#        #      img: POSTER IMAGE URL
+#        #      text: ALTERNATE TEXT
+#        #    - src: ...
+#        #two_columns_level: 3
+#      output_path: assets/datapoint-protocol.pdf
+#      enabled_if_env: ENABLE_PDF_EXPORT
+#      debug_html: false
+#      show_anchors: false
+#      verbose: false
+#      render_js: false
+#      strict: false
+#      #headless_chrome_path: headless-chromium
+#      #
   - gen-files:
       scripts:
         - docs/generate_maturity_model.py
   - redirects:
       redirect_maps:
         'index.md': 'intro/index.md'
-        
+
 markdown_extensions:
   - toc:
       permalink: true
@@ -148,6 +187,7 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.magiclink
   - pymdownx.smartsymbols
+  - pymdownx.critic
   - pymdownx.emoji:
       emoji_generator: !!python/name:materialx.emoji.to_svg
       emoji_index: !!python/name:materialx.emoji.twemoji
@@ -160,3 +200,4 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.tilde
