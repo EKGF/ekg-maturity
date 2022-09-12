@@ -1,0 +1,298 @@
+@prefix : <https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ekgmm: <https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#> .
+@prefix maturity-site: <https://maturity.ekgf.org/> .
+@base <https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#> .
+
+<https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#> rdf:type owl:Ontology ;
+                                                                                           rdfs:comment "The Ontology for the Maturity Model for the Enterprise Knowledge Graph"@en ;
+                                                                                           rdfs:label "Maturity Model Ontology"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#iriLocalName
+ekgmm:iriLocalName rdf:type owl:AnnotationProperty ;
+                   rdfs:comment "The \"local name\" of the given object as it is used in IRIs or URIs"@en .
+
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#iriLocalTypeName
+ekgmm:iriLocalTypeName rdf:type owl:AnnotationProperty ;
+                       rdfs:comment "The \"local type name\" of the given object as it is used in IRIs or URIs"@en .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#hasCapability
+ekgmm:hasCapability rdf:type owl:ObjectProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( ekgmm:CapabilityArea
+                                                ekgmm:Pillar
+                                              )
+                                ] ;
+                    rdfs:range ekgmm:Capability ;
+                    rdfs:label "hasCapability"@en .
+
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#hasLevel
+ekgmm:hasLevel rdf:type owl:ObjectProperty ;
+               owl:inverseOf ekgmm:levelInModel ;
+               rdfs:domain ekgmm:Model ;
+               rdfs:range ekgmm:Level ;
+               rdfs:label "hasLevel"@en .
+
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#hasPillar
+ekgmm:hasPillar rdf:type owl:ObjectProperty ;
+                owl:inverseOf ekgmm:pillarInModel ;
+                rdfs:domain ekgmm:Model ;
+                rdfs:range ekgmm:Pillar ;
+                rdfs:label "hasPillar"@en .
+
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#inArea
+ekgmm:inArea rdf:type owl:ObjectProperty ;
+             rdfs:domain ekgmm:Capability ;
+             rdfs:range ekgmm:CapabilityArea ;
+             rdfs:label "inArea"@en .
+
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#inModel
+ekgmm:inModel rdf:type owl:ObjectProperty ,
+                       owl:TransitiveProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( ekgmm:Capability
+                                          ekgmm:CapabilityArea
+                                          ekgmm:Level
+                                          ekgmm:Pillar
+                                        )
+                          ] ;
+              rdfs:range ekgmm:Model ;
+              rdfs:label "inModel"@en .
+
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#inPillar
+ekgmm:inPillar rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain ekgmm:CapabilityArea ;
+               rdfs:range ekgmm:Pillar ;
+               rdfs:label "inPillar"@en .
+
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#levelInModel
+ekgmm:levelInModel rdf:type owl:ObjectProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain ekgmm:Level ;
+                   rdfs:range ekgmm:Model ;
+                   rdfs:label "levelInModel"@en .
+
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#pillarInModel
+ekgmm:pillarInModel rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain ekgmm:Pillar ;
+                    rdfs:range ekgmm:Model ;
+                    rdfs:label "pillarInModel"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#capabilityNumber
+ekgmm:capabilityNumber rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "A capability number in the format `<pillar>.<area>.<capability>` where `<pillar>` is an uppercase letter and `<area>` and `<capability>` are integer numbers."@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#Capability
+ekgmm:Capability rdf:type owl:Class ;
+                 rdfs:label "Capability"@en ;
+                 ekgmm:iriLocalTypeName "capability" .
+
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#CapabilityArea
+ekgmm:CapabilityArea rdf:type owl:Class ;
+                     rdfs:label "Capability Area"@en ;
+                     ekgmm:iriLocalTypeName "capability-area" .
+
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#Level
+ekgmm:Level rdf:type owl:Class ;
+            rdfs:label "Level"@en ;
+            ekgmm:iriLocalTypeName "level" .
+
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#Model
+ekgmm:Model rdf:type owl:Class ;
+            rdfs:label "Model"@en ;
+            ekgmm:iriLocalTypeName "model" .
+
+
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#Pillar
+ekgmm:Pillar rdf:type owl:Class ;
+             rdfs:label "Pillar"@en ;
+             ekgmm:iriLocalTypeName "pillar" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://maturity.ekgf.org/business-pillar
+maturity-site:business-pillar rdf:type owl:NamedIndividual ,
+                                       ekgmm:Pillar ;
+                              ekgmm:inModel maturity-site:maturity-model ;
+                              <http://purl.org/dc/terms/description> """### Audience
+  
+  Addresses the audience of personas on the business-side of an enterprise, 
+  C-level, 
+  LOB execs,
+  corporate planners,
+  business architects,
+  management consultants and so forth."""@en ;
+                              rdfs:label "Business Pillar"@en ;
+                              ekgmm:iriLocalName "business" .
+
+
+###  https://maturity.ekgf.org/data-pillar
+maturity-site:data-pillar rdf:type owl:NamedIndividual ,
+                                   ekgmm:Pillar ;
+                          ekgmm:pillarInModel maturity-site:maturity-model ;
+                          <http://purl.org/dc/terms/description> """
+  ### Audience
+  
+  Addresses the audience of people in the data-management and data-governance departments.
+  """ ;
+                          rdfs:label "Data Pillar"@en ;
+                          ekgmm:iriLocalName "data" .
+
+
+###  https://maturity.ekgf.org/level1
+maturity-site:level1 rdf:type owl:NamedIndividual ,
+                              ekgmm:Level ;
+                     rdfs:label "Level 1" ;
+                     ekgmm:iriLocalName "1" ;
+                     ekgmm:iriLocalTypeName "level" .
+
+
+###  https://maturity.ekgf.org/level2
+maturity-site:level2 rdf:type owl:NamedIndividual ,
+                              ekgmm:Level ;
+                     ekgmm:levelInModel maturity-site:maturity-model ;
+                     rdfs:label "Level 2" ;
+                     ekgmm:iriLocalName "2" ;
+                     ekgmm:iriLocalTypeName "level" .
+
+
+###  https://maturity.ekgf.org/level3
+maturity-site:level3 rdf:type owl:NamedIndividual ,
+                              ekgmm:Level ;
+                     ekgmm:levelInModel maturity-site:maturity-model ;
+                     rdfs:label "Level 3" ;
+                     ekgmm:iriLocalName "3" ;
+                     ekgmm:iriLocalTypeName "level" .
+
+
+###  https://maturity.ekgf.org/level4
+maturity-site:level4 rdf:type owl:NamedIndividual ,
+                              ekgmm:Level ;
+                     ekgmm:levelInModel maturity-site:maturity-model ;
+                     rdfs:label "Level 4" ;
+                     ekgmm:iriLocalName "4" ;
+                     ekgmm:iriLocalTypeName "level" .
+
+
+###  https://maturity.ekgf.org/level5
+maturity-site:level5 rdf:type owl:NamedIndividual ,
+                              ekgmm:Level ;
+                     ekgmm:levelInModel maturity-site:maturity-model ;
+                     rdfs:label "Level 5" ;
+                     ekgmm:iriLocalName "5" ;
+                     ekgmm:iriLocalTypeName "level" .
+
+
+###  https://maturity.ekgf.org/maturity-model
+maturity-site:maturity-model rdf:type owl:NamedIndividual ,
+                                      ekgmm:Model ;
+                             ekgmm:hasLevel maturity-site:level1 ,
+                                            maturity-site:level2 ,
+                                            maturity-site:level3 ,
+                                            maturity-site:level4 ,
+                                            maturity-site:level5 ;
+                             ekgmm:hasPillar maturity-site:business-pillar ,
+                                             maturity-site:data-pillar ,
+                                             maturity-site:organization-pillar ,
+                                             maturity-site:technology-pillar ;
+                             rdfs:label "EKG/MM"@en ;
+                             ekgmm:iriLocalName "ekg-mm" .
+
+
+###  https://maturity.ekgf.org/organization-pillar
+maturity-site:organization-pillar rdf:type owl:NamedIndividual ,
+                                           ekgmm:Pillar ;
+                                  ekgmm:pillarInModel maturity-site:maturity-model ;
+                                  <http://purl.org/dc/terms/description> """
+  ### Audience
+  
+  Addresses the audience of people that are neither business, data nor tech such as financial execs and experts, risk
+  execs and experts, program/portfolio/project managers, HR execs and experts and so forth.
+  """ ;
+                                  rdfs:label "Organization Pillar"@en ;
+                                  ekgmm:iriLocalName "organization" .
+
+
+###  https://maturity.ekgf.org/technology-pillar
+maturity-site:technology-pillar rdf:type owl:NamedIndividual ,
+                                         ekgmm:Pillar ;
+                                ekgmm:pillarInModel maturity-site:maturity-model ;
+                                <http://purl.org/dc/terms/description> """
+  ### Audience
+  
+  Addresses the audience of technologists, technical architects, developers, infrastructure execs and experts,
+  security execs and experts etc.
+  """ ;
+                                rdfs:label "Technology Pillar"@en ;
+                                ekgmm:iriLocalName "technology" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( maturity-site:business-pillar
+                        maturity-site:data-pillar
+                        maturity-site:organization-pillar
+                        maturity-site:technology-pillar
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( maturity-site:level1
+                        maturity-site:level2
+                        maturity-site:level3
+                        maturity-site:level4
+                        maturity-site:level5
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
