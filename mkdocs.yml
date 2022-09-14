@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
-site_name: EKG/Mqturity
+site_name: EKG/Maturity
 site_description: Maturity Model for the Enterprise Knowledge Graph (EKG)
 repo_name: 'EKGF/ekg-maturity'
 repo_url: https://github.com/EKGF/ekg-maturity

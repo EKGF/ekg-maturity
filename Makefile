@@ -4,31 +4,24 @@ VIRTUAL_ENV := ./.venv
 ifeq ($(OS),Windows_NT)
     YOUR_OS := Windows
     INSTALL_TARGET := install-windows
-    MKDOCS := mkdocs
-    PYTHON := python3
-    PIP := pip
+    SYSTEM_PYTHON := python3
 else
     YOUR_OS := $(shell sh -c 'uname 2>/dev/null || echo Unknown')
 ifeq ($(YOUR_OS), Linux)
     INSTALL_TARGET := install-linux
 ifneq ($(wildcard /home/runner/.*),) # this means we're running in Github Actions
-		MKDOCS := mkdocs
-		PYTHON := python3
-		PIP := pip
+		SYSTEM_PYTHON := python3
 else
-		MKDOCS := $(shell asdf where python)/bin/mkdocs
-		PYTHON := $(shell asdf where python)/bin/python3
-		PIP := $(PYTHON) -m pip
+		SYSTEM_PYTHON := $(shell asdf where python)/bin/python3
 endif
 endif
 ifeq ($(YOUR_OS), Darwin)
     INSTALL_TARGET := install-macos
-		MKDOCS := $(shell asdf where python)/bin/mkdocs
-		PYTHON := $(shell asdf where python)/bin/python3
-		PIP := $(PYTHON) -m pip
+		SYSTEM_PYTHON := $(shell asdf where python)/bin/python3
 endif
 endif
 
+VENV_MKDOCS := $(VIRTUAL_ENV)/bin/mkdocs
 VENV_PYTHON := $(VIRTUAL_ENV)/bin/python3
 VENV_PIP := $(VIRTUAL_ENV)/bin/pip3
 
@@ -45,12 +38,14 @@ endif
 all: docs-build
 
 .PHONY: info
-info:
+info: python-venv
 	@echo "Git Branch: ${CURRENT_BRANCH}"
 	@echo "Operating System: ${YOUR_OS}"
-	@echo "MkDocs: ${MKDOCS}"
+	@echo "MkDocs: ${VENV_MKDOCS}"
 	@echo "MkDocs config file: ${MKDOCS_CONFIG_FILE}"
-	@echo "Python pip: ${PIP}"
+	@echo "System Python: ${SYSTEM_PYTHON} version: $$($(SYSTEM_PYTHON) --version)" 
+	@echo "Virtual Env Python: ${VENV_PYTHON} version: $$($(VENV_PYTHON) --version)"
+	@echo "Python pip: ${VENV_PIP}"
 	@echo "install target: ${INSTALL_TARGET}"
 
 .PHONY: clean
@@ -166,8 +161,8 @@ docs-install-special-python-packages: docs-install-pdf-python-packages docs-inst
 
 .PHONY: docs-install-pdf-python-packages
 docs-install-pdf-python-packages:
-	@echo "Install PDF python packages via pip:"
-	$(VENV_PIP) install --upgrade weasyprint
+	@#echo "Install PDF python packages via pip:"
+	#	$(VENV_PIP) install --upgrade weasyprint
 	cd ../mkdocs-with-pdf && $(VENV_PIP) install -e .
 	#$(VENV_PIP) install --upgrade mkdocs-with-pdf
 	#$(VENV_PIP) install --upgrade weasyprint==52
@@ -185,27 +180,27 @@ endif
 
 .PHONY: python-venv
 python-venv:
-	$(PYTHON) -m venv --upgrade --upgrade-deps $(VIRTUAL_ENV)
+	$(SYSTEM_PYTHON) -m venv --upgrade --upgrade-deps $(VIRTUAL_ENV)
 
 .PHONY: docs-build
 docs-build:
-	$(MKDOCS) build --config-file $(MKDOCS_CONFIG_FILE)
+	$(VENV_MKDOCS) build --config-file $(MKDOCS_CONFIG_FILE)
 
 .PHONY: docs-build-clean
 docs-build-clean:
-	$(MKDOCS) build --config-file $(MKDOCS_CONFIG_FILE) --clean
+	$(VENV_MKDOCS) build --config-file $(MKDOCS_CONFIG_FILE) --clean
 
 .PHONY: docs-serve
 docs-serve:
-	$(MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict
+	$(VENV_MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict
 
 .PHONY: docs-serve-debug
 docs-serve-debug:
-	$(MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict --verbose
+	$(VENV_MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict --verbose
 
 .PHONY: docs-deploy
 docs-deploy:
-	$(MKDOCS) gh-deploy --config-file $(MKDOCS_CONFIG_FILE) --verbose
+	$(VENV_MKDOCS) gh-deploy --config-file $(MKDOCS_CONFIG_FILE) --verbose
 
 .PHONY: docs-sync-from
 docs-sync-from: docs-sync-from-ekg-maturity docs-sync-from-ekg-principles
