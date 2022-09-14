@@ -53,3 +53,4 @@ out/
 *.fdb_latexmk
 *.xdy
 /ekg-maturity/*.pdf
+.venv/
