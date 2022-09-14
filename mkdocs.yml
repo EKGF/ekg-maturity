@@ -71,7 +71,7 @@ extra:
       link: https://github.com/EKGF/ekg-maturity
   analytics:
     provider: google
-    property: 331824165
+    property: G-0FZFTDFDHQ
 extra_javascript:
   - "javascript/images_dark.js"
   - "javascript/refresh_on_toggle_dark_light.js"
