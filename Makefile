@@ -123,12 +123,7 @@ docs-install-asdf-packages: docs-install-asdf
 	asdf install
 
 .PHONY: docs-install-python-packages
-ifneq ($(wildcard /home/runner/.*),)
-docs-install-python-packages: docs-install-asdf
-docs-install-python-packages: docs-install-asdf
-else
 docs-install-python-packages: docs-install-asdf-packages docs-install-standard-python-packages docs-install-special-python-packages
-endif
 
 .PHONY: docs-install-standard-python-packages
 docs-install-standard-python-packages: python-venv
