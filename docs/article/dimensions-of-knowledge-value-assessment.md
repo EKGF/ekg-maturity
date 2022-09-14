@@ -137,7 +137,7 @@ As concluded in a knowledge metrics survey by Matošková[^5],
 it seems sensible to employ Knowledge as an Asset measurement
 that enhance _Intellectual Capital objectivity_ and 
 _Value Creation transparency_. 
-Such as, create a [Use Case Tree](https://use-case-tree-method.ekgf.org)
+Such as, create a [Use Case Tree](https://method.ekgf.org)
 for Intellectual Capital measurement that may include - Knowledge Graph Identifier; 
 Stakeholder Awareness : System Measure : Output Measure : 
 Outcome Measure : Economic Asset Measure .

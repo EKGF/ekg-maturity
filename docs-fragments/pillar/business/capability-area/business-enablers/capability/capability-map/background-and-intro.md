@@ -95,7 +95,7 @@ Business Capability Maps are usually rather coarse-grained and
 visualized in a three-level hierarchy whereas the
 structure of the EKG goes much further than that.
 Translating each capability to a 
-_[use case](https://use-case-tree-method.ekgf.org/concept/usecase/)_ 
+_[use case](https://method.ekgf.org/concept/usecase/)_ 
 is a good start but each of these use cases can be further broken down
 into smaller use cases where each use case becomes a 
 highly reusable component of the EKG.

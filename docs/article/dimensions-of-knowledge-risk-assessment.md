@@ -153,7 +153,7 @@ and a list of possible KPIs that map to the objectives of the evaluation model.
         procedures that have a stated frequency of knowledge updates
       * Business Recovery and Continuity Plans for Critical Infrastructures.<br/>
         Performance Factors: Evidence of strategic documents - implementation guides, 
-        [Use Case Tree](https://use-case-tree-method.ekgf.org/concept/use-case/), 
+        [Use Case Tree](https://method.ekgf.org/concept/use-case/), 
         RACI (responsible, accountable, consulted, informed) Chart
       * Successful Information Sharing and Trusted Cooperation.<br/>
         Performance Factors: Evidence of trusted channels for communication; 
@@ -210,7 +210,7 @@ Further, when the safeguard (DT) uses digital objects (representing
 images, sounds, signals) the response to physical warnings (sounds, 
 flashing lights) can be better calibrated. 
 Moreover when a Vulnerability is discovered, the 
-[Use Case Tree](https://use-case-tree-method.ekgf.org/concept/use-case/)
+[Use Case Tree](https://method.ekgf.org/concept/use-case/)
 (of connected nodes) may be actuated to simulate how a proposed change 
 in behavior could mitigate specific risks.
 

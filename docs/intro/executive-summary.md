@@ -40,7 +40,7 @@ around your data management and governance practices, the state of your technolo
 the culture of your organization and so forth.
 In this example, the use case _Real-time risk management_---as the top-level strategic 
 use case---would be broken down into various _sub-use cases_ resulting in a so-called
-_"[Use Case Tree](https://use-case-tree-method.ekgf.org/concept/use-case/)_" (UCT).
+_"[Use Case Tree](https://method.ekgf.org/concept/use-case/)_" (UCT).
 Each node in that tree represents some functionality---a capability so you will.
 How does this relate to the maturity model? Well, per use case in that tree structure you can determine how realistic
 it is to actually be able to implement that use case in relation to the level of maturity of the organization as a

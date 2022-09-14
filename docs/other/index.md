@@ -47,7 +47,7 @@ You're welcome to contribute.
 ## Use Case Tree Method
 
 A proposal for a front-to-back method to support your EKG journey: 
-[https://use-case-tree-method.ekgf.org](https://use-case-tree-method.ekgf.org), 
+[https://method.ekgf.org](https://method.ekgf.org), 
 this is a project that is being maintained in the GitHub repository 
 [EKGF/use-case-tree-method](https://github.com/EKGF/use-case-tree-method).
 
