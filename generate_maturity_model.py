@@ -5,8 +5,8 @@ from pathlib import Path
 config = ekglib.maturity_model_parser.Config(
     verbose=False,
     mkdocs=False,
-    model_name="EKG/MM",
-    model_root=Path('../ekg-mm').resolve(),
+    model_name="EKG/Maturity",
+    model_root=Path('../ekg-maturity').resolve(),
     output_root=Path("./docs").resolve(),
     docs_root=Path(os.getcwd()) / "docs",
     fragments_root=Path(os.getcwd()) / "docs-fragments"    
