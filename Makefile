@@ -162,11 +162,11 @@ docs-install-special-python-packages: docs-install-pdf-python-packages docs-inst
 .PHONY: docs-install-pdf-python-packages
 docs-install-pdf-python-packages:
 	@#echo "Install PDF python packages via pip:"
-	#	$(VENV_PIP) install --upgrade weasyprint
-	cd ../mkdocs-with-pdf && $(VENV_PIP) install -e .
-	#$(VENV_PIP) install --upgrade mkdocs-with-pdf
-	#$(VENV_PIP) install --upgrade weasyprint==52
-	#$(VENV_PIP) install --upgrade mkpdfs-mkdocs
+	@#$(VENV_PIP) install --upgrade weasyprint
+	@#cd ../mkdocs-with-pdf && $(VENV_PIP) install -e .
+	@#$(VENV_PIP) install --upgrade mkdocs-with-pdf
+	@#$(VENV_PIP) install --upgrade weasyprint==52
+	@#$(VENV_PIP) install --upgrade mkpdfs-mkdocs
 
 .PHONY: docs-install-mkdocs-insider-version-packages
 docs-install-mkdocs-insider-version-packages:
