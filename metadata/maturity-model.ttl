@@ -240,8 +240,8 @@ maturity-site:maturity-model rdf:type owl:NamedIndividual ,
                                              maturity-site:data-pillar ,
                                              maturity-site:organization-pillar ,
                                              maturity-site:technology-pillar ;
-                             rdfs:label "EKG/MM"@en ;
-                             ekgmm:iriLocalName "ekg-mm" .
+                             rdfs:label "EKG/Maturity"@en ;
+                             ekgmm:iriLocalName "ekg-maturity" .
 
 
 ###  https://maturity.ekgf.org/organization-pillar

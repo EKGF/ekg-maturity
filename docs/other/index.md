@@ -21,7 +21,7 @@ You're welcome to contribute.
 
 ## Maturity Model
 
-The Maturity Model for the Enterprise Knowledge Graph (EKG/MM): 
+The Maturity Model for the Enterprise Knowledge Graph (EKG/Maturity): 
 [https://maturity.ekgf.org](https://maturity.ekgf.org),
 this is a project that is being maintained in the GitHub repository 
 [EKGF/ekg-maturity](https://github.com/EKGF/ekg-maturity).
@@ -104,14 +104,14 @@ You're welcome to contribute.
 
 The Foundation recognizes different types of "personas" that it needs to serve:
 
-| `<as a>`               | `<I want to>`                                                                                                                                                     |
-|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Business Executive** | Realize the benefits and minimize the risks of EKG by having access to proven methods, best practices and a community of experts.                                 |
-| **Vendor**               | Make it easy for organizations to understand and successfully adopt my product across multiple industry sectors.                                                  |
-| **Modeler**              | Have access to a proven and consistent set of deployable use cases, models \& ontologies that can be used with my organization’s EKG.                             |
-| **Technical Architect**  | Have access to components and interfaces with supporting technology architectures that I can assemble and deploy within my environment.                           |
-| **Consultant**           | Have access to---and contribute to---EKG-related best practices (e.g. EKG/Method \& EKG/MM) as well as a community of potential customers and skilled associates. |
-| **Academic**             | The chance to make a meaningful and recognized contribution that builds upon frameworks to address pressing business needs.                                       |
-| **EKG Engineer**         | be informed about best practices, role descriptions, education and certifications.                                                                                |
+| `<as a>`                | `<I want to>`                                                                                                                                                           |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Business Executive**  | Realize the benefits and minimize the risks of EKG by having access to proven methods, best practices and a community of experts.                                       |
+| **Vendor**              | Make it easy for organizations to understand and successfully adopt my product across multiple industry sectors.                                                        |
+| **Modeler**             | Have access to a proven and consistent set of deployable use cases, models \& ontologies that can be used with my organization’s EKG.                                   |
+| **Technical Architect** | Have access to components and interfaces with supporting technology architectures that I can assemble and deploy within my environment.                                 |
+| **Consultant**          | Have access to---and contribute to---EKG-related best practices (e.g. EKG/Method \& EKG/Maturity) as well as a community of potential customers and skilled associates. |
+| **Academic**            | The chance to make a meaningful and recognized contribution that builds upon frameworks to address pressing business needs.                                             |
+| **EKG Engineer**        | be informed about best practices, role descriptions, education and certifications.                                                                                      |
 
 

@@ -1,7 +1,7 @@
-# EKG/MM
+# EKG/Maturity
 
 This repository contains all the content that we have for the Maturity Model
-for the Enterprise Knowledge Graph (EKG/MM). It is used to generate
+for the Enterprise Knowledge Graph (EKG/Maturity). It is used to generate
 this website: [https://maturity.ekgf.org](https://maturity.ekgf.org).
 
 ![quadrant](customer-assets/quadrant.jpg)
@@ -15,11 +15,11 @@ This work is licensed under a
 
 For members of the [EKGF](https://www.ekgf.org) there are a number of Slack channels:
 
-- [#ekg-mm-general](https://ekgf.slack.com/archives/C016DU529DE)
-- [#ekg-mm-pillar-business](https://ekgf.slack.com/archives/C01JF3MJQBX)
-- [#ekg-mm-pillar-organization](https://ekgf.slack.com/archives/C01JWRDL6P3)
-- [#ekg-mm-pillar-data](https://ekgf.slack.com/archives/C01JF3XKDN1)
-- [#ekg-mm-pillar-technology](https://ekgf.slack.com/archives/C01J3DC930F)
+- [#ekg-maturity-general](https://ekgf.slack.com/archives/C016DU529DE)
+- [#ekg-maturity-pillar-business](https://ekgf.slack.com/archives/C01JF3MJQBX)
+- [#ekg-maturity-pillar-organization](https://ekgf.slack.com/archives/C01JWRDL6P3)
+- [#ekg-maturity-pillar-data](https://ekgf.slack.com/archives/C01JF3XKDN1)
+- [#ekg-maturity-pillar-technology](https://ekgf.slack.com/archives/C01J3DC930F)
 
 ## Where to find the content?
 

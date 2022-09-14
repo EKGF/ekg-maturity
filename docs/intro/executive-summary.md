@@ -1,6 +1,6 @@
 # Executive Summary
 
-The EKG/MM is the industry-standard definition of the capabilities required for an EKG and
+The EKG Maturity Model (EKG/Maturity) is the industry-standard definition of the capabilities required for an EKG and
 of the generic capabilities in any given organization that are affected by EKG.
 
 It establishes standard criteria for measuring progress and sets out the practical questions that all involved
@@ -8,11 +8,11 @@ stakeholders ask to ensure trust, confidence and usage flexibility of data.
 Each capability area provides a business summary denoting its importance, a definition of the added value from
 semantic standards and scoring criteria based on five levels of defined maturity.
 
-**The EKG/MM is a capability model** designed to promulgate best practices across the knowledge graph community.
+**EKG/Maturity is a capability model** designed to promulgate best practices across the knowledge graph community.
 It covers essential capabilities as well as standard evaluation criteria required for the design, implementation,
 and maintenance of an EKG.
 
-The Maturity Model for the Enterprise Knowledge Graph (EKG/MM) is one of the key initiatives
+The Maturity Model for the Enterprise Knowledge Graph (EKG/Maturity) is one of the key initiatives
 of the [Enterprise Knowledge Graph Foundation](https://ekgf.org) being developed by a
 community of [contributors](../other/contributors.md).
 
@@ -26,7 +26,7 @@ how it affects your business and what can be expected of it at certain levels of
 
 ## Non-functional requirements
 
-The EKG/MM is therefore seen as the overall framework for all
+The maturity model is therefore seen as the overall framework for all
 "non-functional requirements" (NFRs)---clustered per capability---that are
 not <ins>directly</ins> related to any given "use case".
 
@@ -42,7 +42,7 @@ In this example, the use case _Real-time risk management_---as the top-level str
 use case---would be broken down into various _sub-use cases_ resulting in a so-called
 _"[Use Case Tree](https://use-case-tree-method.ekgf.org/concept/use-case/)_" (UCT).
 Each node in that tree represents some functionality---a capability so you will.
-How does this relate to the EKG/MM? Well, per use case in that tree structure you can determine how realistic
+How does this relate to the maturity model? Well, per use case in that tree structure you can determine how realistic
 it is to actually be able to implement that use case in relation to the level of maturity of the organization as a
 whole and more specifically in relation to any of the capabilities that are being covered in this document.
 
@@ -55,11 +55,11 @@ Rather than building a new silo everytime for every new use case, you would "bui
 Use cases are _logical silos_ in that sense.
 In a data-centric EKG world, there are no more independent applications that are run as separate systems.
 Just this particular change alone has major implications on how things are organized.
-The EKG/MM covers these---and many other---implications.
+EKG/Maturity covers these---and many other---implications.
 
 ## Capabilities as Use Cases
 
-The EKG/MM is about the generic capabilities and how they may evolve over time and how some of them are
+The maturity model is about the generic capabilities and how they may evolve over time and how some of them are
 required to be available at a certain level of maturity.
 That being said, almost every capability that we describe in this document is in itself also a use case.
 Many if not most of these capabilities will more and more depend on high quality detailed and "holistic" data.

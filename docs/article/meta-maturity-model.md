@@ -14,7 +14,7 @@ menu-option that you see on this website --- in RDF so that we can then:
 
 - enforce a consistent structure throughout
 - create a dataset that anyone can build upon in their own EKG
-- have a solid foundation for EKG/MM assessments
+- have a solid foundation for EKG/Maturity assessments
 
 For simplicity's sake we're using UML in this article to document the model even though
 UML is not able to fully cover the expressiveness of an OWL ontology.

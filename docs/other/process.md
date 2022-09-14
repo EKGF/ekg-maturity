@@ -9,13 +9,13 @@ EKG adoption, including:
 - semantic standards to solve the challenges of data management 
 - a method for accelerated EKG deployment
 
-One of the activities of the EKGF is its work on the EKG/MM
+One of the activities of the EKGF is its work on [EKG/Maturity](https://maturity.ekgf.org)
 which establishes standard criteria for measuring and guiding progress
 on EKG adoption through asking practical questions of different
 involved stakeholders. 
 
 In order to be able to scale to a larger community of collaborating teams, 
-each contributing content to the EKG/MM, we decided to "eat our own dogfood" 
+each contributing content to the EKG/Maturity, we decided to "eat our own dogfood" 
 and apply the same principles as we advocate for software development and
 data management such as "work Agile" and "test everything".
 
@@ -99,8 +99,8 @@ automatically via GitHub email.
 
      - As a <ins>planner</ins>, I want to be able to **plan issues**
 
-Work on the EKG/MM is divided among workgroups that each take on one of 
-[the four MM pillars]
+Work on EKG/Maturity is divided among workgroups that each take on one of 
+[the four pillars of the maturity model]
 or horizontal slice of the MM. 
 Workgroups are self-managed teams. 
 The workgroups meet on a regular schedule. 
@@ -116,7 +116,7 @@ Here are some useful links.
 
 The idea is very simple though, we use the GitHub Projects facility. 
 Currently, we have a project for each pillar and a general project. 
-Here’s the main page for EKG/MM GitHub Projects: 
+Here’s the main page for EKG/Maturity GitHub Projects: 
 [https://github.com/ekgf/ekg-maturity/projects](https://github.com/ekgf/ekg-maturity/projects)
 
 What you see is a list of "project boards" where each project board 
@@ -198,7 +198,7 @@ has been merged into the main branch.
     - As a <ins>fixer</ins>, I want to be able to **create a pull request**
 
 The term "fixer" is our own term, they’re usually called "developer" but
-we don’t consider someone who works on EKG/MM content to be a developer necessarily.
+we don’t consider someone who works on EKG/Maturity content to be a developer necessarily.
 In the GitHub user interface, they show up as "contributors".
 Anyone who actually changes things in the repository will be registered by GitHub as 
 a contributor to that repository[^github-userids].

@@ -1,6 +1,6 @@
 # The Four Capability Pillars
 
-All capabilities that we measure and assess in the EKG/MM are categorized
+All capabilities that we measure and assess in the maturity model are categorized
 in four major categories---also called "pillars"---that match the four 
 primary audiences that are involved:
 
