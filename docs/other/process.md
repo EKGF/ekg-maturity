@@ -261,7 +261,7 @@ be `issue-123`.
 
 ### How to commit a change?
 
-![Committing changes](/assets/ekg-maturity-process-commit-changes.png)
+![Committing changes](/assets/ekgmm-process-commit-changes.png)
 
 There are several ways to create a commit on a branch in a 
 git repository. It’s up to the "fixer" (usually called "developer"
