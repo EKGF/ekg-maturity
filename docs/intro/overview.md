@@ -20,79 +20,75 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 </thead>
 <tbody>
 <tr>
-<td width="1%" colspan="5" style="text-align:left;vertical-align:top;"><a href="/pillar/data">Data Pillar</a></td>
+<td width="1%" colspan="5" style="text-align:left;vertical-align:top;"><a href="/pillar/business">Business Pillar</a></td>
 </tr>
 <tr>
-<td width="1%" rowspan="15"></td>
-<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/data/capability-area/data-strategy">Data Strategy</a></td>
+<td width="1%" rowspan="14"></td>
+<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/business/capability-area/strategy-actuation">Business Strategy Actuation</a></td>
 </tr>
 <tr>
-<td width="1%" rowspan="2"></td>
-<td width="1%">C.1.1</td>
-<td width="20%"><a href="/pillar/data/capability-area/data-strategy/capability/goals-and-objectives">Goals & Objectives</a></td>
-<td width="77%">EKG as the semantic data mesh for the organization.</td>
+<td width="1%" rowspan="3"></td>
+<td width="1%">A.1.1</td>
+<td width="20%"><a href="/pillar/business/capability-area/strategy-actuation/capability/business-vision">Business Vision</a></td>
+<td width="77%">Communicating the essence of what a business wants to achieve.</td>
 </tr>
 <tr>
-<td width="1%">C.1.2</td>
-<td width="20%"><a href="/pillar/data/capability-area/data-strategy/capability/business-case">Business Case</a></td>
-<td width="77%">Business rationale, justification and ROI of the EKG.</td>
+<td width="1%">A.1.2</td>
+<td width="20%"><a href="/pillar/business/capability-area/strategy-actuation/capability/business-goals">Business Goals</a></td>
+<td width="77%">Specifying the Business Outcomes along the EKG journey to achieve the Business Vision.</td>
 </tr>
 <tr>
-<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/data/capability-area/data-architecture">Data Architecture</a></td>
+<td width="1%">A.1.3</td>
+<td width="20%"><a href="/pillar/business/capability-area/strategy-actuation/capability/business-tactics">Business Tactics</a></td>
+<td width="77%">Ensuring that change capabilities are focused on business value realization.</td>
 </tr>
 <tr>
-<td width="1%" rowspan="4"></td>
-<td width="1%">C.2.1</td>
-<td width="20%"><a href="/pillar/data/capability-area/data-architecture/capability/ontologies">Ontologies</a></td>
-<td width="77%">The _models_ that provide the structure and meaning for the information.</td>
+<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/business/capability-area/business-model-elaboration">Business Model Elaboration</a></td>
 </tr>
 <tr>
-<td width="1%">C.2.2</td>
-<td width="20%"><a href="/pillar/data/capability-area/data-architecture/capability/business-vocabularies">Business Vocabularies</a></td>
-<td width="77%">Terms used to refer to the information by different business communities.</td>
+<td width="1%" rowspan="3"></td>
+<td width="1%">A.2.1</td>
+<td width="20%"><a href="/pillar/business/capability-area/business-model-elaboration/capability/market-segmentation">Market Segmentation</a></td>
+<td width="77%">Shared understanding of markets, products, and clients.</td>
 </tr>
 <tr>
-<td width="1%">C.2.3</td>
-<td width="20%"><a href="/pillar/data/capability-area/data-architecture/capability/datasets">Datasets</a></td>
-<td width="77%">Coherent collections of information made available for access.</td>
+<td width="1%">A.2.2</td>
+<td width="20%"><a href="/pillar/business/capability-area/business-model-elaboration/capability/value-chain">Value Chain</a></td>
+<td width="77%">Alignment of business capabilities with EKG pathway.</td>
 </tr>
 <tr>
-<td width="1%">C.2.4</td>
-<td width="20%"><a href="/pillar/data/capability-area/data-architecture/capability/data-integration">Data Integration</a></td>
-<td width="77%">Unifying or relating different information concepts.</td>
+<td width="1%">A.2.3</td>
+<td width="20%"><a href="/pillar/business/capability-area/business-model-elaboration/capability/change-management">Change Management</a></td>
+<td width="77%">Manage operations change to a new state of sustainable value.</td>
 </tr>
 <tr>
-<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/data/capability-area/data-quality">Data Quality</a></td>
+<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/business/capability-area/business-enablers">Business Enablers</a></td>
 </tr>
 <tr>
-<td width="1%" rowspan="1"></td>
-<td width="1%">C.3.1</td>
-<td width="20%"><a href="/pillar/data/capability-area/data-quality/capability/business-rules">Business Rules</a></td>
-<td width="77%">Strategy and approach for managing data quality.</td>
+<td width="1%" rowspan="5"></td>
+<td width="1%">A.3.1</td>
+<td width="20%"><a href="/pillar/business/capability-area/business-enablers/capability/operating-model">Operating Model</a></td>
+<td width="77%">The desired level of business process integration & standardization.</td>
 </tr>
 <tr>
-<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/data/capability-area/data-governance">Data Governance</a></td>
+<td width="1%">A.3.2</td>
+<td width="20%"><a href="/pillar/business/capability-area/business-enablers/capability/performance-management">Performance Management</a></td>
+<td width="77%">Measure business processes to manage performance.</td>
 </tr>
 <tr>
-<td width="1%" rowspan="4"></td>
-<td width="1%">C.4.1</td>
-<td width="20%"><a href="/pillar/data/capability-area/data-governance/capability/operating-model">Operating Model</a></td>
-<td width="77%">Structure and approach for the EKG Center of Excellence.</td>
+<td width="1%">A.3.3</td>
+<td width="20%"><a href="/pillar/business/capability-area/business-enablers/capability/risk-management">Risk Management</a></td>
+<td width="77%">Identify risk to mitigate or accept, with reaction plans.</td>
 </tr>
 <tr>
-<td width="1%">C.4.2</td>
-<td width="20%"><a href="/pillar/data/capability-area/data-governance/capability/data-management-policy">Data Management Policy</a></td>
-<td width="77%">Policies, procedures, and standards for managing the data lifecycle.</td>
+<td width="1%">A.3.4</td>
+<td width="20%"><a href="/pillar/business/capability-area/business-enablers/capability/supply-chain-management">Supply Chain Management</a></td>
+<td width="77%">Managed flow of goods, services & information between businesses.</td>
 </tr>
 <tr>
-<td width="1%">C.4.3</td>
-<td width="20%"><a href="/pillar/data/capability-area/data-governance/capability/classification-management">Classification Management</a></td>
-<td width="77%">Management of the data production and manufacturing process.</td>
-</tr>
-<tr>
-<td width="1%">C.4.4</td>
-<td width="20%"><a href="/pillar/data/capability-area/data-governance/capability/risk-and-control-framework">Risk & Control Framework</a></td>
-<td width="77%">Model-driven EKG access control mechanisms.</td>
+<td width="1%">A.3.5</td>
+<td width="20%"><a href="/pillar/business/capability-area/business-enablers/capability/capability-map">Capability Map</a></td>
+<td width="77%">Defining what a business does and which outcomes it wants to achieve.</td>
 </tr>
 <tr>
 <td width="1%" colspan="5" style="text-align:left;vertical-align:top;"><a href="/pillar/organization">Organization Pillar</a></td>
@@ -234,6 +230,81 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <td width="77%">Ability of the organization to facilitate knowledge collaboration.</td>
 </tr>
 <tr>
+<td width="1%" colspan="5" style="text-align:left;vertical-align:top;"><a href="/pillar/data">Data Pillar</a></td>
+</tr>
+<tr>
+<td width="1%" rowspan="15"></td>
+<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/data/capability-area/data-strategy">Data Strategy</a></td>
+</tr>
+<tr>
+<td width="1%" rowspan="2"></td>
+<td width="1%">C.1.1</td>
+<td width="20%"><a href="/pillar/data/capability-area/data-strategy/capability/goals-and-objectives">Goals & Objectives</a></td>
+<td width="77%">EKG as the semantic data mesh for the organization.</td>
+</tr>
+<tr>
+<td width="1%">C.1.2</td>
+<td width="20%"><a href="/pillar/data/capability-area/data-strategy/capability/business-case">Business Case</a></td>
+<td width="77%">Business rationale, justification and ROI of the EKG.</td>
+</tr>
+<tr>
+<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/data/capability-area/data-architecture">Data Architecture</a></td>
+</tr>
+<tr>
+<td width="1%" rowspan="4"></td>
+<td width="1%">C.2.1</td>
+<td width="20%"><a href="/pillar/data/capability-area/data-architecture/capability/ontologies">Ontologies</a></td>
+<td width="77%">The _models_ that provide the structure and meaning for the information.</td>
+</tr>
+<tr>
+<td width="1%">C.2.2</td>
+<td width="20%"><a href="/pillar/data/capability-area/data-architecture/capability/business-vocabularies">Business Vocabularies</a></td>
+<td width="77%">Terms used to refer to the information by different business communities.</td>
+</tr>
+<tr>
+<td width="1%">C.2.3</td>
+<td width="20%"><a href="/pillar/data/capability-area/data-architecture/capability/datasets">Datasets</a></td>
+<td width="77%">Coherent collections of information made available for access.</td>
+</tr>
+<tr>
+<td width="1%">C.2.4</td>
+<td width="20%"><a href="/pillar/data/capability-area/data-architecture/capability/data-integration">Data Integration</a></td>
+<td width="77%">Unifying or relating different information concepts.</td>
+</tr>
+<tr>
+<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/data/capability-area/data-quality">Data Quality</a></td>
+</tr>
+<tr>
+<td width="1%" rowspan="1"></td>
+<td width="1%">C.3.1</td>
+<td width="20%"><a href="/pillar/data/capability-area/data-quality/capability/business-rules">Business Rules</a></td>
+<td width="77%">Strategy and approach for managing data quality.</td>
+</tr>
+<tr>
+<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/data/capability-area/data-governance">Data Governance</a></td>
+</tr>
+<tr>
+<td width="1%" rowspan="4"></td>
+<td width="1%">C.4.1</td>
+<td width="20%"><a href="/pillar/data/capability-area/data-governance/capability/operating-model">Operating Model</a></td>
+<td width="77%">Structure and approach for the EKG Center of Excellence.</td>
+</tr>
+<tr>
+<td width="1%">C.4.2</td>
+<td width="20%"><a href="/pillar/data/capability-area/data-governance/capability/data-management-policy">Data Management Policy</a></td>
+<td width="77%">Policies, procedures, and standards for managing the data lifecycle.</td>
+</tr>
+<tr>
+<td width="1%">C.4.3</td>
+<td width="20%"><a href="/pillar/data/capability-area/data-governance/capability/classification-management">Classification Management</a></td>
+<td width="77%">Management of the data production and manufacturing process.</td>
+</tr>
+<tr>
+<td width="1%">C.4.4</td>
+<td width="20%"><a href="/pillar/data/capability-area/data-governance/capability/risk-and-control-framework">Risk & Control Framework</a></td>
+<td width="77%">Model-driven EKG access control mechanisms.</td>
+</tr>
+<tr>
 <td width="1%" colspan="5" style="text-align:left;vertical-align:top;"><a href="/pillar/technology">Technology Pillar</a></td>
 </tr>
 <tr>
@@ -348,77 +419,6 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <td width="1%">D.3.6</td>
 <td width="20%"><a href="/pillar/technology/capability-area/user-interface/capability/visualization">Visualization</a></td>
 <td width="77%">... todo ...</td>
-</tr>
-<tr>
-<td width="1%" colspan="5" style="text-align:left;vertical-align:top;"><a href="/pillar/business">Business Pillar</a></td>
-</tr>
-<tr>
-<td width="1%" rowspan="14"></td>
-<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/business/capability-area/strategy-actuation">Business Strategy Actuation</a></td>
-</tr>
-<tr>
-<td width="1%" rowspan="3"></td>
-<td width="1%">A.1.1</td>
-<td width="20%"><a href="/pillar/business/capability-area/strategy-actuation/capability/business-vision">Business Vision</a></td>
-<td width="77%">Communicating the essence of what a business wants to achieve.</td>
-</tr>
-<tr>
-<td width="1%">A.1.2</td>
-<td width="20%"><a href="/pillar/business/capability-area/strategy-actuation/capability/business-goals">Business Goals</a></td>
-<td width="77%">Specifying the Business Outcomes along the EKG journey to achieve the Business Vision.</td>
-</tr>
-<tr>
-<td width="1%">A.1.3</td>
-<td width="20%"><a href="/pillar/business/capability-area/strategy-actuation/capability/business-tactics">Business Tactics</a></td>
-<td width="77%">Ensuring that change capabilities are focused on business value realization.</td>
-</tr>
-<tr>
-<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/business/capability-area/business-model-elaboration">Business Model Elaboration</a></td>
-</tr>
-<tr>
-<td width="1%" rowspan="3"></td>
-<td width="1%">A.2.1</td>
-<td width="20%"><a href="/pillar/business/capability-area/business-model-elaboration/capability/market-segmentation">Market Segmentation</a></td>
-<td width="77%">Shared understanding of markets, products, and clients.</td>
-</tr>
-<tr>
-<td width="1%">A.2.2</td>
-<td width="20%"><a href="/pillar/business/capability-area/business-model-elaboration/capability/value-chain">Value Chain</a></td>
-<td width="77%">Alignment of business capabilities with EKG pathway.</td>
-</tr>
-<tr>
-<td width="1%">A.2.3</td>
-<td width="20%"><a href="/pillar/business/capability-area/business-model-elaboration/capability/change-management">Change Management</a></td>
-<td width="77%">Manage operations change to a new state of sustainable value.</td>
-</tr>
-<tr>
-<td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/business/capability-area/business-enablers">Business Enablers</a></td>
-</tr>
-<tr>
-<td width="1%" rowspan="5"></td>
-<td width="1%">A.3.1</td>
-<td width="20%"><a href="/pillar/business/capability-area/business-enablers/capability/operating-model">Operating Model</a></td>
-<td width="77%">The desired level of business process integration & standardization.</td>
-</tr>
-<tr>
-<td width="1%">A.3.2</td>
-<td width="20%"><a href="/pillar/business/capability-area/business-enablers/capability/performance-management">Performance Management</a></td>
-<td width="77%">Measure business processes to manage performance.</td>
-</tr>
-<tr>
-<td width="1%">A.3.3</td>
-<td width="20%"><a href="/pillar/business/capability-area/business-enablers/capability/risk-management">Risk Management</a></td>
-<td width="77%">Identify risk to mitigate or accept, with reaction plans.</td>
-</tr>
-<tr>
-<td width="1%">A.3.4</td>
-<td width="20%"><a href="/pillar/business/capability-area/business-enablers/capability/supply-chain-management">Supply Chain Management</a></td>
-<td width="77%">Managed flow of goods, services & information between businesses.</td>
-</tr>
-<tr>
-<td width="1%">A.3.5</td>
-<td width="20%"><a href="/pillar/business/capability-area/business-enablers/capability/capability-map">Capability Map</a></td>
-<td width="77%">Defining what a business does and which outcomes it wants to achieve.</td>
 </tr>
 </tbody>
 </table>
