@@ -4,39 +4,39 @@
   --md-primary-fg-color--dark:  #25126A;
 }
 
-#rotate-text {
-  -ms-writing-mode: tb-rl;
-  -webkit-writing-mode: vertical-rl;
-  writing-mode: vertical-rl;
-  width: 30px;
-  transform: rotate(-90deg);
-  margin: 0px;
-  padding: 0px;
-  white-space: nowrap;
-}
+/*#rotate-text {*/
+/*  -ms-writing-mode: tb-rl;*/
+/*  -webkit-writing-mode: vertical-rl;*/
+/*  writing-mode: vertical-rl;*/
+/*  width: 30px;*/
+/*  transform: rotate(-90deg);*/
+/*  margin: 0px;*/
+/*  padding: 0px;*/
+/*  white-space: nowrap;*/
+/*}*/
 
-td
-{
-  vertical-align: bottom;
-  text-align: center;
-}
+/*td*/
+/*{*/
+/*  vertical-align: bottom;*/
+/*  text-align: center;*/
+/*}*/
 
-td span
-{
-  -ms-writing-mode: tb-rl;
-  -webkit-writing-mode: vertical-rl;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  white-space: nowrap;
-}
+/*td span*/
+/*{*/
+/*  -ms-writing-mode: tb-rl;*/
+/*  -webkit-writing-mode: vertical-rl;*/
+/*  writing-mode: vertical-rl;*/
+/*  transform: rotate(180deg);*/
+/*  white-space: nowrap;*/
+/*}*/
 
-.md-typeset__table.mmtable
-{
-  border: 1px red solid ;
-}
+/*.md-typeset__table.mmtable*/
+/*{*/
+/*  border: 1px red solid ;*/
+/*}*/
 
-.md-typeset__table.mmtable td {
-    font-weight: bold;
-    background-color: #fff;
-    border-collapse: separate;
-}
+/*.md-typeset__table.mmtable td {*/
+/*    font-weight: bold;*/
+/*    background-color: #fff;*/
+/*    border-collapse: separate;*/
+/*}*/
