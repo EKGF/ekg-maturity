@@ -117,6 +117,21 @@ ekgmm:capabilityNumber rdf:type owl:DatatypeProperty ,
                        rdfs:comment "A capability number in the format `<pillar>.<area>.<capability>` where `<pillar>` is an uppercase letter and `<area>` and `<capability>` are integer numbers."@en .
 
 
+###  https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#sortKey
+ekgmm:sortKey rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( ekgmm:Capability
+                                          ekgmm:CapabilityArea
+                                          ekgmm:Model
+                                          ekgmm:Pillar
+                                        )
+                          ] ;
+              rdfs:range xsd:string ;
+              rdfs:comment "If available, used for sorting"@en ;
+              rdfs:label "Sort Key"@en .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -159,6 +174,7 @@ ekgmm:Pillar rdf:type owl:Class ;
 maturity-site:business-pillar rdf:type owl:NamedIndividual ,
                                        ekgmm:Pillar ;
                               ekgmm:inModel maturity-site:maturity-model ;
+                              ekgmm:sortKey "pillar1" ;
                               <http://purl.org/dc/terms/description> """### Audience
   
   Addresses the audience of personas on the business-side of an enterprise, 
@@ -175,6 +191,7 @@ maturity-site:business-pillar rdf:type owl:NamedIndividual ,
 maturity-site:data-pillar rdf:type owl:NamedIndividual ,
                                    ekgmm:Pillar ;
                           ekgmm:pillarInModel maturity-site:maturity-model ;
+                          ekgmm:sortKey "pillar3" ;
                           <http://purl.org/dc/terms/description> """
   ### Audience
   
@@ -187,6 +204,7 @@ maturity-site:data-pillar rdf:type owl:NamedIndividual ,
 ###  https://maturity.ekgf.org/level1
 maturity-site:level1 rdf:type owl:NamedIndividual ,
                               ekgmm:Level ;
+                     ekgmm:sortKey "level1" ;
                      rdfs:label "Level 1" ;
                      ekgmm:iriLocalName "1" ;
                      ekgmm:iriLocalTypeName "level" .
@@ -196,6 +214,7 @@ maturity-site:level1 rdf:type owl:NamedIndividual ,
 maturity-site:level2 rdf:type owl:NamedIndividual ,
                               ekgmm:Level ;
                      ekgmm:levelInModel maturity-site:maturity-model ;
+                     ekgmm:sortKey "level2" ;
                      rdfs:label "Level 2" ;
                      ekgmm:iriLocalName "2" ;
                      ekgmm:iriLocalTypeName "level" .
@@ -205,6 +224,7 @@ maturity-site:level2 rdf:type owl:NamedIndividual ,
 maturity-site:level3 rdf:type owl:NamedIndividual ,
                               ekgmm:Level ;
                      ekgmm:levelInModel maturity-site:maturity-model ;
+                     ekgmm:sortKey "level3" ;
                      rdfs:label "Level 3" ;
                      ekgmm:iriLocalName "3" ;
                      ekgmm:iriLocalTypeName "level" .
@@ -214,6 +234,7 @@ maturity-site:level3 rdf:type owl:NamedIndividual ,
 maturity-site:level4 rdf:type owl:NamedIndividual ,
                               ekgmm:Level ;
                      ekgmm:levelInModel maturity-site:maturity-model ;
+                     ekgmm:sortKey "level4" ;
                      rdfs:label "Level 4" ;
                      ekgmm:iriLocalName "4" ;
                      ekgmm:iriLocalTypeName "level" .
@@ -223,6 +244,7 @@ maturity-site:level4 rdf:type owl:NamedIndividual ,
 maturity-site:level5 rdf:type owl:NamedIndividual ,
                               ekgmm:Level ;
                      ekgmm:levelInModel maturity-site:maturity-model ;
+                     ekgmm:sortKey "level5" ;
                      rdfs:label "Level 5" ;
                      ekgmm:iriLocalName "5" ;
                      ekgmm:iriLocalTypeName "level" .
@@ -248,6 +270,7 @@ maturity-site:maturity-model rdf:type owl:NamedIndividual ,
 maturity-site:organization-pillar rdf:type owl:NamedIndividual ,
                                            ekgmm:Pillar ;
                                   ekgmm:pillarInModel maturity-site:maturity-model ;
+                                  ekgmm:sortKey "pillar2" ;
                                   <http://purl.org/dc/terms/description> """
   ### Audience
   
@@ -262,6 +285,7 @@ maturity-site:organization-pillar rdf:type owl:NamedIndividual ,
 maturity-site:technology-pillar rdf:type owl:NamedIndividual ,
                                          ekgmm:Pillar ;
                                 ekgmm:pillarInModel maturity-site:maturity-model ;
+                                ekgmm:sortKey "pillar4" ;
                                 <http://purl.org/dc/terms/description> """
   ### Audience
   
