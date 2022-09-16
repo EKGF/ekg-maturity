@@ -38,7 +38,7 @@ site/
 !images/*.pdf_tex
 images/svg-inkscape/
 svg-inkscape/
-ekg-maturity/images/svg-inkscape/
+*/images/svg-inkscape/
 out/
 /.project
 .uuid
@@ -52,5 +52,4 @@ out/
 .idea
 *.fdb_latexmk
 *.xdy
-/ekg-maturity/*.pdf
 .venv/
