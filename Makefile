@@ -128,6 +128,7 @@ docs-install-standard-python-packages: python-venv
 	$(VENV_PIP) install --upgrade pipenv
 #	$(VENV_PIP) install --upgrade plantuml-markdown
 	$(VENV_PIP) install --upgrade mdutils
+	$(VENV_PIP) install --upgrade option
 	$(VENV_PIP) install --upgrade mkdocs
 	$(VENV_PIP) install --upgrade mkdocs-awesome-pages-plugin
 	$(VENV_PIP) install --upgrade mkdocs-build-plantuml-plugin
@@ -145,7 +146,8 @@ docs-install-standard-python-packages: python-venv
 	$(VENV_PIP) install --upgrade mkdocs-redirects
 	$(VENV_PIP) install --upgrade mdx-spanner
 	$(VENV_PIP) install --upgrade markdown-emdash
-	$(VENV_PIP) install --upgrade "git+https://github.com/EKGF/ekglib.git"
+	$(VENV_PIP) install --upgrade --no-cache-dir "git+https://github.com/EKGF/ekglib.git"
+	$(VENV_PIP) freeze > requirements.txt
 
 .PHONY: docs-install-python-packages-via-requirements-txt
 docs-install-python-packages-via-requirements-txt:
