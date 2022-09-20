@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.2+insiders-4.23.5">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3+insiders-4.23.5">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/main.5014570d.min.css">
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/main.fb3608a7.min.css">
       
         
         <link rel="stylesheet" href="../../../../../../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -3765,7 +3765,7 @@
         
   
   <span class="md-ellipsis">
-    Levels
+    Maturity Levels
     
   </span>
   
@@ -3892,7 +3892,7 @@
         
   
   <span class="md-ellipsis">
-    Levels
+    Maturity Levels
     
   </span>
   
@@ -4026,6 +4026,18 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Levels
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -4036,6 +4048,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#maturity-level-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maturity Level 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maturity-level-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maturity Level 2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maturity-level-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maturity Level 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maturity-level-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maturity Level 4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maturity-level-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maturity Level 5
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -12505,9 +12581,74 @@
 
 
 <h1 id="levels">Levels<a class="headerlink" href="#levels" title="Permanent link">&para;</a></h1>
-<div class="admonition warn">
-<p class="admonition-title">Warn</p>
-<p>Work in progress</p>
+<p>The goal is not always a single source of data - but rather the ability to choose the right authoritative source
+for the appropriate context.</p>
+<h2 id="maturity-level-1">Maturity Level 1<a class="headerlink" href="#maturity-level-1" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All data sources are identified and documented for in-scope use cases</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Do we know the authoritative source for each data set (should not be able to do integration without
+      using approved authoritative source)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Does everyone agree that we are using the right sources (the right source for every
+      context) &mdash; link to governance</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Do we have an approved list of what each source feeds (precise description at the entity level that
+      we can get from an approved source&mdash;must know if this is the primary source of the data per the
+      use case context).<br/>
+      <em>"For any given entity do I have all the potential sources and for a specific context do I know which
+      is authorized."</em></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> There is a defined governance process for change management and testing (clear picture of all the
+      dependencies for data integration).
+      If there are changes to authoritative sources&mdash;do we know the downstream implications (tracked and tested)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Are all <em>technology-stacks</em> known and supported by current teams (are all key systems under the
+      management and governance of the organization&mdash;should not have ghost systems that are not controlled
+      as part of the integration process)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Entitlement policies and classification rules (i.e. security, PII, business sensitive) are 
+      defined and verified</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Data Quality requirements are defined, documented, and verified</li>
+</ul>
+<h2 id="maturity-level-2">Maturity Level 2<a class="headerlink" href="#maturity-level-2" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All information (above) are identified, precisely defined, and on-boarded into the knowledge graph</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Able to do <em>datapoint lineage</em> (detailed and complete view of the data integration landscape)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Start making the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> the central point for data integration (the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> becomes the <em>Rosetta stone</em> of
+      integration)&mdash;onboard systems, convert to <abbr title="Resource Definition Framework, the standard that defines the basic building block of a semantic graph: the so-called &quot;triple&quot; i.e. an RDF-statement">RDF</abbr>, integrate into <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> (defined as the
+      data integration strategy&mdash;not necessarily complete)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All data sets that are on-boarded into the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> are coming from the authoritative sources.
+      There are no man-in-the-middle systems.
+      The goal is direct from the authoritative source to the target system for in-scope use cases.
+      Must get <ins>the most granular data</ins> directly from the authoritative sources.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All datasets are <em>"self-describing datasets" (SDDs)</em>.<sup id="fnref:principle5"><a class="footnote-ref" href="#fn:principle5">1</a></sup></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Policy&mdash;All data is obtained from the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> as the authoritative source.
+      Do not go directly to the originating source of the data.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Entitlement policies and classification requirements are on-boarded into the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../../../data-governance/capability/classification-management">Data quality business rules</a> 
+      are on-boarded into the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr></li>
+</ul>
+<h2 id="maturity-level-3">Maturity Level 3<a class="headerlink" href="#maturity-level-3" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Data is precisely defined (granular level)&mdash;expressed as formal ontologies&mdash;and on-boarded into the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All data flows are modeled, defined, and registered in the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> (<em>full lineage</em> in the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> for all
+      in-scope use cases or applications)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Start to make the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> the authoritative source (set-up to facilitate decommissioning of systems).
+      The <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> is structured to become the “new” system for in-scope applications (as soon as all
+      connections emanate from the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Entitlements are automatically managed and enforced</li>
+</ul>
+<h2 id="maturity-level-4">Maturity Level 4<a class="headerlink" href="#maturity-level-4" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Policy&mdash;All downstream client systems are using authoritative sources as the only source of information
+      for in-scope datasets (<abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> is in the middle of all data flows)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All “cottage industry systems” are replaced by the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> (and <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> is able to perform all the 
+      requirements of any system it replaced&mdash;reporting, entitlement, quality control)</li>
+</ul>
+<h2 id="maturity-level-5">Maturity Level 5<a class="headerlink" href="#maturity-level-5" title="Permanent link">&para;</a></h2>
+<p>No further requirements.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:principle5">
+<p>See <a href="https://principles.ekgf.org/principle/05-self-describing/"><abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> principle 5: Self-describing</a>&#160;<a class="footnote-backref" href="#fnref:principle5" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
 </div>
 
 
@@ -12720,7 +12861,7 @@
     <script id="__config" type="application/json">{"base": "../../../../../../..", "features": ["search.highlight", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.annotate"], "search": "../../../../../../../assets/javascripts/workers/search.720157f5.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../../../../../assets/javascripts/bundle.4a0e3b6c.min.js"></script>
+      <script src="../../../../../../../assets/javascripts/bundle.0d3e07ec.min.js"></script>
       
         <script src="../../../../../../../javascript/images_dark.js"></script>
       

@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.2+insiders-4.23.5">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3+insiders-4.23.5">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.5014570d.min.css">
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.fb3608a7.min.css">
       
         
         <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -3767,7 +3767,7 @@
         
   
   <span class="md-ellipsis">
-    Levels
+    Maturity Levels
     
   </span>
   
@@ -3894,7 +3894,7 @@
         
   
   <span class="md-ellipsis">
-    Levels
+    Maturity Levels
     
   </span>
   
@@ -12524,18 +12524,80 @@ via the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr>.</
 
 <!-- BEGIN INCLUDE dimensions.md -->
 <h2 id="dimensions">Dimensions<a class="headerlink" href="#dimensions" title="Permanent link">&para;</a></h2>
-<div class="admonition warn">
-<p class="admonition-title">Warn</p>
-<p>Work in progress</p>
-</div>
+<ul>
+<li>The organization has one (or many) officially <em>designated glossaries</em></li>
+<li>Level of review by <em>subject matter experts (SMEs)</em></li>
+<li>Level of <em>change management</em> including <em>versioning</em>, <em>approval</em>, <em>audit trail</em></li>
+<li>Level of communication and ready availability</li>
+<li>Terms have a full <em>business definition</em></li>
+<li>Business definitions also use a <em>vocabulary</em> with cross-references</li>
+<li>Definitions traced to their source with <em>change triggering</em></li>
+<li>Level of examples including <em>edge case instances</em>, which can expose vagueness or ambiguity</li>
+<li>All terms mapped to an <em>ontology definition</em></li>
+<li>Level of review by <em>ontology experts</em></li>
+<li>Level of review by <em>application experts</em> or <em>data experts</em></li>
+<li>Level of <em>coverage of use cases</em></li>
+<li>Relationship to official <em>business glossaries</em> or <em>data dictionaries</em></li>
+<li>Mapping to business models including <em>processes</em>, <em>objectives</em>, <em>key performance indicators (KPIs)</em></li>
+<li>Segregation of vocabularies by <em>community</em></li>
+<li>Reuse of glossaries across communities</li>
+<li>Support for different natural languages</li>
+<li><em>Searchability</em></li>
+<li>Completeness of <em>reverse mapping</em> from ontologies to <em>in-scope glossary</em> for terms and definitions</li>
+<li>Generation of glossaries from ontologies</li>
+<li>Relationship amongst terms (synonyms, abbreviations)</li>
+<li>Export to <em>alternative representations</em> e.g. web page, spreadsheet</li>
+<li>Managing proper nouns (names of business entities, products etc) and mapping to individuals in the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr></li>
+</ul>
 <!-- END INCLUDE -->
 
 <!-- BEGIN INCLUDE levels.md -->
-<h2 id="levels">Levels<a class="headerlink" href="#levels" title="Permanent link">&para;</a></h2>
-<div class="admonition warn">
-<p class="admonition-title">Warn</p>
-<p>Work in progress</p>
-</div>
+<h2 id="maturity-levels">Maturity Levels<a class="headerlink" href="#maturity-levels" title="Permanent link">&para;</a></h2>
+<h3 id="maturity-level-1">Maturity Level 1<a class="headerlink" href="#maturity-level-1" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Business terms for <a href="https://method.ekgf.org/concept/use-case/"><abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> use cases</a> are captured
+      and mapped to an ontology (possibly as simple labels)</li>
+</ul>
+<h3 id="maturity-level-2">Maturity Level 2<a class="headerlink" href="#maturity-level-2" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Relevant terms (for <a href="https://method.ekgf.org/concept/use-case/"><abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> use cases</a>) are associated 
+      with the use case independently of their corresponding ontologies</li>
+</ul>
+<h3 id="maturity-level-3">Maturity Level 3<a class="headerlink" href="#maturity-level-3" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Existing glossaries within the organization, within the scope of supported use cases,
+      are mapped to ontologies and imported into the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Terms are grouped into vocabularies for reuse in different communities</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vocabularies include local textual definitions as well as being mapped to ontologies</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Community level vocabularies able to import common vocabularies reusable in many communities:
+      allow for multiple levels from local to global</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Support for synonyms and abbreviations within vocabularies</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vocabularies use general principles of modularity</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ontologies presented to different communities in their own language</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Natural language used for definitions links to other terms used</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Terms are searchable via the knowledge graph interface</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Generate vocabularies from existing data models or ontologies</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ontology logic is presented to business users as natural language</li>
+</ul>
+<h3 id="maturity-level-4">Maturity Level 4<a class="headerlink" href="#maturity-level-4" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ontology logic is presented to business as natural language</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> is the <em>authoritative source</em> for all terms, scoped by community, context and use case</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The governance processes for all new terms (and changes) are managed directly within the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The results of <em>ontology inferencing</em> are presented in business natural language</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use of <em>ontology logic</em> to validate use of <em>vocabulary terms</em></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Management of homonyms and disambiguation of terms&mdash;through being mapped to different concepts</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use of business terms in <em>natural language queries</em></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Techniques for disambiguation e.g. allowing business users to select the intended meaning</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use of textual analytics to suggest modifications to vocabulary/ontology (lemmatization)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use of vocabularies to match internal databases or external data sources for linked data,
+      and establish <code>sameAs</code> links</li>
+</ul>
+<h3 id="maturity-level-5">Maturity Level 5<a class="headerlink" href="#maturity-level-5" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Terminology is used to support <em>natural language processing (NLP)</em> of <em>unstructured data</em> for the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use of <em>reference data</em> from the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> to support entity resolution (in <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> context or elsewhere)</li>
+</ul>
 <!-- END INCLUDE -->
 
   
@@ -12751,7 +12813,7 @@ via the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr>.</
     <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["search.highlight", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.annotate"], "search": "../../../../../../assets/javascripts/workers/search.720157f5.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../../../../assets/javascripts/bundle.4a0e3b6c.min.js"></script>
+      <script src="../../../../../../assets/javascripts/bundle.0d3e07ec.min.js"></script>
       
         <script src="../../../../../../javascript/images_dark.js"></script>
       
