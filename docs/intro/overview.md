@@ -134,8 +134,8 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <tr>
 <td width="1%" rowspan="5"></td>
 <td width="1%">B.2.1</td>
-<td width="20%"><a href="/pillar/organization/capability-area/product-ownership/capability/usecase-requirements">Usecase Requirements</a></td>
-<td width="77%">Identification/prioritization of EKG usecase requirements.</td>
+<td width="20%"><a href="/pillar/organization/capability-area/product-ownership/capability/use-case-requirements">Use case Requirements</a></td>
+<td width="77%">Identification/prioritization of EKG use case requirements.</td>
 </tr>
 <tr>
 <td width="1%">B.2.2</td>

@@ -6,11 +6,11 @@
 @prefix ekgmm:     <https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#> .
 @prefix dct:       <http://purl.org/dc/terms/> .
 
-<capability-product-ownership-usecase-requirements>
+<capability-product-ownership-use-case-requirements>
   a                      ekgmm:Capability ;
-  rdfs:label             "Usecase Requirements" ;
-  rdfs:comment           "Identification/prioritization of EKG usecase requirements." ;
-  ekgmm:iriLocalName     "usecase-requirements" ;
+  rdfs:label             "Use case Requirements" ;
+  rdfs:comment           "Identification/prioritization of EKG use case requirements." ;
+  ekgmm:iriLocalName     "use-case-requirements" ;
   ekgmm:inArea           <capability-area-product-ownership> ;
   ekgmm:capabilityNumber "B.2.1" ;
 .
