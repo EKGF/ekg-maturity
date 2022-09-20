@@ -21,7 +21,7 @@ data-science-types==0.2.23
 defusedxml==0.7.1
 distlib==0.3.6
 EditorConfig==0.12.3
-ekglib @ git+https://github.com/EKGF/ekglib.git@a2acfcdcce7b05d2c21c3e6b78c671e9411b343e
+ekglib @ git+https://github.com/EKGF/ekglib.git@559a4284cbdf2fa17028904d9a742b9e10145c74
 et-xmlfile==1.1.0
 filelock==3.8.0
 fonttools==4.37.1
@@ -58,7 +58,7 @@ mkdocs-exclude-search==0.6.4
 mkdocs-gen-files==0.4.0
 mkdocs-git-revision-date-plugin==0.3.2
 mkdocs-graphviz==1.4.87
-mkdocs-include-markdown-plugin==3.8.0
+mkdocs-include-markdown-plugin==3.8.1
 mkdocs-kroki-plugin==0.3.0
 mkdocs-localsearch==0.9.2
 mkdocs-macros-plugin==0.7.0
@@ -66,7 +66,7 @@ mkdocs-material @ git+https://github.com/squidfunk/mkdocs-material-insiders.git@
 mkdocs-material-extensions==1.0.3
 mkdocs-mermaid2-plugin==0.6.0
 mkdocs-minify-plugin==0.5.0
-mkdocs-redirects==1.1.0
+mkdocs-redirects==1.2.0
 natsort==8.2.0
 numpy==1.23.3
 openpyxl==3.0.10
