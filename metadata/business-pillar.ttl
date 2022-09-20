@@ -6,6 +6,15 @@
 @prefix ekgmm:     <https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#> .
 @prefix dct:       <http://purl.org/dc/terms/> .
 
+<business-pillar>
+  dct:description """
+    - Stakeholders recognize business opportunities in scaling and
+      amplifying capabilities through [EKG use cases](https://catalog.ekgf.org/use-case/).
+    - The first internal champion is seeking to socialize strategic use cases,
+      supports innovation, and is willing to take on the disruption challenge.
+  """ ;
+.
+
 <capability-area-business-strategy-actuation>
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Business Strategy Actuation" ;
