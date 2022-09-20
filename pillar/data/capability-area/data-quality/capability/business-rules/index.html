@@ -6122,11 +6122,11 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../organization/capability-area/product-ownership/capability/usecase-requirements/" class="md-nav__link ">
+            <a href="../../../../../organization/capability-area/product-ownership/capability/use-case-requirements/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    Usecase Requirements
+    Use case Requirements
     
   </span>
   
@@ -6139,10 +6139,10 @@
             
           </div>
         
-        <nav class="md-nav" aria-label="Usecase Requirements" data-md-level="6">
+        <nav class="md-nav" aria-label="Use case Requirements" data-md-level="6">
           <label class="md-nav__title" for="__nav_2_4_3_3_2_2">
             <span class="md-nav__icon md-icon"></span>
-            Usecase Requirements
+            Use case Requirements
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6154,7 +6154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../organization/capability-area/product-ownership/capability/usecase-requirements/background-and-intro/" class="md-nav__link">
+      <a href="../../../../../organization/capability-area/product-ownership/capability/use-case-requirements/background-and-intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6175,7 +6175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../organization/capability-area/product-ownership/capability/usecase-requirements/dimensions/" class="md-nav__link">
+      <a href="../../../../../organization/capability-area/product-ownership/capability/use-case-requirements/dimensions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6196,7 +6196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../organization/capability-area/product-ownership/capability/usecase-requirements/levels/" class="md-nav__link">
+      <a href="../../../../../organization/capability-area/product-ownership/capability/use-case-requirements/levels/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -12524,18 +12524,63 @@ identified and prevented before data enters the system.</p>
 
 <!-- BEGIN INCLUDE dimensions.md -->
 <h2 id="dimensions">Dimensions<a class="headerlink" href="#dimensions" title="Permanent link">&para;</a></h2>
-<div class="admonition warn">
-<p class="admonition-title">Warn</p>
-<p>Work in progress</p>
-</div>
+<ul>
+<li>Are data quality business rules specified, formalized, and expressed in a standardized manner</li>
+<li>Is there a clear line of business accountability (owned, funded, and governed) for the
+  data quality rules</li>
+<li>Is there a centrally managed repository of business rules</li>
+<li>it does not necessarily have to be central as long as it is agreed and enforced at the right scope</li>
+<li>Is there a clearly defined mechanism for logging additions and performing updates</li>
+<li>Are the business rules aligned with business applications and traceable to source systems</li>
+<li>Are the data quality business rules automated and expressed in a machine-executable format</li>
+</ul>
 <!-- END INCLUDE -->
 
 <!-- BEGIN INCLUDE levels.md -->
 <h2 id="levels">Levels<a class="headerlink" href="#levels" title="Permanent link">&para;</a></h2>
-<div class="admonition warn">
-<p class="admonition-title">Warn</p>
-<p>Work in progress</p>
-</div>
+<h3 id="maturity-level-1">Maturity Level 1<a class="headerlink" href="#maturity-level-1" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../../../data-governance/capability/classification-management">Data quality business rules</a>
+      (conditions) have been defined, documented and, verified by <em>subject matter experts (SMEs)</em> 
+      (process for evaluation and acceptance defined)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Business rules are aligned with in-scope <a href="https://method.ekgf.org/concept/use-case">use cases</a>
+      and specific <a href="https://method.ekgf.org/concept/story">user stories</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Business rules are standardized and registered into a repository with a defined mechanism for
+      logging additions and performing updates</li>
+</ul>
+<h3 id="maturity-level-2">Maturity Level 2<a class="headerlink" href="#maturity-level-2" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A defined architecture exists to translate business rules into machine-executable code
+      (some rules will be <em>OWL expressions</em>, some will be 
+      <a href="https://www.w3.org/TR/shacl/#constraints-section"><em><abbr title="Shapes Constraint Language, a W3C standard">SHACL</abbr> shapes</em> and <em><abbr title="Shapes Constraint Language, a W3C standard">SHACL</abbr> constraints</em></a>,
+      some will be translated into workflow logic)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <em>Business provenance</em> and <em>lineage</em> are traceable across the <em>data supply chain</em> and
+      evaluated against defined business rules (all business rules must be traceable and understandable in
+      context&mdash;must understand the purpose and importance of the rule)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Business rules for in-scope use cases are implemented in the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr></li>
+</ul>
+<h3 id="maturity-level-3">Maturity Level 3<a class="headerlink" href="#maturity-level-3" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Metrics&mdash;The measurement criteria are defined for data quality business rules (which rules are executed,
+      how often, improvement)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Performance&mdash;The value of business rules are related to business concepts (products, financial performance,
+      organizational objectives)&mdash;able to trace the core relationship between the 
+      <a href="/pillar/business/capability-area/strategy-actuation/capability/business-goals">business objectives</a> and
+      the data quality business rules (correlation between rules and outcomes are known, able to be queried and
+      traceable within the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr>)</li>
+</ul>
+<h3 id="maturity-level-4">Maturity Level 4<a class="headerlink" href="#maturity-level-4" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Business rules are combined with <em>AI capability</em> for compliance (dynamic optimization of business rules)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Model-driven (senior management can begin to optimize business objectives using business rules in
+      the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr>&mdash;i.e. alignment of business rules with “what if” scenarios)</li>
+</ul>
+<h3 id="maturity-level-5">Maturity Level 5<a class="headerlink" href="#maturity-level-5" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All business rules are driven by
+      <a href="/pillar/business/capability-area/strategy-actuation/capability/business-goals">business objectives</a> 
+      (objectives are in the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> with appropriate scorecards)</li>
+</ul>
 <!-- END INCLUDE -->
 
   
