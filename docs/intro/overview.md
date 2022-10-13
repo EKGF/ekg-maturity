@@ -184,7 +184,7 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <tr>
 <td width="1%">B.3.5</td>
 <td width="20%"><a href="/pillar/organization/capability-area/delivery-management/capability/ekg-platform-team">EKG/Platform Team</a></td>
-<td width="77%">Requirements and accountabilities for managing the EKG/Platform.</td>
+<td width="77%">Requirements and accountabilities for managing the [EKG/Platform](https://method.ekgf.org/vocab/ekg-platform/).</td>
 </tr>
 <tr>
 <td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/organization/capability-area/organizational-culture">Organizational Culture</a></td>
@@ -339,7 +339,7 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <tr>
 <td width="1%">D.2.4</td>
 <td width="20%"><a href="/pillar/technology/capability-area/technology-execution/capability/business-continuity">Business Continuity</a></td>
-<td width="77%">Continued business operations during unplanned EKG/Platform disruption.</td>
+<td width="77%">Continued business operations during unplanned [EKG/Platform](https://method.ekgf.org/vocab/ekg-platform/) disruption.</td>
 </tr>
 <tr>
 <td width="1%">D.2.5</td>
@@ -374,7 +374,7 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <tr>
 <td width="1%">D.2.11</td>
 <td width="20%"><a href="/pillar/technology/capability-area/technology-execution/capability/knowledge-graph-storage-retrieval">Knowledge Graph Storage & Retrieval</a></td>
-<td width="77%">Semantic data storage managed by the EKG/Platform.</td>
+<td width="77%">Semantic data storage managed by the [EKG/Platform](https://method.ekgf.org/vocab/ekg-platform/).</td>
 </tr>
 <tr>
 <td width="1%">D.2.12</td>

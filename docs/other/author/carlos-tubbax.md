@@ -12,3 +12,4 @@
 - [Enterprise Architecture](https://maturity.ekgf.org/appendix/enterprise-architecture/)
 - [Business Operating Model](https://maturity.ekgf.org/appendix/operating-model/)
 
+
