@@ -52,6 +52,7 @@ info: python-venv
 clean:
 	@echo Cleaning
 	@rm -rf site 2>/dev/null || true
+	@rm -rf .venv/lib/python3.10/site-packages 2>/dev/null || true
 
 .PHONY: install
 install: docs-install
@@ -105,12 +106,16 @@ docs-install-brew-macos:
 	brew --version
 
 .PHONY: docs-install-asdf
+ifneq ($(wildcard /home/runner/.*),)
 docs-install-asdf: docs-install-brew
 	@echo "Install the asdf package manager:"
 	brew upgrade asdf || brew install asdf
 	asdf plugin add python || true
 	asdf plugin add nodejs || true
 	asdf plugin add java || true
+else
+docs-install-asdf:
+endif
 
 .PHONY: docs-install-asdf-packages
 docs-install-asdf-packages: docs-install-asdf
@@ -125,28 +130,30 @@ docs-install-standard-python-packages: python-venv
 	@echo "Install standard python packages via pip:"
 	$(VENV_PIP) install --upgrade pip
 	$(VENV_PIP) install --upgrade wheel
+	$(VENV_PIP) install --upgrade setuptools
 	$(VENV_PIP) install --upgrade pipenv
 #	$(VENV_PIP) install --upgrade plantuml-markdown
+	$(VENV_PIP) install --upgrade mkdocs-build-plantuml-plugin
 	$(VENV_PIP) install --upgrade mdutils
 	$(VENV_PIP) install --upgrade option
 	$(VENV_PIP) install --upgrade mkdocs
 	$(VENV_PIP) install --upgrade mkdocs-awesome-pages-plugin
-	$(VENV_PIP) install --upgrade mkdocs-build-plantuml-plugin
+	$(VENV_PIP) install --upgrade mkdocs-awesome-pages-plugin
 	$(VENV_PIP) install --upgrade mkdocs-exclude
 	$(VENV_PIP) install --upgrade mkdocs-exclude-search
 	$(VENV_PIP) install --upgrade mkdocs-gen-files
-	$(VENV_PIP) install --upgrade mkdocs-git-revision-date-plugin
+	$(VENV_PIP) install --upgrade mkdocs-git-revision-date-localized-plugin
 	$(VENV_PIP) install --upgrade mkdocs-graphviz
 	$(VENV_PIP) install --upgrade mkdocs-include-markdown-plugin
-	$(VENV_PIP) install --upgrade mkdocs-kroki-plugin
 	$(VENV_PIP) install --upgrade mkdocs-localsearch
 	$(VENV_PIP) install --upgrade mkdocs-macros-plugin
 	$(VENV_PIP) install --upgrade mkdocs-mermaid2-plugin
 	$(VENV_PIP) install --upgrade mkdocs-minify-plugin
 	$(VENV_PIP) install --upgrade mkdocs-redirects
-	$(VENV_PIP) install --upgrade mdx-spanner
-	$(VENV_PIP) install --upgrade markdown-emdash
+	$(VENV_PIP) install --upgrade mkdocs-kroki-plugin
 	$(VENV_PIP) install --upgrade --no-cache-dir "git+https://github.com/EKGF/ekglib.git"
+# $(VENV_PIP) install --upgrade mdx-spanner
+#	$(VENV_PIP) install --upgrade markdown-emdash
 	$(VENV_PIP) freeze > requirements.txt
 
 .PHONY: docs-install-python-packages-via-requirements-txt
@@ -185,7 +192,7 @@ python-venv:
 	$(SYSTEM_PYTHON) -m venv --upgrade --upgrade-deps $(VIRTUAL_ENV)
 
 .PHONY: docs-build
-docs-build:
+docs-build: $(VENV_MKDOCS)
 	$(VENV_MKDOCS) build --config-file $(MKDOCS_CONFIG_FILE)
 
 .PHONY: docs-build-clean

@@ -45,7 +45,7 @@
 <capability-delivery-management-ekg-platform-team>
   a                      ekgmm:Capability ;
   rdfs:label             "EKG/Platform Team" ;
-  rdfs:comment           "Requirements and accountabilities for managing the EKG/Platform." ;
+  rdfs:comment           "Requirements and accountabilities for managing the [EKG/Platform](https://method.ekgf.org/vocab/ekg-platform/)." ;
   ekgmm:iriLocalName     "ekg-platform-team" ;
   ekgmm:inArea           <capability-area-delivery-management> ;
   ekgmm:capabilityNumber "B.3.5" ;

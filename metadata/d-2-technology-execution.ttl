@@ -36,7 +36,7 @@
 <capability-technology-execution-business-continuity>
   a                      ekgmm:Capability ;
   rdfs:label             "Business Continuity" ;
-  rdfs:comment           "Continued business operations during unplanned EKG/Platform disruption." ;
+  rdfs:comment           "Continued business operations during unplanned [EKG/Platform](https://method.ekgf.org/vocab/ekg-platform/) disruption." ;
   ekgmm:iriLocalName     "business-continuity" ;
   ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.4" ;
@@ -99,7 +99,7 @@
 <capability-technology-execution-knowledge-graph-storage-retrieval>
   a                      ekgmm:Capability ;
   rdfs:label             "Knowledge Graph Storage & Retrieval" ;
-  rdfs:comment           "Semantic data storage managed by the EKG/Platform." ;
+  rdfs:comment           "Semantic data storage managed by the [EKG/Platform](https://method.ekgf.org/vocab/ekg-platform/)." ;
   ekgmm:iriLocalName     "knowledge-graph-storage-retrieval" ;
   ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.11" ;
