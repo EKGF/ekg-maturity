@@ -106,12 +106,16 @@ docs-install-brew-macos:
 	brew --version
 
 .PHONY: docs-install-asdf
+ifneq ($(wildcard /home/runner/.*),)
 docs-install-asdf: docs-install-brew
 	@echo "Install the asdf package manager:"
 	brew upgrade asdf || brew install asdf
 	asdf plugin add python || true
 	asdf plugin add nodejs || true
 	asdf plugin add java || true
+else
+docs-install-asdf:
+endif
 
 .PHONY: docs-install-asdf-packages
 docs-install-asdf-packages: docs-install-asdf
@@ -119,12 +123,7 @@ docs-install-asdf-packages: docs-install-asdf
 	asdf install
 
 .PHONY: docs-install-python-packages
-ifneq ($(wildcard /home/runner/.*),)
-docs-install-python-packages: docs-install-asdf
-docs-install-python-packages: docs-install-asdf
-else
 docs-install-python-packages: docs-install-asdf-packages docs-install-standard-python-packages docs-install-special-python-packages
-endif
 
 .PHONY: docs-install-standard-python-packages
 docs-install-standard-python-packages: python-venv
@@ -143,7 +142,6 @@ docs-install-standard-python-packages: python-venv
 	$(VENV_PIP) install --upgrade mkdocs-exclude
 	$(VENV_PIP) install --upgrade mkdocs-exclude-search
 	$(VENV_PIP) install --upgrade mkdocs-gen-files
-	$(VENV_PIP) install --upgrade mkdocs-git-revision-date-localized-plugin
 	$(VENV_PIP) install --upgrade mkdocs-git-revision-date-localized-plugin
 	$(VENV_PIP) install --upgrade mkdocs-graphviz
 	$(VENV_PIP) install --upgrade mkdocs-include-markdown-plugin
@@ -194,7 +192,7 @@ python-venv:
 	$(SYSTEM_PYTHON) -m venv --upgrade --upgrade-deps $(VIRTUAL_ENV)
 
 .PHONY: docs-build
-docs-build:
+docs-build: $(VENV_MKDOCS)
 	$(VENV_MKDOCS) build --config-file $(MKDOCS_CONFIG_FILE)
 
 .PHONY: docs-build-clean

@@ -15,7 +15,7 @@ cssselect==1.1.0
 data-science-types==0.2.23
 distlib==0.3.6
 EditorConfig==0.12.3
-ekglib @ git+https://github.com/EKGF/ekglib.git@76d33efc57b03c8cca597e731694dadd9e9d5929
+ekglib @ file:///Users/jacobus/Work/ekglib
 et-xmlfile==1.1.0
 filelock==3.8.0
 ghp-import==2.1.0
@@ -28,7 +28,7 @@ idna==3.4
 inflection==0.5.1
 iniconfig==1.1.1
 isodate==0.6.1
-Jinja2==3.0.0
+Jinja2==3.1.2
 jmespath==1.0.1
 jsbeautifier==1.14.6
 jsmin==3.0.1
@@ -45,6 +45,8 @@ mkdocs-build-plantuml-plugin==1.7.4
 mkdocs-exclude==1.0.2
 mkdocs-exclude-search==0.6.4
 mkdocs-gen-files==0.4.0
+mkdocs-git-revision-date-localized-plugin==1.1.0
+mkdocs-git-revision-date-plugin==0.3.2
 mkdocs-graphviz==1.4.91
 mkdocs-include-markdown-plugin==3.9.0
 mkdocs-kroki-plugin==0.3.0
