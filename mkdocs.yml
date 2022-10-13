@@ -92,14 +92,21 @@ extra_javascript:
   - "javascript/refresh_on_toggle_dark_light.js"
   - "https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/mkdocs-graphviz.js"
 plugins:
+  - include-markdown
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+      locale: en
+      type: timeago
+      timezone: America/New_York
+      exclude:
+        - pillar/*
   - search:
       lang:
         - en
   - exclude-search:
       exclude:
         - 'fragment/*'
-  - include-markdown
-# - git-revision-date
   - build_plantuml:
       render: "server" # or "local" for local rendering
       bin_path: "/usr/local/bin/plantuml" # ignored when render: server
@@ -127,8 +134,6 @@ plugins:
       regex:
         - '.*\.(tmp|bin|tar)$'
         - '_.*\.md$'
-  - macros:
-      module_name: 'docs/main'
   - kroki:
       ServerURL: https://kroki.io/
       DownloadImages: false
@@ -177,11 +182,11 @@ markdown_extensions:
   - toc:
       permalink: true
   - meta
-  - mdx_spanner
+# - mdx_spanner
   - def_list
   - abbr
   - admonition
-  - mdx_emdash
+# - mdx_emdash
   - attr_list
   - footnotes
   - tables
