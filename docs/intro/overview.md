@@ -23,7 +23,7 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <td width="1%" colspan="5" style="text-align:left;vertical-align:top;"><a href="/pillar/business">Business Pillar</a></td>
 </tr>
 <tr>
-<td width="1%" rowspan="14"></td>
+<td width="1%" rowspan="15"></td>
 <td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/business/capability-area/strategy-actuation">Business Strategy Actuation</a></td>
 </tr>
 <tr>
@@ -65,7 +65,7 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/business/capability-area/business-enablers">Business Enablers</a></td>
 </tr>
 <tr>
-<td width="1%" rowspan="5"></td>
+<td width="1%" rowspan="6"></td>
 <td width="1%">A.3.1</td>
 <td width="20%"><a href="/pillar/business/capability-area/business-enablers/capability/operating-model">Operating Model</a></td>
 <td width="77%">The desired level of business process integration & standardization.</td>
@@ -87,6 +87,11 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 </tr>
 <tr>
 <td width="1%">A.3.5</td>
+<td width="20%"><a href="/pillar/business/capability-area/business-enablers/capability/scalability-assessment">Scalability Assessment</a></td>
+<td width="77%">Assessing scalability (work in progress).</td>
+</tr>
+<tr>
+<td width="1%">A.3.6</td>
 <td width="20%"><a href="/pillar/business/capability-area/business-enablers/capability/capability-map">Capability Map</a></td>
 <td width="77%">Defining what a business does and which outcomes it wants to achieve.</td>
 </tr>

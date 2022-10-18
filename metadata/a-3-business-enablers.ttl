@@ -71,17 +71,29 @@
     leveraging worldwide logistics, synchronizing supply with demand, and measuring performance globally.
 """
 .
+<capability-business-enablers-scalability-assessment>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Scalability Assessment" ;
+  rdfs:comment           "Assessing scalability (work in progress)." ;
+  ekgmm:iriLocalName     "scalability-assessment" ;
+  ekgmm:capabilityNumber "A.3.5" ;
+  ekgmm:inArea           <capability-area-business-enablers> ;
+  dct:description        """
+    TODO
+  """
+.
+
 
 <capability-business-enablers-capability-map>
   a                      ekgmm:Capability ;
   rdfs:label             "Capability Map" ;
   rdfs:comment           "Defining what a business does and which outcomes it wants to achieve." ;
   ekgmm:iriLocalName     "capability-map" ;
-  ekgmm:capabilityNumber "A.3.5" ;
+  ekgmm:capabilityNumber "A.3.6" ;
   ekgmm:inArea           <capability-area-business-enablers> ;
   dct:description        """
-Understanding _what_ a business does is at least as important as understanding _how_ it does it.
-Focusing on the _what_ rather than on the _how_ often provides the right level of abstraction
-of complex ecosystems in a way that can be easily digested by business executives and planning teams.
-"""
+    Understanding _what_ a business does is at least as important as understanding _how_ it does it.
+    Focusing on the _what_ rather than on the _how_ often provides the right level of abstraction
+    of complex ecosystems in a way that can be easily digested by business executives and planning teams.
+  """
 .
