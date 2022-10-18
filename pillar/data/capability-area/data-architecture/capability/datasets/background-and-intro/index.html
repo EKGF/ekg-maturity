@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6+insiders-4.25.4">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.6+insiders-4.26.0">
     
     
       
@@ -2242,6 +2242,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -2835,11 +2837,11 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../../../business/capability-area/business-enablers/capability/capability-map/" class="md-nav__link ">
+            <a href="../../../../../../business/capability-area/business-enablers/capability/scalability-assessment/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    Capability Map
+    Scalability Assessment
     
   </span>
   
@@ -2853,8 +2855,139 @@
             
           </div>
         
-        <nav class="md-nav" aria-label="Capability Map" data-md-level="6">
+        <nav class="md-nav" aria-label="Scalability Assessment" data-md-level="6">
           <label class="md-nav__title" for="__nav_2_2_3_4_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Scalability Assessment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../business/capability-area/business-enablers/capability/scalability-assessment/background-and-intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Background & Intro
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../business/capability-area/business-enablers/capability/scalability-assessment/dimensions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dimensions
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../business/capability-area/business-enablers/capability/scalability-assessment/levels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Levels
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3_4_2_7" type="checkbox" id="__nav_2_2_3_4_2_7" >
+        
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../../business/capability-area/business-enablers/capability/capability-map/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Capability Map
+    
+  </span>
+  
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_2_2_3_4_2_7">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" aria-label="Capability Map" data-md-level="6">
+          <label class="md-nav__title" for="__nav_2_2_3_4_2_7">
             <span class="md-nav__icon md-icon"></span>
             Capability Map
           </label>
@@ -3946,6 +4079,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Background & Intro
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -3957,6 +4103,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dataset-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset Metadata
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -12879,15 +13053,48 @@
 
 <!-- Page content -->
 <h1 id="background-intro">Background &amp; Intro<a class="headerlink" href="#background-intro" title="Permanent link">&para;</a></h1>
-<div class="admonition warn">
-<p class="admonition-title">Warn</p>
-<p>Work in progress</p>
-</div>
+<p>A dataset represents a coherent and distinct data asset, or data product, including unstructured data. </p>
+<p>A dataset is a logical view on the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> for a specific purpose and may not directly represent physical storage or a source of data. It may encompass subsetting (shapes, projection or selection) of a physical data store: (e.g. for ontologies: specific classes and properties; for relational databases specific rows and columns as well as tables).
+The same data element could be exposed through many datasets (grouped/filtered differently subject to different access controls).</p>
+<p>Datasets are in general usage outside specific enterprises:
+- governments have public data catalogs e.g. US data.gov for many datasets, including published statistics;
+- datasets cataloged by cloud providers (Google, Amazon) and commercial data publishers (Bloomberg, Factset etc) and may be available by download or <abbr title="Application Programming Interface">API</abbr>
+- Wikidata
+- scientific datasets submitted with papers to represent experimental data</p>
+<h2 id="dataset-metadata">Dataset Metadata<a class="headerlink" href="#dataset-metadata" title="Permanent link">&para;</a></h2>
+<p>The dataset metadata contains information about 
+- what data exists, 
+- what it means (ontologies for the data set)
+- cross-references e.g. to related data sets
+    - family of datasets
+    - vocabularies
+    - ontologies
+- where it resides (“data-at-rest”)
+- format(s)
+- how to access (UI, APIs, queries, reports etc)
+- usage permission e.g. approved authoritative source
+- link to data sharing agreements
+- responsible parties
+- lifecycle/maintenance/approval process
+- retention and records management: legal requirements to both retain (legal hold) and delete (to avoid discovery). Requirements are jurisdiction-specific. 
+- licensing (how the data can be used and by whom; pricing)
+- data sharing agreements
+- Snapshot vs dynamically updated (snapshot possibly for legal reasons)
+- Compliance with FAIR principles (encompassed by <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Principles)
+- accessibility/security 
+- privacy (especially for personal data, need for masking/encryption)
+- sensitivity (e.g. financial)
+- upstream/downstream usage (lineage)
+- how it moves (“data in motion”) 
+- classifications/tagging
+- quality metrics
+- usage metrics (frequency of access, update, concentration of access)
+- “data temperature” (frequency of access, change/volatility) - may determine storage media, in memory vs archive
+- availability and other useful metrics (volumetrics)
+- provenance e.g. source systems, lineage, derivation, processing, machine learning, simulation
+- datasets usable for ML training data (check semantic tagging for relational data)  </p>
 <h1 id="contribution-to-the-ekg">Contribution to the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr><a class="headerlink" href="#contribution-to-the-ekg" title="Permanent link">&para;</a></h1>
-<div class="admonition warn">
-<p class="admonition-title">Warn</p>
-<p>Work in progress</p>
-</div>
+<p>Linking data inventory to the knowledge graph (and business concepts) ensures precision of meaning at the most granular level.  Data in the knowledge graph is traceable to all application usage allowing users to find data of interest through assisted and contextual search.  The ability of the knowledge graph to connect data with metadata enables users to perform flexible queries in ways that were not previously possible.  </p>
 <h1 id="contribution-to-the-enterprise">Contribution to the Enterprise<a class="headerlink" href="#contribution-to-the-enterprise" title="Permanent link">&para;</a></h1>
 <p>Linking data inventory to the knowledge graph (and 
 business concepts) ensures the precision of meaning
@@ -13111,10 +13318,10 @@ in ways that were not previously possible.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../../../../..", "features": ["search.highlight", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.annotate"], "search": "../../../../../../../assets/javascripts/workers/search.720157f5.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../../../..", "features": ["search.highlight", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.annotate"], "search": "../../../../../../../assets/javascripts/workers/search.939a4419.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../../../../../assets/javascripts/bundle.abceede4.min.js"></script>
+      <script src="../../../../../../../assets/javascripts/bundle.01b2e45f.min.js"></script>
       
         <script src="../../../../../../../js/timeago.min.js"></script>
       
