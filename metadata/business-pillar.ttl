@@ -45,4 +45,15 @@
   rdfs:label         "Business Enablers" ;
   ekgmm:iriLocalName "business-enablers" ;
   ekgmm:inPillar     <business-pillar> ;
+  dct:description    """
+    _Business Enablers_ help implementors focus on [Business Strategy](/appendix/business-strategy/) execution.
+    Specifically, they bring visibility to the exploration, architecture, 
+    infrastructure, compliance and performance activities needed to successfully 
+    [implement](https://method.ekgf.org/process/build/) the target business functionality. 
+    For instance, using [EKG](https://principles.ekgf.org/vocab/ekg/) they are able 
+    to supply the knowledge enablement models, metrics, risk framework, 
+    value chain maps and self describing data that are needed by implementors to 
+    verify and validate the [delivery pipeline](/pillar/organization/capability-area/delivery-management/) 
+    which powers digital transformations.
+  """
 .
