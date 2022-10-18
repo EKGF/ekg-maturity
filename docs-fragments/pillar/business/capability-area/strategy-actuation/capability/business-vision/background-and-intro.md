@@ -31,7 +31,7 @@ Any core ideology should consist of two components:
    
 Similarly to core ideology, an envisioned future consists of two parts:
    
-1. ***Big, Hairy, Audacious Goals (BHAGs)** are inspiring stories that serve as a 
+1. **Big, Hairy, Audacious Goals (BHAGs)** are inspiring stories that serve as a 
    focal point for effort, are a catalyst for team spirit and mark a clear finish line. 
    BHAGs should be attainable in a 10-to-30 years time window and should be 
    highly focussed, tangible and highly focussed.

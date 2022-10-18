@@ -5,7 +5,7 @@ binaryio==1.0.0
 boto3==1.24.70
 boto3-stubs==1.24.70
 botocore==1.27.70
-botocore-stubs==1.27.89
+botocore-stubs==1.27.90
 bracex==2.3.post1
 certifi==2022.9.24
 charset-normalizer==2.1.1
@@ -15,7 +15,7 @@ cssselect==1.1.0
 data-science-types==0.2.23
 distlib==0.3.6
 EditorConfig==0.12.3
-ekglib @ file:///Users/jacobus/Work/ekglib
+ekglib @ git+https://github.com/EKGF/ekglib.git@76d33efc57b03c8cca597e731694dadd9e9d5929
 et-xmlfile==1.1.0
 filelock==3.8.0
 ghp-import==2.1.0
@@ -46,7 +46,6 @@ mkdocs-exclude==1.0.2
 mkdocs-exclude-search==0.6.4
 mkdocs-gen-files==0.4.0
 mkdocs-git-revision-date-localized-plugin==1.1.0
-mkdocs-git-revision-date-plugin==0.3.2
 mkdocs-graphviz==1.4.91
 mkdocs-include-markdown-plugin==3.9.0
 mkdocs-kroki-plugin==0.3.0

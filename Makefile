@@ -192,7 +192,7 @@ python-venv:
 	$(SYSTEM_PYTHON) -m venv --upgrade --upgrade-deps $(VIRTUAL_ENV)
 
 .PHONY: docs-build
-docs-build: $(VENV_MKDOCS)
+docs-build:
 	$(VENV_MKDOCS) build --config-file $(MKDOCS_CONFIG_FILE)
 
 .PHONY: docs-build-clean
