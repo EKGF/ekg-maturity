@@ -21,8 +21,9 @@
   ekgmm:iriLocalName "strategy-actuation" ;
   ekgmm:inPillar     <business-pillar> ;
   dct:description    """
-    _Business Strategy Actuation_ is a business identity oriented process that senses, understands and communicates 
-    business outcome-based assessment data to focus energy and resources on strategic objectives.
+    _Business Strategy Actuation_ is a [business identity](/pillar/business/background-and-intro/#business-identity) 
+    oriented process that senses, understands and communicates business outcome-based assessment data to focus energy 
+    and resources on strategic objectives.
     Actuation measurement values are used to assess whether strategic objectives and associated business goals
     are being fulfilled.
   """
@@ -34,8 +35,10 @@
   ekgmm:iriLocalName "business-model-elaboration" ;
   ekgmm:inPillar     <business-pillar> ;
   dct:description    """
-    _Business Model Elaboration_ is the process of providing further detail of business strategy.
-    It may include decision rationale that explains how the business identity data infrastructure
+    _Business Model Elaboration_ is the process of providing further detail of 
+    [business strategy](/appendix/business-strategy/).
+    It may include decision rationale that explains how the 
+    [business identity](/pillar/business/background-and-intro/#business-identity) data infrastructure
     and algorithms enable the how and why planned actions would create, deliver, and capture value.
   """
 .
@@ -46,7 +49,7 @@
   ekgmm:iriLocalName "business-enablers" ;
   ekgmm:inPillar     <business-pillar> ;
   dct:description    """
-    _Business Enablers_ help implementors focus on [Business Strategy](/appendix/business-strategy/) execution.
+    _Business Enablers_ help implementors focus on [business strategy](/appendix/business-strategy/) execution.
     Specifically, they bring visibility to the exploration, architecture, 
     infrastructure, compliance and performance activities needed to successfully 
     [implement](https://method.ekgf.org/process/build/) the target business functionality. 
