@@ -11,9 +11,10 @@ Datasets are in general usage outside specific enterprises:
 - Wikidata
 - scientific datasets submitted with papers to represent experimental data
 
-
 ## Dataset Metadata
-The dataset metadata contains information about 
+
+The dataset metadata contains information about
+
 - what data exists, 
 - what it means (ontologies for the data set)
 - cross-references e.g. to related data sets
@@ -27,11 +28,13 @@ The dataset metadata contains information about
 - link to data sharing agreements
 - responsible parties
 - lifecycle/maintenance/approval process
-- retention and records management: legal requirements to both retain (legal hold) and delete (to avoid discovery). Requirements are jurisdiction-specific. 
+- retention and records management: legal requirements to both retain (legal hold) and delete (to avoid discovery).
+  Requirements are jurisdiction-specific. 
 - licensing (how the data can be used and by whom; pricing)
 - data sharing agreements
 - Snapshot vs dynamically updated (snapshot possibly for legal reasons)
-- Compliance with FAIR principles (encompassed by EKG Principles)
+- Compliance with [FAIR principles](https://principles.ekgf.org/fair/)
+  (encompassed by [EKG Principles](https://principles.ekgf.org/principle/#__tabbed_1_2))
 - accessibility/security 
 - privacy (especially for personal data, need for masking/encryption)
 - sensitivity (e.g. financial)
@@ -45,6 +48,7 @@ The dataset metadata contains information about
 - provenance e.g. source systems, lineage, derivation, processing, machine learning, simulation
 - datasets usable for ML training data (check semantic tagging for relational data)  
 
+See also [Self-describing Dataset (SDD)](https://principles.ekgf.org/vocab/sdd/).
 
 # Contribution to the EKG
 Linking data inventory to the knowledge graph (and business concepts) ensures precision of meaning at the most granular level.  Data in the knowledge graph is traceable to all application usage allowing users to find data of interest through assisted and contextual search.  The ability of the knowledge graph to connect data with metadata enables users to perform flexible queries in ways that were not previously possible.  
