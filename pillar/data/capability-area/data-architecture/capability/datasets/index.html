@@ -13014,37 +13014,44 @@ The same data element could be exposed through many datasets (grouped/filtered d
 - Wikidata
 - scientific datasets submitted with papers to represent experimental data</p>
 <h3 id="dataset-metadata">Dataset Metadata<a class="headerlink" href="#dataset-metadata" title="Permanent link">&para;</a></h3>
-<p>The dataset metadata contains information about 
-- what data exists, 
-- what it means (ontologies for the data set)
-- cross-references e.g. to related data sets
-    - family of datasets
-    - vocabularies
-    - ontologies
-- where it resides (“data-at-rest”)
-- format(s)
-- how to access (UI, APIs, queries, reports etc)
-- usage permission e.g. approved authoritative source
-- link to data sharing agreements
-- responsible parties
-- lifecycle/maintenance/approval process
-- retention and records management: legal requirements to both retain (legal hold) and delete (to avoid discovery). Requirements are jurisdiction-specific. 
-- licensing (how the data can be used and by whom; pricing)
-- data sharing agreements
-- Snapshot vs dynamically updated (snapshot possibly for legal reasons)
-- Compliance with FAIR principles (encompassed by <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Principles)
-- accessibility/security 
-- privacy (especially for personal data, need for masking/encryption)
-- sensitivity (e.g. financial)
-- upstream/downstream usage (lineage)
-- how it moves (“data in motion”) 
-- classifications/tagging
-- quality metrics
-- usage metrics (frequency of access, update, concentration of access)
-- “data temperature” (frequency of access, change/volatility) - may determine storage media, in memory vs archive
-- availability and other useful metrics (volumetrics)
-- provenance e.g. source systems, lineage, derivation, processing, machine learning, simulation
-- datasets usable for ML training data (check semantic tagging for relational data)  </p>
+<p>The dataset metadata contains information about</p>
+<ul>
+<li>what data exists, </li>
+<li>what it means (ontologies for the data set)</li>
+<li>cross-references e.g. to related data sets<ul>
+<li>family of datasets</li>
+<li>vocabularies</li>
+<li>ontologies</li>
+</ul>
+</li>
+<li>where it resides (“data-at-rest”)</li>
+<li>format(s)</li>
+<li>how to access (UI, APIs, queries, reports etc)</li>
+<li>usage permission e.g. approved authoritative source</li>
+<li>link to data sharing agreements</li>
+<li>responsible parties</li>
+<li>lifecycle/maintenance/approval process</li>
+<li>retention and records management: legal requirements to both retain (legal hold) and delete (to avoid discovery).
+  Requirements are jurisdiction-specific. </li>
+<li>licensing (how the data can be used and by whom; pricing)</li>
+<li>data sharing agreements</li>
+<li>Snapshot vs dynamically updated (snapshot possibly for legal reasons)</li>
+<li>Compliance with <a href="https://principles.ekgf.org/fair/">FAIR principles</a>
+  (encompassed by <a href="https://principles.ekgf.org/principle/#__tabbed_1_2"><abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Principles</a>)</li>
+<li>accessibility/security </li>
+<li>privacy (especially for personal data, need for masking/encryption)</li>
+<li>sensitivity (e.g. financial)</li>
+<li>upstream/downstream usage (lineage)</li>
+<li>how it moves (“data in motion”) </li>
+<li>classifications/tagging</li>
+<li>quality metrics</li>
+<li>usage metrics (frequency of access, update, concentration of access)</li>
+<li>“data temperature” (frequency of access, change/volatility) - may determine storage media, in memory vs archive</li>
+<li>availability and other useful metrics (volumetrics)</li>
+<li>provenance e.g. source systems, lineage, derivation, processing, machine learning, simulation</li>
+<li>datasets usable for ML training data (check semantic tagging for relational data)  </li>
+</ul>
+<p>See also <a href="https://principles.ekgf.org/vocab/sdd/">Self-describing Dataset (<abbr title="Self-describing dataset, an EKGF standard">SDD</abbr>)</a>.</p>
 <h2 id="contribution-to-the-ekg">Contribution to the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr><a class="headerlink" href="#contribution-to-the-ekg" title="Permanent link">&para;</a></h2>
 <p>Linking data inventory to the knowledge graph (and business concepts) ensures precision of meaning at the most granular level.  Data in the knowledge graph is traceable to all application usage allowing users to find data of interest through assisted and contextual search.  The ability of the knowledge graph to connect data with metadata enables users to perform flexible queries in ways that were not previously possible.  </p>
 <h2 id="contribution-to-the-enterprise">Contribution to the Enterprise<a class="headerlink" href="#contribution-to-the-enterprise" title="Permanent link">&para;</a></h2>
