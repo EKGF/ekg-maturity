@@ -1,4 +1,3 @@
-# Dimensions
 
 - Do one or more _data inventories_ exist
 - Is the inventory based on _defined standards_ (for both meaning and format)

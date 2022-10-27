@@ -1,5 +1,3 @@
-# Background & Intro
-
 A dataset represents a coherent and distinct data asset, or data product, including unstructured data. 
 
 A dataset is a logical view on the EKG for a specific purpose and may not directly represent physical storage or a source of data. It may encompass subsetting (shapes, projection or selection) of a physical data store: (e.g. for ontologies: specific classes and properties; for relational databases specific rows and columns as well as tables).
@@ -50,18 +48,3 @@ The dataset metadata contains information about
 
 See also [Self-describing Dataset (SDD)](https://principles.ekgf.org/vocab/sdd/).
 
-# Contribution to the EKG
-Linking data inventory to the knowledge graph (and business concepts) ensures precision of meaning at the most granular level.  Data in the knowledge graph is traceable to all application usage allowing users to find data of interest through assisted and contextual search.  The ability of the knowledge graph to connect data with metadata enables users to perform flexible queries in ways that were not previously possible.  
-
-
-# Contribution to the Enterprise
-
-Linking data inventory to the knowledge graph (and 
-business concepts) ensures the precision of meaning
-at the most granular level.
-Data in the knowledge graph is traceable to all 
-application usage allowing users to find data of interest
-through assisted and contextual search and navigation.
-The unique ability of the knowledge graph to connect 
-data with metadata enables users to perform flexible queries
-in ways that were not previously possible.

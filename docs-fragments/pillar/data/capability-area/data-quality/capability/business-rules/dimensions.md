@@ -1,4 +1,3 @@
-# Dimensions
 
 - Are data quality business rules specified, formalized, and expressed in a standardized manner
 - Is there a clear line of business accountability (owned, funded, and governed) for the

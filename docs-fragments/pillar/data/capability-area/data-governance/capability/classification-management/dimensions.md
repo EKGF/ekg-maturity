@@ -1,4 +1,3 @@
-# Dimensions
 
 - Are critical data elements identified, verified and prioritized for specific
   use cases and applications

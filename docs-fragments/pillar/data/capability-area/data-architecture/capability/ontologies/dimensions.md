@@ -1,4 +1,3 @@
-# Maturity Dimensions
 
 - How much of the enterprise data is covered by ontologies?
 - How well is ontology coverage mapped to business need?

@@ -1,4 +1,3 @@
-# Dimensions
 
 - Are policies and standards in alignment with data management strategy
 - Are data management policies documented, complete and operational

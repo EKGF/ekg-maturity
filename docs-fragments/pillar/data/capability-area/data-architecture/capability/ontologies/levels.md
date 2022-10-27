@@ -1,5 +1,3 @@
-# Maturity Levels
-
 The following criteria for each level are abbreviated: each item is shorthand for:
 
 - documented process

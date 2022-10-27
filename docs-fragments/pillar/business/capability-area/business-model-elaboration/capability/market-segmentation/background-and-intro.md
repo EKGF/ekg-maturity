@@ -1,5 +1,3 @@
-# Background & Intro
-
 !!! note inline end
 
     98% of firms agree that static segmentation is no longer adequate,
@@ -14,15 +12,3 @@ heuristics and benchmarking.
 The availability of and access to voluminous information though a multitude of digital sources has put
 additional emphasis on the ability of enterprises to dynamically tweak their Market Segmentation.
 
-# Contribution to the EKG
-
-The EKG can bring all possible internal and external detail information
-about customers, products, services, competition, sales volumes, 
-customer requirements and many other details together forming a 
-holistic and realistic, almost real-time view of the position of
-the company in their markets.
-
-# Contribution to the Enterprise
-
-Having the proper Market Segments defined will help with the selection,
-definition and prioritization of the right use cases for the EKG.

@@ -1,4 +1,3 @@
-# Dimensions
 
 - Have the underlying [principles](https://principles.ekgf.org/principle/) (and challenges) 
   of data management been established and accepted by involved stakeholders

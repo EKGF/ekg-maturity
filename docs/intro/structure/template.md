@@ -12,13 +12,13 @@ The general layout, in this document, of each capability looks as follows:
 
 > Description of the capability
 
-## Contribution to EKG
+### Contribution to EKG
 
 > How the capability contributes to the EKG
 
 > Including traceability to EKG/Principles where relevant
 
-## Contribution to the Enterprise
+### Contribution to the Enterprise
 
 > How the capability as part of the EKG contributes to the enterprise
 

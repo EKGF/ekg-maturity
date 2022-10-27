@@ -1,5 +1,3 @@
-# Dimensions
-
 !!! warn
 
     Work in progress, this is just the results of an initial

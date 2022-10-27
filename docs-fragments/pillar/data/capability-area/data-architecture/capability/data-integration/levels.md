@@ -1,5 +1,3 @@
-# Levels
-
 The goal is not always a single source of data - but rather the ability to choose the right authoritative source
 for the appropriate context.
 

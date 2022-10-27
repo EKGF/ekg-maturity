@@ -1,5 +1,3 @@
-# Maturity Levels
-
 ## Maturity Level 1
 
 - [ ] Sources, data sets, and metadata are onboarded and expressed as _formal ontologies_

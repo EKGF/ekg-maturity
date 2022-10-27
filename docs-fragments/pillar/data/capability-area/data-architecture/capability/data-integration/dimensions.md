@@ -1,4 +1,3 @@
-# Dimensions
 
 - Are the data integration activities, their systems, repositories, and connections
   known and tracked

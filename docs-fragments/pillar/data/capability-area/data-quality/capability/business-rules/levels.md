@@ -1,5 +1,3 @@
-# Levels
-
 ## Maturity Level 1
 
 - [ ] [Data quality business rules](../../../data-governance/capability/classification-management)

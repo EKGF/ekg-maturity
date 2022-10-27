@@ -1,4 +1,3 @@
-# Dimensions
 
 - The organization has one (or many) officially _designated glossaries_
 - Level of review by _subject matter experts (SMEs)_

@@ -1,4 +1,3 @@
-# Dimensions
 
 - Has the organization developed a structured framework outlining the principles of how
   operational risk is identified, assessed, monitored and controlled

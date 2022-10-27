@@ -1,5 +1,3 @@
-# Maturity Levels
-
 ## Maturity Level 1
 
 - [ ] Business terms for [EKG use cases](https://method.ekgf.org/concept/use-case/) are captured
