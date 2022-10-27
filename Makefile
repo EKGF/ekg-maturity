@@ -205,7 +205,7 @@ docs-serve:
 
 .PHONY: docs-serve-debug
 docs-serve-debug:
-	$(VENV_MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict --verbose
+	$(VENV_MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --verbose
 
 .PHONY: docs-deploy
 docs-deploy:

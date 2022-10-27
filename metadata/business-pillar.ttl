@@ -36,7 +36,7 @@
   ekgmm:inPillar     <business-pillar> ;
   dct:description    """
     _Business Model Elaboration_ is the process of providing further detail of 
-    [business strategy](/appendix/business-strategy/).
+    [business strategy](/article/business-strategy/).
     It may include decision rationale that explains how the 
     [business identity](/pillar/business/background-and-intro/#business-identity) data infrastructure
     and algorithms enable the how and why planned actions would create, deliver, and capture value.
@@ -49,7 +49,7 @@
   ekgmm:iriLocalName "business-enablers" ;
   ekgmm:inPillar     <business-pillar> ;
   dct:description    """
-    _Business Enablers_ help implementors focus on [business strategy](/appendix/business-strategy/) execution.
+    _Business Enablers_ help implementors focus on [business strategy](/article/business-strategy/) execution.
     Specifically, they bring visibility to the exploration, architecture, 
     infrastructure, compliance and performance activities needed to successfully 
     [implement](https://method.ekgf.org/process/build/) the target business functionality. 

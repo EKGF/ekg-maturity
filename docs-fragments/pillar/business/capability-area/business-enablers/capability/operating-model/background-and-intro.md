@@ -64,7 +64,7 @@ an Enterprise’s Business Identity can help in
 In order to best support a company's strategy, a foundation for execution is necessary.
 Such a foundation is the operating model of an organization.
 
-See appendix [Operating Model](/appendix/operating-model/) for a summary of the theory around
+See article [Operating Model](/article/operating-model/) for a summary of the theory around
 business operating models.
 
 # Contribution to the EKG

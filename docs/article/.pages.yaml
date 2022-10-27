@@ -1,4 +1,7 @@
 title: Articles
 nav:
-  - value-proposition-of-ekg.md
+  - Business Strategy: business-strategy.md
+  - Enterprise Architecture: enterprise-architecture.md
+  - Operating Model: operating-model.md
+  - Value Proposition: value-proposition-of-ekg.md
   - ...

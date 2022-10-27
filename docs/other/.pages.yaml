@@ -2,9 +2,13 @@ title: Other
 nav:
   - index.md
   - EKGF: https://ekgf.org
-  - Principles: https://principles.ekgf.org
+  - Principles: https://principles.ekgf.org/principle/
+  - Manifesto: https://principles.ekgf.org/
+  - FAIR: https://principles.ekgf.org/fair/
   - Maturity: https://maturity.ekgf.org
   - Method: https://method.ekgf.org
+  - Use Case FAQ: https://method.ekgf.org/other/faq/
+  - Catalog: https://catalog.ekgf.org/
   - contributors.md
   - author
   - ...
