@@ -3,10 +3,11 @@ name: Build Website
 on:
   push:
     branches:
-      - '*'
-    tags:
-      - '*'
+    - main
 
+env:
+  HOMEBREW_NO_INSTALL_CLEANUP: 1
+  
 jobs:
   website:
     runs-on: ubuntu-latest
