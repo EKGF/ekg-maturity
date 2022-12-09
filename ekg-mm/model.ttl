@@ -1,14 +1,14 @@
-@base <https://maturity-model.ekgf.org/> .
+@base <https://maturity.ekgf.org/id/> .
 @prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 @prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
-@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+@prefix ekgmm:     <https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#> .
 @prefix dct:       <http://purl.org/dc/terms/> .
 
-<ekg-mm>
+<maturity-model>
   rdf:type           ekgmm:Model ;
-  rdfs:label         "EKG/MM" ;
+  rdfs:label         "EKG/Maturity" ;
   ekgmm:iriLocalName "ekg-mm" ;
 .
 
@@ -16,7 +16,7 @@
   rdf:type            ekgmm:Pillar ;
   rdfs:label          "Business Pillar"@en ;
   ekgmm:iriLocalName  "business" ;
-  ekgmm:pillarInModel <ekg-mm> ;
+  ekgmm:pillarInModel <maturity-model> ;
   dct:description     """
   ### Audience
   
@@ -33,7 +33,7 @@
   rdf:type            ekgmm:Pillar ;
   rdfs:label          "Organization Pillar"@en ;
   ekgmm:iriLocalName  "organization" ;
-  ekgmm:pillarInModel <ekg-mm> ;
+  ekgmm:pillarInModel <maturity-model> ;
   dct:description     """
   ### Audience
   
@@ -46,7 +46,7 @@
   rdf:type            ekgmm:Pillar ;
   rdfs:label          "Data Pillar"@en ;
   ekgmm:iriLocalName  "data" ;
-  ekgmm:pillarInModel <ekg-mm> ;
+  ekgmm:pillarInModel <maturity-model> ;
   dct:description     """
   ### Audience
   
@@ -58,7 +58,7 @@
   rdf:type            ekgmm:Pillar ;
   rdfs:label          "Technology Pillar"@en ;
   ekgmm:iriLocalName  "technology" ;
-  ekgmm:pillarInModel <ekg-mm> ;
+  ekgmm:pillarInModel <maturity-model> ;
   dct:description     """
   ### Audience
   
@@ -72,7 +72,7 @@
   rdfs:label             "Level 1" ;
   ekgmm:iriLocalTypeName "level" ;
   ekgmm:iriLocalName     "1" ;
-  ekgmm:levelInModel     <ekg-mm> ;
+  ekgmm:levelInModel     <maturity-model> ;
 .
 
 <level2>
@@ -80,7 +80,7 @@
   rdfs:label             "Level 2" ;
   ekgmm:iriLocalTypeName "level" ;
   ekgmm:iriLocalName     "2" ;
-  ekgmm:levelInModel     <ekg-mm> ;
+  ekgmm:levelInModel     <maturity-model> ;
 .
 
 <level3>
@@ -88,7 +88,7 @@
   rdfs:label             "Level 3" ;
   ekgmm:iriLocalTypeName "level" ;
   ekgmm:iriLocalName     "3" ;
-  ekgmm:levelInModel     <ekg-mm> ;
+  ekgmm:levelInModel     <maturity-model> ;
 .
 
 <level4>
@@ -96,7 +96,7 @@
   rdfs:label             "Level 4" ;
   ekgmm:iriLocalTypeName "level" ;
   ekgmm:iriLocalName     "4" ;
-  ekgmm:levelInModel     <ekg-mm> ;
+  ekgmm:levelInModel     <maturity-model> ;
 .
 
 <level5>
@@ -104,5 +104,5 @@
   rdfs:label             "Level 5" ;
   ekgmm:iriLocalTypeName "level" ;
   ekgmm:iriLocalName     "5" ;
-  ekgmm:levelInModel     <ekg-mm> ;
+  ekgmm:levelInModel     <maturity-model> ;
 .

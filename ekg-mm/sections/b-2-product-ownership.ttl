@@ -1,9 +1,9 @@
-@base <https://maturity-model.ekgf.org/> .
+@base <https://maturity.ekgf.org/id/> .
 @prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 @prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
-@prefix ekgmm:     <https://ekgf.github.io/ekglib/ontology/maturity-model/> .
+@prefix ekgmm:     <https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#> .
 @prefix dct:       <http://purl.org/dc/terms/> .
 
 <capability-product-ownership-usecase-requirements>
