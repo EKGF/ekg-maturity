@@ -1,6 +1,6 @@
 # The Four Capability Pillars
 
-All capabilities that we measure and assess in the EKG/MM are categorized
+All capabilities that we measure and assess in the EKG maturity model are categorized
 in four major categories---also called "pillars"---that match the four 
 primary audiences that are involved:
 
@@ -15,16 +15,16 @@ executed, with the right planning, budgets, processes and workforce.
 
 These four pillars roughly correspond with the four primary audiences that we are addressing:
 
-1. The audience of people on the business-side
-2. The audience of people that are project managers, trainers or HR, legal, compliance and finance departments
-3. The audience of people in the data-management and data-governance departments
-4. The audience of technologists
+1. __Business Pillar__: The audience of people on "the business-side"
+2. __Organization Pillar__: The audience of people that are project managers, trainers or HR, legal, compliance and finance departments
+3. __Data Pillar__: The audience of people in the data-management and data-governance departments
+4. __Technology Pillar__: The audience of technologists and engineers
 
 ## [Business Pillar](../../../pillar/business/)
 
 All Business-side capabilities including
-[Business Strategy Actuation](../../../pillar/business/area/business-strategy-actuation/),
-[Business Enablers](../../../pillar/business/area/business-enablers/),
+[Business Strategy Actuation](../../../pillar/business/capability-area/business-strategy-actuation/),
+[Business Enablers](../../../pillar/business/capability-area/business-enablers/),
 Alignment, Business Operating Model and others.
 Does not include all the other Business Capabilities that
 an enterprise may have themselves.

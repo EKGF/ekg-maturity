@@ -15,14 +15,14 @@ EKG adoption, including:
 - semantic standards to solve the challenges of data management 
 - a method for accelerated EKG deployment
 
-One of the activities of the EKGF is its work on the EKG/MM
+One of the activities of the EKGF is its work on the EKG maturity model (EKG/Maturity)
 which establishes standard criteria for measuring and guiding progress
 on EKG adoption through asking practical questions of different
 involved stakeholders. 
 
 In its original form, it was a set of documents.
 In order to be able to scale this up to a larger community of collaborating teams, 
-each contributing content to the EKG/MM, we decided to "eat our own dogfood" 
+each contributing content to the EKG maturity model, we decided to "eat our own dogfood" 
 and apply the same principles as we advocate for software development and
 data management such as "work Agile" and "test everything".
 
@@ -61,7 +61,7 @@ be able to add their comments somewhere.
 We have to make it as easy as possible for them to do so. 
 
 Unfortunately, the Issue Management function of private GitHub repositories ---
-like the [EKGF/ekg-mm](https://github.com/ekgf/ekg-mm) repository --- can only be
+like the [EKGF/ekg-maturity](https://github.com/EKGF/ekg-maturity) repository --- can only be
 used by people who have a GitHub account.
 
 As someone in the role of a critic, you don’t have to deal with "Agile"
@@ -80,7 +80,7 @@ some feedback (a "critic") to join the EKGF as a private member (free) or as a
 corporate member.
 
 Email with [registration@ekgf.org](mailto:registration@ekgf.org) to set it up,
-if you plan to participate as a contributor to the EKG/MM then please also
+if you plan to participate as a contributor to the EKG maturity model then please also
 supply your GitHub user-id.
 
 #### How to create a GitHub & Slack account?
@@ -102,7 +102,7 @@ You can add your business email address(es) to your GitHub account later.
 
 Mail your GitHub account id (user-id) to
 [registration@ekgf.org](mailto:registration@ekgf.org) so that we can add you
-to the access control list of the [EKGF/ekg-mm repository](https://github.com/EKGF/ekg-mm).
+to the access control list of the [EKGF/ekg-maturity repository](https://github.com/EKGF/ekg-maturity).
 
 ### How to raise an issue?
 
@@ -113,11 +113,11 @@ an issue with the consistency of the story, anything that comes to mind.
 If you decide to let us benefit from your feedback then please follow these steps:
 
 - Go to the main page where all issues are shown:
-  [https://github.com/ekgf/ekg-mm/issues](https://github.com/ekgf/ekg-mm/issues) 
+  [https://github.com/EKGF/ekg-maturity/issues](https://github.com/EKGF/ekg-maturity/issues) 
 - Check if your issue is already raised by someone else, if so, 
   feel free to augment the discussion around that issue with your own concerns.
 - If it clearly is a new issue,
-  click the ["New Issue" button](https://github.com/EKGF/ekg-mm/issues/new).
+  click the ["New Issue" button](https://github.com/EKGF/ekg-maturity/issues/new).
 - Give it a concise title and clear description and ideally:
     - Copy paragraphs you don’t agree with into the issue
     - Copy the URL of the relevant page into the issue 
@@ -137,14 +137,14 @@ automatically via GitHub email.
 
      - As a <ins>planner</ins>, I want to be able to **plan issues**
 
-Work on the EKG/MM is divided among workgroups that each take on one of 
-[the four MM pillars]
-or horizontal slice of the MM. 
+Work on the EKG maturity model is divided among workgroups that each take on one of 
+[the four maturity model pillars]
+or horizontal slice of the maturity model. 
 Workgroups are self-managed teams. 
 The workgroups meet on a regular schedule. 
 Any method that the team agrees to use to plan and to document issues during 
 working sessions is ok. 
-But, the official content of the MM is contained in the GitHub repository 
+But, the official content of the maturity model is contained in the GitHub repository 
 that is managed using the GitHub Kanban with review and automation process.
 
 Here are some useful links. 
@@ -154,8 +154,8 @@ Here are some useful links.
 
 The idea is very simple though, we use the GitHub Projects facility. 
 Currently, we have a project for each pillar and a general project. 
-Here’s the main page for EKG/MM GitHub Projects: 
-[https://github.com/ekgf/ekg-mm/projects](https://github.com/ekgf/ekg-mm/projects)
+Here’s the main page for EKG/Maturity GitHub Projects: 
+[https://github.com/EKGF/ekg-maturity/projects](https://github.com/EKGF/ekg-maturity/projects)
 
 What you see is a list of "project boards" where each project board 
 is owned by a workgroup in the entire Kanban process. 
@@ -164,7 +164,7 @@ This begins with planning.
 The planning process consists of various tasks:
 
 - Find open issues that are relevant to the workgroup in the list of issues:
-    - [open issues that have not yet been assigned to a project board](https://github.com/EKGF/ekg-mm/issues?q=is%3Aissue+is%3Aopen+no%3Aproject)
+    - [open issues that have not yet been assigned to a project board](https://github.com/EKGF/ekg-maturity/issues?q=is%3Aissue+is%3Aopen+no%3Aproject)
 - Link each issue that should be done by the workgroup to its
       corresponding project board.
       It will then appear at the bottom of the “To Do” column of that board.
@@ -236,7 +236,7 @@ has been merged into the main branch.
     - As a <ins>fixer</ins>, I want to be able to **create a pull request**
 
 The term "fixer" is our own term, they’re usually called "developer" but
-we don’t consider someone who works on EKG/MM content to be a developer necessarily.
+we don’t consider someone who works on EKG/Maturity content to be a developer necessarily.
 In the GitHub user interface, they show up as "contributors".
 Anyone who actually changes things in the repository will be registered by GitHub as 
 a contributor to that repository[^github-userids].
@@ -264,7 +264,7 @@ We will now describe how each of these three tasks can be done.
 This is "Method A" as described above.
 First find the content file that you want to edit.
 All content is under the content root directory 
-[`/docs`](https://github.com/EKGF/ekg-mm/tree/main/docs).
+[`/docs`](https://github.com/EKGF/ekg-maturity/tree/main/docs).
 
 The arrow in the figure above shows the
 location of the "edit button" (ignore the other buttons). 
@@ -352,10 +352,10 @@ and shows those differences on the PR-form.
 
 There are several places in the GitHub user interface where you 
 can start creating a PR but the most basic one shows up at the
-[branches page](https://github.com/ekgf/ekg-mm/branches) which
+[branches page](https://github.com/EKGF/ekg-maturity/branches) which
 shows all branches of the repository:
 
-- [https://github.com/ekgf/ekg-mm/branches](https://github.com/ekgf/ekg-mm/branches)
+- [https://github.com/EKGF/ekg-maturity/branches](https://github.com/EKGF/ekg-maturity/branches)
 
 On the right side of the table showing all the branches you either see an 
 existing PR for the given branch or a button:

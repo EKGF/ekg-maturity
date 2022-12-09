@@ -12,11 +12,6 @@ their EKG journey from strategy to production.
 [Wizdom](http://www.wizdom.com/) is a recognized leader in providing our clients with
 innovative process-based business solutions for improving performance.
 
-### Stardog
-
-[Stardog](https://www.stardog.com/), the leading Enterprise Knowledge Graph platform,
-turns data into knowledge to power more effective digital transformations.
-
 ### Ontotext
 
 [Ontotext](https://www.ontotext.com/) is a global leader in enterprise knowledge graph technology
