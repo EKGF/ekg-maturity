@@ -1,0 +1,56 @@
+@base <https://maturity.ekgf.org/id/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix ekgmm:     <https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#> .
+@prefix dct:       <http://purl.org/dc/terms/> .
+
+<organization-pillar>
+  rdf:type            ekgmm:Pillar ;
+  rdfs:label          "Organization Pillar"@en ;
+  ekgmm:iriLocalName  "organization" ;
+  ekgmm:pillarInModel <maturity-model> ;
+  dct:description     """
+  ### Audience
+  
+  Addresses the audience of people that are neither business, data nor tech such as financial execs and experts, risk
+  execs and experts, program/portfolio/project managers, HR execs and experts and so forth.
+  """ ;
+.
+
+<capability-area-executive-leadership>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Executive Leadership" ;
+  ekgmm:iriLocalName "executive-leadership" ;
+  ekgmm:inPillar     <organization-pillar> ;
+.
+
+
+<capability-area-product-ownership>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Product Ownership" ;
+  ekgmm:iriLocalName "product-ownership" ;
+  ekgmm:inPillar     <organization-pillar> ;
+.
+
+<capability-area-delivery-management>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Delivery Management" ;
+  ekgmm:iriLocalName "delivery-management" ;
+  ekgmm:inPillar     <organization-pillar> ;
+.
+
+<capability-area-organizational-culture>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Organizational Culture" ;
+  ekgmm:iriLocalName "organizational-culture" ;
+  ekgmm:inPillar     <organization-pillar> ;
+.
+
+<capability-area-organizational-capabilities>
+  a                  ekgmm:CapabilityArea ;
+  rdfs:label         "Organizational Capabilities" ;
+  ekgmm:iriLocalName "organizational-capabilities" ;
+  ekgmm:inPillar     <organization-pillar> ;
+.
