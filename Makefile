@@ -221,9 +221,17 @@ docs-build-clean:
 docs-serve:
 	$(VENV_MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict
 
+.PHONY: docs-serve-non-strict
+docs-serve-non-strict:
+	$(VENV_MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload
+
 .PHONY: docs-serve-debug
 docs-serve-debug:
-	$(VENV_MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict --verbose
+	$(VENV_MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --verbose --strict
+
+.PHONY: docs-serve-debug-non-strict
+docs-serve-debug-non-strict:
+	$(VENV_MKDOCS) serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --verbose
 
 .PHONY: docs-deploy
 docs-deploy:

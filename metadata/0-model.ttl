@@ -12,9 +12,6 @@
   ekgmm:iriLocalName "ekg-maturity" ;
 .
 
-
-
-
 <level1>
   rdf:type               ekgmm:Level ;
   rdfs:label             "Level 1" ;

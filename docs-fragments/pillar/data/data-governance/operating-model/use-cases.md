@@ -3,4 +3,4 @@
 !!! warn
 
     Work in progress.
-    Illustrate which kind of use cases could support the given Capability or Capability Area.
+    List examples of use cases that contribute to this capability, making the link to use cases in the catalog at [https://catalog.ekgf.org/use-case/](https://catalog.ekgf.org/use-case/)..

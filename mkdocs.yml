@@ -103,12 +103,6 @@ plugins:
       timezone: America/New_York
       exclude:
         - pillar/*
-  - search:
-      lang:
-        - en
-  - exclude-search:
-      exclude:
-        - 'fragment/*'
   - build_plantuml:
       render: "server" # or "local" for local rendering
       bin_path: "/usr/local/bin/plantuml" # ignored when render: server
@@ -179,6 +173,12 @@ plugins:
   - redirects:
       redirect_maps:
         'index.md': 'intro/index.md'
+  - search:
+      lang:
+        - en
+#  - exclude-search:
+#      exclude:
+#        - 'fragment/*'
 
 markdown_extensions:
   - toc:
@@ -188,7 +188,7 @@ markdown_extensions:
   - def_list
   - abbr
   - admonition
-# - mdx_emdash
+# - mdx_emdash (causes too many warnings)
   - attr_list
   - footnotes
   - tables
@@ -223,3 +223,4 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  - markdown.extensions.smarty

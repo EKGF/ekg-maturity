@@ -25,7 +25,8 @@ mkdocs-minify-plugin = "*"
 mkdocs-redirects = "*"
 mkdocs-kroki-plugin = "*"
 mdx-spanner = "*"
-markdown-emdash = "*"
+#markdown-emdash = "*"
+smartypants = "*"
 
 [dev-packages]
 
