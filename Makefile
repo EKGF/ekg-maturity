@@ -151,9 +151,10 @@ docs-install-standard-python-packages: python-venv
 	$(VENV_PIP) install --upgrade mkdocs-minify-plugin
 	$(VENV_PIP) install --upgrade mkdocs-redirects
 	$(VENV_PIP) install --upgrade mkdocs-kroki-plugin
-# $(VENV_PIP) install --upgrade --no-cache-dir "git+https://github.com/EKGF/ekglib.git"
-# $(VENV_PIP) install --upgrade mdx-spanner
-#	$(VENV_PIP) install --upgrade markdown-emdash
+	$(VENV_PIP) install --upgrade mdx-spanner
+	$(VENV_PIP) install --upgrade markdown-emdash
+	$(VENV_PIP) install --upgrade toml
+	$(VENV_PIP) install --upgrade --no-cache-dir "git+https://github.com/EKGF/ekglib.git"
 	$(VENV_PIP) freeze > requirements.txt
 
 .PHONY: docs-install-python-packages-via-requirements-txt
