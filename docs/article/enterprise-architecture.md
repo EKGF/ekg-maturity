@@ -3,11 +3,11 @@ title: Enterprise Architecture
 summary: Enterprise Architecture
 authors:
 - Carlos Tubbax
-some_url: https://maturity-model.ekgf.org/appendix/enterprise-architecture/
+some_url: https://maturity.ekgf.org/article/enterprise-architecture/
 ---
 # Enterprise Architecture
 
-Antwerp, 2021, Carlos Tubbax.
+Antwerp, 2021, [Carlos Tubbax](/other/author/carlos-tubbax/).
 
 Once a company has defined one or several operating models depending on its business process integration and
 standardization requirements, it can then draw its enterprise architecture that reflects the company’s key processes,
@@ -65,7 +65,7 @@ This core diagram provides a high-level overview of a company's enterprise archi
 integrated processes implementing a Unification operating model.
 
 <figure markdown>
-  ![Image title](core-diagram-design-process4.jpg){ width="700" }
+  ![Image title](image/core-diagram-design-process4.jpg){ width="700" }
   <figcaption>Figure 1: Core Diagram Design Process4<br />©2005 MIT Sloan Center for Information Systems Research and IMD</figcaption>
 </figure>
 
@@ -77,7 +77,7 @@ In a unification model, each business unit functions more or less independently 
 for shared services across the company.
 
 <figure markdown>
-  ![Image title](diversification-operating-model-core-diagram4.jpg){ width="700" }
+  ![Image title](image/diversification-operating-model-core-diagram4.jpg){ width="700" }
   <figcaption>Figure 2: Diversification Operating Model Core Diagram4 <br />©2005 MIT Sloan Center for Information Systems Research and IMD</figcaption>
 </figure>
 
@@ -119,7 +119,7 @@ However, processes are often not depicted in the core diagram of a coordination 
 and can differ to a great extent across business units.
 
 <figure markdown>
-  ![Image title](coordination-operating-model-core-diagram4.jpg){ width="700" }
+  ![Image title](image/coordination-operating-model-core-diagram4.jpg){ width="700" }
   <figcaption>Figure 3: Coordination Operating Model Core Diagram4<br />©2005 MIT Sloan Center for Information Systems Research and IMD</figcaption>
 </figure>
 
@@ -144,7 +144,7 @@ However, since business units barely share data or have the same customer types 
 it is not necessary to add them to the core diagram.
 
 <figure markdown>
-  ![Image title](replication-operating-model-core-diagram4.png){ width="700" }
+  ![Image title](image/replication-operating-model-core-diagram4.png){ width="700" }
   <figcaption>Figure 4: Replication Operating Model Core Diagram4<br />©2005 MIT Sloan Center for Information Systems Research and IMD</figcaption>
 </figure>
 
