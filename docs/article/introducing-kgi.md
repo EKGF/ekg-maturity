@@ -6,6 +6,9 @@ authors:
 date: 2022-03-06
 some_url: https://maturity.ekgf.org/article/introducing-kgi/
 ---
+
+New Jersey, 2021, [Carl Mattocks](/other/author/carl-mattocks/)
+
 # Introducing the EKG Matrix Plot & KGI Value
 
 The Enterprise Knowledge Graph (EKG) 0-5 Level Maturity Model is an industry-standard 

@@ -5,6 +5,9 @@ authors:
   - Carlos Tubbax 
 some_url: https://maturity.ekgf.org/article/business-strategy/
 ---
+
+Antwerp, 2021, [Carlos Tubbax](/other/author/carlos-tubbax/).
+
 # What is Business Strategy?
 
 Competitive strategy is about standing out from competitors by offering a unique mix of value.

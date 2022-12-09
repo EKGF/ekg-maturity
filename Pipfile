@@ -1,0 +1,33 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+wheel = "*"
+setuptools = "*"
+plantuml-markdown = "*"
+mkdocs-build-plantuml-plugin = "*"
+mdutils = "*"
+option = "*"
+mkdocs = "*"
+mkdocs-awesome-pages-plugin = "*"
+mkdocs-exclude = "*"
+mkdocs-exclude-search = "*"
+mkdocs-gen-files = "*"
+mkdocs-git-revision-date-localized-plugin = "*"
+mkdocs-graphviz = "*"
+mkdocs-include-markdown-plugin = "*"
+mkdocs-localsearch = "*"
+mkdocs-macros-plugin = "*"
+mkdocs-mermaid2-plugin = "*"
+mkdocs-minify-plugin = "*"
+mkdocs-redirects = "*"
+mkdocs-kroki-plugin = "*"
+mdx-spanner = "*"
+markdown-emdash = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"

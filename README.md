@@ -1,10 +1,16 @@
 # EKG/Maturity
 
-This repository contains all the content that we have for the Maturity Model
-for the Enterprise Knowledge Graph (EKG/Maturity). It is used to generate
-this website: [https://maturity.ekgf.org](https://maturity.ekgf.org).
+This repository contains the [Markdown](https://en.wikipedia.org/wiki/Markdown)
+based source documents of EKG/Maturity, the Maturity Model for the EKG.
 
 ![quadrant](customer-assets/quadrant.jpg)
+
+## Website
+
+The content in this repository is used to generate a website ([https://maturity.ekgf.org](https://maturity.ekgf.org))
+using the [MkDocs](https://squidfunk.github.io/mkdocs-material/) tool.
+All content is in Markdown format and can be found in the [./docs](./docs) 
+or [./docs-fragments](./docs-fragments) directories.
 
 ## License
 
@@ -33,6 +39,29 @@ Markdown is a lightweight markup language for creating formatted text using a pl
 
 For a quick overview of what you need to understand of Markdown look at this ["Markdown cheat sheet"](https://www.markdownguide.org/cheat-sheet/).
 
+## Where is this published?
+
+From this git repository we generate a PDF document.
+Two in fact: the "editors-version" which contains annotations and "todo's" 
+and the "release-version" without those annotations.
+
+You can find the published version
+at [https://ekgf.org/maturitymodel](https://ekgf.org/maturitymodel).
+
+!!! note
+
+    Please note that we're in the process of generating a website for the
+    maturity model here: [https://maturity-model.ekgf.org](https://maturity-model.ekgf.org)
+
+For members of the EKGF there's also a Slack channel called
+[#ekg-mm-latest](https://ekgf.slack.com/archives/C01TEL6GWEN)
+where both PDFs are published every time someone pushes
+a change into this repository.
+
+!!! note
+
+    Soon we'll also be publishing this content as HTML.
+
 ## Github
 
 This repository resides on GitHub as https://github.com/EKGF/ekg-maturity.
@@ -51,7 +80,7 @@ How to create a clone of the GitHub repo:
 cd ~ # go to your home directory or the directory where you want your git clones to be
 git clone https://github.com/EKGF/ekg-maturity
 cd ekg-maturity
-make docs-install
+make install
 ```
 
 ## Editors
@@ -64,6 +93,24 @@ ASCII files.
 * IntelliJ has by far the best "git merge" options of any tool out there,
   if you're planning to write a lot of content then it makes sense to
   install the "community edition" (free) and get used to IntelliJ.
+
+## Install components
+
+If you want to run the website on your local
+machine to see your content before committing
+it to GitHub you can do so by first installing
+all the components around "MkDocs" which is a
+Python program with a lot of sub-components.
+
+You can install this as follows:
+
+```shell
+make docs-install
+```
+
+The above command assumes you're doing this
+on a MacOS machine. It has not been tested
+on Windows or Linux (but it may work).
 
 ## Build steps
 

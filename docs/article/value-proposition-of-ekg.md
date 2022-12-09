@@ -1,13 +1,15 @@
 ---
-title: Value proposition of EKG
-summary: Value proposition of EKG
+title: The value proposition of EKG
+summary: The value proposition of EKG
 authors:
     - Carlos Tubbax
 date: 2022-01-31
 some_url: https://maturity.ekgf.org/article/value-proposition-of-ekg/
 ---
 
-Antwerp, December 2021, Carlos Tubbax.
+Antwerp, December 2021, [Carlos Tubbax](/other/author/carlos-tubbax/).
+
+# The value proposition of EKG
 
 Companies face increasingly difficult challenges due to the complexity of their
 business environments stemming from market disruptions, new regulations, 

@@ -5,6 +5,9 @@ authors:
   - Carlos Tubbax
 some_url: https://maturity.ekgf.org/article/operating-model/
 ---
+
+Antwerp, 2021, [Carlos Tubbax](/other/author/carlos-tubbax/).
+
 # Business Operating Model
 
 !!! note "Ross, Weill, Robertson (2006)"

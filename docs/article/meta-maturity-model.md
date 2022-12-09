@@ -3,12 +3,15 @@ title: Meta Maturity Model
 summary: Meta Maturity Model
 authors:
     - Jacobus Geluk
+    - Carl Mattocks
+    - Carlos Tubbax
+    - Pete Rivett
 date: 2022-03-09
 some_url: https://maturity.ekgf.org/article/meta-maturity-model/
 ---
 
 This is a work-in-progress article documenting our current thinking about
-the meta-model of the EKG Maturity Model as we're documenting it on this website.
+the meta-model of the EKG maturity model (EKG/Maturity) as we're documenting it on this website.
 We're working on an OWL Ontology and describing all content --- under the [Pillars](/pillars)
 menu-option that you see on this website --- in RDF so that we can then:
 

@@ -1,4 +1,10 @@
-# How to contribute?
+# How to contribute
+
+!!! note warning
+
+     some of the content on this page still assumes that we're generating one PDF file
+     as the deliverable. We're in the process of switching over to just generating this
+     website instead which requires some minor changes in the process described here.
 
 ## Introduction
 
@@ -9,7 +15,7 @@ EKG adoption, including:
 - semantic standards to solve the challenges of data management 
 - a method for accelerated EKG deployment
 
-One of the activities of the EKGF is its work on [EKG/Maturity](https://maturity.ekgf.org)
+One of the activities of the EKGF is its work on the EKG maturity model ([EKG/Maturity](https://maturity.ekgf.org))
 which establishes standard criteria for measuring and guiding progress
 on EKG adoption through asking practical questions of different
 involved stakeholders. 
@@ -66,6 +72,37 @@ the right side of the screen where you see links to the "Assignee"
 (the person who is going to work on your issue), the "Project"
 (the workgroup that’s planning and tracking your issue) and the "Linked pull requests". 
 
+### How to register?
+
+We are asking every potential contributor, even someone who just wants to give us
+some feedback (a "critic") to join the EKGF as a private member (free) or as a
+corporate member.
+
+Email with [registration@ekgf.org](mailto:registration@ekgf.org) to set it up,
+if you plan to participate as a contributor to the EKG maturity model then please also
+supply your GitHub user-id.
+
+#### How to create a GitHub & Slack account?
+
+##### Slack
+
+If you already have a Slack account then join the EKGF workspace 
+here: [https://ekgf.slack.com/](https://ekgf.slack.com/).
+Otherwise, first create your Slack account [here](https://slack.com/get-started\#/create).
+
+##### GitHub
+
+Go to [https://github.com/join](https://github.com/join).
+
+Since you can associate multiple email addresses to your GitHub account we would
+suggest to initially create it with your private email address which then becomes
+your "primary email account" in GitHub.
+You can add your business email address(es) to your GitHub account later.
+
+Mail your GitHub account id (user-id) to
+[registration@ekgf.org](mailto:registration@ekgf.org) so that we can add you
+to the access control list of the [EKGF/ekg-maturity repository](https://github.com/EKGF/ekg-maturity).
+
 ### How to raise an issue?
 
 While you’re reading the website, you may have comments, we hope you do.
@@ -99,14 +136,14 @@ automatically via GitHub email.
 
      - As a <ins>planner</ins>, I want to be able to **plan issues**
 
-Work on EKG/Maturity is divided among workgroups that each take on one of 
-[the four pillars of the maturity model]
-or horizontal slice of the MM. 
+Work on the EKG maturity model is divided among workgroups that each take on one of 
+[the four maturity model pillars]
+or horizontal slice of the maturity model. 
 Workgroups are self-managed teams. 
 The workgroups meet on a regular schedule. 
 Any method that the team agrees to use to plan and to document issues during 
 working sessions is ok. 
-But, the official content of the MM is contained in the GitHub repository 
+But, the official content of the maturity model is contained in the GitHub repository 
 that is managed using the GitHub Kanban with review and automation process.
 
 Here are some useful links. 
@@ -117,7 +154,7 @@ Here are some useful links.
 The idea is very simple though, we use the GitHub Projects facility. 
 Currently, we have a project for each pillar and a general project. 
 Here’s the main page for EKG/Maturity GitHub Projects: 
-[https://github.com/ekgf/ekg-maturity/projects](https://github.com/ekgf/ekg-maturity/projects)
+[https://github.com/EKGF/ekg-maturity/projects](https://github.com/EKGF/ekg-maturity/projects)
 
 What you see is a list of "project boards" where each project board 
 is owned by a workgroup in the entire Kanban process. 
@@ -314,10 +351,10 @@ and shows those differences on the PR-form.
 
 There are several places in the GitHub user interface where you 
 can start creating a PR but the most basic one shows up at the
-[branches page](https://github.com/ekgf/ekg-maturity/branches) which
+[branches page](https://github.com/EKGF/ekg-maturity/branches) which
 shows all branches of the repository:
 
-- [https://github.com/ekgf/ekg-maturity/branches](https://github.com/ekgf/ekg-maturity/branches)
+- [https://github.com/EKGF/ekg-maturity/branches](https://github.com/EKGF/ekg-maturity/branches)
 
 On the right side of the table showing all the branches you either see an 
 existing PR for the given branch or a button:

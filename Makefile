@@ -1,5 +1,6 @@
 
 VIRTUAL_ENV := ./.venv
+LANG := en
 
 ifeq ($(OS),Windows_NT)
     YOUR_OS := Windows
@@ -10,14 +11,22 @@ else
 ifeq ($(YOUR_OS), Linux)
     INSTALL_TARGET := install-linux
 ifneq ($(wildcard /home/runner/.*),) # this means we're running in Github Actions
-		SYSTEM_PYTHON := python3
+	MKDOCS := mkdocs
+	PIP := pip
+	SYSTEM_PYTHON := python3
 else
-		SYSTEM_PYTHON := $(shell asdf where python)/bin/python3
+	MKDOCS := $(shell asdf where python)/bin/mkdocs
+	PIP := $(shell asdf where python)/bin/python -m pip
+	SYSTEM_PYTHON := $(shell asdf where python)/bin/python3
 endif
 endif
 ifeq ($(YOUR_OS), Darwin)
-    INSTALL_TARGET := install-macos
-		SYSTEM_PYTHON := $(shell asdf where python)/bin/python3
+	INSTALL_TARGET := install-macos
+	OPEN_EDITORS_VERSION_TARGET := open-editors-version-macos
+	OPEN_RELEASE_VERSION_TARGET := open-release-version-macos
+	MKDOCS := $(shell asdf where python)/bin/mkdocs
+	PIP := $(shell asdf where python)/bin/python -m pip
+	SYSTEM_PYTHON := $(shell asdf where python)/bin/python3
 endif
 endif
 
@@ -133,8 +142,7 @@ docs-install-python-packages: docs-install-asdf-packages docs-install-standard-p
 .PHONY: docs-install-standard-python-packages
 docs-install-standard-python-packages: python-venv
 	@echo "Install standard python packages via pip:"
-	$(VENV_PIP) install --upgrade pip
-	$(VENV_PIP) install --upgrade 
+	$(VENV_PIP) install --upgrade pip pipenv
 	$(VENV_PIPENV) install 
 
 #	$(VENV_PIP) install --upgrade wheel
@@ -246,3 +254,5 @@ docs-sync-from-ekg-principles: $(wildcard ../ekg-principles/docs-overrides/*)
 docs-sync-to-ekg-principles: $(wildcard ../ekg-principles/Makefile)
 	cd ../ekg-principles && make docs-sync-from
 
+.PHONY: docs-assets
+docs-assets:

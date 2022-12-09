@@ -13,6 +13,8 @@ copyright: Copyright &copy; 2022 Enterprise Knowledge Graph Foundation
 # nav: omitted, because we're using the awesome-pages plugin (https://squidfunk.github.io/mkdocs-material/plugins/awesome-pages/)
 extra_css:
   - stylesheets/extra.css
+watch:
+  - docs-fragments
 theme:
   name: material
   language: en
@@ -49,8 +51,8 @@ theme:
     - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
-#    - navigation.sections
-#    - navigation.expand
+#   - navigation.sections
+#   - navigation.expand
     - navigation.indexes
     - toc.follow
     - toc.integrate

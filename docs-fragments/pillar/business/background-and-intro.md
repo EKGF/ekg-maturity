@@ -341,7 +341,7 @@ We now look at two key elements of organizational activity
 business strategy, through the lens of Business Identity and
 Contracts:
 
-* [Business Strategy Actuation](../capability-area/strategy-actuation/)
+* [Business Strategy Actuation](../strategy-actuation/)
   is a business identity oriented process that senses, 
   understands and communicates business outcome-based 
   assessment data to focus energy and resources on
@@ -349,14 +349,14 @@ Contracts:
   Actuation measurement values are used to assess 
   whether strategic objectives and associated
   business goals are being fulfilled.
-* [Business Model Elaboration](../capability-area/business-model-elaboration/)
+* [Business Model Elaboration](../business-model-elaboration/)
   is the process of providing further detail of
   business strategy.
   It may include decision rationale that explains how the
   business identity data infrastructure and algorithms 
   enable the how and why planned actions would
   create, deliver, and capture value.
-* [Business Enablers](../capability-area/business-enablers/) utilizes 
+* [Business Enablers](../business-enablers/) utilizes 
   Business Identity to scope the EKG facts and facets that are needed to 
   have a single source of truth about each of their Suppliers, Partners and Consumers.
   For example, when a Business Identity point to point relationship with the 

@@ -27,4 +27,4 @@ This is where you come in.
 Join our workgroups and participate in working towards Release Version 2.0.
 
 The Enterprise Knowledge Graph Foundation team<br />
-info@ekgf.org
+[info@ekgf.org](mailto:info@ekgf.org)
