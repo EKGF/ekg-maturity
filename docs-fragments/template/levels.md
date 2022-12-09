@@ -1,5 +1,4 @@
-# Levels
-
 !!! warn
 
-    Work in progress
+    Work in progress.
+    Describe the five levels of maturity for this Capability.

@@ -357,4 +357,4 @@ Contracts:
   enable the how and why planned actions would
   create, deliver, and capture value.
 
-[^what-is-strategy]: See [Business Strategy](/appendix/business-strategy/)
+[^what-is-strategy]: See [Business Strategy](/article/business-strategy/)
