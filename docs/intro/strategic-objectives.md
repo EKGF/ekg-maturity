@@ -38,7 +38,7 @@ understand the dynamics of the market, operate with more agility,
 maximize time-to-market.
 
 - Do LOB stakeholders clearly understand the relationship between data management
-  and [business objectives](/pillar/business/capability-area/strategy-actuation/capability/business-goals)
+  and [business objectives](/pillar/business/strategy-actuation/business-goals)
 - Is all the data that is important to meet business priorities been defined
   and classified
 - Is the data management strategy aligned with business priorities,
@@ -50,10 +50,10 @@ maximize time-to-market.
 - Have LOB business outcomes (and dependencies) been defined and sequenced
   across the organizations
 - Is there alignment between 
-  organizational/[business objectives](/pillar/business/capability-area/strategy-actuation/capability/business-goals)
+  organizational/[business objectives](/pillar/business/strategy-actuation/business-goals)
   and data (concepts and repositories)
 - Has the organization defined and aligned data metrics and
-  Key Performance Indicators (KPIs) with [business objectives](/pillar/business/capability-area/strategy-actuation/capability/business-goals)
+  Key Performance Indicators (KPIs) with [business objectives](/pillar/business/strategy-actuation/business-goals)
 - Has the organization defined the business architecture for both 
   strategic and tactical objectives
 - Is the data strategy aligned with lines of business objectives
@@ -88,7 +88,7 @@ control the data manufacturing process.
 
 - Is there a clearly defined and sanctioned data strategy for the 
   organization (aligned to organizational and 
-  [business objectives](/pillar/business/capability-area/strategy-actuation/capability/business-goals))
+  [business objectives](/pillar/business/strategy-actuation/business-goals))
 - Does the organization have “data management delusions” and are they 
   aware of their fallacy
 - Does the organization have a plan on how to execute their data-centric 
@@ -108,7 +108,7 @@ control the data manufacturing process.
 - Are the criteria for designating criticality (and other classifications) 
   consistent and scalable
 - Does the organization have a data management and governance strategy to 
-  deliver against [business objectives](/pillar/business/capability-area/strategy-actuation/capability/business-goals)
+  deliver against [business objectives](/pillar/business/strategy-actuation/business-goals)
 - How does the organization evaluate the costs and effectiveness of the 
   data strategy
 - Has the data management strategy been translated into a operational roadmap

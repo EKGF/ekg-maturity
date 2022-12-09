@@ -7,11 +7,24 @@
 @prefix dct:       <http://purl.org/dc/terms/> .
 
 <business-pillar>
-  dct:description """
+  rdf:type            ekgmm:Pillar ;
+  rdfs:label          "Business Pillar"@en ;
+  ekgmm:iriLocalName  "business" ;
+  ekgmm:pillarInModel <maturity-model> ;
+  dct:description     """
     - Stakeholders recognize business opportunities in scaling and
       amplifying capabilities through [EKG use cases](https://catalog.ekgf.org/use-case/).
     - The first internal champion is seeking to socialize strategic use cases,
       supports innovation, and is willing to take on the disruption challenge.
+
+  ### Audience
+  
+  Addresses the audience of personas on the business-side of an enterprise, 
+  C-level, 
+  LOB execs,
+  corporate planners,
+  business architects,
+  management consultants and so forth.
   """ ;
 .
 
@@ -56,7 +69,7 @@
     For instance, using [EKG](https://principles.ekgf.org/vocab/ekg/) they are able 
     to supply the knowledge enablement models, metrics, risk framework, 
     value chain maps and self describing data that are needed by implementors to 
-    verify and validate the [delivery pipeline](/pillar/organization/capability-area/delivery-management/) 
+    verify and validate the [delivery pipeline](/pillar/organization/delivery-management/) 
     which powers digital transformations.
   """
 .

@@ -53,7 +53,7 @@ the objective would likely include all forms of Business Value
 that indicate the health and well-being of an enterprise. 
 The most likely core objective would be to have a _Value Proposition_
 that gives the customer the reason to choose their offering. 
-Another likely objective would be the [Value Stream Management](/pillar/business/capability-area/business-model-elaboration/capability/value-chain/dimensions)
+Another likely objective would be the [Value Stream Management](/pillar/business/business-model-elaboration/value-chain/dimensions)
 focused on the flow of Value Chain activities performed when 
 validating a product-market proposition.
 

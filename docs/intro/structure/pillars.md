@@ -23,8 +23,8 @@ These four pillars roughly correspond with the four primary audiences that we ar
 ## [Business Pillar](../../../pillar/business/)
 
 All Business-side capabilities including
-[Business Strategy Actuation](../../../pillar/business/capability-area/business-strategy-actuation/),
-[Business Enablers](../../../pillar/business/capability-area/business-enablers/),
+[Business Strategy Actuation](../../../pillar/business/business-strategy-actuation/),
+[Business Enablers](../../../pillar/business/business-enablers/),
 Alignment, Business Operating Model and others.
 Does not include all the other Business Capabilities that
 an enterprise may have themselves.
@@ -39,11 +39,11 @@ management consultants and so forth.
 ## [Organization Pillar](../../../pillar/organization/)
 
 All relevant Organizational Capabilities including
-[Executive Leadership](../../../pillar/organization/capability-area/executive-leadership/),
-[Product Ownership](../../../pillar/organization/capability-area/product-ownership/),
-[Delivery Management](../../../pillar/organization/capability-area/delivery-management/),
-[Organizational Culture](../../../pillar/organization/capability-area/organizational-culture/) and
-[Organizational Capabilities](../../../pillar/organization/capability-area/organizational-capabilities/).
+[Executive Leadership](../../../pillar/organization/executive-leadership/),
+[Product Ownership](../../../pillar/organization/product-ownership/),
+[Delivery Management](../../../pillar/organization/delivery-management/),
+[Organizational Culture](../../../pillar/organization/organizational-culture/) and
+[Organizational Capabilities](../../../pillar/organization/organizational-capabilities/).
 
 Addresses the audience of people that are neither business, data nor tech such as financial execs and experts, risk
 execs and experts, program/portfolio/project managers, HR execs and experts and so forth.
@@ -51,19 +51,19 @@ execs and experts, program/portfolio/project managers, HR execs and experts and 
 ## [Data Pillar](../../../pillar/data/)
 
 All Data (Management) capabilities including
-[Data Strategy](../../../pillar/data/capability-area/data-strategy/),
-[Data Architecture](../../../pillar/data/capability-area/data-architecture/),
-[Data Quality](../../../pillar/data/capability-area/data-quality/), and
-[Data Governance](../../../pillar/data/capability-area/data-governance/).
+[Data Strategy](../../../pillar/data/data-strategy/),
+[Data Architecture](../../../pillar/data/data-architecture/),
+[Data Quality](../../../pillar/data/data-quality/), and
+[Data Governance](../../../pillar/data/data-governance/).
 
 Addresses the audience of people in the data-management and data-governance departments.
 
 ## [Technology Pillar](../../../pillar/technology/)
 
 All Technology Capabilities including
-[Technology Strategy](../../../technology/capability-area/technology-strategy/),
-[Technology Execution](../../../technology/capability-area/technology-execution/), and
-[User Interface](../../../technology/capability-area/user-interface/).
+[Technology Strategy](../../../technology/technology-strategy/),
+[Technology Execution](../../../technology/technology-execution/), and
+[User Interface](../../../technology/user-interface/).
 
 Addresses the audience of technologists, technical architects, developers, infrastructure execs and experts,
 security execs and experts etc.

@@ -41,7 +41,7 @@ The following criteria for each level are abbreviated: each item is shorthand fo
 - [ ] Automated checking of ontologies against different profiles (e.g. OWL-RL)
       to check for technology support
 - [ ] Automated checking of ontologies against different best practices
-- [ ] Ontology source changes linked to automated [operations](/pillar/technology/capability-area/technology-execution/capability/operations/)
+- [ ] Ontology source changes linked to automated [operations](/pillar/technology/technology-execution/operations/)
       for testing and deployment
 - [ ] Impact analysis identifies ontology breaking changes which require fixes to existing EKG data
 - [ ] EKG-wide ontology browsing and searching

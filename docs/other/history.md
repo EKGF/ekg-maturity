@@ -3,7 +3,7 @@
 | Version | Date       | Comments                                                                                                                                   | Author                                                |
 |---------|------------|--------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
 | 1.0     | 21/11/2021 | First major release                                                                                                                        |                                                       |
-| 0.11    | 26/10/2021 | Added chapter [Capability Map](/pillar/business/capability-area/business-enablers/capability/capability-map/)                              | Carlos Tubbax                                         |
+| 0.11    | 26/10/2021 | Added chapter [Capability Map](/pillar/business/business-enablers/capability-map/)                              | Carlos Tubbax                                         |
 | 0.10    | 13/10/2021 | Moved Organization Pillar to second place                                                                                                  | Avinash Patil                                         |
 | 0.9     | 05/10/2021 | Reshuffle of various capabilities in Data Pillar                                                                                           | Pete Rivett                                           |
 | 0.8     | 31/08/2021 | Added completely new content for "B.2.2 Ontologies"                                                                                        | Pete Rivett and others                                |
@@ -13,7 +13,7 @@
 | 0.5     | 08/06/2021 | Added article "What is Strategy?"                                                                                                         | Carlos Tubbax                                         |
 |         |            | Added several updates to Business Pillar intro                                                                                             | Avinash Patil                                         |
 | 0.4     | 27/05/2021 | New intro for business pillar                                                                                                              | Avinash Patil, Carl Mattocks, _et al_                 |
-|         |            | Content for [Change Management](/pillar/business/capability-area/business-model-elaboration/capability/change-management/)                 | Diane Alexander, Jeffrey Wallk                        |
+|         |            | Content for [Change Management](/pillar/business/business-model-elaboration/change-management/)                 | Diane Alexander, Jeffrey Wallk                        |
 |         |            | Removed chapter "A.1.4 Operating Model"                                                                                                    |                                                       |
 |         |            | Added content for chapter "A.3.3 Risk Management"                                                                                          | Diane Alexander                                       |
 | 0.3     | 08/04/2021 | Business pillar workgroup deciding top-level structure                                                                                     | Lars Magnusson, Carl Mattocks, Jeffrey Wallk _et al_. |

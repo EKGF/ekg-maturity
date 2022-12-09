@@ -6,6 +6,19 @@
 @prefix ekgmm:     <https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#> .
 @prefix dct:       <http://purl.org/dc/terms/> .
 
+<technology-pillar>
+  rdf:type            ekgmm:Pillar ;
+  rdfs:label          "Technology Pillar"@en ;
+  ekgmm:iriLocalName  "technology" ;
+  ekgmm:pillarInModel <maturity-model> ;
+  dct:description     """
+  ### Audience
+  
+  Addresses the audience of technologists, technical architects, developers, infrastructure execs and experts,
+  security execs and experts etc.
+  """ ;
+.
+
 <capability-area-technology-strategy>
   a                  ekgmm:CapabilityArea ;
   rdfs:label         "Technology Strategy" ;

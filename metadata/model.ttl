@@ -12,60 +12,8 @@
   ekgmm:iriLocalName "ekg-maturity" ;
 .
 
-<business-pillar>
-  rdf:type            ekgmm:Pillar ;
-  rdfs:label          "Business Pillar"@en ;
-  ekgmm:iriLocalName  "business" ;
-  ekgmm:pillarInModel <maturity-model> ;
-  dct:description     """
-  ### Audience
-  
-  Addresses the audience of personas on the business-side of an enterprise, 
-  C-level, 
-  LOB execs,
-  corporate planners,
-  business architects,
-  management consultants and so forth.
-  """ ;
-.
 
-<organization-pillar>
-  rdf:type            ekgmm:Pillar ;
-  rdfs:label          "Organization Pillar"@en ;
-  ekgmm:iriLocalName  "organization" ;
-  ekgmm:pillarInModel <maturity-model> ;
-  dct:description     """
-  ### Audience
-  
-  Addresses the audience of people that are neither business, data nor tech such as financial execs and experts, risk
-  execs and experts, program/portfolio/project managers, HR execs and experts and so forth.
-  """ ;
-.
 
-<data-pillar>
-  rdf:type            ekgmm:Pillar ;
-  rdfs:label          "Data Pillar"@en ;
-  ekgmm:iriLocalName  "data" ;
-  ekgmm:pillarInModel <maturity-model> ;
-  dct:description     """
-  ### Audience
-  
-  Addresses the audience of people in the data-management and data-governance departments.
-  """ ;
-.
-
-<technology-pillar>
-  rdf:type            ekgmm:Pillar ;
-  rdfs:label          "Technology Pillar"@en ;
-  ekgmm:iriLocalName  "technology" ;
-  ekgmm:pillarInModel <maturity-model> ;
-  dct:description     """
-  ### Audience
-  
-  Addresses the audience of technologists, technical architects, developers, infrastructure execs and experts,
-  security execs and experts etc.
-  """ ;
-.
 
 <level1>
   rdf:type               ekgmm:Level ;
