@@ -1,16 +1,24 @@
-[[source]]
-url = "https://pypi.org/simple"
-verify_ssl = true
-name = "pypi"
+[tool.poetry]
+name = "ekg-maturity"
+version = "1.0.2"
+description = ""
+authors = ["Jacobus Geluk <jacobus.geluk@ekgf.org>"]
+readme = "README.md"
+license = "GPL-3.0-only"
+homepage = "https://maturity.ekgf.org"
+repository = "https://github.com/EKGF/ekg-maturity"
+packages = [
+]
 
-[packages]
+[tool.poetry.dependencies]
+python = "^3.10"
 wheel = "*"
 setuptools = "*"
 plantuml-markdown = "*"
 mkdocs-build-plantuml-plugin = "*"
 mdutils = "*"
 option = "*"
-mkdocs = "*"
+mkdocs = "^1.4"
 mkdocs-awesome-pages-plugin = "*"
 mkdocs-exclude = "*"
 mkdocs-exclude-search = "*"
@@ -27,8 +35,9 @@ mkdocs-kroki-plugin = "*"
 mdx-spanner = "*"
 #markdown-emdash = "*"
 smartypants = "*"
+ekglib = {git = "https://github.com/EKGF/ekglib.git"}
 
-[dev-packages]
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
-[requires]
-python_version = "3.10"

@@ -30,6 +30,7 @@ ifeq ($(YOUR_OS), Darwin)
 endif
 endif
 
+VENV_POETRY := $(VIRTUAL_ENV)/bin/poetry
 VENV_MKDOCS := $(VIRTUAL_ENV)/bin/mkdocs
 VENV_PYTHON := $(VIRTUAL_ENV)/bin/python3
 VENV_PIP    := $(VIRTUAL_ENV)/bin/pip3
@@ -60,12 +61,13 @@ info: python-venv
 	@echo "Virtual Env Python: ${VENV_PYTHON} version: $$($(VENV_PYTHON) --version)"
 	@echo "Python pip: ${VENV_PIP}"
 	@echo "Python pipenv: ${VENV_PIPENV}"
+	@echo "Python poetry: ${VENV_POETRY}"
 	@echo "install target: ${INSTALL_TARGET}"
 
 .PHONY: clean
 clean:
 	@echo Cleaning
-	@rm -rf site 2>/dev/null || true
+	@rm -rf site 2>/dev/null |true
 	@rm -rf .venv/lib/python3.10/site-packages 2>/dev/null || true
 
 .PHONY: install
@@ -142,65 +144,28 @@ docs-install-python-packages: docs-install-asdf-packages docs-install-standard-p
 .PHONY: docs-install-standard-python-packages
 docs-install-standard-python-packages: python-venv
 	@echo "Install standard python packages via pip:"
-	$(VENV_PIP) install --upgrade pip pipenv
-	$(VENV_PIPENV) install 
-
-#	$(VENV_PIP) install --upgrade wheel
-#	$(VENV_PIP) install --upgrade setuptools
-#	$(VENV_PIP) install --upgrade pipenv
-##	$(VENV_PIP) install --upgrade plantuml-markdown
-#	$(VENV_PIP) install --upgrade mkdocs-build-plantuml-plugin
-#	$(VENV_PIP) install --upgrade mdutils
-#	$(VENV_PIP) install --upgrade option
-#	$(VENV_PIP) install --upgrade mkdocs
-#	$(VENV_PIP) install --upgrade mkdocs-awesome-pages-plugin
-#	$(VENV_PIP) install --upgrade mkdocs-awesome-pages-plugin
-#	$(VENV_PIP) install --upgrade mkdocs-exclude
-#	$(VENV_PIP) install --upgrade mkdocs-exclude-search
-#	$(VENV_PIP) install --upgrade mkdocs-gen-files
-#	$(VENV_PIP) install --upgrade mkdocs-git-revision-date-localized-plugin
-#	$(VENV_PIP) install --upgrade mkdocs-graphviz
-#	$(VENV_PIP) install --upgrade mkdocs-include-markdown-plugin
-#	$(VENV_PIP) install --upgrade mkdocs-localsearch
-#	$(VENV_PIP) install --upgrade mkdocs-macros-plugin
-#	$(VENV_PIP) install --upgrade mkdocs-mermaid2-plugin
-#	$(VENV_PIP) install --upgrade mkdocs-minify-plugin
-#	$(VENV_PIP) install --upgrade mkdocs-redirects
-#	$(VENV_PIP) install --upgrade mkdocs-kroki-plugin
-#	$(VENV_PIP) install --upgrade --no-cache-dir "git+https://github.com/EKGF/ekglib.git"
-# $(VENV_PIP) install --upgrade mdx-spanner
-#	$(VENV_PIP) install --upgrade markdown-emdash
-# $(VENV_PIP) freeze > requirements.txt
-
-#.PHONY: docs-install-python-packages-via-requirements-txt
-#docs-install-python-packages-via-requirements-txt:
-#ifeq ($(PAT_MKDOCS_INSIDERS),)
-#	@echo "ERROR: Can only run this when PAT_MKDOCS_INSIDERS is known"
-#else
-#	@echo "Install standard python packages according to requirements.txt:"
-#	@PAT_MKDOCS_INSIDERS=$(PAT_MKDOCS_INSIDERS) $(VENV_PIP) install -r requirements.txt
-#endif
+	$(VENV_PIP) install --upgrade pip setuptools
+	$(VENV_PIP) install poetry
+	$(VENV_POETRY) config virtualenvs.in-project true --local
+	$(VENV_POETRY) config experimental.system-git-client true --local
 
 .PHONY: docs-install-special-python-packages
-docs-install-special-python-packages: docs-install-pdf-python-packages docs-install-mkdocs-insider-version-packages
+docs-install-special-python-packages: docs-install-ekglib docs-install-mkdocs-insider-version-packages
 
-.PHONY: docs-install-pdf-python-packages
-docs-install-pdf-python-packages:
-	@#echo "Install PDF python packages via pip:"
-	@#$(VENV_PIP) install --upgrade weasyprint
-	@#cd ../mkdocs-with-pdf && $(VENV_PIP) install -e .
-	@#$(VENV_PIP) install --upgrade mkdocs-with-pdf
-	@#$(VENV_PIP) install --upgrade weasyprint==52
-	@#$(VENV_PIP) install --upgrade mkpdfs-mkdocs
+.PHONY: docs-install-ekglib
+docs-install-ekglib:
+	@echo "Install ekglib via poetry:"
+	$(VENV_POETRY) add -vvv "git+https://github.com/EKGF/ekglib.git"
 
 .PHONY: docs-install-mkdocs-insider-version-packages
 docs-install-mkdocs-insider-version-packages:
 ifeq ($(PAT_MKDOCS_INSIDERS),)
-	@echo "Install standard mkdocs python package via pip:"
-	$(VENV_PIPENV) install --upgrade --force-reinstall mkdocs-material
+	@echo "Install standard mkdocs python package via poetry:"
+	$(VENV_POETRY) add mkdocs-material
 else
-	@echo "Install special insiders version of mkdocs python package via pip:"
-	$(VENV_PIPENV) install -e "git+https://$(PAT_MKDOCS_INSIDERS)@github.com/squidfunk/mkdocs-material-insiders.git#egg=mkdocs-material"
+	@echo "Install special insiders version of mkdocs python package via poetry:"
+	$(VENV_POETRY) remove mkdocs-material || true
+	$(VENV_POETRY) add "git+https://$(PAT_MKDOCS_INSIDERS)@github.com/squidfunk/mkdocs-material-insiders.git#egg=mkdocs-material"
 endif
 
 $(VENV_MKDOCS): docs-install-python-packages
