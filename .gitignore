@@ -1,4 +1,5 @@
 .venv/
+venv/
 site/
 .DS_Store
 .texpadtmp
