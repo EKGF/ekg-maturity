@@ -43,8 +43,7 @@ and to adapt to changing environmental conditions and regulations. This can incl
 to develop and implement sustainable business practices, and to adapt to changing environmental policies and regulations.
 
 
-
-
+   
 Overall, the dimensions of business scalability assessment can vary depending on the specific needs and goals of the organization, but typically include financial, operational, customer, and talent dimensions.
 
 

@@ -37,9 +37,6 @@ Business scalability assessment can help businesses identify opportunities for g
 
 
 
-
-
-
 !!! warn
 
     Work in progress, list examples of use cases that contribute to this capability.

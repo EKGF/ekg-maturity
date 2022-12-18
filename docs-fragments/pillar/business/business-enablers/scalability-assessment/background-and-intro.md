@@ -10,6 +10,7 @@ Business scalability refers to a company's ability to grow and handle increased 
 In other words, a scalable business is one that can easily adapt to changes in demand and continue to operate efficiently and effectively, regardless of how quickly the business 
 is growing. This is often achieved through a combination of factors such as having a solid business plan, using efficient and flexible systems and technologies, and having a team 
 of employees who are able to adapt to new challenges. By having a scalable business, a company can more easily expand its operations and increase its profits over time.
+ 
 
 
 ## What is business scalability assessment?

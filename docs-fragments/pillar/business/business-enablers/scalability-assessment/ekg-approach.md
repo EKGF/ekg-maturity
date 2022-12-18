@@ -81,6 +81,7 @@ the organization's scalability and potential for growth.
 With an enterprise knowledge graph, the scalability assessment would be a more efficient, effective, and dynamic process, with greater flexibility and scalability. It would be easier to maintain and update the assessment as the organization evolves, and it would be more powerful and useful in driving decision-making and strategic planning.
 
 
+
 !!! warn
 
     Work in progress, describe how this capability would be delivered or supported using an EKG approach,
