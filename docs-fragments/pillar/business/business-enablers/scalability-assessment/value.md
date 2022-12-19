@@ -17,7 +17,6 @@ There are several benefits to conducting a scalability assessment for an enterpr
 5. _Increase competitiveness_: By improving efficiency and preparing for growth, a scalability assessment can help a business stay competitive in a rapidly changing market.
 
 
-
 6. _Improved customer satisfaction_: By identifying and addressing bottlenecks, a scalability assessment can help a business improve the speed and quality of its products or services, leading to increased customer satisfaction.
 
 
