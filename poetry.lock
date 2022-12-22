@@ -584,7 +584,7 @@ toml = "^0.10.2"
 type = "git"
 url = "https://github.com/EKGF/ekglib.git"
 reference = "HEAD"
-resolved_reference = "a67a5e41d61b6b5a2697618b368282016ed1017c"
+resolved_reference = "462789732ee9f78417ddf9cd2f5292327ad92a48"
 
 [[package]]
 name = "et-xmlfile"

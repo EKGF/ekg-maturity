@@ -3,13 +3,13 @@ VIRTUAL_ENV := ./.venv
 LANG := en
 
 ifeq ($(OS),Windows_NT)
-    YOUR_OS := Windows
-    INSTALL_TARGET := install-windows
-    SYSTEM_PYTHON := python3
+  YOUR_OS := Windows
+  INSTALL_TARGET := install-windows
+  SYSTEM_PYTHON := python3
 else
-    YOUR_OS := $(shell sh -c 'uname 2>/dev/null || echo Unknown')
+  YOUR_OS := $(shell sh -c 'uname 2>/dev/null || echo Unknown')
 ifeq ($(YOUR_OS), Linux)
-    INSTALL_TARGET := install-linux
+  INSTALL_TARGET := install-linux
 ifneq ($(wildcard /home/runner/.*),) # this means we're running in Github Actions
 	MKDOCS := mkdocs
 	PIP := pip
@@ -22,8 +22,6 @@ endif
 endif
 ifeq ($(YOUR_OS), Darwin)
 	INSTALL_TARGET := install-macos
-	OPEN_EDITORS_VERSION_TARGET := open-editors-version-macos
-	OPEN_RELEASE_VERSION_TARGET := open-release-version-macos
 	MKDOCS := $(shell asdf where python)/bin/mkdocs
 	PIP := $(shell asdf where python)/bin/python -m pip
 	SYSTEM_PYTHON := $(shell asdf where python)/bin/python3
@@ -42,10 +40,10 @@ PIPENV_VENV_IN_PROJECT := 1
 CURRENT_BRANCH := $(shell git branch --show-current)
 PAT_MKDOCS_INSIDERS := $(shell cat $(HOME)/.secrets/PAT_MKDOCS_INSIDERS.txt 2>/dev/null)
 ifeq ($(PAT_MKDOCS_INSIDERS),)
-MKDOCS_CONFIG_FILE := 'mkdocs.outsiders.yml'
+MKDOCS_CONFIG_FILE := 'mkdocs.yml'
 $(info You don't have the $(HOME)/.secrets/PAT_MKDOCS_INSIDERS.txt file so we are using the open source version of MkDocs)
 else
-MKDOCS_CONFIG_FILE := 'mkdocs.yml'
+MKDOCS_CONFIG_FILE := 'mkdocs.outsiders.yml'
 endif
 
 .PHONY: all
