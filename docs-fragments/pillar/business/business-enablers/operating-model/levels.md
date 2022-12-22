@@ -14,6 +14,7 @@ The maturity levels of developing an operating model with an enterprise knowledg
 
 5. _Operational Ecosystem_: At this stage, the enterprise knowledge graph has become an integral part of the organization's operational ecosystem and is being used to support a wide range of business functions. The focus is on continuously improving the use of the knowledge graph to support the organization's goals and objectives.
 
+
 !!! warn
 
     Work in progress, describe the 5 maturity levels of this capability

@@ -17,6 +17,22 @@ There are several use cases for an operating model, including:
 
 6. _Supporting business continuity_: An operating model can help to ensure that an organization is able to continue operating in the event of unexpected disruptions or challenges.
 
+
+7. _Aligning business and IT_: An operating model can help to align the business and IT functions of an organization by outlining how they work together to deliver value to customers.
+
+
+8. _Managing risk_: An operating model can help to identify and mitigate potential risks within an organization by outlining the processes and controls in place to manage those risks.
+
+
+9. _Enhancing customer experience_: An operating model can help to optimize the delivery of goods or services to customers by outlining the processes and systems that support customer interactions.
+
+
+10. _Enabling digital transformation_: An operating model can help to support the implementation of new technologies and digital processes by outlining how they will be integrated into the organization's existing operations.
+
+Supporting compliance and regulatory requirements: An operating model can help to ensure that an organization is able to meet various compliance and regulatory requirements by outlining the processes and controls in place to support those requirements.
+
+
+
 !!! warn
 
     Work in progress, list examples of use cases that contribute to this capability, making the link to use cases in the catalog at [https://catalog.ekgf.org/use-case/](https://catalog.ekgf.org/use-case/)..

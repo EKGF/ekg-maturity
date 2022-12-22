@@ -12,6 +12,7 @@ Refine and update the operating model as needed: As the organization evolves and
 
 Without an enterprise knowledge graph, the development of an operating model may involve more manual effort and may be more prone to errors or inconsistencies. It may also be more difficult to update and maintain the operating model over time, as it may be scattered across various documents or stored in different locations.
 
+
 !!! warn
 
     Work in progress, describe how this capability is possibly being delivered today in a non-EKG context and optionally what the issues are that EKG could or should improve

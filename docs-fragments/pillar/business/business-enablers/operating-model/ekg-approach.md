@@ -14,6 +14,7 @@ Refine and update the graph as needed: As the operating model evolves, the knowl
 
 Using an enterprise knowledge graph to represent the operating model can help organizations to visualize and understand the various components and relationships within the model, and to make more informed decisions about how to optimize and improve their operations. It can also help to ensure that all relevant information about the operating model is centralized and easily accessible to those who need it.
 
+
 !!! warn
 
     Work in progress, describe how this capability would be delivered or supported using an EKG approach,
