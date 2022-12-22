@@ -1,43 +1,18 @@
-## What are the five maturity levels of business scalability assessment?
+The maturity levels of supply chain management with an enterprise knowledge graph can be described as follows:
 
-The five maturity levels of business scalability assessment are a framework for evaluating the current level of scalability of a business and 
-identifying areas for improvement. These levels are:
-
-1. _Initial_: At this level, a business has minimal scalability, with little ability to handle increased demand or growth.
+1. _EKG Initiation_: At this stage, the organization is just starting to explore the use of a knowledge graph to represent its supply chain. The focus is on understanding the potential benefits and limitations of using a knowledge graph, and on developing a basic understanding of how to create and maintain a knowledge graph. This might involve conducting research and pilot projects to test the feasibility and effectiveness of using a knowledge graph.
 
 
-2. _Repeatable_: At this level, a business has established processes and systems in place that allow it to handle increased demand in a consistent and predictable manner.
+2. _Extensible Platform_: At this stage, the organization has implemented an enterprise knowledge graph and is using it to represent key components of its supply chain, such as suppliers, customers, and products. The focus is on expanding the scope and complexity of the knowledge graph, and on developing the skills and capabilities needed to maintain and update the graph as the supply chain evolves. This might involve integrating the knowledge graph with other systems and processes, and training employees on how to use the graph.
 
 
-3. _Defined_: At this level, a business has fully documented processes and systems in place, enabling it to easily replicate its operations and handle increased demand.
+3. _Enterprise Ready_: At this stage, the enterprise knowledge graph is being used to represent the full scope of the organization's supply chain and is integrated with other systems and processes. The focus is on optimizing the use of the knowledge graph and on developing advanced skills and capabilities in using the graph to support decision-making and supply chain management. This might involve implementing advanced analytics and machine learning algorithms to extract insights from the knowledge graph, and using the graph to support real-time decision-making.
 
 
-4. _Managed_: At this level, a business has advanced systems and processes in place to actively monitor and manage its scalability, allowing it to quickly adapt to changing 
-   demand.
+4. _Strategic Asset_: At this stage, the enterprise knowledge graph has become a key strategic asset for the organization, and is being used to drive innovation and differentiation in the supply chain. The focus is on leveraging the knowledge graph to support business growth and to create new value for customers. This might involve using the knowledge graph to develop new products and services, or to differentiate the organization's offerings from those of its competitors.
 
 
-5. _Optimized_: At this level, a business has fully optimized its systems and processes for scalability, allowing it to handle large increases in demand with ease.
-
-
-By regularly assessing its scalability maturity level, a business can identify areas for improvement and take steps to increase its ability to handle increased demand and growth. This can help the business grow and succeed in a competitive market.
-
-## Which role will EKG play at each maturity level?
-
-The role of an enterprise knowledge graph (EKG) varies depending on the maturity level of the business. In general, however, an EKG can help a business at any level by
-providing a centralized, structured repository of knowledge that can be easily accessed and used by employees.
-
-At the initial level, an EKG can help a business by providing a foundation for organizing and storing knowledge, allowing it to better manage its information and make more
-informed decisions.
-
-At the repeatable level, an EKG can help a business by enabling it to easily share and access knowledge across the organization, improving collaboration and consistency.
-
-At the defined level, an EKG can help a business by providing a structured and standardized way to represent knowledge, making it easier to analyze and use.
-
-At the managed level, an EKG can help a business by providing real-time insights and analytics, allowing it to actively monitor and manage its knowledge and make more 
-informed decisions.
-
-At the optimized level, an EKG can help a business by providing a comprehensive view of its knowledge and enabling it to leverage advanced AI technologies to drive
-innovation and growth.
+5. _Operational Ecosystem_: At this stage, the enterprise knowledge graph has become an integral part of the organization's operational ecosystem and is being used to support a wide range of supply chain functions. The focus is on continuously improving the use of the knowledge graph to support the organization's goals and objectives. This might involve using the knowledge graph to support automation and digital transformation, or to enable real-time monitoring and response to supply chain disruptions.
 
 !!! warn
 
