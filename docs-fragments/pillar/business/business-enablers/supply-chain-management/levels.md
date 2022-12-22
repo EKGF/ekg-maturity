@@ -14,6 +14,7 @@ The maturity levels of supply chain management with an enterprise knowledge grap
 
 5. _Operational Ecosystem_: At this stage, the enterprise knowledge graph has become an integral part of the organization's operational ecosystem and is being used to support a wide range of supply chain functions. The focus is on continuously improving the use of the knowledge graph to support the organization's goals and objectives. This might involve using the knowledge graph to support automation and digital transformation, or to enable real-time monitoring and response to supply chain disruptions.
 
+
 !!! warn
 
     Work in progress, describe the 5 maturity levels of this capability

@@ -9,6 +9,7 @@ In addition, an enterprise knowledge graph can be used to facilitate collaborati
 
 Overall, the use of an enterprise knowledge graph can help organizations to better manage their supply chains, improve efficiency, and reduce costs.
 
+
 !!! warn
 
     Work in progress, describe how this capability would be delivered or supported using an EKG approach,

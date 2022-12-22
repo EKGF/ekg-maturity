@@ -6,6 +6,7 @@ In addition, without an enterprise knowledge graph, it may be more challenging f
 
 Overall, without an enterprise knowledge graph, supply chain management may be less efficient and more prone to disruptions, which could result in increased costs and other challenges for the organization.
 
+
 !!! warn
 
     Work in progress, describe how this capability is possibly being delivered today in a non-EKG context and optionally what the issues are that EKG could or should improve

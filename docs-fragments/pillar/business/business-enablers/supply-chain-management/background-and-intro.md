@@ -18,6 +18,7 @@ Demand planning: forecasting customer demand for a product or service to ensure 
 
 By managing these various activities in an effective and coordinated manner, organizations can optimize the flow of goods and services from production to customer and improve efficiency, reduce costs, and increase customer satisfaction.
 
+
 !!! warn
 
     Work in progress
