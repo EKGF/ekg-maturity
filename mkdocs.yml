@@ -1,5 +1,6 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: EKG/Maturity
+site_name: EKG/Maturity
 site_description: Maturity Model for the Enterprise Knowledge Graph (EKG)
 repo_name: 'EKGF/ekg-maturity'
 repo_url: https://github.com/EKGF/ekg-maturity
@@ -7,7 +8,7 @@ site_url: https://maturity.ekgf.org
 edit_uri: edit/main/docs/
 site_dir: site
 site_author: Enterprise Knowledge Graph Foundation
-copyright: Copyright &copy; 2022 Enterprise Knowledge Graph Foundation
+copyright: Copyright &copy; 2019-2023 Enterprise Knowledge Graph Foundation
 
 # Navigation
 # nav: omitted, because we're using the awesome-pages plugin (https://squidfunk.github.io/mkdocs-material/plugins/awesome-pages/)
