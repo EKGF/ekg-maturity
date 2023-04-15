@@ -155,20 +155,24 @@ docs-install-python-packages: docs-install-asdf-packages docs-install-standard-p
 
 .PHONY: docs-install-standard-python-packages
 docs-install-standard-python-packages: $(VENV_POETRY)
-	@echo "Install standard python packages via pip:"
-	$(VENV_POETRY) config virtualenvs.in-project true --local
-	$(VENV_POETRY) config experimental.system-git-client true --local
+#	@echo "Install standard python packages via pip:"
+#	$(VENV_POETRY) config virtualenvs.in-project true --local
+#	$(VENV_POETRY) config experimental.system-git-client true --local
 
 .PHONY: docs-install-special-python-packages
-docs-install-special-python-packages: docs-install-ekglib docs-install-mkdocs-insider-version-packages
+#docs-install-special-python-packages: docs-install-ekglib docs-install-mkdocs-insider-version-packages
+docs-install-special-python-packages: docs-install-mkdocs-insider-version-packages
 
-.PHONY: docs-install-ekglib
-docs-install-ekglib: $(VENV_POETRY)
-	@echo "Install ekglib via poetry:"
-	$(VENV_POETRY) add "git+https://github.com/EKGF/ekglib.git"
+#.PHONY: docs-install-ekglib
+#docs-install-ekglib: $(VENV_POETRY)
+#	@echo "Install ekglib via poetry:"
+#	$(VENV_POETRY) add "git+https://github.com/EKGF/ekglib.git"
 
+poetry.lock:
+	@$(VENV_POETRY) lock --no-update --no-interaction
+	
 .PHONY: docs-install-mkdocs-insider-version-packages
-docs-install-mkdocs-insider-version-packages: $(VENV_POETRY)
+docs-install-mkdocs-insider-version-packages: $(VENV_POETRY) poetry.lock
 ifeq ($(PAT_MKDOCS_INSIDERS),)
 	@echo "Install standard mkdocs python package via poetry:"
 	@$(VENV_POETRY) add mkdocs-material
@@ -177,7 +181,8 @@ else
 		echo "Install special insiders version of mkdocs python package via poetry:" ;\
 		echo "First remove the public version of mkdocs-material, if it's installed:" ;\
 		$(VENV_POETRY) remove mkdocs-material || true ;\
-		echo "Then install the actual insiders version:" ;\
+		echo "Then install the actual insiders version: PAT_MKDOCS_INSIDERS=${PAT_MKDOCS_INSIDERS}" ;\
+		set -x ;\
 		$(VENV_POETRY) add "git+https://$(PAT_MKDOCS_INSIDERS)@github.com/squidfunk/mkdocs-material-insiders.git" ;\
 		echo "Insider's version of mkdocs-material has been installed successfully!" ;\
 	fi

@@ -181,6 +181,7 @@ plugins:
 #        - 'fragment/*'
 
 markdown_extensions:
+  - footnotes
   - attr_list
   - md_in_html
   - toc:
