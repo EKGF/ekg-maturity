@@ -51,8 +51,8 @@ theme:
     - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
-#   - navigation.sections
-#   - navigation.expand
+#    - navigation.sections
+#    - navigation.expand
     - navigation.indexes
     - toc.follow
     - toc.integrate
@@ -63,7 +63,7 @@ extra:
   giscus:
     repo_id: 'MDEwOlJlcG9zaXRvcnkzMTk3MTE4MzM='
     category:
-      name: 'Page Comments"'
+      name: 'Page Comments'
       id: 'DIC_kwDOEw5qWc4CRV2s'
   social:
     - icon: fontawesome/brands/twitter
@@ -106,6 +106,9 @@ plugins:
   - search:
       lang:
         - en
+  - exclude-search:
+      exclude:
+        - 'fragment/*'
   - build_plantuml:
       render: "server" # or "local" for local rendering
       bin_path: "/usr/local/bin/plantuml" # ignored when render: server
@@ -137,39 +140,6 @@ plugins:
       ServerURL: https://kroki.io/
       DownloadImages: false
       DownloadDir: docs/diagrams/out
-#  - with-pdf:
-#      author: The Team
-#      copyright: Copyright &copy; 2018 - 2022 agnos.ai UK Ltd & Stealth Software Technologies, Inc --- Confidential
-#      cover: true
-#      back_cover: false
-#      cover_title: The Datapoint Protocol
-#      cover_subtitle: Pitch, Business Plan & Proposal
-#      #custom_template_path: TEMPLATES PATH
-#      toc_title: Table of Contents
-#      heading_shift: false
-#      toc_level: 1
-#      ordered_chapter_level: 3
-#      #excludes_children:
-#        #    - 'release-notes/:upgrading'
-#        #    - 'release-notes/:changelog'
-#        #
-#      exclude_pages:
-#        - pdf.md
-#        #convert_iframe:
-#        #    - src: IFRAME SRC
-#        #      img: POSTER IMAGE URL
-#        #      text: ALTERNATE TEXT
-#        #    - src: ...
-#        #two_columns_level: 3
-#      output_path: assets/datapoint-protocol.pdf
-#      enabled_if_env: ENABLE_PDF_EXPORT
-#      debug_html: false
-#      show_anchors: false
-#      verbose: false
-#      render_js: false
-#      strict: false
-#      #headless_chrome_path: headless-chromium
-#      #
   - gen-files:
       scripts:
         - docs/generate_maturity_model.py
@@ -192,7 +162,6 @@ markdown_extensions:
   - abbr
   - admonition
 # - mdx_emdash (causes too many warnings)
-  - footnotes
   - tables
   - mkdocs_graphviz
   - pymdownx.caret
@@ -224,4 +193,3 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-#  - markdown.extensions.smarty
