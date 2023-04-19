@@ -52,7 +52,7 @@ PAT_MKDOCS_INSIDERS := $(shell cat $(HOME)/.secrets/PAT_MKDOCS_INSIDERS.txt 2>/d
 ifneq ($(PAT_MKDOCS_INSIDERS),)
 MKDOCS_CONFIG_FILE := mkdocs.yml
 else
-$(info You don't have the $(HOME)/.secrets/PAT_MKDOCS_INSIDERS.txt file so we are using the open source version of MkDocs)
+$(info You do not have the $(HOME)/.secrets/PAT_MKDOCS_INSIDERS.txt file so we are using the open source version of MkDocs)
 MKDOCS_CONFIG_FILE := mkdocs.outsiders.yml
 endif
 
