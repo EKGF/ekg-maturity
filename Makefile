@@ -74,7 +74,8 @@ info:
 clean:
 	@echo Cleaning
 	@rm -rf site 2>/dev/null || true
-	@rm -rf .venv/lib/python*/site-packages 2>/dev/null || true
+	@rm -rf .venv 2>/dev/null || true
+	@rm -rf *.lock 2>/dev/null || true
 
 .PHONY: install
 install: docs-install
