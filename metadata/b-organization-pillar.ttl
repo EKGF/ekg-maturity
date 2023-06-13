@@ -59,6 +59,22 @@
   rdfs:label         "Organizational Culture" ;
   ekgmm:iriLocalName "organizational-culture" ;
   ekgmm:inPillar     <organization-pillar> ;
+  rdfs:comment """
+    
+    In the context of an Enterprise Knowledge Graph (EKG), organizational culture refers to the shared values,
+    beliefs, behaviors, and norms that shape the way an organization operates and interacts with its employees,
+    customers, and stakeholders.
+    
+    It represents the collective mindset and character of the organization, influencing its decision-making 
+    processes, communication patterns, and overall work environment.
+    
+    The EKG, as a comprehensive knowledge repository, can capture and represent various aspects of 
+    organizational culture. 
+    It can include explicit information about the organization's mission, vision, and core values, 
+    as well as its preferred work practices, management styles, and communication channels. 
+    The EKG can also capture implicit cultural elements, such as employee attitudes, team dynamics, 
+    and historical patterns of behavior.
+  """
 .
 
 <capability-area-organizational-capabilities>
@@ -66,4 +82,7 @@
   rdfs:label         "Organizational Capabilities" ;
   ekgmm:iriLocalName "organizational-capabilities" ;
   ekgmm:inPillar     <organization-pillar> ;
+  rdfs:comment       """
+
+  """
 .
