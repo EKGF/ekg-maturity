@@ -163,3 +163,51 @@ organizations can effectively manage the deployment and maintenance of the EKG,
 ensuring its reliable operation and availability. 
 This capability helps organizations leverage the full potential of the EKG and provides
 a solid foundation for knowledge management, decision-making, and collaboration within the organization.
+
+## Data Integration
+
+_Data Integration_ within the Technology Pillar encompasses the organizational
+capability to seamlessly combine data from various sources into the EKG.
+It involves the processes, technologies, and practices required to efficiently 
+integrate data and resolve identity challenges, including legacy and EKG identifiers.
+
+Key aspects of Data Integration within the Technology Pillar now include:
+
+1. **Data Source Connectivity**: Establishing connections and interfaces 
+   to retrieve data from diverse sources, including internal databases, 
+   external systems, APIs, structured data, unstructured documents, and more. 
+   This includes the integration of data with different identifier schemes.
+2. **Identity Resolution**: Resolving identity challenges, **including legacy 
+   identifiers and EKG identifiers**, to ensure consistency and accuracy 
+   within the EKG. 
+   This involves mapping and aligning identifiers across various data sources
+   (or data products, see https://data-product.ekgf.org) and resolving 
+   conflicts to achieve a unified and reliable representation of entities.
+2. **Data Transformation and Harmonization**: Applying transformation and 
+   harmonization techniques to ensure data from different sources, including
+   legacy systems, are integrated and reconciled effectively within the EKG. 
+   This includes mapping legacy identifiers to EKG identifiers and maintaining referential integrity.
+3. **Data Quality and Governance**: Implementing data quality measures and 
+   governance practices to address identity-related issues. 
+   This involves data profiling, deduplication, and data cleansing to improve
+   the accuracy, completeness, and reliability of entity identities within the
+   EKG.
+4. **Semantic Interoperability**: Achieving semantic interoperability by 
+   harmonizing the meaning and representation of entity identities across 
+   diverse data sources. 
+   This involves leveraging ontologies, controlled vocabularies, and
+   semantic modeling techniques to ensure consistency and accurate 
+   identity representation within the EKG.
+5. **Scalability and Performance**: Ensuring the data integration processes, 
+   including identity resolution, can scale to handle increasing volumes of 
+   data and perform optimally within the EKG ecosystem. 
+   This may involve adopting scalable technologies, distributed processing 
+   frameworks, and optimizing workflows to address identity resolution 
+   challenges at scale.
+
+By incorporating identity resolution into the Data Integration capability, 
+organizations can effectively address the challenges associated with legacy 
+and EKG identifiers. 
+This enables a cohesive and accurate representation of entities within the EKG,
+ensuring data integrity and supporting reliable knowledge discovery, analytics,
+and decision-making processes.
