@@ -328,53 +328,53 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <tr>
 <td width="1%" rowspan="13"></td>
 <td width="1%">D.2.1</td>
+<td width="20%"><a href="/pillar/technology/technology-execution/identity-resolution">Identifier Resolution</a></td>
+<td width="77%">Standards for ensuring content is identified and resolvable.</td>
+</tr>
+<tr>
+<td width="1%">D.2.2</td>
 <td width="20%"><a href="/pillar/technology/technology-execution/data-integration">Data Integration</a></td>
 <td width="77%">Ability to source and integrate data (consolidate silos).</td>
 </tr>
 <tr>
-<td width="1%">D.2.2</td>
+<td width="1%">D.2.3</td>
 <td width="20%"><a href="/pillar/technology/technology-execution/operations">Operations</a></td>
 <td width="77%">Deployment and maintenance requirements for the EKG.</td>
 </tr>
 <tr>
-<td width="1%">D.2.3</td>
-<td width="20%"><a href="/pillar/technology/technology-execution/logging-systems-monitoring">Logging / Systems Monitoring</a></td>
-<td width="77%">Physical infrastructure and composite view of systems/applications.</td>
+<td width="1%">D.2.4</td>
+<td width="20%"><a href="/pillar/technology/technology-execution/observability">Observability</a></td>
+<td width="77%">Exploring properties and patterns of the overall EKG infrastructure</td>
 </tr>
 <tr>
-<td width="1%">D.2.4</td>
+<td width="1%">D.2.5</td>
 <td width="20%"><a href="/pillar/technology/technology-execution/business-continuity">Business Continuity</a></td>
 <td width="77%">Continued business operations during unplanned [EKG/Platform](https://method.ekgf.org/vocab/ekg-platform/) disruption.</td>
 </tr>
 <tr>
-<td width="1%">D.2.5</td>
+<td width="1%">D.2.6</td>
 <td width="20%"><a href="/pillar/technology/technology-execution/data-quality-implementation">Data Quality Implementation</a></td>
 <td width="77%">Technical implementation of data quality framework.</td>
 </tr>
 <tr>
-<td width="1%">D.2.6</td>
+<td width="1%">D.2.7</td>
 <td width="20%"><a href="/pillar/technology/technology-execution/analytics">Analytics</a></td>
 <td width="77%">Technical implementation of analytics facilities.</td>
 </tr>
 <tr>
-<td width="1%">D.2.7</td>
+<td width="1%">D.2.8</td>
 <td width="20%"><a href="/pillar/technology/technology-execution/inferencing-rules">Inferencing Rules</a></td>
 <td width="77%">Inferring new facts from existing facts by means of ontologies.</td>
 </tr>
 <tr>
-<td width="1%">D.2.8</td>
+<td width="1%">D.2.9</td>
 <td width="20%"><a href="/pillar/technology/technology-execution/entitlement-management">Entitlement Management</a></td>
 <td width="77%">Enforcing fine-grained context-specific entitlement policies.</td>
 </tr>
 <tr>
-<td width="1%">D.2.9</td>
+<td width="1%">D.2.10</td>
 <td width="20%"><a href="/pillar/technology/technology-execution/data-transformation-execution">Data Transformation Execution</a></td>
 <td width="77%">Governed automated orchestration of data transformation.</td>
-</tr>
-<tr>
-<td width="1%">D.2.10</td>
-<td width="20%"><a href="/pillar/technology/technology-execution/identity-resolution">Identity Resolution</a></td>
-<td width="77%">Standards for ensuring content is identified and resolvable.</td>
 </tr>
 <tr>
 <td width="1%">D.2.11</td>

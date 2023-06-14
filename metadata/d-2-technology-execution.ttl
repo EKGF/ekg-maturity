@@ -6,13 +6,30 @@
 @prefix ekgmm:     <https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#> .
 @prefix dct:       <http://purl.org/dc/terms/> .
 
+<capability-technology-execution-identity-resolution>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Identifier Resolution" ;
+  rdfs:comment           "Standards for ensuring content is identified and resolvable." ;
+  ekgmm:iriLocalName     "identity-resolution" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
+  ekgmm:capabilityNumber "D.2.1" ;
+  dct:description        """
+    Identifier resolution is a process of combining multiple identifiers across devices, spreadsheets, repositories, and
+    platforms into a cohesive profile.
+    The process includes searching across disparate datasets and analyzing content to find (and resolve) matches based
+    on available data records and attributes.
+    Identifier resolution is complicated by distinctions in both structure and meaning because various information systems
+    can vary in quality, completeness, format, and nomenclature.
+  """
+.
+
 <capability-technology-execution-data-integration>
   a                      ekgmm:Capability ;
   rdfs:label             "Data Integration" ;
   rdfs:comment           "Ability to source and integrate data (consolidate silos)." ;
   ekgmm:iriLocalName     "data-integration" ;
   ekgmm:inArea           <capability-area-technology-execution> ;
-  ekgmm:capabilityNumber "D.2.1" ;
+  ekgmm:capabilityNumber "D.2.2" ;
 .
 
 <capability-technology-execution-operations>
@@ -21,16 +38,16 @@
   rdfs:comment           "Deployment and maintenance requirements for the EKG." ;
   ekgmm:iriLocalName     "operations" ;
   ekgmm:inArea           <capability-area-technology-execution> ;
-  ekgmm:capabilityNumber "D.2.2" ;
+  ekgmm:capabilityNumber "D.2.3" ;
 .
 
-<capability-technology-execution-logging-systems-monitoring>
+<capability-technology-execution-observability>
   a                      ekgmm:Capability ;
-  rdfs:label             "Logging / Systems Monitoring" ;
-  rdfs:comment           "Physical infrastructure and composite view of systems/applications." ;
-  ekgmm:iriLocalName     "logging-systems-monitoring" ;
+  rdfs:label             "Observability" ;
+  rdfs:comment           "Exploring properties and patterns of the overall EKG infrastructure" ;
+  ekgmm:iriLocalName     "observability" ;
   ekgmm:inArea           <capability-area-technology-execution> ;
-  ekgmm:capabilityNumber "D.2.3" ;
+  ekgmm:capabilityNumber "D.2.4" ;
 .
 
 <capability-technology-execution-business-continuity>
@@ -39,7 +56,7 @@
   rdfs:comment           "Continued business operations during unplanned [EKG/Platform](https://method.ekgf.org/vocab/ekg-platform/) disruption." ;
   ekgmm:iriLocalName     "business-continuity" ;
   ekgmm:inArea           <capability-area-technology-execution> ;
-  ekgmm:capabilityNumber "D.2.4" ;
+  ekgmm:capabilityNumber "D.2.5" ;
 .
 
 <capability-technology-execution-data-quality-implementation>
@@ -48,7 +65,7 @@
   rdfs:comment           "Technical implementation of data quality framework." ;
   ekgmm:iriLocalName     "data-quality-implementation" ;
   ekgmm:inArea           <capability-area-technology-execution> ;
-  ekgmm:capabilityNumber "D.2.5" ;
+  ekgmm:capabilityNumber "D.2.6" ;
 .
 
 <capability-technology-execution-analytics>
@@ -57,7 +74,7 @@
   rdfs:comment           "Technical implementation of analytics facilities." ;
   ekgmm:iriLocalName     "analytics" ;
   ekgmm:inArea           <capability-area-technology-execution> ;
-  ekgmm:capabilityNumber "D.2.6" ;
+  ekgmm:capabilityNumber "D.2.7" ;
 .
 
 <capability-technology-execution-inferencing-rules>
@@ -66,7 +83,7 @@
   rdfs:comment           "Inferring new facts from existing facts by means of ontologies." ;
   ekgmm:iriLocalName     "inferencing-rules" ;
   ekgmm:inArea           <capability-area-technology-execution> ;
-  ekgmm:capabilityNumber "D.2.7" ;
+  ekgmm:capabilityNumber "D.2.8" ;
 .
 
 <capability-technology-execution-entitlement-management>
@@ -75,7 +92,7 @@
   rdfs:comment           "Enforcing fine-grained context-specific entitlement policies." ;
   ekgmm:iriLocalName     "entitlement-management" ;
   ekgmm:inArea           <capability-area-technology-execution> ;
-  ekgmm:capabilityNumber "D.2.8" ;
+  ekgmm:capabilityNumber "D.2.9" ;
 .
 
 <capability-technology-execution-data-transformation-execution>
@@ -84,24 +101,7 @@
   rdfs:comment           "Governed automated orchestration of data transformation." ;
   ekgmm:iriLocalName     "data-transformation-execution" ;
   ekgmm:inArea           <capability-area-technology-execution> ;
-  ekgmm:capabilityNumber "D.2.9" ;
-.
-
-<capability-technology-execution-identity-resolution>
-  a                      ekgmm:Capability ;
-  rdfs:label             "Identity Resolution" ;
-  rdfs:comment           "Standards for ensuring content is identified and resolvable." ;
-  ekgmm:iriLocalName     "identity-resolution" ;
-  ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.10" ;
-  dct:description        """
-    Identity resolution is a process of combining multiple identifiers across devices, spreadsheets, repositories, and
-    platforms into a cohesive profile.
-    The process includes searching across disparate datasets and analyzing content to find (and resolve) matches based
-    on available data records and attributes.
-    Identity resolution is complicated by distinctions in both structure and meaning because various information systems
-    can vary in quality, completeness, format, and nomenclature.
-  """
 .
 
 <capability-technology-execution-knowledge-graph-storage-retrieval>
