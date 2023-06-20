@@ -168,7 +168,7 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <tr>
 <td width="1%" rowspan="5"></td>
 <td width="1%">B.3.1</td>
-<td width="20%"><a href="/pillar/organization/delivery-management/etl-data-movement">ETL Data-movement</a></td>
+<td width="20%"><a href="/pillar/organization/delivery-management/data-movement">Data-movement</a></td>
 <td width="77%">Process for extracting/transforming data from source-to-EKG.</td>
 </tr>
 <tr>

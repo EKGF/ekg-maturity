@@ -6,11 +6,11 @@
 @prefix ekgmm:     <https://raw.githubusercontent.com/EKGF/ontology-maturity-model/main/maturity-model.ttl#> .
 @prefix dct:       <http://purl.org/dc/terms/> .
 
-<capability-delivery-management-etl-data-movement>
+<capability-delivery-management-data-movement>
   a                      ekgmm:Capability ;
-  rdfs:label             "ETL Data-movement" ;
+  rdfs:label             "Data-movement" ;
   rdfs:comment           "Process for extracting/transforming data from source-to-EKG." ;
-  ekgmm:iriLocalName     "etl-data-movement" ;
+  ekgmm:iriLocalName     "data-movement" ;
   ekgmm:inArea           <capability-area-delivery-management> ;
   ekgmm:capabilityNumber "B.3.1" ;
 .
