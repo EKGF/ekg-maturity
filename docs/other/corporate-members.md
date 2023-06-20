@@ -14,7 +14,7 @@ innovative process-based business solutions for improving performance.
 
 ### Ontotext
 
-[Ontotext](https://www.ontotext.com/) is a global leader in enterprise knowledge graph technology
+[Ontotext](https://www.ontotext.com/) is a global leader in Enterprise Knowledge Graph technology
 and semantic database engines.
 
 ### data.world
@@ -24,7 +24,7 @@ fast answers to any business question.
 
 ### Eccenca
 
-[eccenca](https://eccenca.com/) is a leading provider of enterprise knowledge graph management
+[eccenca](https://eccenca.com/) is a leading provider of Enterprise Knowledge Graph management
 software and solutions.
 
 ### Global IDs

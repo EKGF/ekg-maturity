@@ -1,9 +1,3 @@
-# Background & Intro
-
-!!! warn
-
-    Work in progress
-
 At the highest levels of maturity, it is essential for the organization to have a comprehensive understanding
 of the major components that form the foundation of the EKG.
 
@@ -39,5 +33,10 @@ exchange of information.
    They define the rights, responsibilities, and quality requirements to ensure reliable and consistent
    knowledge exchange.
 
-at the highest levels of maturity, an Enterprise Knowledge Graph (EKG) serves as an enabler for a knowledge-based economy or data economy. The EKG acts as a bridge between the demand for information, represented by various use cases, and the supply of information provided by data publishers and their data products. Its primary purpose is to facilitate efficient discovery, access, and utilization of relevant knowledge within an organization.
+at the highest levels of maturity, an Enterprise Knowledge Graph (EKG) serves as an enabler for a 
+knowledge-based economy or data economy. 
+The EKG acts as a bridge between the demand for information, represented by various use cases, 
+and the supply of information provided by data publishers and their data products. 
+Its primary purpose is to facilitate efficient discovery, access, and utilization of relevant 
+knowledge within an organization.
 

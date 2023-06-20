@@ -1,8 +1,8 @@
 A business scalability assessment is a process of evaluating an organization's ability to grow and adapt to changing market conditions, customer preferences, and competitive 
-pressures. Without an enterprise knowledge graph, the scalability assessment would typically involve a lot of manual effort, data gathering, and analysis, and it would be 
+pressures. Without an Enterprise Knowledge Graph, the scalability assessment would typically involve a lot of manual effort, data gathering, and analysis, and it would be 
 difficult to maintain and update the assessment as the organization evolves.
 
-Without an enterprise knowledge graph, the scalability assessment would typically involve the following steps:
+Without an Enterprise Knowledge Graph, the scalability assessment would typically involve the following steps:
 
 1. _Identify the objectives and criteria of the assessment_: The first step would be to identify the goals and objectives of the scalability assessment, as well as the criteria
    and metrics that will be used to evaluate the organization's scalability. This would typically involve interviews and discussions with key stakeholders, as well as a review
@@ -27,7 +27,7 @@ Without an enterprise knowledge graph, the scalability assessment would typicall
     and potential for growth.
 
 
-Without an enterprise knowledge graph, the scalability assessment would be a time-consuming and labor-intensive process, with limited flexibility and scalability. 
+Without an Enterprise Knowledge Graph, the scalability assessment would be a time-consuming and labor-intensive process, with limited flexibility and scalability. 
 It would be difficult to maintain and update the assessment as the organization evolves, and it would be challenging to use the assessment to drive decision-making and 
 strategic planning.
 

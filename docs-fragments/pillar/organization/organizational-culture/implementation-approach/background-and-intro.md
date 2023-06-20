@@ -1,59 +1,43 @@
-!!! warn
+The _Implementation Approach capability_ within the "Organizational Culture" 
+capability area aims to establish a culture that extends to trusted vendors 
+and encompasses a clear understanding of the overall information economy. 
+This includes having a structured view of demand (use cases) and supply (data products)
+and the data contracts that connect them. 
+Key to this approach is ensuring that each use case and data product is well-defined
+with a clear scope, objectives, responsibilities, expectations, and a strategic roadmap.
+This enables the organization to achieve reuse and repurpose at an ecosystem scale.
 
-    Work in progress
+Key aspects of the Implementation Approach capability include:
 
-Within an Enterprise Knowledge Graph there is a need to map and combine data using 
-ontologies as a basis for the integration of classes/concepts to achieve wisdom 
-through common view(s) & model(s). 
-Partners will need to exchange information within N-lines of business and 
-N-shared activities. 
-Data integration must support these activities to connect data silos.
+1. **Structured View of Demand and Supply**: Developing a structured understanding of
+   the overall information economy, with a clear delineation of the demand for 
+   information (use cases) and the supply of information (data products). 
+   This provides a comprehensive perspective on the organization's knowledge needs
+   and available data assets.
+2. **Clear Use Case and Data Product Definition**: Ensuring that each use case and
+   data product is well-defined, with a clear scope, objectives, and expected outcomes.
+   This involves articulating the responsibilities and expectations of all stakeholders
+   involved and providing a strategic roadmap that aligns with the organization's goals.
+3. **Collaboration at Ecosystem Scale**: Fostering collaboration and facilitating reuse
+   and repurpose of resources at the ecosystem scale. 
+   This involves creating an environment where use cases and data products can be shared,
+   adapted, and built upon, allowing for increased efficiency, innovation, 
+   and scalability.
+4. **Strategic Roadmap Alignment**: Ensuring that the implementation approach aligns
+   with the strategic roadmap of the organization. 
+   This involves integrating the goals, milestones, and priorities of the EKG development
+   and operation into the broader strategic initiatives of the organization, 
+   promoting synergy and a unified direction.
+5. **Ecosystem-wide Responsibility**: Promoting a culture of shared responsibility and
+   accountability across the ecosystem. 
+   This includes establishing clear roles and responsibilities for all stakeholders
+   involved in the development, operation, and utilization of the EKG, ensuring 
+   effective coordination and collaboration.
 
-Each lines of business can interchange data with concepts from ontologies 
-for shared activities and transactions.
-
-External data can also be interchanged with the enterprise using similar 
-concepts from ontologies with vendors, channels, and customers.
-
-Enterprise Knowledge Graphs when most mature fully implement a unity 
-of heterogeneous sources. 
-An evolving ontology drives data, information, knowledge, wisdom, 
-and in turn is formed in that order. 
-Graphs provide an operational structure to allow for chaining and 
-integrating data to create information/data integration via linking data throughout.
-
-RDF graphs are serializable by materialized data represented in the 
-form of triples and/or quads. 
-Direct import queries enables data to be integrated into and within a knowledge graph.
-
-Extract, transform, load processes are necessary. 
-Often these processes are abbreviated as ETL or ELT since the 
-mapping/transform may occur once after a load process is performed.
-
-RDF mapping language, RML, is a generalized source mapping language for 
-RDF to facilitate data integration from non-RDF sources. 
-Examples of RML sources include JSON,CSV, TSV, XML. R2RML is a subset of RML, 
-designed for integration of data from relational sources leveraging JDBC.
-
-CoNLL is a standard within NLP, Natural Language Processing, implemented 
-in CSV/TSV. CoNLL can be stored using the expressiveness of RDF using 
-CoNLL-RDF and converted back to CSV/TSV.
-
-Data when materialized should be stored in various RDF file serialization formats 
-such as: RDF/XML, JSON-LD, Turtle/TTL, NQUADS, NTriples, TriG, Trix, and n3. 
-The tools used in the ETL/ELT process should support manipulating data in these 
-common standardized knowledge graph formats.
-
-ETL/ELT needs to orchestrated once of any scale with data pipelines and 
-scheduling software.The simplest example would be using scheduling software 
-with batch scripts, more elaborate open source examples would be using a 
-Dev/MLOps framework. 
-The goal of the ETL/ELT is to take RDF serialized data and incorporate 
-into a knowledge graph RDF data store from serialized files. 
-RDF data stores offer significant capabilities and performance over 
-flat-file serialized files.
-
-At the most mature level of a knowledge graph data integration must 
-incorporate mapping using utilities and/or capabilities using 
-RDF mapping languages and subsets, RDF serializable files, 
-and RDF data stores using ETL/ELT data pipelines.
+By adopting an implementation approach that includes a structured view of demand and 
+supply, well-defined use cases and data products, and a focus on ecosystem-wide reuse 
+and repurpose, organizations can foster a culture of efficiency, innovation, 
+and strategic alignment. 
+This enables the organization to effectively leverage its knowledge assets, 
+drive value creation, and achieve higher levels of maturity for the 
+Enterprise Knowledge Graph.

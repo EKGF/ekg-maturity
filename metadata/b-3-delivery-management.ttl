@@ -18,7 +18,7 @@
 <capability-delivery-management-ontologies-and-mapping>
   a                      ekgmm:Capability ;
   rdfs:label             "Ontologies & Mapping" ;
-  rdfs:comment           "Approach to concept modeling and transformation." ;
+  rdfs:comment           "Continuous improvement of ontologies and use cases and data products that rely on them." ;
   ekgmm:iriLocalName     "ontologies-and-mapping" ;
   ekgmm:inArea           <capability-area-delivery-management> ;
   ekgmm:capabilityNumber "B.3.2" ;

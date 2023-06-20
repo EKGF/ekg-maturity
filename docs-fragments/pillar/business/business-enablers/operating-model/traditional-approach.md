@@ -1,4 +1,4 @@
-The development of an operating model without an enterprise knowledge graph would typically involve the following steps:
+The development of an operating model without an Enterprise Knowledge Graph would typically involve the following steps:
 
 1. _Identify the key components of the operating model_: This might include processes, systems, resources, and roles and responsibilities.
 
@@ -14,7 +14,7 @@ The development of an operating model without an enterprise knowledge graph woul
 
 5. _Refine and update the operating model as needed_: As the organization evolves and the business environment changes, it may be necessary to update the operating model to ensure that it continues to support the organization's goals and objectives.
 
-Without an enterprise knowledge graph, the development of an operating model may involve more manual effort and may be more prone to errors or inconsistencies. It may also be more difficult to update and maintain the operating model over time, as it may be scattered across various documents or stored in different locations.
+Without an Enterprise Knowledge Graph, the development of an operating model may involve more manual effort and may be more prone to errors or inconsistencies. It may also be more difficult to update and maintain the operating model over time, as it may be scattered across various documents or stored in different locations.
 
 
 !!! warn

@@ -1,7 +1,7 @@
 Organizational governance refers to the set of rules, practices, and processes by which an 
 organization is directed and controlled. 
 It includes the frameworks and mechanisms for decision-making, accountability, and transparency. 
-In the context of an enterprise knowledge graph (EKG) and composable business, 
+In the context of an Enterprise Knowledge Graph (EKG) and composable business, 
 governance is critical to ensure that the EKG is maintained and managed properly, 
 and that the organization operates in compliance with applicable regulations and business policies.
 

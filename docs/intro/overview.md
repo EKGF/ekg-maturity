@@ -174,7 +174,7 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <tr>
 <td width="1%">B.3.2</td>
 <td width="20%"><a href="/pillar/organization/delivery-management/ontologies-and-mapping">Ontologies & Mapping</a></td>
-<td width="77%">Approach to concept modeling and transformation.</td>
+<td width="77%">Continuous improvement of ontologies and use cases and data products that rely on them.</td>
 </tr>
 <tr>
 <td width="1%">B.3.3</td>

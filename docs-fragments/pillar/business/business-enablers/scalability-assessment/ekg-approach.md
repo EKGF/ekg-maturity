@@ -1,5 +1,5 @@
 ## How can EKG enable composable business? 
-An enterprise knowledge graph (EKG) can boost reuse, replicable modularity, and speed in several ways. First, by providing a single, 
+An Enterprise Knowledge Graph (EKG) can boost reuse, replicable modularity, and speed in several ways. First, by providing a single, 
 unified view of an organization's data, an EKG can help businesses to identify and leverage data that can be used in multiple contexts, 
 allowing them to quickly and easily combine different pieces of information to create new insights and solutions. This can facilitate the 
 reuse of data across different parts of the organization, helping to reduce duplication of effort and to improve efficiency.
@@ -16,22 +16,22 @@ more composable and scalable.
 
 ## How could EKG help organizations obtain economies of scale?
 
-An enterprise knowledge graph can provide economies of scale by enabling businesses to more efficiently and effectively manage their data and processes. 
+An Enterprise Knowledge Graph can provide economies of scale by enabling businesses to more efficiently and effectively manage their data and processes. 
 By providing a single, unified view of an organization's data, a knowledge graph can help businesses to identify and leverage data that can be used in multiple contexts, 
 reducing duplication of effort and improving efficiency. In addition, a knowledge graph can also help businesses to automate and streamline their internal processes,
 allowing them to reduce the amount of time and resources required to complete tasks. This can help businesses to scale up their operations more easily and effectively, 
-allowing them to take advantage of opportunities for growth and expansion. Ultimately, by providing economies of scale, an enterprise knowledge graph can help businesses
+allowing them to take advantage of opportunities for growth and expansion. Ultimately, by providing economies of scale, an Enterprise Knowledge Graph can help businesses
 to become more profitable and sustainable over the long term.
 
 ## How can EKG enable business scalability assessment?
-An enterprise knowledge graph can help organizations with business scalability assessment by providing a framework for organizing and analyzing data, and by enabling 
+An Enterprise Knowledge Graph can help organizations with business scalability assessment by providing a framework for organizing and analyzing data, and by enabling 
 businesses to quickly and easily access the information they need to make strategic decisions. By connecting and organizing data from multiple sources, 
 a knowledge graph can provide a comprehensive view of an organization's operations, allowing businesses to identify potential bottlenecks or constraints that could hinder 
 their ability to grow and adapt to changing market conditions. This can help businesses to develop strategies for addressing these issues and to improve their overall 
 scalability. In addition, a knowledge graph can also provide businesses with insights into their market position, competitors, and potential opportunities for growth, 
 helping them to make more informed decisions about their future direction and expansion plans.
 
-An enterprise knowledge graph (EKG) can help overcome some of the drawbacks of the traditional approach for business scalability assessment by providing a centralized, 
+An Enterprise Knowledge Graph (EKG) can help overcome some of the drawbacks of the traditional approach for business scalability assessment by providing a centralized, 
 accessible repository of information about the organization and its capabilities. This can help teams and individuals within the organization quickly and easily access
 the data and information they need to assess the organization's scalability, reducing the time and resources required for the assessment.
 
@@ -47,11 +47,11 @@ its scalability.
 
 ## How would business scalability assessment look like with EKG?
 
-With an enterprise knowledge graph, the scalability assessment would be a more efficient and effective process, with greater flexibility and scalability. 
-An enterprise knowledge graph is a centralized, interconnected, and dynamic representation of an organization's knowledge, and it can be used to capture, organize, 
+With an Enterprise Knowledge Graph, the scalability assessment would be a more efficient and effective process, with greater flexibility and scalability. 
+An Enterprise Knowledge Graph is a centralized, interconnected, and dynamic representation of an organization's knowledge, and it can be used to capture, organize, 
 and access data and information from multiple sources and formats.
 
-With an enterprise knowledge graph, the scalability assessment would typically involve the following steps:
+With an Enterprise Knowledge Graph, the scalability assessment would typically involve the following steps:
 
 1. _Identify the objectives and criteria of the assessment_: The first step would be to identify the goals and objectives of the scalability assessment, as well as the criteria
 and metrics that will be used to evaluate the organization's scalability. This would typically involve defining the relevant entities, attributes, and relationships in the
@@ -78,7 +78,7 @@ This would typically involve using the knowledge graph as a platform for collabo
 the organization's scalability and potential for growth.
 
 
-With an enterprise knowledge graph, the scalability assessment would be a more efficient, effective, and dynamic process, with greater flexibility and scalability. It would be easier to maintain and update the assessment as the organization evolves, and it would be more powerful and useful in driving decision-making and strategic planning.
+With an Enterprise Knowledge Graph, the scalability assessment would be a more efficient, effective, and dynamic process, with greater flexibility and scalability. It would be easier to maintain and update the assessment as the organization evolves, and it would be more powerful and useful in driving decision-making and strategic planning.
 
 
 

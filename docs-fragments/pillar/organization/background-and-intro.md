@@ -64,10 +64,10 @@ By incorporating organizational culture into the EKG, an organization can benefi
    It can help identify patterns, trends, and areas for improvement, enabling the organization to adapt 
    and evolve its culture over time.
 
-  In summary, organizational culture within the context of an Enterprise Knowledge Graph refers to the 
-  collective beliefs, values, and behaviors that shape an organization. 
-  By integrating cultural elements into the EKG, organizations can leverage this knowledge to enhance collaboration, 
-  guide decision-making, support change management, and foster a positive and productive work environment.
+In summary, organizational culture within the context of an Enterprise Knowledge Graph refers to the 
+collective beliefs, values, and behaviors that shape an organization. 
+By integrating cultural elements into the EKG, organizations can leverage this knowledge to enhance collaboration, 
+guide decision-making, support change management, and foster a positive and productive work environment.
 
 ## Data Economy
 
