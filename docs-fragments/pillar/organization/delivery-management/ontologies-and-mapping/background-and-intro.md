@@ -1,5 +1,5 @@
 The _Ontologies & Mapping capability_ within the Delivery Management area focuses on
-organizing and continuously improving ontologies, taxonomies, and vocabularies used 
+organizing and continuously improving ontologies and vocabularies used 
 within an organization's knowledge graph. 
 It encompasses the management of mappings between these semantic structures and
 the knowledge graph's use cases and data sources.
@@ -7,22 +7,22 @@ the knowledge graph's use cases and data sources.
 Key aspects of the Ontologies & Mapping capability include:
 
 1. **Ontology Management**: Establishing practices for the creation, maintenance, 
-   and enhancement of ontologies, taxonomies, and vocabularies. 
+   and enhancement of ontologies and vocabularies. 
    This involves defining governance processes, versioning strategies, 
    and ensuring alignment with industry standards and best practices.
 
 2. **Continuous Improvement**: Encouraging ongoing enhancements and refinements
-   to ontologies, taxonomies, and vocabularies based on evolving business needs, 
+   to ontologies and vocabularies based on evolving business needs, 
    domain expertise, and feedback from knowledge graph stakeholders.
 
-3. **Mapping Management**: Managing mappings between ontologies, taxonomies, 
+3. **Mapping Management**: Managing mappings between ontologies or 
    vocabularies, and the knowledge graph's use cases and data sources. 
    This involves identifying and maintaining mappings that establish connections
    and relationships between the various semantic structures and the data 
    represented in the knowledge graph.
 
 4. **Alignment with Use Cases and Data Products**: Ensuring that ontologies, 
-   taxonomies, and vocabularies are aligned with the specific use cases and 
+   or vocabularies are aligned with the specific use cases and 
    data products within the knowledge graph.
    This includes identifying the relevant concepts, properties, and relationships
    required for effective knowledge graph utilization.
@@ -47,13 +47,13 @@ This involves:
   to mitigate risks and ensure smooth transitions.
 
 By effectively managing the Ontologies & Mapping capability, the organization pillar
-personnel enable the coordination, collaboration, and improvement of ontologies,
-taxonomies, and vocabularies within the knowledge graph.
+personnel enable the coordination, collaboration, and improvement of ontologies
+or vocabularies within the knowledge graph.
 They ensure the involvement of the right experts, alignment with business needs, 
 and seamless integration with the overall delivery management process. 
 Through their efforts, the organization can leverage the semantic richness, 
 interoperability, and usability of the knowledge graph to drive valuable insights 
 and outcomes.
 
-Note: The capability encompasses the continuous improvement of ontologies, 
-taxonomies, and vocabularies, as well as the management of mappings between these structures and knowledge graph use cases and data sources.
+Note: The capability encompasses the continuous improvement of ontologies or vocabularies,
+as well as the management of mappings between these structures and knowledge graph use cases and data sources.
