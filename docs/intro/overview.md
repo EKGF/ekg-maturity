@@ -313,7 +313,7 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <td width="1%" colspan="5" style="text-align:left;vertical-align:top;"><a href="/pillar/technology">Technology Pillar</a></td>
 </tr>
 <tr>
-<td width="1%" rowspan="23"></td>
+<td width="1%" rowspan="24"></td>
 <td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/technology/technology-strategy">Technology Strategy</a></td>
 </tr>
 <tr>
@@ -326,7 +326,7 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/technology/technology-execution">Technology Execution</a></td>
 </tr>
 <tr>
-<td width="1%" rowspan="13"></td>
+<td width="1%" rowspan="14"></td>
 <td width="1%">D.2.1</td>
 <td width="20%"><a href="/pillar/technology/technology-execution/identity-resolution">Identifier Resolution</a></td>
 <td width="77%">Standards for ensuring content is identified and resolvable.</td>
@@ -390,6 +390,11 @@ The taxonomy of pillars, capability areas, capabilities, and their measurable ab
 <td width="1%">D.2.13</td>
 <td width="20%"><a href="/pillar/technology/technology-execution/knowledge-graph-virtualization">Knowledge Graph Virtualization</a></td>
 <td width="77%">Model-driven views on data of any source leaving it in-place.</td>
+</tr>
+<tr>
+<td width="1%">D.2.14</td>
+<td width="20%"><a href="/pillar/technology/technology-execution/llm-ai">Large language model AI</a></td>
+<td width="77%">Leveraging the power of LLM AI</td>
 </tr>
 <tr>
 <td width="1%" colspan="4" style="text-align:left;vertical-align:top;"><a href="/pillar/technology/user-interface">User Interface</a></td>

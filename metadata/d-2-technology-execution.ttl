@@ -130,3 +130,12 @@
   ekgmm:inArea           <capability-area-technology-execution> ;
   ekgmm:capabilityNumber "D.2.13" ;
 .
+
+<capability-technology-execution-llm-ai>
+  a                      ekgmm:Capability ;
+  rdfs:label             "Large language model AI" ;
+  rdfs:comment           "Leveraging the power of LLM AI" ;
+  ekgmm:iriLocalName     "llm-ai" ;
+  ekgmm:inArea           <capability-area-technology-execution> ;
+  ekgmm:capabilityNumber "D.2.14" ;
+.
