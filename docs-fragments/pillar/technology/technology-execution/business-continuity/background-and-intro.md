@@ -1,5 +1,3 @@
-## Business Continuity
-
 The **Business Continuity** capability within the Technology Pillar focuses on ensuring
 the uninterrupted operation and availability of the Enterprise Knowledge Graph (EKG),
 particularly leveraging the EKG itself at higher levels of maturity.
@@ -31,7 +29,8 @@ maturity, include:
    that integrate with the EKG, leveraging its interconnected knowledge to guide the
    recovery process.
    This includes defining recovery objectives and utilizing the EKG's data contracts
-   to prioritize recovery efforts and ensure prompt restoration of critical components.
+   and SLAs to prioritize recovery efforts and ensure prompt restoration of critical
+   components.
 
 5. **Incident Response and Management**: Leveraging the EKG's capabilities to facilitate
    incident response and management processes.
@@ -44,6 +43,12 @@ maturity, include:
    This ensures that stakeholders understand how the EKG supports continuity efforts,
    their roles and responsibilities within the EKG ecosystem, and how to effectively
    utilize the EKG's capabilities during disruptions.
+
+7. **Mission-Critical Business Process Modeling**: Given the complexity of the EKG, 
+   it's advisable to model mission-critical business processes and make BCP an 
+   integral part of the EKG's data itself. 
+   This can help ensure that these processes can be quickly restarted in a new 
+   location if necessary.
 
 By integrating business continuity operations with the EKG itself at higher levels of
 maturity, organizations can leverage its interconnected knowledge assets, data contracts,
