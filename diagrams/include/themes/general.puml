@@ -1,15 +1,15 @@
 !define BORDER_THICKNESS 1
 
+!option handwritten false
 skinparam Padding 4
-skinparam RoundCorner 40
-skinparam Shadowing true
+skinparam RoundCorner 8
+skinparam Shadowing false
 skinparam HyperlinkUnderline false
-skinparam handwritten false
 
 skinparam Default {
-  'FontName "Open Sans Semibold"
+  FontName "Roboto"
   FontColor FONT_COLOR
-  FontSize 12
+  FontSize 14
 }
 
 skinparam Arrow {
@@ -72,7 +72,7 @@ skinparam interface {
   BorderColor BORDER_COLOR
   FontColor FONT_COLOR
 }
-skinparam SequenceParticipantBorderThickness 3
+skinparam SequenceParticipantBorderThickness 1
 skinparam sequence {
   ParticipantBackgroundColor BG_MAIN_COLOR
   ParticipantBorderColor BORDER_COLOR
