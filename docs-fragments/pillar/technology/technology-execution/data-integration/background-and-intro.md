@@ -15,7 +15,7 @@ Key aspects of Data Integration within the Technology Pillar now include:
    the EKG. This involves mapping and aligning identifiers across various 
    data sources and resolving conflicts to achieve a unified and reliable 
    representation of entities. 
-   See also [D.2.1. Identifier Resolution](../../../../pillar/technology/technology-execution/identity-resolution/).
+   See also [D.2.1. Identifier Resolution](../identity-resolution/index.md).
 2. **Data Transformation and Harmonization**: Applying transformation and 
    harmonization techniques to ensure data from different sources, including
    legacy systems, are integrated and reconciled effectively within the EKG. 

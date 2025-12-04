@@ -110,25 +110,8 @@ docs-install-brew-macos:
 	@if ! command -v brew >/dev/null 2>&1 ; then echo "Install HomeBrew" ; exit 1 ; fi
 	@brew --version
 
-.PHONY: docs-install-asdf
-docs-install-asdf: docs-install-brew
-	@echo "Install the asdf package manager:"
-	@if ! command -v asdf >/dev/null 2>&1; then \
-		brew upgrade asdf 2>/dev/null || brew install asdf; \
-	fi
-	@asdf plugin add python 2>/dev/null || true
-
-.PHONY: docs-install-asdf-packages
-docs-install-asdf-packages: docs-install-asdf
-	@echo "Install packages via asdf:"
-	asdf install
-	
 .PHONY: docs-install-python-packages
-#ifneq ($(wildcard /home/runner/.*),)
-#docs-install-python-packages: docs-install-asdf
-#else
-docs-install-python-packages: docs-install-asdf-packages docs-install-standard-python-packages
-#endif
+docs-install-python-packages: docs-install-standard-python-packages
 
 .PHONY: docs-install-standard-python-packages
 docs-install-standard-python-packages: docs-ensure-venv

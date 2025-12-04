@@ -32,17 +32,6 @@ jobs:
         with:
           fetch-depth: 0
       -
-        name: Cache asdf installations
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.asdf/installs
-            ~/.asdf/plugins
-            ~/.asdf/shims
-          key: ${{ runner.os }}-asdf-${{ hashFiles('.tool-versions') }}
-          restore-keys: |
-            ${{ runner.os }}-asdf-
-      -
         name: Cache uv dependencies
         uses: actions/cache@v4
         with:
@@ -52,9 +41,6 @@ jobs:
           key: ${{ runner.os }}-uv-${{ hashFiles('uv.lock', 'pyproject.toml') }}
           restore-keys: |
             ${{ runner.os }}-uv-
-      -
-        name: Install asdf & tools
-        uses: asdf-vm/actions/install@v4
       -
         name: Install all MkDocs dependencies
         run: |

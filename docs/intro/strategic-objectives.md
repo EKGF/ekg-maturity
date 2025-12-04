@@ -50,10 +50,10 @@ maximize time-to-market.
 - Have LOB business outcomes (and dependencies) been defined and sequenced
   across the organizations
 - Is there alignment between 
-  organizational/[business objectives](/pillar/business/strategy-actuation/business-goals)
+  organizational/[business objectives](../pillar/business/strategy-actuation/business-goals/index.md)
   and data (concepts and repositories)
 - Has the organization defined and aligned data metrics and
-  Key Performance Indicators (KPIs) with [business objectives](/pillar/business/strategy-actuation/business-goals)
+  Key Performance Indicators (KPIs) with [business objectives](../pillar/business/strategy-actuation/business-goals/index.md)
 - Has the organization defined the business architecture for both 
   strategic and tactical objectives
 - Is the data strategy aligned with lines of business objectives

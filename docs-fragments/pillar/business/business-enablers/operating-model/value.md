@@ -4,7 +4,7 @@ Since an operating model reflects the business needs for standardization
 across a company and its business units, it could be a great input for
 the development of reusable business vocabularies as part of the
 data infrastructure of an enterprise as later explained in the
-[data part of this work](/pillar/data/).
+[data part of this work](../../../data/index.md).
 These vocabularies may, in turn, be converted to machine-readable models.
 Such machine-readable models are called ontologies.
 

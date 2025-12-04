@@ -38,7 +38,7 @@ for the appropriate context.
 - [ ] Policy---All data is obtained from the EKG as the authoritative source.
       Do not go directly to the originating source of the data.
 - [ ] Entitlement policies and classification requirements are on-boarded into the EKG
-- [ ] [Data quality business rules](../../../data-governance/classification-management) 
+- [ ] [Data quality business rules](https://maturity.ekgf.org/pillar/data/data-governance/classification-management/) 
       are on-boarded into the EKG
 
 ## Maturity Level 3

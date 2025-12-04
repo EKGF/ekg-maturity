@@ -1,6 +1,6 @@
 ## Maturity Level 1
 
-- [ ] [Data quality business rules](../../../data-governance/classification-management)
+- [ ] [Data quality business rules](https://maturity.ekgf.org/pillar/data/data-governance/classification-management/)
       (conditions) have been defined, documented and, verified by _subject matter experts (SMEs)_ 
       (process for evaluation and acceptance defined)
 - [ ] Business rules are aligned with in-scope [use cases](https://method.ekgf.org/concept/use-case)
@@ -25,7 +25,7 @@
       how often, improvement)
 - [ ] Performance---The value of business rules are related to business concepts (products, financial performance,
       organizational objectives)---able to trace the core relationship between the 
-      [business objectives](/pillar/business/strategy-actuation/business-goals) and
+      [business objectives](../../strategy-actuation/business-goals/index.md) and
       the data quality business rules (correlation between rules and outcomes are known, able to be queried and
       traceable within the EKG)
 
@@ -38,5 +38,5 @@
 ## Maturity Level 5
 
 - [ ] All business rules are driven by
-      [business objectives](/pillar/business/strategy-actuation/business-goals) 
+      [business objectives](../../strategy-actuation/business-goals/index.md) 
       (objectives are in the EKG with appropriate scorecards)

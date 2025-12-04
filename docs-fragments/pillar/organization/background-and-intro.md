@@ -13,12 +13,12 @@ Organizational Culture is relevant for the EKG in two ways:
 1. [Organizational Culture contributes to the EKG](#organizational-culture-contributes-to-the-ekg)
 2. [EKG contributes to the Organizational Culture](#ekg-contributes-to-the-organizational-culture)
 
-[Organizational Culture](../organizational-culture) is further documented in this maturity model as its
+[Organizational Culture](organizational-culture/index.md) is further documented in this maturity model as its
 own capability area with the following three capabilities that are relevant to the EKG:
 
-1. [B.4.1. Implementation Approach](../organizational-culture/implementation-approach)
-2. [B.4.2. Agility & Innovation](../organizational-culture/agility-and-innovation)
-3. [B.4.3. Ecosystem Collaboration](../organizational-culture/ecosystem-collaboration)
+1. [B.4.1. Implementation Approach](organizational-culture/implementation-approach/index.md)
+2. [B.4.2. Agility & Innovation](organizational-culture/agility-and-innovation/index.md)
+3. [B.4.3. Ecosystem Collaboration](organizational-culture/ecosystem-collaboration/index.md)
 
 ### Organizational Culture contributes to the EKG
 

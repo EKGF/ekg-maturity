@@ -41,7 +41,7 @@
     The product owner also ensures that the problem context is well-defined and 
     structured methodically, preferably using a structured method (such as the 
     [EKGF Method](https://method.ekgf.org) which provides a structure of all use cases in an EKG) 
-    and that it includes all the [use case requirements](use-case-requirements/). 
+    and that it includes all the [use case requirements](https://maturity.ekgf.org/pillar/organization/use-case-requirements/). 
     Through their leadership, the product owner ensures that the use cases are 
     delivered on time, on budget, and to the satisfaction of the stakeholders.
   """;

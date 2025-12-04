@@ -55,13 +55,13 @@ business processes <ins>and</ins> effectiveness of the overall end-to-end busine
 In the introductory section, we have introduced the idea of using Business Identities as intuitive anchor for
 an Enterprise’s engagement with its stakeholders.
 To address the trade-off challenge on individual vs collective efficiency in its business processes,
-an Enterprise’s [Business Identity](../../../../business/background-and-intro/#business-identity) can help in
+an Enterprise’s [Business Identity](../../background-and-intro.md#business-identity) can help in
 (a) aligning the guidance of the enterprise's vision/mission/values to the trade-off and
 (b) ensuring consistency in practices and tools, through standardization, in the execution of business processes.
 
 In order to best support a company's strategy, a foundation for execution is necessary.
 Such a foundation is the operating model of an organization.
 
-See article [Operating Model](/article/operating-model/) for a summary of the theory around
+See article [Operating Model](../../../../article/operating-model.md) for a summary of the theory around
 business operating models.
 

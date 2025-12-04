@@ -5,7 +5,7 @@
     its more granular, precision-based, inheritor: 
     Dynamic Predictive Segmentation.
 
-Market Segmentation is an important component in the [elaboration of an Enterprise’s Business Model](../../),
+Market Segmentation is an important component in the [elaboration of an Enterprise’s Business Model](../../index.md),
 helping Enterprises to align their Product and Services fulfilment to the needs of their customers.
 Market Segmentation practices today involve an intensive analysis through a mix of surveys,
 heuristics and benchmarking.
