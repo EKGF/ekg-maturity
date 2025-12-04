@@ -34,7 +34,7 @@
   ekgmm:iriLocalName "strategy-actuation" ;
   ekgmm:inPillar     <business-pillar> ;
   dct:description    """
-    _Business Strategy Actuation_ is a [business identity](business/background-and-intro/#business-identity) 
+    _Business Strategy Actuation_ is a [business identity](https://maturity.ekgf.org/pillar/business/background-and-intro/#business-identity) 
     oriented process that senses, understands and communicates business outcome-based assessment data to focus energy 
     and resources on strategic objectives.
     Actuation measurement values are used to assess whether strategic objectives and associated business goals
@@ -49,9 +49,9 @@
   ekgmm:inPillar     <business-pillar> ;
   dct:description    """
     _Business Model Elaboration_ is the process of providing further detail of 
-    [business strategy](/article/business-strategy/).
+    [business strategy](https://maturity.ekgf.org/article/business-strategy/).
     It may include decision rationale that explains how the 
-    [business identity](/pillar/business/background-and-intro/#business-identity) data infrastructure
+    [business identity](https://maturity.ekgf.org/pillar/business/background-and-intro/#business-identity) data infrastructure
     and algorithms enable the how and why planned actions would create, deliver, and capture value.
   """
 .
@@ -62,14 +62,14 @@
   ekgmm:iriLocalName "business-enablers" ;
   ekgmm:inPillar     <business-pillar> ;
   dct:description    """
-    _Business Enablers_ help implementors focus on [business strategy](/article/business-strategy/) execution.
+    _Business Enablers_ help implementors focus on [business strategy](https://maturity.ekgf.org/article/business-strategy/) execution.
     Specifically, they bring visibility to the exploration, architecture, 
     infrastructure, compliance and performance activities needed to successfully 
     [implement](https://method.ekgf.org/process/build/) the target business functionality. 
     For instance, using [EKG](https://principles.ekgf.org/vocab/ekg/) they are able 
     to supply the knowledge enablement models, metrics, risk framework, 
     value chain maps and self describing data that are needed by implementors to 
-    verify and validate the [delivery pipeline](/pillar/organization/delivery-management/) 
+    verify and validate the [delivery pipeline](https://maturity.ekgf.org/pillar/organization/delivery-management/) 
     which powers digital transformations.
   """
 .

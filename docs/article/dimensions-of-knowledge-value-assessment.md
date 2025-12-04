@@ -16,7 +16,7 @@ To help measure knowledge growth the _Enterprise Knowledge Graph (EKG)
 Maturity Model_ provides a single metric for an entire Enterprise’s 
 utilization. 
 To qualitatively identify maturity trends the Model is structured
-with [Pillars](../../pillar). 
+with [Pillars](../pillar/index.md). 
 To quantitatively measure maturity success the Model supports the 
 use of dimension-specific data points. 
 Additionally, to help explain the investment created at "Maturity" 
@@ -53,7 +53,7 @@ the objective would likely include all forms of Business Value
 that indicate the health and well-being of an enterprise. 
 The most likely core objective would be to have a _Value Proposition_
 that gives the customer the reason to choose their offering. 
-Another likely objective would be the [Value Stream Management](/pillar/business/business-model-elaboration/value-chain/dimensions)
+Another likely objective would be the [Value Stream Management](../pillar/business/business-model-elaboration/value-chain/index.md)
 focused on the flow of Value Chain activities performed when 
 validating a product-market proposition.
 

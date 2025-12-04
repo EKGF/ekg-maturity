@@ -91,7 +91,7 @@ Response design; Value Outcomes; Performance[^2].
 ### Portfolio
 
 To support Portfolio-level analysis a quantitative risk assessment and management 
-framework identified the phases of a Value of 
+framework[^7] identified the phases of a Value of 
 Asset driven analysis > 
 scenario identification > 
 consequence and criticality assessment > 
@@ -221,7 +221,7 @@ in behavior could mitigate specific risks.
 [^4]: https://www.mitre.org/publications/systems-engineering-guide/acquisition-systems-engineering/risk-management/risk-impact-assessment-and-prioritization
 [^5]: https://www.enisa.europa.eu/publications/an-evaluation-framework-for-cyber-security-strategies
 [^6]: https://en.wikipedia.org/wiki/Digital_twin
-[^7]: Advanced Risk Analysis in Engineering Enterprise Systems By Cesar Ariel Pinto, Paul R. Garvey 
+[^7]: Advanced Risk Analysis in Engineering Enterprise Systems; Cesar Ariel Pinto, Paul R. Garvey 
 
 
 

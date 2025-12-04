@@ -7,7 +7,7 @@ date: 2022-01-31
 some_url: https://maturity.ekgf.org/article/value-proposition-of-ekg/
 ---
 
-Antwerp, December 2021, [Carlos Tubbax](/other/author/carlos-tubbax/).
+Antwerp, December 2021, [Carlos Tubbax](../other/author/carlos-tubbax.md).
 
 # The value proposition of EKG
 

@@ -6,8 +6,8 @@ repo_url: https://github.com/EKGF/ekg-maturity
 site_url: https://maturity.ekgf.org
 edit_uri: edit/main/docs/
 site_dir: site
-site_author: Enterprise Knowledge Graph Foundation
-copyright: Copyright &copy; 2019-2023 Enterprise Knowledge Graph Foundation
+site_author: Object Management Group (OMG) Enterprise Knowledge Graph Forum
+copyright: "Copyright © 2025 Object Management Group®, OMG® | All Rights Reserved"
 
 # Navigation
 # nav: omitted, because we're using the awesome-pages plugin (https://squidfunk.github.io/mkdocs-material/plugins/awesome-pages/)
@@ -137,9 +137,7 @@ plugins:
         - '.*\.(tmp|bin|tar)$'
         - '_.*\.md$'
   - kroki:
-      ServerURL: https://kroki.io/
-      DownloadImages: false
-      DownloadDir: docs/diagrams/out
+      server_url: https://kroki.io/
   - gen-files:
       scripts:
         - docs/generate_maturity_model.py
@@ -181,8 +179,8 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.critic
   - pymdownx.emoji:
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -190,6 +188,9 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde

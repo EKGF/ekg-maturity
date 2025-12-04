@@ -1,0 +1,88 @@
+{# SEO Meta Tags Partial #}
+
+{# Get page-specific description or fall back to site description #}
+{% set page_description = page.meta.description if page.meta and page.meta.description else config.site_description %}
+
+{# Get page title #}
+{% set page_title = page.title if page.title else config.site_name %}
+{% set full_title = page_title + " - " + config.site_name if page_title != config.site_name else config.site_name %}
+
+{# Get page URL #}
+{% set page_url = config.site_url + page.url if page.url else config.site_url %}
+
+{# Get page image (use site logo or custom image) #}
+{% set page_image = config.site_url + "/assets/images/favicon.png" %}
+{% if page.meta and page.meta.image %}
+  {% set page_image = config.site_url + page.meta.image if page.meta.image.startswith("/") else page.meta.image %}
+{% endif %}
+
+{# Open Graph / Facebook #}
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ page_url }}">
+<meta property="og:title" content="{{ full_title }}">
+<meta property="og:description" content="{{ page_description }}">
+<meta property="og:image" content="{{ page_image }}">
+<meta property="og:site_name" content="{{ config.site_name }}">
+{% if config.site_author %}
+<meta property="og:locale" content="en_US">
+{% endif %}
+
+{# Twitter Card #}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ page_url }}">
+<meta name="twitter:title" content="{{ full_title }}">
+<meta name="twitter:description" content="{{ page_description }}">
+<meta name="twitter:image" content="{{ page_image }}">
+{% if config.extra.social %}
+  {% for social in config.extra.social %}
+    {% if "twitter" in social.link %}
+      <meta name="twitter:site" content="@{{ social.link.split('/')[-1] }}">
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{# Additional SEO meta tags #}
+{% if page.meta and page.meta.keywords %}
+<meta name="keywords" content="{{ page.meta.keywords | join(', ') }}">
+{% endif %}
+
+{# JSON-LD Structured Data #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{% if page.meta and page.meta.schema_type %}{{ page.meta.schema_type }}{% else %}WebPage{% endif %}",
+  "name": "{{ full_title }}",
+  "description": "{{ page_description }}",
+  "url": "{{ page_url }}",
+  "inLanguage": "{{ config.theme.language }}",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "{{ config.site_name }}",
+    "url": "{{ config.site_url }}"
+  }{% if config.site_author %},
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ config.site_author }}",
+    "url": "{{ config.site_url }}"
+  }{% endif %}{% if page.meta and page.meta.authors %},
+  "author": [
+    {% for author in page.meta.authors %}
+    {
+      "@type": "Person",
+      "name": "{{ author }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]{% endif %}{% if page.meta and page.meta.date_published %},
+  "datePublished": "{{ page.meta.date_published }}"{% endif %}{% if page.meta and page.meta.date_modified %},
+  "dateModified": "{{ page.meta.date_modified }}"{% elif page.meta and page.meta.git_revision_date_localized %},
+  "dateModified": "{{ page.meta.git_revision_date_localized }}"{% endif %},
+  "mainEntity": {
+    "@type": "Article",
+    "headline": "{{ page_title }}",
+    "description": "{{ page_description }}"
+  }
+}
+</script>
+
+***
+

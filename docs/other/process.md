@@ -44,7 +44,7 @@ To summarize, we have 4 main things to do:
 An issue can be anything, your feedback, ideas, suggestions, spelling mistakes,
 inconsistencies, anything that should be changed on this website.
 
-![Process Diagram](/assets/ekgmm-process-diagram.png)
+![Process Diagram](../assets/ekgmm-process-diagram.png)
 
 ## Raise
 
@@ -248,7 +248,7 @@ There are roughly two methods though:
 2. Make a so-called _git clone_ of the repository to your own
    workstation and use any appropriate editor to add or change things.
 
-![Where to find the edit button](/assets/ekgmm-process-edit-content.png)
+![Where to find the edit button](../assets/ekgmm-process-edit-content.png)
 
 Both methods require:
 
@@ -298,7 +298,7 @@ be `issue-123`.
 
 ### How to commit a change?
 
-![Committing changes](/assets/ekgmm-process-commit-changes.png)
+![Committing changes](../assets/ekgmm-process-commit-changes.png)
 
 There are several ways to create a commit on a branch in a 
 git repository. It’s up to the "fixer" (usually called "developer"
@@ -359,7 +359,7 @@ shows all branches of the repository:
 On the right side of the table showing all the branches you either see an 
 existing PR for the given branch or a button:
 
-![Process PR button](/assets/ekgmm-process-pr-button.png)
+![Process PR button](../assets/ekgmm-process-pr-button.png)
 
 It’s easy from there. 
 Give your PR a good title (that title goes into the "changelog" so be 
@@ -380,4 +380,4 @@ TODO
   Kanban terminology and in the Github project user interface.
   Besides that you can also add “Notes” to the project board.
 [^github-userids]: The GitHub userids and names of all contributors 
-  will be listed [here](/other/contributors/).
+  will be listed [here](contributors.md).

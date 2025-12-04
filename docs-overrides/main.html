@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+<!-- SEO Meta Tags -->
+{% block extrahead %}
+{{ super() }}
+{% include "partials/seo.html" %}
+{% endblock %}
+
 <!-- Content -->
 {% block content %}
 {% if page.meta.generated == True %}

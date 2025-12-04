@@ -4,8 +4,8 @@ The Enterprise Knowledge Graph Foundation (EKGF) was chartered in early 2020.
 Of the many ideas discussed for initial projects, the founders agreed that writing and publishing a Maturity Model
 for the EKG (EKG/Maturity) should be the first effort of the membership.
 
-The idea of representing the maturity model as four pillars titled [Business](/pillar/business/), 
-[Organization](/pillar/organization/), [Data](/pillar/data/), and [Technology](/pillar/technology/),
+The idea of representing the maturity model as four pillars titled [Business](../pillar/business/index.md), 
+[Organization](../pillar/organization/index.md), [Data](../pillar/data/index.md), and [Technology](../pillar/technology/index.md),
 was presented in a June 2020 kickoff webinar.
 
 This concept was accepted.

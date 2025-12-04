@@ -7,7 +7,7 @@ date: 2022-03-06
 some_url: https://maturity.ekgf.org/article/introducing-kgi/
 ---
 
-New Jersey, 2021, [Carl Mattocks](/other/author/carl-mattocks/)
+New Jersey, 2021, [Carl Mattocks](../other/author/carl-mattocks.md)
 
 # Introducing the EKG Matrix Plot & KGI Value
 
@@ -15,7 +15,7 @@ The Enterprise Knowledge Graph (EKG) 0-5 Level Maturity Model is an industry-sta
 knowledge management guideline with topics that support an evidence-rating system 
 for organizational use of Knowledge Graphs (KG). 
 
-In particular, it uses [Pillars](/pillar/) of meta-knowledge, each containing a 
+In particular, it uses [Pillars](../pillar/index.md) of meta-knowledge, each containing a 
 collection of subject area specific assessment criteria that are the related 
 dimension values of distinct maturity metrics.
 

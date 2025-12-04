@@ -6,7 +6,7 @@ authors:
 some_url: https://maturity.ekgf.org/article/business-strategy/
 ---
 
-Antwerp, 2021, [Carlos Tubbax](/other/author/carlos-tubbax/).
+Antwerp, 2021, [Carlos Tubbax](../other/author/carlos-tubbax.md).
 
 # What is Business Strategy?
 

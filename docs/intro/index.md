@@ -18,4 +18,4 @@ It is necessary to be a member of the EKGF to be included in
 
 ![](../assets/ekg-maturity-structure.png)
 
-See [structure](./structure/) for more information.
+See [structure](structure/index.md) for more information.
