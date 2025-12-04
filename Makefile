@@ -166,7 +166,7 @@ docs-serve-debug-non-strict: docs-ensure-venv
 
 .PHONY: docs-deploy
 docs-deploy: docs-ensure-venv
-	$(UV) run mkdocs gh-deploy --config-file $(MKDOCS_CONFIG_FILE) --verbose
+	$(UV) run mkdocs gh-deploy --config-file $(MKDOCS_CONFIG_FILE)
 
 .PHONY: docs-sync-from
 docs-sync-from: docs-sync-from-ekg-maturity docs-sync-from-ekg-principles
