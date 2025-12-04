@@ -60,11 +60,6 @@ theme:
 extra:
   homepage: https://www.ekgf.org/quadrants
   generator: false
-  giscus:
-    repo_id: 'MDEwOlJlcG9zaXRvcnkzMTk3MTE4MzM='
-    category:
-      name: 'Page Comments'
-      id: 'DIC_kwDOEw5qWc4CRV2s'
   social:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/EKG_Foundation
@@ -75,20 +70,6 @@ extra:
   analytics:
     provider: google
     property: G-0FZFTDFDHQ
-    feedback:
-      title: Was this page helpful?
-      ratings:
-        - icon: material/emoticon-happy-outline
-          name: This page was helpful
-          data: 1
-          note: >-
-            Thanks for your feedback!
-        - icon: material/emoticon-sad-outline
-          name: This page could be improved
-          data: 0
-          note: >-
-            Thanks for your feedback! Help us improve this page by
-            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
 extra_javascript:
   - "javascript/images_dark.js"
   - "javascript/refresh_on_toggle_dark_light.js"
