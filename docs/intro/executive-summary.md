@@ -51,7 +51,7 @@ whole and more specifically in relation to any of the capabilities that are bein
 Another major point to make about the Use Case Trees is that it is the backbone component-structure
 of your EKG.
 In a way you could see them as the EKG's equivalent of your current siloed application- and data-landscape.
-Rather than building a new silo everytime for every new use case, you would "build" new use cases in the EKG.
+Rather than building a new silo every time for every new use case, you would "build" new use cases in the EKG.
 Use cases are _logical silos_ in that sense.
 In a data-centric EKG world, there are no more independent applications that are run as separate systems.
 Just this particular change alone has major implications on how things are organized.

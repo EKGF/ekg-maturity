@@ -231,7 +231,7 @@ offerings) by its customers and stakeholders.
   interest in and intent of using information is clearly understood and
   agreed upon upfront.
 - The **Understand** imperative is addressed by using the Business Identity
-  as a common link between the complementary mechanisms of (a) fulfilment 
+  as a common link between the complementary mechanisms of (a) fulfillment 
   within an enterprise and (b) the collaboration contexts with the partners.
 - The **Decide** imperative is addressed by using the Business Identity
   as an enterprise persona for scenario planning and evaluation --- rather
@@ -240,7 +240,7 @@ offerings) by its customers and stakeholders.
 Business Identity enables an (EKG powered) enterprise to constantly
 assess and align its value propositions to a) the needs and use-contexts
 of consumers and b) the collaboration mechanisms with business partners
-for effective fulfilment.
+for effective fulfillment.
 
 Examples of prominent _brand statements_:
 
@@ -360,7 +360,7 @@ Contracts:
   Business Identity to scope the EKG facts and facets that are needed to 
   have a single source of truth about each of their Suppliers, Partners and Consumers.
   For example, when a Business Identity point to point relationship with the 
-  Identities of all their Customers is enabled, implementors have much 
+  Identities of all their Customers is enabled, implementers have much 
   greater clarity about what must be governed, collected, analyzed, and securely stored.
 
 [^what-is-strategy]: See [Business Strategy](../../article/business-strategy.md)

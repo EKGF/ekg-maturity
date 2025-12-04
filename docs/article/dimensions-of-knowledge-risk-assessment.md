@@ -199,7 +199,7 @@ The task of populating a BCP will likely employ a digitization process
 that converts the characteristics of a physical object / process into a 
 digital form and, as a Value-Add, create a _Digital Twin (DT)_[^6] 
 construct. 
-Moreso, to provide operations intelligence that span its lifecycle, 
+More so, to provide operations intelligence that span its lifecycle, 
 The BCP would have Use Case Tree connections to Knowledge Graphs, 
 KPIs, KRIs  and the Business Capability that leverage it. 
 As in, Safeguard physical properties declared in a Knowledge Graph 

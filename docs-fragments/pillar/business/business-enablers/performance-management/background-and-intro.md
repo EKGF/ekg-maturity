@@ -15,7 +15,7 @@ has operated at (at-least!) three different levels:
 2. **Operations and Delivery management reporting used by front-line and operations staff to identify, analyse and fix problems and deviations**<br/>
    Improvements in the planning and scheduling activities, through multiple generations of resource planning
    and workflow management, have helped most enterprises to rapidly configure chains of activities,
-   optimise resource capital and monitor in near real-time the fulfilment and deviations in operations.
+   optimise resource capital and monitor in near real-time the fulfillment and deviations in operations.
 3. **Personnel evaluation and reporting towards role management for career and aspirations management of staff**<br/>
    Performance appraisal has received a lot of attention in recent years, with shifts from intuition and
    heuristics based once-a-year activity to statistical profiling mechanisms and of late,
@@ -30,7 +30,7 @@ enterprises still struggle with bridging the gap in aligning performance managem
     The feedback mechanisms which aim to align the two are dominated by subjective assessments resulting in
     high exception workloads.
 
-**Fulfilment focused integration leaving significant silos between information technology and operations**
+**Fulfillment focused integration leaving significant silos between information technology and operations**
 
 :   Most use of information technology is focused on information flows and aggregation whereas operations
     technology is focused on individual units of activity. The relative prioritization is dominated by

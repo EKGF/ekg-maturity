@@ -36,7 +36,7 @@ Value analysts often use data science methods and computational art
 mechanisms to correctly measure dimensions. 
 Especially, when algorithmic parameters must be used to convert 
 _Business Value dimensions_ into _Key Performance Indicators_. 
-Moreso, when the complexity of the innovation[^2] requires a 
+More so, when the complexity of the innovation[^2] requires a 
 dimension scope supporting the objectives of 
 [Sustainability](#sustainability); 
 [Innovation Strategy](#innovation-strategy); 
