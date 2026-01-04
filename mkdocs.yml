@@ -58,7 +58,7 @@ theme:
     - toc.integrate
     - content.code.annotate
 extra:
-  homepage: https://www.ekgf.org/quadrants
+  homepage: https://ekgf.org/quadrants
   generator: false
   social:
     - icon: fontawesome/brands/twitter

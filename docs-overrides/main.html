@@ -4,6 +4,79 @@
 {% block extrahead %}
 {{ super() }}
 {% include "partials/seo.html" %}
+<script>
+  (function () {
+    var KEY = "ekgf-theme";
+
+    function getCookie(name) {
+      var m = document.cookie.match(
+        new RegExp("(^|;\\s*)" + name + "=([^;]*)"),
+      );
+      return m ? decodeURIComponent(m[2]) : "";
+    }
+
+    function setCookie(name, value) {
+      var host = window.location.hostname || "";
+      var domain = host.endsWith(".ekgf.org") ? "; domain=.ekgf.org" : "";
+      document.cookie =
+        name +
+        "=" +
+        encodeURIComponent(value) +
+        "; path=/; max-age=31536000; samesite=lax" +
+        domain;
+    }
+
+    function applyPaletteFromCookie() {
+      if (typeof __md_get !== "function" || typeof __md_set !== "function")
+        return;
+
+      var t = getCookie(KEY);
+      if (t !== "dark" && t !== "light") return;
+
+      var desired = t === "dark" ? "slate" : "default";
+      var palette = __md_get("__palette");
+
+      if (!palette || typeof palette !== "object") {
+        __md_set("__palette", { color: { scheme: desired } });
+        return;
+      }
+
+      if (!palette.color || typeof palette.color !== "object") {
+        palette.color = {};
+      }
+
+      if (palette.color.scheme === desired) return;
+
+      palette.color.scheme = desired;
+      __md_set("__palette", palette);
+    }
+
+    function syncCookieFromPalette() {
+      if (typeof __md_get !== "function") return;
+      var palette = __md_get("__palette");
+      if (palette && palette.color && typeof palette.color === "object") {
+        var scheme = palette.color.scheme;
+        if (scheme === "slate") setCookie(KEY, "dark");
+        if (scheme === "default") setCookie(KEY, "light");
+      }
+    }
+
+    // Run early so Material can pick up the palette
+    applyPaletteFromCookie();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Ensure cookie exists even if user never toggles
+      syncCookieFromPalette();
+
+      var ref = document.querySelector("[data-md-component=palette]");
+      if (!ref) return;
+
+      ref.addEventListener("change", function () {
+        syncCookieFromPalette();
+      });
+    });
+  })();
+</script>
 {% endblock %}
 
 <!-- Content -->
