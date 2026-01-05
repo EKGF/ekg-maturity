@@ -1,7 +1,7 @@
-# EKG/Maturity
+# EKG Maturity
 
 This repository contains the [Markdown](https://en.wikipedia.org/wiki/Markdown)
-based source documents of EKG/Maturity, the Maturity Model for the EKG.
+based source documents of EKG Maturity, the Maturity Model for the EKG.
 
 ![quadrant](customer-assets/quadrant.jpg)
 
@@ -16,8 +16,15 @@ or [./docs-fragments](./docs-fragments) directories.
 
 [![GitHub](https://img.shields.io/github/license/EKGF/ekg-maturity?style=for-the-badge)](http://creativecommons.org/licenses/by-sa/4.0/)
 
+```text
+Copyright (c) 2026 EDMCouncil Inc., d/b/a Enterprise Data Management Association ("EDMA")
+```
+
 This work is licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+When using or sharing this content, please provide attribution to:
+- EDMCouncil Inc., d/b/a Enterprise Data Management Association ("EDMA")
 
 For members of the [EKGF](https://www.ekgf.org) there are a number of Slack channels:
 
