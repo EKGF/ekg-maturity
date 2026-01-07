@@ -1,0 +1,55 @@
+{
+  "name": "EKG Maturity Documentation",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.14"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "DavidAnson.vscode-markdownlint",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "squidfunk.mkdocs-material"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": false,
+        "python.formatting.provider": "none",
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter",
+          "editor.formatOnSave": true
+        },
+        "[markdown]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.rulers": [70],
+          "editor.wordWrap": "off"
+        },
+        "markdownlint.run": "onSave",
+        "markdownlint.fixOnSave": true,
+        "prettier.printWidth": 70,
+        "prettier.proseWrap": "always"
+      }
+    }
+  },
+
+  "remoteEnv": {
+    "VIRTUAL_ENV": "${containerWorkspaceFolder}/.venv",
+    "PATH": "${containerWorkspaceFolder}/.venv/bin:${env:HOME}/.cargo/bin:${containerEnv:PATH}"
+  },
+
+  "forwardPorts": [8000],
+
+  "postStartCommand": "echo 'Dev container ready!'"
+}

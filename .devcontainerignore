@@ -1,0 +1,11 @@
+**/.git
+**/.venv
+**/node_modules
+**/site
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/.mypy_cache
+**/dist
+**/build
+**/*.egg-info

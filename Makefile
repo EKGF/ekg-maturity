@@ -23,15 +23,14 @@ endif
 endif
 
 #
-# Since we do not have asdf for Windows, we need to install these tools
-# on windows in a different way. Here we assume you did that yourself in
-# the local project's virtualenv directory (./.venv).
+# Windows note: install the required build tools separately (outside of this Makefile),
+# then run `make install` to create/use the local project's virtualenv (./.venv).
 #
 VENV_PYTHON := $(VIRTUAL_ENV)/bin/python3
 UV := uv
-PYTHON_VERSION := 3.13
+PYTHON_VERSION := 3.14.2
 
-PIPENV_DEFAULT_PYTHON_VERSION := 3.13
+PIPENV_DEFAULT_PYTHON_VERSION := 3.14.2
 PIPENV_VENV_IN_PROJECT := 1
 
 CURRENT_BRANCH := $(shell git branch --show-current)
