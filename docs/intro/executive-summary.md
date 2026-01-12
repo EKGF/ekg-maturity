@@ -1,6 +1,6 @@
 # Executive Summary
 
-The EKG Maturity Model (EKG/Maturity) is the industry-standard definition of the capabilities required for an EKG and
+The EKG Maturity Model (EKG Maturity) is the industry-standard definition of the capabilities required for an EKG and
 of the generic capabilities in any given organization that are affected by EKG.
 
 It establishes standard criteria for measuring progress and sets out the practical questions that all involved
@@ -8,11 +8,11 @@ stakeholders ask to ensure trust, confidence and usage flexibility of data.
 Each capability area provides a business summary denoting its importance, a definition of the added value from
 semantic standards and scoring criteria based on five levels of defined maturity.
 
-**EKG/Maturity is a capability model** designed to promulgate best practices across the knowledge graph community.
+**EKG Maturity is a capability model** designed to promulgate best practices across the knowledge graph community.
 It covers essential capabilities as well as standard evaluation criteria required for the design, implementation,
 and maintenance of an EKG.
 
-The Maturity Model for the Enterprise Knowledge Graph (EKG/Maturity) is one of the key initiatives
+The Maturity Model for the Enterprise Knowledge Graph (EKG Maturity) is one of the key initiatives
 of the [Enterprise Knowledge Graph Foundation](https://ekgf.org) being developed by a
 community of [contributors](../other/contributors.md).
 
@@ -55,7 +55,7 @@ Rather than building a new silo every time for every new use case, you would "bu
 Use cases are _logical silos_ in that sense.
 In a data-centric EKG world, there are no more independent applications that are run as separate systems.
 Just this particular change alone has major implications on how things are organized.
-EKG/Maturity covers these---and many other---implications.
+EKG Maturity covers these---and many other---implications.
 
 ## Capabilities as Use Cases
 

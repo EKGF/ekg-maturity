@@ -6,7 +6,7 @@ corporate member.
 
 Email with [registration@ekgf.org](mailto:registration@ekgf.org) to set it up,
 if you plan to participate as a contributor to the 
-[EKG maturity model (EKG/Maturity)](https://maturity.ekgf.org)
+[EKG maturity model (EKG Maturity)](https://maturity.ekgf.org)
 then please also supply your GitHub user-id.
 
 ## How to create a GitHub & Slack account?

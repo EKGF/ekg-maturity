@@ -17,7 +17,6 @@ watch:
 theme:
   name: material
   language: en
-  custom_dir: /Users/jgeluk/Work/mkdocs-material-ekgf/mkdocs_material_ekgf
   font:
     text: Roboto
     code: Roboto Mono

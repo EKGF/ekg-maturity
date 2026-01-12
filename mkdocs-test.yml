@@ -1,0 +1,102 @@
+# Test configuration with material-ekgf plugin
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+site_name: EKG Maturity
+site_description: Maturity Model for the Enterprise Knowledge Graph (EKG)
+repo_name: 'EKGF/ekg-maturity'
+repo_url: https://github.com/EKGF/ekg-maturity
+site_url: https://maturity.ekgf.org
+edit_uri: edit/main/docs/
+site_dir: site-test
+site_author: Object Management Group (OMG) Enterprise Knowledge Graph Forum
+copyright: >-
+  Copyright © 2026 EDMCouncil Inc., d/b/a Enterprise Data Management Association ("EDMA")
+
+theme:
+  name: material
+  language: en
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: light-blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - search.highlight
+    - navigation.top
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - toc.follow
+    - toc.integrate
+    - content.code.annotate
+
+extra:
+  homepage: https://ekgf.org/quadrants
+  generator: false
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/EKG_Foundation
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/EKGF
+    - icon: fontawesome/brands/github
+      link: https://github.com/EKGF/ekg-maturity
+  analytics:
+    provider: google
+    property: G-0FZFTDFDHQ
+
+plugins:
+  - material-ekgf
+  - include-markdown
+  - awesome-pages:
+      filename: .pages.yaml
+      collapse_single_pages: false
+      strict: true
+  - search:
+      lang:
+        - en
+
+markdown_extensions:
+  - footnotes
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - meta
+  - def_list
+  - abbr
+  - admonition
+  - tables
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.critic
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true

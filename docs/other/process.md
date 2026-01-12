@@ -15,13 +15,13 @@ EKG adoption, including:
 - semantic standards to solve the challenges of data management 
 - a method for accelerated EKG deployment
 
-One of the activities of the EKGF is its work on the EKG maturity model ([EKG/Maturity](https://maturity.ekgf.org))
+One of the activities of the EKGF is its work on the EKG maturity model ([EKG Maturity](https://maturity.ekgf.org))
 which establishes standard criteria for measuring and guiding progress
 on EKG adoption through asking practical questions of different
 involved stakeholders. 
 
 In order to be able to scale to a larger community of collaborating teams, 
-each contributing content to the EKG/Maturity, we decided to "eat our own dogfood" 
+each contributing content to the EKG Maturity, we decided to "eat our own dogfood" 
 and apply the same principles as we advocate for software development and
 data management such as "work Agile" and "test everything".
 
@@ -153,7 +153,7 @@ Here are some useful links.
 
 The idea is very simple though, we use the GitHub Projects facility. 
 Currently, we have a project for each pillar and a general project. 
-Here’s the main page for EKG/Maturity GitHub Projects: 
+Here’s the main page for EKG Maturity GitHub Projects: 
 [https://github.com/EKGF/ekg-maturity/projects](https://github.com/EKGF/ekg-maturity/projects)
 
 What you see is a list of "project boards" where each project board 
@@ -235,7 +235,7 @@ has been merged into the main branch.
     - As a <ins>fixer</ins>, I want to be able to **create a pull request**
 
 The term "fixer" is our own term, they’re usually called "developer" but
-we don’t consider someone who works on EKG/Maturity content to be a developer necessarily.
+we don’t consider someone who works on EKG Maturity content to be a developer necessarily.
 In the GitHub user interface, they show up as "contributors".
 Anyone who actually changes things in the repository will be registered by GitHub as 
 a contributor to that repository[^github-userids].

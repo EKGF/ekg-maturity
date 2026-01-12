@@ -24,4 +24,4 @@ Using an Enterprise Knowledge Graph to represent the operating model can help or
 !!! warn
 
     Work in progress, describe how this capability would be delivered or supported using an EKG approach,
-    making the link to the "how" i.e. the [EKG/Method](https://method.ekgf.org).
+    making the link to the "how" i.e. the [EKG Method](https://method.ekgf.org).

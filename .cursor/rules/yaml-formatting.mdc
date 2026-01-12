@@ -1,0 +1,44 @@
+---
+description:
+  YAML and frontmatter formatting rules for ekgf.org content.
+globs: "**/*.md,**/*.yml,**/*.yaml"
+alwaysApply: false
+---
+
+# YAML Formatting Rules
+
+## Frontmatter and YAML Files
+
+When editing YAML files or frontmatter sections in Markdown files:
+
+1. **Always use multiline syntax** instead of long quoted strings
+   - Use `>-` (folded block scalar with strip) for single-line strings
+     that need to wrap
+   - Use `|` (literal block scalar) when preserving line breaks is
+     needed
+   - Use `|-` (literal block scalar with strip) when preserving line
+     breaks but removing trailing newline
+
+2. **Always keep lines shorter than 70 characters**
+   - Break long strings across multiple lines
+   - Each line should be under 70 characters for readability
+
+## Examples
+
+### Good (multiline, < 70 chars per line):
+
+```yaml
+description: >-
+  Learn how to build composable, scalable enterprise knowledge through
+  reuse. Discover how the Use Case Tree Method enables safe reuse of
+  knowledge assets across teams and domains.
+```
+
+### Bad (long quoted string):
+
+```yaml
+description:
+  "Learn how to build composable, scalable enterprise knowledge
+  through reuse. Discover how the Use Case Tree Method enables safe
+  reuse of knowledge assets across teams and domains."
+```

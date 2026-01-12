@@ -8,7 +8,7 @@
 
 <maturity-model>
   rdf:type           ekgmm:Model ;
-  rdfs:label         "EKG/Maturity" ;
+  rdfs:label         "EKG Maturity" ;
   ekgmm:iriLocalName "ekg-maturity" ;
 .
 

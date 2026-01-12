@@ -24,6 +24,7 @@ This work is licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 When using or sharing this content, please provide attribution to:
+
 - EDMCouncil Inc., d/b/a Enterprise Data Management Association ("EDMA")
 
 For members of the [EKGF](https://www.ekgf.org) there are a number of Slack channels:

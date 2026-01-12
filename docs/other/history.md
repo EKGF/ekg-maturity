@@ -18,5 +18,5 @@
 |         |            | Added content for chapter "A.3.3 Risk Management"                                                                                          | Diane Alexander                                       |
 | 0.3     | 08/04/2021 | Business pillar workgroup deciding top-level structure                                                                                     | Lars Magnusson, Carl Mattocks, Jeffrey Wallk _et al_. |
 | 0.2     | 01/01/2021 | Started with new delivery process                                                                                                          | Mike Atkin, Dennis Wisnosky                           |
-| 0.1     | 01/03/2019 | [agnos.ai](https://agnos.ai) started with the EKG/Maturity initiative                                                                      | Michael Atkin, Jacobus Geluk                          |
-| 0.1     | 01/01/2020 | agnos.ai donated IP to EKG/Maturity model to the EKGF ``as is''                                                                            | Jacobus Geluk                                         |
+| 0.1     | 01/03/2019 | [agnos.ai](https://agnos.ai) started with the EKG Maturity initiative                                                                      | Michael Atkin, Jacobus Geluk                          |
+| 0.1     | 01/01/2020 | agnos.ai donated IP to EKG Maturity model to the EKGF ``as is''                                                                            | Jacobus Geluk                                         |

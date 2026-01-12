@@ -1,0 +1,94 @@
+---
+description: Markdown formatting rules for ekgf.org content.
+globs: "**/*.md,**/*.mdx"
+alwaysApply: false
+---
+
+# Markdown Formatting Rules
+
+## Line Length
+
+- **Maximum line length: 70 characters**
+- Apply to all prose content (paragraphs, lists, etc.)
+- Code blocks can exceed 70 characters if necessary
+- Headings should stay within 70 characters when possible
+
+## Line Wrapping
+
+1. **Enable automatic wrapping** for prose content
+2. **Preserve hard wraps** - don't reflow manually wrapped text unless
+   explicitly asked
+3. **Break at word boundaries** - never break in middle of words
+
+## Trailing Whitespace
+
+- **Do NOT trim trailing whitespace** in Markdown files
+- Markdown uses trailing spaces for soft line breaks
+- Let Prettier handle whitespace management
+
+## Lists
+
+- Use `-` for unordered lists (not `*` or `+`)
+- Indent nested lists with 2 spaces
+- Add blank line before and after lists
+
+## Code Blocks
+
+- Use fenced code blocks with language identifiers:
+
+  ````markdown
+  ```typescript
+  const example = "code here";
+  ```
+  ````
+
+- Prefer language-specific identifiers over generic `code`
+
+## Links
+
+- Use inline links: `[text](url)`
+- For repeated links, use reference-style at bottom of section
+
+## Emphasis
+
+- Use `**bold**` for strong emphasis
+- Use `_italic_` for emphasis
+- Use `` `code` `` for inline code
+
+## Headers
+
+- Use ATX-style headers: `# Header`
+- Add blank line before and after headers
+- Use sentence case for headers (not Title Case)
+
+## Example
+
+Good:
+
+```markdown
+# Introduction to EKG
+
+The Enterprise Knowledge Graph (EKG) provides a unified semantic layer
+for organizational knowledge.
+
+## Key benefits
+
+- **Interoperability** - Connect disparate systems
+- **Semantics** - Rich, machine-readable meaning
+- **Governance** - Centralized policy enforcement
+```
+
+Bad:
+
+```markdown
+# Introduction To EKG
+
+The Enterprise Knowledge Graph (EKG) provides a unified semantic layer
+for organizational knowledge.
+
+## Key Benefits
+
+- Interoperability - Connect disparate systems
+- Semantics - Rich, machine-readable meaning
+- Governance - Centralized policy enforcement
+```

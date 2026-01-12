@@ -16,7 +16,7 @@ The general layout, in this document, of each capability looks as follows:
 
 > How the capability contributes to the EKG
 
-> Including traceability to EKG/Principles where relevant
+> Including traceability to EKG Principles where relevant
 
 ### Contribution to the Enterprise
 
