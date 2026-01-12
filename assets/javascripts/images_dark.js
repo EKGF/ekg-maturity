@@ -1,35 +1,19 @@
+(function() {
+const paletteSwitcher0 = document.getElementById("__palette_0");
 const paletteSwitcher1 = document.getElementById("__palette_1");
-const paletteSwitcher2 = document.getElementById("__palette_2");
 
-paletteSwitcher1.addEventListener("change", function () {
-    documentFromDarkToLight(document)
-});
-
-paletteSwitcher2.addEventListener("change", function () {
-    documentFromLightToDark(document)
-});
-
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    alert("you're in dark mode")    // dark mode
-} else {
-    alert("you're in light mode")
+if (paletteSwitcher0) {
+    paletteSwitcher0.addEventListener("change", function () {
+        documentFromDarkToLight(document)
+    });
 }
 
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    const newColorScheme = e.matches ? "dark" : "light";
-    alert("zzzzz " + newColorScheme)
-});
+if (paletteSwitcher1) {
+    paletteSwitcher1.addEventListener("change", function () {
+        documentFromLightToDark(document)
+    });
+}
 
-document.addEventListener("DOMContentLoaded", function(){
-    alert('The page has fully loaded');
-    const palette = __md_get("__palette");
-    alert("palette: " + palette)
-    if (palette && typeof palette.color === "object")
-        if (palette.color.scheme === "slate") {
-            alert("dark: " + palette.color.scheme)
-        }
-    }
-});
 
 
 // if (window.matchMedia('(prefers-color-scheme: dark)').matches === true) {
@@ -89,3 +73,4 @@ function objectsFromDarkToLight(objects) {
     });
 }
 
+})();

@@ -1,0 +1,1658 @@
+:root {
+  /* EKGF custom colors */
+  --md-primary-fg-color: #4051b5;
+  --md-primary-fg-color--light: #5c6bc0;
+  --md-primary-fg-color--dark: #303f9f;
+  --md-accent-fg-color: #ff6f00;
+  --md-accent-fg-color--light: #ff9800;
+  --md-accent-fg-color--dark: #e65100;
+
+  /* OMG separator color alignment - matched to SVG color + link opacity (0.85) */
+  --omg-separator-color: rgba(163, 163, 163, 0.85);
+
+  /* Fine-tune: align header "EKGF" text with first top-level tab label */
+  --ekgf-logo-text-offset-x: -27px;
+
+  /* ekgf.org surface tokens (light) */
+  /* Slightly off-white to create a subtle contrast vs the (pure white) footer */
+  --ekgf-bg: hsl(240 4.8% 97%);
+  --ekgf-fg: rgba(1, 1, 1, 0.8); /* #010101 at 80% opacity */
+  --ekgf-muted-fg: #71717a;
+  --ekgf-border: var(--omg-separator-color);
+  --ekgf-surface-2: #f4f4f5;
+  --ekgf-header-bg: rgba(255, 255, 255, 0.9);
+  --ekgf-header-border: var(--omg-separator-color);
+  /* Footer should read as fully white, slightly distinct from content */
+  --ekgf-footer-bg: #ffffff;
+  --ekgf-footer-border: var(--omg-separator-color);
+
+  /* Map tokens into Material variables */
+  --md-default-bg-color: var(--ekgf-bg);
+  --md-default-fg-color: var(--ekgf-fg);
+  --md-default-fg-color--light: var(--ekgf-muted-fg);
+  --md-default-fg-color--lighter: rgba(1, 1, 1, 0.35);
+  --md-default-fg-color--lightest: rgba(1, 1, 1, 0.12);
+  --md-typeset-color: var(--ekgf-fg);
+  --md-typeset-a-color: var(--md-primary-fg-color);
+  --md-code-bg-color: var(--ekgf-surface-2);
+  --md-code-fg-color: var(--ekgf-fg);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #808bb3;
+  --md-primary-fg-color--light: #808bb3;
+  --md-primary-fg-color--dark: #808bb3;
+  --md-accent-fg-color: #997b66;
+  --md-accent-fg-color--light: #997b66;
+  --md-accent-fg-color--dark: #997b66;
+
+  /* OMG separator color alignment - matched to SVG color + link opacity (0.85) */
+  --omg-separator-color: rgba(148, 163, 184, 0.85);
+
+  /* ekgf.org surface tokens (dark) */
+  /*
+    Match ekgf-website's subtle "pre-footer" dark section tone as the standard
+    background: slightly lighter than the footer/background.
+  */
+  --ekgf-bg: hsl(240 10% 10%);
+  --ekgf-fg: #afafb6;
+  --ekgf-muted-fg: #6d6d78;
+  --ekgf-border: var(--omg-separator-color);
+  --ekgf-surface-2: #242428;
+  --ekgf-header-bg: rgba(18, 18, 22, 0.9);
+  --ekgf-header-border: var(--omg-separator-color);
+  /* Footer/background a touch darker than content to preserve section contrast */
+  --ekgf-footer-bg: hsl(240 10% 8%);
+  --ekgf-footer-border: var(--omg-separator-color);
+
+  /* Map tokens into Material variables */
+  --md-default-bg-color: var(--ekgf-bg);
+  --md-default-fg-color: var(--ekgf-fg);
+  --md-default-fg-color--light: var(--ekgf-muted-fg);
+  --md-default-fg-color--lighter: rgba(175, 175, 182, 0.35);
+  --md-default-fg-color--lightest: rgba(175, 175, 182, 0.12);
+  --md-typeset-color: var(--ekgf-fg);
+  --md-typeset-a-color: var(--md-primary-fg-color);
+  --md-code-bg-color: var(--ekgf-surface-2);
+  --md-code-fg-color: var(--ekgf-fg);
+
+  /* Color matching OMG logo white in dark mode */
+  --omg-logo-white: #E6E8EA;
+}
+
+/* ===== EKGF chrome alignment (header) ===== */
+
+.md-header {
+  background-color: var(--ekgf-header-bg) !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  color: var(--md-default-fg-color) !important;
+  backdrop-filter: saturate(180%) blur(12px);
+}
+
+[data-md-color-scheme="slate"] .md-header__col--title .md-ellipsis,
+[data-md-color-scheme="slate"] .md-header__button.md-logo .ekgf-logo-text {
+  color: var(--omg-logo-white);
+  opacity: 0.85;
+}
+
+[data-md-color-scheme="slate"] .md-header__button.md-logo:hover .ekgf-logo-text {
+  opacity: 1;
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link {
+  color: var(--omg-logo-white);
+  opacity: 0.85;
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link--active {
+  color: #ff9900 !important;
+  opacity: 1;
+}
+
+.md-header__inner {
+  min-height: 0; /* Remove fixed height */
+  padding-top: 0.4rem;
+  padding-bottom: 0; /* Drastically reduce bottom padding */
+}
+
+/* Header grid layout */
+.md-header__row {
+  display: grid;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Header rows layout */
+.md-header__row--top {
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0 !important; /* Drastically reduced bottom padding */
+  max-width: 61rem; /* Match Material's default container width */
+  margin: 0 auto;
+  margin-bottom: -0.4rem; /* Pull navigation row up further */
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+}
+
+.md-header__col {
+  display: flex;
+  align-items: center;
+}
+
+.md-header__col--logo {
+  justify-content: flex-start;
+}
+
+.md-header__col--omg {
+  justify-content: flex-end;
+}
+
+.md-header__col--title {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.md-header__col--title .md-header__title {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.md-header__col--title .md-header__ellipsis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.md-header__col--title .md-header__topic {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.md-header__col--title .md-ellipsis {
+  text-align: center;
+  display: inline-block;
+  font-size: 1.25rem;
+  /*
+    Match MkDocs Material H1 typography (but keep header colors unchanged).
+    From built Material CSS: `.md-typeset h1,.md-typeset h2{font-weight:300;letter-spacing:-.01em}`
+    and `.md-typeset h1{line-height:1.3}`
+  */
+  font-weight: 300 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.3 !important;
+}
+
+.md-header__col--omg {
+  justify-content: flex-end;
+}
+
+.md-header__nav-items {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.md-header__nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* EKGF logo and title container - match ekgf-website layout */
+.md-header__button.md-logo {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 equivalent */
+  font-size: 1.5rem; /* Reduced from 1.875rem */
+  line-height: 1;
+  font-weight: 900; /* font-black equivalent */
+  letter-spacing: -0.05em; /* tracking-tighter equivalent */
+  color: inherit;
+  text-decoration: none;
+}
+
+.md-header__button.md-logo:hover {
+  text-decoration: none;
+}
+
+/* Hide any duplicate logo images that Material might render */
+.md-header__button.md-logo img {
+  display: none !important;
+}
+
+/* Logo alignment wrapper so text can align with tabs while symbol hangs left */
+.md-header__button.md-logo .ekgf-logo-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  padding-left: 0.8rem; /* baseline tab offset (.2rem + .6rem) */
+  transform: translateX(var(--ekgf-logo-text-offset-x));
+}
+
+.md-header__button.md-logo svg.ekgf-logo-symbol {
+  height: 1em;
+  width: 1em;
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  display: block;
+}
+
+@media screen and (min-width: 960px) {
+  .md-header__button.md-logo svg.ekgf-logo-symbol {
+    position: absolute;
+    right: 100%;
+    margin-right: 0rem;
+    top: 50%;
+    transform: translateY(calc(-50% - 1px));
+  }
+}
+
+.md-header__button.md-logo:hover svg.ekgf-logo-symbol {
+  transform: translateY(-1px) scale(1.1);
+}
+
+@media screen and (min-width: 960px) {
+  /* Keep the same anchored translate when the symbol is absolutely positioned */
+  .md-header__button.md-logo:hover svg.ekgf-logo-symbol {
+    transform: translateY(calc(-50% - 1px)) scale(1.1);
+  }
+}
+
+/* Hide any duplicate SVGs that aren't our custom one */
+.md-header__button.md-logo svg:not(.ekgf-logo-symbol) {
+  display: none !important;
+}
+
+/* "EKGF" text next to logo (injected via JS) */
+.md-header__button.md-logo .ekgf-logo-text {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+/* Show the title in the center column */
+.md-header__title {
+  display: block;
+}
+
+@media screen and (max-width: 640px) {
+  .md-header__button.md-logo .ekgf-logo-text {
+    display: none !important; /* Hide on small screens like ekgf-website */
+  }
+}
+
+.md-tabs {
+  background-color: var(--ekgf-header-bg) !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  overflow-y: hidden !important; /* Prevent vertical scrollbar */
+}
+
+.md-tabs .md-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  min-height: 2.8rem;
+  gap: 1rem;
+}
+
+.md-tabs__list {
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+.md-tabs__item {
+  padding-top: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+.md-tabs__link {
+  opacity: 0.8;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  padding-top: 0.4rem !important;
+  padding-bottom: 0.4rem !important;
+  line-height: 1.2;
+  color: var(--md-default-fg-color);
+}
+
+.md-tabs__link:hover {
+  opacity: 1;
+  color: var(--md-default-fg-color) !important;
+}
+
+.md-tabs__link--active {
+  color: #ff9900 !important;
+  opacity: 1;
+}
+
+/* Hide the wrapper containing components to be relocated by JS */
+.ekgf-header-hidden-components {
+  display: none;
+}
+
+/* Hide default search button in header while keeping it in the DOM for Material's JS */
+.ekgf-hidden-search-trigger {
+  display: none !important;
+}
+
+/* Style the search results overlay to appear below our custom search box */
+/* We don't hide the .md-search container itself, but we reposition it */
+.md-header .md-search {
+  display: block !important;
+  position: absolute;
+  top: 100%;
+  right: 0.5rem;
+  width: 30rem;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s, visibility 0.25s;
+  pointer-events: none;
+}
+
+[data-md-toggle="search"]:checked ~ .md-header .md-search {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.md-header .md-search__inner {
+  background-color: var(--md-default-bg-color);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-height: 25rem;
+}
+
+/* Hide the redundant search form in the dialog since we have our own entry box */
+.md-header .md-search__form {
+  display: none;
+}
+
+/* Adjust results spacing */
+.md-header .md-search__output {
+  width: 100%;
+}
+
+/* Show search box in tabs grid */
+.md-tabs .md-grid .ekgf-header-search {
+  display: flex !important;
+  align-items: center;
+  width: 18.75rem; /* 300px */
+  flex-shrink: 0;
+}
+
+.ekgf-header-search__form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.ekgf-header-search__input {
+  width: 100%;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 0.375rem;
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 0.875rem;
+  height: 1.8rem; /* Tighter than tabs */
+  transition: border-color 0.25s;
+}
+
+.ekgf-header-search__input:focus {
+  outline: none;
+  border-color: var(--md-primary-fg-color);
+  background-color: var(--md-default-bg-color);
+}
+
+.ekgf-header-search__input::placeholder {
+  color: var(--md-default-fg-color--light);
+  opacity: 0.6;
+}
+
+/* Wrapper for theme toggle and search in tabs row */
+.ekgf-tabs-controls {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+  height: 100% !important;
+}
+
+/* Remove any extra spacing around the palette form inside the tabs controls */
+.md-tabs .ekgf-tabs-controls form.md-header__option[data-md-component="palette"] {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+.md-tabs .ekgf-tabs-controls .ekgf-header-search {
+  margin-left: 0 !important;
+}
+
+/* Theme toggle styling */
+.md-tabs .md-grid .md-header__option[data-md-component="palette"] {
+  display: flex !important;
+  align-items: center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+  transform: none !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+
+/* Show only ONE theme toggle icon (moon in light mode, sun in dark mode) */
+/* Hide both labels by default (scoped to our tabs row placement) */
+.md-tabs .ekgf-tabs-controls form.md-header__option[data-md-component="palette"]
+  > label.md-header__button {
+  display: none !important;
+}
+
+/* Light mode: show the icon that switches TO dark mode */
+body[data-md-color-scheme="default"]
+  .md-tabs
+  .ekgf-tabs-controls
+  form.md-header__option[data-md-component="palette"]
+  > label.md-header__button[for="__palette_1"] {
+  display: flex !important;
+}
+
+/* Dark mode: show the icon that switches TO light mode */
+body[data-md-color-scheme="slate"]
+  .md-tabs
+  .ekgf-tabs-controls
+  form.md-header__option[data-md-component="palette"]
+  > label.md-header__button[for="__palette_0"] {
+  display: flex !important;
+}
+
+/* Match theme toggle icon color to menu items */
+.md-tabs .md-grid .md-header__option[data-md-component="palette"] .md-header__button {
+  color: var(--md-default-fg-color) !important;
+  opacity: 0.8 !important;
+  transition: opacity 0.2s ease;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 2.4rem !important;
+  height: 2.4rem !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.md-tabs .md-grid .md-header__option[data-md-component="palette"] .md-header__button:hover {
+  opacity: 1 !important;
+}
+
+.md-tabs .md-grid .md-header__option[data-md-component="palette"] .md-header__button svg {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  display: block !important;
+  fill: currentColor !important;
+}
+
+.md-tabs .md-grid .md-header__option[data-md-component="palette"] .md-header__button:hover {
+  opacity: 1 !important;
+}
+
+.md-tabs .md-grid .md-header__option[data-md-component="palette"] .md-header__button svg {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  pointer-events: none;
+}
+
+/* Search wrapper in tabs row - always visible search box */
+.ekgf-tabs-search-wrapper {
+  position: absolute;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--ekgf-surface-2);
+  border: 1px solid var(--ekgf-border);
+  border-radius: 0.375rem;
+  padding: 0.2rem 0.75rem; /* Tighter search box */
+  min-width: 12rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ekgf-tabs-search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+}
+
+.ekgf-tabs-search-icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+}
+
+.ekgf-tabs-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--md-default-fg-color);
+  font-size: 0.875rem;
+  outline: none;
+  padding: 0;
+  min-width: 0;
+}
+
+.ekgf-tabs-search-input::placeholder {
+  color: var(--md-default-fg-color--light);
+  opacity: 0.6;
+}
+
+/* Hide the repo widget in the header (we'll expose repo links in footer) */
+.md-header .md-header__source {
+  display: none !important;
+}
+
+/* OMG logo link (injected via docs-overrides/main.html) */
+/* Vertical alignment line gimmick */
+.md-main__inner.md-grid {
+  border-right: 0.5px solid var(--omg-separator-color);
+}
+
+.ekgf-omg-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0; /* Remove horizontal padding to simplify alignment */
+  margin-left: 0.5rem;  /* Add space from previous element instead */
+  border-radius: 0.5rem;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+  margin-right: -5.3rem; /* Adjusted further right by ~2px for perfect alignment */
+}
+
+.ekgf-omg-link:hover {
+  opacity: 1;
+}
+
+.ekgf-omg-logo {
+  height: 1.5rem; /* Reduced from 2rem */
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  display: block;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.ekgf-omg-logo--dark {
+  display: none;
+}
+
+[data-md-color-scheme="slate"] .ekgf-omg-logo--dark {
+  display: block;
+}
+
+[data-md-color-scheme="slate"] .ekgf-omg-logo--light {
+  display: none;
+}
+
+@media screen and (max-width: 959px) {
+  .ekgf-omg-link {
+    display: none;
+  }
+}
+
+/* ===== EKGF chrome alignment (footer) ===== */
+
+.ekgf-footer {
+  border-top: none !important;
+  background-color: var(--ekgf-footer-bg);
+  color: var(--md-default-fg-color);
+  width: 100%;
+}
+
+/* Sidebar separator gimmick */
+.md-sidebar--primary {
+  border-right: 0.5px solid var(--omg-separator-color);
+}
+
+.ekgf-footer__inner {
+  padding-top: 1em;
+  padding-bottom: 10px;
+  /* Fine-tune footer gutter alignment */
+  padding-left: calc(0.8rem - 2px);
+  padding-right: calc(0.8rem - 2px);
+}
+
+/* Fine-tune: align top-level page H1 with the tabs/logo gutter */
+.md-content__inner > h1 {
+  margin-left: -2px;
+}
+
+.ekgf-footer__grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 600px) {
+  .ekgf-footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .ekgf-footer__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.ekgf-footer__title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.ekgf-footer__text {
+  font-size: 0.65rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.6;
+}
+
+.ekgf-footer__list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.ekgf-footer__list li {
+  margin-bottom: 0.5rem;
+}
+
+.ekgf-footer__link {
+  font-size: 0.65rem;
+  color: var(--md-default-fg-color--light);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ekgf-footer__link:hover {
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+
+.ekgf-footer__link--icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ekgf-footer__social {
+  display: flex;
+  gap: 1rem;
+}
+
+.ekgf-footer__social-link {
+  color: var(--md-default-fg-color--light);
+  transition: color 0.2s ease;
+}
+
+.ekgf-footer__social-link:hover {
+  color: var(--md-default-fg-color);
+}
+
+.ekgf-footer__social-link svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+}
+
+.ekgf-footer__bottom {
+  margin-top: 1rem;
+  padding-top: 0;
+  border-top: 0.5px solid var(--omg-separator-color);
+  text-align: center;
+  font-size: 0.65rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.ekgf-footer__license {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ekgf-footer__license img {
+  height: 17px !important;
+  width: auto !important;
+  display: inline-block !important;
+}
+
+.ekgf-footer__legal {
+  margin-top: 0.5rem;
+}
+
+.ekgf-footer__legal a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.1);
+  transition: color 0.2s ease;
+}
+
+[data-md-color-scheme="slate"] .ekgf-footer__legal a {
+  text-decoration-color: rgba(255, 255, 255, 0.1);
+}
+
+.ekgf-footer__legal a:hover {
+  color: var(--md-default-fg-color);
+}
+
+/* Hide original Material footer elements if any remain */
+.md-footer-meta {
+  display: block !important;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Card Design Enhancements */
+
+/* Grid cards container - improved spacing */
+.md-typeset .grid.cards {
+  gap: 1.5rem !important;
+  margin: 2rem 0;
+}
+
+.md-typeset .grid.cards > ul {
+  gap: 1.5rem !important;
+  display: grid !important;
+  /* Responsive grid: 1 column on mobile, 2 on tablet, 3 on desktop */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Individual card styling - cards are in ul > li structure */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards li {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Card hover effects */
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid.cards li:hover {
+  transform: translateY(-4px) scale(1.01) !important;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Light mode card hover shadow */
+[data-md-color-scheme="default"] .md-typeset .grid.cards > ul > li:hover,
+[data-md-color-scheme="default"] .md-typeset .grid.cards li:hover {
+  box-shadow: 
+    0 8px 16px rgba(74, 35, 217, 0.15),
+    0 4px 8px rgba(74, 35, 217, 0.1) !important;
+}
+
+/* Dark mode card hover shadow */
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li:hover,
+[data-md-color-scheme="slate"] .md-typeset .grid.cards li:hover {
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Card content padding */
+.md-typeset .grid.cards > ul > li > *,
+.md-typeset .grid.cards li > * {
+  transition: color 0.2s ease;
+}
+
+/* Icon styling improvements - target SVG icons in twemoji spans */
+.md-typeset .grid.cards .twemoji svg,
+.md-typeset .grid.cards img[alt*="material-"],
+.md-typeset .grid.cards img[alt*="octicons-"],
+.md-typeset .grid.cards .md-typeset img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(1);
+}
+
+/* Icon hover effect */
+.md-typeset .grid.cards > ul > li:hover .twemoji svg,
+.md-typeset .grid.cards li:hover .twemoji svg,
+.md-typeset .grid.cards > ul > li:hover img[alt*="material-"],
+.md-typeset .grid.cards li:hover img[alt*="octicons-"],
+.md-typeset .grid.cards > ul > li:hover .md-typeset img,
+.md-typeset .grid.cards li:hover .md-typeset img {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+/* Large icon styling (.lg class) */
+.md-typeset .grid.cards .twemoji.lg svg,
+.md-typeset .grid.cards .twemoji.lg {
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+  margin-bottom: 0.75rem;
+  opacity: 0.85;
+  display: block;
+}
+
+/* Process cards - enhanced icon styling */
+.md-typeset .grid.cards > ul > li .twemoji.lg svg,
+.md-typeset .grid.cards > ul > li .twemoji.lg {
+  filter: drop-shadow(0 2px 4px rgba(74, 35, 217, 0.15));
+}
+
+/* Process card specific styling - override ALL Material padding */
+.md-typeset .grid.process-cards > ul > li {
+  padding: 0 !important;
+  margin: 0;
+}
+
+/* Ensure header is flush with card top */
+.md-typeset .grid.process-cards > ul > li > div:first-child {
+  margin-top: 0 !important;
+}
+
+.process-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  margin: 0 0 0.25rem 0 !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(18, 32, 70, 0.18);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  isolation: isolate;
+  min-height: 4.5rem;
+}
+
+.md-typeset .grid.process-cards > ul > li > *:not(.process-card-header) {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.md-typeset .grid.process-cards > ul > li > *:last-child {
+  padding-bottom: 1.25rem;
+}
+
+.process-card-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(48, 63, 159, 0.45), rgba(25, 118, 210, 0.4));
+  z-index: -1;
+}
+
+.process-card-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 80% -10%, rgba(255, 255, 255, 0.15), transparent 55%);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.process-card-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.process-card-header .twemoji.lg,
+.process-card-header .twemoji.lg svg {
+  margin: 0 !important;
+  width: 3.25rem !important;
+  height: 3.25rem !important;
+  opacity: 1;
+  color: #fff !important;
+  filter: drop-shadow(0 4px 12px rgba(15, 23, 42, 0.3));
+}
+
+.process-card-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.process-card-header strong {
+  margin: 0 !important;
+  color: #fff !important;
+  font-size: 1.35em !important;
+}
+
+.process-card-header strong a {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.process-card-header strong a:hover {
+  text-decoration: underline;
+}
+
+.process-card-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.process-card-body {
+  padding: 0 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.process-card-body hr {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.process-card-plan {
+  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 30%;
+}
+
+.process-card-build {
+  background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 40%;
+}
+
+.process-card-run {
+  background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 55%;
+}
+
+/* Theme cards - 4 column layout with narrower cards */
+.md-typeset .grid.theme-cards > ul {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  max-width: 1400px; /* Limit total grid width to prevent too many columns */
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Theme card specific styling - override ALL Material padding */
+.md-typeset .grid.theme-cards > ul > li {
+  padding: 0 !important;
+  margin: 0;
+}
+
+/* Ensure header is flush with card top */
+.md-typeset .grid.theme-cards > ul > li > div:first-child {
+  margin-top: 0 !important;
+}
+
+.theme-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  margin: 0 0 0.25rem 0 !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(18, 32, 70, 0.18);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  isolation: isolate;
+  height: 6rem;
+}
+
+.md-typeset .grid.theme-cards > ul > li > *:not(.theme-card-header) {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.md-typeset .grid.theme-cards > ul > li > *:last-child {
+  padding-bottom: 1.25rem;
+}
+
+.theme-card-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(48, 63, 159, 0.15), rgba(25, 118, 210, 0.1));
+  z-index: -1;
+}
+
+.theme-card-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 80% -10%, rgba(255, 255, 255, 0.15), transparent 55%);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.theme-card-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.theme-card-header .twemoji.lg,
+.theme-card-header .twemoji.lg svg {
+  margin: 0 !important;
+  width: 3.25rem !important;
+  height: 3.25rem !important;
+  opacity: 1;
+  color: #fff !important;
+  filter: drop-shadow(0 4px 12px rgba(15, 23, 42, 0.3));
+}
+
+.theme-card-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.theme-card-header strong {
+  margin: 0 !important;
+  color: #fff !important;
+  font-size: 1.35em !important;
+}
+
+.theme-card-header strong a {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.theme-card-header strong a:hover {
+  text-decoration: underline;
+}
+
+.theme-card-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Hide link text but keep the link functional - for theme cards */
+.md-typeset .grid.theme-cards > ul > li > p:last-child,
+.md-typeset .grid.theme-cards li > p:last-child {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  font-size: 0;
+  line-height: 0;
+  overflow: visible;
+}
+
+/* Make the link cover the entire card - for theme cards */
+.md-typeset .grid.theme-cards > ul > li > p:last-child > a,
+.md-typeset .grid.theme-cards li > p:last-child > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  color: transparent;
+  font-size: 0;
+  z-index: 1;
+}
+
+/* Ensure card content is above the link overlay - for theme cards */
+.md-typeset .grid.theme-cards > ul > li > *:not(p:last-child),
+.md-typeset .grid.theme-cards li > *:not(p:last-child) {
+  position: relative;
+  z-index: 2;
+  pointer-events: none; /* Allow clicks to pass through to the link */
+}
+
+/* Re-enable pointer events for nested links (if any) - for theme cards */
+.md-typeset .grid.theme-cards > ul > li > *:not(p:last-child) a,
+.md-typeset .grid.theme-cards li > *:not(p:last-child) a {
+  pointer-events: auto;
+}
+
+/* Theme card background images */
+.theme-card-transparency {
+  background-image: url("https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 40%;
+}
+
+.theme-card-openness {
+  background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 50%;
+}
+
+.theme-card-sustainability {
+  background-image: url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 40%;
+}
+
+.theme-card-fairness {
+  background-image: url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 50%;
+}
+
+.theme-card-accountability {
+  background-image: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 40%;
+}
+
+.theme-card-digital-assets {
+  background-image: url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 50%;
+}
+
+.theme-card-composable-business {
+  background-image: url("https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 45%;
+}
+
+.theme-card-environmental-sustainability {
+  background-image: url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 35%;
+}
+
+.theme-card-contextual-truth {
+  background-image: url("https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 45%;
+}
+
+.theme-card-reusability {
+  background-image: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 50%;
+}
+
+.theme-card-manage-risk-compliance {
+  background-image: url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 45%;
+}
+
+.theme-card-resilience {
+  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 40%;
+}
+
+.theme-card-power-abstraction {
+  background-image: url("https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 50%;
+}
+
+.theme-card-competitive-advantage {
+  background-image: url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 45%;
+}
+
+.theme-card-manage-profitability {
+  background-image: url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80");
+  background-position: center 40%;
+}
+
+.md-typeset .grid.cards .twemoji.lg svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.md-typeset .grid.cards > ul > li:hover .twemoji.lg,
+.md-typeset .grid.cards li:hover .twemoji.lg {
+  opacity: 1;
+}
+
+/* Objective badge styling - circular badges with letters */
+.md-typeset .grid.cards .objective-badge,
+.md-typeset .objective-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem !important;
+  height: 3rem !important;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-primary-fg-color--dark) 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(74, 35, 217, 0.2);
+  position: relative;
+}
+
+/* Small badge variant for tables */
+.md-typeset table .objective-badge-sm {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  font-size: 0.75rem !important;
+  margin-bottom: 0 !important;
+  margin-right: 0.5rem !important;
+  vertical-align: middle !important;
+  color: white !important;
+  /* Fine-tune vertical position to align with text */
+  position: relative;
+  top: -0.25rem;
+}
+
+.md-typeset table .objective-badge-sm::before {
+  color: white !important;
+}
+
+.md-typeset .grid.cards .objective-badge::before,
+.md-typeset .objective-badge::before {
+  content: attr(data-letter);
+}
+
+/* Dark mode badge styling */
+[data-md-color-scheme="slate"] .md-typeset .grid.cards .objective-badge {
+  background: linear-gradient(135deg, var(--md-primary-fg-color--light) 0%, var(--md-primary-fg-color) 100%);
+  box-shadow: 0 2px 8px rgba(74, 35, 217, 0.3);
+}
+
+/* Badge hover effect */
+.md-typeset .grid.cards > ul > li:hover .objective-badge,
+.md-typeset .grid.cards li:hover .objective-badge {
+  opacity: 1;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 4px 12px rgba(74, 35, 217, 0.4);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li:hover .objective-badge,
+[data-md-color-scheme="slate"] .md-typeset .grid.cards li:hover .objective-badge {
+  box-shadow: 0 4px 12px rgba(74, 35, 217, 0.5);
+}
+
+/* Hide "Learn more" text but keep the link functional */
+.md-typeset .grid.cards > ul > li > p:last-child,
+.md-typeset .grid.cards li > p:last-child {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  font-size: 0;
+  line-height: 0;
+  overflow: visible;
+}
+
+/* Make the "Learn more" link cover the entire card */
+.md-typeset .grid.cards > ul > li > p:last-child > a,
+.md-typeset .grid.cards li > p:last-child > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  color: transparent;
+  font-size: 0;
+  z-index: 1;
+}
+
+/* Ensure card content is above the link overlay for proper stacking and interaction */
+.md-typeset .grid.cards > ul > li > *:not(p:last-child),
+.md-typeset .grid.cards li > *:not(p:last-child) {
+  position: relative;
+  z-index: 2;
+  pointer-events: none; /* Allow clicks to pass through to the link */
+}
+
+/* Re-enable pointer events for nested links (if any) */
+.md-typeset .grid.cards > ul > li > *:not(p:last-child) a,
+.md-typeset .grid.cards li > *:not(p:last-child) a {
+  pointer-events: auto;
+}
+
+/* Remove link hover transform since whole card is clickable */
+.md-typeset .grid.cards a:hover {
+  transform: none;
+}
+
+/* Card title styling */
+.md-typeset .grid.cards strong {
+  font-size: 1.25em !important;
+  font-weight: 700 !important;
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--md-primary-fg-color) !important;
+  transition: color 0.2s ease;
+  letter-spacing: -0.01em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards strong {
+  color: var(--md-primary-fg-color--light) !important;
+}
+
+.md-typeset .grid.cards > ul > li:hover strong,
+.md-typeset .grid.cards li:hover strong {
+  color: var(--md-accent-fg-color) !important;
+}
+
+/* Card paragraph spacing */
+.md-typeset .grid.cards p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  font-size: 0.95em;
+}
+
+/* Show bullet points in grid cards - override Material defaults */
+.md-typeset .grid.cards > ul > li ul,
+.md-typeset .grid.cards > ul > li > ul,
+.md-typeset .grid.cards li ul {
+  list-style-type: disc !important;
+  list-style-position: outside !important;
+  margin-left: 1.5rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  padding-left: 0.5rem !important;
+  display: block !important;
+}
+
+.md-typeset .grid.cards > ul > li ul li,
+.md-typeset .grid.cards > ul > li > ul > li,
+.md-typeset .grid.cards li ul li {
+  list-style-type: disc !important;
+  display: list-item !important;
+  margin-left: 0 !important;
+  padding-left: 0.25rem !important;
+  padding-right: 0 !important;
+}
+
+.md-typeset .grid.cards > ul > li ul li::marker,
+.md-typeset .grid.cards > ul > li > ul > li::marker {
+  content: "• " !important;
+  color: inherit !important;
+}
+
+/* Force a visible dot when Material hides markers */
+.md-typeset .grid.cards > ul > li ul li,
+.md-typeset .grid.cards > ul > li > ul > li {
+  list-style: none !important;
+  position: relative !important;
+  padding-left: 1.1rem !important;
+}
+
+.md-typeset .grid.cards > ul > li ul li::before,
+.md-typeset .grid.cards > ul > li > ul > li::before {
+  content: "•" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0.2rem !important;
+  color: var(--md-primary-fg-color) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  font-size: 1.2rem !important;
+}
+
+/* Process cards - more compact description */
+.md-typeset .grid.cards > ul > li > hr:first-of-type + p {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Improve card content readability */
+.md-typeset .grid.cards em {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Card separator (horizontal rule) styling */
+.md-typeset .grid.cards hr {
+  margin: 0.75rem 0;
+  border-color: rgba(0, 0, 0, 0.1);
+  opacity: 0.5;
+}
+
+/* Process cards - tighter separator spacing */
+.md-typeset .grid.cards > ul > li > hr:first-of-type {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth transitions for all interactive elements */
+.md-typeset .grid.cards * {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus states for accessibility */
+/* Ensure bullet lists in process cards align vertically (top-aligned) */
+.md-typeset .grid.cards > ul > li {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Ensure description paragraph has consistent height so separator aligns */
+.process-cards > ul > li > hr:first-of-type + p {
+  min-height: 3.5rem !important;
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Ensure the separator before lists is at consistent vertical position */
+.process-cards > ul > li > hr:last-of-type {
+  margin-top: auto !important;
+  margin-bottom: 0.5rem !important;
+  flex-shrink: 0 !important;
+}
+
+/* Ensure lists start at consistent position from top */
+.process-cards > ul > li > ul {
+  margin-top: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* ChatGPT-style table styling */
+.md-typeset table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  background: transparent;
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.md-typeset table thead {
+  border: none !important;
+}
+
+.md-typeset table thead th {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-left: none !important;
+  border-right: none !important;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  background: transparent;
+  color: inherit;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table thead th {
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.md-typeset table tbody {
+  border: none !important;
+}
+
+.md-typeset table tbody tr {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-left: none !important;
+  border-right: none !important;
+  background: transparent;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table tbody tr {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.md-typeset table tbody tr:last-child {
+  border-bottom: none !important;
+}
+
+.md-typeset table tbody td {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: transparent;
+  vertical-align: top;
+}
+
+.md-typeset table tbody td:first-child {
+  font-weight: 600;
+}
+
+.md-typeset table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Enhanced blockquote styling */
+.md-typeset blockquote {
+  border-left: 4px solid var(--md-primary-fg-color);
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin: 1.5rem 0;
+  background: rgba(74, 35, 217, 0.03);
+  border-radius: 0 0.25rem 0.25rem 0;
+  font-style: normal;
+}
+
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  background: rgba(74, 35, 217, 0.08);
+  border-left-color: var(--md-primary-fg-color--light);
+}
+
+.md-typeset blockquote p {
+  margin: 0.5rem 0;
+}
+
+.md-typeset blockquote p:first-child {
+  margin-top: 0;
+}
+
+.md-typeset blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Fix tab labels: prevent anchor links from interfering with tab switching */
+/* Material for MkDocs adds permalink anchors to tab labels via JavaScript when toc.permalink is enabled */
+/* These anchors interfere with the label's click event, so we disable pointer events on them */
+.md-typeset .tabbed-labels > label > a,
+.md-typeset .tabbed-labels > label > a[href^="#"] {
+  pointer-events: none !important;
+  text-decoration: none;
+  color: inherit;
+  cursor: inherit;
+}
+
+/* Prevent scrollbar from appearing/disappearing when switching tabs */
+/* This reserves space for the scrollbar to prevent content shift */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Hide the single "Themes" tab header to save vertical space */
+.md-content article > .tabbed-set:has(.theme-cards) > input,
+.md-content article > .tabbed-set:has(.theme-cards) > .tabbed-labels {
+  display: none !important;
+}
+
+/* ===== THEME CARD BULLET OVERRIDES - Must come LAST to override general card CSS ===== */
+.md-typeset .grid.cards.theme-cards > ul > li ul,
+.md-typeset .grid.cards.theme-cards > ul > li > ul {
+  margin-left: 0.5rem !important;
+  padding-left: 0 !important;
+}
+
+.md-typeset .grid.cards.theme-cards > ul > li ul li,
+.md-typeset .grid.cards.theme-cards > ul > li > ul > li {
+  padding-left: 1.1rem !important;
+  margin-left: 0 !important;
+  font-family: Roboto, sans-serif !important;
+  font-size: inherit !important;
+}
+
+.md-typeset .grid.cards.theme-cards > ul > li ul li::before,
+.md-typeset .grid.cards.theme-cards > ul > li > ul > li::before {
+  left: 0 !important;
+  font-size: 1.2rem !important;
+  color: var(--md-primary-fg-color) !important;
+  font-weight: 700 !important;
+}
