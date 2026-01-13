@@ -323,7 +323,7 @@ requires-dist = [
     { name = "mkdocs-localsearch" },
     { name = "mkdocs-macros-plugin" },
     { name = "mkdocs-material" },
-    { name = "mkdocs-material-ekgf", specifier = ">=0.0.10" },
+    { name = "mkdocs-material-ekgf", specifier = ">=0.0.14" },
     { name = "mkdocs-mermaid2-plugin" },
     { name = "mkdocs-minify-plugin" },
     { name = "mkdocs-redirects" },
@@ -836,15 +836,15 @@ wheels = [
 
 [[package]]
 name = "mkdocs-material-ekgf"
-version = "0.0.10"
+version = "0.0.14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "mkdocs" },
     { name = "mkdocs-material" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b1/39/d8d12fae9ee3eb1a912ba3121d5ab7ce66110e42f22c75f2cd789d023d07/mkdocs_material_ekgf-0.0.10.tar.gz", hash = "sha256:c87dc6aa8616ae626820079d617da880870c576e32829b1440054c52b0e4045f", size = 86394, upload-time = "2026-01-12T22:44:10.4Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/24/11/0963f77e2d10d6474effbe703a19e642cbd13c5f48f6ad8b915d6f4eef1f/mkdocs_material_ekgf-0.0.14.tar.gz", hash = "sha256:3e6ec20cb609d55dd1d8d691149e274ddb6a3a19cfb84d4278b3276d5d6f6f0f", size = 86730, upload-time = "2026-01-13T00:51:51.582Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b7/6b/77cb23dc02fa15e4ffce5534339ba62d47c64ffdf1e5346c466323a14677/mkdocs_material_ekgf-0.0.10-py3-none-any.whl", hash = "sha256:32494769115dff5f2443fdf69f03be193b841dd126a6c35c3a96e41d8a904d1b", size = 86168, upload-time = "2026-01-12T22:44:09.104Z" },
+    { url = "https://files.pythonhosted.org/packages/91/9e/e5135534f9df0fb2059036ec09c50792e75ee41e45076a2cb1adf8756aa5/mkdocs_material_ekgf-0.0.14-py3-none-any.whl", hash = "sha256:cdb165dd564642763d5c654fd9b7ee78a3c970f9b6f8571ef53b3bb7e89c1992", size = 86596, upload-time = "2026-01-13T00:51:50.019Z" },
 ]
 
 [[package]]

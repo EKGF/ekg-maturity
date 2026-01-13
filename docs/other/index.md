@@ -32,7 +32,7 @@ You're welcome to contribute.
 
 > Use cases and their Datasets & Ontologies
 
-The EKG/Catalog describes all the common use cases (and some of their "sub-use cases") for EKG:
+The EKG Catalog describes all the common use cases (and some of their "sub-use cases") for EKG:
 [https://catalog.ekgf.org](https://catalog.ekgf.org)
 
 One major goal that we are working towards to is to publish "use cases as executable models"
