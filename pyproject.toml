@@ -31,7 +31,7 @@ dependencies = [
   "pillow",
   "cairosvg",
   "ekglib @ git+https://github.com/EKGF/ekglib.git",
-  "mkdocs-material-ekgf>=0.0.14",
+  "mkdocs-material-ekgf>=0.0.15",
 ]
 
 [project.urls]
