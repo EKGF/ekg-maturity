@@ -7,11 +7,11 @@ This is your executive readiness checklist.
 
 **The question:** Does your organization know *why* it's building an EKG?
 
-- [ ] Executive sponsorship exists with clear accountability
-- [ ] Strategic use cases are defined and prioritized
-- [ ] Business outcomes are measurable and time-bound
-- [ ] Lines of business are engaged, not just IT
-- [ ] ROI expectations are realistic and documented
+- Executive sponsorship exists with clear accountability
+- Strategic use cases are defined and prioritized
+- Business outcomes are measurable and time-bound
+- Lines of business are engaged, not just IT
+- ROI expectations are realistic and documented
 
 **Red flags:**
 
@@ -27,11 +27,11 @@ This is your executive readiness checklist.
 
 **The question:** Do you have the people, skills, and structures to deliver?
 
-- [ ] Roles and responsibilities are defined (who owns what)
-- [ ] Skills assessment completed (gaps identified)
-- [ ] Governance model established (who decides what)
-- [ ] Operating model defined (how work gets done)
-- [ ] Change management plan exists (people will resist)
+- Roles and responsibilities are defined (who owns what)
+- Skills assessment completed (gaps identified)
+- Governance model established (who decides what)
+- Operating model defined (how work gets done)
+- Change management plan exists (people will resist)
 
 **Red flags:**
 
@@ -47,11 +47,11 @@ This is your executive readiness checklist.
 
 **The question:** Is your data ready to be connected and trusted?
 
-- [ ] Critical data assets are identified and catalogued
-- [ ] Data quality issues are known (not hidden)
-- [ ] Data ownership is clear (no orphan datasets)
-- [ ] Master data strategy exists (single source of truth)
-- [ ] Semantic standards are adopted or planned
+- Critical data assets are identified and catalogued
+- Data quality issues are known (not hidden)
+- Data ownership is clear (no orphan datasets)
+- Master data strategy exists (single source of truth)
+- Semantic standards are adopted or planned
 
 **Red flags:**
 
@@ -67,11 +67,11 @@ This is your executive readiness checklist.
 
 **The question:** Can your infrastructure support an EKG at enterprise scale?
 
-- [ ] Architecture strategy includes knowledge graph capabilities
-- [ ] Integration approach defined (how systems connect)
-- [ ] Security and access control model designed
-- [ ] Performance requirements understood
-- [ ] Build vs. buy decisions made for key components
+- Architecture strategy includes knowledge graph capabilities
+- Integration approach defined (how systems connect)
+- Security and access control model designed
+- Performance requirements understood
+- Build vs. buy decisions made for key components
 
 **Red flags:**
 
