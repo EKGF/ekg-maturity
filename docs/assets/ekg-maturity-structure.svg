@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" font-family="system-ui, -apple-system, sans-serif">
+  <style>
+    .pillar-header-business { fill: url(#grad-business); }
+    .pillar-header-org { fill: url(#grad-org); }
+    .pillar-header-data { fill: url(#grad-data); }
+    .pillar-header-tech { fill: url(#grad-tech); }
+    .pillar-header-text { fill: #ffffff; font-weight: 600; font-size: 18px; }
+    .level-row { fill: #fefce8; stroke: #d4d4d4; stroke-width: 1; }
+    .level-text { fill: #1a1a1a; font-size: 14px; font-weight: 600; }
+    .level-badge { fill: #4f46e5; }
+    .level-badge-text { fill: #ffffff; font-size: 16px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+    .level-subtitle { font-style: italic; fill: #666666; font-size: 12px; }
+    .capability-bar { fill: #a3e635; fill-opacity: 0.75; }
+    .capability-text { fill: #1a1a1a; font-size: 12px; font-weight: 400; text-anchor: middle; dominant-baseline: middle; }
+    .callout-box { fill: #fef9c3; }
+    .callout-text { fill: #1a1a1a; font-size: 13px; font-weight: 400; text-anchor: middle; }
+    .arrow { fill: none; stroke: #1a1a1a; stroke-width: 1.5; }
+    .grid-line { stroke: #d4d4d4; stroke-width: 1; }
+
+    @media (prefers-color-scheme: dark) {
+      .pillar-header { fill: #1e3a5f; }
+      .level-row { fill: #2d3748; stroke: #4a5568; }
+      .level-text { fill: #f7fafc; }
+      .level-badge { fill: #6366f1; }
+      .level-subtitle { fill: #a0aec0; }
+      .capability-bar { fill: #84cc16; fill-opacity: 0.75; }
+      .capability-text { fill: #1a1a1a; }
+      .callout-box { fill: #854d0e; }
+      .callout-text { fill: #fef3c7; }
+      .arrow { stroke: #fbbf24; }
+      .grid-line { stroke: #4a5568; }
+    }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1a1a1a"/>
+    </marker>
+    <!-- Pillar header gradients -->
+    <linearGradient id="grad-business" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="grad-org" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="grad-data" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#14b8a6"/>
+      <stop offset="100%" style="stop-color:#0d9488"/>
+    </linearGradient>
+    <linearGradient id="grad-tech" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Pillar Headers (4 equal columns from x=250 to x=970, with 10px padding each side) -->
+  <g class="pillar-headers">
+    <a href="/pillar/business/" target="_top">
+      <rect class="pillar-header-business" x="260" y="30" width="160" height="45" rx="8"/>
+      <text class="pillar-header-text" x="340" y="58" text-anchor="middle">Business</text>
+    </a>
+
+    <a href="/pillar/organization/" target="_top">
+      <rect class="pillar-header-org" x="440" y="30" width="160" height="45" rx="8"/>
+      <text class="pillar-header-text" x="520" y="58" text-anchor="middle">Organization</text>
+    </a>
+
+    <a href="/pillar/data/" target="_top">
+      <rect class="pillar-header-data" x="620" y="30" width="160" height="45" rx="8"/>
+      <text class="pillar-header-text" x="700" y="58" text-anchor="middle">Data</text>
+    </a>
+
+    <a href="/pillar/technology/" target="_top">
+      <rect class="pillar-header-tech" x="800" y="30" width="160" height="45" rx="8"/>
+      <text class="pillar-header-text" x="880" y="58" text-anchor="middle">Technology</text>
+    </a>
+  </g>
+
+  <!-- Level Rows (full width horizontal bars) -->
+  <g class="level-rows">
+    <!-- Level 5 -->
+    <rect class="level-row" x="10" y="85" width="960" height="55"/>
+    <!-- Level 4 -->
+    <rect class="level-row" x="10" y="145" width="960" height="55"/>
+    <!-- Level 3 -->
+    <rect class="level-row" x="10" y="205" width="960" height="55"/>
+    <!-- Level 2 -->
+    <rect class="level-row" x="10" y="265" width="960" height="55"/>
+    <!-- Level 1 -->
+    <rect class="level-row" x="10" y="325" width="960" height="55"/>
+  </g>
+
+  <!-- Vertical pillar dividers -->
+  <g class="grid">
+    <line class="grid-line" x1="250" y1="85" x2="250" y2="380"/>
+    <line class="grid-line" x1="430" y1="85" x2="430" y2="380"/>
+    <line class="grid-line" x1="610" y1="85" x2="610" y2="380"/>
+    <line class="grid-line" x1="790" y1="85" x2="790" y2="380"/>
+  </g>
+
+  <!-- Level Labels (badges and text) -->
+  <g class="level-labels">
+    <!-- Level 5 -->
+    <a href="/intro/structure/levels/#level-5" target="_top">
+      <circle class="level-badge" cx="35" cy="112" r="18"/>
+      <text class="level-badge-text" x="35" y="112">5</text>
+      <text class="level-text" x="60" y="118">Operational Ecosystem</text>
+    </a>
+
+    <!-- Level 4 -->
+    <a href="/intro/structure/levels/#level-4" target="_top">
+      <circle class="level-badge" cx="35" cy="172" r="18"/>
+      <text class="level-badge-text" x="35" y="172">4</text>
+      <text class="level-text" x="60" y="178">Strategic Asset</text>
+    </a>
+
+    <!-- Level 3 -->
+    <a href="/intro/structure/levels/#level-3" target="_top">
+      <circle class="level-badge" cx="35" cy="232" r="18"/>
+      <text class="level-badge-text" x="35" y="232">3</text>
+      <text class="level-text" x="60" y="238">Enterprise Ready</text>
+    </a>
+
+    <!-- Level 2 -->
+    <a href="/intro/structure/levels/#level-2" target="_top">
+      <circle class="level-badge" cx="35" cy="292" r="18"/>
+      <text class="level-badge-text" x="35" y="292">2</text>
+      <text class="level-text" x="60" y="298">Extensible Platform</text>
+    </a>
+
+    <!-- Level 1 -->
+    <a href="/intro/structure/levels/#level-1" target="_top">
+      <circle class="level-badge" cx="35" cy="352" r="18"/>
+      <text class="level-badge-text" x="35" y="352">1</text>
+      <text class="level-text" x="60" y="350">EKG Initiation</text>
+      <text class="level-subtitle" x="60" y="368">Lighthouse Project</text>
+    </a>
+  </g>
+
+  <!-- Business Pillar Capability Bars (column 250-430) -->
+  <g class="business-capabilities">
+    <a href="/pillar/business/strategy-actuation/" target="_top">
+      <rect class="capability-bar" x="280" y="120" width="35" height="240" rx="6"/>
+      <text class="capability-text" transform="translate(297.5, 240) rotate(-90)">Business Strategy Actuation</text>
+    </a>
+    <a href="/pillar/business/business-enablers/" target="_top">
+      <rect class="capability-bar" x="365" y="120" width="35" height="240" rx="6"/>
+      <text class="capability-text" transform="translate(382.5, 240) rotate(-90)">Business Enablers</text>
+    </a>
+  </g>
+
+  <!-- Organization Pillar Capability Bars (column 430-610) -->
+  <g class="organization-capabilities">
+    <a href="/pillar/organization/executive-leadership/" target="_top">
+      <rect class="capability-bar" x="460" y="120" width="35" height="240" rx="6"/>
+      <text class="capability-text" transform="translate(477.5, 240) rotate(-90)">Executive Leadership</text>
+    </a>
+    <a href="/pillar/organization/delivery-management/" target="_top">
+      <rect class="capability-bar" x="545" y="120" width="35" height="240" rx="6"/>
+      <text class="capability-text" transform="translate(562.5, 240) rotate(-90)">Talent Management</text>
+    </a>
+  </g>
+
+  <!-- Data Pillar Capability Bars (column 610-790) -->
+  <g class="data-capabilities">
+    <a href="/pillar/data/data-strategy/" target="_top">
+      <rect class="capability-bar" x="645" y="120" width="35" height="240" rx="6"/>
+      <text class="capability-text" transform="translate(662.5, 240) rotate(-90)">Data Strategy</text>
+    </a>
+    <a href="/pillar/data/data-architecture/" target="_top">
+      <rect class="capability-bar" x="725" y="120" width="35" height="180" rx="6"/>
+      <text class="capability-text" transform="translate(742.5, 210) rotate(-90)">Ontology Strategy</text>
+    </a>
+  </g>
+
+  <!-- Technology Pillar Capability Bars (column 790-970) -->
+  <g class="technology-capabilities">
+    <a href="/pillar/technology/technology-strategy/" target="_top">
+      <rect class="capability-bar" x="860" y="120" width="35" height="240" rx="6"/>
+      <text class="capability-text" transform="translate(877.5, 240) rotate(-90)">EKG Platform Strategy</text>
+    </a>
+  </g>
+
+  <!-- Callout: The 5 maturity levels -->
+  <g class="callout-levels">
+    <rect class="callout-box" x="35" y="410" width="90" height="70" rx="4"/>
+    <text class="callout-text" x="80" y="438">The 5</text>
+    <text class="callout-text" x="80" y="455">maturity</text>
+    <text class="callout-text" x="80" y="472">levels</text>
+    <path class="arrow" d="M 80 405 Q 80 390 65 375" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Callout: Example Capability Components -->
+  <g class="callout-components">
+    <rect class="callout-box" x="155" y="410" width="100" height="70" rx="4"/>
+    <text class="callout-text" x="205" y="433">Example</text>
+    <text class="callout-text" x="205" y="450">Capability</text>
+    <text class="callout-text" x="205" y="467">Components</text>
+    <path class="arrow" d="M 230 405 Q 265 380 285 365" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Callout: The 4 Capability Pillars -->
+  <g class="callout-pillars">
+    <rect class="callout-box" x="880" y="100" width="100" height="70" rx="4"/>
+    <text class="callout-text" x="930" y="123">The 4</text>
+    <text class="callout-text" x="930" y="140">Capability</text>
+    <text class="callout-text" x="930" y="157">Pillars</text>
+    <path class="arrow" d="M 910 95 Q 895 70 880 55" marker-end="url(#arrowhead)"/>
+  </g>
+</svg>
