@@ -3,18 +3,6 @@ revision = 3
 requires-python = ">=3.14.2"
 
 [[package]]
-name = "anyio"
-version = "4.12.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "idna" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/16/ce/8a777047513153587e5434fd752e89334ac33e379aa3497db860eeb60377/anyio-4.12.0.tar.gz", hash = "sha256:73c693b567b0c55130c104d0b43a9baf3aa6a31fc6110116509f27bf75e21ec0", size = 228266, upload-time = "2025-11-28T23:37:38.911Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/7f/9c/36c5c37947ebfb8c7f22e0eb6e4d188ee2d53aa3880f3f2744fb894f0cb1/anyio-4.12.0-py3-none-any.whl", hash = "sha256:dad2376a628f98eeca4881fc56cd06affd18f659b17a747d3ff0307ced94b1bb", size = 113362, upload-time = "2025-11-28T23:36:57.897Z" },
-]
-
-[[package]]
 name = "babel"
 version = "2.17.0"
 source = { registry = "https://pypi.org/simple" }
@@ -292,7 +280,6 @@ dependencies = [
     { name = "mkdocs-git-revision-date-localized-plugin" },
     { name = "mkdocs-graphviz" },
     { name = "mkdocs-include-markdown-plugin" },
-    { name = "mkdocs-kroki-plugin" },
     { name = "mkdocs-localsearch" },
     { name = "mkdocs-macros-plugin" },
     { name = "mkdocs-material" },
@@ -319,11 +306,10 @@ requires-dist = [
     { name = "mkdocs-git-revision-date-localized-plugin" },
     { name = "mkdocs-graphviz" },
     { name = "mkdocs-include-markdown-plugin" },
-    { name = "mkdocs-kroki-plugin" },
     { name = "mkdocs-localsearch" },
     { name = "mkdocs-macros-plugin" },
     { name = "mkdocs-material" },
-    { name = "mkdocs-material-ekgf", specifier = ">=0.0.17" },
+    { name = "mkdocs-material-ekgf", specifier = ">=0.0.18" },
     { name = "mkdocs-mermaid2-plugin" },
     { name = "mkdocs-minify-plugin" },
     { name = "mkdocs-redirects" },
@@ -405,15 +391,6 @@ wheels = [
 ]
 
 [[package]]
-name = "h11"
-version = "0.16.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz", hash = "sha256:4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1", size = 101250, upload-time = "2025-04-24T03:35:25.427Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl", hash = "sha256:63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86", size = 37515, upload-time = "2025-04-24T03:35:24.344Z" },
-]
-
-[[package]]
 name = "hjson"
 version = "3.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -431,19 +408,6 @@ wheels = [
 ]
 
 [[package]]
-name = "httpcore"
-version = "1.0.9"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "certifi" },
-    { name = "h11" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz", hash = "sha256:6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8", size = 85484, upload-time = "2025-04-24T22:06:22.219Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl", hash = "sha256:2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55", size = 78784, upload-time = "2025-04-24T22:06:20.566Z" },
-]
-
-[[package]]
 name = "httplib2"
 version = "0.31.0"
 source = { registry = "https://pypi.org/simple" }
@@ -453,21 +417,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/52/77/6653db69c1f7ecfe5e3f9726fdadc981794656fcd7d98c4209fecfea9993/httplib2-0.31.0.tar.gz", hash = "sha256:ac7ab497c50975147d4f7b1ade44becc7df2f8954d42b38b3d69c515f531135c", size = 250759, upload-time = "2025-09-11T12:16:03.403Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8c/a2/0d269db0f6163be503775dc8b6a6fa15820cc9fdc866f6ba608d86b721f2/httplib2-0.31.0-py3-none-any.whl", hash = "sha256:b9cd78abea9b4e43a7714c6e0f8b6b8561a6fc1e95d5dbd367f5bf0ef35f5d24", size = 91148, upload-time = "2025-09-11T12:16:01.803Z" },
-]
-
-[[package]]
-name = "httpx"
-version = "0.28.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "anyio" },
-    { name = "certifi" },
-    { name = "httpcore" },
-    { name = "idna" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/b1/df/48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956/httpx-0.28.1.tar.gz", hash = "sha256:75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc", size = 141406, upload-time = "2024-12-06T15:37:23.222Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl", hash = "sha256:d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad", size = 73517, upload-time = "2024-12-06T15:37:21.509Z" },
 ]
 
 [[package]]
@@ -766,21 +715,6 @@ wheels = [
 ]
 
 [[package]]
-name = "mkdocs-kroki-plugin"
-version = "1.0.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "defusedxml" },
-    { name = "httpx" },
-    { name = "mkdocs" },
-    { name = "result" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/aa/d9/f5d64114a22c082f8fe6c614ed0c725c56a37499cfd641346755f35568cd/mkdocs_kroki_plugin-1.0.0.tar.gz", hash = "sha256:36b89ba6a36b8a0c87f77e9ea5ec673df58a91f046793206a5cd0b6545bc68e5", size = 13207, upload-time = "2025-11-29T12:33:05.077Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/06/1a/6f7648740d358e07cc3e71821f482d1d1919188d027c7d20a0f266418d59/mkdocs_kroki_plugin-1.0.0-py3-none-any.whl", hash = "sha256:eda8579400eeba3f145bb396f48de4f6d3d4187d5509da0992f8344e42f762b9", size = 16196, upload-time = "2025-11-29T12:33:06.076Z" },
-]
-
-[[package]]
 name = "mkdocs-localsearch"
 version = "0.9.2"
 source = { registry = "https://pypi.org/simple" }
@@ -836,15 +770,15 @@ wheels = [
 
 [[package]]
 name = "mkdocs-material-ekgf"
-version = "0.0.17"
+version = "0.0.19"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "mkdocs" },
     { name = "mkdocs-material" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/91/e5/94744acd6ff69982c37faa9ef1b52e3a605a69d50f3953027e80ee386b44/mkdocs_material_ekgf-0.0.17.tar.gz", hash = "sha256:3b14e5578a9e5050f78324743b377bd49fde7f14f874dd42db47d4ff967f65a8", size = 88430, upload-time = "2026-01-14T01:24:38.628Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/6f/93/e73601eff7eaefb0346fc9d97e793900c8ae97e769b1324ed9836c4c835b/mkdocs_material_ekgf-0.0.19.tar.gz", hash = "sha256:4a46963273509cd076d12e15682761086cf06d1ecb14bf9af05a835cc0607c43", size = 88966, upload-time = "2026-01-14T17:08:54.685Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/77/5e/0c08322dcb2de44111eac808dc8c4cd12688d41c495c78bb67f46dc4a8b7/mkdocs_material_ekgf-0.0.17-py3-none-any.whl", hash = "sha256:37f8645b2eb782beaca98eab61c9e6211b687c84683d782dfef90e0beb86c146", size = 88796, upload-time = "2026-01-14T01:24:37.262Z" },
+    { url = "https://files.pythonhosted.org/packages/5f/79/912dcff20d18222b0634ce681cad13df2cf62417745faebf30ddb0c28bd2/mkdocs_material_ekgf-0.0.19-py3-none-any.whl", hash = "sha256:bc9acbb4caa629f356b9750c071b7fa7c8e376142213b658fb4d5d36385e2974", size = 89257, upload-time = "2026-01-14T17:08:53.469Z" },
 ]
 
 [[package]]
@@ -1214,15 +1148,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/requests-2.32.5.tar.gz", hash = "sha256:dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf", size = 134517, upload-time = "2025-08-18T20:46:02.573Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/1e/db/4254e3eabe8020b458f1a747140d32277ec7a271daf1d235b70dc0b4e6e3/requests-2.32.5-py3-none-any.whl", hash = "sha256:2462f94637a34fd532264295e186976db0f5d453d1cdd31473c85a6a161affb6", size = 64738, upload-time = "2025-08-18T20:46:00.542Z" },
-]
-
-[[package]]
-name = "result"
-version = "0.17.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/a3/47/2175be65744aa4d8419c27bd3a7a7d65af5bcad7a4dc6a812c00778754f0/result-0.17.0.tar.gz", hash = "sha256:b73da420c0cb1a3bf741dbd41ff96dedafaad6a1b3ef437a9e33e380bb0d91cf", size = 20180, upload-time = "2024-06-02T16:39:54.51Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/e2/90/19110ce9374c3db619e2df0816f2c58e4ddc5cdad5f7284cd81d8b30b7cb/result-0.17.0-py3-none-any.whl", hash = "sha256:49fd668b4951ad15800b8ccefd98b6b94effc789607e19c65064b775570933e8", size = 11689, upload-time = "2024-06-02T16:39:52.715Z" },
 ]
 
 [[package]]

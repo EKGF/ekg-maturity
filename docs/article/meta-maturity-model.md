@@ -23,6 +23,11 @@ For simplicity's sake we're using UML in this article to document the model even
 UML is not able to fully cover the expressiveness of an OWL ontology.
 But since this is not really a very complex model to begin with, UML will do.
 
-![Meta Maturity Model](../diagrams/out/maturity-model.svg#darkable)
+<figure markdown>
+  <object
+    data="/diagrams/out/maturity-model.svg#darkable"
+    type="image/svg+xml">
+  </object>
+</figure>
 
 

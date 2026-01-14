@@ -2,6 +2,10 @@
 
 !include ../include/themes/light.puml
 
+skinparam noteFontColor #000000
+
+top to bottom direction
+
 package CapabilityModel as "Abstract Capability Model" {
   abstract class Model {
       + name

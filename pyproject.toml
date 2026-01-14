@@ -24,14 +24,13 @@ dependencies = [
   "mkdocs-mermaid2-plugin",
   "mkdocs-minify-plugin",
   "mkdocs-redirects",
-  "mkdocs-kroki-plugin",
   "mdx-spanner",
   "markdown-emdash",
   "smartypants",
   "pillow",
   "cairosvg",
   "ekglib @ git+https://github.com/EKGF/ekglib.git",
-  "mkdocs-material-ekgf>=0.0.17",
+  "mkdocs-material-ekgf>=0.0.18",
 ]
 
 [tool.uv.sources]
