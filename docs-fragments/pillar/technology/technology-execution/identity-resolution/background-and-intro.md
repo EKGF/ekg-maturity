@@ -1,5 +1,5 @@
 Identifier resolution is a crucial process within the Enterprise Knowledge Graph (EKG), 
-guided by the principles of the Enterprise Knowledge Graph Foundation[^principles].
+guided by the principles of the Enterprise Knowledge Graph Forum[^principles].
 It ensures that every object in the EKG has a unique, permanent, and resolvable identifier
 known as the EKG Identifier (EKG IRI). 
 This identifier serves as the primary means of identifying and connecting objects within 

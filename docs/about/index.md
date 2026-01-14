@@ -1,7 +1,8 @@
 # About
 
 The EKG Maturity Model is developed and maintained by the
-[Enterprise Knowledge Graph Foundation](https://ekgf.org) (EKGF).
+[Enterprise Knowledge Graph Forum](https://ekgf.org) (EKGF),
+a Managed Community of the [Object Management Group](https://omg.org) (OMG).
 
 ## Related Initiatives
 

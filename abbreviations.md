@@ -3,7 +3,7 @@
 *[BDD]: Behavior Driven Development
 *[COSO]: Committee of Sponsoring Organizations of the Treadway Commissions
 *[DDD]: Domain Driven Design
-*[EKGF]: Enterprise Knowledge Graph Foundation
+*[EKGF]: Enterprise Knowledge Graph Forum
 *[EKG]: Enterprise Knowledge Graph, an EKGF standard
 *[ERM]: Enterprise Risk Management
 *[ERP]: Enterprise Resource Planning

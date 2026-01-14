@@ -1,6 +1,7 @@
 # Preface
 
-The Enterprise Knowledge Graph Foundation (EKGF) was chartered in early 2020.
+The Enterprise Knowledge Graph Forum (EKGF), now a Managed Community of the
+[Object Management Group](https://omg.org) (OMG), was originally chartered in early 2020.
 Of the many ideas discussed for initial projects, the founders agreed that writing and publishing a Maturity Model
 for the EKG (EKG Maturity) should be the first effort of the membership.
 
@@ -26,5 +27,5 @@ This input will go into the EKGF Continuous Improvement Process.
 This is where you come in.
 Join our workgroups and participate in working towards Release Version 2.0.
 
-The Enterprise Knowledge Graph Foundation team<br />
+The Enterprise Knowledge Graph Forum team<br />
 [info@ekgf.org](mailto:info@ekgf.org)

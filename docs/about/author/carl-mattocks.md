@@ -8,7 +8,7 @@ is passionate about the prospect of using Knowledge Graphs
 in a Semantic Memory to guide Machine Learning and speed 
 AI powered processing of Business Capabilities. 
 He continues to be a long time contributor to the evolution 
-of publicly ([Enterprise Knowledge Graph Foundation (EKGF)](https://ekgf.org), 
+of publicly ([Enterprise Knowledge Graph Forum (EKGF)](https://ekgf.org), 
 WC3 Artificial Intelligence Knowledge Representation Community Group, 
 Kantara Initiative, ANSI, OASIS, ISO) available specifications for 
 Registry Repositories, Digital ID, Electronic health records, 
