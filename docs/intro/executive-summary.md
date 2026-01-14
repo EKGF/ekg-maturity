@@ -1,66 +1,84 @@
 # Executive Summary
 
-The EKG Maturity Model is the industry-standard definition of the capabilities required for an EKG and
-of the generic capabilities in any given organization that are affected by EKG.
+## The GenAI Reality Check
 
-It establishes standard criteria for measuring progress and sets out the practical questions that all involved
-stakeholders ask to ensure trust, confidence and usage flexibility of data.
-Each capability area provides a business summary denoting its importance, a definition of the added value from
-semantic standards and scoring criteria based on five levels of defined maturity.
+You have decades of legacy systems. Thousands of databases. Millions of documents.
+Data in every shape, format, and quality level imaginable. Completely siloed.
+Only your human experts---your SMEs---truly understand how to use this data
+in the right context, with the right caveats, for the right decisions.
 
-**EKG Maturity is a capability model** designed to promulgate best practices across the knowledge graph community.
-It covers essential capabilities as well as standard evaluation criteria required for the design, implementation,
-and maintenance of an EKG.
+Now you want GenAI agents to bypass those humans and work directly with all
+your legacy systems and data?
 
-The EKG Maturity Model is one of the key initiatives
-of the [Enterprise Knowledge Graph Forum](https://ekgf.org) (EKGF), a Managed Community of the
-[Object Management Group](https://omg.org) (OMG), being developed by a
-community of [contributors](../about/contributors.md).
+Really? You believe in magic?
 
-The EKGF hosts open working sessions to debate the contents
-toward the achievement of consensus.
+## The Hard Truth
 
-## Vision and Expectation Management
+GenAI without context is a liability. It hallucinates. It confidently presents
+nonsense as fact. It has no understanding of your business rules, your regulatory
+constraints, your data quality issues, or the tribal knowledge locked in your
+experts' heads.
 
-It captures our thinking around <ins>the vision of EKG</ins>,
-how it affects your business and what can be expected of it at certain levels of capability maturity.
+Letting GenAI loose on your enterprise without proper grounding is not innovation.
+It's negligence.
 
-## Non-functional requirements
+## The Enterprise Knowledge Graph
 
-The maturity model is therefore seen as the overall framework for all
-"non-functional requirements" (NFRs)---clustered per capability---that are
-not <ins>directly</ins> related to any given "use case".
+An EKG is a virtual semantic and operational layer, composed on demand at
+query and execution time, that governs access to trusted facts and data products
+across all internal and relevant external systems.
 
-## Use Case Tree
+It keeps GenAI grounded in context for secure, high-quality decisions.
 
-For instance, if it is your company's strategy to be able to have 
-[real-time risk insights](https://catalog.ekgf.org/use-case/risk-management/) at all levels
-of your organization then we can separate the specific functional requirements of that 
-very large use case from all the non-functional requirements that would come into place 
-around your data management and governance practices, the state of your technology landscape, 
-the culture of your organization and so forth.
-In this example, the use case _Real-time risk management_---as the top-level strategic 
-use case---would be broken down into various _sub-use cases_ resulting in a so-called
-_"[Use Case Tree](https://method.ekgf.org/concept/use-case/)_" (UCT).
-Each node in that tree represents some functionality---a capability so you will.
-How does this relate to the maturity model? Well, per use case in that tree structure you can determine how realistic
-it is to actually be able to implement that use case in relation to the level of maturity of the organization as a
-whole and more specifically in relation to any of the capabilities that are being covered in this document.
+The EKG doesn't replace your legacy systems. It connects them. It provides
+the semantic layer that gives meaning to your data, the governance layer that
+ensures trust, and the operational layer that makes it all work at enterprise scale.
 
-## Use Cases Replace Silos
+## Why Maturity Matters
 
-Another major point to make about the Use Case Trees is that it is the backbone component-structure
-of your EKG.
-In a way you could see them as the EKG's equivalent of your current siloed application- and data-landscape.
-Rather than building a new silo every time for every new use case, you would "build" new use cases in the EKG.
-Use cases are _logical silos_ in that sense.
-In a data-centric EKG world, there are no more independent applications that are run as separate systems.
-Just this particular change alone has major implications on how things are organized.
-EKG Maturity covers these---and many other---implications.
+You can't just "install" an EKG. Building one requires organizational readiness
+across multiple dimensions:
 
-## Capabilities as Use Cases
+- **Business**: Strategy alignment, executive sponsorship, clear use cases
+- **Organization**: Skills, culture, governance structures, operating models
+- **Data**: Quality, lineage, semantics, master data management
+- **Technology**: Architecture, infrastructure, integration capabilities
 
-The maturity model is about the generic capabilities and how they may evolve over time and how some of them are
-required to be available at a certain level of maturity.
-That being said, almost every capability that we describe in this document is in itself also a use case.
-Many if not most of these capabilities will more and more depend on high quality detailed and "holistic" data.
+The EKG Maturity Model provides the industry-standard framework for assessing
+and developing these capabilities. It establishes clear criteria for measuring
+progress across five levels of maturity, helping you understand where you are,
+where you need to be, and what it takes to get there.
+
+## What This Model Covers
+
+The EKG Maturity Model defines the capabilities required for an EKG and the
+generic capabilities in any organization that are affected by EKG adoption.
+
+Each capability area provides:
+
+- A business summary explaining why it matters
+- The added value from semantic standards
+- Scoring criteria based on five maturity levels
+- Practical questions stakeholders need answered
+
+## From Silos to Use Cases
+
+Traditional IT builds a new silo for every new requirement. EKG inverts this.
+Rather than building independent applications, you build *use cases* in the EKG.
+Each use case becomes a logical component that shares data, semantics, and
+governance with every other use case.
+
+The [Use Case Tree](https://method.ekgf.org/concept/use-case/) methodology
+breaks down strategic objectives into implementable components. For each
+component, you can assess whether your organization has the maturity to
+deliver it---and what capabilities need development if it doesn't.
+
+## Get Started
+
+The EKG Maturity Model is developed by the
+[Enterprise Knowledge Graph Forum](https://ekgf.org) (EKGF), a Managed Community
+of the [Object Management Group](https://omg.org) (OMG).
+
+Explore the [four pillars](../pillar/index.md)---Business, Organization, Data,
+and Technology---to assess your organization's readiness for EKG and GenAI
+at enterprise scale.
