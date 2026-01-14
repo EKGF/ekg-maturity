@@ -1,6 +1,6 @@
 # Executive Summary
 
-The EKG Maturity Model (EKG Maturity) is the industry-standard definition of the capabilities required for an EKG and
+The EKG Maturity Model is the industry-standard definition of the capabilities required for an EKG and
 of the generic capabilities in any given organization that are affected by EKG.
 
 It establishes standard criteria for measuring progress and sets out the practical questions that all involved
@@ -12,7 +12,7 @@ semantic standards and scoring criteria based on five levels of defined maturity
 It covers essential capabilities as well as standard evaluation criteria required for the design, implementation,
 and maintenance of an EKG.
 
-The Maturity Model for the Enterprise Knowledge Graph (EKG Maturity) is one of the key initiatives
+The EKG Maturity Model is one of the key initiatives
 of the [Enterprise Knowledge Graph Forum](https://ekgf.org) (EKGF), a Managed Community of the
 [Object Management Group](https://omg.org) (OMG), being developed by a
 community of [contributors](../about/contributors.md).

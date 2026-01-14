@@ -2,8 +2,8 @@
 
 The Enterprise Knowledge Graph Forum (EKGF), now a Managed Community of the
 [Object Management Group](https://omg.org) (OMG), was originally chartered in early 2020.
-Of the many ideas discussed for initial projects, the founders agreed that writing and publishing a Maturity Model
-for the EKG (EKG Maturity) should be the first effort of the membership.
+Of the many ideas discussed for initial projects, the founders agreed that writing and publishing
+the EKG Maturity Model should be the first effort of the membership.
 
 The idea of representing the maturity model as four pillars titled [Business](../pillar/business/index.md), 
 [Organization](../pillar/organization/index.md), [Data](../pillar/data/index.md), and [Technology](../pillar/technology/index.md),

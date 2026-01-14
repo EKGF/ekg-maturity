@@ -11,7 +11,7 @@ some_url: https://maturity.ekgf.org/article/meta-maturity-model/
 ---
 
 This is a work-in-progress article documenting our current thinking about
-the meta-model of the EKG maturity model (EKG Maturity) as we're documenting it on this website.
+the meta-model of the EKG Maturity Model as we're documenting it on this website.
 We're working on an OWL Ontology and describing all content --- under the [Pillars](../pillar/index.md)
 menu-option that you see on this website --- in RDF so that we can then:
 
