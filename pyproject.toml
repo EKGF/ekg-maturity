@@ -31,8 +31,12 @@ dependencies = [
   "pillow",
   "cairosvg",
   "ekglib @ git+https://github.com/EKGF/ekglib.git",
-  "mkdocs-material-ekgf>=0.0.15",
+  "mkdocs-material-ekgf>=0.0.17",
 ]
+
+[tool.uv.sources]
+# Use local development version - comment out for release
+mkdocs-material-ekgf = { path = "../mkdocs-material-ekgf", editable = true }
 
 [project.urls]
 Homepage = "https://maturity.ekgf.org"
