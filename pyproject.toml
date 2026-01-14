@@ -36,7 +36,7 @@ dependencies = [
 
 [tool.uv.sources]
 # Use local development version - comment out for release
-mkdocs-material-ekgf = { path = "../mkdocs-material-ekgf", editable = true }
+# mkdocs-material-ekgf = { path = "../mkdocs-material-ekgf", editable = true }
 
 [project.urls]
 Homepage = "https://maturity.ekgf.org"

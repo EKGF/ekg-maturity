@@ -323,7 +323,7 @@ requires-dist = [
     { name = "mkdocs-localsearch" },
     { name = "mkdocs-macros-plugin" },
     { name = "mkdocs-material" },
-    { name = "mkdocs-material-ekgf", editable = "../mkdocs-material-ekgf" },
+    { name = "mkdocs-material-ekgf", specifier = ">=0.0.17" },
     { name = "mkdocs-mermaid2-plugin" },
     { name = "mkdocs-minify-plugin" },
     { name = "mkdocs-redirects" },
@@ -836,22 +836,16 @@ wheels = [
 
 [[package]]
 name = "mkdocs-material-ekgf"
-source = { editable = "../mkdocs-material-ekgf" }
+version = "0.0.17"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "mkdocs" },
     { name = "mkdocs-material" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "mkdocs", specifier = ">=1.5.0" },
-    { name = "mkdocs-material", specifier = ">=9.0.0" },
-    { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.11.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.3.0" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.8.0" },
-    { name = "twine", marker = "extra == 'dev'", specifier = ">=5.0.0" },
+sdist = { url = "https://files.pythonhosted.org/packages/91/e5/94744acd6ff69982c37faa9ef1b52e3a605a69d50f3953027e80ee386b44/mkdocs_material_ekgf-0.0.17.tar.gz", hash = "sha256:3b14e5578a9e5050f78324743b377bd49fde7f14f874dd42db47d4ff967f65a8", size = 88430, upload-time = "2026-01-14T01:24:38.628Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/77/5e/0c08322dcb2de44111eac808dc8c4cd12688d41c495c78bb67f46dc4a8b7/mkdocs_material_ekgf-0.0.17-py3-none-any.whl", hash = "sha256:37f8645b2eb782beaca98eab61c9e6211b687c84683d782dfef90e0beb86c146", size = 88796, upload-time = "2026-01-14T01:24:37.262Z" },
 ]
-provides-extras = ["dev"]
 
 [[package]]
 name = "mkdocs-material-extensions"
