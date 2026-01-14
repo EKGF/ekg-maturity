@@ -58,3 +58,4 @@ out/
 *.fdb_latexmk
 *.xdy
 .venv/
+.playwright-mcp/
