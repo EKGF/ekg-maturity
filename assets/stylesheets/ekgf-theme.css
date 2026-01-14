@@ -1723,3 +1723,93 @@ html {
   color: var(--md-primary-fg-color) !important;
   font-weight: 700 !important;
 }
+
+/* ===== LANDING PAGE COMPONENTS ===== */
+
+/* Hero section for landing pages */
+.ekgf-hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.ekgf-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.ekgf-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* Image card grid - 4 cards in a row on desktop */
+.ekgf-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+@media screen and (min-width: 960px) {
+  .ekgf-card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Image card with background image overlay */
+.ekgf-image-card {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  min-height: 200px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.ekgf-image-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.ekgf-image-card-content {
+  position: relative;
+  z-index: 1;
+  padding: 1.25rem;
+  color: #fff;
+}
+
+.ekgf-image-card-content strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.ekgf-image-card-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  color: #fff;
+}
+
+/* Highlighted section block */
+.ekgf-highlight-section {
+  background: var(--md-code-bg-color);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin: 2rem 0;
+}
