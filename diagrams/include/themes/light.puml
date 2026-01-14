@@ -1,26 +1,64 @@
-!define BG_MAIN_COLOR      #66BCF0
-!define BG_SECONDARY_COLOR #B4BCBE
-!define BG_PACKAGE_COLOR   #eeb291
-!define BORDER_COLOR       #444444
-!define FONT_COLOR         #444444
+!option handwritten true
+!define BG_MAIN_COLOR      #4051b5
+!define BG_SECONDARY_COLOR #4051b5
+!define BG_PACKAGE_COLOR   #4051b5
+!define BORDER_COLOR       #ff6f00
+!define FONT_COLOR         #ffffff
+!define ARROW_COLOR        #ff6f00
 
-skinparam backgroundColor #white
+skinparam backgroundColor transparent
 
-' include the general skinparams for both, light and dark
-' to overwrite with the given settings
-!include ./general.puml
+' Compact layout settings
+skinparam Padding 2
+skinparam RoundCorner 6
+skinparam Shadowing false
+skinparam HyperlinkUnderline true
+skinparam HyperlinkColor #ff6f00
+skinparam ranksep 40
+skinparam nodesep 30
 
-skinparam state {
-    BackgroundColor #ade8f4
-    FontColor #03045e
-    AttributeFontColor #03045e
-    ArrowColor #023e8a
-    BorderColor #0077b6
+skinparam Default {
+  FontName "Roboto"
+  FontColor FONT_COLOR
+  FontSize 13
+}
+
+skinparam Arrow {
+  Color ARROW_COLOR
+  FontColor #333333
+  FontStyle normal
+  Thickness 2
 }
 
 skinparam class {
-    BackgroundColor #ade8f4
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+  BorderThickness 2
+  FontColor FONT_COLOR
+  AttributeFontColor FONT_COLOR
+  ArrowColor ARROW_COLOR
+  ArrowThickness 2
 }
 
-skinparam arrowThickness 1
+skinparam package {
+  FontColor #000000
+  BackgroundColor transparent
+  BorderColor BORDER_COLOR
+}
 
+skinparam state {
+  BackgroundColor BG_MAIN_COLOR
+  FontColor FONT_COLOR
+  AttributeFontColor FONT_COLOR
+  ArrowColor ARROW_COLOR
+  BorderColor BORDER_COLOR
+  BorderThickness 2
+}
+
+' Note styling - must come after Default to override
+skinparam note {
+  FontColor #000000
+  BackgroundColor #FFFFCC
+  BorderColor #ff6f00
+}
+skinparam noteFontColor #000000

@@ -1,30 +1,76 @@
-!define BG_MAIN_COLOR      #1A618C
-!define BG_SECONDARY_COLOR #616768
-!define BG_PACKAGE_COLOR   #7a209f
-!define BORDER_COLOR       #EEEEEE
-!define FONT_COLOR         #EEEEEE
+!option handwritten true
+!define BG_MAIN_COLOR      #4051b5
+!define BG_SECONDARY_COLOR #4051b5
+!define BG_PACKAGE_COLOR   #4051b5
+!define BORDER_COLOR       #ff6f00
+!define FONT_COLOR         #ffffff
+!define ARROW_COLOR        #ff6f00
 
-skinparam backgroundColor       #transparent
-skinparam backgroundColor       %hsl_color(232, 15, 21)
-skinparam HyperLinkColor        #lightgreen
+skinparam backgroundColor transparent
 
-' include the general skinparams for both, light and dark
-' to overwrite with the given settings
-!include ./general.puml
+' Compact layout settings
+skinparam Padding 2
+skinparam RoundCorner 6
+skinparam Shadowing false
+skinparam HyperlinkUnderline true
+skinparam HyperlinkColor #ff6f00
+skinparam ranksep 40
+skinparam nodesep 30
 
-skinparam state {
-    BackgroundColor #9397B2
-    FontColor white
-    AttributeFontColor #03045e
-    BorderColor #0077b6
+skinparam Default {
+  FontName "Roboto"
+  FontColor FONT_COLOR
+  FontSize 13
+}
+
+skinparam Arrow {
+  Color ARROW_COLOR
+  FontColor #ffffff
+  FontStyle normal
+  Thickness 2
 }
 
 skinparam class {
-    BackgroundColor #9397B2
-    FontColor white
-    AttributeFontColor #03045e
-    BorderColor #0077b6
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+  BorderThickness 2
+  FontColor FONT_COLOR
+  AttributeFontColor FONT_COLOR
+  ArrowColor ARROW_COLOR
+  ArrowThickness 2
 }
 
-skinparam arrowColor #FF9900
-skinparam arrowThickness 1
+skinparam package {
+  FontColor #ffffff
+  BackgroundColor #1e1e1e
+  BorderColor BORDER_COLOR
+}
+
+skinparam state {
+  BackgroundColor BG_MAIN_COLOR
+  FontColor FONT_COLOR
+  AttributeFontColor FONT_COLOR
+  ArrowColor ARROW_COLOR
+  BorderColor BORDER_COLOR
+  BorderThickness 2
+  StartColor #ffffff
+  EndColor #ffffff
+}
+
+' Explicitly set start/end state colors for visibility in dark mode
+skinparam StateStartColor #ffffff
+skinparam StateEndColor #ffffff
+skinparam StateStartBackgroundColor #ffffff
+skinparam StateEndBackgroundColor #ffffff
+skinparam StateStartBorderColor #ffffff
+skinparam StateEndBorderColor #ffffff
+skinparam StateStartFillColor #ffffff
+skinparam StateEndFillColor #ffffff
+
+' Note styling - must come after Default to override
+skinparam note {
+  FontColor #000000
+  BackgroundColor #FFFFCC
+  BorderColor #ff6f00
+}
+skinparam noteFontColor #000000
