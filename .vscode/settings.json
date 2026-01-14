@@ -1,8 +1,12 @@
 {
-  "markdownlint.ignore": [
-    "LICENSE"
-  ],
-  "files.associations": {
-    "LICENSE": "plaintext"
-  }
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [70],
+    "editor.wordWrap": "off"
+  },
+  "markdownlint.run": "onSave",
+  "markdownlint.fixOnSave": true,
+  "prettier.printWidth": 70,
+  "prettier.proseWrap": "always"
 }
