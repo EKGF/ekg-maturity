@@ -7,7 +7,7 @@ date: 2022-03-06
 some_url: https://maturity.ekgf.org/article/introducing-kgi/
 ---
 
-New Jersey, 2021, [Carl Mattocks](../other/author/carl-mattocks.md)
+New Jersey, 2021, [Carl Mattocks](../about/author/carl-mattocks.md)
 
 # Introducing the EKG Matrix Plot & KGI Value
 

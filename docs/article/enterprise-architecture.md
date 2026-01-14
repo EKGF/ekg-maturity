@@ -7,7 +7,7 @@ some_url: https://maturity.ekgf.org/article/enterprise-architecture/
 ---
 # Enterprise Architecture
 
-Antwerp, 2021, [Carlos Tubbax](../other/author/carlos-tubbax.md).
+Antwerp, 2021, [Carlos Tubbax](../about/author/carlos-tubbax.md).
 
 Once a company has defined one or several operating models depending on its business process integration and
 standardization requirements, it can then draw its enterprise architecture that reflects the company’s key processes,

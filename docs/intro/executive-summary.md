@@ -14,7 +14,7 @@ and maintenance of an EKG.
 
 The Maturity Model for the Enterprise Knowledge Graph (EKG Maturity) is one of the key initiatives
 of the [Enterprise Knowledge Graph Foundation](https://ekgf.org) being developed by a
-community of [contributors](../other/contributors.md).
+community of [contributors](../about/contributors.md).
 
 The Foundation hosts open working sessions to debate the contents
 toward the achievement of consensus.
