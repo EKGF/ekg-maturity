@@ -145,7 +145,7 @@
     "name": "Object Management Group (OMG) Enterprise Knowledge Graph Forum",
     "url": "https://maturity.ekgf.org/"
   },
-  "dateModified": "<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="January 14, 2026 09:08:50 EST"><span class="timeago" datetime="2026-01-14T09:08:50-05:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="January 14, 2026 09:08:50 EST">2026-01-14</span>",
+  "dateModified": "<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="January 15, 2026 10:26:59 EST"><span class="timeago" datetime="2026-01-15T10:26:59-05:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="January 15, 2026 10:26:59 EST">2026-01-15</span>",
   "mainEntity": {
     "@type": "Article",
     "headline": "Personas",
@@ -846,6 +846,37 @@
 </nav>
     
   
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+      <script>
+      (function() {
+        var palette = __md_get("__palette");
+        if (!palette) {
+          // First visit: check radio based on system preference
+          var prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
+          var mediaQuery = prefersDark
+            ? "(prefers-color-scheme: dark)"
+            : "(prefers-color-scheme: light)";
+          var input = document.querySelector(
+            'input[name="__palette"][data-md-color-media="' + mediaQuery + '"]'
+          );
+          if (input) {
+            input.checked = true;
+          }
+        } else {
+          // Returning visit: check radio matching saved scheme
+          var scheme = palette.color && palette.color.scheme;
+          if (scheme) {
+            var input = document.querySelector(
+              'input[name="__palette"][data-md-color-scheme="' + scheme + '"]'
+            );
+            if (input) input.checked = true;
+          }
+        }
+      })();
+      </script>
+    
+  
 </header>
 
     <div class="md-container" data-md-component="container">
@@ -1182,6 +1213,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personas
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1198,6 +1247,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stakeholder-personas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stakeholder Personas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practitioner-personas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practitioner Personas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -22839,7 +22929,9 @@
 
 <!-- Page content -->
 <h1 id="personas">Personas<a class="headerlink" href="#personas" title="Permanent link">&para;</a></h1>
-<p>The <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Maturity Model serves different types of personas, each with their own needs and goals:</p>
+<p>The <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Maturity Model serves different types of personas, each with
+their own needs and goals:</p>
+<h2 id="stakeholder-personas">Stakeholder Personas<a class="headerlink" href="#stakeholder-personas" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -22857,24 +22949,55 @@
 <td>Make it easy for organizations to understand and successfully adopt my product across multiple industry sectors.</td>
 </tr>
 <tr>
-<td><strong>Modeler</strong></td>
-<td>Have access to a proven and consistent set of deployable use cases, models &amp; ontologies that can be used with my organization's <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr>.</td>
+<td><strong>Consultant</strong></td>
+<td>Have access to—and contribute to—<abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr>-related best practices (e.g. <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Method &amp; <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Maturity) as well as a community of potential customers and skilled associates.</td>
+</tr>
+<tr>
+<td><strong>Academic</strong></td>
+<td>The chance to make a meaningful and recognized contribution that builds upon frameworks to address pressing business needs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="practitioner-personas">Practitioner Personas<a class="headerlink" href="#practitioner-personas" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>What they want</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Architect</strong></td>
+<td>Design the technical and semantic architecture of the <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr>, ensuring it meets enterprise needs and scales appropriately.</td>
 </tr>
 <tr>
 <td><strong>Technical Architect</strong></td>
 <td>Have access to components and interfaces with supporting technology architectures that I can assemble and deploy within my environment.</td>
 </tr>
 <tr>
-<td><strong>Consultant</strong></td>
-<td>Have access to---and contribute to---<abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr>-related best practices (e.g. <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Method &amp; <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Maturity) as well as a community of potential customers and skilled associates.</td>
+<td><strong>Ontologist</strong></td>
+<td>Model domain knowledge and maintain ontologies that provide semantic consistency across the enterprise.</td>
 </tr>
 <tr>
-<td><strong>Academic</strong></td>
-<td>The chance to make a meaningful and recognized contribution that builds upon frameworks to address pressing business needs.</td>
+<td><strong>Modeler</strong></td>
+<td>Have access to a proven and consistent set of deployable use cases, models &amp; ontologies that can be used with my organization's <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr>.</td>
+</tr>
+<tr>
+<td><strong>Knowledge Engineer</strong></td>
+<td>Implement use cases and integrations, translating business requirements into working <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> solutions.</td>
 </tr>
 <tr>
 <td><strong><abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Engineer</strong></td>
 <td>Be informed about best practices, role descriptions, education and certifications.</td>
+</tr>
+<tr>
+<td><strong>Data Steward</strong></td>
+<td>Ensure data quality and governance, maintaining the integrity and trustworthiness of <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> data.</td>
+</tr>
+<tr>
+<td><strong><abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> Champion</strong></td>
+<td>Advocate for <abbr title="Enterprise Knowledge Graph, an EKGF standard">EKG</abbr> adoption across the organization, building awareness and driving change.</td>
 </tr>
 </tbody>
 </table>
@@ -22903,7 +23026,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="January 14, 2026 09:08:50 EST"><span class="timeago" datetime="2026-01-14T09:08:50-05:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="January 14, 2026 09:08:50 EST">2026-01-14</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="January 15, 2026 10:26:59 EST"><span class="timeago" datetime="2026-01-15T10:26:59-05:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="January 15, 2026 10:26:59 EST">2026-01-15</span>
   </span>
 
     
@@ -22942,6 +23065,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -23073,7 +23198,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.highlight", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["search.highlight", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
@@ -23091,6 +23216,8 @@
         <script src="../../assets/javascripts/refresh_on_toggle_dark_light.js"></script>
       
         <script src="../../assets/javascripts/nav-section-links.js"></script>
+      
+        <script src="../../assets/javascripts/tabbed-url-sync.js"></script>
       
     
   </body>

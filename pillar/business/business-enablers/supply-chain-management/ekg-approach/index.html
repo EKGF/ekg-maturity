@@ -840,6 +840,37 @@
 </nav>
     
   
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+      <script>
+      (function() {
+        var palette = __md_get("__palette");
+        if (!palette) {
+          // First visit: check radio based on system preference
+          var prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
+          var mediaQuery = prefersDark
+            ? "(prefers-color-scheme: dark)"
+            : "(prefers-color-scheme: light)";
+          var input = document.querySelector(
+            'input[name="__palette"][data-md-color-media="' + mediaQuery + '"]'
+          );
+          if (input) {
+            input.checked = true;
+          }
+        } else {
+          // Returning visit: check radio matching saved scheme
+          var scheme = palette.color && palette.color.scheme;
+          if (scheme) {
+            var input = document.querySelector(
+              'input[name="__palette"][data-md-color-scheme="' + scheme + '"]'
+            );
+            if (input) input.checked = true;
+          }
+        }
+      })();
+      </script>
+    
+  
 </header>
 
     <div class="md-container" data-md-component="container">
@@ -22870,6 +22901,8 @@ making the link to the "how" i.e. the <a href="https://method.ekgf.org"><abbr ti
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -23001,7 +23034,7 @@ making the link to the "how" i.e. the <a href="https://method.ekgf.org"><abbr ti
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["search.highlight", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["search.highlight", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.annotate", "content.tabs.link"], "search": "../../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
@@ -23019,6 +23052,8 @@ making the link to the "how" i.e. the <a href="https://method.ekgf.org"><abbr ti
         <script src="../../../../../assets/javascripts/refresh_on_toggle_dark_light.js"></script>
       
         <script src="../../../../../assets/javascripts/nav-section-links.js"></script>
+      
+        <script src="../../../../../assets/javascripts/tabbed-url-sync.js"></script>
       
     
   </body>
