@@ -35,17 +35,10 @@ jobs:
         with:
           fetch-depth: 0
       -
-        name: Checkout ekg-lib
-        uses: actions/checkout@v4
-        with:
-          repository: EKGF/ekg-lib
-          path: ../ekg-lib
-      -
-        name: Checkout mkdocs-material-ekgf
-        uses: actions/checkout@v4
-        with:
-          repository: EKGF/mkdocs-material-ekgf
-          path: ../mkdocs-material-ekgf
+        name: Clone sibling repositories
+        run: |
+          git clone --depth 1 https://github.com/EKGF/ekg-lib.git ../ekg-lib
+          git clone --depth 1 https://github.com/EKGF/mkdocs-material-ekgf.git ../mkdocs-material-ekgf
       -
         name: Cache uv dependencies
         uses: actions/cache@v4
