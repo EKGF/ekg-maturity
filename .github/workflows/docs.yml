@@ -47,7 +47,8 @@ jobs:
       -
         name: Install all MkDocs dependencies
         run: |
-          # echo "/home/linuxbrew/.linuxbrew/bin/brew" >> $GITHUB_PATH
+          # Regenerate lock file without local sources for CI
+          uv lock --no-sources
           make --environment-overrides UV_FLAGS=--no-sources docs-install-github-actions
       -
         name: Build Site
