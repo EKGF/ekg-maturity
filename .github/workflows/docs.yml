@@ -35,6 +35,18 @@ jobs:
         with:
           fetch-depth: 0
       -
+        name: Checkout ekg-lib
+        uses: actions/checkout@v4
+        with:
+          repository: EKGF/ekg-lib
+          path: ../ekg-lib
+      -
+        name: Checkout mkdocs-material-ekgf
+        uses: actions/checkout@v4
+        with:
+          repository: EKGF/mkdocs-material-ekgf
+          path: ../mkdocs-material-ekgf
+      -
         name: Cache uv dependencies
         uses: actions/cache@v4
         with:
@@ -45,26 +57,20 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-uv-
       -
-        name: Install Homebrew packages
-        run: make --environment-overrides docs-install-brew-packages
-      -
-        name: Regenerate lock file without local sources
-        run: uv lock --no-sources
-      -
-        name: Install Python dependencies
-        run: make --environment-overrides UV_FLAGS=--no-sources docs-install-python-packages info
+        name: Install all MkDocs dependencies
+        run: make --environment-overrides docs-install-github-actions
       -
         name: Build Site
         # Build runs on all branches and PRs to validate changes
         # run 'docs-build' twice because 'gen_files' doesn't let MkDocs
         # pick up on the generated files in the first run
         run: |
-          make --environment-overrides UV_FLAGS=--no-sources docs-build
-          make --environment-overrides UV_FLAGS=--no-sources docs-build
+          make --environment-overrides docs-build
+          make --environment-overrides docs-build
       -
         name: Deploy Site
         # Deploy only runs on main branch after successful build
         if: ${{ github.ref == 'refs/heads/main' }}
-        run: make --environment-overrides UV_FLAGS=--no-sources docs-deploy
+        run: make --environment-overrides docs-deploy
 
 
