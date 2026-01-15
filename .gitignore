@@ -59,3 +59,4 @@ out/
 *.xdy
 .venv/
 .playwright-mcp/
+.playwright-mcp/
