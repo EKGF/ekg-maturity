@@ -263,12 +263,81 @@ wheels = [
 ]
 
 [[package]]
+name = "ekg-lib"
+source = { editable = "../ekg-lib" }
+dependencies = [
+    { name = "boto3" },
+    { name = "boto3-stubs" },
+    { name = "botocore" },
+    { name = "data-science-types" },
+    { name = "humps" },
+    { name = "inflection" },
+    { name = "ldap3" },
+    { name = "mdutils" },
+    { name = "mkdocs-gen-files" },
+    { name = "numpy" },
+    { name = "openpyxl" },
+    { name = "option" },
+    { name = "owlrl" },
+    { name = "pandas" },
+    { name = "pandas-stubs" },
+    { name = "python-dateutil" },
+    { name = "rdflib" },
+    { name = "requests" },
+    { name = "sparqlwrapper" },
+    { name = "stringcase" },
+    { name = "toml" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "boto3" },
+    { name = "boto3-stubs" },
+    { name = "botocore" },
+    { name = "data-science-types" },
+    { name = "humps" },
+    { name = "inflection" },
+    { name = "ldap3" },
+    { name = "mdutils" },
+    { name = "mkdocs-gen-files" },
+    { name = "numpy" },
+    { name = "openpyxl" },
+    { name = "option" },
+    { name = "owlrl" },
+    { name = "pandas" },
+    { name = "pandas-stubs" },
+    { name = "python-dateutil" },
+    { name = "rdflib" },
+    { name = "requests" },
+    { name = "sparqlwrapper" },
+    { name = "stringcase" },
+    { name = "toml" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "hatch" },
+    { name = "mdutils" },
+    { name = "mkdocs" },
+    { name = "mkdocs-gen-files" },
+    { name = "mkdocs-material" },
+    { name = "mypy" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "pytest-html" },
+    { name = "pytest-timeout", specifier = ">=2.4.0" },
+    { name = "ruff" },
+    { name = "tox" },
+    { name = "uv" },
+]
+
+[[package]]
 name = "ekg-maturity"
 version = "1.0.2"
 source = { virtual = "." }
 dependencies = [
     { name = "cairosvg" },
-    { name = "ekglib" },
+    { name = "ekg-lib" },
     { name = "markdown-emdash" },
     { name = "mdutils" },
     { name = "mdx-spanner" },
@@ -294,7 +363,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "cairosvg" },
-    { name = "ekglib", git = "https://github.com/EKGF/ekglib.git" },
+    { name = "ekg-lib", editable = "../ekg-lib" },
     { name = "markdown-emdash" },
     { name = "mdutils" },
     { name = "mdx-spanner" },
@@ -309,40 +378,12 @@ requires-dist = [
     { name = "mkdocs-localsearch" },
     { name = "mkdocs-macros-plugin" },
     { name = "mkdocs-material" },
-    { name = "mkdocs-material-ekgf", specifier = ">=0.0.18" },
+    { name = "mkdocs-material-ekgf", editable = "../mkdocs-material-ekgf" },
     { name = "mkdocs-mermaid2-plugin" },
     { name = "mkdocs-minify-plugin" },
     { name = "mkdocs-redirects" },
     { name = "pillow" },
     { name = "smartypants" },
-]
-
-[[package]]
-name = "ekglib"
-version = "0.0.30"
-source = { git = "https://github.com/EKGF/ekglib.git#c11749854f25ab1e69b83c44079bca7a11f04e08" }
-dependencies = [
-    { name = "boto3" },
-    { name = "boto3-stubs" },
-    { name = "botocore" },
-    { name = "data-science-types" },
-    { name = "humps" },
-    { name = "inflection" },
-    { name = "ldap3" },
-    { name = "mdutils" },
-    { name = "mkdocs-gen-files" },
-    { name = "numpy" },
-    { name = "openpyxl" },
-    { name = "option" },
-    { name = "owlrl" },
-    { name = "pandas" },
-    { name = "pandas-stubs" },
-    { name = "python-dateutil" },
-    { name = "rdflib" },
-    { name = "requests" },
-    { name = "sparqlwrapper" },
-    { name = "stringcase" },
-    { name = "toml" },
 ]
 
 [[package]]
@@ -770,16 +811,22 @@ wheels = [
 
 [[package]]
 name = "mkdocs-material-ekgf"
-version = "0.0.19"
-source = { registry = "https://pypi.org/simple" }
+source = { editable = "../mkdocs-material-ekgf" }
 dependencies = [
     { name = "mkdocs" },
     { name = "mkdocs-material" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/6f/93/e73601eff7eaefb0346fc9d97e793900c8ae97e769b1324ed9836c4c835b/mkdocs_material_ekgf-0.0.19.tar.gz", hash = "sha256:4a46963273509cd076d12e15682761086cf06d1ecb14bf9af05a835cc0607c43", size = 88966, upload-time = "2026-01-14T17:08:54.685Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/5f/79/912dcff20d18222b0634ce681cad13df2cf62417745faebf30ddb0c28bd2/mkdocs_material_ekgf-0.0.19-py3-none-any.whl", hash = "sha256:bc9acbb4caa629f356b9750c071b7fa7c8e376142213b658fb4d5d36385e2974", size = 89257, upload-time = "2026-01-14T17:08:53.469Z" },
+
+[package.metadata]
+requires-dist = [
+    { name = "mkdocs", specifier = ">=1.5.0" },
+    { name = "mkdocs-material", specifier = ">=9.0.0" },
+    { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.11.0" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.3.0" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.8.0" },
+    { name = "twine", marker = "extra == 'dev'", specifier = ">=5.0.0" },
 ]
+provides-extras = ["dev"]
 
 [[package]]
 name = "mkdocs-material-extensions"
