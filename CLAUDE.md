@@ -104,9 +104,11 @@ markdownlint '**/*.md' --ignore node_modules --ignore site
 
 - Commits follow Angular Conventional Commits:
   `<type>(<scope>): <subject>`
-- Types: feat, fix, docs, refactor, test, style, perf, build, ci,
-  chore, revert
-- Use lowercase for type, scope, and subject start
+- Types: `build`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`,
+  `revert`, `style`, `test`
+- Scope is required (e.g., `feat(parser):`, `fix(ui):`)
+- All lowercase, imperative mood, no period at end
+- Note: `chore` is NOT allowed in Angular convention
 - Never bypass git hooks with `--no-verify`
 - Never execute `git push` - user must push manually
 - Never commit without explicit user permission
