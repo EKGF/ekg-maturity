@@ -65,7 +65,7 @@ install: docs-install
 docs-install: docs-install-brew docs-install-brew-packages docs-install-python-packages info
 
 .PHONY: docs-install-github-actions
-docs-install-github-actions: docs-install-brew-packages docs-install-python-packages info
+docs-install-github-actions: docs-install-brew-packages docs-install-python-packages-ci info
 
 .PHONY: docs-install-brew-packages
 docs-install-brew-packages:
@@ -111,6 +111,11 @@ docs-install-brew-macos:
 
 .PHONY: docs-install-python-packages
 docs-install-python-packages: docs-install-standard-python-packages
+
+.PHONY: docs-install-python-packages-ci
+docs-install-python-packages-ci: docs-ensure-venv
+	@echo "Install Python packages via uv (CI mode, ignoring local sources):"
+	$(UV) sync --no-sources
 
 .PHONY: docs-install-standard-python-packages
 docs-install-standard-python-packages: docs-ensure-venv
