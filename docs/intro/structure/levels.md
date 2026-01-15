@@ -46,7 +46,7 @@ This document will refer---for each capability---to the five maturity levels.
 - The domain of parallel knowledge graph activities, 
   implementing multiple (related) use cases on the same platform.
 - The organization is creating reusable architecture---i.e. 
-  "the EKG platform" ([EKG Platform](https://method.ekgf.org/vocab/ekg-platform/))---based
+  "the EKG platform" ([EKG Platform](https://method.ekgf.org/article/ekg-platform/))---based
   on [EKG principles](https://principles.ekgf.org/principle/).
 - The "EKG Center of Excellence" (CoE) is created.
 - Funding is likely to be at the LOB level and starts to (partly)
@@ -84,7 +84,7 @@ This document will refer---for each capability---to the five maturity levels.
 ## Level 3
 
 - The establishment of a secure, scalable and resilient 
-  [EKG Platform](https://method.ekgf.org/vocab/ekg-platform/)
+  [EKG Platform](https://method.ekgf.org/article/ekg-platform/)
   for business-critical strategic use cases. 
 - Resources for the design and build of operational systems are defined 
   and coordinated. 
