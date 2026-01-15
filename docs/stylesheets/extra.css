@@ -1,0 +1,5 @@
+/* Make SVG objects transparent and properly sized */
+object[type="image/svg+xml"] {
+  background: transparent !important;
+  min-height: 500px;
+}

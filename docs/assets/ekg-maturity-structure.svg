@@ -5,7 +5,7 @@
     .pillar-header-data { fill: url(#grad-data); }
     .pillar-header-tech { fill: url(#grad-tech); }
     .pillar-header-text { fill: #ffffff; font-weight: 600; font-size: 18px; }
-    .level-row { fill: transparent; stroke: #d4d4d4; stroke-width: 1; }
+    .level-row { fill: #fefce8; stroke: #d4d4d4; stroke-width: 1; }
     .level-text { fill: #1a1a1a; font-size: 14px; font-weight: 600; }
     .level-badge { fill: #4f46e5; }
     .level-badge-text { fill: #ffffff; font-size: 16px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }

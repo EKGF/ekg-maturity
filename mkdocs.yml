@@ -71,6 +71,8 @@ extra:
 extra_javascript:
   - "https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/mkdocs-graphviz.js"
   - javascripts/darkable-objects.js
+extra_css:
+  - stylesheets/extra.css
 plugins:
   - material-ekgf
   - include-markdown
