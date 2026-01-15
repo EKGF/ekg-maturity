@@ -45,11 +45,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-uv-
       -
-        name: Install all MkDocs dependencies
-        run: |
-          # Regenerate lock file without local sources for CI
-          uv lock --no-sources
-          make --environment-overrides UV_FLAGS=--no-sources docs-install-github-actions
+        name: Install Homebrew packages
+        run: make --environment-overrides docs-install-brew-packages
+      -
+        name: Regenerate lock file without local sources
+        run: uv lock --no-sources
+      -
+        name: Install Python dependencies
+        run: make --environment-overrides UV_FLAGS=--no-sources docs-install-python-packages info
       -
         name: Build Site
         # Build runs on all branches and PRs to validate changes
