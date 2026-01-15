@@ -41,7 +41,7 @@ jobs:
           git clone --depth 1 https://github.com/EKGF/mkdocs-material-ekgf.git ../mkdocs-material-ekgf
       -
         name: Cache uv dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cache/uv
