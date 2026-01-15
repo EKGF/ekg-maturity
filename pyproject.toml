@@ -29,13 +29,14 @@ dependencies = [
   "smartypants",
   "pillow",
   "cairosvg",
-  "ekglib @ git+https://github.com/EKGF/ekglib.git",
-  "mkdocs-material-ekgf>=0.0.18",
+  "ekg-lib>=0.0.30",
+  "mkdocs-material-ekgf>=0.0.20",
 ]
 
 [tool.uv.sources]
 # Use local development version - comment out for release
-# mkdocs-material-ekgf = { path = "../mkdocs-material-ekgf", editable = true }
+mkdocs-material-ekgf = { path = "../mkdocs-material-ekgf", editable = true }
+ekg-lib = { path = "../ekg-lib", editable = true }
 
 [project.urls]
 Homepage = "https://maturity.ekgf.org"
