@@ -60,3 +60,4 @@ out/
 .venv/
 .playwright-mcp/
 .playwright-mcp/
+node_modules/
