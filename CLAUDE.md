@@ -102,15 +102,11 @@ markdownlint '**/*.md' --ignore node_modules --ignore site
 
 ## Git workflow
 
-- Commits follow Angular Conventional Commits:
-  `<type>(<scope>): <subject>`
-- Types: `build`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`,
-  `revert`, `style`, `test`
-- Scope is required (e.g., `feat(parser):`, `fix(ui):`)
-- All lowercase, imperative mood, no period at end
-- Note: `chore` is NOT allowed in Angular convention
-- Never bypass git hooks with `--no-verify`
-- Never execute `git push` - user must push manually
-- Never commit without explicit user permission
-- Prefer `git rebase` over `git merge` for linear history
+- **NEVER execute `git push`** - users must push manually
+- **NEVER bypass hooks** with `--no-verify`
+- **NEVER use `git merge`** - always use `git rebase` for linear
+  history
+- Commit only when explicitly requested
 - Use `git pull --rebase` when pulling remote changes
+
+For commit message format, see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
