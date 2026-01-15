@@ -28,6 +28,8 @@ endif
 #
 VENV_PYTHON := $(VIRTUAL_ENV)/bin/python3
 UV := uv
+# UV_FLAGS can be set to --no-sources for CI builds to ignore local dev sources
+UV_FLAGS ?=
 PYTHON_VERSION := 3.14.2
 
 PIPENV_DEFAULT_PYTHON_VERSION := 3.14.2
@@ -43,7 +45,7 @@ all: docs-build
 info:
 	@echo "Git Branch        : ${CURRENT_BRANCH}"
 	@echo "Operating System  : ${YOUR_OS}"
-	@echo "MkDocs            : $$($(UV) run mkdocs --version)"
+	@echo "MkDocs            : $$($(UV) run $(UV_FLAGS) mkdocs --version)"
 	@echo "MkDocs config file: ${MKDOCS_CONFIG_FILE}"
 	@echo "System Python     : ${SYSTEM_PYTHON} version: $$($(SYSTEM_PYTHON) --version)" 
 	@echo "Virtual Env Python: ${VENV_PYTHON} version: $$($(VENV_PYTHON) --version)"
@@ -65,7 +67,7 @@ install: docs-install
 docs-install: docs-install-brew docs-install-brew-packages docs-install-python-packages info
 
 .PHONY: docs-install-github-actions
-docs-install-github-actions: docs-install-brew-packages docs-install-python-packages-ci info
+docs-install-github-actions: docs-install-brew-packages docs-install-python-packages info
 
 .PHONY: docs-install-brew-packages
 docs-install-brew-packages:
@@ -112,15 +114,10 @@ docs-install-brew-macos:
 .PHONY: docs-install-python-packages
 docs-install-python-packages: docs-install-standard-python-packages
 
-.PHONY: docs-install-python-packages-ci
-docs-install-python-packages-ci: docs-ensure-venv
-	@echo "Install Python packages via uv (CI mode, ignoring local sources):"
-	$(UV) sync --no-sources
-
 .PHONY: docs-install-standard-python-packages
 docs-install-standard-python-packages: docs-ensure-venv
 	@echo "Install Python packages via uv:"
-	$(UV) sync
+	$(UV) sync $(UV_FLAGS)
 
 .PHONY: docs-ensure-venv
 docs-ensure-venv:
@@ -134,15 +131,15 @@ docs-ensure-venv:
 
 .PHONY: docs-build
 docs-build: docs-ensure-venv
-	$(UV) run mkdocs build --config-file $(MKDOCS_CONFIG_FILE)
+	$(UV) run $(UV_FLAGS) mkdocs build --config-file $(MKDOCS_CONFIG_FILE)
 
 .PHONY: docs-build-clean
 docs-build-clean: docs-ensure-venv
-	$(UV) run mkdocs build --config-file $(MKDOCS_CONFIG_FILE) --clean
+	$(UV) run $(UV_FLAGS) mkdocs build --config-file $(MKDOCS_CONFIG_FILE) --clean
 
 .PHONY: docs-serve
 docs-serve: docs-ensure-venv
-	$(UV) run mkdocs serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict
+	$(UV) run $(UV_FLAGS) mkdocs serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict
 
 .PHONY: docs-diagrams-clean
 docs-diagrams-clean:
@@ -154,23 +151,23 @@ docs-serve-fresh: docs-diagrams-clean docs-serve
 
 .PHONY: docs-serve-fast
 docs-serve-fast: docs-ensure-venv
-	$(UV) run mkdocs serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict
+	$(UV) run $(UV_FLAGS) mkdocs serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --strict
 
 .PHONY: docs-serve-non-strict
 docs-serve-non-strict: docs-ensure-venv
-	$(UV) run mkdocs serve --config-file $(MKDOCS_CONFIG_FILE) --livereload
+	$(UV) run $(UV_FLAGS) mkdocs serve --config-file $(MKDOCS_CONFIG_FILE) --livereload
 
 .PHONY: docs-serve-debug
 docs-serve-debug: docs-ensure-venv
-	$(UV) run mkdocs serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --verbose --strict
+	$(UV) run $(UV_FLAGS) mkdocs serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --verbose --strict
 
 .PHONY: docs-serve-debug-non-strict
 docs-serve-debug-non-strict: docs-ensure-venv
-	$(UV) run mkdocs serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --verbose
+	$(UV) run $(UV_FLAGS) mkdocs serve --config-file $(MKDOCS_CONFIG_FILE) --livereload --verbose
 
 .PHONY: docs-deploy
 docs-deploy: docs-ensure-venv
-	$(UV) run mkdocs gh-deploy --config-file $(MKDOCS_CONFIG_FILE)
+	$(UV) run $(UV_FLAGS) mkdocs gh-deploy --config-file $(MKDOCS_CONFIG_FILE)
 
 .PHONY: docs-sync-from
 docs-sync-from: docs-sync-from-ekg-maturity docs-sync-from-ekg-principles
