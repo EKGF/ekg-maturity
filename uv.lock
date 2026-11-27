@@ -1,6 +1,6 @@
 version = 1
-revision = 3
-requires-python = ">=3.14.2"
+revision = 5
+requires-python = ">=3.14.3"
 
 [[package]]
 name = "babel"
@@ -254,6 +254,18 @@ wheels = [
 ]
 
 [[package]]
+name = "dotenvage"
+version = "0.8.33"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a3/5f/f7788d1ecb7f00d4000a0bc6e950e588504149c87a5a8d16e6f13a756fca/dotenvage-0.8.33-cp310-abi3-macosx_10_12_x86_64.whl", hash = "sha256:7f9a3882c8b3ab01f820a49edd5d502fccd775dc2a26f7eaab455d8aa97e04d8", size = 660401, upload-time = "2026-11-19T23:37:27.353Z" },
+    { url = "https://files.pythonhosted.org/packages/fa/7a/511686d6f640d92129aa2281100907e13a44abdf23d7029179fa7b4e7709/dotenvage-0.8.33-cp310-abi3-macosx_11_0_arm64.whl", hash = "sha256:41755b3bf47a3b788e5346c54495a659ed22eac5b45480a6e92109c1470196f1", size = 647020, upload-time = "2026-11-19T23:37:29.399Z" },
+    { url = "https://files.pythonhosted.org/packages/7f/0d/f9ba532fa22b624d7f381d4a62428265bb2b16175099d4bc285fc9e789bf/dotenvage-0.8.33-cp310-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:ee8a356a9c3e8247fe61be93d8d95a1ff793adf584fe08dd9ee3f3f455376dce", size = 616600, upload-time = "2026-11-19T23:37:31.097Z" },
+    { url = "https://files.pythonhosted.org/packages/38/2e/6803df48d0ca0d7bbb3d467342e509b3f04e1f668cc289cbb0afa95c8582/dotenvage-0.8.33-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:a815a8e0ad6205af9fd26aec744e14d519dab213158bf5a8e2ba8d6da6395618", size = 649408, upload-time = "2026-11-19T23:37:32.914Z" },
+    { url = "https://files.pythonhosted.org/packages/82/31/c742000041f480382177a672120497c400453ec0712444113c18247e9c48/dotenvage-0.8.33-cp310-abi3-win_amd64.whl", hash = "sha256:66086d3910dd53cf28ab38ae84bc3e7e26b8555716a5b79bdea179d9d9fb874e", size = 534734, upload-time = "2026-11-19T23:37:34.288Z" },
+]
+
+[[package]]
 name = "editorconfig"
 version = "0.17.1"
 source = { registry = "https://pypi.org/simple" }
@@ -270,6 +282,7 @@ dependencies = [
     { name = "boto3-stubs" },
     { name = "botocore" },
     { name = "data-science-types" },
+    { name = "dotenvage" },
     { name = "humps" },
     { name = "inflection" },
     { name = "ldap3" },
@@ -295,6 +308,7 @@ requires-dist = [
     { name = "boto3-stubs" },
     { name = "botocore" },
     { name = "data-science-types" },
+    { name = "dotenvage" },
     { name = "humps" },
     { name = "inflection" },
     { name = "ldap3" },
@@ -819,14 +833,18 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "mkdocs", specifier = ">=1.5.0" },
+    { name = "mkdocs", specifier = ">=1.5.0,<2" },
     { name = "mkdocs-material", specifier = ">=9.0.0" },
     { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.11.0" },
+    { name = "playwright", marker = "extra == 'social'", specifier = ">=1.58.0" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.3.0" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.8.0" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.15.1" },
     { name = "twine", marker = "extra == 'dev'", specifier = ">=5.0.0" },
 ]
-provides-extras = ["dev"]
+provides-extras = ["dev", "social"]
+
+[package.metadata.requires-dev]
+dev = [{ name = "twine", specifier = ">=6.2.0" }]
 
 [[package]]
 name = "mkdocs-material-extensions"
